@@ -1377,6 +1377,101 @@ The architecture of thought is yours to build.
 - "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models" (Wei et al.)
 - "Tree of Thoughts: Deliberate Problem Solving with Large Language Models" (Yao et al.)
 
+## Appendix E: DCF in Practice — A Meta-Example
+
+This appendix documents how DCF was applied during the creation of this very treatise, serving as a concrete case study of the framework in action.
+
+### The Session That Created This Document
+
+**Human Behaviors Demonstrating DCF:**
+
+| Behavior | DCF Principle |
+|----------|---------------|
+| "Study these documents in depth" | Thinking Mirror—externalize the task |
+| "Create a todo so you can run through all of this" | Metacognition—visible process tracking |
+| "Is it still relevant?" | Socratic Dialogue—challenge the output |
+| "Would you give my approach a specific name?" | Operationalization—from insight to artifact |
+| "Can you also address the gaps?" | Recursive Refinement—iterate on incompleteness |
+| "Has other research been done?" | Dialectic—position against alternatives |
+| Noticing own chain-of-thought prompting | Meta-metacognition—awareness of own DCF application |
+
+### Claude Code as Distributed Cognitive System
+
+The human used Claude Code's specific affordances as cognitive infrastructure:
+
+| Claude Code Feature | Usage Pattern | Cognitive Function |
+|---------------------|---------------|-------------------|
+| **TodoWrite** | Track task progress | Externalized working memory |
+| **Git commits** | Checkpoint after each major phase | Cognitive save points |
+| **File system** | Documents as persistent artifacts | Long-term knowledge architecture |
+| **Conversation** | Progressive refinement through dialogue | Active reasoning workspace |
+| **Tool access** | Read/Edit/Glob as exploration | Extended perception |
+| **Prompt structure** | Chain-of-thought updates, goal reminders | Steering collaboration |
+
+### The Recursive Cognitive Loop
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  HUMAN COGNITIVE PROCESS (Observed in This Session)            │
+│                                                                 │
+│  Mental Model ←───────────────────────────────────────┐        │
+│       ↓                                               │        │
+│  Express to Claude Code ──→ Claude executes ──→ Output │        │
+│       ↓                                               │        │
+│  Review output ──→ Refine mental model ───────────────┘        │
+│       ↓                                                        │
+│  TodoWrite tracks state ──→ Git preserves checkpoints          │
+│       ↓                                                        │
+│  Document captures knowledge ──→ Input for next cycle          │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### The Meta-Recursive Nature of This Work
+
+```
+Writing about → how to think with AI
+     ↓
+While thinking with AI → about how you think
+     ↓
+And noticing that you're → thinking about thinking
+     ↓
+Which is itself → a DCF principle (metacognition)
+     ↓
+And documenting that noticing → creates this appendix
+```
+
+### DCF Principles Mapped to Claude Code Implementation
+
+| DCF Principle | Claude Code Implementation |
+|---------------|---------------------------|
+| Language as Infrastructure | CLAUDE.md, document artifacts, todo lists |
+| Externalized Cognition | TodoWrite, conversation context, file system |
+| Recursive Refinement | Edit cycles, iterative section updates |
+| Checkpoint Engagement | Git commits between phases |
+| Metacognition | Observing and documenting own process |
+| Socratic Dialogue | Questioning outputs before acceptance |
+| Tool Selection Awareness | Choosing Read vs Serena vs Grep appropriately |
+
+### Novelty Assessment (From This Session)
+
+Analysis of where DCF contributes original thinking:
+
+| Aspect | Novelty | Notes |
+|--------|---------|-------|
+| Socratic prompting concept | Low | Well-documented in literature |
+| Thinking mirror metaphor | Medium | Exists but rarely central |
+| Recursive refinement | Medium | Chain-of-thought adjacent |
+| DCF as unified framework | High | Integration is novel |
+| Agentic-era human philosophy | Very High | Almost no published work |
+| CLAUDE.md as cognitive infrastructure | Very High | Not framed this way elsewhere |
+| Checkpoint-focused Socratic application | High | Not clearly articulated elsewhere |
+
+### Key Insight
+
+The framework wasn't invented theoretically—it was discovered through practice, then formalized. This appendix demonstrates that DCF describes what effective practitioners naturally do when being deliberate about human-AI collaboration.
+
+The validity of DCF comes from its emergence from lived practice, not academic speculation.
+
 ---
 
 *This treatise was developed through the very methodology it describes: iterative dialogue with AI, recursive refinement of ideas, and the synthesis of multiple sources into coherent understanding. It is itself an artifact of DCF in practice.*
