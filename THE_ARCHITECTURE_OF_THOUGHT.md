@@ -1,20 +1,22 @@
-# The Architecture of Thought: A Framework for Co-Cognitive Engineering with Large Language Models
+# The Architecture of Thought: The Dialectical Cognition Framework (DCF)
 
-*A Treatise on Human-AI Collaboration, Recursive Prompting, and the Engineering of Clarity*
+*A Treatise on Human-AI Collaboration in the Agentic Era*
 
 ---
 
 ## Preface
 
-This document synthesizes a methodology that emerged not from academic theory but from lived practice—months of working alongside large language models to solve real problems: fragmented documentation, ambiguous system designs, complex codebases, and the persistent challenge of transforming chaos into clarity.
+This document synthesizes the **Dialectical Cognition Framework (DCF)**—a methodology that emerged not from academic theory but from lived practice. Months of working alongside large language models to solve real problems: fragmented documentation, ambiguous system designs, complex codebases, and the persistent challenge of transforming chaos into clarity.
 
 What began as frustration with poor technical documentation evolved into something unexpected: a new way of thinking. Not thinking *about* AI, but thinking *with* it. Not using LLMs as answer machines, but as mirrors for cognition—collaborative partners in the architecture of thought itself.
 
-This treatise is written for practitioners: software engineers, technical writers, knowledge workers, and anyone who senses that there's a deeper way to engage with these tools than the surface-level prompting that dominates current discourse.
+**A Note on Eras:** This framework bridges two distinct periods of LLM interaction. The *conversational era* (2022-2024) required humans to manually chain prompts and orchestrate every step. The *agentic era* (2024-present) features autonomous AI systems like Claude Code that plan, execute, and self-correct with minimal human intervention. DCF principles apply to both, but the *application* differs. Throughout this document, we note when practices are now automated, while preserving the underlying philosophy that remains constant.
+
+This treatise is written for practitioners: software engineers, technical writers, knowledge workers, and anyone who senses that there's a deeper way to engage with AI than surface-level prompting or passive approval of autonomous agents.
 
 ---
 
-## Part I: The Core Philosophy
+## Part I: The Core Philosophy of DCF
 
 ### Chapter 1: Beyond Prompting — The Shift from Extraction to Collaboration
 
@@ -22,10 +24,10 @@ The dominant paradigm for interacting with LLMs treats them as sophisticated sea
 
 But extraction misses the deeper capability of these systems. LLMs don't merely retrieve—they *generate*. They don't just recall patterns—they *synthesize*. And synthesis, when properly guided, can produce something neither you nor the model possessed alone.
 
-**The fundamental shift:**
+**The fundamental shift (DCF Principle #1: Collaboration Over Extraction):**
 
-| Extraction Paradigm | Collaboration Paradigm |
-|---------------------|------------------------|
+| Extraction Paradigm | DCF Collaboration Paradigm |
+|---------------------|----------------------------|
 | "Give me the answer" | "Help me think through this" |
 | One-shot prompts | Recursive dialogue |
 | Evaluation: correctness | Evaluation: clarity gained |
@@ -34,7 +36,9 @@ But extraction misses the deeper capability of these systems. LLMs don't merely 
 
 This shift transforms the LLM from a tool into a **thinking partner**—a system that scaffolds cognition rather than replacing it.
 
-### Chapter 2: The Thinking Mirror Hypothesis
+> **Agentic Era Update:** In systems like Claude Code, this shift is partially automated. The agent *already* engages in multi-step reasoning, plans before acting, and self-corrects. Your role shifts from orchestrating collaboration to *evaluating* whether the agent's autonomous collaboration with itself produced the right outcome. DCF still applies—at the review and approval stages.
+
+### Chapter 2: The Thinking Mirror Hypothesis (DCF Principle #2)
 
 LLMs are probabilistic models trained on vast corpora of human expression. They predict likely continuations of text based on patterns in that data. This technical reality has a profound implication:
 
@@ -51,7 +55,9 @@ This mirror doesn't show you truth. It shows you *a version of your thought tran
 
 The mirror hypothesis explains why one-shot prompting fails for complex tasks. A mirror shows you what you bring to it. If you bring a vague question, you receive a vague reflection. But if you bring structured inquiry—layered, iterative, self-correcting—the mirror returns increasing clarity.
 
-### Chapter 3: Language as Infrastructure
+> **Agentic Era Update:** In Claude Code, the "mirror" has expanded. The agent's *plan* is now your primary reflection point. When Claude Code presents "Here's my implementation plan...", that plan is the mirror. Review it Socratically: What assumptions does it reveal? What did it miss? Extended thinking models also have *internal mirrors*—the model argues with itself before responding. Your job is to evaluate the output of that internal dialectic.
+
+### Chapter 3: Language as Infrastructure (DCF Principle #3)
 
 In software engineering, we speak of infrastructure as the invisible scaffolding that supports systems. But what is the infrastructure of an organization's cognition? What scaffolds understanding across teams, projects, and time?
 
@@ -67,9 +73,16 @@ This reframes technical writing from a communication task to an **engineering di
 
 LLMs, properly employed, become tools for engineering this infrastructure at scale.
 
+> **Agentic Era Update:** Claude Code introduces new forms of language-as-infrastructure:
+> - **CLAUDE.md files**: Project-level cognitive context loaded at session start
+> - **Memory systems**: Persistent understanding that accumulates across sessions
+> - **Todo lists**: Externalized working memory visible to both human and AI
+>
+> These aren't just convenience features—they're *cognitive infrastructure for human-AI collaboration*. A well-maintained CLAUDE.md is your organization's interface to agentic AI systems.
+
 ---
 
-## Part II: The Socratic Method Reimagined
+## Part II: The Socratic Method Reimagined (DCF Core)
 
 ### Chapter 4: Socratic Dialogue as Methodology
 
@@ -82,7 +95,7 @@ The Socratic method, articulated 2,400 years ago, remains humanity's most powerf
 
 These operations map directly to human-AI dialogue:
 
-| Socratic Operation | LLM Application |
+| Socratic Operation | DCF Application |
 |-------------------|-----------------|
 | **Elenchus** | "What assumptions are built into that answer?" |
 | **Maieutics** | "Help me articulate what I'm trying to express" |
@@ -90,6 +103,13 @@ These operations map directly to human-AI dialogue:
 | **Aporia** | "What am I not seeing about this problem?" |
 
 The difference from ancient Athens: Socrates had finite patience and his own biases. The LLM has neither. It can pursue a line of questioning indefinitely, with perfect equanimity, following whatever direction you steer.
+
+> **Agentic Era Update:** In Claude Code, Socratic operations apply at *decision points*:
+> - **Plan Mode approval**: Apply elenchus—"What contradictions exist in this plan?"
+> - **Skill outputs**: Apply dialectic—"What's the argument against this commit message?"
+> - **Agent delegation**: Apply aporia—"What am I missing about whether to delegate this?"
+>
+> The Socratic method hasn't been replaced by autonomous agents—it's been *concentrated* at the moments that matter most.
 
 ### Chapter 5: The Five Phases of Socratic Prompting
 
@@ -124,9 +144,23 @@ Start again, from your now-evolved perspective.
 
 The cycle continues. Each iteration sharpens understanding. The end state is not an answer—it's clarity.
 
+> **Agentic Era Application:** These five phases now apply primarily during *planning and review*, not execution:
+>
+> | Phase | Conversational Era | Agentic Era (Claude Code) |
+> |-------|-------------------|---------------------------|
+> | Raw Inquiry | Every prompt | Initial task description |
+> | Reflective Clarification | Manual follow-ups | Plan Mode review questions |
+> | Personal Synthesis | Conversational turns | Checkpoint discussions |
+> | Operationalization | You request structure | Agent generates automatically |
+> | Recursive Loop | Manual iteration | Agent iterates; you approve convergence |
+>
+> The phases are compressed but not eliminated. Master them to make approval decisions well.
+
 ---
 
 ## Part III: Prompt Chaining as Cognitive Architecture
+
+> **Historical Context:** This section describes manual prompt chaining—a foundational technique from the conversational era. In agentic systems like Claude Code, much of this happens automatically. Understanding the principles remains valuable for: (1) evaluating whether the agent's automatic chaining is correct, (2) intervening when automatic approaches fail, and (3) working with simpler LLM interfaces that don't support agents.
 
 ### Chapter 6: Why Single Prompts Fail
 
@@ -151,6 +185,14 @@ Step 6: Iterate on failures
 ```
 
 Each step is a discrete prompt with a focused objective. The chain creates a **cognitive pipeline**—a series of transformations that convert chaos into clarity.
+
+> **Agentic Era Reality:** Claude Code performs this chaining automatically:
+> - The **Task tool** spawns specialized agents for different chain steps
+> - **Plan Mode** implements research→plan→implement chains
+> - **Extended thinking** handles internal reasoning chains
+> - **Tool orchestration** chains file reads, edits, and verification
+>
+> Your role shifts from *building chains* to *evaluating chain outputs* and *intervening when chains fail*.
 
 ### Chapter 7: Designing Prompt Chains
 
@@ -353,70 +395,350 @@ The measure of effective LLM use: **does it make you more capable when the LLM i
 
 ---
 
-## Part VII: Claude Code and Development Best Practices
+## Part VII: Claude Code and Development Best Practices (2025)
 
-### Chapter 18: LLMs in Software Development
+### Chapter 18: Claude Code Architecture
 
-The methodology applies directly to code:
+Claude Code is a fully agentic development environment. Understanding its architecture enables effective DCF application:
 
-**Scaffolding before implementation:**
+**Core Components:**
 ```
-"Break this feature into functions with clear responsibilities"
-"Generate stub implementations with docstrings"
-"Identify edge cases and failure modes"
-```
-
-**Iterative implementation:**
-```
-"Implement just this one function"
-"Write tests for this function"
-"Now implement the next function"
-```
-
-**Review and refactoring:**
-```
-"What are the code smells in this implementation?"
-"Suggest three improvements for readability"
-"Refactor this function to be more Pythonic"
-```
-
-### Chapter 19: The Co-Developer Pattern
-
-When working with Claude Code or similar agentic tools, treat the AI as a **junior developer with perfect recall but limited judgment**:
-
-- Be explicit about requirements
-- Review all generated code
-- Catch errors early through incremental development
-- Maintain architectural decisions yourself
-- Use the AI for implementation, not design
-
-The pattern:
-```
-Human: Define the interface and architecture
-AI: Implement to spec
-Human: Review and course-correct
-AI: Iterate based on feedback
-Human: Final approval and integration
+┌─────────────────────────────────────────────────────────────────┐
+│  CLAUDE CODE MAIN PROCESS                                       │
+│  - Conversation management                                      │
+│  - Tool orchestration (Read, Write, Edit, Bash, Glob, Grep)    │
+│  - Agent spawning (Task tool)                                   │
+│  - Memory management                                            │
+├─────────────────────────────────────────────────────────────────┤
+│  BUILT-IN WORKFLOWS                                             │
+│  - Plan Mode (EnterPlanMode → research → ExitPlanMode)         │
+│  - Ralph Loop (autonomous execution with checkpoints)           │
+│  - Todo tracking (TodoWrite for progress visibility)            │
+├─────────────────────────────────────────────────────────────────┤
+│  SPECIALIZED AGENTS (via Task tool)                             │
+│  - Explore: Fast codebase exploration                           │
+│  - Plan: Architecture design                                    │
+│  - code-reviewer: Quality analysis                              │
+│  - feature-dev: Guided development                              │
+│  - pr-review-toolkit: PR analysis suite                         │
+├─────────────────────────────────────────────────────────────────┤
+│  SKILLS (via Skill tool)                                        │
+│  - /commit: Git commit workflow                                 │
+│  - /review-pr: PR review                                        │
+│  - /frontend-design: UI generation                              │
+│  - Custom skills via plugins                                    │
+├─────────────────────────────────────────────────────────────────┤
+│  MCP SERVERS (external capabilities)                            │
+│  - Serena: Semantic code intelligence                           │
+│  - Playwright: Browser automation                               │
+│  - GitHub: Repository operations                                │
+│  - Atlassian: Jira/Confluence integration                       │
+│  - Context7: Documentation retrieval                            │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
-### Chapter 20: Knowledge Sharing for Teams
+### Chapter 19: DCF at Each Interaction Level
 
-The methodology scales to teams:
+**Level 1: Direct Commands**
+Simple tasks where Claude Code executes directly:
+```
+Human: "Read the README and summarize the project structure"
+```
+DCF Application: Minimal—trust the output, verify if critical.
 
-**Shared prompt libraries:**
-- Standard prompts for common tasks
-- Documented patterns that work
-- Anti-patterns to avoid
+**Level 2: Plan Mode (Research-Plan-Implement)**
+Complex tasks requiring upfront planning:
+```
+Human: "Implement user authentication for this API"
+Claude Code: [Enters Plan Mode, researches codebase, presents plan]
+```
+DCF Application: **High**—review plan Socratically before approval:
+- "What alternatives did you consider?"
+- "What's the riskiest assumption?"
+- "What would make this approach fail?"
 
-**Collaborative documentation:**
-- AI-assisted drafts
-- Human review and refinement
-- Consistent structure across authors
+**Level 3: Agent Delegation**
+Tasks spawned to specialized agents:
+```
+Claude Code: [Spawns Explore agent to understand codebase]
+Claude Code: [Spawns code-reviewer after implementation]
+```
+DCF Application: **Medium**—evaluate agent selection and outputs:
+- Was the right agent chosen?
+- Did the agent's findings get incorporated correctly?
 
-**Onboarding acceleration:**
-- AI-generated explanations of codebases
-- Interactive Q&A about system design
-- Personalized learning paths
+**Level 4: Skill Execution**
+Predefined workflows for common tasks:
+```
+Human: "/commit"
+Claude Code: [Executes commit skill with git analysis]
+```
+DCF Application: **Low to Medium**—review generated commit message, verify staged files.
+
+### Chapter 20: Memory Systems and Cognitive Persistence
+
+Claude Code's memory systems implement DCF's "language as infrastructure" principle:
+
+**CLAUDE.md (Project Memory)**
+```markdown
+# CLAUDE.md - Project: MyApp
+
+## Project Overview
+[Brief description for context]
+
+## Architecture Decisions
+- Using PostgreSQL for X reason
+- Chose React over Vue because...
+
+## Conventions
+- Test files: *.test.ts
+- Use conventional commits
+
+## DCF Preferences
+- Always present plans before implementing
+- Challenge my assumptions
+- Show trade-offs explicitly
+```
+
+**User Memories (Personal Cognitive Profile)**
+Accumulated understanding of how you work:
+- Preferred coding style
+- Common project types
+- Review depth preferences
+
+**Serena Memories (Code Intelligence)**
+Project-specific technical understanding:
+- Architecture patterns discovered during onboarding
+- Symbol relationships
+- Suggested commands
+
+### Chapter 21: The Modern Co-Developer Pattern
+
+The "junior developer" model is outdated. Claude Code is now a **senior developer with different strengths**:
+
+| Dimension | Human Strength | Claude Code Strength |
+|-----------|----------------|---------------------|
+| Vision | Why we're building this | — |
+| Architecture | System-level decisions | Pattern recognition across codebases |
+| Implementation | — | Fast, consistent code generation |
+| Testing | Edge case intuition | Comprehensive test coverage |
+| Review | Judgment calls | Exhaustive analysis |
+| Context | Business understanding | Perfect recall of technical details |
+
+**Updated Pattern:**
+```
+Human: Define goals, constraints, and values
+Claude Code: Research codebase, propose architecture
+Human: Review plan using DCF principles, approve/refine
+Claude Code: Implement with continuous progress updates
+Human: Review at checkpoints, apply Socratic questioning
+Claude Code: Iterate based on feedback
+Human: Final verification, approve merge
+```
+
+### Chapter 22: Team-Scale DCF
+
+**Shared CLAUDE.md Standards:**
+Teams should maintain consistent CLAUDE.md structures:
+- Project context all team members need
+- Architectural decisions and rationale
+- DCF checkpoint requirements
+- Code review standards
+
+**Skill Libraries:**
+Custom skills for team workflows:
+- `/deploy-staging`: Team deployment process
+- `/review-security`: Security-focused review
+- `/update-docs`: Documentation refresh workflow
+
+**Knowledge Propagation:**
+- Use Claude Code to generate onboarding documentation
+- Have new team members interact with Claude Code to explore codebase
+- Capture architectural decisions in CLAUDE.md as they're made
+
+### Chapter 23: Skill Composition and Workflows
+
+Skills are predefined workflows. Composing them effectively requires understanding their scope and interactions:
+
+**Skill Anatomy:**
+```
+┌─────────────────────────────────────────┐
+│  SKILL: /commit                         │
+│  ─────────────────────────────────────  │
+│  1. Analyze git status                  │
+│  2. Review staged/unstaged changes      │
+│  3. Check recent commit patterns        │
+│  4. Generate commit message             │
+│  5. Execute commit                      │
+│  6. Report result                       │
+└─────────────────────────────────────────┘
+```
+
+**Skill Composition Patterns:**
+
+| Pattern | Example | DCF Checkpoint |
+|---------|---------|----------------|
+| Sequential | Code → /commit → Push | Review commit message before push |
+| Conditional | Test pass? → /commit : Fix | Decide whether to proceed |
+| Nested | /feature-dev includes /commit | Review feature before commit phase |
+
+**When NOT to Use Skills:**
+- When you need fine-grained control
+- When the skill's assumptions don't match your context
+- When you want to learn the underlying process
+
+### Chapter 24: MCP Orchestration Philosophy
+
+MCP (Model Context Protocol) servers extend Claude Code's capabilities. Choosing the right tool matters:
+
+**Tool Selection Decision Tree:**
+```
+Need to understand code?
+├─ Yes: Need semantic understanding (symbols, types)?
+│   ├─ Yes → Serena MCP
+│   └─ No: Just file content → Read tool
+└─ No: Other task type
+
+Need to interact with web?
+├─ Yes: Need to click/interact?
+│   ├─ Yes → Playwright MCP
+│   └─ No: Just fetch content → WebFetch tool
+└─ No: Other task type
+
+Need external service?
+├─ GitHub operations → GitHub MCP
+├─ Jira/Confluence → Atlassian MCP
+├─ Library docs → Context7 MCP
+└─ General search → WebSearch tool
+```
+
+**MCP Selection by Use Case:**
+
+| Use Case | Best Tool | Why |
+|----------|-----------|-----|
+| Find all usages of a function | Serena `find_referencing_symbols` | Semantic understanding |
+| Read a specific file | Read tool | Simpler, faster |
+| Refactor a method | Serena `replace_symbol_body` | Precise symbol editing |
+| Simple text replacement | Edit tool | Good enough, less overhead |
+| Create GitHub PR | GitHub MCP | Native API integration |
+| Run git commands | Bash tool | More flexible |
+| Research current API docs | Context7 MCP | Up-to-date documentation |
+| General web research | WebSearch + WebFetch | Broader scope |
+
+**DCF Principle:** Ask "Is this the right tool?" before accepting the agent's tool choice. Sometimes simpler tools are better.
+
+### Chapter 25: Community Patterns and Ecosystem
+
+The Claude Code community has developed patterns worth adopting:
+
+**CLAUDE.md Best Practices:**
+```markdown
+# CLAUDE.md
+
+## Quick Start
+One paragraph: what this project does, how to run it.
+
+## Architecture
+Key patterns, directory structure, main entry points.
+
+## Workflows
+- How to run tests: `npm test`
+- How to deploy: `./scripts/deploy.sh`
+- How to add features: [process]
+
+## Conventions
+- File naming, test patterns, commit format
+- What NOT to do (common mistakes)
+
+## For Claude
+- Preferred interaction style
+- When to ask vs. proceed
+- DCF checkpoint preferences
+```
+
+**Hook Patterns:**
+Hooks execute shell commands at tool invocation:
+```json
+// .claude/settings.json
+{
+  "hooks": {
+    "preToolUse": [
+      {
+        "matcher": { "tool": "Edit" },
+        "command": "echo 'Editing file: $FILEPATH'"
+      }
+    ],
+    "postToolUse": [
+      {
+        "matcher": { "tool": "Bash", "command": "npm test" },
+        "command": "./scripts/notify-test-result.sh"
+      }
+    ]
+  }
+}
+```
+
+**Community Repository Patterns:**
+- **awesome-claude-code**: Curated tools and configurations
+- **claude-code-plugins**: Community skill plugins
+- **mcp-servers**: Additional MCP integrations
+
+### Chapter 26: Configuration Philosophy
+
+Configuration is cognitive architecture in code form.
+
+**Permission Levels:**
+| Level | When to Use | DCF Implication |
+|-------|-------------|-----------------|
+| Ask always | Learning, sensitive code | Maximum DCF engagement |
+| Allow with approval | Normal development | Checkpoint-based DCF |
+| Allow automatically | Routine, trusted operations | Trust but verify results |
+
+**Project Configuration Hierarchy:**
+```
+~/.claude/                    # Global defaults
+├── settings.json             # User preferences
+└── memories/                 # Persistent user context
+
+project/
+├── CLAUDE.md                 # Project AI context
+├── .claude/
+│   ├── settings.json         # Project overrides
+│   └── commands/             # Custom slash commands
+└── .gitignore                # Include .claude/ or not?
+```
+
+**DCF Configuration Recommendations:**
+
+```json
+// For maximum DCF engagement (recommended for complex projects)
+{
+  "permissions": {
+    "Edit": "ask",
+    "Write": "ask",
+    "Bash": "ask",
+    "Read": "auto"  // Safe to auto-approve reads
+  },
+  "planMode": {
+    "autoEnter": true,  // Force planning for non-trivial tasks
+    "requireApproval": true
+  }
+}
+```
+
+```json
+// For flow state (trusted project, routine tasks)
+{
+  "permissions": {
+    "Edit": "auto",
+    "Write": "auto",
+    "Bash": "ask",  // Still ask for commands
+    "Read": "auto"
+  }
+}
+```
+
+**The Configuration DCF Principle:** Your configuration should match your cognitive engagement level. More autonomy = more need for post-hoc review. Less autonomy = more in-flow checkpoints.
 
 ---
 
@@ -962,18 +1284,29 @@ The architecture of thought is yours to build.
 
 ---
 
-## Appendix A: Key Principles Summary
+## Appendix A: DCF Principles Summary
 
+**Core Principles:**
 1. **The Thinking Mirror**: LLMs reflect and transform your thought; quality input yields quality output
 2. **Socratic Dialogue**: Use questioning to arrive at clarity, not prompting to extract answers
-3. **Prompt Chaining**: Decompose complex tasks into manageable, sequential operations
+3. **Prompt Chaining**: Decompose complex tasks into manageable, sequential operations (now often automated)
 4. **Recursive Refinement**: Output becomes input; iterate until convergence
-5. **Language as Infrastructure**: Documentation is cognitive engineering, not writing
+5. **Language as Infrastructure**: Documentation and CLAUDE.md files are cognitive engineering
+
+**Metacognitive Principles:**
 6. **Metacognition**: Think about thinking; reflect on process, not just outcome
 7. **Extended Mind**: LLMs are cognitive augmentation, expanding the boundaries of thought
 8. **Scaffolding**: AI support builds independent capability; the goal is growth, not dependence
+
+**Collaboration Principles:**
 9. **Co-creation**: Neither human nor AI alone; together, capabilities emerge that neither possessed
 10. **Continuous Evolution**: The methodology grows; document what works; share with others
+
+**Agentic Era Principles:**
+11. **Checkpoint Engagement**: Apply DCF at approval points, not every interaction
+12. **Tool Selection Awareness**: Evaluate whether the right tool was chosen for the task
+13. **Configuration as Philosophy**: Permission settings reflect cognitive engagement strategy
+14. **Memory Maintenance**: Actively curate CLAUDE.md and memories as cognitive infrastructure
 
 ## Appendix B: Recommended Reading
 
@@ -996,14 +1329,37 @@ The architecture of thought is yours to build.
 
 **AI and LLMs:**
 - The Illustrated Transformer — Jay Alammar
-- OpenAI Cookbook
+- Anthropic Documentation (docs.anthropic.com)
 - LangChain Documentation
 
 **Tools for Thought:**
 - Andy Matuschak's Notes (andymatuschak.org)
 - *Tools for Thought* — Howard Rheingold
 
-## Appendix C: Research References
+## Appendix C: Claude Code Resources
+
+**Official Documentation:**
+- Claude Code Documentation: docs.anthropic.com/claude-code
+- Anthropic API Reference: docs.anthropic.com/api
+- Claude Model Card: anthropic.com/claude
+
+**MCP Servers:**
+- MCP Specification: github.com/anthropics/mcp
+- Serena (Semantic Code Intelligence): MCP plugin for code understanding
+- Playwright MCP: Browser automation integration
+- Context7: Real-time documentation retrieval
+
+**Community Resources:**
+- r/ClaudeAI: Reddit community discussions
+- Claude Code GitHub Issues: Bug reports and feature requests
+- awesome-claude-code: Community-curated resources (search GitHub)
+
+**Configuration References:**
+- CLAUDE.md examples: Search GitHub for "CLAUDE.md" in popular repos
+- Hook patterns: Claude Code documentation on hooks
+- Permission models: Claude Code settings documentation
+
+## Appendix D: Research References
 
 **Academic Work on Socratic LLMs:**
 - Chang, E.Y. "Prompting Large Language Models With the Socratic Method" (arXiv:2303.08769)
@@ -1016,10 +1372,15 @@ The architecture of thought is yours to build.
 - Brincoveanu, "Large Language Models and the Socratic Method"
 - Castro-Rosas, "Prompting Large Language Models Using Socratic Questioning Techniques" (LinkedIn)
 
+**Agentic AI Research:**
+- "ReAct: Synergizing Reasoning and Acting in Language Models" (Yao et al.)
+- "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models" (Wei et al.)
+- "Tree of Thoughts: Deliberate Problem Solving with Large Language Models" (Yao et al.)
+
 ---
 
-*This treatise was developed through the very methodology it describes: iterative dialogue with AI, recursive refinement of ideas, and the synthesis of multiple sources into coherent understanding. It is itself an artifact of co-cognitive engineering.*
+*This treatise was developed through the very methodology it describes: iterative dialogue with AI, recursive refinement of ideas, and the synthesis of multiple sources into coherent understanding. It is itself an artifact of DCF in practice.*
 
-*Document your journey. Share what you learn. Build what you envision.*
+*The Dialectical Cognition Framework continues to evolve. Document your adaptations. Share what works. Build what you envision.*
 
 *The architecture of thought awaits its architects.*
