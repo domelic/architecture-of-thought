@@ -692,6 +692,245 @@ The name matters less than the practice. But having a name enables:
 
 ---
 
+## Part XI: Agentic Era Adaptations
+
+### Chapter 33: The Shift from Manual to Autonomous
+
+The Dialectical Cognition Framework was conceived during the conversational era of LLMs—when human-AI interaction meant trading messages back and forth, manually chaining prompts, and orchestrating every step.
+
+That era is ending.
+
+**Claude Code and similar agentic systems now:**
+- Autonomously execute multi-step tasks
+- Spawn specialized sub-agents for different purposes
+- Maintain persistent memory across sessions
+- Use external tools (browsers, file systems, APIs, databases)
+- Self-correct through built-in feedback loops
+- Plan before implementing, with human approval gates
+
+This doesn't invalidate DCF—it elevates it. The framework shifts from *operational technique* to *supervisory philosophy*. You're no longer the driver; you're the navigator with veto power.
+
+### Chapter 34: DCF in an Agentic Context
+
+**The New Role of the Human:**
+
+| Manual Era | Agentic Era |
+|------------|-------------|
+| Craft each prompt | Define objectives and constraints |
+| Chain prompts manually | Review agent's automatic chains |
+| Orchestrate every step | Approve plans, intervene at checkpoints |
+| Generate all structure | Evaluate generated structures |
+| Catch every error | Set up guardrails, review outputs |
+
+**DCF Principles Translated:**
+
+1. **Thinking Mirror** → The agent's *plan* is now the mirror. Review it Socratically before approval.
+
+2. **Socratic Dialogue** → Use at checkpoints: "Before I approve this, what assumptions are you making?"
+
+3. **Recursive Refinement** → The agent does this internally; your job is to evaluate whether convergence is correct.
+
+4. **Metacognition** → Monitor your own cognitive engagement. Are you rubber-stamping, or genuinely reviewing?
+
+### Chapter 35: Claude Code's Architecture Through DCF Lens
+
+**Built-in DCF Mechanisms in Claude Code:**
+
+| Claude Code Feature | DCF Principle It Embodies |
+|--------------------|---------------------------|
+| **Plan Mode** | Structured cognition—research before implement |
+| **Extended Thinking** | Internal dialectic—model argues with itself |
+| **Task Tool (Agents)** | Specialized cognition—right tool for right job |
+| **TodoWrite** | Externalized metacognition—visible progress tracking |
+| **CLAUDE.md / Memories** | Persistent cognitive scaffolding |
+| **Checkpoints & Approvals** | Human-in-the-loop dialectic |
+
+**The Agent Ecosystem:**
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  ORCHESTRATOR: Main Claude Code Instance                        │
+│  (Maintains conversation, decides when to delegate)             │
+├─────────────────────────────────────────────────────────────────┤
+│  SPECIALIZED AGENTS (spawned via Task tool):                    │
+│                                                                 │
+│  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐               │
+│  │   Explore   │ │    Plan     │ │ Code Review │               │
+│  │   Agent     │ │   Agent     │ │   Agent     │               │
+│  │             │ │             │ │             │               │
+│  │ Fast codebase│ │ Architecture│ │ Quality     │               │
+│  │ exploration │ │ design      │ │ analysis    │               │
+│  └─────────────┘ └─────────────┘ └─────────────┘               │
+│                                                                 │
+│  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐               │
+│  │   Bash      │ │  General    │ │  Feature    │               │
+│  │   Agent     │ │  Purpose    │ │    Dev      │               │
+│  │             │ │             │ │             │               │
+│  │ Command     │ │ Research &  │ │ Guided      │               │
+│  │ execution   │ │ multi-step  │ │ development │               │
+│  └─────────────┘ └─────────────┘ └─────────────┘               │
+├─────────────────────────────────────────────────────────────────┤
+│  TOOL ECOSYSTEM (MCP Servers):                                  │
+│  Playwright, GitHub, Atlassian, Serena, Context7, etc.          │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Chapter 36: Memory Systems as Cognitive Infrastructure
+
+Claude Code maintains several memory layers:
+
+**1. CLAUDE.md (Project Memory)**
+- Lives in your project root
+- Contains project-specific instructions, conventions, context
+- Loaded automatically at session start
+- *DCF Application*: This is your externalized project cognition. Maintain it deliberately.
+
+**2. User Memories**
+- Persistent across all projects
+- Stores preferences, patterns, learned context
+- *DCF Application*: Your cognitive profile. The AI learns how you think.
+
+**3. Conversation Context**
+- Current session's accumulated understanding
+- Automatically summarized when limits approached
+- *DCF Application*: The active working memory of your collaboration.
+
+**4. Serena/MCP Server Memories**
+- Tool-specific persistent storage
+- Project onboarding, architectural notes
+- *DCF Application*: Specialized cognitive modules for different tools.
+
+**Maintaining Memory Deliberately:**
+
+```markdown
+# Example CLAUDE.md structure for DCF practitioner
+
+## Project Context
+[What this project is, why it exists]
+
+## Architectural Decisions
+[Key choices and their rationale—externalized reasoning]
+
+## DCF Checkpoints
+- Before implementing: Always present plan for approval
+- Before committing: Review changes Socratically
+- When stuck: Spawn Explore agent before proceeding
+
+## My Cognitive Preferences
+- I prefer seeing trade-offs explicitly stated
+- Challenge my assumptions before agreeing
+- Show me the "why" not just the "what"
+```
+
+### Chapter 37: When to Engage vs. When to Trust
+
+The critical skill in agentic DCF: knowing when human dialectic adds value.
+
+**Trust the Agent When:**
+- Task is well-defined and bounded
+- Agent has relevant context (from memories, prior conversation)
+- Failure is low-cost and reversible
+- You can verify output easily
+
+**Engage Dialectically When:**
+- Requirements are ambiguous
+- Architectural decisions are being made
+- Trade-offs exist that reflect your values
+- You notice the agent making assumptions
+- Output will be hard to verify or undo
+
+**The Approval Checkpoint Pattern:**
+
+```
+Agent: "I've analyzed the codebase and propose this implementation plan:
+       [detailed plan]
+
+       Ready to proceed?"
+
+Human (DCF): "Before I approve:
+             1. What alternatives did you consider?
+             2. What's the riskiest assumption here?
+             3. What would make us regret this approach?"
+
+Agent: [Responds with analysis]
+
+Human (DCF): "Good. Given that, let's adjust the plan to..."
+```
+
+### Chapter 38: Extended Thinking and Internal Dialectic
+
+Modern Claude models feature "extended thinking"—internal reasoning that happens before response generation. This is DCF happening *inside the model*.
+
+**What Extended Thinking Means for DCF:**
+
+The model now:
+- Considers multiple approaches internally
+- Argues with itself about trade-offs
+- Identifies potential issues before surfacing them
+- Converges on answers through internal iteration
+
+**Your Role Shifts:**
+- Less need to prompt for "think step by step"
+- More need to evaluate the *output* of that thinking
+- Focus on whether the model's reasoning aligns with your goals
+- Challenge conclusions, not process
+
+**Requesting Visibility:**
+```
+Human: "Show me your reasoning for this recommendation.
+       What did you consider and reject?"
+```
+
+This surfaces the internal dialectic, making it available for your review.
+
+### Chapter 39: Tool Ecosystems as Cognitive Extensions
+
+MCP (Model Context Protocol) servers extend Claude Code's capabilities:
+
+| Tool Category | Examples | DCF Application |
+|--------------|----------|-----------------|
+| **Code Intelligence** | Serena, GitHub | Structured codebase understanding |
+| **Web Access** | Playwright, WebFetch | Research and verification |
+| **Knowledge Bases** | Atlassian, Context7 | Organizational memory |
+| **Execution** | Bash, file operations | Action in the world |
+
+**DCF Principle: Tools Are Thinking Extensions**
+
+Each tool expands what "thinking with AI" can accomplish:
+- Serena provides symbolic code understanding (not just text matching)
+- Playwright enables verification against real web interfaces
+- Context7 provides up-to-date documentation as cognitive context
+
+**Evaluating Tool Usage:**
+When the agent uses tools, apply DCF:
+- Was that the right tool for this task?
+- Did the tool output get interpreted correctly?
+- Should I verify the tool's output independently?
+
+### Chapter 40: The Future of DCF in Agentic Systems
+
+As AI systems become more capable, DCF evolves:
+
+**Near-term (Current):**
+- Human approves plans before execution
+- Checkpoints at major decision points
+- Manual review of significant outputs
+
+**Medium-term (Emerging):**
+- AI proposes when to seek human input
+- Confidence-based escalation
+- Automated verification with human exception handling
+
+**Long-term (Speculative):**
+- Collaborative goal-setting, autonomous execution
+- Human involvement only for value alignment
+- DCF principles encoded in system architecture
+
+**The Constant:**
+However capable AI becomes, the core DCF insight remains: **productive human-AI collaboration requires structured dialogue, mutual refinement, and metacognitive awareness**. The mechanics change; the philosophy endures.
+
+---
+
 ## Conclusion: The Synthesis
 
 We began with a question: how should we engage with large language models?
