@@ -27,6 +27,8 @@
 \usepackage{etoolbox}
 \usepackage{float}
 \usepackage[numbers,sort&compress]{natbib}
+\usepackage{makeidx}
+\makeindex
 
 % ============================================================================
 % DOCUMENT CONFIGURATION
@@ -143,9 +145,9 @@
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
 
-This treatise presents the \textbf{Dialectical Cognition Framework (DCF)}---a methodology for human-AI collaboration that emerged from extensive practical experience working with large language models. Unlike extraction-based approaches that treat AI as an answer machine, DCF positions LLMs as \emph{thinking mirrors}: collaborative partners in the architecture of thought itself.
+This treatise presents the \textbf{Dialectical Cognition Framework (DCF)}\index{Dialectical Cognition Framework (DCF)}---a methodology for human-AI collaboration\index{Human-AI Collaboration} that emerged from extensive practical experience working with large language models. Unlike extraction-based approaches that treat AI as an answer machine, DCF positions LLMs as \emph{thinking mirrors}\index{Thinking Mirror}: collaborative partners in the architecture of thought itself.
 
-The framework synthesizes insights from Socratic philosophy, cognitive science, and contemporary AI engineering to provide a structured approach for engaging with both conversational and agentic AI systems. Key contributions include: (1) the Thinking Mirror hypothesis for understanding human-LLM interaction; (2) a formalized five-phase Socratic prompting methodology; (3) principles for prompt chaining as cognitive architecture; (4) adaptations for the agentic era of autonomous AI systems; and (5) positioning within the broader 2025 AI methodology landscape including ACE-FCA, 12-Factor Agents, BMAD, and Ralph.
+The framework synthesizes insights from Socratic philosophy\index{Socratic Method}, cognitive science, and contemporary AI engineering to provide a structured approach for engaging with both conversational and agentic AI systems\index{Agentic AI}. Key contributions include: (1) the Thinking Mirror hypothesis for understanding human-LLM interaction; (2) a formalized five-phase Socratic prompting methodology\index{Socratic Prompting}; (3) principles for prompt chaining\index{Prompt Chaining} as cognitive architecture; (4) adaptations for the agentic era of autonomous AI systems; and (5) positioning within the broader 2025 AI methodology landscape including ACE-FCA, 12-Factor Agents, BMAD, and Ralph.
 
 DCF operates at the \emph{micro level} of human-AI interaction---the cognitive strategy for how humans should think during checkpoints, reviews, and approvals. It serves as a ``cognitive operating system'' that runs on top of whatever agentic framework practitioners choose, filling a gap that existing methodologies leave implicit.
 
@@ -156,6 +158,12 @@ This work is intended for software engineers, technical writers, knowledge worke
 
 % Table of Contents
 \tableofcontents
+
+% List of Figures and Tables
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
 
 % ============================================================================
 % MAIN MATTER
@@ -269,7 +277,7 @@ LLMs, properly employed, become tools for engineering this infrastructure at sca
 \begin{quotebox}
 \textbf{Agentic Era Update:} Claude Code introduces new forms of language-as-infrastructure:
 \begin{itemize}
-    \item \textbf{CLAUDE.md files}: Project-level cognitive context loaded at session start
+    \item \textbf{CLAUDE.md files}\index{CLAUDE.md}: Project-level cognitive context loaded at session start
     \item \textbf{Memory systems}: Persistent understanding that accumulates across sessions
     \item \textbf{Todo lists}: Externalized working memory visible to both human and AI
 \end{itemize}
@@ -460,7 +468,7 @@ Effective prompt chains share common patterns:
 
 The key insight: \textbf{you're not asking the LLM to solve the problem. You're asking it to help you decompose the problem into solvable pieces.}
 
-\chapter{The Recursive Refinement Loop}
+\chapter{The Recursive Refinement Loop}\index{Recursive Refinement}
 
 The most powerful prompt chains are recursive. Output becomes input. Each pass refines the previous. The loop continues until convergence.
 
@@ -696,7 +704,7 @@ LLMs can assist with:
 
 \chapter{Thinking About Thinking}
 
-Metacognition---awareness of one's own cognitive processes---is the capability that distinguishes effective learners from ineffective ones. It's also the capability that distinguishes effective LLM users from ineffective ones.
+Metacognition\index{Metacognition}---awareness of one's own cognitive processes---is the capability that distinguishes effective learners from ineffective ones. It's also the capability that distinguishes effective LLM users from ineffective ones.
 
 Metacognitive practitioners:
 
@@ -881,7 +889,7 @@ The measure of effective AI collaboration isn't how much you accomplish with AI-
 
 \chapter{Building Personal Knowledge Systems}
 
-DCF extends beyond individual interactions to the construction of \textbf{personal knowledge systems} (PKM)---infrastructures that capture, organize, and compound learning over time. The most effective AI collaborators don't just have good prompting skills; they have well-designed systems for accumulating and retrieving knowledge.
+DCF extends beyond individual interactions to the construction of \textbf{personal knowledge systems}\index{Personal Knowledge Management (PKM)} (PKM)---infrastructures that capture, organize, and compound learning over time. The most effective AI collaborators don't just have good prompting skills; they have well-designed systems for accumulating and retrieving knowledge.
 
 \section{The PKM Revolution}
 
@@ -895,7 +903,7 @@ Several established methodologies inform effective PKM:
 
 \subsection{The Zettelkasten Method}
 
-Developed by German sociologist Niklas Luhmann (who published over 70 books and 400 articles using this system), Zettelkasten (``slip box'') emphasizes:
+Developed by German sociologist Niklas Luhmann\index{Luhmann, Niklas} \cite{luhmann1992kommunikation} (who published over 70 books and 400 articles using this system), Zettelkasten\index{Zettelkasten} (``slip box'') emphasizes:
 
 \begin{itemize}
     \item \textbf{Atomic notes}: Each note captures a single idea
@@ -908,7 +916,7 @@ The system mimics how the brain processes information---through association rath
 
 \subsection{The PARA Method}
 
-Tiago Forte's PARA (Projects, Areas, Resources, Archives) offers an action-oriented organizational structure:
+Tiago Forte's PARA\index{PARA Method} \cite{forte2022building} (Projects, Areas, Resources, Archives) offers an action-oriented organizational structure:
 
 \begin{itemize}
     \item \textbf{Projects}: Short-term efforts with clear goals and deadlines
@@ -1058,7 +1066,7 @@ The goal isn't a perfect system but a \emph{growing} one---infrastructure that c
 
 \chapter{The Extended Mind Thesis}
 
-In 1998, philosophers Andy Clark and David Chalmers published a landmark paper in \emph{Analysis} titled ``The Extended Mind,'' posing a provocative question: \emph{Where does the mind stop and the rest of the world begin?}
+In 1998, philosophers Andy Clark\index{Clark, Andy} and David Chalmers\index{Chalmers, David} published a landmark paper in \emph{Analysis} titled ``The Extended Mind'' \cite{clark1998extended}, posing a provocative question: \emph{Where does the mind stop and the rest of the world begin?}\index{Extended Mind Thesis}
 
 Their answer challenged centuries of philosophical assumption: cognitive processes ``ain't all in the head.'' The environment, they argued, plays an active role in driving cognition. Under the right conditions, external objects become genuine parts of the cognitive system---not mere tools, but extensions of mind itself.
 
@@ -1097,7 +1105,7 @@ These criteria distinguish genuine cognitive extension from mere tool use. A cal
 
 \section{Beyond the Original Paper}
 
-Clark continued developing the extended mind thesis in subsequent work. His 2008 book \emph{Supersizing the Mind} and 2015's \emph{Surfing Uncertainty} extended the framework, arguing that humans are ``natural-born cyborgs''---creatures whose minds have always been constituted partly by external scaffolding, from language itself to written records to digital devices.
+Clark continued developing the extended mind thesis in subsequent work. His 2008 book \emph{Supersizing the Mind} \cite{clark2008supersizing} and 2015's \emph{Surfing Uncertainty} \cite{clark2015surfing} extended the framework, arguing that humans are ``natural-born cyborgs''---creatures whose minds have always been constituted partly by external scaffolding, from language itself to written records to digital devices.
 
 The thesis remains philosophically contested. Internalists argue that cognition must be bounded by the skull; that external resources are inputs to cognition, not constituents of it. But even critics acknowledge that Clark and Chalmers identified something important: the deep coupling between minds and their environments.
 
@@ -1139,11 +1147,11 @@ The implication is profound: effective LLM collaboration is not about mastering 
 
 \chapter{Distributed Cognition}
 
-While Clark and Chalmers focused on individual minds extending into the environment, cognitive scientist Edwin Hutchins asked a different question: what if we took the \emph{system} rather than the individual as our unit of cognitive analysis?
+While Clark and Chalmers focused on individual minds extending into the environment, cognitive scientist Edwin Hutchins\index{Hutchins, Edwin} asked a different question: what if we took the \emph{system} rather than the individual as our unit of cognitive analysis?\index{Distributed Cognition}
 
 \section{Cognition in the Wild}
 
-In his 1995 book \emph{Cognition in the Wild}, Hutchins presented an ethnographic study of navigation aboard a U.S. Navy ship. Rather than examining how individual sailors think, he treated the entire bridge---its crew, instruments, charts, and procedures---as a single cognitive system.
+In his 1995 book \emph{Cognition in the Wild} \cite{hutchins1995cognition}, Hutchins presented an ethnographic study of navigation aboard a U.S. Navy ship. Rather than examining how individual sailors think, he treated the entire bridge---its crew, instruments, charts, and procedures---as a single cognitive system.
 
 His central finding was revolutionary: \textbf{the navigation task was accomplished by the system, not by any individual within it}.
 
@@ -1236,11 +1244,11 @@ Effective DCF practice means designing these distributed systems well: clear art
 
 \chapter{Scaffolding Theory}
 
-The third theoretical pillar of DCF comes from developmental psychology. Soviet psychologist Lev Vygotsky (1896--1934) developed ideas about learning and development that, though nearly a century old, speak directly to human-AI collaboration.
+The third theoretical pillar of DCF comes from developmental psychology. Soviet psychologist Lev Vygotsky\index{Vygotsky, Lev} (1896--1934) developed ideas about learning and development \cite{vygotsky1978mind} that, though nearly a century old, speak directly to human-AI collaboration.\index{Scaffolding Theory}
 
 \section{The Zone of Proximal Development}
 
-Vygotsky's most influential concept is the \textbf{Zone of Proximal Development} (ZPD):
+Vygotsky's most influential concept is the \textbf{Zone of Proximal Development}\index{Zone of Proximal Development (ZPD)} (ZPD):
 
 \begin{quotebox}
 The distance between the actual developmental level as determined by independent problem solving and the level of potential development as determined through problem-solving under adult guidance or in collaboration with more capable peers.
@@ -1266,7 +1274,7 @@ Vygotsky argued that effective instruction targets the ZPD---not what learners a
 
 \section{Scaffolding: The Mechanism}
 
-While Vygotsky introduced the ZPD, the term ``scaffolding'' was coined later by Jerome Bruner, David Wood, and Gail Ross in 1976. They observed tutors helping children with a construction task and noticed a pattern:
+While Vygotsky introduced the ZPD, the term ``scaffolding''\index{Scaffolding} was coined later by Jerome Bruner\index{Bruner, Jerome}, David Wood, and Gail Ross in 1976 \cite{bruner1976role}. They observed tutors helping children with a construction task and noticed a pattern:
 
 \begin{enumerate}
     \item \textbf{Initial support}: The tutor provides substantial help, demonstrating, guiding, structuring the task
@@ -1767,7 +1775,7 @@ These scales recognize that effective AI use is a \emph{skill} that can be asses
 
 \subsection{The Synergy Index}
 
-A 2025 framework by Riedl and Weidmann proposes a ``Synergy Index'' for measuring human-AI partnership effectiveness through multiple variables:
+A 2025 framework by Riedl and Weidmann \cite{riedl2025synergy} proposes a ``Synergy Index'' for measuring human-AI partnership effectiveness through multiple variables:
 
 \begin{itemize}
     \item \textbf{Task completion quality}: Not just speed, but correctness and completeness
@@ -1782,7 +1790,7 @@ The AIQ framework reimagines intelligence testing for the AI era, measuring not 
 
 \section{The Sobering Research Findings}
 
-A 2024 meta-analysis in \emph{Nature Human Behaviour} titled ``When Combinations of Humans and AI Are Useful'' provides important context:
+A 2024 meta-analysis in \emph{Nature Human Behaviour} \cite{naturehb2024combinations} titled ``When Combinations of Humans and AI Are Useful'' provides important context:
 
 \begin{quotebox}
 ``On average, human-AI teams performed better than humans working alone, but didn't surpass AI systems operating independently. Importantly, they did not find `human-AI synergy'---the average human-AI systems performed worse than the best of humans alone or AI alone.''
@@ -2210,7 +2218,7 @@ Co-Cognitive (This) & Socratic Prompting, Thinking Mirrors & Human-AI collaborat
 
 \textbf{Relationship to DCF}: Research-Plan-Implement is a \emph{macro workflow} for software development tasks. DCF addresses the \emph{micro interactions} within each phase.
 
-\section{Chain-of-Thought / Tree-of-Thought}
+\section{Chain-of-Thought / Tree-of-Thought}\index{Chain-of-Thought}\index{Tree-of-Thought}
 
 \textbf{What it is}: Prompting techniques that encourage the model to reason step-by-step.
 
@@ -2997,7 +3005,7 @@ This is not about AI replacing humans. It's about humans becoming more capable t
 \begin{itemize}
     \item \emph{The Extended Mind} --- Annie Murphy Paul
     \item \emph{Thinking, Fast and Slow} --- Daniel Kahneman
-    \item \emph{How to Take Smart Notes} --- Sönke Ahrens
+    \item \emph{How to Take Smart Notes} \cite{ahrens2017take} --- S{\"o}nke Ahrens
 \end{itemize}
 
 \section{Philosophy}
@@ -3068,8 +3076,8 @@ This is not about AI replacing humans. It's about humans becoming more capable t
 \section{Academic Work on Socratic LLMs}
 
 \begin{itemize}
-    \item Chang, E.Y. ``Prompting Large Language Models With the Socratic Method'' (arXiv:2303.08769)
-    \item ``The Art of SOCRATIC QUESTIONING: Recursive Thinking with Large Language Models'' (EMNLP 2023)
+    \item Chang, E.Y. ``Prompting Large Language Models With the Socratic Method'' \cite{chang2023prompting}
+    \item ``The Art of SOCRATIC QUESTIONING: Recursive Thinking with Large Language Models'' \cite{qi2023socratic}
     \item SocraticAI: Princeton NLP Group framework for self-discovery
     \item EULER: Fine-tuning for Socratic Interactions (CEUR-WS)
 \end{itemize}
@@ -3085,9 +3093,9 @@ This is not about AI replacing humans. It's about humans becoming more capable t
 \section{Agentic AI Research}
 
 \begin{itemize}
-    \item ``ReAct: Synergizing Reasoning and Acting in Language Models'' (Yao et al.)
-    \item ``Chain-of-Thought Prompting Elicits Reasoning in Large Language Models'' (Wei et al.)
-    \item ``Tree of Thoughts: Deliberate Problem Solving with Large Language Models'' (Yao et al.)
+    \item ``ReAct: Synergizing Reasoning and Acting in Language Models'' \cite{yao2022react}
+    \item ``Chain-of-Thought Prompting Elicits Reasoning in Large Language Models'' \cite{wei2022chain}
+    \item ``Tree of Thoughts: Deliberate Problem Solving with Large Language Models'' \cite{yao2023tree}
 \end{itemize}
 
 \chapter{DCF in Practice: A Meta-Example}
@@ -3498,6 +3506,13 @@ The development of the Dialectical Cognition Framework and this treatise benefit
 \textbf{Future Contributors}: DCF is designed to evolve. Those who will adapt, critique, and extend these ideas are acknowledged in advance for the improvements they will make.
 
 % ============================================================================
+% BIBLIOGRAPHY
+% ============================================================================
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+% ============================================================================
 % COLOPHON
 % ============================================================================
 
@@ -3528,5 +3543,11 @@ The Dialectical Cognition Framework continues to evolve. Document your adaptatio
 
 {\small First Edition --- January 2026}
 \end{center}
+
+% ============================================================================
+% INDEX
+% ============================================================================
+
+\printindex
 
 \end{document}

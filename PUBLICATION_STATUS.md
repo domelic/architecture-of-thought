@@ -1,15 +1,18 @@
 # THE ARCHITECTURE OF THOUGHT - Publication Status
 
 **Document**: THE_ARCHITECTURE_OF_THOUGHT.tex / .pdf
-**Current Version**: 142 pages, 3532 lines LaTeX
+**Current Version**: 148 pages, ~3600 lines LaTeX
 **Last Updated**: January 2026
 **Authors**: Damir Omelic (Independent Researcher) & Claude (Anthropic)
 
 ---
 
-## Publication Readiness: READY
+## Publication Readiness: FULLY COMPLETE
 
-The document is complete for sharing with workplace or publishing as independent research.
+The document is now complete with all academic publication features:
+- Formal BibTeX bibliography with inline citations
+- List of Figures and List of Tables
+- Comprehensive Index (26 entries)
 
 ---
 
@@ -17,13 +20,15 @@ The document is complete for sharing with workplace or publishing as independent
 
 | Metric | Count |
 |--------|-------|
-| Pages | 142 |
+| Pages | 148 |
 | Parts | 12 |
 | Chapters | 66 |
 | Sections | 192 |
 | Glossary Terms | ~30 |
 | Exercises | 7 + workshop format |
 | Case Studies | 5 detailed examples |
+| Bibliography Entries | 16 |
+| Index Entries | 26 |
 
 ---
 
@@ -66,75 +71,32 @@ The document is complete for sharing with workplace or publishing as independent
 
 ---
 
-## Optional Enhancements (NOT Required)
+## Academic Enhancements (COMPLETED)
 
-These are only needed if submitting to formal peer-reviewed academic journals:
+All academic publication features have been implemented:
 
-### 1. Formal BibTeX Bibliography with Inline Citations
+### 1. Formal BibTeX Bibliography with Inline Citations - DONE
+- Created `references.bib` with 16 academic sources
+- Added `\cite{}` commands throughout the document
+- Citations include: Clark & Chalmers (1998), Hutchins (1995), Vygotsky (1978), Bruner/Wood/Ross (1976), Nature Human Behaviour (2024), and more
 
-**Current state**: References are listed in appendix chapters but not cited inline with `\cite{}` commands.
+### 2. List of Figures and Tables - DONE
+- Added `\listoffigures` and `\listoftables` after Table of Contents
+- Automatically generated from all figures and tables in the document
 
-**To implement**:
-```latex
-% Add to preamble (already has natbib)
-\bibliographystyle{plainnat}
+### 3. Index - DONE
+- Added `makeidx` package with `\makeindex` and `\printindex`
+- 26 index entries covering key concepts:
+  - Dialectical Cognition Framework (DCF)
+  - Extended Mind Thesis
+  - Distributed Cognition
+  - Scaffolding Theory
+  - Zone of Proximal Development (ZPD)
+  - Metacognition
+  - And more...
 
-% At end of document, before \end{document}
-\bibliography{references}
-
-% Create references.bib file with entries like:
-@article{clark1998extended,
-  author = {Clark, Andy and Chalmers, David},
-  title = {The Extended Mind},
-  journal = {Analysis},
-  volume = {58},
-  number = {1},
-  pages = {7--19},
-  year = {1998}
-}
-
-@book{hutchins1995cognition,
-  author = {Hutchins, Edwin},
-  title = {Cognition in the Wild},
-  publisher = {MIT Press},
-  year = {1995}
-}
-
-% Then add \cite{clark1998extended} in text where referenced
-```
-
-### 2. List of Figures and Tables
-
-**To implement** (add after `\tableofcontents`):
-```latex
-\listoffigures
-\listoftables
-```
-
-### 3. Index
-
-**To implement**:
-```latex
-% Add to preamble
-\usepackage{makeidx}
-\makeindex
-
-% Throughout document, mark terms
-\index{Dialectical Cognition Framework}
-\index{Thinking Mirror}
-\index{Socratic Dialogue}
-
-% At end of document
-\printindex
-```
-
-### 4. Proofreading Pass
-
-Before final submission, review for:
-- Typos and grammatical errors
-- Consistency in terminology
-- Table/figure numbering
-- Cross-reference accuracy
+### 4. Remaining Optional
+- Proofreading pass (typos, consistency, cross-references)
 
 ---
 
@@ -144,13 +106,17 @@ Before final submission, review for:
 # Navigate to project directory
 cd /Users/damiromelic/Projects/ai-research
 
-# Compile (run twice for TOC/references)
-pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
-pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
+# Full compilation with bibliography and index
+/Library/TeX/texbin/pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
+/Library/TeX/texbin/bibtex THE_ARCHITECTURE_OF_THOUGHT
+/Library/TeX/texbin/makeindex THE_ARCHITECTURE_OF_THOUGHT
+/Library/TeX/texbin/pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
+/Library/TeX/texbin/pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 
-# If using BibTeX (after adding .bib file)
+# Or if pdflatex is in PATH:
 pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 bibtex THE_ARCHITECTURE_OF_THOUGHT
+makeindex THE_ARCHITECTURE_OF_THOUGHT
 pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ```
