@@ -470,7 +470,143 @@ The most powerful prompt chains are recursive. Output becomes input. Each pass r
          |__________________________________|
 \end{lstlisting}
 
-This is not automation---it's \textbf{amplified cognition}. The human remains in the loop, steering, evaluating, deciding. The LLM handles generation and transformation. Together, they produce what neither could alone.
+This simple diagram represents one of the most powerful patterns in human-AI collaboration. Understanding it deeply transforms how you work with LLMs.
+
+\section{The Anatomy of Recursion}
+
+Each phase serves a distinct cognitive function:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{llp{6cm}}
+\toprule
+\textbf{Phase} & \textbf{Actor} & \textbf{Function} \\
+\midrule
+Articulate & Human & Express current understanding, identify gaps \\
+Generate & AI & Produce new content, explore possibilities \\
+Evaluate & Human & Assess quality, identify improvements needed \\
+Refine & Both & Improve based on evaluation, prepare for next iteration \\
+\bottomrule
+\end{tabular}
+\caption{Phases of the Recursive Loop}
+\end{table}
+
+The loop is \emph{not} about fixing AI mistakes. It's about the progressive clarification of thought through iterative externalization and evaluation.
+
+\section{A Concrete Example: Explaining a Concept}
+
+Consider explaining ``eventual consistency'' to a non-technical audience:
+
+\textbf{Iteration 1:}
+\begin{itemize}
+    \item \emph{Articulate}: ``Explain eventual consistency in simple terms''
+    \item \emph{Generate}: AI produces technical explanation with jargon
+    \item \emph{Evaluate}: Too technical, uses undefined terms
+    \item \emph{Refine}: ``Rewrite avoiding all technical terms, use a household analogy''
+\end{itemize}
+
+\textbf{Iteration 2:}
+\begin{itemize}
+    \item \emph{Generate}: AI uses library book analogy
+    \item \emph{Evaluate}: Better, but doesn't capture the ``eventual'' aspect
+    \item \emph{Refine}: ``Emphasize the time delay aspect---why isn't it instant?''
+\end{itemize}
+
+\textbf{Iteration 3:}
+\begin{itemize}
+    \item \emph{Generate}: AI adds shipping/delivery metaphor
+    \item \emph{Evaluate}: Clear, accurate, accessible---converged
+\end{itemize}
+
+Each iteration improved the output through human evaluation and guidance. The final result was better than either the first AI output or what the human could have written directly.
+
+\section{Convergence Criteria}
+
+A critical question: \emph{when do you stop iterating?}
+
+\subsection{Quality Convergence}
+
+Stop when additional iterations produce diminishing improvements:
+
+\begin{itemize}
+    \item The output meets your quality threshold
+    \item Changes become cosmetic rather than substantive
+    \item You're satisfied with accuracy, clarity, and completeness
+\end{itemize}
+
+\subsection{Purpose Convergence}
+
+Stop when the output fulfills its intended purpose:
+
+\begin{itemize}
+    \item The document answers the reader's likely questions
+    \item The code solves the problem correctly
+    \item The explanation would enable understanding in your target audience
+\end{itemize}
+
+\subsection{Resource Convergence}
+
+Stop when continuing costs more than the value it would add:
+
+\begin{itemize}
+    \item Time constraints require shipping the current version
+    \item Further refinement has reached the point of diminishing returns
+    \item The context window is getting unwieldy
+\end{itemize}
+
+\section{Warning Signs: Unproductive Recursion}
+
+Not all iteration is productive. Watch for:
+
+\begin{itemize}
+    \item \textbf{Circular refinement}: Oscillating between versions without improvement
+    \item \textbf{Perfectionism trap}: Endless tweaking of already-good output
+    \item \textbf{Goal drift}: Losing sight of the original purpose through successive changes
+    \item \textbf{Complexity creep}: Each iteration making the output more complicated
+\end{itemize}
+
+When you notice these patterns, step back and re-evaluate your convergence criteria.
+
+\section{Connection to Maieutic Prompting}
+
+Research on ``maieutic prompting'' (from the Greek word for midwifery, referring to Socrates' teaching method) has explored recursive explanation generation to identify logical contradictions and improve reasoning.
+
+The approach involves:
+\begin{enumerate}
+    \item Generating an initial explanation
+    \item Recursively generating explanations of that explanation
+    \item Identifying inconsistencies across levels
+    \item Revising to eliminate contradictions
+\end{enumerate}
+
+This connects directly to DCF's Socratic emphasis: recursion isn't just refinement of output, but deepening of understanding through successive articulation.
+
+\section{Amplified Cognition, Not Automation}
+
+The recursive refinement loop is \textbf{amplified cognition}, not automation. The human remains essential:
+
+\begin{itemize}
+    \item \textbf{Setting direction}: Defining what ``good'' looks like
+    \item \textbf{Evaluating quality}: Judging whether output meets standards
+    \item \textbf{Steering refinement}: Guiding what aspects to improve
+    \item \textbf{Determining convergence}: Deciding when to stop
+\end{itemize}
+
+The LLM handles generation and transformation---tasks it does tirelessly and at scale. The human provides judgment and direction---capacities that remain distinctively human. Together, they produce what neither could alone.
+
+\section{Practical Application}
+
+To implement recursive refinement effectively:
+
+\begin{enumerate}
+    \item \textbf{Start with clear purpose}: Know what you're trying to achieve
+    \item \textbf{Evaluate explicitly}: Don't just react---identify specific shortcomings
+    \item \textbf{Refine specifically}: Direct improvements to identified gaps
+    \item \textbf{Track convergence}: Notice when you're approaching ``good enough''
+    \item \textbf{Know when to stop}: Recognize diminishing returns
+\end{enumerate}
+
+The loop isn't about getting the AI to produce perfect output. It's about using iteration to clarify your own thinking until the externalized form matches your internal standard.
 
 % ============================================================================
 % PART IV: DOCUMENTATION TO KNOWLEDGE ENGINEERING
@@ -587,38 +723,332 @@ This externalization makes cognitive processes visible and improvable.
 
 \chapter{The Learning Stance}
 
-Most people use LLMs to avoid learning. They want the answer, not understanding.
+Most people use LLMs to avoid learning. They want the answer, not understanding. This approach is understandable---it's efficient in the short term. But it's also self-limiting.
 
-The effective stance inverts this:
+\section{The Two Stances}
+
+There are fundamentally two ways to approach AI assistance:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lp{5cm}p{5cm}}
+\toprule
+\textbf{Aspect} & \textbf{Extraction Stance} & \textbf{Learning Stance} \\
+\midrule
+Goal & Get the answer & Understand the problem \\
+Measure of success & Task completed & Capability increased \\
+Relationship to AI & Tool to use & Partner to learn with \\
+Long-term effect & Dependency & Development \\
+\bottomrule
+\end{tabular}
+\caption{Two Stances Toward AI Assistance}
+\end{table}
+
+The extraction stance treats AI as a vending machine: insert prompt, receive answer. The learning stance treats AI as a tutor: engage in dialogue to develop understanding.
+
+\section{The Learning Stance Inverted}
+
+The effective approach inverts the default impulse:
 
 \begin{quotebox}
 \textbf{Use LLMs to accelerate learning, not bypass it.}
 \end{quotebox}
 
-Practical techniques:
+This isn't about being inefficient for the sake of learning. It's about recognizing that \emph{deep learning is ultimately more efficient} than shallow extraction. Understanding compounds; answers don't.
+
+\section{Evidence from Learning Science}
+
+Research on learning supports the learning stance approach:
+
+\subsection{Elaborative Interrogation}
+
+Studies show that asking ``why'' and ``how'' questions about material significantly improves retention and transfer. When you ask an LLM to explain the reasoning behind an answer, you're engaging in elaborative interrogation---a technique with strong evidence for learning enhancement.
+
+\subsection{Generation Effect}
+
+Information you generate yourself is better remembered than information you passively receive. When you work through a problem with AI guidance (rather than simply receiving an answer), you engage the generation effect.
+
+\subsection{Desirable Difficulties}
+
+Learning science identifies ``desirable difficulties''---challenges that slow initial performance but enhance long-term retention. The learning stance introduces productive struggle rather than instant resolution.
+
+\subsection{Transfer of Learning}
+
+Understanding transfers to new contexts; memorized answers don't. By developing understanding through AI collaboration, you build transferable knowledge.
+
+\section{Practical Techniques}
+
+\subsection{Explanation-First Requests}
+
+Instead of: ``Write a function that does X''
+
+Try: ``I need to accomplish X. What approaches could I take, and what are the tradeoffs?''
+
+The first extracts code. The second builds understanding.
+
+\subsection{Socratic Requests}
+
+Ask the AI to teach through questions rather than statements:
 
 \begin{itemize}
-    \item Ask for explanations, not just answers
-    \item Request that the LLM identify what you should learn next
-    \item Generate practice problems for yourself
-    \item Have the LLM quiz you on material
-    \item Ask for the ``why'' behind every ``what''
+    \item ``Instead of explaining directly, ask me questions that will help me discover the answer''
+    \item ``What should I be thinking about to solve this myself?''
+    \item ``What's the key insight I'm missing?''
 \end{itemize}
 
-The paradox: by seeking understanding rather than answers, you become capable of generating better answers yourself.
+\subsection{Learning Path Requests}
+
+Ask the AI to structure your learning:
+
+\begin{itemize}
+    \item ``What should I learn next to understand this better?''
+    \item ``What prerequisite knowledge am I missing?''
+    \item ``What exercises would help me internalize this?''
+\end{itemize}
+
+\subsection{Practice Generation}
+
+Have the AI generate opportunities for practice:
+
+\begin{itemize}
+    \item ``Generate practice problems at increasing difficulty''
+    \item ``Create scenarios where I'd need to apply this knowledge''
+    \item ``Quiz me on this material and explain where I go wrong''
+\end{itemize}
+
+\subsection{The ``Why'' Chain}
+
+For any answer you receive, ask ``why'' repeatedly:
+
+\begin{enumerate}
+    \item AI provides answer
+    \item You ask: ``Why is that the right approach?''
+    \item AI explains reasoning
+    \item You ask: ``Why does that reasoning hold?''
+    \item Continue until you've reached foundational principles
+\end{enumerate}
+
+This technique uncovers the structure beneath surface answers.
+
+\section{The Calibration Problem}
+
+A challenge: how do you know when to use the learning stance versus the extraction stance?
+
+Consider:
+
+\begin{itemize}
+    \item \textbf{Extraction appropriate}: One-time tasks you'll never repeat, time-critical emergencies, well-understood routine operations
+    \item \textbf{Learning appropriate}: Topics in your domain, recurring problem types, foundations you'll build on, areas where understanding compounds
+\end{itemize}
+
+The bias should generally be toward learning. If you're unsure, choose to understand.
+
+\section{The Metacognitive Layer}
+
+The learning stance requires metacognitive awareness---thinking about your own learning:
+
+\begin{itemize}
+    \item \textbf{Notice when you're extracting}: Catch yourself asking for answers without understanding
+    \item \textbf{Assess your growth}: Are you more capable now than before the interaction?
+    \item \textbf{Identify patterns}: What types of problems do you consistently extract rather than learn?
+    \item \textbf{Design interventions}: How can you shift those patterns toward learning?
+\end{itemize}
+
+\section{The Paradox}
+
+The learning stance embodies a productive paradox:
+
+\begin{quotebox}
+By seeking understanding rather than answers, you become capable of generating better answers yourself.
+\end{quotebox}
+
+The extraction stance provides immediate answers but leaves you dependent. The learning stance requires more investment but builds independence. Over time, the learner surpasses the extractor---not because they use AI less, but because they use it to become more capable.
+
+\section{Integration with Scaffolding Theory}
+
+The learning stance operationalizes scaffolding theory (Chapter 16): AI provides temporary support that builds independent capability. The goal isn't to eliminate AI use but to ensure that AI use makes you more capable.
+
+Key practices:
+
+\begin{itemize}
+    \item \textbf{Request explanation, not just output}: Understanding the ``why'' enables future independent action
+    \item \textbf{Periodically attempt unassisted}: Test what you've internalized
+    \item \textbf{Notice skill development}: Track what you can now do that you previously couldn't
+    \item \textbf{Celebrate independence}: When you no longer need AI for something, you've succeeded
+\end{itemize}
+
+The measure of effective AI collaboration isn't how much you accomplish with AI---it's how much more capable you become through working with AI.
 
 \chapter{Building Personal Knowledge Systems}
 
-The methodology extends beyond individual interactions to \textbf{personal knowledge systems}:
+DCF extends beyond individual interactions to the construction of \textbf{personal knowledge systems} (PKM)---infrastructures that capture, organize, and compound learning over time. The most effective AI collaborators don't just have good prompting skills; they have well-designed systems for accumulating and retrieving knowledge.
+
+\section{The PKM Revolution}
+
+Personal Knowledge Management has emerged as a discipline for navigating information abundance. Unlike organizational Knowledge Management (which focuses on collective knowledge), PKM centers on individual productivity, learning, and growth.
+
+The core insight: in an era of information overload, the bottleneck isn't access to knowledge---it's \emph{organization} of knowledge for retrieval and application.
+
+\section{Classical PKM Methodologies}
+
+Several established methodologies inform effective PKM:
+
+\subsection{The Zettelkasten Method}
+
+Developed by German sociologist Niklas Luhmann (who published over 70 books and 400 articles using this system), Zettelkasten (``slip box'') emphasizes:
 
 \begin{itemize}
-    \item \textbf{Prompt libraries}: Reusable patterns for common tasks
-    \item \textbf{Conversation archives}: Records of productive dialogues
-    \item \textbf{Learning journals}: Reflections on what worked and what didn't
-    \item \textbf{Mental model inventories}: Explicit documentation of how you think
+    \item \textbf{Atomic notes}: Each note captures a single idea
+    \item \textbf{Unique identifiers}: Every note has an ID for precise linking
+    \item \textbf{Interconnection}: Notes link to related notes, forming a web
+    \item \textbf{Emergence}: Understanding emerges from traversing connections
 \end{itemize}
 
-These artifacts compound over time. Each interaction builds on previous ones. The system grows.
+The system mimics how the brain processes information---through association rather than hierarchy.
+
+\subsection{The PARA Method}
+
+Tiago Forte's PARA (Projects, Areas, Resources, Archives) offers an action-oriented organizational structure:
+
+\begin{itemize}
+    \item \textbf{Projects}: Short-term efforts with clear goals and deadlines
+    \item \textbf{Areas}: Long-term responsibilities without end dates
+    \item \textbf{Resources}: Topics of ongoing interest for future reference
+    \item \textbf{Archives}: Inactive items from the other categories
+\end{itemize}
+
+PARA organizes by \emph{actionability}, not topic---making it easier to find what you need when you need it.
+
+\subsection{The CODE Cycle}
+
+A process framework for working with information:
+
+\begin{enumerate}
+    \item \textbf{Capture}: Gather information efficiently using digital tools
+    \item \textbf{Organize}: Categorize and tag for future access
+    \item \textbf{Distill}: Extract core insights and summaries
+    \item \textbf{Express}: Share or apply the knowledge
+\end{enumerate}
+
+\section{Digital Gardens}
+
+A ``digital garden'' is a public-facing collection of interconnected notes that evolve over time. Unlike static blogs, digital gardens embrace imperfection and continuous growth---ideas at various stages of development, connected and cross-pollinating.
+
+The garden metaphor is apt: you plant seeds (initial notes), tend them (refine and connect), and harvest (extract insights for use). Some ideas flourish; others lie dormant until conditions change.
+
+\section{Tools Ecosystem}
+
+The PKM tools landscape has exploded:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lp{7cm}}
+\toprule
+\textbf{Tool Category} & \textbf{Examples and Characteristics} \\
+\midrule
+Local-first markdown & Obsidian, Logseq---bidirectional linking, graph visualization, plugin ecosystems \\
+Outliner-based & Roam Research, Workflowy---hierarchical yet flexible structure \\
+Traditional notes & Notion, Evernote---feature-rich but less connection-focused \\
+AI-enhanced & Mem, Reflect---automatic organization and retrieval \\
+\bottomrule
+\end{tabular}
+\caption{PKM Tools Landscape}
+\end{table}
+
+The trend toward local-first, plain-text formats (like Obsidian's markdown files) reflects a preference for data ownership and longevity over feature richness.
+
+\section{DCF-Specific PKM Components}
+
+For DCF practitioners, the personal knowledge system includes AI-specific elements:
+
+\subsection{Prompt Libraries}
+
+Collections of reusable prompt patterns for common tasks:
+
+\begin{itemize}
+    \item \textbf{Explanation prompts}: Templates for requesting clear explanations
+    \item \textbf{Review prompts}: Patterns for code/document review
+    \item \textbf{Learning prompts}: Frameworks for educational dialogue
+    \item \textbf{Debugging prompts}: Approaches for systematic problem-solving
+\end{itemize}
+
+These aren't rigid scripts but adaptable patterns that encode what works.
+
+\subsection{Conversation Archives}
+
+Records of productive AI dialogues:
+
+\begin{itemize}
+    \item Insights that emerged through Socratic questioning
+    \item Effective refinement sequences
+    \item Approaches that worked for specific problem types
+\end{itemize}
+
+Reviewing past conversations accelerates future ones---you recognize patterns and avoid reinventing approaches.
+
+\subsection{Learning Journals}
+
+Reflective documentation of growth:
+
+\begin{itemize}
+    \item What you learned from specific interactions
+    \item Patterns in your collaboration style
+    \item Skills you've internalized vs. still depend on AI for
+    \item Metacognitive observations about your own thinking
+\end{itemize}
+
+\subsection{Mental Model Inventories}
+
+Explicit documentation of how you think:
+
+\begin{itemize}
+    \item Frameworks you use for problem decomposition
+    \item Heuristics for different domains
+    \item Decision-making criteria
+    \item Known biases and blindspots
+\end{itemize}
+
+Externalizing mental models makes them available for AI collaboration---you can share your thinking frameworks and have AI apply or challenge them.
+
+\section{Compounding Returns}
+
+The power of PKM lies in compounding:
+
+\begin{itemize}
+    \item Each note connects to others, creating emergent understanding
+    \item Prompt patterns improve through reuse and refinement
+    \item Past conversations inform future approaches
+    \item Metacognitive awareness deepens over time
+\end{itemize}
+
+A well-maintained PKM system makes you more effective not just in the moment, but cumulatively over months and years.
+
+\section{Integration with AI Workflows}
+
+Modern PKM increasingly integrates with AI:
+
+\begin{itemize}
+    \item \textbf{AI-assisted capture}: Summarizing and extracting from sources
+    \item \textbf{Automated linking}: Suggesting connections between notes
+    \item \textbf{Intelligent retrieval}: Finding relevant prior knowledge
+    \item \textbf{Synthesis}: Combining notes into coherent outputs
+\end{itemize}
+
+CLAUDE.md files and memory systems in Claude Code are themselves PKM artifacts---externalized knowledge that shapes AI behavior and persists across sessions.
+
+\section{Getting Started}
+
+For practitioners new to PKM:
+
+\begin{enumerate}
+    \item \textbf{Start simple}: A single folder of markdown files beats an unused complex system
+    \item \textbf{Capture liberally}: When in doubt, write it down
+    \item \textbf{Review regularly}: Periodic review surfaces connections and gaps
+    \item \textbf{Connect actively}: When adding notes, link to related existing notes
+    \item \textbf{Evolve the system}: Your PKM should adapt as your needs change
+\end{enumerate}
+
+The goal isn't a perfect system but a \emph{growing} one---infrastructure that compounds your cognitive capability over time.
 
 % ============================================================================
 % PART VI: PHILOSOPHICAL FOUNDATIONS
@@ -628,46 +1058,310 @@ These artifacts compound over time. Each interaction builds on previous ones. Th
 
 \chapter{The Extended Mind Thesis}
 
-Philosophers Andy Clark and David Chalmers proposed that cognition extends beyond the brain into the environment. A notebook that reliably stores memories becomes, functionally, part of the cognitive system.
+In 1998, philosophers Andy Clark and David Chalmers published a landmark paper in \emph{Analysis} titled ``The Extended Mind,'' posing a provocative question: \emph{Where does the mind stop and the rest of the world begin?}
 
-LLMs are the most powerful extension of mind yet created:
+Their answer challenged centuries of philosophical assumption: cognitive processes ``ain't all in the head.'' The environment, they argued, plays an active role in driving cognition. Under the right conditions, external objects become genuine parts of the cognitive system---not mere tools, but extensions of mind itself.
+
+\section{The Otto Thought Experiment}
+
+Clark and Chalmers illustrate their thesis through a famous thought experiment. Consider two people seeking the Museum of Modern Art in New York:
+
+\textbf{Inga} has a normal memory. When she wants to visit the museum, she recalls from biological memory that it's on 53rd Street and walks there.
+
+\textbf{Otto} has Alzheimer's disease. He carries a notebook everywhere, religiously maintained and always accessible. When he wants to visit the museum, he consults his notebook, reads that it's on 53rd Street, and walks there.
+
+Clark and Chalmers argue that Otto's notebook plays the same functional role as Inga's biological memory. The information was there before he consulted it, he believed it implicitly, and it guided his action just as Inga's memory guided hers. The notebook, they conclude, is genuinely part of Otto's cognitive system---part of his mind.
+
+\section{The Parity Principle}
+
+The argument rests on what they call the \textbf{Parity Principle}:
+
+\begin{quotebox}
+If, as we confront some task, a part of the world functions as a process which, \emph{were it done in the head}, we would have no hesitation in recognizing as part of the cognitive process, then that part of the world \emph{is} part of the cognitive process.
+\end{quotebox}
+
+The principle doesn't claim that external processes are identical to internal ones---only that functional equivalence is what matters for cognitive status. If it walks like cognition and quacks like cognition, it's cognition.
+
+\section{Criteria for Cognitive Extension}
+
+Not every external resource counts as cognitive extension. Clark and Chalmers specify conditions:
+
+\begin{enumerate}
+    \item \textbf{Reliability}: The resource must be consistently available
+    \item \textbf{Trust}: The user must trust the information without repeated verification
+    \item \textbf{Accessibility}: The resource must be easily and regularly accessed
+    \item \textbf{Past endorsement}: Information was deliberately stored for later use
+\end{enumerate}
+
+These criteria distinguish genuine cognitive extension from mere tool use. A calculator you occasionally borrow isn't part of your mind; a smartphone you carry everywhere and rely upon habitually might be.
+
+\section{Beyond the Original Paper}
+
+Clark continued developing the extended mind thesis in subsequent work. His 2008 book \emph{Supersizing the Mind} and 2015's \emph{Surfing Uncertainty} extended the framework, arguing that humans are ``natural-born cyborgs''---creatures whose minds have always been constituted partly by external scaffolding, from language itself to written records to digital devices.
+
+The thesis remains philosophically contested. Internalists argue that cognition must be bounded by the skull; that external resources are inputs to cognition, not constituents of it. But even critics acknowledge that Clark and Chalmers identified something important: the deep coupling between minds and their environments.
+
+\section{LLMs as Cognitive Extension}
+
+Large Language Models represent the most powerful potential extension of mind yet created. Consider how an LLM meets Clark and Chalmers' criteria:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Criterion} & \textbf{LLM Application} \\
+\midrule
+Reliability & Available 24/7, consistent interface \\
+Trust & Users increasingly rely on outputs without external verification \\
+Accessibility & Instant access through multiple devices \\
+Past endorsement & CLAUDE.md files store deliberate context for future use \\
+\bottomrule
+\end{tabular}
+\caption{LLMs Against Extended Mind Criteria}
+\end{table}
+
+But LLMs go beyond Otto's notebook in crucial ways:
 
 \begin{itemize}
-    \item Infinite patience for iteration
-    \item Access to vast linguistic patterns
-    \item No fatigue, no emotional bias
-    \item Always available, instantly responsive
+    \item \textbf{Active participation}: Unlike a passive notebook, LLMs engage in dialogue, challenge assumptions, and generate novel combinations
+    \item \textbf{Infinite patience}: They support unlimited iteration without fatigue or frustration
+    \item \textbf{Vast pattern access}: They bring linguistic and conceptual patterns no individual could internalize
+    \item \textbf{Emotional neutrality}: No ego, no defensiveness, no bad days
 \end{itemize}
 
-The implication: effective LLM use is not about tool mastery---it's about \textbf{cognitive augmentation}. You're not just using a tool; you're expanding the boundaries of your mind.
+\section{Implications for DCF}
+
+If we take the extended mind thesis seriously, DCF practices aren't just techniques for using a tool---they're methods for \textbf{configuring an extended cognitive system}.
+
+CLAUDE.md files become externalized cognitive infrastructure, shaping what thoughts become possible. Memory systems function as extended long-term storage. Conversation history serves as extended working memory. The quality of your prompts determines the quality of your extended cognition.
+
+The implication is profound: effective LLM collaboration is not about mastering a tool. It's about \textbf{expanding the boundaries of your mind} and learning to think with a larger cognitive system than biology alone provides.
 
 \chapter{Distributed Cognition}
 
-Cognitive scientist Edwin Hutchins studied ship navigation and found that cognition wasn't located in any individual---it was distributed across the crew and their instruments. The ship's navigation was an emergent property of the system.
+While Clark and Chalmers focused on individual minds extending into the environment, cognitive scientist Edwin Hutchins asked a different question: what if we took the \emph{system} rather than the individual as our unit of cognitive analysis?
 
-Organizations work the same way. Cognition is distributed across people, documents, tools, and processes. When documentation fails, organizational cognition fails.
+\section{Cognition in the Wild}
 
-LLMs can serve as \textbf{cognitive infrastructure} for organizations:
+In his 1995 book \emph{Cognition in the Wild}, Hutchins presented an ethnographic study of navigation aboard a U.S. Navy ship. Rather than examining how individual sailors think, he treated the entire bridge---its crew, instruments, charts, and procedures---as a single cognitive system.
+
+His central finding was revolutionary: \textbf{the navigation task was accomplished by the system, not by any individual within it}.
+
+\section{The Ship as Cognitive System}
+
+Consider what happens when a ship enters a harbor. The task requires:
 
 \begin{itemize}
-    \item Standardizing how knowledge is captured
-    \item Accelerating how information propagates
-    \item Improving how decisions are supported
+    \item Bearing takers who sight landmarks through alidades and report readings
+    \item A bearing recorder who logs the readings on a standardized form
+    \item A plotter who translates bearings into positions on a chart
+    \item A fathometer operator who monitors depth
+    \item A conning officer who integrates information and issues commands
 \end{itemize}
+
+No single person holds all the information needed to navigate safely. The bearing taker doesn't know the ship's position. The plotter doesn't see the landmarks. The conning officer depends on information flowing from multiple sources through established protocols.
+
+\begin{quotebox}
+``The navigation team can be seen as a computational and cognitive system. The computation is achieved by the propagation of representational state across a series of representational media.''\\
+\emph{---Edwin Hutchins}
+\end{quotebox}
+
+\section{Cognitive Artifacts}
+
+Hutchins emphasized the role of \textbf{cognitive artifacts}---tools that embody knowledge and participate in cognitive processes. The nautical chart isn't just a reference; it's a computational medium where bearings are transformed into positions. The alidade isn't just an instrument; it's a device that transforms visual perception into numerical data.
+
+These artifacts carry centuries of accumulated knowledge. A sailor using a chart benefits from the mathematical and cartographic innovations of generations past, without needing to understand or reinvent them. The cognitive labor is \emph{built into the tool}.
+
+Key properties of cognitive artifacts:
+
+\begin{enumerate}
+    \item \textbf{Knowledge embodiment}: Tools encode expertise that users needn't possess
+    \item \textbf{Representation transformation}: Artifacts convert information between formats
+    \item \textbf{Coordination scaffolding}: Shared artifacts enable distributed work
+    \item \textbf{Error detection}: Well-designed artifacts make mistakes visible
+\end{enumerate}
+
+\section{Cultural-Cognitive Systems}
+
+Hutchins argued that cultural practices and cognitive processes are deeply intertwined. The navigation procedures, the training regimens, the design of instruments---all represent cultural knowledge that shapes and enables cognition. The system's intelligence is partly \emph{cultural}, accumulated over time and transmitted through practice.
+
+This perspective dissolves the boundary between individual cognition and cultural knowledge. When you follow a procedure, consult a manual, or use a well-designed tool, you're not just retrieving information---you're participating in a distributed cognitive process that extends across time and social space.
+
+\section{When Distributed Cognition Fails}
+
+Hutchins also documented failures. When communication breaks down, when procedures aren't followed, when artifacts are misread---the system's cognition fails. Importantly, these failures often can't be attributed to any individual's error. They're \emph{system} failures, emerging from breakdowns in coordination.
+
+This has profound implications: improving organizational performance isn't just about training individuals. It's about designing the cognitive system---the artifacts, procedures, communication patterns, and coordination mechanisms---that constitutes organizational thought.
+
+\section{Organizations as Cognitive Systems}
+
+Modern organizations embody the same principles Hutchins observed on the ship's bridge:
+
+\begin{itemize}
+    \item \textbf{Documentation} serves as organizational memory
+    \item \textbf{Procedures} coordinate distributed work
+    \item \textbf{Tools} embody accumulated expertise
+    \item \textbf{Communication channels} propagate information
+\end{itemize}
+
+When documentation fails, organizational memory fails. When procedures are unclear, coordination fails. When tools are poorly designed, embodied expertise is inaccessible. Organizational cognition is only as good as its distributed infrastructure.
+
+\section{LLMs as Cognitive Infrastructure}
+
+LLMs offer unprecedented potential to enhance distributed cognition:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Distributed Cognition Need} & \textbf{LLM Contribution} \\
+\midrule
+Knowledge capture & Standardize how information is recorded \\
+Representation transformation & Translate between formats and audiences \\
+Coordination scaffolding & Generate consistent artifacts for shared use \\
+Error detection & Review and identify inconsistencies \\
+Cultural transmission & Encode and propagate best practices \\
+\bottomrule
+\end{tabular}
+\caption{LLMs Supporting Distributed Cognition}
+\end{table}
+
+The human-AI team becomes a distributed cognitive system. The human provides judgment, context, and oversight. The AI provides generation, transformation, and tireless consistency. Together, they constitute a cognitive system more capable than either alone.
+
+\section{Implications for DCF}
+
+DCF operates within distributed cognitive systems. CLAUDE.md files function as cognitive artifacts---encoding preferences and context that shape AI behavior. Prompt patterns serve as procedures---coordinating human-AI interaction. Memory systems provide organizational memory across sessions.
+
+Effective DCF practice means designing these distributed systems well: clear artifacts, reliable procedures, well-maintained memory. The quality of your human-AI collaboration depends not just on your prompting skill, but on the cognitive infrastructure you've built around it.
 
 \chapter{Scaffolding Theory}
 
-Psychologist Lev Vygotsky introduced the concept of scaffolding: temporary support that enables learners to perform beyond their current capability, eventually internalized as independent skill.
+The third theoretical pillar of DCF comes from developmental psychology. Soviet psychologist Lev Vygotsky (1896--1934) developed ideas about learning and development that, though nearly a century old, speak directly to human-AI collaboration.
 
-LLMs are scaffolding for thought:
+\section{The Zone of Proximal Development}
+
+Vygotsky's most influential concept is the \textbf{Zone of Proximal Development} (ZPD):
+
+\begin{quotebox}
+The distance between the actual developmental level as determined by independent problem solving and the level of potential development as determined through problem-solving under adult guidance or in collaboration with more capable peers.
+\end{quotebox}
+
+In simpler terms: there are things you can do alone, things you can't do at all, and things you can do \emph{with help}. The ZPD is that middle zone---the space where learning happens.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lp{8cm}}
+\toprule
+\textbf{Zone} & \textbf{Description} \\
+\midrule
+Can do alone & Current independent capability \\
+\textbf{ZPD (learning zone)} & Can do with assistance; where growth occurs \\
+Cannot do & Beyond current reach, even with help \\
+\bottomrule
+\end{tabular}
+\caption{Vygotsky's Zones of Development}
+\end{table}
+
+Vygotsky argued that effective instruction targets the ZPD---not what learners already know, not what's impossibly beyond them, but the productive edge where assistance enables performance that builds toward independence.
+
+\section{Scaffolding: The Mechanism}
+
+While Vygotsky introduced the ZPD, the term ``scaffolding'' was coined later by Jerome Bruner, David Wood, and Gail Ross in 1976. They observed tutors helping children with a construction task and noticed a pattern:
+
+\begin{enumerate}
+    \item \textbf{Initial support}: The tutor provides substantial help, demonstrating, guiding, structuring the task
+    \item \textbf{Gradual release}: As the child gains competence, the tutor withdraws support incrementally
+    \item \textbf{Independence}: Eventually, the child performs the task independently; the scaffolding is removed
+\end{enumerate}
+
+The metaphor comes from construction: scaffolding supports a building during construction, then is removed when the structure can stand alone. Educational scaffolding supports a learner during skill acquisition, then fades as the skill is internalized.
+
+\section{Properties of Effective Scaffolding}
+
+Research has identified characteristics of effective scaffolding:
 
 \begin{itemize}
-    \item They support tasks you couldn't complete alone
-    \item Repeated use builds your independent capability
-    \item The goal is not dependence but development
+    \item \textbf{Contingent}: Adjusted to the learner's current level and responses
+    \item \textbf{Fading}: Systematically reduced as competence increases
+    \item \textbf{Transfer}: Supports that build toward independent performance
+    \item \textbf{Intersubjectivity}: Shared understanding between helper and learner
 \end{itemize}
 
-The measure of effective LLM use: \textbf{does it make you more capable when the LLM is gone?}
+Scaffolding is not simply providing answers. It's providing \emph{support structures} that enable learners to reach answers themselves, building the cognitive structures they'll use when the support is gone.
+
+\section{The Fading Principle}
+
+Critical to scaffolding theory is the principle of \textbf{fading}. Scaffolding that never fades isn't scaffolding---it's a crutch. The goal is development of independent capability, not permanent dependence on support.
+
+Effective fading:
+
+\begin{enumerate}
+    \item \textbf{Monitor progress}: Assess when support can be reduced
+    \item \textbf{Withdraw incrementally}: Remove support in stages, not all at once
+    \item \textbf{Reinstate if needed}: Provide support again if the learner struggles
+    \item \textbf{Target internalization}: Ensure the learner has internalized the skill
+\end{enumerate}
+
+\section{The Dependency Critique}
+
+Critics have raised concerns about scaffolding approaches:
+
+\begin{itemize}
+    \item \textbf{Over-reliance risk}: Learners may become dependent on support rather than developing independence
+    \item \textbf{Fading failure}: If scaffolding isn't systematically withdrawn, it undermines autonomy
+    \item \textbf{Contextual limits}: ZPD-based approaches assume one-on-one or small-group interaction, which may not scale
+    \item \textbf{Cultural assumptions}: The theory assumes certain cultural models of teaching and learning
+\end{itemize}
+
+These critiques apply directly to AI-assisted work. If AI assistance never fades---if users always rely on AI without developing independent capability---the scaffolding has failed.
+
+\section{LLMs as Cognitive Scaffolding}
+
+LLMs can function as powerful scaffolding for cognitive development:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Scaffolding Function} & \textbf{LLM Application} \\
+\midrule
+Demonstration & Show examples of how to approach problems \\
+Decomposition & Break complex tasks into manageable steps \\
+Prompting & Ask questions that guide thinking \\
+Explanation & Provide context that fills knowledge gaps \\
+Feedback & Identify errors and suggest improvements \\
+\bottomrule
+\end{tabular}
+\caption{LLMs as Scaffolding}
+\end{table}
+
+But the scaffolding metaphor carries an obligation: the goal is \emph{your development}, not permanent assistance. AI should make you more capable over time, not just more productive in the moment.
+
+\section{The DCF Measure of Success}
+
+The scaffolding perspective provides a crucial metric for evaluating AI collaboration:
+
+\begin{quotebox}
+\textbf{Does your LLM use make you more capable when the LLM is gone?}
+\end{quotebox}
+
+If you're learning through collaboration---understanding patterns, internalizing approaches, building independent skill---the scaffolding is working. If you're simply extracting answers without growth, you're not being scaffolded; you're being carried.
+
+This doesn't mean you should artificially limit AI use. It means you should approach AI collaboration with a learning stance: seeking to understand, not just to complete tasks. The best scaffolding is invisible---you don't notice when it fades because you've become capable enough not to need it.
+
+\section{Implications for Practice}
+
+DCF-informed practice treats AI collaboration as an opportunity for development:
+
+\begin{itemize}
+    \item \textbf{Ask for explanations}, not just answers
+    \item \textbf{Request teaching}, not just doing
+    \item \textbf{Periodically attempt tasks without AI} to assess growth
+    \item \textbf{Notice when you've internalized patterns} that you once needed help with
+    \item \textbf{Deliberately push into your ZPD}: tackle harder problems with AI support
+\end{itemize}
+
+The measure of mastery isn't that you no longer use AI---it's that your ZPD has expanded, enabling you to tackle challenges that were previously beyond reach.
 
 % ============================================================================
 % PART VII: CLAUDE CODE BEST PRACTICES
@@ -1050,15 +1744,123 @@ Allow automatically & Routine, trusted operations & Trust but verify results \\
 
 \chapter{Measuring Improvement}
 
-How to know the methodology is working:
+How do you know if DCF is working? This question has occupied researchers studying human-AI collaboration, and the answers are more nuanced than simple productivity metrics suggest.
+
+\section{The Measurement Challenge}
+
+Traditional evaluation metrics---task completion time, output quantity, user satisfaction---capture only part of the picture. They miss the cognitive dimensions that DCF emphasizes: quality of thinking, development of capability, depth of understanding.
+
+Recent research has proposed more sophisticated frameworks for measuring human-AI collaboration effectiveness.
+
+\section{Emerging Measurement Frameworks}
+
+\subsection{Collaborative AI Literacy and Metacognition Scales}
+
+Researchers have developed validated scales for assessing AI collaboration capability:
 
 \begin{itemize}
-    \item \textbf{Documentation quality}: Reader feedback improves
-    \item \textbf{Development velocity}: Tasks complete faster with fewer bugs
-    \item \textbf{Learning rate}: New concepts understood more quickly
-    \item \textbf{Cognitive clarity}: Able to articulate ideas more precisely
-    \item \textbf{Independence}: Can work without AI when necessary, but choose not to
+    \item \textbf{Collaborative AI Literacy}: Measures ability to direct, contextualize, and refine AI outputs---the skills that distinguish effective collaborators from passive consumers
+    \item \textbf{Collaborative AI Metacognition}: Captures how users plan, monitor, and evaluate their thinking while interacting with AI---awareness of process, not just outcome
 \end{itemize}
+
+These scales recognize that effective AI use is a \emph{skill} that can be assessed and developed.
+
+\subsection{The Synergy Index}
+
+A 2025 framework by Riedl and Weidmann proposes a ``Synergy Index'' for measuring human-AI partnership effectiveness through multiple variables:
+
+\begin{itemize}
+    \item \textbf{Task completion quality}: Not just speed, but correctness and completeness
+    \item \textbf{Innovation scores}: Novelty and creativity of solutions
+    \item \textbf{Adaptability metrics}: How well the team handles unexpected challenges
+    \item \textbf{Error detection rates}: Catching mistakes before they propagate
+\end{itemize}
+
+\subsection{Artificial Intelligence Quotient (AIQ)}
+
+The AIQ framework reimagines intelligence testing for the AI era, measuring not individual intelligence but \textbf{collaborative intelligence}---how effectively a human works with AI systems.
+
+\section{The Sobering Research Findings}
+
+A 2024 meta-analysis in \emph{Nature Human Behaviour} titled ``When Combinations of Humans and AI Are Useful'' provides important context:
+
+\begin{quotebox}
+``On average, human-AI teams performed better than humans working alone, but didn't surpass AI systems operating independently. Importantly, they did not find `human-AI synergy'---the average human-AI systems performed worse than the best of humans alone or AI alone.''
+\end{quotebox}
+
+This finding is sobering: simply combining humans and AI doesn't automatically produce superior results. The \emph{quality} of collaboration matters. This is precisely why DCF exists---to transform human-AI interaction from mere combination to genuine synergy.
+
+The same research found that human-AI teams showed more potential for \emph{creative tasks} than decision-making tasks, suggesting that the Socratic, generative approach DCF emphasizes may be particularly valuable.
+
+\section{Practical DCF Metrics}
+
+Based on both research and practice, here are concrete indicators that DCF methodology is working:
+
+\subsection{Output Quality Metrics}
+
+\begin{itemize}
+    \item \textbf{Documentation effectiveness}: Do readers understand and act on documents? Track feedback and revision requests
+    \item \textbf{Code quality}: Fewer bugs, better architecture decisions, clearer structure
+    \item \textbf{Decision quality}: Better outcomes from decisions made with AI assistance
+\end{itemize}
+
+\subsection{Process Metrics}
+
+\begin{itemize}
+    \item \textbf{Iteration depth}: Are you engaging in recursive refinement or accepting first outputs?
+    \item \textbf{Question ratio}: What percentage of your prompts are questions vs. commands?
+    \item \textbf{Challenge frequency}: How often do you push back on AI suggestions?
+\end{itemize}
+
+\subsection{Development Metrics}
+
+\begin{itemize}
+    \item \textbf{Learning rate}: New concepts understood more quickly with AI scaffolding
+    \item \textbf{Independence growth}: Tasks you once needed AI for that you now handle alone
+    \item \textbf{ZPD expansion}: Problems you can tackle that were previously beyond reach
+\end{itemize}
+
+\subsection{Metacognitive Metrics}
+
+\begin{itemize}
+    \item \textbf{Cognitive clarity}: Ability to articulate ideas more precisely
+    \item \textbf{Process awareness}: Recognition of your own thinking patterns during collaboration
+    \item \textbf{Calibration}: Accurate sense of when to trust AI outputs vs. when to verify
+\end{itemize}
+
+\section{Practical Assessment Approaches}
+
+\subsection{Before/After Comparison}
+
+For a specific skill or task type:
+\begin{enumerate}
+    \item Assess baseline capability (before DCF practice)
+    \item Track performance over time with AI collaboration
+    \item Periodically test without AI to measure internalized growth
+\end{enumerate}
+
+\subsection{Journaling and Reflection}
+
+Maintain a log of:
+\begin{itemize}
+    \item What you learned from each significant AI interaction
+    \item Patterns you've noticed in your collaboration style
+    \item Skills you've internalized vs. still depend on AI for
+\end{itemize}
+
+\subsection{Peer Comparison}
+
+Where possible, compare outcomes with colleagues using different AI interaction styles. This provides external validation beyond self-assessment.
+
+\section{The Ultimate Metric}
+
+Beyond specific measurements, DCF success can be assessed by a simple question:
+
+\begin{quotebox}
+\textbf{Does your AI collaboration make you a better thinker, or just a faster executor?}
+\end{quotebox}
+
+If you're growing---understanding more deeply, thinking more clearly, capable of harder challenges---the methodology is working. If you're merely completing tasks without growth, the potential of human-AI collaboration remains unrealized.
 
 \chapter{Case Studies: DCF in Practice}
 
@@ -1171,17 +1973,149 @@ Capability transfer & Learning applications retain value without AI \\
 
 \chapter{Naming the Field}
 
-What we're describing lacks a name. Possibilities:
+What we're describing lacks a settled name. The practice of effective human-AI cognitive collaboration is too new to have established terminology. Yet naming matters: it enables curriculum development, professional identity, and systematic improvement.
+
+\section{The Emergence of New Terms (2024--2025)}
+
+The field is rapidly developing vocabulary, with several terms gaining traction:
+
+\subsection{Prompt-Driven Development (PDD)}
+
+Prompt-Driven Development has emerged as a term for software development centered on AI dialogue rather than traditional coding:
+
+\begin{quotebox}
+``Prompt-Driven Development represents a fundamental shift in how software is conceived, built, and maintained. Rather than manually writing every function, developers can now focus on articulating goals, solving problems, and curating the outputs of AI collaborators.''
+\end{quotebox}
+
+PDD focuses on the \emph{what}---using prompts to direct AI to produce artifacts. DCF complements this by focusing on \emph{how to think} during the process.
+
+\subsection{Vibe Coding}
+
+In 2025, ``vibe coding'' emerged as a colloquial term for conversational, prompt-first development workflows:
 
 \begin{itemize}
-    \item \textbf{Co-cognitive engineering}: Building systems of thought with AI
-    \item \textbf{Augmented intelligence}: Human capability extended by AI
-    \item \textbf{Prompt-driven development}: Software methodology centered on AI dialogue
-    \item \textbf{Knowledge architecture}: Designing how organizations think
-    \item \textbf{Cognitive systems design}: Engineering human-AI thought systems
+    \item Developers describe what they want in natural language
+    \item AI generates working code in response
+    \item The emphasis is on rapid iteration over precision
 \end{itemize}
 
-The name matters less than the recognition: \textbf{this is a discipline}. It can be learned, practiced, and mastered.
+The term captures the intuitive, exploratory nature of AI-assisted development but lacks rigor. Current applications focus on prototyping and MVPs rather than production systems.
+
+\subsection{AI-Driven Development Lifecycle (AI-DLC)}
+
+AWS introduced this term in 2025 for an AI-native methodology placing AI at the center of the software development process:
+
+\begin{itemize}
+    \item AI assists at every stage from inception to operation
+    \item Human oversight remains at every step
+    \item Focus on effectively applying AI at each development phase
+\end{itemize}
+
+\subsection{Spec-Driven Development}
+
+A response to the chaos of pure prompt-driven approaches, spec-driven development uses formal specifications as ``super prompts'':
+
+\begin{itemize}
+    \item Specifications are version-controlled and human-readable
+    \item They express programmer intent crisply to agents
+    \item Structure tames the ad-hoc nature of prompting
+\end{itemize}
+
+\section{Related Established Terms}
+
+Several existing terms overlap with or inform the emerging discipline:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lp{7cm}}
+\toprule
+\textbf{Term} & \textbf{Focus} \\
+\midrule
+Augmented Intelligence & Human capability extended by AI (contrast with ``artificial'' replacement) \\
+Human-AI Teaming & Collaboration patterns between humans and AI systems \\
+Prompt Engineering & Crafting effective prompts (narrower than cognitive methodology) \\
+Cognitive Augmentation & Enhancement of human thinking through technology \\
+\bottomrule
+\end{tabular}
+\caption{Related Established Terms}
+\end{table}
+
+\section{Candidate Names for the Discipline}
+
+Drawing on the emerging terminology and established fields, several candidates emerge for naming what DCF addresses:
+
+\begin{itemize}
+    \item \textbf{Co-cognitive engineering}: Building systems of thought with AI---emphasizes the collaborative construction aspect
+    \item \textbf{Augmented intelligence practice}: Human capability extended by AI---emphasizes augmentation over replacement
+    \item \textbf{Knowledge architecture}: Designing how individuals and organizations think---emphasizes the structural aspect
+    \item \textbf{Cognitive systems design}: Engineering human-AI thought systems---emphasizes the systemic nature
+    \item \textbf{AI collaboration methodology}: How to work effectively with AI---emphasizes the methodological rigor
+\end{itemize}
+
+\section{Why Naming Matters}
+
+The lack of a settled name isn't merely semantic. It has practical consequences:
+
+\subsection{Curriculum Development}
+
+Without a name, you can't create courses. ``Introduction to [what]?'' Universities and training programs need terms to organize offerings.
+
+\subsection{Professional Identity}
+
+Professionals need language to describe their expertise. ``I'm skilled at effective AI collaboration'' lacks the precision of a named discipline.
+
+\subsection{Research Coordination}
+
+Academic research requires shared vocabulary. Without it, researchers talk past each other, duplicate work, and miss connections.
+
+\subsection{Organizational Recognition}
+
+Companies struggle to hire for roles they can't name. ``Prompt engineer'' captures only part of what effective practitioners do.
+
+\section{What DCF Contributes}
+
+Regardless of what the broader field is called, DCF contributes a specific focus:
+
+\begin{quotebox}
+\textbf{Most frameworks focus on what the AI should do. DCF focuses on how the human should think.}
+\end{quotebox}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Other Approaches} & \textbf{DCF} \\
+\midrule
+How to prompt effectively & How to think effectively with AI \\
+What outputs to generate & What questions to ask \\
+AI capabilities & Human cognitive stance \\
+Task completion & Cognitive development \\
+\bottomrule
+\end{tabular}
+\caption{DCF's Distinctive Focus}
+\end{table}
+
+The field needs both: methodologies for directing AI \emph{and} frameworks for human thinking during collaboration. DCF addresses the latter.
+
+\section{The Recognition That Matters}
+
+Beyond any specific name, the crucial recognition is this:
+
+\begin{quotebox}
+\textbf{This is a discipline.}
+\end{quotebox}
+
+Whether called co-cognitive engineering, AI collaboration methodology, or something not yet coined, the practice of thinking effectively with AI:
+
+\begin{itemize}
+    \item Can be learned
+    \item Can be practiced systematically
+    \item Can be improved over time
+    \item Can be taught to others
+    \item Can be mastered
+\end{itemize}
+
+The name will settle. What matters now is treating this as a real skill domain deserving deliberate development.
 
 \chapter{The Future of Thought Work}
 
