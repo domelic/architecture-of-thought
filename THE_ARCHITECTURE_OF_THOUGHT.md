@@ -744,7 +744,7 @@ project/
 
 ## Part VIII: Practical Application Framework
 
-### Chapter 21: The Practitioner's Toolkit
+### Chapter 27: The Practitioner's Toolkit
 
 **For Documentation:**
 1. Feed the AI the raw material (wiki, notes, transcript)
@@ -770,7 +770,7 @@ project/
 5. Identify remaining gaps
 6. Repeat until mastery
 
-### Chapter 22: Failure Modes and Mitigations
+### Chapter 28: Failure Modes and Mitigations
 
 **Failure Mode 1: Over-reliance**
 *Symptom:* Unable to work without AI
@@ -788,7 +788,7 @@ project/
 *Symptom:* Declining ability to think without AI scaffolding
 *Mitigation:* Deliberate practice of unassisted reasoning
 
-### Chapter 23: Measuring Improvement
+### Chapter 29: Measuring Improvement
 
 How to know the methodology is working:
 
@@ -802,7 +802,7 @@ How to know the methodology is working:
 
 ## Part IX: The Emerging Discipline
 
-### Chapter 24: Naming the Field
+### Chapter 30: Naming the Field
 
 What we're describing lacks a name. Possibilities:
 
@@ -814,7 +814,7 @@ What we're describing lacks a name. Possibilities:
 
 The name matters less than the recognition: **this is a discipline**. It can be learned, practiced, and mastered.
 
-### Chapter 25: The Future of Thought Work
+### Chapter 31: The Future of Thought Work
 
 The trajectory is clear:
 
@@ -833,7 +833,7 @@ The trajectory is clear:
 - The distinction between "AI-assisted" and "unassisted" work fades
 - New forms of thought become possible that neither human nor AI could achieve alone
 
-### Chapter 26: Your Role in This Emergence
+### Chapter 32: Your Role in This Emergence
 
 You—the reader of this treatise—are early.
 
@@ -854,7 +854,7 @@ The architecture of thought is being built. You can be an architect.
 
 ## Part X: Positioning Within the AI Methodology Landscape
 
-### Chapter 27: The Ecosystem of Agentic Frameworks
+### Chapter 33: The Ecosystem of Agentic Frameworks
 
 The methodology described in this treatise exists within a growing ecosystem of AI interaction patterns. Understanding where it fits—and where it diverges—helps clarify its unique contribution.
 
@@ -867,7 +867,7 @@ The methodology described in this treatise exists within a growing ecosystem of 
 | **Prompt Patterns** | Few-shot, Role Prompting, System Prompts | Optimizing individual prompt effectiveness |
 | **Co-Cognitive (This)** | Socratic Prompting, Thinking Mirrors | Human-AI collaborative reasoning |
 
-### Chapter 28: Comparison with Agentic Frameworks
+### Chapter 34: Comparison with Agentic Frameworks
 
 **The Ralph Method / Ralph Loop:**
 - **What it is**: A continuous human-in-the-loop workflow where the AI works autonomously between human checkpoints, with the human providing guidance at inflection points
@@ -884,7 +884,7 @@ The methodology described in this treatise exists within a growing ecosystem of 
 - **Focus**: Improving reasoning quality in individual prompts
 - **Relationship to this methodology**: These are *single-prompt techniques* for improving AI reasoning. Our methodology is a *multi-turn conversation strategy* for human-AI collaboration. Chain-of-thought is something you do *to* the model; Socratic dialogue is something you do *with* the model.
 
-### Chapter 29: The Stack View
+### Chapter 35: The Stack View
 
 These approaches form a stack, each addressing different levels of the human-AI interaction:
 
@@ -910,7 +910,7 @@ These approaches form a stack, each addressing different levels of the human-AI 
 
 **Our methodology operates primarily at the MICRO level**—the cognitive strategy for human-AI thinking—but it influences and is influenced by all levels.
 
-### Chapter 30: Synthesis — Why All Layers Matter
+### Chapter 36: Synthesis — Why All Layers Matter
 
 The most effective practitioners operate across all layers:
 
@@ -929,7 +929,7 @@ Most frameworks focus on *what the AI should do*. This treatise focuses on *how 
 
 It's the cognitive operating system that runs on top of whatever agentic framework you choose.
 
-### Chapter 31: Practical Integration
+### Chapter 37: Practical Integration
 
 **Using Socratic Prompting within Ralph Loop:**
 ```
@@ -968,7 +968,7 @@ This iteration revealed X, Y, Z—worth the extra cycles."
 
 The frameworks aren't competitors—they're layers that work together. Master all four levels for maximum effectiveness.
 
-### Chapter 32: Naming the Approach
+### Chapter 38: Naming the Approach
 
 This methodology needs a name. Several candidates emerge from its core characteristics:
 
@@ -1016,7 +1016,7 @@ The name matters less than the practice. But having a name enables:
 
 ## Part XI: Agentic Era Adaptations
 
-### Chapter 33: The Shift from Manual to Autonomous
+### Chapter 39: The Shift from Manual to Autonomous
 
 The Dialectical Cognition Framework was conceived during the conversational era of LLMs—when human-AI interaction meant trading messages back and forth, manually chaining prompts, and orchestrating every step.
 
@@ -1032,7 +1032,7 @@ That era is ending.
 
 This doesn't invalidate DCF—it elevates it. The framework shifts from *operational technique* to *supervisory philosophy*. You're no longer the driver; you're the navigator with veto power.
 
-### Chapter 34: DCF in an Agentic Context
+### Chapter 40: DCF in an Agentic Context
 
 **The New Role of the Human:**
 
@@ -1054,7 +1054,7 @@ This doesn't invalidate DCF—it elevates it. The framework shifts from *operati
 
 4. **Metacognition** → Monitor your own cognitive engagement. Are you rubber-stamping, or genuinely reviewing?
 
-### Chapter 35: Claude Code's Architecture Through DCF Lens
+### Chapter 41: Claude Code's Architecture Through DCF Lens
 
 **Built-in DCF Mechanisms in Claude Code:**
 
@@ -1097,7 +1097,7 @@ This doesn't invalidate DCF—it elevates it. The framework shifts from *operati
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-### Chapter 36: Memory Systems as Cognitive Infrastructure
+### Chapter 42: Memory Systems as Cognitive Infrastructure
 
 Claude Code maintains several memory layers:
 
@@ -1144,7 +1144,7 @@ Claude Code maintains several memory layers:
 - Show me the "why" not just the "what"
 ```
 
-### Chapter 37: When to Engage vs. When to Trust
+### Chapter 43: When to Engage vs. When to Trust
 
 The critical skill in agentic DCF: knowing when human dialectic adds value.
 
@@ -1179,7 +1179,7 @@ Agent: [Responds with analysis]
 Human (DCF): "Good. Given that, let's adjust the plan to..."
 ```
 
-### Chapter 38: Extended Thinking and Internal Dialectic
+### Chapter 44: Extended Thinking and Internal Dialectic
 
 Modern Claude models feature "extended thinking"—internal reasoning that happens before response generation. This is DCF happening *inside the model*.
 
@@ -1205,7 +1205,7 @@ Human: "Show me your reasoning for this recommendation.
 
 This surfaces the internal dialectic, making it available for your review.
 
-### Chapter 39: Tool Ecosystems as Cognitive Extensions
+### Chapter 45: Tool Ecosystems as Cognitive Extensions
 
 MCP (Model Context Protocol) servers extend Claude Code's capabilities:
 
@@ -1229,7 +1229,7 @@ When the agent uses tools, apply DCF:
 - Did the tool output get interpreted correctly?
 - Should I verify the tool's output independently?
 
-### Chapter 40: The Future of DCF in Agentic Systems
+### Chapter 46: The Future of DCF in Agentic Systems
 
 As AI systems become more capable, DCF evolves:
 
