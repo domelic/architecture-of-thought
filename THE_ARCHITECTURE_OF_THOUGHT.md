@@ -1020,6 +1020,7 @@ DCF exists within a rich ecosystem of AI agent methodologies. Understanding wher
 
 | Framework | Focus | Level | Source |
 |-----------|-------|-------|--------|
+| **Research-Plan-Implement** | Three-phase workflow separating reasoning from execution | Workflow | Claude Code (Plan Mode) |
 | **ACE-FCA** | Self-improving context through Generator-Reflector-Curator loops | Engineering | Stanford/HumanLayer |
 | **12-Factor Agents** | Production reliability patterns ("own your prompts," "contact humans") | Engineering | Dex Horthy |
 | **BMAD-METHOD** | Agile workflows with 21 specialized agents across 4 phases | Process | BMad Code |
@@ -1031,6 +1032,7 @@ DCF exists within a rich ecosystem of AI agent methodologies. Understanding wher
 
 | Framework | DCF Relationship |
 |-----------|------------------|
+| **Research-Plan-Implement** | Symbiotic. Plan Mode provides the *structure* (three phases with approval gates); DCF provides the *thinking* within each phase. Research phase: use Socratic inquiry to explore. Plan phase: use recursive refinement to converge. Implement phase: use checkpoint engagement to verify. |
 | **ACE-FCA** | Complementary. ACE automates context curation; DCF guides human evaluation of that curation. When ACE's Curator proposes a context update, how do you assess it? Socratic questioning. |
 | **12-Factor Agents** | Orthogonal. 12-Factor tells you *how to build* agents; DCF tells you *how to think with* agents. Factor 8 ("Contact Humans as First-Class") is where DCF applies—12-Factor says do it, DCF says how to do it well. |
 | **BMAD-METHOD** | Overlapping. BMAD provides process structure (Analysis→Planning→Solutioning→Implementation); DCF provides thinking methodology *within* that process. Use DCF when evaluating BMAD agent outputs. |
@@ -1043,6 +1045,7 @@ DCF exists within a rich ecosystem of AI agent methodologies. Understanding wher
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │  What existing frameworks address:                              │
+│  - Research-Plan-Implement: How to STRUCTURE phased work        │
 │  - ACE, 12-Factor: How to BUILD better agents                   │
 │  - BMAD: How to ORGANIZE agent workflows                        │
 │  - Ralph: How to AUTOMATE agent execution                       │
