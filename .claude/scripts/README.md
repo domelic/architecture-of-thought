@@ -42,14 +42,14 @@ dcf-workflow --dry-run debug  # Show what would run
 
 | Workflow | Sequence | When to Use |
 |----------|----------|-------------|
-| `new-project` | learn → premortem → review | Starting unfamiliar work |
-| `debug` | debug → simplify → decide | Bug isn't where you think |
-| `decision` | review → challenge → decide | Choosing between options |
-| `learning` | learn → challenge → retro | Building deep understanding |
-| `unstuck` | unstick → simplify → decide | Progress has stalled |
-| `session-end` | retro | Wrapping up a session |
-| `code-review` | review → challenge | Evaluating proposals |
-| `pre-implementation` | premortem → review | Before building |
+| `new-project` | onboard → architect → premortem | Starting unfamiliar work |
+| `debug` | debug → assumptions → simplify | Bug isn't where you think |
+| `decision` | tradeoffs → challenge → decide | Choosing between options |
+| `learning` | learn → explain → retro | Building deep understanding |
+| `unstuck` | diagnose → unstick → simplify | Progress has stalled |
+| `session-end` | context-health → compact → retro | Wrapping up a session |
+| `code-review` | review → assumptions → challenge | Evaluating proposals |
+| `pre-implementation` | architect → tradeoffs → premortem | Before building |
 
 ### How It Works
 
@@ -70,20 +70,20 @@ $ dcf-workflow decision "monorepo vs polyrepo"
 DCF Workflow
 ════════════
 
-  Sequence: review → challenge → decide
+  Sequence: tradeoffs → challenge → decide
   Context:  monorepo vs polyrepo
 
 This workflow has 3 steps with checkpoints between each.
 Press Enter to begin...
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-▶ DCF Mode: review
+▶ DCF Mode: tradeoffs
   Context: monorepo vs polyrepo
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Run in Claude Code:
 
-  /dcf review monorepo vs polyrepo
+  /dcf tradeoffs monorepo vs polyrepo
 
 (Copied to clipboard)
 

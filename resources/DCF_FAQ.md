@@ -220,6 +220,7 @@ The `/dcf` skill is a principle-based Claude Code skill that applies DCF's Socra
 ```
 /dcf [mode] [context]
 
+# Core modes
 /dcf                     # General Socratic dialogue
 /dcf review              # Evaluate before committing
 /dcf checkpoint          # Agentic decision point
@@ -231,6 +232,21 @@ The `/dcf` skill is a principle-based Claude Code skill that applies DCF's Socra
 /dcf challenge           # Steelman the opposition
 /dcf simplify            # Find the essential
 /dcf retro               # Capture learning
+
+# Design & analysis
+/dcf architect           # Divergent → convergent design
+/dcf tradeoffs           # Structured tradeoff analysis
+/dcf assumptions         # Deep assumption excavation
+
+# Learning & onboarding
+/dcf onboard             # Explore unfamiliar codebase/domain
+/dcf explain             # Feynman technique
+
+# Session management
+/dcf compact             # Prepare for session compaction
+/dcf context-health      # Assess and address context rot
+/dcf diagnose            # Identify anti-pattern
+/dcf skill               # Capture pattern as skill
 ```
 
 ### When should I use each mode?
@@ -248,6 +264,15 @@ The `/dcf` skill is a principle-based Claude Code skill that applies DCF's Socra
 | `/dcf challenge` | Strengthen your position by arguing against it |
 | `/dcf simplify` | A solution has grown unwieldy and needs reduction |
 | `/dcf retro` | End of session—capture what you learned |
+| `/dcf architect` | Designing something—need broad exploration then minimal MVP |
+| `/dcf tradeoffs` | Choosing between options—need explicit analysis |
+| `/dcf assumptions` | Suspect hidden assumptions affecting your thinking |
+| `/dcf onboard` | Entering unfamiliar codebase or domain |
+| `/dcf explain` | Want to test your understanding by teaching |
+| `/dcf compact` | Preparing for session compaction or break |
+| `/dcf context-health` | Session feels degraded or confused |
+| `/dcf diagnose` | Something's wrong but you don't know which anti-pattern |
+| `/dcf skill` | Discovered a pattern worth capturing for reuse |
 
 ### What about the procedural version with 22 modes?
 
@@ -305,12 +330,12 @@ Hooks enable DCF at scale without manual invocation.
 Use the `dcf-workflow` script to chain modes with checkpoints:
 
 ```bash
-dcf-workflow new-project              # learn → premortem → review
-dcf-workflow debug "auth issue"       # debug → simplify → decide
-dcf-workflow decision "API design"    # review → challenge → decide
-dcf-workflow learning "rust ownership"# learn → challenge → retro
-dcf-workflow unstuck                  # unstick → simplify → decide
-dcf-workflow session-end              # retro
+dcf-workflow new-project              # onboard → architect → premortem
+dcf-workflow debug "auth issue"       # debug → assumptions → simplify
+dcf-workflow decision "API design"    # tradeoffs → challenge → decide
+dcf-workflow learning "rust ownership"# learn → explain → retro
+dcf-workflow unstuck                  # diagnose → unstick → simplify
+dcf-workflow session-end              # context-health → compact → retro
 ```
 
 The script provides checkpoints between each mode, prompting you to reflect before proceeding.

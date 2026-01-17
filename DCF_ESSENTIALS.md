@@ -179,6 +179,7 @@ The `/dcf` skill is **principle-based**, not scripted. Each mode has an outcome,
 ```
 /dcf [mode] [context]
 
+# Core modes
 /dcf                  # General Socratic dialogue
 /dcf review           # Evaluate before committing
 /dcf checkpoint       # Agentic decision point
@@ -190,14 +191,27 @@ The `/dcf` skill is **principle-based**, not scripted. Each mode has an outcome,
 /dcf challenge        # Steelman the opposition
 /dcf simplify         # Find the essential
 /dcf retro            # Capture learning
+
+# Design & analysis
+/dcf architect        # Divergent → convergent design
+/dcf tradeoffs        # Structured tradeoff analysis
+/dcf assumptions      # Deep assumption excavation
+
+# Learning & session
+/dcf onboard          # Explore unfamiliar territory
+/dcf explain          # Feynman technique
+/dcf compact          # Prepare for compaction
+/dcf context-health   # Assess context rot
+/dcf diagnose         # Identify anti-pattern
+/dcf skill            # Capture as reusable skill
 ```
 
 **Workflow Automation:** Use `dcf-workflow` to chain modes with checkpoints:
 
 ```bash
-dcf-workflow new-project    # learn → premortem → review
-dcf-workflow debug          # debug → simplify → decide
-dcf-workflow decision       # review → challenge → decide
+dcf-workflow new-project    # onboard → architect → premortem
+dcf-workflow debug          # debug → assumptions → simplify
+dcf-workflow decision       # tradeoffs → challenge → decide
 ```
 
 **Principle:** Claude adapts Socratic questioning to the actual situation—no rigid scripts.

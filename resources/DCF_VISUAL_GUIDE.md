@@ -360,8 +360,8 @@ The skill is **principle-based**, not scripted. Each mode has an **outcome**, no
 │                                                                     │
 │   /dcf [mode] [context]                                             │
 │                                                                     │
+│   CORE MODES                                                        │
 │   ┌─────────────────────────────────────────────────────────────┐   │
-│   │                                                             │   │
 │   │    /dcf                General Socratic dialogue            │   │
 │   │    /dcf review         Evaluate before committing           │   │
 │   │    /dcf checkpoint     Agentic decision point               │   │
@@ -373,14 +373,34 @@ The skill is **principle-based**, not scripted. Each mode has an **outcome**, no
 │   │    /dcf challenge      Steelman the opposition              │   │
 │   │    /dcf simplify       Find the essential                   │   │
 │   │    /dcf retro          Capture learning                     │   │
-│   │                                                             │   │
+│   └─────────────────────────────────────────────────────────────┘   │
+│                                                                     │
+│   DESIGN & ANALYSIS                                                 │
+│   ┌─────────────────────────────────────────────────────────────┐   │
+│   │    /dcf architect      Divergent → convergent design        │   │
+│   │    /dcf tradeoffs      Structured tradeoff analysis         │   │
+│   │    /dcf assumptions    Deep assumption excavation           │   │
+│   └─────────────────────────────────────────────────────────────┘   │
+│                                                                     │
+│   LEARNING & ONBOARDING                                             │
+│   ┌─────────────────────────────────────────────────────────────┐   │
+│   │    /dcf onboard        Explore unfamiliar territory         │   │
+│   │    /dcf explain        Feynman technique                    │   │
+│   └─────────────────────────────────────────────────────────────┘   │
+│                                                                     │
+│   SESSION MANAGEMENT                                                │
+│   ┌─────────────────────────────────────────────────────────────┐   │
+│   │    /dcf compact        Prepare for session compaction       │   │
+│   │    /dcf context-health Assess and address context rot       │   │
+│   │    /dcf diagnose       Identify anti-pattern                │   │
+│   │    /dcf skill          Capture pattern as reusable skill    │   │
 │   └─────────────────────────────────────────────────────────────┘   │
 │                                                                     │
 │   KEY PRINCIPLE:                                                    │
 │   Each mode describes an OUTCOME, not a script.                     │
 │   Claude adapts Socratic questioning to the actual situation.       │
 │                                                                     │
-│   ARCHIVED: 22-mode procedural version at                           │
+│   ARCHIVED: Procedural version at                                   │
 │   .claude/skills/archive/dcf-procedural.md                          │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
@@ -397,12 +417,14 @@ Use `dcf-workflow` to chain modes with checkpoints:
 │                        dcf-workflow <scenario>                       │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                     │
-│   new-project     learn ──► premortem ──► review                    │
-│   debug           debug ──► simplify ──► decide                     │
-│   decision        review ──► challenge ──► decide                   │
-│   learning        learn ──► challenge ──► retro                     │
-│   unstuck         unstick ──► simplify ──► decide                   │
-│   session-end     retro                                             │
+│   new-project         onboard ──► architect ──► premortem           │
+│   debug               debug ──► assumptions ──► simplify            │
+│   decision            tradeoffs ──► challenge ──► decide            │
+│   learning            learn ──► explain ──► retro                   │
+│   unstuck             diagnose ──► unstick ──► simplify             │
+│   session-end         context-health ──► compact ──► retro          │
+│   code-review         review ──► assumptions ──► challenge          │
+│   pre-implementation  architect ──► tradeoffs ──► premortem         │
 │                                                                     │
 │   Each arrow (──►) is a CHECKPOINT where you engage fully           │
 │   before proceeding to the next mode.                               │

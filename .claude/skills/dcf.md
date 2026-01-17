@@ -8,7 +8,7 @@ Apply Socratic questioning to think WITH the user, not just answer them.
 /dcf [mode] [context]
 ```
 
-**Modes:** `review`, `checkpoint`, `debug`, `learn`, `decide`, `unstick`, `premortem`, `challenge`, `simplify`, `retro`
+**Modes:** `review`, `checkpoint`, `debug`, `learn`, `decide`, `unstick`, `premortem`, `challenge`, `simplify`, `retro`, `architect`, `tradeoffs`, `assumptions`, `onboard`, `explain`, `compact`, `context-health`, `diagnose`, `skill`
 
 Examples:
 ```
@@ -16,7 +16,9 @@ Examples:
 /dcf review                   # Evaluate a plan or proposal
 /dcf debug                    # Debug by questioning mental models
 /dcf learn typescript generics # Learn through dialogue
-/dcf decide                   # Reach closure on a decision
+/dcf architect                # Design from broad exploration to MVP
+/dcf tradeoffs                # Analyze options explicitly
+/dcf onboard                  # Explore unfamiliar codebase
 ```
 
 ## Core Principles
@@ -114,16 +116,100 @@ Each mode has an **outcome**, not a script. Achieve the outcome using whatever a
 - What would be done differently?
 - Should anything be captured in CLAUDE.md or as a skill?
 
+### `architect` - Divergent to Convergent Design
+**Outcome:** Broad exploration crystallizes into minimal viable change.
+- **Diverge first**: Map the full landscape—components, connections, possibilities
+- Explore end-to-end flows, generate multiple approaches
+- **Capture insights**: Synthesize what you've learned before context grows too large
+- **Converge**: Extract the signal—what actually matters for this situation?
+- **Crystallize MVP**: What's the smallest change that delivers value?
+
+The key insight: You can only build the minimal solution after you've understood the full landscape.
+
+### `tradeoffs` - Structured Tradeoff Analysis
+**Outcome:** Implicit choices become explicit; decision criteria are clear.
+- Identify all realistic options (including ones that seem "too hard")
+- Surface dimensions: What are you optimizing for? What hidden criteria exist?
+- Make tradeoffs explicit: For each option, what do you gain? What do you give up?
+- Test for hidden preferences: "If I told you to pick B, what's your gut reaction?"
+- Document the tradeoff reasoning for future reference
+
+### `assumptions` - Deep Assumption Excavation
+**Outcome:** Hidden assumptions are surfaced and evaluated.
+- Surface obvious assumptions first (explicit facts, given constraints)
+- Probe for hidden ones: What must be true for this to work? About users? Technology? Timing?
+- Challenge foundations: Which assumptions are verified vs. intuition?
+- Find load-bearing assumptions: Which, if wrong, invalidate everything?
+- Decide: Which need verification? Which are acceptable risks?
+
+The most dangerous assumptions are the ones you don't know you're making.
+
+### `onboard` - Guided Exploration of Unfamiliar Territory
+**Outcome:** Unfamiliar codebase/domain becomes navigable with confidence.
+- Assess starting point: What do you know? What's your goal? Learning style?
+- Map the landscape: Key components, entry points, "hello world" flow
+- Build mental model iteratively: Hypothesize, verify, note surprises
+- Connect to what you know: Similar patterns, what's genuinely new?
+- Establish footholds: Where can you make a small, safe change?
+- Document for future you
+
+### `explain` - Teach to Test Understanding (Feynman Technique)
+**Outcome:** Gaps in understanding are identified through attempted explanation.
+- Explain the concept as if to a smart colleague outside the domain
+- Identify gaps: Where did you hesitate? Use hand-wavy language? Skip "obvious" parts?
+- Probe edges: Edge cases, common misconceptions, connections to related concepts
+- Simplify further: One sentence? Core insight without jargon? Good analogy?
+- Verify: What do you now realize you can't fully explain?
+
+### `compact` - Prepare for Session Compaction
+**Outcome:** Essential session state is captured before context limits hit.
+- **Completed work**: What was accomplished? Files modified? Decisions made?
+- **Open questions**: What's unresolved? What clarifications needed?
+- **Next steps**: Priority order, dependencies between tasks
+- **Context that matters**: Non-obvious assumptions, discovered constraints
+- Offer to create `SESSION_FINDINGS.md` (gitignored) for continuity
+
+### `context-health` - Assess and Address Context Rot
+**Outcome:** Context degradation is identified and remediated.
+- Assess: How long running? How many topics? Performance degrading?
+- Check symptoms: Poisoning (uncorrected errors), distraction (irrelevant tangents), confusion (conflated concepts), clash (unresolved plan changes)
+- Diagnose severity (1-5): Mild → clarify explicitly. Moderate → context reset summary. Severe → capture state, recommend fresh start.
+- Prevent future rot: What practices would keep context cleaner?
+
+### `diagnose` - Identify Your Anti-Pattern
+**Outcome:** The specific failure mode is named and addressed.
+- Describe symptoms: What's going wrong? What triggered it?
+- Check common anti-patterns by category:
+  - *Unproductive*: Socratic Theater, Rubber Stamping, Lazy Prompting
+  - *No progress*: Infinite Refinement, Abstraction Addiction, Goal Drift
+  - *Trust issues*: Hallucination Acceptance, Mirror Narcissism
+  - *Quality degrading*: Context Rot, Complexity Creep
+  - *Capability not building*: Cognitive Atrophy, Reinvention Addiction
+- Identify root cause and apply the specific fix
+- Prevent recurrence: What checkpoint would catch this earlier?
+
+### `skill` - Capture Pattern as Reusable Skill
+**Outcome:** An effective pattern is codified for future use.
+- Identify the pattern: What's working? Done multiple times? Applies to other tasks?
+- Extract the essence: What's transferable? What's the non-obvious insight?
+- Generalize: Name, modes, when to apply, what Claude needs to know
+- Create `.claude/skills/skillname.md` with usage, instructions, criteria
+- Plan refinement: How will you know if it needs adjustment?
+
 ## Workflow Composition
 
 Modes chain naturally. Common sequences:
 
 | Scenario | Flow |
 |----------|------|
-| New project | `learn` → `premortem` → `review` |
-| Debugging | `debug` → `simplify` → `decide` |
-| Decision | `challenge` → `decide` |
-| Session end | `retro` |
+| New project | `onboard` → `architect` → `premortem` |
+| Deep debug | `debug` → `assumptions` → `simplify` |
+| Decision point | `tradeoffs` → `challenge` → `decide` |
+| Learning arc | `learn` → `explain` → `retro` |
+| Getting unstuck | `diagnose` → `unstick` → `simplify` |
+| Session end | `context-health` → `compact` → `retro` |
+| Code review | `review` → `assumptions` → `challenge` |
+| Pre-implementation | `architect` → `tradeoffs` → `premortem` |
 
 ## Tool Integration
 

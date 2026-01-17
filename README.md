@@ -149,14 +149,29 @@ This repository includes a `/dcf` skill for Claude Code—a principle-based appr
 /dcf challenge           # Steelman the opposition
 /dcf simplify            # Find the essential
 /dcf retro               # Capture learning
+
+# Design & analysis
+/dcf architect           # Divergent exploration → minimal viable change
+/dcf tradeoffs           # Structured tradeoff analysis
+/dcf assumptions         # Deep assumption excavation
+
+# Learning & onboarding
+/dcf onboard             # Explore unfamiliar codebase/domain
+/dcf explain             # Feynman technique - teach to test understanding
+
+# Session management
+/dcf compact             # Prepare for session compaction
+/dcf context-health      # Assess and address context rot
+/dcf diagnose            # Identify which anti-pattern you're falling into
+/dcf skill               # Capture pattern as reusable skill
 ```
 
 **Workflow Automation:** Use the `dcf-workflow` script to chain modes with checkpoints:
 
 ```bash
-dcf-workflow new-project              # learn → premortem → review
-dcf-workflow debug "auth timeout"     # debug → simplify → decide
-dcf-workflow decision "API design"    # review → challenge → decide
+dcf-workflow new-project              # onboard → architect → premortem
+dcf-workflow debug "auth timeout"     # debug → assumptions → simplify
+dcf-workflow decision "API design"    # tradeoffs → challenge → decide
 ```
 
 **Installation:**
