@@ -13,6 +13,12 @@ Apply Socratic questioning and structured thinking to any problem, plan, or deci
 /dcf retro               # End-of-session reflection and learning capture
 /dcf compact             # Prepare for session compaction
 /dcf skill               # Capture an effective pattern as a reusable skill
+/dcf debug               # Debug with Socratic questioning
+/dcf premortem           # Pre-project failure analysis
+/dcf challenge           # Steelman the opposite position
+/dcf unstick             # When you're blocked and don't know why
+/dcf tradeoffs           # Structured tradeoff analysis
+/dcf explain             # Teach to test understanding (Feynman technique)
 ```
 
 ## Instructions
@@ -146,6 +152,168 @@ Guide the user through recognizing and codifying an effective pattern as a Claud
    - "What edge cases should we anticipate?"
 
 The `/dcf` skill itself is an example of this process—Socratic questioning codified into reusable infrastructure.
+
+For **`/dcf debug`** (debugging with Socratic questioning):
+
+Debug by questioning your mental model, not just searching for the bug.
+
+1. **Establish the Mental Model**
+   - "What do you expect this code to do? Walk me through it."
+   - "At what point does behavior diverge from expectation?"
+   - "What's your current hypothesis about the cause?"
+
+2. **Challenge Assumptions**
+   - "What are you assuming is working correctly?"
+   - "Have you verified that assumption, or is it intuition?"
+   - "What if the bug isn't where you think it is?"
+
+3. **Narrow the Search Space**
+   - "What's the smallest input that reproduces the bug?"
+   - "What changed recently that could have introduced this?"
+   - "What have you already ruled out, and how?"
+
+4. **Question the Evidence**
+   - "Is your debugging output actually showing what you think it shows?"
+   - "Could there be multiple bugs masking each other?"
+   - "What would convince you that your fix actually worked?"
+
+The goal is to help the user examine their mental model of the code, not just find the bug for them.
+
+For **`/dcf premortem`** (pre-project failure analysis):
+
+Before starting, imagine the project has failed. Work backward to understand why.
+
+1. **Set the Scene**
+   - "Imagine it's [timeframe] from now. This project has failed. What happened?"
+   - "Don't think about what might go wrong—assume it already did. What was the cause?"
+
+2. **Explore Failure Modes**
+   - "What's the most likely way this fails?"
+   - "What's the most catastrophic way this could fail?"
+   - "What's the subtle failure that nobody would notice until too late?"
+
+3. **Identify Assumptions at Risk**
+   - "What are we assuming will be true that might not be?"
+   - "What dependencies are we trusting that could break?"
+   - "What's the 'that would never happen' scenario?"
+
+4. **Build Safeguards**
+   - "How would we detect this failure early?"
+   - "What could we do now to prevent or mitigate this?"
+   - "What's our contingency if this assumption proves false?"
+
+5. **Prioritize Concerns**
+   - "Of all these failure modes, which should we address before starting?"
+   - "What risks are acceptable vs. must-fix?"
+
+For **`/dcf challenge`** (steelman the opposite position):
+
+Strengthen your thinking by arguing against it. This is pure dialectic.
+
+1. **Articulate the Position**
+   - "State your current position clearly. What do you believe and why?"
+   - "What's the core claim you're making?"
+
+2. **Steelman the Opposition**
+   - "What's the strongest argument against your position?"
+   - "If someone smarter than you disagreed, what would they say?"
+   - "What evidence would someone use to argue the opposite?"
+
+3. **Find the Tension**
+   - "Where does your position have genuine weaknesses?"
+   - "What would you have to give up to address the counterargument?"
+   - "Is there a synthesis that captures the truth in both views?"
+
+4. **Test Conviction**
+   - "After considering the opposition, has your view shifted?"
+   - "What would it take to change your mind?"
+   - "Is your belief based on evidence or preference?"
+
+The goal is not to undermine the user's position, but to make it stronger by surviving genuine challenge.
+
+For **`/dcf unstick`** (when you're blocked and don't know why):
+
+Use confusion as a signal. This mode applies productive aporia.
+
+1. **Name the Stuckness**
+   - "Describe the stuck feeling. What does it feel like?"
+   - "Is this 'I don't know what to do' or 'I don't want to do what I know I should'?"
+   - "When did you get stuck? What were you doing right before?"
+
+2. **Diagnose the Block**
+   - "Are you stuck on the problem, the solution, or the first step?"
+   - "Is this a knowledge gap, a decision you're avoiding, or unclear requirements?"
+   - "What question, if answered, would unstick you?"
+
+3. **Reduce the Problem**
+   - "What's the smallest piece of this you could make progress on?"
+   - "If you had to ship something in 30 minutes, what would it be?"
+   - "What would you do if you weren't afraid of doing it wrong?"
+
+4. **Change the Frame**
+   - "What would you tell someone else who was stuck on this?"
+   - "What would make this problem fun?"
+   - "Is the thing you're stuck on actually the thing you should be working on?"
+
+5. **Commit to Movement**
+   - "What's one concrete action you can take in the next 5 minutes?"
+   - "What's the worst that happens if you just try something?"
+
+For **`/dcf tradeoffs`** (structured tradeoff analysis):
+
+Make implicit choices explicit. Every decision trades something for something else.
+
+1. **Identify the Options**
+   - "What are the realistic options? List them without judging yet."
+   - "Is there an option you're not considering because it seems too hard?"
+
+2. **Surface the Dimensions**
+   - "What criteria matter for this decision?"
+   - "What are you optimizing for? Speed? Quality? Maintainability? Learning?"
+   - "What hidden criteria might be influencing you?"
+
+3. **Make Tradeoffs Explicit**
+   - "For each option: What do you gain? What do you give up?"
+   - "What does Option A sacrifice that Option B preserves?"
+   - "Is there an option that doesn't require this tradeoff?"
+
+4. **Test for Hidden Preferences**
+   - "If I told you to pick Option B, what's your gut reaction?"
+   - "Which tradeoff are you least willing to make?"
+   - "Are you rationalizing a decision you've already made?"
+
+5. **Decide and Document**
+   - "Given these tradeoffs, which option aligns with your priorities?"
+   - "What would have to change for you to revisit this decision?"
+   - "How will you explain this tradeoff to future-you or your team?"
+
+For **`/dcf explain`** (Feynman technique - teach to test understanding):
+
+If you can't explain it simply, you don't understand it well enough.
+
+1. **Choose the Concept**
+   - "What do you want to understand better?"
+   - "Explain it to me as if I'm a smart colleague who doesn't know this domain."
+
+2. **Identify Gaps**
+   - "Where did you hesitate or use hand-wavy language?"
+   - "What did you skip over because it's 'obvious'?"
+   - "If I asked 'why?' at that point, what would you say?"
+
+3. **Probe the Edges**
+   - "What's an edge case or exception to what you just explained?"
+   - "What's the most common misconception about this?"
+   - "How does this connect to [related concept]?"
+
+4. **Simplify Further**
+   - "Can you explain it in one sentence?"
+   - "What's the core insight, stripped of jargon?"
+   - "What analogy would make this click for someone new?"
+
+5. **Verify Understanding**
+   - "Now that you've explained it, what do you understand better?"
+   - "What question do you now realize you can't answer?"
+   - "What would you need to learn to fill that gap?"
 
 **Phase 3 - Synthesize and Refine**
 
