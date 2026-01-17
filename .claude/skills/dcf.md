@@ -261,6 +261,8 @@ Context hygiene and capture.
 
 Modes chain naturally. Common sequences:
 
+> **Caution:** Workflows are scaffolding, not standard practice. Each transition should be a genuine checkpoint—"Is this the right next mode?"—not an automatic progression. The goal is to internalize when each mode fits, then choose deliberately. If you find yourself running workflows without pausing between modes, you've automated the thinking DCF is meant to develop.
+
 | Scenario | Flow |
 |----------|------|
 | New project | `onboard` → `architect` → `premortem` |

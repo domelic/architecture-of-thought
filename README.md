@@ -179,6 +179,8 @@ dcf-workflow debug "auth timeout"     # debug → assumptions → simplify
 dcf-workflow decision "API design"    # tradeoffs → challenge → decide
 ```
 
+> **Caution:** Workflows are scaffolding, not standard practice. Each transition should be a genuine checkpoint—"Is this the right next mode?"—not an automatic progression. The goal is to internalize when each mode fits, then choose deliberately.
+
 **Installation:**
 - Copy `.claude/skills/dcf.md` to your project or global Claude Code skills directory
 - Optionally add `.claude/scripts/` to your PATH for workflow automation
