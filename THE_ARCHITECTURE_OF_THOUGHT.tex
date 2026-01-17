@@ -4072,6 +4072,10 @@ This glossary provides definitions for key terms used throughout this treatise. 
 
 \textbf{Anticipatory Calibration}\index{Anticipatory Calibration} --- The practice of forming a hypothesis about what AI will produce before prompting, then comparing expectation to reality. Builds accurate mental models of AI capabilities over time. See Chapter 11.
 
+\section*{B}
+
+\textbf{Background Agents}\index{Background Agents} --- Agents spawned via the Task tool that run asynchronously while you continue other work. Trade engagement for efficiency---use for exploration, engage synchronously for judgment calls.
+
 \section*{C}
 
 \textbf{Chain-of-Thought (CoT)} --- A prompting technique where the AI is encouraged to show its reasoning process step-by-step, improving performance on complex tasks. Related to but distinct from DCF's emphasis on human-AI dialogue.
@@ -4106,6 +4110,8 @@ This glossary provides definitions for key terms used throughout this treatise. 
 
 \textbf{Hallucination} --- AI generation of plausible but factually incorrect information. A key limitation requiring human verification and Socratic questioning.
 
+\textbf{Hooks}\index{Hooks} --- Shell commands that execute automatically before or after Claude Code tool calls. Enable automated DCF checkpoints---for example, running tests after every file edit.
+
 \textbf{Human-in-the-Loop (HITL)} --- System design pattern where human judgment is required at critical decision points. DCF applies to optimizing these interaction points.
 
 \section*{L}
@@ -4130,6 +4136,8 @@ This glossary provides definitions for key terms used throughout this treatise. 
 
 \section*{P}
 
+\textbf{Pattern Capture}\index{Pattern Capture} --- The practice of recognizing effective prompting patterns and codifying them as reusable Claude Code skills. When you discover an approach that works well for a category of tasks, extract its transferable essence and document it. See Section~\ref{sec:pattern-to-skill}.
+
 \textbf{Plan Mode} --- A feature in agentic systems where the AI develops a detailed plan before execution, allowing human review of the approach. Natural DCF application point.
 
 \textbf{Prompt} --- Input text given to an LLM to elicit a response. Quality of prompts significantly affects quality of outputs.
@@ -4140,9 +4148,13 @@ This glossary provides definitions for key terms used throughout this treatise. 
 
 \textbf{Recursive Refinement} --- The DCF principle of iteratively improving outputs until they converge on clarity. Each iteration's output becomes the next iteration's input.
 
+\textbf{Reinvention Addiction}\index{Reinvention Addiction} --- The anti-pattern of repeatedly solving the same type of problem from scratch instead of capturing effective patterns as reusable skills. Treats each session as isolated rather than building cumulative capability. See Anti-Pattern 12 in Chapter~\ref{ch:failure-modes}.
+
 \textbf{ReAct (Reasoning + Acting)} --- An AI paradigm combining reasoning traces with action execution. Enables LLMs to interact with external tools and environments.
 
 \section*{S}
+
+\textbf{Session Lifecycle}\index{Session Lifecycle} --- The practice of managing conversation context over time. Includes knowing when to start fresh sessions vs.\ continue existing ones, and using \texttt{/dcf compact} to capture state before context limits are reached.
 
 \textbf{Socratic Dialogue} --- A method of inquiry through questioning rather than assertion. In DCF, the primary mode of productive human-AI interaction.
 

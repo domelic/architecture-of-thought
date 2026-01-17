@@ -4,7 +4,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18275170.svg)](https://doi.org/10.5281/zenodo.18275170)
 [![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-red.svg)](LICENSE)
-[![Pages](https://img.shields.io/badge/Pages-150-blue.svg)](THE_ARCHITECTURE_OF_THOUGHT.pdf)
+[![Pages](https://img.shields.io/badge/Pages-173-blue.svg)](THE_ARCHITECTURE_OF_THOUGHT.pdf)
 [![LaTeX](https://img.shields.io/badge/Format-LaTeX-green.svg)](THE_ARCHITECTURE_OF_THOUGHT.tex)
 
 ---
@@ -28,7 +28,7 @@ DCF operates at the *micro level* of human-AI interaction—the cognitive strate
 
 ## Download
 
-**[Download PDF (150 pages)](THE_ARCHITECTURE_OF_THOUGHT.pdf)**
+**[Download PDF (173 pages)](THE_ARCHITECTURE_OF_THOUGHT.pdf)**
 
 **[DCF Essentials — Practitioner's Quick Reference](DCF_ESSENTIALS.md)**
 
@@ -47,7 +47,7 @@ DCF operates at the *micro level* of human-AI interaction—the cognitive strate
 | [Visual Guide](resources/DCF_VISUAL_GUIDE.md) | Diagrams and visual references | Quick reference |
 | [Slide Deck](resources/DCF_SLIDE_DECK.md) | Presentation for teaching DCF | Team training |
 | [Framework Integration](resources/DCF_FRAMEWORK_INTEGRATION.md) | DCF + Ralph, Plan Mode, BMAD | Combining methodologies |
-| [Anti-Patterns Guide](resources/DCF_ANTI_PATTERNS.md) | 10 failure modes with fixes | Avoiding common mistakes |
+| [Anti-Patterns Guide](resources/DCF_ANTI_PATTERNS.md) | 12 failure modes with fixes | Avoiding common mistakes |
 
 ### Learning & Reference
 
@@ -138,6 +138,10 @@ This repository includes a `/dcf` skill for Claude Code that applies the framewo
 /dcf review              # Review a plan or proposed approach
 /dcf checkpoint          # Apply DCF at an agentic checkpoint
 /dcf learn <topic>       # Use DCF for learning/understanding
+/dcf refine              # Iterate on output that needs improvement
+/dcf retro               # End-of-session reflection and learning capture
+/dcf compact             # Prepare for session compaction
+/dcf skill               # Capture an effective pattern as a reusable skill
 ```
 
 To use: copy `.claude/skills/dcf.md` to your project or global Claude Code skills directory.
@@ -191,7 +195,7 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ├── DCF_ESSENTIALS.md                 # Condensed practitioner's guide
 ├── CONTRIBUTING.md                   # Contribution guidelines
 ├── CHANGELOG.md                      # Version history
-├── THE_ARCHITECTURE_OF_THOUGHT.pdf   # Compiled document (150 pages)
+├── THE_ARCHITECTURE_OF_THOUGHT.pdf   # Compiled document (173 pages)
 ├── THE_ARCHITECTURE_OF_THOUGHT.tex   # LaTeX source
 ├── references.bib                    # BibTeX bibliography (18 sources)
 ├── .claude/
