@@ -12,6 +12,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.2.2] - 2026-01-17
+
+### Changed
+
+#### Skill Mode Reorganization
+Reorganized 21 `/dcf` skill modes from flat list into 5 intuitive categories:
+
+| Category | Modes | Purpose |
+|----------|-------|---------|
+| **Evaluation & Review** | `review`, `checkpoint`, `self-review`, `refine` | Quality gates before proceeding |
+| **Problem Solving** | `debug`, `unstick`, `simplify`, `diagnose` | Getting past blocks |
+| **Design & Analysis** | `architect`, `tradeoffs`, `assumptions`, `premortem`, `challenge`, `decide` | Making good decisions |
+| **Learning & Exploration** | `learn`, `onboard`, `explain` | Building understanding |
+| **Session Management** | `compact`, `context-health`, `retro`, `skill` | Context hygiene and capture |
+
+- Added category headers and descriptions to `/dcf` skill
+- Updated README.md mode listing to match new structure
+- Updated DCF_ESSENTIALS.md mode listing to match new structure
+
+---
+
 ## [2.2.1] - 2026-01-17
 
 ### Added
