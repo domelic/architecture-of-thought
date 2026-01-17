@@ -12,6 +12,52 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.2.0] - 2026-01-17
+
+### Added
+
+#### Meta-Question as Core Principle
+- Elevated "What question should I be asking?" to a core DCF principle
+- Added to /dcf skill as 5th core principle and Socratic Toolkit operation
+- Added dedicated "The Question" section to skill response format
+- Added Meta-Question entry to DCF_GLOSSARY.md
+- Added as 6th principle in DCF_ESSENTIALS.md
+- Added as 8th principle (Metacognitive) in treatise with glossary entry
+
+#### New Skill Modes (21 total)
+- **`/dcf refine`** - Iterate deliberately on output without drift or infinite loops
+- **`/dcf self-review`** - Have Claude review its own output (activates evaluation mode)
+
+#### Workflow Automation
+- **`dcf-workflow`** - Shell script for chaining modes with checkpoints
+- **`.claude/scripts/README.md`** - Script documentation
+- **`.claude/settings.example.json`** - Example hooks configuration
+
+### Changed
+
+#### Skill Refactoring
+- Converted from procedural (scripted steps) to principle-based (outcomes)
+- Reduced from 22 modes to 21 modes (more focused)
+- Reorganized into 4 categories (was 6):
+  - Core modes (13)
+  - Design & Analysis (3)
+  - Learning & Onboarding (2)
+  - Session Management (4)
+- Archived procedural version to `.claude/skills/archive/dcf-procedural.md`
+
+#### Updated Workflows
+- `new-project`: onboard → architect → premortem (was learn → premortem → review)
+- `debug`: debug → assumptions → simplify (was debug → simplify → decide)
+- `decision`: tradeoffs → challenge → decide (was review → challenge → decide)
+- `session-end`: context-health → compact → retro (was just retro)
+
+#### Treatise Updates
+- Updated skill description to reflect principle-based approach
+- Updated principle count to 16 (was 15)
+- Renumbered Collaboration and Agentic Era principles
+
+---
+
 ## [2.1.0] - 2026-01-17
 
 ### Added

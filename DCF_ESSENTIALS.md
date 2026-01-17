@@ -15,7 +15,7 @@ The Dialectical Cognition Framework is a methodology for **thinking with AI**, n
 
 ---
 
-## The Five Core Principles
+## The Six Core Principles
 
 ### 1. The Thinking Mirror
 
@@ -53,6 +53,7 @@ The 2,400-year-old Socratic method maps directly to AI collaboration:
 | **Maieutics** (drawing out knowledge) | "Help me articulate what I'm trying to express" |
 | **Dialectic** (reasoned argument) | "Present the strongest counterargument" |
 | **Aporia** (productive confusion) | "What am I not seeing about this?" |
+| **Meta-question** (finding the inquiry) | "What question should I be asking?" |
 
 **Practice:** After every AI response, ask at least one challenging question before accepting it.
 
@@ -91,6 +92,16 @@ From Vygotsky: there are things you can do alone, things you can't do at all, an
 **The test:** Does your AI collaboration make you more capable when the AI is gone?
 
 If you're just extracting answers without growth, you're not being scaffolded—you're being carried.
+
+---
+
+### 6. The Meta-Question
+
+> "What question should I be asking?"
+
+Often the most powerful move isn't answering—it's finding the right question. Users are frequently stuck not because they lack answers but because they're asking the wrong question.
+
+**Practice:** End every significant exchange by surfacing what question should come next. This is often more valuable than any answer.
 
 ---
 

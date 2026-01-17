@@ -31,6 +31,9 @@ Examining opposing positions to arrive at truth. In DCF: "What's the strongest a
 ### Aporia (Productive Confusion)
 The state of puzzlement that precedes insight. In DCF: "What am I not seeing about this problem?"
 
+### Meta-Question
+The practice of asking "What question should I be asking?" rather than seeking answers directly. Often the most powerful Socratic move—users are frequently stuck not because they lack answers but because they're asking the wrong question. Elevated to a core principle in DCF.
+
 ---
 
 ## Process Terms
