@@ -209,6 +209,80 @@ The specific synthesis into DCF is new, but the foundations are well-established
 
 ---
 
+## Claude Code Integration
+
+### What is the /dcf skill?
+
+The `/dcf` skill is a Claude Code skill that applies DCF principles directly in your workflow. It provides structured Socratic dialogue for different situations.
+
+### What modes does the /dcf skill have?
+
+```
+/dcf                     # General Socratic questioning
+/dcf review              # Review plans or proposed approaches
+/dcf checkpoint          # Apply DCF at agentic decision points
+/dcf learn <topic>       # Learning and understanding
+/dcf refine              # Iterate on output that needs improvement
+/dcf retro               # End-of-session reflection
+/dcf compact             # Prepare for session compaction
+/dcf skill               # Capture an effective pattern as a reusable skill
+```
+
+### When should I use each mode?
+
+| Mode | Use When |
+|------|----------|
+| `/dcf` | You need general Socratic questioning on any topic |
+| `/dcf review` | An agent presents a plan and you need to evaluate it |
+| `/dcf checkpoint` | You're at a decision point in an agentic workflow |
+| `/dcf learn` | You want to understand something, not just get an answer |
+| `/dcf refine` | Output exists but isn't quite right |
+| `/dcf retro` | End of session—capture what you learned |
+| `/dcf compact` | Session is long and you need to prepare for compaction |
+| `/dcf skill` | You've discovered a pattern worth capturing as a reusable skill |
+
+### How do I install the /dcf skill?
+
+Copy `.claude/skills/dcf.md` from this repository to your project's `.claude/skills/` directory, or to your global Claude Code skills directory.
+
+### What about hooks for automated DCF?
+
+Claude Code hooks can trigger DCF checkpoints automatically. For example, you can configure a hook to prompt for review after every file edit:
+
+```json
+{
+  "hooks": {
+    "post_tool_call": {
+      "Edit": "echo 'File modified. Consider: What assumptions did this change make?'"
+    }
+  }
+}
+```
+
+Hooks enable DCF at scale without manual invocation.
+
+### Which model should I use with DCF?
+
+| Model | Best For | DCF Implication |
+|-------|----------|-----------------|
+| Haiku | Quick searches, exploration | Lower stakes, verify more |
+| Sonnet | Most development work | Balanced engagement |
+| Opus | Architecture, complex judgment | High stakes, deep engagement |
+
+**Principle:** Match model capability to decision stakes.
+
+### How do I manage long sessions?
+
+Use `/dcf compact` before sessions get too long. This guides you through capturing:
+- What was accomplished
+- Open questions remaining
+- Recommended next steps
+- Context that matters for continuity
+
+The output goes to `SESSION_FINDINGS.md` (gitignored) so compaction summaries have explicit material to work with.
+
+---
+
 ## Implementation Questions
 
 ### How do I get my team to adopt DCF?

@@ -330,6 +330,188 @@ Standard Questions:
 
 ---
 
+## DCF + Claude Code Agent Ecosystem
+
+### Agent Types and DCF Engagement
+
+Claude Code provides specialized agents for different purposes. Each requires different DCF engagement:
+
+```
+┌────────────────┬─────────────────────────────────────────────────┐
+│    AGENT       │    DCF ENGAGEMENT                               │
+├────────────────┼─────────────────────────────────────────────────┤
+│                │                                                 │
+│   Explore      │   LOW: Review findings for completeness         │
+│                │   • "Did you search in the right places?"       │
+│                │   • "What might be missing from this picture?"  │
+│                │                                                 │
+├────────────────┼─────────────────────────────────────────────────┤
+│                │                                                 │
+│   Plan         │   HIGH: Full Socratic review                    │
+│                │   • "What alternatives were considered?"        │
+│                │   • "What's the riskiest assumption?"           │
+│                │   • "What would make this approach fail?"       │
+│                │                                                 │
+├────────────────┼─────────────────────────────────────────────────┤
+│                │                                                 │
+│   code-        │   MEDIUM: Evaluate flagged issues               │
+│   reviewer     │   • "Is this a real issue or false positive?"   │
+│                │   • "What's the severity if we ignore this?"    │
+│                │                                                 │
+├────────────────┼─────────────────────────────────────────────────┤
+│                │                                                 │
+│   code-        │   HIGH: Architectural decisions                 │
+│   architect    │   • "What does this design optimize for?"       │
+│                │   • "What would we regret in 6 months?"         │
+│                │                                                 │
+├────────────────┼─────────────────────────────────────────────────┤
+│                │                                                 │
+│   Background   │   DEFERRED: Review when complete                │
+│   agents       │   • Run async, engage with output later         │
+│                │   • Trade real-time engagement for efficiency   │
+│                │                                                 │
+└────────────────┴─────────────────────────────────────────────────┘
+```
+
+### Background Agent Pattern
+
+```
+# Launch background exploration
+"Use the Task tool with run_in_background=true to explore
+the authentication system. I'll review the findings later."
+
+# Continue other work...
+
+# When ready to review (DCF engagement)
+"Show me the background agent output. Before I accept:
+- What did it find that I should pay attention to?
+- What might it have missed given its search approach?"
+```
+
+**Trade-off:** Background agents sacrifice real-time engagement for efficiency. Use for exploration; engage synchronously for judgment calls.
+
+---
+
+## DCF + Hooks (Automated Checkpoints)
+
+### What Are Hooks?
+
+Hooks are shell commands that execute automatically before or after Claude Code tool calls. They enable **automated DCF triggers**.
+
+### Hook-Based DCF Patterns
+
+```json
+// .claude/settings.json
+{
+  "hooks": {
+    "post_tool_call": {
+      "Edit": "echo '⚠️ File modified. DCF check: What assumptions did this change make?'"
+    }
+  }
+}
+```
+
+### Use Cases
+
+| Trigger | Hook Action | DCF Purpose |
+|---------|-------------|-------------|
+| After file edit | Reminder prompt | Surface assumptions in changes |
+| After test run | Result summary | Evaluate test coverage decisions |
+| Before commit | Checklist | Ensure review before permanent action |
+| After plan generation | Question prompt | Trigger plan review |
+
+### Caution
+
+Hooks can create noise. Apply judiciously:
+- **Good:** Reminders for high-stakes operations
+- **Bad:** Alerts on every trivial action
+
+The goal is to automate DCF triggers where you'd forget to apply them manually—not to add friction everywhere.
+
+---
+
+## DCF + Model Selection
+
+### The Principle
+
+**Match model capability to decision stakes.**
+
+Different models have different cost/capability trade-offs. Model selection is itself a DCF decision.
+
+### Decision Guide
+
+```
+                     What are the stakes?
+                           │
+           ┌───────────────┼───────────────┐
+           │               │               │
+           ▼               ▼               ▼
+          LOW           MEDIUM           HIGH
+       (routine)      (standard)      (critical)
+           │               │               │
+           ▼               ▼               ▼
+      ┌────────┐     ┌────────┐     ┌────────┐
+      │ Haiku  │     │ Sonnet │     │  Opus  │
+      └────────┘     └────────┘     └────────┘
+
+```
+
+### Model Selection Matrix
+
+| Task Type | Recommended | DCF Implication |
+|-----------|-------------|-----------------|
+| File search, quick lookup | Haiku | Lower capability = more verification |
+| Standard development | Sonnet | Balanced engagement |
+| Architecture decisions | Opus | High stakes = deep engagement |
+| Code review | Sonnet/Opus | Match to code criticality |
+| Learning new concepts | Opus | Complex reasoning benefits |
+
+### Integration Pattern
+
+```
+# Before starting a task, consider:
+"This task involves [X].
+
+Stakes assessment:
+- Reversibility: [high/medium/low]
+- Complexity: [high/medium/low]
+- Verification difficulty: [high/medium/low]
+
+→ Model selection: [Haiku/Sonnet/Opus]
+→ DCF engagement level: [proportional to stakes]"
+```
+
+---
+
+## Session Lifecycle Integration
+
+### When to Start Fresh vs. Continue
+
+| Situation | Action | Rationale |
+|-----------|--------|-----------|
+| New unrelated task | Fresh session | Clean context |
+| Continuing previous work | Same session | Preserve context |
+| Session feels "heavy" | `/dcf compact`, then fresh | Capture, then clean |
+| Major context shift | Fresh session | Avoid confusion |
+
+### The Compaction Pattern
+
+Long sessions hit context limits. Prepare proactively:
+
+```
+1. Notice session is getting long
+2. Run /dcf compact
+3. Capture findings to SESSION_FINDINGS.md
+4. Start fresh session if needed
+5. New session has explicit context to work with
+```
+
+### DCF Connection
+
+Session management is **anticipatory calibration** applied to context. You're forming an explicit model of "what matters" before the system forces automatic summarization.
+
+---
+
 ## Quick Reference: Framework Pairings
 
 | Framework | DCF Role | Key Integration Point |
@@ -340,6 +522,9 @@ Standard Questions:
 | **12-Factor** | Human-in-the-loop thinking | Where humans intervene |
 | **ACE-FCA** | Audit automatic adaptations | Periodic review |
 | **Chain-of-Thought** | Evaluate reasoning chains | After CoT output |
+| **Agent Ecosystem** | Match engagement to agent type | At agent output review |
+| **Hooks** | Automated checkpoint triggers | Post-tool-call reminders |
+| **Model Selection** | Match capability to stakes | Before starting tasks |
 
 ---
 

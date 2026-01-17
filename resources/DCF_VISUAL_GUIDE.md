@@ -349,5 +349,116 @@ Diagrams and visual references for the Dialectical Cognition Framework.
 
 ---
 
+## The /dcf Skill Modes
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                     /dcf SKILL MODES                                │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│   GENERAL                                                           │
+│   ┌─────────────┐                                                   │
+│   │    /dcf     │  Socratic questioning on any topic                │
+│   └─────────────┘                                                   │
+│                                                                     │
+│   WORKFLOW INTEGRATION                                              │
+│   ┌─────────────┐  ┌──────────────────┐  ┌─────────────┐           │
+│   │ /dcf review │  │ /dcf checkpoint  │  │ /dcf refine │           │
+│   └──────┬──────┘  └────────┬─────────┘  └──────┬──────┘           │
+│          │                  │                   │                   │
+│          ▼                  ▼                   ▼                   │
+│    Evaluate plans     Decision points     Iterate output           │
+│    before approval    in agentic work     toward quality           │
+│                                                                     │
+│   LEARNING & GROWTH                                                 │
+│   ┌──────────────────┐  ┌─────────────┐                            │
+│   │ /dcf learn <X>   │  │ /dcf retro  │                            │
+│   └────────┬─────────┘  └──────┬──────┘                            │
+│            │                   │                                    │
+│            ▼                   ▼                                    │
+│      Understand, don't    End-of-session                           │
+│      just get answers     reflection                                │
+│                                                                     │
+│   SESSION & PATTERN MANAGEMENT                                      │
+│   ┌──────────────┐  ┌─────────────┐                                │
+│   │ /dcf compact │  │ /dcf skill  │                                │
+│   └──────┬───────┘  └──────┬──────┘                                │
+│          │                 │                                        │
+│          ▼                 ▼                                        │
+│    Prepare for        Capture effective                            │
+│    compaction         patterns as skills                           │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Agent Selection Guide
+
+```
+    What are you trying to do?
+              │
+    ┌─────────┴─────────────────────────────────┐
+    │                                           │
+    ▼                                           ▼
+  Understand                                 Execute
+  the codebase                               a task
+    │                                           │
+    ▼                                           │
+┌─────────┐                          ┌─────────┴─────────┐
+│ Explore │                          │                   │
+│  agent  │                          ▼                   ▼
+└─────────┘                     Need design?      Routine work?
+                                     │                   │
+                               ┌─────┴─────┐            │
+                               │           │            │
+                               ▼           ▼            ▼
+                          ┌────────┐  ┌─────────┐  ┌────────────┐
+                          │  Plan  │  │  code-  │  │  Direct    │
+                          │ agent  │  │ reviewer│  │  execution │
+                          └────────┘  └─────────┘  └────────────┘
+
+
+    DCF ENGAGEMENT BY AGENT:
+
+    ┌──────────────┬─────────────────────────────────────┐
+    │ Agent        │ DCF Checkpoint                      │
+    ├──────────────┼─────────────────────────────────────┤
+    │ Explore      │ Review findings for completeness    │
+    │ Plan         │ Full Socratic review of approach    │
+    │ code-reviewer│ Evaluate flagged issues critically  │
+    │ Background   │ Review async output when complete   │
+    └──────────────┴─────────────────────────────────────┘
+```
+
+---
+
+## Model Selection Decision
+
+```
+                        What are the stakes?
+                              │
+              ┌───────────────┼───────────────┐
+              │               │               │
+              ▼               ▼               ▼
+           LOW            MEDIUM           HIGH
+        (routine)       (standard)      (critical)
+              │               │               │
+              ▼               ▼               ▼
+         ┌────────┐     ┌────────┐     ┌────────┐
+         │ Haiku  │     │ Sonnet │     │  Opus  │
+         └────────┘     └────────┘     └────────┘
+              │               │               │
+              ▼               ▼               ▼
+         Quick tasks    Most work      Architecture
+         Exploration    Development    Complex judgment
+         File search    Code changes   Strategic decisions
+
+    PRINCIPLE: Match model capability to decision stakes.
+               Haiku for speed, Opus for depth.
+```
+
+---
+
 *From the Dialectical Cognition Framework (DCF)*
 *https://github.com/domelic/architecture-of-thought*
