@@ -36,7 +36,7 @@ DCF operates at the *micro level* of human-AI interaction—the cognitive strate
 
 ## Resources
 
-Practical tools for applying DCF in your workflow:
+### Practical Tools
 
 | Resource | Description | Use Case |
 |----------|-------------|----------|
@@ -48,6 +48,32 @@ Practical tools for applying DCF in your workflow:
 | [Slide Deck](resources/DCF_SLIDE_DECK.md) | Presentation for teaching DCF | Team training |
 | [Framework Integration](resources/DCF_FRAMEWORK_INTEGRATION.md) | DCF + Ralph, Plan Mode, BMAD | Combining methodologies |
 | [Anti-Patterns Guide](resources/DCF_ANTI_PATTERNS.md) | 10 failure modes with fixes | Avoiding common mistakes |
+
+### Learning & Reference
+
+| Resource | Description | Use Case |
+|----------|-------------|----------|
+| [Example Transcripts](resources/DCF_EXAMPLE_TRANSCRIPTS.md) | 4 annotated real-world conversations | See DCF in action |
+| [FAQ](resources/DCF_FAQ.md) | Comprehensive Q&A | Common questions answered |
+| [Glossary](resources/DCF_GLOSSARY.md) | 40+ term definitions | Quick term lookup |
+| [Reading List](resources/DCF_READING_LIST.md) | Annotated bibliography | Deeper learning paths |
+| [Comparison Matrix](resources/DCF_COMPARISON_MATRIX.md) | DCF vs other methodologies | Choosing approaches |
+
+### Team & Community
+
+| Resource | Description | Use Case |
+|----------|-------------|----------|
+| [Team Adoption Playbook](resources/DCF_TEAM_ADOPTION_PLAYBOOK.md) | 5-phase organizational guide | Rolling out DCF |
+| [Case Study Template](resources/DCF_CASE_STUDY_TEMPLATE.md) | Standardized documentation format | Sharing experiences |
+| [Video/Podcast Script](resources/DCF_VIDEO_SCRIPT.md) | Ready-to-use media script | Content creation |
+| [Research Agenda](resources/DCF_RESEARCH_AGENDA.md) | Open questions & priorities | Academic collaboration |
+
+### Project Files
+
+| File | Description |
+|------|-------------|
+| [CONTRIBUTING.md](CONTRIBUTING.md) | How to contribute to DCF |
+| [CHANGELOG.md](CHANGELOG.md) | Version history and changes |
 
 ---
 
@@ -151,6 +177,8 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 /
 ├── README.md                         # This file
 ├── DCF_ESSENTIALS.md                 # Condensed practitioner's guide
+├── CONTRIBUTING.md                   # Contribution guidelines
+├── CHANGELOG.md                      # Version history
 ├── THE_ARCHITECTURE_OF_THOUGHT.pdf   # Compiled document (150 pages)
 ├── THE_ARCHITECTURE_OF_THOUGHT.tex   # LaTeX source
 ├── references.bib                    # BibTeX bibliography (18 sources)
@@ -165,7 +193,16 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
     ├── DCF_VISUAL_GUIDE.md           # Diagrams and visual references
     ├── DCF_SLIDE_DECK.md             # Presentation slides
     ├── DCF_FRAMEWORK_INTEGRATION.md  # Integration with other frameworks
-    └── DCF_ANTI_PATTERNS.md          # 10 failure modes with fixes
+    ├── DCF_ANTI_PATTERNS.md          # 10 failure modes with fixes
+    ├── DCF_EXAMPLE_TRANSCRIPTS.md    # 4 annotated conversations
+    ├── DCF_FAQ.md                    # Frequently asked questions
+    ├── DCF_GLOSSARY.md               # Term definitions
+    ├── DCF_READING_LIST.md           # Annotated bibliography
+    ├── DCF_COMPARISON_MATRIX.md      # DCF vs other methodologies
+    ├── DCF_TEAM_ADOPTION_PLAYBOOK.md # Organizational adoption guide
+    ├── DCF_CASE_STUDY_TEMPLATE.md    # Documentation template
+    ├── DCF_VIDEO_SCRIPT.md           # Media production script
+    └── DCF_RESEARCH_AGENDA.md        # Open research questions
 ```
 
 ---
