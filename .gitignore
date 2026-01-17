@@ -30,3 +30,6 @@
 *~
 .vscode/
 .idea/
+
+# Private/personal files
+AMAZON_PUBLISHING_GUIDE.md
