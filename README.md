@@ -132,46 +132,37 @@ This work is intended for:
 
 ### Claude Code Skill
 
-This repository includes a `/dcf` skill for Claude Code that applies the framework's principles directly in your workflow:
+This repository includes a `/dcf` skill for Claude Code—a principle-based approach that trusts Claude to apply Socratic questioning contextually:
 
 ```bash
-/dcf                     # General - Socratic questioning on any topic
+/dcf [mode] [context]
 
-# Workflow Integration
-/dcf review              # Review a plan or proposed approach
-/dcf checkpoint          # Apply DCF at an agentic checkpoint
-/dcf refine              # Iterate on output that needs improvement
-/dcf self-review         # Have Claude review its own output
-
-# Debugging & Analysis
-/dcf debug               # Debug with Socratic questioning
-/dcf premortem           # Pre-project failure analysis
-/dcf tradeoffs           # Structured tradeoff analysis
-/dcf assumptions         # Deep excavation of hidden assumptions
-/dcf simplify            # Reduce complexity to essential
-/dcf architect           # Broad exploration to minimal viable change
-
-# Thinking & Learning
-/dcf learn <topic>       # Use DCF for learning/understanding
-/dcf explain             # Teach to test understanding (Feynman technique)
-/dcf onboard             # Guided exploration of unfamiliar codebase/domain
-/dcf retro               # End-of-session reflection and learning capture
-
-# Dialectic & Unblocking
-/dcf challenge           # Steelman the opposite position
-/dcf unstick             # When you're blocked and don't know why
-/dcf diagnose            # Identify which anti-pattern you're falling into
-/dcf decide              # Reach closure when you have options
-
-# Session & Pattern Management
-/dcf compact             # Prepare for session compaction
-/dcf context-health      # Assess and address context rot
-/dcf skill               # Capture an effective pattern as a reusable skill
+# Core modes (outcome-focused, not scripted)
+/dcf                     # General Socratic dialogue
+/dcf review              # Evaluate before committing
+/dcf checkpoint          # Agentic decision point
+/dcf debug               # Question the mental model
+/dcf learn <topic>       # Build understanding through dialogue
+/dcf decide              # Reach closure on a decision
+/dcf unstick             # Break through blocks
+/dcf premortem           # Anticipate failure before starting
+/dcf challenge           # Steelman the opposition
+/dcf simplify            # Find the essential
+/dcf retro               # Capture learning
 ```
 
-**Workflow Composition:** Skills can be chained for common scenarios—e.g., `onboard` → `architect` → `premortem` for new projects, or `tradeoffs` → `challenge` → `decide` for decision points. See the Workflows section in `dcf.md` for recommended sequences.
+**Workflow Automation:** Use the `dcf-workflow` script to chain modes with checkpoints:
 
-To use: copy `.claude/skills/dcf.md` to your project or global Claude Code skills directory.
+```bash
+dcf-workflow new-project              # learn → premortem → review
+dcf-workflow debug "auth timeout"     # debug → simplify → decide
+dcf-workflow decision "API design"    # review → challenge → decide
+```
+
+**Installation:**
+- Copy `.claude/skills/dcf.md` to your project or global Claude Code skills directory
+- Optionally add `.claude/scripts/` to your PATH for workflow automation
+- See `.claude/settings.example.json` for hooks configuration
 
 ---
 
@@ -226,8 +217,14 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ├── THE_ARCHITECTURE_OF_THOUGHT.tex   # LaTeX source
 ├── references.bib                    # BibTeX bibliography (18 sources)
 ├── .claude/
-│   └── skills/
-│       └── dcf.md                    # Claude Code skill for DCF
+│   ├── skills/
+│   │   ├── dcf.md                    # Claude Code skill for DCF (principle-based)
+│   │   └── archive/
+│   │       └── dcf-procedural.md     # Legacy procedural version (22 modes)
+│   ├── scripts/
+│   │   ├── dcf-workflow              # Workflow automation script
+│   │   └── README.md                 # Scripts documentation
+│   └── settings.example.json         # Example hooks configuration
 ├── examples/
 │   ├── README.md                     # Examples overview
 │   ├── CASE_STUDY_debugging_race_condition.md

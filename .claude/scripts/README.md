@@ -1,0 +1,112 @@
+# DCF Scripts
+
+Command-line tools for DCF workflow automation.
+
+## Installation
+
+Add to your PATH:
+
+```bash
+export PATH="$PATH:/path/to/ai-research/.claude/scripts"
+```
+
+Or create a symlink:
+
+```bash
+ln -s /path/to/ai-research/.claude/scripts/dcf-workflow /usr/local/bin/dcf-workflow
+```
+
+## dcf-workflow
+
+Chains DCF skill modes with checkpoints between steps.
+
+### Usage
+
+```bash
+# Predefined workflows
+dcf-workflow new-project
+dcf-workflow debug "investigating auth timeout"
+dcf-workflow decision "REST vs GraphQL"
+
+# Custom workflows
+dcf-workflow learn premortem review "new payment feature"
+dcf-workflow debug simplify decide
+
+# Options
+dcf-workflow --list      # Show available workflows
+dcf-workflow --help      # Show help
+dcf-workflow --dry-run debug  # Show what would run
+```
+
+### Predefined Workflows
+
+| Workflow | Sequence | When to Use |
+|----------|----------|-------------|
+| `new-project` | learn → premortem → review | Starting unfamiliar work |
+| `debug` | debug → simplify → decide | Bug isn't where you think |
+| `decision` | review → challenge → decide | Choosing between options |
+| `learning` | learn → challenge → retro | Building deep understanding |
+| `unstuck` | unstick → simplify → decide | Progress has stalled |
+| `session-end` | retro | Wrapping up a session |
+| `code-review` | review → challenge | Evaluating proposals |
+| `pre-implementation` | premortem → review | Before building |
+
+### How It Works
+
+1. Shows the workflow sequence
+2. For each mode:
+   - Displays the `/dcf` command to run
+   - Copies to clipboard (if available)
+   - Waits for you to complete in Claude Code
+3. Between modes:
+   - Checkpoint prompt
+   - Opportunity to branch or stop
+
+### Example Session
+
+```
+$ dcf-workflow decision "monorepo vs polyrepo"
+
+DCF Workflow
+════════════
+
+  Sequence: review → challenge → decide
+  Context:  monorepo vs polyrepo
+
+This workflow has 3 steps with checkpoints between each.
+Press Enter to begin...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+▶ DCF Mode: review
+  Context: monorepo vs polyrepo
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Run in Claude Code:
+
+  /dcf review monorepo vs polyrepo
+
+(Copied to clipboard)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+▋ CHECKPOINT
+
+  Before proceeding to 'challenge':
+  • Did the previous mode achieve its outcome?
+  • What insights emerged that inform the next step?
+  • Should you branch to a different mode instead?
+
+  Press Enter to continue, or Ctrl+C to stop...
+```
+
+## Creating Custom Scripts
+
+You can create your own workflow scripts:
+
+```bash
+#!/bin/bash
+# my-workflow.sh
+
+dcf-workflow learn premortem review "$@"
+```
+
+Or call modes directly in your own automation.

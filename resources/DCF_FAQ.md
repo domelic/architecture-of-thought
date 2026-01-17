@@ -213,92 +213,77 @@ The specific synthesis into DCF is new, but the foundations are well-established
 
 ### What is the /dcf skill?
 
-The `/dcf` skill is a Claude Code skill that applies DCF principles directly in your workflow. It provides structured Socratic dialogue for different situations.
+The `/dcf` skill is a principle-based Claude Code skill that applies DCF's Socratic questioning contextually. Unlike scripted skills with rigid steps, it trusts Claude to adapt questioning to the actual situation.
 
 ### What modes does the /dcf skill have?
 
 ```
-/dcf                     # General - Socratic questioning on any topic
+/dcf [mode] [context]
 
-# Workflow Integration
-/dcf review              # Review plans or proposed approaches
-/dcf checkpoint          # Apply DCF at agentic decision points
-/dcf refine              # Iterate on output that needs improvement
-/dcf self-review         # Have Claude review its own output
-
-# Debugging & Analysis
-/dcf debug               # Debug with Socratic questioning
-/dcf premortem           # Pre-project failure analysis
-/dcf tradeoffs           # Structured tradeoff analysis
-/dcf assumptions         # Deep excavation of hidden assumptions
-/dcf simplify            # Reduce complexity to essential
-/dcf architect           # Broad exploration to minimal viable change
-
-# Thinking & Learning
-/dcf learn <topic>       # Learning and understanding
-/dcf explain             # Teach to test understanding (Feynman technique)
-/dcf onboard             # Guided exploration of unfamiliar codebase/domain
-/dcf retro               # End-of-session reflection
-
-# Dialectic & Unblocking
-/dcf challenge           # Steelman the opposite position
-/dcf unstick             # When you're blocked and don't know why
-/dcf diagnose            # Identify which anti-pattern you're falling into
-/dcf decide              # Reach closure when you have options
-
-# Session & Pattern Management
-/dcf compact             # Prepare for session compaction
-/dcf context-health      # Assess and address context rot
-/dcf skill               # Capture an effective pattern as a reusable skill
+/dcf                     # General Socratic dialogue
+/dcf review              # Evaluate before committing
+/dcf checkpoint          # Agentic decision point
+/dcf debug               # Question the mental model
+/dcf learn <topic>       # Build understanding through dialogue
+/dcf decide              # Reach closure on a decision
+/dcf unstick             # Break through blocks
+/dcf premortem           # Anticipate failure before starting
+/dcf challenge           # Steelman the opposition
+/dcf simplify            # Find the essential
+/dcf retro               # Capture learning
 ```
 
 ### When should I use each mode?
 
 | Mode | Use When |
 |------|----------|
-| **General** | |
-| `/dcf` | You need general Socratic questioning on any topic |
-| **Workflow Integration** | |
-| `/dcf review` | An agent presents a plan and you need to evaluate it |
-| `/dcf checkpoint` | You're at a decision point in an agentic workflow |
-| `/dcf refine` | Output exists but isn't quite right |
-| `/dcf self-review` | You want Claude to review what it just produced |
-| **Debugging & Analysis** | |
-| `/dcf debug` | You're debugging and want to examine your mental model of the code |
-| `/dcf premortem` | Before starting a project—imagine it failed, work backward |
-| `/dcf tradeoffs` | You're choosing between options with hidden costs |
-| `/dcf assumptions` | You suspect hidden assumptions but can't identify them |
+| `/dcf` | General Socratic questioning on any topic |
+| `/dcf review` | Evaluating a plan, proposal, or code before committing |
+| `/dcf checkpoint` | At an agentic decision point requiring approval |
+| `/dcf debug` | Debugging—examine your mental model, not just the code |
+| `/dcf learn` | You want to understand deeply, not just get information |
+| `/dcf decide` | Analysis is complete but you're having trouble committing |
+| `/dcf unstick` | You're blocked and don't know what question to ask |
+| `/dcf premortem` | Before starting—imagine failure and work backward |
+| `/dcf challenge` | Strengthen your position by arguing against it |
 | `/dcf simplify` | A solution has grown unwieldy and needs reduction |
-| `/dcf architect` | You need to explore broadly before narrowing to MVP |
-| **Thinking & Learning** | |
-| `/dcf learn` | You want to understand something, not just get an answer |
-| `/dcf explain` | You want to test your understanding by teaching |
-| `/dcf onboard` | You're exploring an unfamiliar codebase or domain |
 | `/dcf retro` | End of session—capture what you learned |
-| **Dialectic & Unblocking** | |
-| `/dcf challenge` | You want to strengthen your position by arguing against it |
-| `/dcf unstick` | You're blocked and don't even know what question to ask |
-| `/dcf diagnose` | You suspect you're falling into an anti-pattern |
-| `/dcf decide` | Analysis is done but you're having trouble committing |
-| **Session & Pattern Management** | |
-| `/dcf compact` | Session is long and you need to prepare for compaction |
-| `/dcf context-health` | You suspect context rot or want proactive session hygiene |
-| `/dcf skill` | You've discovered a pattern worth capturing as a reusable skill |
+
+### What about the procedural version with 22 modes?
+
+The original procedural version with scripted steps for each of 22 modes is archived at `.claude/skills/archive/dcf-procedural.md`. The current version is principle-based, trusting Claude to apply Socratic questioning contextually rather than following rigid scripts.
+
+### How do I chain modes together?
+
+Use the `dcf-workflow` script for workflow automation:
+
+```bash
+dcf-workflow new-project              # learn → premortem → review
+dcf-workflow debug "auth timeout"     # debug → simplify → decide
+dcf-workflow decision "API design"    # review → challenge → decide
+```
+
+See `.claude/scripts/README.md` for full documentation.
 
 ### How do I install the /dcf skill?
 
-Copy `.claude/skills/dcf.md` from this repository to your project's `.claude/skills/` directory, or to your global Claude Code skills directory.
+1. Copy `.claude/skills/dcf.md` to your project's `.claude/skills/` directory
+2. Optionally add `.claude/scripts/` to your PATH for workflow automation
+3. See `.claude/settings.example.json` for hooks configuration
 
 ### What about hooks for automated DCF?
 
-Claude Code hooks can trigger DCF checkpoints automatically. For example, you can configure a hook to prompt for review after every file edit:
+Claude Code hooks can trigger DCF checkpoints automatically. See `.claude/settings.example.json` for a complete example:
 
 ```json
 {
   "hooks": {
-    "post_tool_call": {
-      "Edit": "echo 'File modified. Consider: What assumptions did this change make?'"
-    }
+    "post_tool_call": [
+      {
+        "tool": "Edit",
+        "command": "echo '💭 DCF Checkpoint: What assumptions did this edit make?'"
+      }
+    ]
   }
 }
 ```
@@ -315,26 +300,26 @@ Hooks enable DCF at scale without manual invocation.
 
 **Principle:** Match model capability to decision stakes.
 
-### How do I chain skills together for complex scenarios?
+### How do I chain modes together for complex scenarios?
 
-Use the **Workflows** section in the `/dcf` skill for recommended sequences:
+Use the `dcf-workflow` script to chain modes with checkpoints:
 
-| Scenario | Sequence |
-|----------|----------|
-| **New Project** | `onboard` → `architect` → `premortem` |
-| **Deep Debug** | `debug` → `assumptions` → `simplify` |
-| **Decision Point** | `tradeoffs` → `challenge` → `decide` |
-| **Learning Arc** | `learn` → `explain` → `retro` |
-| **Getting Unstuck** | `diagnose` → `unstick` → `simplify` |
-| **Session End** | `context-health` → `compact` → `retro` |
+```bash
+dcf-workflow new-project              # learn → premortem → review
+dcf-workflow debug "auth issue"       # debug → simplify → decide
+dcf-workflow decision "API design"    # review → challenge → decide
+dcf-workflow learning "rust ownership"# learn → challenge → retro
+dcf-workflow unstuck                  # unstick → simplify → decide
+dcf-workflow session-end              # retro
+```
 
-Each skill also includes **See also** suggestions at the end of its instructions, showing related skills that chain well.
+The script provides checkpoints between each mode, prompting you to reflect before proceeding.
 
-**Key principle:** Skills remain atomic—invoke each deliberately. The sequence is guidance, not automation. Each transition is a checkpoint where you engage fully before moving on.
+**Key principle:** Modes remain atomic—each transition is a checkpoint where you engage fully before moving on.
 
 ### How do I manage long sessions?
 
-Use `/dcf compact` before sessions get too long. This guides you through capturing:
+Use `/dcf retro` at the end of sessions to capture:
 - What was accomplished
 - Open questions remaining
 - Recommended next steps

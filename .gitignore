@@ -24,6 +24,9 @@
 .claude/
 !.claude/skills/
 !.claude/skills/**
+!.claude/scripts/
+!.claude/scripts/**
+!.claude/settings.example.json
 .playwright-mcp/
 
 # Editor files

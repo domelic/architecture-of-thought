@@ -172,20 +172,35 @@ You (DCF): "Before I approve:
 
 **Principle:** Match model capability to decision stakes.
 
-### Skill Workflows
+### The /dcf Skill
 
-The `/dcf` skill has 22 modes that can be chained for common scenarios:
+The `/dcf` skill is **principle-based**, not scripted. Each mode has an outcome, not a script:
 
-| Scenario | Sequence | Purpose |
-|----------|----------|---------|
-| New Project | `onboard` → `architect` → `premortem` | Navigate unfamiliar territory |
-| Deep Debug | `debug` → `assumptions` → `simplify` | Bug isn't where you think |
-| Decision Point | `tradeoffs` → `challenge` → `decide` | Choose and commit |
-| Learning Arc | `learn` → `explain` → `retro` | Build real understanding |
-| Getting Unstuck | `diagnose` → `unstick` → `simplify` | Break through blocks |
-| Session End | `context-health` → `compact` → `retro` | Clean exit |
+```
+/dcf [mode] [context]
 
-**Principle:** Skills remain atomic—invoke each deliberately. Sequences are guidance, not automation. Each transition is a checkpoint.
+/dcf                  # General Socratic dialogue
+/dcf review           # Evaluate before committing
+/dcf checkpoint       # Agentic decision point
+/dcf debug            # Question the mental model
+/dcf learn <topic>    # Build understanding through dialogue
+/dcf decide           # Reach closure on a decision
+/dcf unstick          # Break through blocks
+/dcf premortem        # Anticipate failure before starting
+/dcf challenge        # Steelman the opposition
+/dcf simplify         # Find the essential
+/dcf retro            # Capture learning
+```
+
+**Workflow Automation:** Use `dcf-workflow` to chain modes with checkpoints:
+
+```bash
+dcf-workflow new-project    # learn → premortem → review
+dcf-workflow debug          # debug → simplify → decide
+dcf-workflow decision       # review → challenge → decide
+```
+
+**Principle:** Claude adapts Socratic questioning to the actual situation—no rigid scripts.
 
 ---
 

@@ -1,0 +1,194 @@
+#!/bin/bash
+# DCF Workflow Runner
+# Chains DCF skill modes with checkpoints between steps
+
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+# Predefined workflows
+declare -A WORKFLOWS
+WORKFLOWS["new-project"]="learn premortem review"
+WORKFLOWS["debug"]="debug simplify decide"
+WORKFLOWS["decision"]="review challenge decide"
+WORKFLOWS["learning"]="learn challenge retro"
+WORKFLOWS["unstuck"]="unstick simplify decide"
+WORKFLOWS["session-end"]="retro"
+WORKFLOWS["code-review"]="review challenge"
+WORKFLOWS["pre-implementation"]="premortem review"
+
+show_help() {
+    echo "DCF Workflow Runner"
+    echo ""
+    echo "Usage: dcf-workflow <workflow|modes...> [context]"
+    echo ""
+    echo "Predefined Workflows:"
+    echo "  new-project        learn → premortem → review"
+    echo "  debug              debug → simplify → decide"
+    echo "  decision           review → challenge → decide"
+    echo "  learning           learn → challenge → retro"
+    echo "  unstuck            unstick → simplify → decide"
+    echo "  session-end        retro"
+    echo "  code-review        review → challenge"
+    echo "  pre-implementation premortem → review"
+    echo ""
+    echo "Custom Workflow:"
+    echo "  dcf-workflow debug simplify decide \"investigating auth bug\""
+    echo ""
+    echo "Options:"
+    echo "  -h, --help     Show this help"
+    echo "  -l, --list     List available workflows"
+    echo "  -d, --dry-run  Show what would be executed"
+    echo ""
+    echo "Examples:"
+    echo "  dcf-workflow new-project"
+    echo "  dcf-workflow decision \"API design choice\""
+    echo "  dcf-workflow learn premortem \"starting new feature\""
+}
+
+list_workflows() {
+    echo "Available Workflows:"
+    echo ""
+    for workflow in "${!WORKFLOWS[@]}"; do
+        modes="${WORKFLOWS[$workflow]}"
+        formatted=$(echo "$modes" | tr ' ' ' → ')
+        printf "  %-20s %s\n" "$workflow" "$formatted"
+    done
+}
+
+run_mode() {
+    local mode=$1
+    local context=$2
+
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${GREEN}▶ DCF Mode: ${mode}${NC}"
+    if [ -n "$context" ]; then
+        echo -e "${YELLOW}  Context: ${context}${NC}"
+    fi
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo ""
+
+    # Build the command
+    if [ -n "$context" ]; then
+        cmd="/dcf ${mode} ${context}"
+    else
+        cmd="/dcf ${mode}"
+    fi
+
+    echo -e "${YELLOW}Run in Claude Code:${NC}"
+    echo ""
+    echo "  $cmd"
+    echo ""
+
+    # Copy to clipboard if available
+    if command -v pbcopy &> /dev/null; then
+        echo -n "$cmd" | pbcopy
+        echo -e "${GREEN}(Copied to clipboard)${NC}"
+    elif command -v xclip &> /dev/null; then
+        echo -n "$cmd" | xclip -selection clipboard
+        echo -e "${GREEN}(Copied to clipboard)${NC}"
+    fi
+    echo ""
+}
+
+checkpoint() {
+    local next_mode=$1
+
+    echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${YELLOW}▋ CHECKPOINT${NC}"
+    echo ""
+    echo "  Before proceeding to '${next_mode}':"
+    echo "  • Did the previous mode achieve its outcome?"
+    echo "  • What insights emerged that inform the next step?"
+    echo "  • Should you branch to a different mode instead?"
+    echo ""
+    read -p "  Press Enter to continue, or Ctrl+C to stop... "
+    echo ""
+}
+
+# Parse arguments
+DRY_RUN=false
+MODES=()
+CONTEXT=""
+
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -h|--help)
+            show_help
+            exit 0
+            ;;
+        -l|--list)
+            list_workflows
+            exit 0
+            ;;
+        -d|--dry-run)
+            DRY_RUN=true
+            shift
+            ;;
+        *)
+            # Check if it's a predefined workflow
+            if [ -n "${WORKFLOWS[$1]}" ] && [ ${#MODES[@]} -eq 0 ]; then
+                IFS=' ' read -ra MODES <<< "${WORKFLOWS[$1]}"
+            # Check if it looks like a mode (no spaces, short)
+            elif [[ "$1" =~ ^[a-z-]+$ ]] && [ ${#1} -lt 20 ]; then
+                MODES+=("$1")
+            else
+                # Treat as context
+                CONTEXT="$1"
+            fi
+            shift
+            ;;
+    esac
+done
+
+# Validate we have modes
+if [ ${#MODES[@]} -eq 0 ]; then
+    echo -e "${RED}Error: No workflow or modes specified${NC}"
+    echo ""
+    show_help
+    exit 1
+fi
+
+# Display workflow plan
+echo ""
+echo -e "${GREEN}DCF Workflow${NC}"
+echo -e "${GREEN}════════════${NC}"
+echo ""
+echo -e "  Sequence: ${MODES[*]}" | sed 's/ / → /g'
+if [ -n "$CONTEXT" ]; then
+    echo -e "  Context:  $CONTEXT"
+fi
+echo ""
+
+if [ "$DRY_RUN" = true ]; then
+    echo -e "${YELLOW}(Dry run - commands not executed)${NC}"
+    exit 0
+fi
+
+echo -e "${YELLOW}This workflow has ${#MODES[@]} steps with checkpoints between each.${NC}"
+read -p "Press Enter to begin... "
+echo ""
+
+# Execute workflow
+for i in "${!MODES[@]}"; do
+    mode="${MODES[$i]}"
+
+    run_mode "$mode" "$CONTEXT"
+
+    # Checkpoint between modes (not after last)
+    if [ $i -lt $((${#MODES[@]} - 1)) ]; then
+        next_mode="${MODES[$((i + 1))]}"
+        checkpoint "$next_mode"
+    fi
+done
+
+echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${GREEN}✓ Workflow complete${NC}"
+echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"

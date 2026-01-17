@@ -351,161 +351,61 @@ Diagrams and visual references for the Dialectical Cognition Framework.
 
 ## The /dcf Skill Modes
 
+The skill is **principle-based**, not scripted. Each mode has an **outcome**, not a script.
+
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                     /dcf SKILL MODES (22 total)                     │
+│                    /dcf SKILL MODES (Principle-Based)               │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                     │
-│   GENERAL                                                           │
-│   ┌─────────────┐                                                   │
-│   │    /dcf     │  Socratic questioning on any topic                │
-│   └─────────────┘                                                   │
+│   /dcf [mode] [context]                                             │
 │                                                                     │
-│   WORKFLOW INTEGRATION                                              │
-│   ┌─────────────┐  ┌──────────────────┐  ┌─────────────┐           │
-│   │ /dcf review │  │ /dcf checkpoint  │  │ /dcf refine │           │
-│   └──────┬──────┘  └────────┬─────────┘  └──────┬──────┘           │
-│          │                  │                   │                   │
-│          ▼                  ▼                   ▼                   │
-│    Evaluate plans     Decision points     Iterate output           │
-│    before approval    in agentic work     toward quality           │
+│   ┌─────────────────────────────────────────────────────────────┐   │
+│   │                                                             │   │
+│   │    /dcf                General Socratic dialogue            │   │
+│   │    /dcf review         Evaluate before committing           │   │
+│   │    /dcf checkpoint     Agentic decision point               │   │
+│   │    /dcf debug          Question the mental model            │   │
+│   │    /dcf learn <topic>  Build understanding through dialogue │   │
+│   │    /dcf decide         Reach closure on a decision          │   │
+│   │    /dcf unstick        Break through blocks                 │   │
+│   │    /dcf premortem      Anticipate failure before starting   │   │
+│   │    /dcf challenge      Steelman the opposition              │   │
+│   │    /dcf simplify       Find the essential                   │   │
+│   │    /dcf retro          Capture learning                     │   │
+│   │                                                             │   │
+│   └─────────────────────────────────────────────────────────────┘   │
 │                                                                     │
-│   ┌──────────────────┐                                              │
-│   │ /dcf self-review │  Have Claude review its own output           │
-│   └──────────────────┘                                              │
+│   KEY PRINCIPLE:                                                    │
+│   Each mode describes an OUTCOME, not a script.                     │
+│   Claude adapts Socratic questioning to the actual situation.       │
 │                                                                     │
-│   DEBUGGING & ANALYSIS                                              │
-│   ┌─────────────┐  ┌────────────────┐  ┌────────────────┐          │
-│   │ /dcf debug  │  │ /dcf premortem │  │ /dcf tradeoffs │          │
-│   └──────┬──────┘  └───────┬────────┘  └───────┬────────┘          │
-│          │                 │                   │                    │
-│          ▼                 ▼                   ▼                    │
-│    Question mental    Imagine failure,    Make implicit            │
-│    model of code      work backward       choices explicit         │
-│                                                                     │
-│   ┌──────────────────┐  ┌───────────────┐                          │
-│   │ /dcf assumptions │  │ /dcf simplify │                          │
-│   └────────┬─────────┘  └───────┬───────┘                          │
-│            │                    │                                   │
-│            ▼                    ▼                                   │
-│      Deep excavation      Reduce complexity                        │
-│      of hidden assumptions to essential                            │
-│                                                                     │
-│   ┌─────────────────┐                                               │
-│   │ /dcf architect  │  Broad exploration → Minimal viable change    │
-│   └─────────────────┘  (The Architectural Funnel)                   │
-│                                                                     │
-│   THINKING & LEARNING                                               │
-│   ┌──────────────────┐  ┌─────────────┐  ┌───────────────┐         │
-│   │ /dcf learn <X>   │  │ /dcf retro  │  │ /dcf explain  │         │
-│   └────────┬─────────┘  └──────┬──────┘  └───────┬───────┘         │
-│            │                   │                 │                  │
-│            ▼                   ▼                 ▼                  │
-│      Understand, don't    End-of-session   Teach to test           │
-│      just get answers     reflection       understanding           │
-│                                                                     │
-│   ┌──────────────┐                                                  │
-│   │ /dcf onboard │  Guided exploration of unfamiliar territory     │
-│   └──────────────┘                                                  │
-│                                                                     │
-│   DIALECTIC & UNBLOCKING                                            │
-│   ┌───────────────┐  ┌──────────────┐  ┌────────────────┐          │
-│   │ /dcf challenge│  │ /dcf unstick │  │ /dcf diagnose  │          │
-│   └───────┬───────┘  └──────┬───────┘  └───────┬────────┘          │
-│           │                 │                  │                    │
-│           ▼                 ▼                  ▼                    │
-│     Steelman the       Use confusion     Identify which            │
-│     opposite view      productively      anti-pattern              │
-│                                                                     │
-│   ┌─────────────┐                                                   │
-│   │ /dcf decide │  Reach closure when analysis is complete         │
-│   └─────────────┘
-│                                                                     │
-│   SESSION & PATTERN MANAGEMENT                                      │
-│   ┌──────────────┐  ┌────────────────────┐  ┌─────────────┐        │
-│   │ /dcf compact │  │ /dcf context-health│  │ /dcf skill  │        │
-│   └──────┬───────┘  └─────────┬──────────┘  └──────┬──────┘        │
-│          │                    │                    │                │
-│          ▼                    ▼                    ▼                │
-│    Prepare for          Assess and           Capture effective     │
-│    compaction           address rot          patterns as skills    │
+│   ARCHIVED: 22-mode procedural version at                           │
+│   .claude/skills/archive/dcf-procedural.md                          │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## Skill Workflows
+## Workflow Automation
 
-Skills can be chained for common scenarios. Each transition is a checkpoint—engage fully before proceeding.
+Use `dcf-workflow` to chain modes with checkpoints:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                    RECOMMENDED SKILL WORKFLOWS                       │
+│                        dcf-workflow <scenario>                       │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                     │
-│   NEW PROJECT                                                       │
-│   ┌──────────┐      ┌───────────┐      ┌────────────┐              │
-│   │ onboard  │ ───► │ architect │ ───► │ premortem  │              │
-│   └──────────┘      └───────────┘      └────────────┘              │
-│        │                  │                   │                     │
-│   "Where am I?"    "What to build?"   "What could fail?"           │
+│   new-project     learn ──► premortem ──► review                    │
+│   debug           debug ──► simplify ──► decide                     │
+│   decision        review ──► challenge ──► decide                   │
+│   learning        learn ──► challenge ──► retro                     │
+│   unstuck         unstick ──► simplify ──► decide                   │
+│   session-end     retro                                             │
 │                                                                     │
-│   DEEP DEBUG                                                        │
-│   ┌──────────┐      ┌─────────────┐      ┌──────────┐              │
-│   │  debug   │ ───► │ assumptions │ ───► │ simplify │              │
-│   └──────────┘      └─────────────┘      └──────────┘              │
-│        │                   │                   │                    │
-│   "Question model"   "What's hidden?"   "What's essential?"        │
-│                                                                     │
-│   DECISION POINT                                                    │
-│   ┌───────────┐      ┌───────────┐      ┌──────────┐               │
-│   │ tradeoffs │ ───► │ challenge │ ───► │  decide  │               │
-│   └───────────┘      └───────────┘      └──────────┘               │
-│        │                   │                  │                     │
-│   "What's traded?"   "Opposite view?"   "Commit now"               │
-│                                                                     │
-│   LEARNING ARC                                                      │
-│   ┌──────────┐      ┌───────────┐      ┌──────────┐                │
-│   │  learn   │ ───► │  explain  │ ───► │  retro   │                │
-│   └──────────┘      └───────────┘      └──────────┘                │
-│        │                  │                  │                      │
-│   "Understand"      "Teach it back"    "What stuck?"               │
-│                                                                     │
-│   GETTING UNSTUCK                                                   │
-│   ┌───────────┐      ┌──────────┐      ┌──────────┐                │
-│   │ diagnose  │ ───► │ unstick  │ ───► │ simplify │                │
-│   └───────────┘      └──────────┘      └──────────┘                │
-│        │                  │                  │                      │
-│   "Which pattern?"   "Break block"     "Find essence"              │
-│                                                                     │
-│   SESSION END                                                       │
-│   ┌────────────────┐      ┌──────────┐      ┌──────────┐           │
-│   │ context-health │ ───► │ compact  │ ───► │  retro   │           │
-│   └────────────────┘      └──────────┘      └──────────┘           │
-│          │                     │                  │                 │
-│   "Context clean?"       "Capture state"    "What learned?"        │
-│                                                                     │
-│   CODE REVIEW                                                       │
-│   ┌──────────┐      ┌─────────────┐      ┌───────────┐             │
-│   │  review  │ ───► │ assumptions │ ───► │ challenge │             │
-│   └──────────┘      └─────────────┘      └───────────┘             │
-│        │                   │                   │                    │
-│   "Evaluate plan"    "What's hidden?"    "Opposite view?"          │
-│                                                                     │
-│   PRE-IMPLEMENTATION                                                │
-│   ┌───────────┐      ┌───────────┐      ┌────────────┐             │
-│   │ architect │ ───► │ tradeoffs │ ───► │ premortem  │             │
-│   └───────────┘      └───────────┘      └────────────┘             │
-│        │                  │                    │                    │
-│   "Explore broadly"  "What's traded?"   "What could fail?"         │
-│                                                                     │
-├─────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│   KEY PRINCIPLE:                                                    │
-│   Skills remain atomic. Invoke each deliberately.                   │
-│   The sequence is guidance, not automation.                         │
-│   Each arrow (───►) is a checkpoint where you engage fully.        │
+│   Each arrow (──►) is a CHECKPOINT where you engage fully           │
+│   before proceeding to the next mode.                               │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
 ```
