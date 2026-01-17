@@ -172,6 +172,21 @@ You (DCF): "Before I approve:
 
 **Principle:** Match model capability to decision stakes.
 
+### Skill Workflows
+
+The `/dcf` skill has 22 modes that can be chained for common scenarios:
+
+| Scenario | Sequence | Purpose |
+|----------|----------|---------|
+| New Project | `onboard` → `architect` → `premortem` | Navigate unfamiliar territory |
+| Deep Debug | `debug` → `assumptions` → `simplify` | Bug isn't where you think |
+| Decision Point | `tradeoffs` → `challenge` → `decide` | Choose and commit |
+| Learning Arc | `learn` → `explain` → `retro` | Build real understanding |
+| Getting Unstuck | `diagnose` → `unstick` → `simplify` | Break through blocks |
+| Session End | `context-health` → `compact` → `retro` | Clean exit |
+
+**Principle:** Skills remain atomic—invoke each deliberately. Sequences are guidance, not automation. Each transition is a checkpoint.
+
 ---
 
 ## Quick Reference: Socratic Prompts

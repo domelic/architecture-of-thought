@@ -169,6 +169,8 @@ This repository includes a `/dcf` skill for Claude Code that applies the framewo
 /dcf skill               # Capture an effective pattern as a reusable skill
 ```
 
+**Workflow Composition:** Skills can be chained for common scenarios—e.g., `onboard` → `architect` → `premortem` for new projects, or `tradeoffs` → `challenge` → `decide` for decision points. See the Workflows section in `dcf.md` for recommended sequences.
+
 To use: copy `.claude/skills/dcf.md` to your project or global Claude Code skills directory.
 
 ---

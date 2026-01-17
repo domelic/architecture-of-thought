@@ -435,6 +435,83 @@ Diagrams and visual references for the Dialectical Cognition Framework.
 
 ---
 
+## Skill Workflows
+
+Skills can be chained for common scenarios. Each transition is a checkpoint—engage fully before proceeding.
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                    RECOMMENDED SKILL WORKFLOWS                       │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│   NEW PROJECT                                                       │
+│   ┌──────────┐      ┌───────────┐      ┌────────────┐              │
+│   │ onboard  │ ───► │ architect │ ───► │ premortem  │              │
+│   └──────────┘      └───────────┘      └────────────┘              │
+│        │                  │                   │                     │
+│   "Where am I?"    "What to build?"   "What could fail?"           │
+│                                                                     │
+│   DEEP DEBUG                                                        │
+│   ┌──────────┐      ┌─────────────┐      ┌──────────┐              │
+│   │  debug   │ ───► │ assumptions │ ───► │ simplify │              │
+│   └──────────┘      └─────────────┘      └──────────┘              │
+│        │                   │                   │                    │
+│   "Question model"   "What's hidden?"   "What's essential?"        │
+│                                                                     │
+│   DECISION POINT                                                    │
+│   ┌───────────┐      ┌───────────┐      ┌──────────┐               │
+│   │ tradeoffs │ ───► │ challenge │ ───► │  decide  │               │
+│   └───────────┘      └───────────┘      └──────────┘               │
+│        │                   │                  │                     │
+│   "What's traded?"   "Opposite view?"   "Commit now"               │
+│                                                                     │
+│   LEARNING ARC                                                      │
+│   ┌──────────┐      ┌───────────┐      ┌──────────┐                │
+│   │  learn   │ ───► │  explain  │ ───► │  retro   │                │
+│   └──────────┘      └───────────┘      └──────────┘                │
+│        │                  │                  │                      │
+│   "Understand"      "Teach it back"    "What stuck?"               │
+│                                                                     │
+│   GETTING UNSTUCK                                                   │
+│   ┌───────────┐      ┌──────────┐      ┌──────────┐                │
+│   │ diagnose  │ ───► │ unstick  │ ───► │ simplify │                │
+│   └───────────┘      └──────────┘      └──────────┘                │
+│        │                  │                  │                      │
+│   "Which pattern?"   "Break block"     "Find essence"              │
+│                                                                     │
+│   SESSION END                                                       │
+│   ┌────────────────┐      ┌──────────┐      ┌──────────┐           │
+│   │ context-health │ ───► │ compact  │ ───► │  retro   │           │
+│   └────────────────┘      └──────────┘      └──────────┘           │
+│          │                     │                  │                 │
+│   "Context clean?"       "Capture state"    "What learned?"        │
+│                                                                     │
+│   CODE REVIEW                                                       │
+│   ┌──────────┐      ┌─────────────┐      ┌───────────┐             │
+│   │  review  │ ───► │ assumptions │ ───► │ challenge │             │
+│   └──────────┘      └─────────────┘      └───────────┘             │
+│        │                   │                   │                    │
+│   "Evaluate plan"    "What's hidden?"    "Opposite view?"          │
+│                                                                     │
+│   PRE-IMPLEMENTATION                                                │
+│   ┌───────────┐      ┌───────────┐      ┌────────────┐             │
+│   │ architect │ ───► │ tradeoffs │ ───► │ premortem  │             │
+│   └───────────┘      └───────────┘      └────────────┘             │
+│        │                  │                    │                    │
+│   "Explore broadly"  "What's traded?"   "What could fail?"         │
+│                                                                     │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│   KEY PRINCIPLE:                                                    │
+│   Skills remain atomic. Invoke each deliberately.                   │
+│   The sequence is guidance, not automation.                         │
+│   Each arrow (───►) is a checkpoint where you engage fully.        │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
 ## Agent Selection Guide
 
 ```
