@@ -3,6 +3,7 @@
 **The Dialectical Cognition Framework (DCF): A Treatise on Human-AI Collaboration in the Agentic Era**
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18275170.svg)](https://doi.org/10.5281/zenodo.18275170)
+[![GitHub release](https://img.shields.io/github/v/release/domelic/architecture-of-thought)](https://github.com/domelic/architecture-of-thought/releases/latest)
 [![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-red.svg)](LICENSE)
 [![Pages](https://img.shields.io/badge/Pages-180-blue.svg)](THE_ARCHITECTURE_OF_THOUGHT.pdf)
 [![LaTeX](https://img.shields.io/badge/Format-LaTeX-green.svg)](THE_ARCHITECTURE_OF_THOUGHT.tex)
