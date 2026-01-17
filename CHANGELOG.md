@@ -12,7 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
-## [3.0.0] - 2026-01-17
+## [2.0.0] - 2026-01-17
 
 ### Added
 
@@ -82,40 +82,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Fixed
 - Completed DCF_CASE_STUDY_TEMPLATE.md (was truncated)
-
----
-
-## [2.0.0] - 2026-01-16
-
-### Added
-
-#### Core Resources
-- **DCF Essentials** - One-page practitioner's quick-start guide
-- **Claude Code Skill** - `/dcf` skill for applying DCF in Claude Code sessions
-
-#### Practical Resources
-- **CLAUDE.md Template** - DCF-informed project configuration template
-- **Prompt Library** - Ready-to-use Socratic prompts organized by situation
-- **Self-Assessment Tool** - Weekly/monthly reflection templates
-- **Workshop Exercises** - 8 hands-on exercises for learning DCF
-- **Visual Guide** - ASCII diagrams and one-page summary
-- **Slide Deck** - Presentation materials for teaching DCF
-- **Framework Integration Guide** - DCF with Plan Mode, Ralph, BMAD, etc.
-- **Anti-Patterns Guide** - Detailed guide to 10 DCF failure modes
-
-#### Community Resources
-- **Example Transcripts** - 4 annotated real-world DCF conversations
-- **FAQ** - Comprehensive frequently asked questions
-- **Team Adoption Playbook** - 5-phase organizational adoption guide
-- **Annotated Reading List** - Curated sources with DCF context
-- **Case Study Template** - Standardized format for documenting applications
-- **Comparison Matrix** - DCF vs other methodologies
-- **Glossary** - 40+ term definitions for DCF vocabulary
-
-### Changed
-- Updated README with comprehensive resources section
-- Added repository structure documentation
-- Added download/installation instructions
 
 ---
 
