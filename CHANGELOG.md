@@ -24,9 +24,15 @@ Following audit against Paul-Elder framework for Socratic questioning:
 - Added Meta-Question to treatise table (was in glossary only)
 - Added glossary entries for Evidence and Consequences in both DCF_GLOSSARY.md and treatise
 
+#### Academic Coverage for Hybrid Approach
+- Added Paul & Elder citations to references.bib (2006 book, 2007 journal article)
+- Added "Classical and Modern Synthesis" subsection explaining DCF's 7-operation approach
+- Provides academic grounding for combining classical Socratic operations with modern pedagogical framework
+
 ### Changed
 - PDF now 191 pages (up from 190)
 - Socratic operations expanded from 5 to 7 (now complete per Paul-Elder framework)
+- Bibliography now includes 20 sources (up from 18)
 
 ---
 
