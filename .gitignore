@@ -22,6 +22,8 @@
 
 # Tool-specific directories
 .claude/
+!.claude/skills/
+!.claude/skills/**
 .playwright-mcp/
 
 # Editor files
@@ -33,3 +35,14 @@
 
 # Private/personal files
 AMAZON_PUBLISHING_GUIDE.md
+AMAZON_KDP_CONTENT.md
+SESSION_NOTES.md
+CLAUDE_CODE_SKILLS.md
+
+# Generated ebook files
+*.epub
+
+# Cover images (private - not for repo)
+cover.png
+cover.jpg
+cover_clean.jpg

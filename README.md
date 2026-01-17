@@ -74,6 +74,19 @@ This work is intended for:
 - Knowledge workers seeking deeper AI engagement
 - Anyone moving beyond surface-level prompting
 
+### Claude Code Skill
+
+This repository includes a `/dcf` skill for Claude Code that applies the framework's principles directly in your workflow:
+
+```bash
+/dcf                     # Start DCF session on current context
+/dcf review              # Review a plan or proposed approach
+/dcf checkpoint          # Apply DCF at an agentic checkpoint
+/dcf learn <topic>       # Use DCF for learning/understanding
+```
+
+To use: copy `.claude/skills/dcf.md` to your project or global Claude Code skills directory.
+
 ---
 
 ## Citation
@@ -123,7 +136,10 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ├── DCF_ESSENTIALS.md                 # Condensed practitioner's guide
 ├── THE_ARCHITECTURE_OF_THOUGHT.pdf   # Compiled document (150 pages)
 ├── THE_ARCHITECTURE_OF_THOUGHT.tex   # LaTeX source
-└── references.bib                    # BibTeX bibliography (18 sources)
+├── references.bib                    # BibTeX bibliography (18 sources)
+└── .claude/
+    └── skills/
+        └── dcf.md                    # Claude Code skill for DCF
 ```
 
 ---
