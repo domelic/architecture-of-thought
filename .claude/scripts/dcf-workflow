@@ -102,11 +102,10 @@ copy_to_clipboard() {
 # -----------------------------------------------------------------------------
 
 show_help() {
-    cat <<EOF
-${BOLD}DCF Workflow Runner${NC} v${VERSION}
+    printf '%b' "${BOLD}DCF Workflow Runner${NC} v${VERSION}
 
 ${YELLOW}CAUTION: Workflows are scaffolding, not standard practice.${NC}
-Each transition should be a genuine checkpoint—"Is this the right next mode?"
+Each transition should be a genuine checkpoint—\"Is this the right next mode?\"
 The goal is to internalize when each mode fits, then choose deliberately.
 
 ${BOLD}Usage:${NC}
@@ -124,7 +123,7 @@ ${BOLD}Predefined Workflows:${NC}
     pre-implementation architect → tradeoffs → premortem
 
 ${BOLD}Custom Workflow:${NC}
-    ${SCRIPT_NAME} debug simplify decide "investigating auth bug"
+    ${SCRIPT_NAME} debug simplify decide \"investigating auth bug\"
 
 ${BOLD}Options:${NC}
     -h, --help       Show this help
@@ -135,10 +134,10 @@ ${BOLD}Options:${NC}
 
 ${BOLD}Examples:${NC}
     ${SCRIPT_NAME} new-project
-    ${SCRIPT_NAME} decision "API design choice"
-    ${SCRIPT_NAME} learn premortem "starting new feature"
+    ${SCRIPT_NAME} decision \"API design choice\"
+    ${SCRIPT_NAME} learn premortem \"starting new feature\"
     ${SCRIPT_NAME} --dry-run debug
-EOF
+"
 }
 
 show_version() {
