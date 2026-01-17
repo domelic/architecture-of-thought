@@ -9,6 +9,8 @@ Apply Socratic questioning and structured thinking to any problem, plan, or deci
 /dcf review              # Review a plan or proposed approach
 /dcf checkpoint          # Apply DCF at an agentic checkpoint
 /dcf learn <topic>       # Use DCF for learning/understanding
+/dcf refine              # Iterate on output that needs improvement
+/dcf retro               # End-of-session reflection and learning capture
 ```
 
 ## Instructions
@@ -72,6 +74,20 @@ For **`/dcf learn <topic>`**:
 - "What specifically confuses you?"
 - "Let me ask you questions to help you discover the answer..."
 - "What's the key insight that would unlock your understanding?"
+
+For **`/dcf refine`** (iterating on output):
+- "What specifically isn't working about this output?"
+- "Is this a quality issue, a direction issue, or both?"
+- "What would 'good enough' look like? Be specific."
+- "Are we refining toward the right goal, or has the goal drifted?"
+- "Is this change substantive or cosmetic? Should we stop?"
+
+For **`/dcf retro`** (end-of-session reflection):
+- "What assumptions surfaced that you hadn't examined before?"
+- "What do you understand now that you didn't at the start?"
+- "Where did you just extract answers without real engagement?"
+- "What would you do differently next time?"
+- "Should any of this be captured in CLAUDE.md for future sessions?"
 
 **Phase 3 - Synthesize and Refine**
 
