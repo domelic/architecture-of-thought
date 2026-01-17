@@ -353,7 +353,7 @@ Diagrams and visual references for the Dialectical Cognition Framework.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                     /dcf SKILL MODES (19 total)                     │
+│                     /dcf SKILL MODES (22 total)                     │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                     │
 │   GENERAL                                                           │
@@ -382,6 +382,14 @@ Diagrams and visual references for the Dialectical Cognition Framework.
 │          ▼                 ▼                   ▼                    │
 │    Question mental    Imagine failure,    Make implicit            │
 │    model of code      work backward       choices explicit         │
+│                                                                     │
+│   ┌──────────────────┐  ┌───────────────┐                          │
+│   │ /dcf assumptions │  │ /dcf simplify │                          │
+│   └────────┬─────────┘  └───────┬───────┘                          │
+│            │                    │                                   │
+│            ▼                    ▼                                   │
+│      Deep excavation      Reduce complexity                        │
+│      of hidden assumptions to essential                            │
 │                                                                     │
 │   ┌─────────────────┐                                               │
 │   │ /dcf architect  │  Broad exploration → Minimal viable change    │
@@ -414,13 +422,13 @@ Diagrams and visual references for the Dialectical Cognition Framework.
 │   └─────────────┘
 │                                                                     │
 │   SESSION & PATTERN MANAGEMENT                                      │
-│   ┌──────────────┐  ┌─────────────┐                                │
-│   │ /dcf compact │  │ /dcf skill  │                                │
-│   └──────┬───────┘  └──────┬──────┘                                │
-│          │                 │                                        │
-│          ▼                 ▼                                        │
-│    Prepare for        Capture effective                            │
-│    compaction         patterns as skills                           │
+│   ┌──────────────┐  ┌────────────────────┐  ┌─────────────┐        │
+│   │ /dcf compact │  │ /dcf context-health│  │ /dcf skill  │        │
+│   └──────┬───────┘  └─────────┬──────────┘  └──────┬──────┘        │
+│          │                    │                    │                │
+│          ▼                    ▼                    ▼                │
+│    Prepare for          Assess and           Capture effective     │
+│    compaction           address rot          patterns as skills    │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
 ```

@@ -147,6 +147,8 @@ This repository includes a `/dcf` skill for Claude Code that applies the framewo
 /dcf debug               # Debug with Socratic questioning
 /dcf premortem           # Pre-project failure analysis
 /dcf tradeoffs           # Structured tradeoff analysis
+/dcf assumptions         # Deep excavation of hidden assumptions
+/dcf simplify            # Reduce complexity to essential
 /dcf architect           # Broad exploration to minimal viable change
 
 # Thinking & Learning
@@ -163,6 +165,7 @@ This repository includes a `/dcf` skill for Claude Code that applies the framewo
 
 # Session & Pattern Management
 /dcf compact             # Prepare for session compaction
+/dcf context-health      # Assess and address context rot
 /dcf skill               # Capture an effective pattern as a reusable skill
 ```
 

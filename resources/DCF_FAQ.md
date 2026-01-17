@@ -230,6 +230,8 @@ The `/dcf` skill is a Claude Code skill that applies DCF principles directly in 
 /dcf debug               # Debug with Socratic questioning
 /dcf premortem           # Pre-project failure analysis
 /dcf tradeoffs           # Structured tradeoff analysis
+/dcf assumptions         # Deep excavation of hidden assumptions
+/dcf simplify            # Reduce complexity to essential
 /dcf architect           # Broad exploration to minimal viable change
 
 # Thinking & Learning
@@ -246,6 +248,7 @@ The `/dcf` skill is a Claude Code skill that applies DCF principles directly in 
 
 # Session & Pattern Management
 /dcf compact             # Prepare for session compaction
+/dcf context-health      # Assess and address context rot
 /dcf skill               # Capture an effective pattern as a reusable skill
 ```
 
@@ -264,6 +267,8 @@ The `/dcf` skill is a Claude Code skill that applies DCF principles directly in 
 | `/dcf debug` | You're debugging and want to examine your mental model of the code |
 | `/dcf premortem` | Before starting a project—imagine it failed, work backward |
 | `/dcf tradeoffs` | You're choosing between options with hidden costs |
+| `/dcf assumptions` | You suspect hidden assumptions but can't identify them |
+| `/dcf simplify` | A solution has grown unwieldy and needs reduction |
 | `/dcf architect` | You need to explore broadly before narrowing to MVP |
 | **Thinking & Learning** | |
 | `/dcf learn` | You want to understand something, not just get an answer |
@@ -277,6 +282,7 @@ The `/dcf` skill is a Claude Code skill that applies DCF principles directly in 
 | `/dcf decide` | Analysis is done but you're having trouble committing |
 | **Session & Pattern Management** | |
 | `/dcf compact` | Session is long and you need to prepare for compaction |
+| `/dcf context-health` | You suspect context rot or want proactive session hygiene |
 | `/dcf skill` | You've discovered a pattern worth capturing as a reusable skill |
 
 ### How do I install the /dcf skill?

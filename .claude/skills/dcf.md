@@ -17,6 +17,8 @@ Apply Socratic questioning and structured thinking to any problem, plan, or deci
 /dcf debug               # Debug with Socratic questioning
 /dcf premortem           # Pre-project failure analysis
 /dcf tradeoffs           # Structured tradeoff analysis
+/dcf assumptions         # Deep excavation of hidden assumptions
+/dcf simplify            # Reduce complexity to essential
 /dcf architect           # Broad exploration to minimal viable change
 
 # Thinking & Learning
@@ -33,6 +35,7 @@ Apply Socratic questioning and structured thinking to any problem, plan, or deci
 
 # Session & Pattern Management
 /dcf compact             # Prepare for session compaction
+/dcf context-health      # Assess and address context rot
 /dcf skill               # Capture an effective pattern as a reusable skill
 ```
 
@@ -167,6 +170,49 @@ Guide the user through capturing session state before compaction. Create a worki
    - "What does future-you need to know that might not survive compaction?"
 
 After gathering responses, offer to create a `SESSION_FINDINGS.md` file (gitignored) that captures this information for continuity.
+
+For **`/dcf context-health`** (assess and address context rot):
+
+Proactive session hygiene. Use when you suspect context is degrading, or periodically during long sessions.
+
+1. **Assess Current State**
+   - "How long has this session been running?"
+   - "How many topics or tasks have we covered?"
+   - "Has AI performance seemed to degrade? Slower? More confused? Forgetting things?"
+
+2. **Check for Context Rot Symptoms**
+   - **Poisoning**: "Has any incorrect information entered the conversation that wasn't corrected?"
+   - **Distraction**: "Have we gone on tangents that are no longer relevant?"
+   - **Confusion**: "Are there similar concepts we've discussed that might be getting conflated?"
+   - **Clash**: "Have plans or decisions changed without explicitly resolving the old approach?"
+
+3. **Diagnose Severity**
+   - "On a scale of 1-5, how cluttered does this context feel?"
+   - "What percentage of the conversation is still relevant to current work?"
+   - "Are misunderstandings increasing in frequency?"
+
+4. **Apply Remediation**
+
+   *For mild rot (score 1-2):*
+   - "Let's explicitly clarify: The current approach is X. Previous approach Y is deprecated."
+   - Resolve any contradictions with explicit statements
+
+   *For moderate rot (score 3):*
+   - "Let's summarize the current state and relevant context."
+   - Create a brief "context reset" statement
+   - Consider clearing tangential information
+
+   *For severe rot (score 4-5):*
+   - "This context may be too cluttered to recover. Let's prepare for a fresh start."
+   - Use `/dcf compact` to capture essential state
+   - Recommend `/clear` and restart with clean summary
+
+5. **Prevent Future Rot**
+   - "What practices would keep context cleaner going forward?"
+   - "Should we set a checkpoint to reassess context health?"
+   - "Is there information we should explicitly exclude from context?"
+
+The insight: Context is working memory. Proactive hygiene beats reactive recovery. This mode catches degradation before it causes failures.
 
 For **`/dcf skill`** (capturing patterns as reusable skills):
 
@@ -333,6 +379,74 @@ Make implicit choices explicit. Every decision trades something for something el
    - "Given these tradeoffs, which option aligns with your priorities?"
    - "What would have to change for you to revisit this decision?"
    - "How will you explain this tradeoff to future-you or your team?"
+
+For **`/dcf assumptions`** (deep excavation of hidden assumptions):
+
+When you suspect hidden assumptions are affecting your thinking but can't identify them. More focused and systematic than general `/dcf`.
+
+1. **Surface the Obvious Assumptions**
+   - "What are you explicitly assuming to be true?"
+   - "What facts are you treating as given?"
+   - "What constraints are you working within?"
+
+2. **Probe for Hidden Assumptions**
+   - "What would have to be true for your approach to work?"
+   - "What are you assuming about the user/customer/stakeholder?"
+   - "What are you assuming about the technology/system/environment?"
+   - "What are you assuming about timing, resources, or dependencies?"
+
+3. **Challenge the Foundations**
+   - "Which of these assumptions have you actually verified?"
+   - "Which assumptions are you most uncertain about?"
+   - "What if the opposite of [assumption] were true?"
+
+4. **Find the Load-Bearing Assumptions**
+   - "Which assumptions, if wrong, would invalidate the entire approach?"
+   - "Which assumptions are you most afraid to question?"
+   - "What's the assumption you've never even articulated?"
+
+5. **Decide What to Do**
+   - "Which assumptions need verification before proceeding?"
+   - "Which assumptions are acceptable risks?"
+   - "How would you hedge against the riskiest assumption being wrong?"
+
+The insight: The most dangerous assumptions are the ones you don't know you're making. This mode systematically excavates them.
+
+For **`/dcf simplify`** (reduce complexity to essential):
+
+Counter to Complexity Creep anti-pattern. When a solution has grown unwieldy and you need to find the essential core.
+
+1. **Acknowledge the Complexity**
+   - "Describe the current solution. What does it do?"
+   - "How did it get this complex? What drove each addition?"
+   - "What's the original problem this was meant to solve?"
+
+2. **Find the Essential**
+   - "If you could only keep one feature, what would it be?"
+   - "What's the 20% that delivers 80% of the value?"
+   - "What would a 'good enough' version look like?"
+
+3. **Question Every Component**
+   - "For each piece: What happens if we remove it?"
+   - "Is this solving a real problem or a hypothetical one?"
+   - "Is this complexity earning its keep?"
+
+4. **Look for Consolidation**
+   - "Are there two things that could become one?"
+   - "Is there a simpler abstraction that covers multiple cases?"
+   - "What patterns or duplication could be eliminated?"
+
+5. **Consider Starting Fresh**
+   - "If you built this again from scratch, knowing what you know now, what would you do differently?"
+   - "What would the solution look like if you had half the time?"
+   - "What would you cut if forced to ship tomorrow?"
+
+6. **Commit to Simplicity**
+   - "What specifically will you remove or simplify?"
+   - "What will you resist adding in the future?"
+   - "How will you know if complexity is creeping back?"
+
+The insight: Simplicity is a feature. Every piece of complexity must justify its existence. This mode helps you find what can be safely removed.
 
 For **`/dcf architect`** (broad exploration to minimal viable change):
 
