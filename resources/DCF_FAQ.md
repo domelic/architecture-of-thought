@@ -235,11 +235,14 @@ The `/dcf` skill is a Claude Code skill that applies DCF principles directly in 
 # Thinking & Learning
 /dcf learn <topic>       # Learning and understanding
 /dcf explain             # Teach to test understanding (Feynman technique)
+/dcf onboard             # Guided exploration of unfamiliar codebase/domain
 /dcf retro               # End-of-session reflection
 
 # Dialectic & Unblocking
 /dcf challenge           # Steelman the opposite position
 /dcf unstick             # When you're blocked and don't know why
+/dcf diagnose            # Identify which anti-pattern you're falling into
+/dcf decide              # Reach closure when you have options
 
 # Session & Pattern Management
 /dcf compact             # Prepare for session compaction
@@ -265,10 +268,13 @@ The `/dcf` skill is a Claude Code skill that applies DCF principles directly in 
 | **Thinking & Learning** | |
 | `/dcf learn` | You want to understand something, not just get an answer |
 | `/dcf explain` | You want to test your understanding by teaching |
+| `/dcf onboard` | You're exploring an unfamiliar codebase or domain |
 | `/dcf retro` | End of session—capture what you learned |
 | **Dialectic & Unblocking** | |
 | `/dcf challenge` | You want to strengthen your position by arguing against it |
 | `/dcf unstick` | You're blocked and don't even know what question to ask |
+| `/dcf diagnose` | You suspect you're falling into an anti-pattern |
+| `/dcf decide` | Analysis is done but you're having trouble committing |
 | **Session & Pattern Management** | |
 | `/dcf compact` | Session is long and you need to prepare for compaction |
 | `/dcf skill` | You've discovered a pattern worth capturing as a reusable skill |

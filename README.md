@@ -152,11 +152,14 @@ This repository includes a `/dcf` skill for Claude Code that applies the framewo
 # Thinking & Learning
 /dcf learn <topic>       # Use DCF for learning/understanding
 /dcf explain             # Teach to test understanding (Feynman technique)
+/dcf onboard             # Guided exploration of unfamiliar codebase/domain
 /dcf retro               # End-of-session reflection and learning capture
 
 # Dialectic & Unblocking
 /dcf challenge           # Steelman the opposite position
 /dcf unstick             # When you're blocked and don't know why
+/dcf diagnose            # Identify which anti-pattern you're falling into
+/dcf decide              # Reach closure when you have options
 
 # Session & Pattern Management
 /dcf compact             # Prepare for session compaction

@@ -22,11 +22,14 @@ Apply Socratic questioning and structured thinking to any problem, plan, or deci
 # Thinking & Learning
 /dcf learn <topic>       # Use DCF for learning/understanding
 /dcf explain             # Teach to test understanding (Feynman technique)
+/dcf onboard             # Guided exploration of unfamiliar codebase/domain
 /dcf retro               # End-of-session reflection and learning capture
 
 # Dialectic & Unblocking
 /dcf challenge           # Steelman the opposite position
 /dcf unstick             # When you're blocked and don't know why
+/dcf diagnose            # Identify which anti-pattern you're falling into
+/dcf decide              # Reach closure when you have options
 
 # Session & Pattern Management
 /dcf compact             # Prepare for session compaction
@@ -422,6 +425,131 @@ If you can't explain it simply, you don't understand it well enough.
    - "Now that you've explained it, what do you understand better?"
    - "What question do you now realize you can't answer?"
    - "What would you need to learn to fill that gap?"
+
+For **`/dcf onboard`** (guided exploration of unfamiliar territory):
+
+Use DCF's Learning Accelerator principle: start with the problem, scaffold understanding as you go, learn in context.
+
+1. **Assess Starting Point**
+   - "What do you already know about this codebase/domain?"
+   - "What's your goal—what do you need to be able to do?"
+   - "What's your learning style—dive in and explore, or understand architecture first?"
+
+2. **Map the Landscape**
+   - "Let's identify the key components. What are the entry points?"
+   - "What's the 'hello world' of this codebase—the simplest complete flow?"
+   - "Who are the stakeholders and what do they care about?"
+
+3. **Build Mental Model Iteratively**
+   - "Based on what you've seen, how do you think X works?"
+   - "Let's verify that hypothesis. What would you need to check?"
+   - "What surprised you? What doesn't fit your model?"
+
+4. **Connect to What You Know**
+   - "What's this similar to that you've worked with before?"
+   - "What patterns do you recognize?"
+   - "What's genuinely new that you need to learn?"
+
+5. **Establish Footholds**
+   - "Where can you make a small, safe change to test your understanding?"
+   - "What's one thing you could confidently modify now?"
+   - "What areas should you avoid until you understand more?"
+
+6. **Document for Future You**
+   - "What mental model did you build that future-you needs to remember?"
+   - "What gotchas or surprises should be documented?"
+   - "Should any of this go in CLAUDE.md or team documentation?"
+
+The goal: transform unfamiliar territory into a space where you can work confidently, using AI to accelerate the learning curve without bypassing real understanding.
+
+For **`/dcf diagnose`** (identify which anti-pattern you're falling into):
+
+Apply metacognitive awareness to your own AI collaboration practice. Surface which failure mode might be affecting your work.
+
+1. **Describe the Symptoms**
+   - "What's going wrong? Describe the feeling or frustration."
+   - "What triggered this? What were you doing when it started feeling off?"
+   - "Is this a pattern you've noticed before, or new?"
+
+2. **Check Common Anti-Patterns**
+
+   Present the relevant subset based on symptoms:
+
+   *If session feels unproductive:*
+   - **Socratic Theater**: "Are you asking questions but not engaging with answers?"
+   - **Rubber Stamping**: "Are you approving outputs without really reviewing?"
+   - **Lazy Prompting**: "Are you frustrated that AI 'doesn't get it'—but are your prompts vague?"
+
+   *If you're not making progress:*
+   - **Infinite Refinement**: "Are you endlessly iterating without shipping?"
+   - **Abstraction Addiction**: "Are you discussing instead of building?"
+   - **Goal Drift**: "What was your original objective? Are you still pursuing it?"
+
+   *If trust is an issue:*
+   - **Hallucination Acceptance**: "Are you trusting without verifying?"
+   - **Mirror Narcissism**: "Are you using AI to confirm what you already believe?"
+
+   *If quality is degrading:*
+   - **Context Rot**: "Has the session been going a long time? Is AI performance degrading?"
+   - **Complexity Creep**: "Is each iteration making this more complex, not clearer?"
+
+   *If capability isn't building:*
+   - **Cognitive Atrophy**: "Can you still do this without AI?"
+   - **Reinvention Addiction**: "Are you solving this same type of problem repeatedly without capturing the pattern?"
+
+   *If organizational friction:*
+   - **Knowledge Gatekeeping**: "Is tribal knowledge blocking AI effectiveness?"
+
+3. **Identify the Root Cause**
+   - "Which of these resonates? What's really happening?"
+   - "What triggered you to fall into this pattern?"
+   - "Is this situational or a recurring tendency?"
+
+4. **Apply the Fix**
+   - Reference the specific fix for the identified anti-pattern
+   - "What will you do differently starting now?"
+   - "How will you notice if you fall into this pattern again?"
+
+5. **Prevent Recurrence**
+   - "What conditions led to this anti-pattern?"
+   - "What practice or checkpoint would catch this earlier?"
+   - "Should we add anything to your workflow to prevent this?"
+
+For **`/dcf decide`** (reach closure when you have options):
+
+Different from `/dcf tradeoffs` (which analyzes options). This mode is about actually committing when analysis is complete but decision paralysis persists.
+
+1. **Verify Analysis is Complete**
+   - "Have you already analyzed the options and tradeoffs?"
+   - "What's stopping you from deciding—more info needed, or difficulty committing?"
+   - "If it's more info: what specific question would resolve the uncertainty?"
+
+2. **Check for Decision Avoidance**
+   - "Is this a reversible or irreversible decision?"
+   - "What's the cost of not deciding? Is delay itself a choice?"
+   - "Are you seeking certainty where none is available?"
+
+3. **Apply Decision Frameworks**
+   - "If you had to decide in the next 5 minutes, what would you choose?"
+   - "What would you advise someone else in this situation?"
+   - "Which option would you regret NOT trying?"
+
+4. **Test for False Dilemmas**
+   - "Are these really the only options?"
+   - "Is there a way to test one option cheaply before fully committing?"
+   - "Can you choose a default and set criteria to switch?"
+
+5. **Commit and Move**
+   - "Given everything, which option do you choose?"
+   - "What's the first action that makes this decision real?"
+   - "What would cause you to revisit this decision later?"
+
+6. **Document the Decision**
+   - "Why did you choose this? Capture the reasoning."
+   - "What tradeoffs are you accepting?"
+   - "When should this decision be reviewed?"
+
+The insight: Most decisions benefit more from commitment than from continued analysis. Perfect information rarely exists. This mode helps you move forward when thinking is done but action hasn't started.
 
 **Phase 3 - Synthesize and Refine**
 

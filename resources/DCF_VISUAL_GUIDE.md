@@ -353,7 +353,7 @@ Diagrams and visual references for the Dialectical Cognition Framework.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                     /dcf SKILL MODES (16 total)                     │
+│                     /dcf SKILL MODES (19 total)                     │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                     │
 │   GENERAL                                                           │
@@ -396,14 +396,22 @@ Diagrams and visual references for the Dialectical Cognition Framework.
 │      Understand, don't    End-of-session   Teach to test           │
 │      just get answers     reflection       understanding           │
 │                                                                     │
+│   ┌──────────────┐                                                  │
+│   │ /dcf onboard │  Guided exploration of unfamiliar territory     │
+│   └──────────────┘                                                  │
+│                                                                     │
 │   DIALECTIC & UNBLOCKING                                            │
-│   ┌───────────────┐  ┌──────────────┐                              │
-│   │ /dcf challenge│  │ /dcf unstick │                              │
-│   └───────┬───────┘  └──────┬───────┘                              │
-│           │                 │                                       │
-│           ▼                 ▼                                       │
-│     Steelman the       Use confusion                               │
-│     opposite view      productively                                │
+│   ┌───────────────┐  ┌──────────────┐  ┌────────────────┐          │
+│   │ /dcf challenge│  │ /dcf unstick │  │ /dcf diagnose  │          │
+│   └───────┬───────┘  └──────┬───────┘  └───────┬────────┘          │
+│           │                 │                  │                    │
+│           ▼                 ▼                  ▼                    │
+│     Steelman the       Use confusion     Identify which            │
+│     opposite view      productively      anti-pattern              │
+│                                                                     │
+│   ┌─────────────┐                                                   │
+│   │ /dcf decide │  Reach closure when analysis is complete         │
+│   └─────────────┘
 │                                                                     │
 │   SESSION & PATTERN MANAGEMENT                                      │
 │   ┌──────────────┐  ┌─────────────┐                                │
