@@ -29,7 +29,7 @@ DCF operates at the *micro level* of human-AI interaction—the cognitive strate
 
 ## Download
 
-**[Download PDF (190 pages)](THE_ARCHITECTURE_OF_THOUGHT.pdf)**
+**[Download PDF (193 pages)](THE_ARCHITECTURE_OF_THOUGHT.pdf)**
 
 **[DCF Essentials — Practitioner's Quick Reference](DCF_ESSENTIALS.md)**
 
@@ -230,9 +230,9 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ├── DCF_ESSENTIALS.md                 # Condensed practitioner's guide
 ├── CONTRIBUTING.md                   # Contribution guidelines
 ├── CHANGELOG.md                      # Version history
-├── THE_ARCHITECTURE_OF_THOUGHT.pdf   # Compiled document (190 pages)
+├── THE_ARCHITECTURE_OF_THOUGHT.pdf   # Compiled document (193 pages)
 ├── THE_ARCHITECTURE_OF_THOUGHT.tex   # LaTeX source
-├── references.bib                    # BibTeX bibliography (18 sources)
+├── references.bib                    # BibTeX bibliography (25 sources)
 ├── .claude/
 │   ├── skills/
 │   │   ├── dcf.md                    # Claude Code skill for DCF (principle-based)

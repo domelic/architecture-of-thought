@@ -202,7 +202,7 @@ If you're just completing tasks—the potential is unrealized.
 
 # Resources
 
-- **Full treatise:** "The Architecture of Thought" (180 pages)
+- **Full treatise:** "The Architecture of Thought" (193 pages)
 - **Quick reference:** DCF Essentials guide
 - **Practice:** DCF Workshop Exercises
 - **Daily use:** DCF Prompt Library
