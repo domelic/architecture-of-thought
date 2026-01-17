@@ -220,6 +220,9 @@ The practice of recognizing effective prompting patterns and codifying them as r
 ### Hooks
 Shell commands that execute automatically before or after Claude Code tool calls. Enable automated DCF checkpoints—for example, running tests after every file edit.
 
+### Workflow Composition
+The practice of chaining multiple DCF skills into sequences appropriate for common scenarios. Skills remain atomic (invoked individually), but recommended sequences provide guidance for multi-phase work like "New Project" (`onboard` → `architect` → `premortem`) or "Decision Point" (`tradeoffs` → `challenge` → `decide`). Each transition is a checkpoint—engage fully before proceeding.
+
 ### Session Lifecycle
 The practice of managing conversation context over time. Includes knowing when to start fresh sessions vs. continue existing ones, and using `/dcf compact` to capture state before context limits are reached.
 
@@ -247,6 +250,7 @@ Agents spawned via the Task tool that run asynchronously while you continue othe
 | **Knowledge Gatekeeping** | Tribal knowledge hoarding blocking AI benefits |
 | **Shared Context** | Team-level AI knowledge infrastructure |
 | **Trust-Speed-Rigor** | Three forces to balance when building with AI |
+| **Workflow Composition** | Chaining skills into sequences for common scenarios |
 
 ---
 

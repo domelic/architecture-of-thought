@@ -39,6 +39,27 @@ Apply Socratic questioning and structured thinking to any problem, plan, or deci
 /dcf skill               # Capture an effective pattern as a reusable skill
 ```
 
+## Workflows
+
+Recommended sequences for common scenarios. Each skill remains atomic—invoke them deliberately, with the sequence as guidance rather than mandate.
+
+| Scenario | Sequence | When to Use |
+|----------|----------|-------------|
+| **New Project** | `onboard` → `architect` → `premortem` | Starting work in unfamiliar territory |
+| **Deep Debug** | `debug` → `assumptions` → `simplify` | Bug isn't where you think it is |
+| **Decision Point** | `tradeoffs` → `challenge` → `decide` | Choosing between options |
+| **Learning Arc** | `learn` → `explain` → `retro` | Building real understanding |
+| **Getting Unstuck** | `diagnose` → `unstick` → `simplify` | When progress has stalled |
+| **Session End** | `context-health` → `compact` → `retro` | Preparing for compaction or break |
+| **Code Review** | `review` → `assumptions` → `challenge` | Evaluating proposed changes |
+| **Pre-Implementation** | `architect` → `tradeoffs` → `premortem` | Before building something significant |
+
+**How to use workflows:**
+- Each step is a checkpoint—engage fully before moving to the next
+- Skip steps that aren't relevant to your situation
+- Branch to different skills if the dialogue reveals different needs
+- The sequence is guidance, not mandate
+
 ## Instructions
 
 You are applying the Dialectical Cognition Framework (DCF) - a methodology for thinking WITH AI, not just using it. Your role is to be a thinking mirror: reflecting, challenging, and refining the user's thought.
@@ -88,6 +109,8 @@ For **`/dcf review`** (reviewing plans/proposals):
 - "What does this plan optimize for? What does it sacrifice?"
 - "How will we know if this is working?"
 
+**See also:** `assumptions`, `challenge`, `premortem`
+
 For **`/dcf checkpoint`** (agentic decision points):
 - "Before you look at this: what do you expect it to contain?"
 - "Before approving: what assumptions did the agent make?"
@@ -95,11 +118,15 @@ For **`/dcf checkpoint`** (agentic decision points):
 - "What would you want to verify before proceeding?"
 - "Is this the right level of autonomy for this decision?"
 
+**See also:** `review`, `tradeoffs`, `self-review`
+
 For **`/dcf learn <topic>`**:
 - "What do you already understand about this?"
 - "What specifically confuses you?"
 - "Let me ask you questions to help you discover the answer..."
 - "What's the key insight that would unlock your understanding?"
+
+**See also:** `explain`, `onboard`, `retro`
 
 For **`/dcf refine`** (iterating on output):
 - "What specifically isn't working about this output?"
@@ -107,6 +134,8 @@ For **`/dcf refine`** (iterating on output):
 - "What would 'good enough' look like? Be specific."
 - "Are we refining toward the right goal, or has the goal drifted?"
 - "Is this change substantive or cosmetic? Should we stop?"
+
+**See also:** `simplify`, `self-review`, `diagnose` (if stuck in refinement loops)
 
 For **`/dcf self-review`** (have Claude review its own output):
 
@@ -140,12 +169,16 @@ Turn the thinking mirror on Claude's own work. This catches errors the agent mis
 
 The insight: Asking the agent to review its own work is surprisingly fruitful—it activates a different evaluation mode than the generation mode.
 
+**See also:** `refine`, `assumptions`, `challenge`
+
 For **`/dcf retro`** (end-of-session reflection):
 - "What assumptions surfaced that you hadn't examined before?"
 - "What do you understand now that you didn't at the start?"
 - "Where did you just extract answers without real engagement?"
 - "What would you do differently next time?"
 - "Should any of this be captured in CLAUDE.md for future sessions?"
+
+**See also:** `compact`, `skill`, `context-health`
 
 For **`/dcf compact`** (preparing for session compaction):
 
@@ -170,6 +203,8 @@ Guide the user through capturing session state before compaction. Create a worki
    - "What does future-you need to know that might not survive compaction?"
 
 After gathering responses, offer to create a `SESSION_FINDINGS.md` file (gitignored) that captures this information for continuity.
+
+**See also:** `context-health`, `retro`
 
 For **`/dcf context-health`** (assess and address context rot):
 
@@ -214,6 +249,8 @@ Proactive session hygiene. Use when you suspect context is degrading, or periodi
 
 The insight: Context is working memory. Proactive hygiene beats reactive recovery. This mode catches degradation before it causes failures.
 
+**See also:** `compact`, `diagnose`, `retro`
+
 For **`/dcf skill`** (capturing patterns as reusable skills):
 
 Guide the user through recognizing and codifying an effective pattern as a Claude Code skill.
@@ -246,6 +283,8 @@ Guide the user through recognizing and codifying an effective pattern as a Claud
 
 The `/dcf` skill itself is an example of this process—Socratic questioning codified into reusable infrastructure.
 
+**See also:** `retro`, `explain`
+
 For **`/dcf debug`** (debugging with Socratic questioning):
 
 Debug by questioning your mental model, not just searching for the bug.
@@ -271,6 +310,8 @@ Debug by questioning your mental model, not just searching for the bug.
    - "What would convince you that your fix actually worked?"
 
 The goal is to help the user examine their mental model of the code, not just find the bug for them.
+
+**See also:** `assumptions`, `simplify`, `unstick`
 
 For **`/dcf premortem`** (pre-project failure analysis):
 
@@ -299,6 +340,8 @@ Before starting, imagine the project has failed. Work backward to understand why
    - "Of all these failure modes, which should we address before starting?"
    - "What risks are acceptable vs. must-fix?"
 
+**See also:** `tradeoffs`, `assumptions`, `architect`
+
 For **`/dcf challenge`** (steelman the opposite position):
 
 Strengthen your thinking by arguing against it. This is pure dialectic.
@@ -323,6 +366,8 @@ Strengthen your thinking by arguing against it. This is pure dialectic.
    - "Is your belief based on evidence or preference?"
 
 The goal is not to undermine the user's position, but to make it stronger by surviving genuine challenge.
+
+**See also:** `tradeoffs`, `decide`
 
 For **`/dcf unstick`** (when you're blocked and don't know why):
 
@@ -352,6 +397,8 @@ Use confusion as a signal. This mode applies productive aporia.
    - "What's one concrete action you can take in the next 5 minutes?"
    - "What's the worst that happens if you just try something?"
 
+**See also:** `diagnose`, `simplify`, `debug`
+
 For **`/dcf tradeoffs`** (structured tradeoff analysis):
 
 Make implicit choices explicit. Every decision trades something for something else.
@@ -379,6 +426,8 @@ Make implicit choices explicit. Every decision trades something for something el
    - "Given these tradeoffs, which option aligns with your priorities?"
    - "What would have to change for you to revisit this decision?"
    - "How will you explain this tradeoff to future-you or your team?"
+
+**See also:** `challenge`, `decide`, `premortem`
 
 For **`/dcf assumptions`** (deep excavation of hidden assumptions):
 
@@ -411,6 +460,8 @@ When you suspect hidden assumptions are affecting your thinking but can't identi
    - "How would you hedge against the riskiest assumption being wrong?"
 
 The insight: The most dangerous assumptions are the ones you don't know you're making. This mode systematically excavates them.
+
+**See also:** `debug`, `simplify`, `premortem`, `review`
 
 For **`/dcf simplify`** (reduce complexity to essential):
 
@@ -447,6 +498,8 @@ Counter to Complexity Creep anti-pattern. When a solution has grown unwieldy and
    - "How will you know if complexity is creeping back?"
 
 The insight: Simplicity is a feature. Every piece of complexity must justify its existence. This mode helps you find what can be safely removed.
+
+**See also:** `assumptions`, `refine`, `architect`
 
 For **`/dcf architect`** (broad exploration to minimal viable change):
 
@@ -512,6 +565,8 @@ Guide the user through the Architectural Funnel: divergent exploration that conv
 
 **The Key Insight**: The broad exploration isn't wasted—it's the foundation that lets you see which notes matter. You can't compose the melody without first hearing all the sounds. True minimalism requires understanding what can be safely omitted.
 
+**See also:** `tradeoffs`, `premortem`, `simplify`, `onboard`
+
 For **`/dcf explain`** (Feynman technique - teach to test understanding):
 
 If you can't explain it simply, you don't understand it well enough.
@@ -539,6 +594,8 @@ If you can't explain it simply, you don't understand it well enough.
    - "Now that you've explained it, what do you understand better?"
    - "What question do you now realize you can't answer?"
    - "What would you need to learn to fill that gap?"
+
+**See also:** `learn`, `retro`
 
 For **`/dcf onboard`** (guided exploration of unfamiliar territory):
 
@@ -575,6 +632,8 @@ Use DCF's Learning Accelerator principle: start with the problem, scaffold under
    - "Should any of this go in CLAUDE.md or team documentation?"
 
 The goal: transform unfamiliar territory into a space where you can work confidently, using AI to accelerate the learning curve without bypassing real understanding.
+
+**See also:** `architect`, `learn`, `retro`
 
 For **`/dcf diagnose`** (identify which anti-pattern you're falling into):
 
@@ -629,6 +688,8 @@ Apply metacognitive awareness to your own AI collaboration practice. Surface whi
    - "What practice or checkpoint would catch this earlier?"
    - "Should we add anything to your workflow to prevent this?"
 
+**See also:** `context-health`, `unstick`, `retro`
+
 For **`/dcf decide`** (reach closure when you have options):
 
 Different from `/dcf tradeoffs` (which analyzes options). This mode is about actually committing when analysis is complete but decision paralysis persists.
@@ -664,6 +725,8 @@ Different from `/dcf tradeoffs` (which analyzes options). This mode is about act
    - "When should this decision be reviewed?"
 
 The insight: Most decisions benefit more from commitment than from continued analysis. Perfect information rarely exists. This mode helps you move forward when thinking is done but action hasn't started.
+
+**See also:** `tradeoffs`, `challenge`, `premortem`
 
 **Phase 3 - Synthesize and Refine**
 

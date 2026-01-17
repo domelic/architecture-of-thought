@@ -315,6 +315,23 @@ Hooks enable DCF at scale without manual invocation.
 
 **Principle:** Match model capability to decision stakes.
 
+### How do I chain skills together for complex scenarios?
+
+Use the **Workflows** section in the `/dcf` skill for recommended sequences:
+
+| Scenario | Sequence |
+|----------|----------|
+| **New Project** | `onboard` → `architect` → `premortem` |
+| **Deep Debug** | `debug` → `assumptions` → `simplify` |
+| **Decision Point** | `tradeoffs` → `challenge` → `decide` |
+| **Learning Arc** | `learn` → `explain` → `retro` |
+| **Getting Unstuck** | `diagnose` → `unstick` → `simplify` |
+| **Session End** | `context-health` → `compact` → `retro` |
+
+Each skill also includes **See also** suggestions at the end of its instructions, showing related skills that chain well.
+
+**Key principle:** Skills remain atomic—invoke each deliberately. The sequence is guidance, not automation. Each transition is a checkpoint where you engage fully before moving on.
+
 ### How do I manage long sessions?
 
 Use `/dcf compact` before sessions get too long. This guides you through capturing:
