@@ -23,7 +23,7 @@ Requires TeX Live 2025 or MacTeX.
 
 ```
 /
-├── THE_ARCHITECTURE_OF_THOUGHT.tex   # Main LaTeX source (173 pages)
+├── THE_ARCHITECTURE_OF_THOUGHT.tex   # Main LaTeX source (180 pages)
 ├── THE_ARCHITECTURE_OF_THOUGHT.pdf   # Compiled output
 ├── references.bib                    # BibTeX bibliography (18 sources)
 ├── DCF_ESSENTIALS.md                 # Condensed practitioner's guide

@@ -55,7 +55,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **CHANGELOG.md** - This file
 
 ### Changed
-- PDF now 173 pages (up from 150)
+- PDF now 180 pages (up from 150)
 - Index now contains 56+ entries
 - Anti-patterns expanded from 4 to 12
 
