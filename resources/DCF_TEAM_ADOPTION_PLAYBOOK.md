@@ -10,6 +10,65 @@ Adopting DCF as a team is different from individual practice. This playbook prov
 
 ---
 
+## Core Principles for Adoption
+
+### Demonstration Over Explanation
+
+The most effective way to create AI curiosity is through results, not arguments. Don't try to convince skeptics with theory—show them outcomes.
+
+**The principle:**
+- Work wins convert skeptics faster than words
+- One successful project demonstrates more than ten presentations
+- Let the results speak; interested people will ask how
+
+**In practice:**
+- Champions should share concrete wins, not abstract benefits
+- "This PR was written in 2 hours with DCF" > "DCF improves productivity"
+- Create visible artifacts that demonstrate the approach working
+
+### Meet People Where They Are
+
+People adopt new approaches at different rates, and that's expected and reasonable. Fear of rapid change is a valid response, not a character flaw.
+
+**Adoption stages (from diffusion of innovations):**
+
+| Stage | Percentage | Characteristics | Approach |
+|-------|------------|-----------------|----------|
+| **Innovators** | ~2.5% | Already experimenting | Recruit as champions |
+| **Early Adopters** | ~13.5% | Open, but want proof | Show champion results |
+| **Early Majority** | ~34% | Pragmatic, risk-aware | Wait until proven, then invite |
+| **Late Majority** | ~34% | Skeptical, need pressure | Don't push; let culture shift |
+| **Laggards** | ~16% | Resistant to change | Accept non-adoption; don't force |
+
+**Key insight:** Don't try to convert the Late Majority before the Early Majority. Work with willing adopters first; culture shifts will bring others along.
+
+### The Trust-Speed-Rigor Triangle
+
+Building fast with AI requires balancing three forces:
+
+```
+         TRUST
+          /\
+         /  \
+        /    \
+       /      \
+      /________\
+   SPEED      RIGOR
+```
+
+**Trust**: Team confidence that AI-assisted work meets standards
+**Speed**: Velocity of development with AI assistance
+**Rigor**: Verification, review, and quality processes
+
+**The balance:**
+- High trust + high speed requires established patterns and track record
+- Low trust requires more rigor, which slows speed
+- Rigor builds trust over time, eventually enabling speed
+
+**For new teams:** Start with more rigor, let trust build through demonstrated quality, then relax verification as patterns prove reliable.
+
+---
+
 ## Phase 1: Foundation (Weeks 1-2)
 
 ### Goals
@@ -265,6 +324,40 @@ If successful, help other teams:
 - Are you measuring the right things?
 - Are you applying DCF to appropriate tasks?
 - Consider whether practices need adjustment
+
+### Knowledge Gatekeeping is Blocking Us
+
+**The pattern:** Despite AI tools being available, organizational knowledge hoarding prevents effective use. People can't apply AI to problems they don't understand, and context is locked in individuals' heads.
+
+**This manifests as:**
+- "Ask Sarah, she knows how that system works"
+- Undocumented tribal knowledge required to do work
+- Fear of looking ignorant prevents questions
+- Information asymmetry as power
+
+**The fix (four components):**
+
+1. **Communication infrastructure**
+   - Document the "why" not just the "how"
+   - Create shared context repositories (team CLAUDE.md, wikis, ADRs)
+   - Make asking questions normal, not embarrassing
+
+2. **Permission to jump in**
+   - Explicitly invite cross-domain exploration
+   - "You don't need to be an expert to work on this"
+   - Reduce territorial ownership of code/systems
+
+3. **Team buy-in for investment**
+   - Allocate time for context-sharing activities
+   - Recognize documentation and knowledge transfer
+   - Don't punish "unproductive" time spent learning
+
+4. **Sell your ideas as a developer**
+   - Make your proposals visible and compelling
+   - Show how AI-assisted approaches benefit the team
+   - Build coalitions around promising experiments
+
+**Key insight:** AI tools amplify what you know. If knowledge is siloed, AI benefits are siloed too. Shared context is a prerequisite for shared AI productivity.
 
 ---
 

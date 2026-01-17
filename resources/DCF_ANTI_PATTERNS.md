@@ -728,6 +728,72 @@ Context is the AI's working memory. Just as you can't think clearly with a clutt
 
 ---
 
+## Anti-Pattern 14: Knowledge Gatekeeping
+
+### What It Looks Like
+
+Organizational knowledge hoarding that prevents effective AI collaboration.
+
+```
+Developer: "I want to use Claude to help refactor the auth system"
+Reality: The auth system's quirks exist only in Sarah's head
+Result: AI produces technically correct but contextually wrong changes
+```
+
+The AI has access to code, but not to the tribal knowledge that makes the code make sense.
+
+### Symptoms
+
+- "Ask [person], they know how that works"
+- Undocumented decisions, conventions, and gotchas
+- Fear of looking ignorant prevents questions
+- AI-assisted work requires constant "actually, we don't do it that way" corrections
+- Same AI failures repeat because context never gets documented
+
+### Root Cause
+
+- Information asymmetry treated as job security
+- No culture of documentation or knowledge sharing
+- Psychological safety issues (asking = admitting ignorance)
+- Time pressure that prevents proper onboarding
+- Territorial ownership of code/systems
+
+### The Fix
+
+1. **Build shared context infrastructure**
+   ```
+   Create a context-engineering repo or team wiki where AI-relevant
+   knowledge gets captured: conventions, gotchas, architectural decisions.
+   ```
+
+2. **Normalize knowledge sharing**
+   ```
+   "What I learned today" becomes a team ritual.
+   Questions are celebrated, not stigmatized.
+   ```
+
+3. **Document for AI, not just humans**
+   ```
+   CLAUDE.md files, inline comments explaining "why", and ADRs
+   (Architecture Decision Records) give AI the context it needs.
+   ```
+
+4. **Permission to explore**
+   ```
+   Explicitly invite: "You don't need to be the expert to work on this."
+   Reduce territorial ownership.
+   ```
+
+### Connection to DCF
+
+Knowledge gatekeeping is the organizational equivalent of "lazy prompting" - expecting good outputs without providing necessary context. DCF assumes you can provide quality input to get quality reflection. If knowledge is locked in people's heads, AI can only reflect what's visible in code.
+
+### The Organizational Insight
+
+AI amplifies what you know. If knowledge is siloed, AI benefits are siloed too. The teams that gain most from AI are those that have already built knowledge-sharing cultures. For others, AI adoption becomes a forcing function to fix long-standing information asymmetries.
+
+---
+
 ## Quick Reference: Anti-Pattern Detection
 
 | You Might Be In... | If You Notice... |
@@ -745,6 +811,7 @@ Context is the AI's working memory. Just as you can't think clearly with a clutt
 | Abstraction Addiction | Discussing, not doing |
 | Reinvention Addiction | Solving same problem type from scratch repeatedly |
 | Context Rot | AI performance degrades as session lengthens |
+| Knowledge Gatekeeping | AI fails because tribal knowledge isn't documented |
 
 ---
 

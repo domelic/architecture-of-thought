@@ -66,6 +66,9 @@ The convergent phase of the Architectural Funnel where you extract what actually
 ### Learning Stance
 Approaching AI interaction to understand, not just to get answers. "Help me figure this out" rather than "Give me the answer."
 
+### Learning Accelerator
+The phenomenon where AI dramatically accelerates skill acquisition by providing just-in-time, contextualized learning. Skills that take months can be acquired in weeks—not by skipping learning, but by learning in context of real application.
+
 ### Extraction Stance (Anti-pattern)
 Using AI purely to get outputs without engagement or understanding. The opposite of DCF's approach.
 
@@ -84,6 +87,9 @@ Vygotsky's concept: the space between what you can do alone and what you can do 
 
 ### Scaffolding
 Support provided to help someone accomplish what they couldn't do alone, with the expectation that support fades as capability builds.
+
+### Test Coverage as Scaffolding
+The principle that comprehensive test suites enable confident approval of bold AI-assisted changes. Tests verify behavior automatically, reducing human verification burden and enabling faster, larger refactorings.
 
 ---
 
@@ -137,6 +143,25 @@ Preferring abstract discussion over concrete action. Analyzing instead of buildi
 
 ### Reinvention Addiction
 Repeatedly solving the same type of problem from scratch instead of capturing effective patterns as reusable skills. Treating each session as isolated rather than building cumulative capability.
+
+### Knowledge Gatekeeping
+Organizational knowledge hoarding that prevents effective AI collaboration. Tribal knowledge locked in people's heads rather than documented, causing AI to produce technically correct but contextually wrong outputs.
+
+---
+
+## Adoption Concepts
+
+### Demonstration Over Explanation
+The adoption principle that results convince better than arguments. Work wins convert skeptics faster than presentations.
+
+### Trust-Speed-Rigor Triangle
+The three forces that must be balanced when building with AI: Trust (confidence in AI-assisted quality), Speed (velocity of development), and Rigor (verification processes). High speed requires established trust; low trust requires more rigor.
+
+### Adoption Stages
+The diffusion of innovations pattern: Innovators (~2.5%), Early Adopters (~13.5%), Early Majority (~34%), Late Majority (~34%), Laggards (~16%). Work with willing adopters first; culture shifts bring others along.
+
+### Shared Context Infrastructure
+Team-level systems for collective AI knowledge: context engineering repositories, prompt libraries, shared CLAUDE.md templates, and knowledge wikis. Prevents siloing of AI expertise.
 
 ---
 
@@ -214,6 +239,10 @@ Agents spawned via the Task tool that run asynchronously while you continue othe
 | **Scaffolding** | Support that builds independence |
 | **ZPD** | Zone where learning happens |
 | **Convergence** | When refinement yields diminishing returns |
+| **Learning Accelerator** | AI enables faster skill acquisition through context |
+| **Knowledge Gatekeeping** | Tribal knowledge hoarding blocking AI benefits |
+| **Shared Context** | Team-level AI knowledge infrastructure |
+| **Trust-Speed-Rigor** | Three forces to balance when building with AI |
 
 ---
 

@@ -878,6 +878,52 @@ Learning science identifies ``desirable difficulties''---challenges that slow in
 
 Understanding transfers to new contexts; memorized answers don't. By developing understanding through AI collaboration, you build transferable knowledge.
 
+\section{AI as Learning Accelerator}\label{sec:learning-accelerator}\index{Learning Accelerator}
+
+A counterintuitive finding from practitioners: AI doesn't just help with tasks you know how to do---it \emph{dramatically accelerates learning} tasks you don't yet understand.
+
+\subsection{The Acceleration Pattern}
+
+Rather than spending weeks reading documentation and tutorials before starting, practitioners report a new pattern:
+
+\begin{enumerate}
+    \item \textbf{Start with the problem}, not the prerequisite knowledge
+    \item \textbf{Use AI to scaffold} understanding as you need it
+    \item \textbf{Learn concepts in context} of real application
+    \item \textbf{Build working solutions} while acquiring knowledge
+\end{enumerate}
+
+The result: skills that would take months to develop can be acquired in weeks. Not because learning is skipped, but because it's \emph{contextualized} and \emph{just-in-time}.
+
+\subsection{High-Level Skills Over Language Specifics}
+
+AI changes the value hierarchy of technical knowledge:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Level} & \textbf{Traditional Value} & \textbf{AI-Augmented Value} \\
+\midrule
+Syntax/APIs & High (needed for every line) & Lower (AI handles details) \\
+Patterns/Concepts & Medium (learned over time) & Highest (guides AI direction) \\
+Architecture & High (senior skill) & Critical (multiplied by AI speed) \\
+Problem decomposition & Implicit & Explicit and essential \\
+\bottomrule
+\end{tabular}
+\caption{Shifting Value of Technical Knowledge}
+\end{table}
+
+This doesn't mean language specifics don't matter---understanding \emph{why} the AI chose a particular approach requires some domain knowledge. But the \emph{balance} shifts. High-level conceptual skills become more valuable because they direct the AI's capabilities effectively.
+
+\subsection{The Learning Stance Enables Acceleration}
+
+AI accelerates learning \emph{only if you maintain the learning stance}. Extraction-mode users get immediate outputs but no acceleration---they don't understand what they received. Learning-stance users compound: each project builds knowledge that makes the next project faster.
+
+\begin{quotebox}
+\textbf{Key insight:} AI is the most powerful learning tool ever created---but only for those who approach it as learners rather than extractors.
+\end{quotebox}
+
 \section{Practical Techniques}
 
 \subsection{Explanation-First Requests}
@@ -1793,6 +1839,66 @@ This keeps your repository clean while maintaining session continuity. The conte
 Pre-compaction documentation is \textbf{anticipatory calibration} applied to session management. You're forming an explicit model of ``what matters about this session'' before the compaction forces you to rely on an automated summary. The act of writing clarifies your own understanding---the thinking mirror principle at work.
 
 It's also \textbf{scaffolding that fades}: the session document supports continuity during active work, then becomes unnecessary once the work is complete and captured in permanent artifacts.
+
+\section{Shared Context Infrastructure}\label{sec:shared-context}\index{Shared Context Infrastructure}\index{Context Engineering Repository}
+
+Individual memory systems (CLAUDE.md, personal memories) extend naturally to \textbf{team-level shared context}. Organizations that maximize AI benefits create infrastructure for collective context---preventing the siloing of AI knowledge.
+
+\subsection{The Problem: AI Knowledge Silos}
+
+Without deliberate infrastructure, AI benefits fragment:
+\begin{itemize}
+    \item Each team member develops their own effective prompts
+    \item Successful patterns aren't shared
+    \item Failed experiments are repeated across the team
+    \item No institutional learning about what works
+\end{itemize}
+
+This mirrors traditional knowledge silos, amplified by AI's rapid iteration cycles.
+
+\subsection{The Solution: Context Engineering Repositories}
+
+A \textbf{context engineering repository} serves as a centralized place for team AI knowledge:
+
+\begin{lstlisting}
+/context-engineering/
+  /prompts/
+    - code-review-prompt.md
+    - architecture-analysis.md
+    - debugging-approach.md
+  /CLAUDE.md-templates/
+    - project-type-a.md
+    - project-type-b.md
+  /learnings/
+    - what-works.md
+    - what-doesnt-work.md
+  /experiments/
+    - current-experiments.md
+    - results.md
+\end{lstlisting}
+
+\subsection{Goals of Shared Context Infrastructure}
+
+\begin{enumerate}
+    \item \textbf{Team alignment}: Shared vocabulary and approaches
+    \item \textbf{Iterative improvement}: Prompts evolve through collective experience
+    \item \textbf{Transparency}: ``This is what we're trying, here's what we're learning''
+    \item \textbf{Collaboration}: Others can try, adapt, and improve shared patterns
+    \item \textbf{Prevent siloing}: Useful processes become organizational assets, not individual secrets
+    \item \textbf{Knowledge centralization}: One place to look for ``how do we use AI for X''
+\end{enumerate}
+
+\subsection{Implementation Patterns}
+
+\textbf{Pull request workflow for prompts:} Treat prompt improvements like code changes. Propose, review, merge. This creates accountability and learning records.
+
+\textbf{Regular sync meetings:} Brief (15 min) sessions to share ``what I learned about AI this week.'' Surfaces patterns that wouldn't otherwise propagate.
+
+\textbf{Experiments registry:} Track what's being tried, by whom, with what results. Prevents duplicate effort and builds institutional knowledge.
+
+\begin{quotebox}
+\textbf{Key insight:} The most effective organizations treat AI collaboration as a \emph{team sport}, not an individual skill. Shared context infrastructure makes this possible.
+\end{quotebox}
 
 \chapter{The Modern Co-Developer Pattern}
 
@@ -3713,6 +3819,59 @@ Agent: [Responds with analysis]
 
 Human (DCF): "Good. Given that, let's adjust the plan to..."
 \end{lstlisting}
+
+\section{Test Coverage as Scaffolding for Bold Changes}\label{sec:test-scaffolding}\index{Test Coverage}\index{Scaffolding}
+
+A critical enabler for agentic AI: \textbf{test coverage provides the confidence to approve large changes}.
+
+\subsection{The Problem}
+
+AI agents can now propose sweeping modernizations:
+\begin{itemize}
+    \item Replace legacy patterns with modern equivalents
+    \item Refactor entire subsystems
+    \item Migrate to new frameworks or architectures
+    \item Pull out large chunks of code and replace them
+\end{itemize}
+
+Without safety nets, approving such changes is terrifying. The human becomes a bottleneck---not from lack of trust in AI, but from lack of \emph{verification capability}.
+
+\subsection{Tests as Verification Infrastructure}
+
+Comprehensive test coverage transforms the approval dynamic:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Coverage Level} & \textbf{Human Burden} & \textbf{Approval Confidence} \\
+\midrule
+None & Manual review of every change & Low (can't verify behavior preserved) \\
+Partial & Focus review on untested areas & Medium (verified where covered) \\
+Comprehensive & Run tests, review output & High (behavior verified automatically) \\
+\bottomrule
+\end{tabular}
+\caption{Test Coverage and Approval Confidence}
+\end{table}
+
+\subsection{The Investment}
+
+Before enabling bold AI-assisted changes, invest in test infrastructure:
+
+\begin{enumerate}
+    \item \textbf{Critical path coverage}: Test the flows that must not break
+    \item \textbf{Regression suites}: Capture known-good behavior before changes
+    \item \textbf{Integration tests}: Verify system-level behavior, not just units
+    \item \textbf{CI integration}: Tests run automatically on every change
+\end{enumerate}
+
+\subsection{Connection to DCF}
+
+Test coverage is \textbf{scaffolding at the infrastructure level}. It supports your ability to approve agent changes confidently, then becomes invisible once in place. You don't think about the tests during review---you trust them to catch problems.
+
+\begin{quotebox}
+\textbf{Key insight:} Test coverage doesn't just verify code---it verifies \emph{AI changes to code}. Investing in tests before AI adoption multiplies AI's value by enabling bolder, faster approvals.
+\end{quotebox}
 
 \chapter{Extended Thinking and Internal Dialectic}
 
