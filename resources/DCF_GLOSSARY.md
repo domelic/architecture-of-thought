@@ -34,6 +34,12 @@ The state of puzzlement that precedes insight. In DCF: "What am I not seeing abo
 ### Meta-Question
 The practice of asking "What question should I be asking?" rather than seeking answers directly. Often the most powerful Socratic move—users are frequently stuck not because they lack answers but because they're asking the wrong question. Elevated to a core principle in DCF.
 
+### Evidence (Probing Reasons)
+Questioning that examines the factual foundation of statements. In DCF: "How do you know? What evidence supports this?" Many beliefs rest on untested assumptions or weakly understood foundations—this operation surfaces them.
+
+### Consequences (Tracing Implications)
+Questioning that explores the logical implications and outcomes of ideas. In DCF: "What are the consequences? What if you're wrong?" Reveals whether an idea actually works in practice and surfaces unintended effects.
+
 ---
 
 ## Process Terms
@@ -242,6 +248,8 @@ Agents spawned via the Task tool that run asynchronously while you continue othe
 | **Thinking Mirror** | AI as reflection of your thought |
 | **Elenchus** | Questioning that exposes assumptions |
 | **Maieutics** | Drawing out unspoken knowledge |
+| **Evidence** | Probing reasons and factual foundations |
+| **Consequences** | Tracing implications and outcomes |
 | **Recursive Refinement** | Iterating toward clarity |
 | **Checkpoint** | Decision point requiring human judgment |
 | **Learning Stance** | Seeking understanding over answers |

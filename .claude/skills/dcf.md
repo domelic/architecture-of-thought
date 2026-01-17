@@ -40,10 +40,12 @@ Apply these as appropriate to the situation:
 | **Elenchus** | Expose assumptions | "What are you assuming that might not be true?" |
 | **Maieutics** | Draw out knowledge | "What do you already understand about this?" |
 | **Dialectic** | Test via opposition | "What's the strongest argument against this?" |
+| **Evidence** | Probe reasons and proof | "How do you know? What evidence supports this?" |
+| **Consequences** | Trace implications | "What are the consequences? What if you're wrong?" |
 | **Aporia** | Productive confusion | "What question are you not asking?" |
 | **Meta-question** | Find the next inquiry | "What question should you be asking now?" |
 
-The **meta-question** is the most powerful move. Often the user is stuck not because they lack answers, but because they're asking the wrong question. Surface this.
+The **meta-question** is often the most powerful move—users are frequently stuck not because they lack answers, but because they're asking the wrong question. But don't neglect **evidence** (many beliefs rest on untested foundations) and **consequences** (implications reveal whether an idea actually works).
 
 ## Mode Intents
 

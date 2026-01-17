@@ -12,6 +12,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.2.1] - 2026-01-17
+
+### Added
+
+#### Complete Socratic Toolkit (7 operations)
+Following audit against Paul-Elder framework for Socratic questioning:
+- **Evidence** - "How do you know? What evidence supports this?" (probing reasons and factual foundations)
+- **Consequences** - "What are the consequences? What if you're wrong?" (tracing implications and outcomes)
+- Updated Socratic Toolkit in `/dcf` skill from 5 to 7 operations
+- Added Meta-Question to treatise table (was in glossary only)
+- Added glossary entries for Evidence and Consequences in both DCF_GLOSSARY.md and treatise
+
+### Changed
+- PDF now 191 pages (up from 190)
+- Socratic operations expanded from 5 to 7 (now complete per Paul-Elder framework)
+
+---
+
 ## [2.2.0] - 2026-01-17
 
 ### Added

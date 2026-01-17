@@ -52,6 +52,8 @@ The 2,400-year-old Socratic method maps directly to AI collaboration:
 | **Elenchus** (cross-examination) | "What assumptions are in that answer?" |
 | **Maieutics** (drawing out knowledge) | "Help me articulate what I'm trying to express" |
 | **Dialectic** (reasoned argument) | "Present the strongest counterargument" |
+| **Evidence** (probing reasons) | "How do you know? What evidence supports this?" |
+| **Consequences** (tracing implications) | "What are the consequences? What if you're wrong?" |
 | **Aporia** (productive confusion) | "What am I not seeing about this?" |
 | **Meta-question** (finding the inquiry) | "What question should I be asking?" |
 
