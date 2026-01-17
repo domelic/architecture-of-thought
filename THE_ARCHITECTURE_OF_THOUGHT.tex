@@ -3094,6 +3094,67 @@ Co-Cognitive (This) & Socratic Prompting, Thinking Mirrors & Human-AI collaborat
 
 \textbf{Relationship to DCF}: These are \emph{single-prompt techniques}; DCF is a \emph{multi-turn conversation strategy}.
 
+\section{Comparison Matrix}\index{Framework Comparison}
+
+The following table summarizes how DCF relates to other methodologies:
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{p{2.2cm}p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}}
+\toprule
+\textbf{Dimension} & \textbf{DCF} & \textbf{Prompt Eng.} & \textbf{Ralph Loop} & \textbf{Plan Mode} \\
+\midrule
+Primary Focus & Human thinking & AI output quality & Task automation & Work structure \\
+Level & Micro (interaction) & Atomic (prompt) & Macro (project) & Meso (phase) \\
+Human Role & Thinking partner & Prompt crafter & Supervisor & Approver \\
+AI Role & Thinking mirror & Output generator & Autonomous executor & Planner \\
+Goal & Understanding + output & Better outputs & Task completion & Structured work \\
+When to Use & Complex thinking & Routine prompts & Well-defined tasks & Multi-step projects \\
+\bottomrule
+\end{tabular}
+\caption{Framework comparison across key dimensions}
+\end{table}
+
+\section{When to Use Which Approach}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{6cm}p{6cm}}
+\toprule
+\textbf{Situation} & \textbf{Recommended Approach} \\
+\midrule
+Well-defined task, need output & Prompt Engineering \\
+Complex task, need understanding & DCF \\
+Multi-step project with phases & Plan Mode + DCF at checkpoints \\
+Autonomous execution of clear goal & Ralph Loop \\
+Logic-heavy single problem & Chain-of-Thought \\
+Learning something new & DCF (learning stance) \\
+Architectural decision & DCF (dialectic emphasis) \\
+Code review & DCF (checkpoint protocol) \\
+\bottomrule
+\end{tabular}
+\caption{Situation-based framework selection}
+\end{table}
+
+\section{Anti-Patterns by Framework}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{3cm}p{5cm}p{5cm}}
+\toprule
+\textbf{Approach} & \textbf{Don't Use When} & \textbf{Risk if Misapplied} \\
+\midrule
+DCF & Trivial tasks; extreme time pressure & Analysis paralysis \\
+Prompt Engineering & Understanding matters more than output & Surface-level results \\
+Ralph Loop & Requirements unclear; failure is costly & Wrong direction at speed \\
+Plan Mode & Simple single-step tasks & Overhead without value \\
+Chain-of-Thought & Multi-turn dialogue needed & Missed context \\
+\bottomrule
+\end{tabular}
+\caption{When NOT to use each approach}
+\end{table}
+
 \chapter{The Stack View}
 
 These approaches form a stack, each addressing different levels of human-AI interaction:
@@ -3869,6 +3930,155 @@ This is not about AI replacing humans. It's about humans becoming more capable t
     \item \textbf{Memory Maintenance}: Actively curate CLAUDE.md and memories as cognitive infrastructure
 \end{enumerate}
 
+\chapter{Prompt Reference}\label{ch:prompt-reference}\index{Prompt Reference}
+
+This appendix provides essential prompts organized by situation. These are not scripts to recite---they're starting points for genuine inquiry. Adapt them to your context.
+
+\section{Clarification Prompts}
+
+Use when requirements or direction are unclear.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{3cm}p{9cm}}
+\toprule
+\textbf{Situation} & \textbf{Prompt} \\
+\midrule
+Unclear problem & ``What problem are we actually solving? What does success look like?'' \\
+Ambiguous scope & ``What's in scope? What should I explicitly NOT build?'' \\
+Multiple interpretations & ``This could mean A or B. Which direction should we go?'' \\
+Missing context & ``What prerequisite knowledge am I missing to understand this?'' \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Challenge Prompts}
+
+Use to surface assumptions and stress-test decisions.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{3cm}p{9cm}}
+\toprule
+\textbf{Situation} & \textbf{Prompt} \\
+\midrule
+Question assumptions & ``What assumptions are built into that approach?'' \\
+Test robustness & ``What's the strongest argument against this?'' \\
+Anticipate failure & ``If this fails, what's the most likely reason?'' \\
+Find blind spots & ``What am I not seeing about this problem?'' \\
+Future regret & ``What would make us regret this decision in 6 months?'' \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Plan Review Prompts}
+
+Use at checkpoints before approving AI-generated plans.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{3cm}p{9cm}}
+\toprule
+\textbf{Situation} & \textbf{Prompt} \\
+\midrule
+Standard checkpoint & ``Before I approve: What alternatives did you consider? What's the riskiest assumption? What would make this fail?'' \\
+Complexity check & ``Is this complexity necessary, or are we over-engineering?'' \\
+Trade-off analysis & ``What does this optimize for? What does it sacrifice?'' \\
+Simplification & ``What's the simplest version that could work?'' \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Learning Prompts}
+
+Use when the goal is understanding, not just output.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{3cm}p{9cm}}
+\toprule
+\textbf{Situation} & \textbf{Prompt} \\
+\midrule
+Guided discovery & ``Don't give me the answer---ask me questions that help me discover it.'' \\
+Key insight & ``What's the key insight that would unlock my understanding?'' \\
+Test understanding & ``I think I understand X. Quiz me to find my gaps.'' \\
+Build depth & ``What's the next level of depth I should explore?'' \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Debugging Prompts}
+
+Use when diagnosing problems.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{3cm}p{9cm}}
+\toprule
+\textbf{Situation} & \textbf{Prompt} \\
+\midrule
+Systematic diagnosis & ``What are the possible causes? Let's rank them by likelihood.'' \\
+Assumption check & ``What assumptions am I making about how this should work?'' \\
+Minimal reproduction & ``What's the smallest test case that reproduces this?'' \\
+Getting unstuck & ``I've been stuck for a while. Help me step back and see it fresh.'' \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Code Review Prompts}
+
+Use when reviewing code or implementations.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{3cm}p{9cm}}
+\toprule
+\textbf{Situation} & \textbf{Prompt} \\
+\midrule
+Understanding & ``Explain this code as if I'm new to the team. What's the key insight?'' \\
+Hidden assumptions & ``Where are the assumptions buried in this code?'' \\
+Edge cases & ``What edge cases does this not handle?'' \\
+Silent failures & ``Where could this fail silently?'' \\
+Simplification & ``Is there a simpler way to achieve the same result?'' \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Synthesis Prompts}
+
+Use when wrapping up work or capturing learning.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{3cm}p{9cm}}
+\toprule
+\textbf{Situation} & \textbf{Prompt} \\
+\midrule
+Session summary & ``What's the one thing I should remember from this session?'' \\
+Learning capture & ``What did I learn that I didn't know before?'' \\
+Next steps & ``What question should I be asking next?'' \\
+Pre-compaction & ``What context is essential for continuing this work?'' \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Meta Prompts}
+
+Use for reflection on the collaboration itself.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{3cm}p{9cm}}
+\toprule
+\textbf{Situation} & \textbf{Prompt} \\
+\midrule
+Engagement check & ``Am I extracting answers or building understanding?'' \\
+Collaboration quality & ``What would make this collaboration more effective?'' \\
+Calibration & ``I keep being surprised by X. How should I update my model?'' \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \chapter{Recommended Reading}
 
 \section{Cognitive Science}
@@ -4349,6 +4559,50 @@ Actionability & Could you implement the suggestion? \\
     \item Compare results on: quality, time, learning, satisfaction
     \item Identify which approach suits which task types
 \end{enumerate}
+
+\section{Exercise 8: The Silence Test}\index{Silence Test}
+
+\textbf{Objective}: Assess what you've internalized vs. what you still depend on AI for.
+
+This exercise tests whether AI collaboration is building your capability or creating dependency---the core question of scaffolding theory.
+
+\textbf{Instructions}:
+\begin{enumerate}
+    \item Choose a task you normally do with AI assistance
+    \item Attempt it \emph{without} AI. Set a timer for 20 minutes.
+    \item During the attempt, track:
+    \begin{itemize}
+        \item Where you got stuck
+        \item What you wanted to ask AI for help with
+        \item What you successfully did independently
+    \end{itemize}
+    \item After 20 minutes, use AI to complete the task
+    \item Compare: What was genuinely difficult vs. what was habitual dependency?
+\end{enumerate}
+
+\textbf{Tracking Sheet}:
+\begin{table}[H]
+\centering
+\begin{tabular}{p{4cm}p{4cm}p{4cm}}
+\toprule
+\textbf{Got Stuck On} & \textbf{Wanted AI For} & \textbf{Did Independently} \\
+\midrule
+& & \\
+& & \\
+& & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Reflection Questions}:
+\begin{itemize}
+    \item What should I practice doing without AI?
+    \item What is AI genuinely augmenting vs. replacing?
+    \item Am I building capability or dependency?
+    \item If the same patterns appear repeatedly, what skill am I avoiding developing?
+\end{itemize}
+
+\textbf{The DCF Connection}: This exercise operationalizes the scaffolding principle---AI should help you reach capabilities you couldn't achieve alone, then fade as you internalize those capabilities. If you can't do \emph{anything} without AI, the scaffold has become a crutch.
 
 \section{Workshop Format: DCF Introduction (90 minutes)}
 
