@@ -115,7 +115,60 @@ The mirror reflects only what you want to see.
 
 ---
 
-## Anti-Pattern 3: Infinite Refinement
+## Anti-Pattern 3: Reactive Evaluation
+
+### What It Looks Like
+
+Evaluating AI output without having formed expectations first. Asking "does this look good?" rather than "does this match what I predicted?"
+
+```
+Human: "Write a function to parse user input"
+AI: [Provides function]
+Human: [Reads it] "Yeah, that looks fine."
+```
+
+No prediction, no comparison, no learning signal.
+
+### Symptoms
+
+- You can't articulate what you expected before seeing the output
+- "Looks good" is your default evaluation
+- You accept plausible-sounding output without rigorous assessment
+- Your mental model of AI capabilities doesn't improve over time
+- You're frequently surprised (positively or negatively) but don't update
+
+### Root Cause
+
+- Passive consumption habits from other media
+- Time pressure discouraging deliberate evaluation
+- Lack of awareness that anticipation is a skill
+- Over-trust in AI outputs
+
+### The Fix
+
+1. **Pause before reading** — form an explicit prediction
+   ```
+   "Before I look: I expect this to cover X, probably miss Y, and maybe suggest Z."
+   ```
+
+2. **Compare against your prediction**
+   ```
+   "Did it match? What surprised me? What does that reveal?"
+   ```
+
+3. **Track surprise patterns** — repeated surprises in one direction mean your mental model is miscalibrated
+
+4. **Use surprise as signal**
+   - Positive surprise → delegate more of this type
+   - Negative surprise → prompt quality issue or AI limitation?
+
+### The Deeper Issue
+
+Reactive evaluation means you're not building a calibrated model of AI capabilities. You're flying blind, unable to predict what AI will do well or poorly. Anticipatory calibration is scientific thinking applied to AI collaboration.
+
+---
+
+## Anti-Pattern 4: Infinite Refinement
 
 ### What It Looks Like
 
@@ -173,7 +226,7 @@ Human: "Better, but now the flow from paragraph 2 to 3 feels off..."
 
 ---
 
-## Anti-Pattern 4: Lazy Prompting
+## Anti-Pattern 5: Lazy Prompting
 
 ### What It Looks Like
 
@@ -226,7 +279,7 @@ Human: "This AI doesn't understand me."
 
 ---
 
-## Anti-Pattern 5: Hallucination Acceptance
+## Anti-Pattern 6: Hallucination Acceptance
 
 ### What It Looks Like
 
@@ -275,7 +328,7 @@ Human: [Implements based on this claim without checking]
 
 ---
 
-## Anti-Pattern 6: Rubber Stamping
+## Anti-Pattern 7: Rubber Stamping
 
 ### What It Looks Like
 
@@ -326,7 +379,7 @@ Human: [Skims for 5 seconds] "Looks good, proceed."
 
 ---
 
-## Anti-Pattern 7: Complexity Creep
+## Anti-Pattern 8: Complexity Creep
 
 ### What It Looks Like
 
@@ -377,7 +430,7 @@ Iteration 5: Now it's a framework
 
 ---
 
-## Anti-Pattern 8: Cognitive Atrophy
+## Anti-Pattern 9: Cognitive Atrophy
 
 ### What It Looks Like
 
@@ -423,7 +476,7 @@ After AI:  "Claude, what's wrong with this code?"
 
 ---
 
-## Anti-Pattern 9: Goal Drift
+## Anti-Pattern 10: Goal Drift
 
 ### What It Looks Like
 
@@ -478,7 +531,7 @@ Iteration 5: Philosophical tangent about identity
 
 ---
 
-## Anti-Pattern 10: Abstraction Addiction
+## Anti-Pattern 11: Abstraction Addiction
 
 ### What It Looks Like
 

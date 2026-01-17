@@ -50,6 +50,9 @@ The standard DCF questions applied at decision points:
 2. What's the riskiest assumption?
 3. What would make this fail?
 
+### Anticipatory Calibration
+The practice of forming a hypothesis about what AI will produce before prompting, then comparing to build an accurate mental model. Predict → Prompt → Compare → Update.
+
 ---
 
 ## Stances

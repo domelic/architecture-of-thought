@@ -133,6 +133,48 @@ Could someone new to the codebase understand this?
 
 ---
 
+## Anticipatory Calibration Prompts
+
+### Before reading AI output
+
+```
+[Pause] What do I expect this response to contain?
+```
+
+```
+I predict the AI will suggest [X]. Let me see if that's right.
+```
+
+```
+Before I read: I expect this to be strong on [A] but probably miss [B].
+```
+
+### After receiving output
+
+```
+That surprised me—I expected [X] but got [Y]. What does that tell me?
+```
+
+```
+This matched my prediction exactly. Am I being too predictable in my prompts?
+```
+
+```
+The AI exceeded my expectations on [X]. I should trust it more with similar tasks.
+```
+
+### Calibrating your mental model
+
+```
+I keep being surprised by [pattern]. My model of AI capabilities is off—how should I update it?
+```
+
+```
+I expected this to be easy for AI but it struggled. Why?
+```
+
+---
+
 ## Code Review Prompts
 
 ### Understanding code
