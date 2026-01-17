@@ -25,10 +25,10 @@
 | Subtitle | A Treatise on Human-AI Collaboration in the Agentic Era |
 | Author | Damir Omelic (Independent Researcher) |
 | Co-Author | Claude (Anthropic) |
-| Pages | 148 |
-| Bibliography | 16 academic sources |
-| Index Entries | 26 |
-| Chapters | 66 |
+| Pages | 150 |
+| Bibliography | 18 academic sources |
+| Index Entries | 30 |
+| Chapters | 67 |
 | Parts | 12 |
 
 ---
@@ -59,9 +59,9 @@ Omelic, Damir, and Claude. "The Architecture of Thought: The Dialectical Cogniti
 
 | File | Description |
 |------|-------------|
-| `THE_ARCHITECTURE_OF_THOUGHT.pdf` | Compiled document (148 pages) |
+| `THE_ARCHITECTURE_OF_THOUGHT.pdf` | Compiled document (150 pages) |
 | `THE_ARCHITECTURE_OF_THOUGHT.tex` | LaTeX source |
-| `references.bib` | BibTeX bibliography (16 sources) |
+| `references.bib` | BibTeX bibliography (18 sources) |
 | `README.md` | Repository overview with citation info |
 | `PUBLICATION_STATUS.md` | Detailed publication status |
 | `SHARING_GUIDE.md` | Distribution strategy guide |
@@ -73,11 +73,12 @@ Omelic, Damir, and Claude. "The Architecture of Thought: The Dialectical Cogniti
 
 ### 1. Document Enhancements (January 2026)
 - Expanded 8 short chapters with academic depth and research citations
-- Added formal BibTeX bibliography with 16 sources
+- Added formal BibTeX bibliography with 18 sources
 - Added inline `\cite{}` commands throughout document
 - Added List of Figures and List of Tables
-- Added comprehensive Index (26 entries)
-- Compiled to 148 pages
+- Added comprehensive Index (30 entries)
+- Added chapter on Dialectical Thinking Tradition (acknowledging prior literature)
+- Compiled to 150 pages
 
 ### 2. GitHub Publication
 - Created public repository: `domelic/architecture-of-thought`
@@ -129,7 +130,7 @@ cd4bd77 - Add README and sharing guide for public distribution
 
 ### LinkedIn Post
 ```
-I'm excited to share "The Architecture of Thought" — a 148-page treatise on human-AI collaboration.
+I'm excited to share "The Architecture of Thought" — a 150-page treatise on human-AI collaboration.
 
 The Dialectical Cognition Framework (DCF) presents a methodology for working WITH AI rather than just extracting answers FROM it.
 

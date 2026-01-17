@@ -1,7 +1,7 @@
 # THE ARCHITECTURE OF THOUGHT - Publication Status
 
 **Document**: THE_ARCHITECTURE_OF_THOUGHT.tex / .pdf
-**Current Version**: 148 pages, ~3600 lines LaTeX
+**Current Version**: 150 pages, ~3700 lines LaTeX
 **Last Updated**: January 2026
 **Authors**: Damir Omelic (Independent Researcher) & Claude (Anthropic)
 
@@ -12,7 +12,8 @@
 The document is now complete with all academic publication features:
 - Formal BibTeX bibliography with inline citations
 - List of Figures and List of Tables
-- Comprehensive Index (26 entries)
+- Comprehensive Index (30 entries)
+- Chapter on Dialectical Thinking Tradition (acknowledging prior literature)
 
 ---
 
@@ -20,15 +21,15 @@ The document is now complete with all academic publication features:
 
 | Metric | Count |
 |--------|-------|
-| Pages | 148 |
+| Pages | 150 |
 | Parts | 12 |
-| Chapters | 66 |
-| Sections | 192 |
+| Chapters | 67 |
+| Sections | 195 |
 | Glossary Terms | ~30 |
 | Exercises | 7 + workshop format |
 | Case Studies | 5 detailed examples |
-| Bibliography Entries | 16 |
-| Index Entries | 26 |
+| Bibliography Entries | 18 |
+| Index Entries | 30 |
 
 ---
 
@@ -47,7 +48,7 @@ The document is now complete with all academic publication features:
 
 ### Content
 - [x] Core DCF Philosophy (Thinking Mirror, Socratic Dialogue, Recursive Refinement)
-- [x] Philosophical Foundations (Extended Mind, Distributed Cognition, Scaffolding Theory)
+- [x] Philosophical Foundations (Extended Mind, Distributed Cognition, Scaffolding Theory, Dialectical Thinking Tradition)
 - [x] Practical Frameworks (Prompt Chaining, Documentation, PKM)
 - [x] Claude Code Best Practices (2025)
 - [x] Framework Comparisons (Ralph, R-P-I, ACE-FCA, BMAD, Loom, etc.)

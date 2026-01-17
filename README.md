@@ -4,7 +4,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18275170.svg)](https://doi.org/10.5281/zenodo.18275170)
 [![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-red.svg)](LICENSE)
-[![Pages](https://img.shields.io/badge/Pages-148-blue.svg)](THE_ARCHITECTURE_OF_THOUGHT.pdf)
+[![Pages](https://img.shields.io/badge/Pages-150-blue.svg)](THE_ARCHITECTURE_OF_THOUGHT.pdf)
 [![LaTeX](https://img.shields.io/badge/Format-LaTeX-green.svg)](THE_ARCHITECTURE_OF_THOUGHT.tex)
 
 ---
@@ -111,9 +111,9 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ```
 /
 ├── README.md                         # This file
-├── THE_ARCHITECTURE_OF_THOUGHT.pdf   # Compiled document (148 pages)
+├── THE_ARCHITECTURE_OF_THOUGHT.pdf   # Compiled document (150 pages)
 ├── THE_ARCHITECTURE_OF_THOUGHT.tex   # LaTeX source
-├── references.bib                    # BibTeX bibliography (16 sources)
+├── references.bib                    # BibTeX bibliography (18 sources)
 ├── docs/                             # Documentation
 │   ├── PUBLICATION_COMPLETE.md       # Publication summary with all links
 │   ├── PUBLICATION_STATUS.md         # Detailed status and statistics
