@@ -641,6 +641,93 @@ Reinvention addiction treats each session as isolated rather than building cumul
 
 ---
 
+## Anti-Pattern 13: Context Rot
+
+**The Pattern**: Allowing the conversation context to degrade through accumulated noise, contradictions, or irrelevant information until the AI's performance noticeably suffers.
+
+```
+[Session starts clean]
+Human: Great explanation of the auth system!
+Human: Actually wait, let's try a different approach...
+Human: No, go back to the first idea.
+Human: Here's some additional context [pastes large document]
+Human: Ignore that last part, it's outdated.
+[40 messages later]
+Human: Why does Claude keep getting confused about basic requirements?
+```
+
+### The Four Causes of Context Rot
+
+1. **Poisoning**: Incorrect information enters the context and isn't corrected
+   - Outdated requirements pasted and never updated
+   - Wrong assumptions stated early that are never explicitly revised
+
+2. **Distraction**: Irrelevant information dilutes attention
+   - Large documents pasted "just in case"
+   - Tangential discussions that don't get cleared
+
+3. **Confusion**: Similar but different information creates ambiguity
+   - Multiple versions of the same spec
+   - Contradictory instructions at different points
+
+4. **Clash**: Direct contradictions that create logical impossibilities
+   - "Use approach A" followed later by "Use approach B" without resolution
+   - Requirements that cannot all be satisfied simultaneously
+
+### Symptoms
+
+- AI performance degrades as session lengthens
+- Repeated misunderstandings of "obvious" requirements
+- AI seems to forget or contradict earlier agreements
+- You're frequently saying "No, I meant..." or "Remember when we said..."
+- Context usage hits 60%+ without proportional value
+
+### Root Cause
+
+- Treating context like infinite storage rather than working memory
+- Not recognizing when context hygiene is needed
+- Reluctance to clear and restart because of sunk cost
+- Pasting large documents without summarizing relevance
+- Not explicitly resolving contradictions when plans change
+
+### The Fix
+
+1. **Monitor context health**
+   ```
+   Check /context periodically. If above 50-60% on a complex task,
+   consider clearing.
+   ```
+
+2. **Explicit contradiction resolution**
+   ```
+   "Earlier we said X, but now we're doing Y. To be clear: Y is the
+   current approach, ignore X."
+   ```
+
+3. **Summarize, don't paste**
+   ```
+   Instead of pasting a 500-line doc, summarize: "The key constraints
+   from the spec are: 1, 2, 3. Full doc at path/to/spec.md if needed."
+   ```
+
+4. **Clear and restart with summary**
+   ```
+   When context gets cluttered, use /clear then restart with a clean
+   summary of current state and next steps.
+   ```
+
+5. **Use /dcf compact proactively**
+   ```
+   Before context gets critical, capture state in a durable document
+   that can survive a fresh start.
+   ```
+
+### The Deeper Issue
+
+Context is the AI's working memory. Just as you can't think clearly with a cluttered desk and competing demands, the AI can't perform well with poisoned, distracted, confused, or clashing context. Context hygiene is a skill that improves outcomes more than most prompt engineering tricks.
+
+---
+
 ## Quick Reference: Anti-Pattern Detection
 
 | You Might Be In... | If You Notice... |
@@ -657,6 +744,7 @@ Reinvention addiction treats each session as isolated rather than building cumul
 | Goal Drift | Forgot original objective |
 | Abstraction Addiction | Discussing, not doing |
 | Reinvention Addiction | Solving same problem type from scratch repeatedly |
+| Context Rot | AI performance degrades as session lengthens |
 
 ---
 

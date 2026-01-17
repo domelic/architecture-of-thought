@@ -141,6 +141,7 @@ This repository includes a `/dcf` skill for Claude Code that applies the framewo
 /dcf review              # Review a plan or proposed approach
 /dcf checkpoint          # Apply DCF at an agentic checkpoint
 /dcf refine              # Iterate on output that needs improvement
+/dcf self-review         # Have Claude review its own output
 
 # Debugging & Analysis
 /dcf debug               # Debug with Socratic questioning

@@ -11,6 +11,7 @@ Apply Socratic questioning and structured thinking to any problem, plan, or deci
 /dcf review              # Review a plan or proposed approach
 /dcf checkpoint          # Apply DCF at an agentic checkpoint
 /dcf refine              # Iterate on output that needs improvement
+/dcf self-review         # Have Claude review its own output
 
 # Debugging & Analysis
 /dcf debug               # Debug with Socratic questioning
@@ -99,6 +100,38 @@ For **`/dcf refine`** (iterating on output):
 - "What would 'good enough' look like? Be specific."
 - "Are we refining toward the right goal, or has the goal drifted?"
 - "Is this change substantive or cosmetic? Should we stop?"
+
+For **`/dcf self-review`** (have Claude review its own output):
+
+Turn the thinking mirror on Claude's own work. This catches errors the agent misses during implementation.
+
+1. **Establish Review Criteria**
+   - "What were the requirements for this output?"
+   - "What quality standards should it meet?"
+   - "What edge cases or error conditions should be handled?"
+
+2. **Conduct the Review**
+   - "Review what you just produced. What issues do you see?"
+   - "Are there any assumptions you made that should be validated?"
+   - "What would a critical reviewer flag?"
+   - "Does this actually solve the original problem?"
+
+3. **Check for Common Pitfalls**
+   - "Are there any security concerns?"
+   - "Is error handling adequate?"
+   - "Are there edge cases not covered?"
+   - "Is this overly complex for what it needs to do?"
+
+4. **Assess Completeness**
+   - "What's missing that you didn't implement?"
+   - "Are there TODO comments or placeholders left behind?"
+   - "Does this integrate correctly with existing code?"
+
+5. **Decide Next Steps**
+   - "Based on this review, what should be fixed before proceeding?"
+   - "Is this ready, or does it need another iteration?"
+
+The insight: Asking the agent to review its own work is surprisingly fruitful—it activates a different evaluation mode than the generation mode.
 
 For **`/dcf retro`** (end-of-session reflection):
 - "What assumptions surfaced that you hadn't examined before?"

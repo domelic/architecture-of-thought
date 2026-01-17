@@ -353,7 +353,7 @@ Diagrams and visual references for the Dialectical Cognition Framework.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                     /dcf SKILL MODES (14 total)                     │
+│                     /dcf SKILL MODES (15 total)                     │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                     │
 │   GENERAL                                                           │
@@ -369,6 +369,10 @@ Diagrams and visual references for the Dialectical Cognition Framework.
 │          ▼                  ▼                   ▼                   │
 │    Evaluate plans     Decision points     Iterate output           │
 │    before approval    in agentic work     toward quality           │
+│                                                                     │
+│   ┌──────────────────┐                                              │
+│   │ /dcf self-review │  Have Claude review its own output           │
+│   └──────────────────┘                                              │
 │                                                                     │
 │   DEBUGGING & ANALYSIS                                              │
 │   ┌─────────────┐  ┌────────────────┐  ┌────────────────┐          │

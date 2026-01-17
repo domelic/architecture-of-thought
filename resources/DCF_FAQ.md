@@ -224,6 +224,7 @@ The `/dcf` skill is a Claude Code skill that applies DCF principles directly in 
 /dcf review              # Review plans or proposed approaches
 /dcf checkpoint          # Apply DCF at agentic decision points
 /dcf refine              # Iterate on output that needs improvement
+/dcf self-review         # Have Claude review its own output
 
 # Debugging & Analysis
 /dcf debug               # Debug with Socratic questioning
@@ -254,6 +255,7 @@ The `/dcf` skill is a Claude Code skill that applies DCF principles directly in 
 | `/dcf review` | An agent presents a plan and you need to evaluate it |
 | `/dcf checkpoint` | You're at a decision point in an agentic workflow |
 | `/dcf refine` | Output exists but isn't quite right |
+| `/dcf self-review` | You want Claude to review what it just produced |
 | **Debugging & Analysis** | |
 | `/dcf debug` | You're debugging and want to examine your mental model of the code |
 | `/dcf premortem` | Before starting a project—imagine it failed, work backward |

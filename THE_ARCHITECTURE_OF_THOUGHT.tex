@@ -575,6 +575,28 @@ Not all iteration is productive. Watch for:
 
 When you notice these patterns, step back and re-evaluate your convergence criteria.
 
+\subsection{The Three Attempts Rule}
+
+A practical heuristic for avoiding unproductive recursion: \textbf{after three failed attempts at the same problem, stop and reassess your approach}.
+
+This rule serves multiple purposes:
+\begin{itemize}
+    \item \textbf{Prevents infinite loops}: Three attempts is enough to distinguish ``needs refinement'' from ``wrong approach entirely''
+    \item \textbf{Forces meta-reflection}: Stepping back to reassess engages a different cognitive mode than continuing to iterate
+    \item \textbf{Surfaces hidden assumptions}: If three attempts failed, something fundamental may be wrong with the framing
+\end{itemize}
+
+When you hit the three-attempt threshold, ask:
+\begin{itemize}
+    \item Is the problem well-defined, or am I chasing a moving target?
+    \item Are my evaluation criteria clear and appropriate?
+    \item Am I asking the AI for something it cannot do well?
+    \item Should I break this into smaller subproblems?
+    \item Do I need to gather more information before proceeding?
+\end{itemize}
+
+This is not a rigid rule---some problems genuinely require more than three iterations. But it's a useful forcing function to prevent the ``infinite refinement'' anti-pattern where you keep iterating without making real progress.
+
 \section{Connection to Maieutic Prompting}
 
 Research on ``maieutic prompting'' (from the Greek word for midwifery, referring to Socrates' teaching method) has explored recursive explanation generation to identify logical contradictions and improve reasoning.
@@ -776,6 +798,30 @@ This is scientific thinking applied to prompting: hypothesis, test, update. The 
 \begin{quotebox}
 \textbf{Agentic Era Application:} When an agent presents a plan, pause before reading it. What do you expect the plan to contain? What approach do you predict? Then read---and notice where the agent surprised you. This discipline prevents rubber-stamping.
 \end{quotebox}
+
+\subsection{The Throw-Away Draft Pattern}
+
+A powerful variation: use a first draft specifically to reveal where your mental model diverges from reality.
+
+The pattern:
+\begin{enumerate}
+    \item \textbf{Generate a throw-away draft}: Ask the AI to produce a first attempt, knowing you'll likely discard it.
+    \item \textbf{Compare to your mental model}: Where did the output surprise you? Where did it take a different approach than you expected?
+    \item \textbf{Use the delta to sharpen your prompt}: The divergence tells you exactly what needs to be specified more clearly.
+    \item \textbf{Generate the real version}: With the insights from the throw-away draft, your next prompt will be much more precise.
+\end{enumerate}
+
+This inverts the typical workflow. Instead of trying to write the perfect prompt upfront, you use the first iteration as a learning tool. The ``wasted'' first draft actually saves time by revealing gaps in your specification that would have caused multiple correction cycles.
+
+Example:
+\begin{quote}
+\emph{Throw-away draft request}: ``Write a function to parse user input.''\\
+\emph{Draft reveals}: AI assumed string input, used regex, returned dict.\\
+\emph{What you learned}: You need to specify input type, parsing approach, and return format.\\
+\emph{Real request}: ``Write a function to parse JSON user input, validate against a schema, and return a typed dataclass with validation errors.''
+\end{quote}
+
+The throw-away draft pattern is especially valuable for complex tasks where you can't anticipate all the decisions the AI will need to make. Rather than guessing, you let the first draft reveal the decision points.
 
 \chapter{The Learning Stance}
 
@@ -2106,6 +2152,27 @@ Knowing when to start a fresh session vs. continue an existing one is a form of 
     \item \textbf{Capture before switching}---use \texttt{/dcf compact} before major context shifts
     \item \textbf{Start fresh for fresh tasks}---don't let inertia keep you in a stale session
 \end{enumerate}
+
+\subsection{The 50-60\% Context Guideline}
+
+A practical heuristic: \textbf{effective context capacity is 50-60\% of the maximum, not 100\%}.
+
+This matters because:
+\begin{itemize}
+    \item \textbf{Tool calls consume context}: Every file read, command executed, and search result adds to context consumption---often invisibly.
+    \item \textbf{Performance degrades before limits}: AI quality can degrade well before you hit hard context limits.
+    \item \textbf{Headroom enables recovery}: If you're at 90\% and need to paste an error message, you have no room to work.
+\end{itemize}
+
+Practical implications:
+\begin{itemize}
+    \item \textbf{Monitor context}: Use \texttt{/context} periodically to check consumption.
+    \item \textbf{Plan for compaction early}: When you hit 50-60\% on a complex task, start thinking about what to capture.
+    \item \textbf{Don't start complex tasks mid-session}: If you're already at 40\%, starting a major new task risks hitting limits at an awkward point.
+    \item \textbf{Summarize rather than paste}: A 500-line document becomes noise; a 10-line summary with ``full doc at path/to/spec.md'' preserves headroom.
+\end{itemize}
+
+The 50-60\% guideline isn't a rigid rule, but it prevents the surprise of hitting context limits during critical work.
 
 \section{IDE Integration}\index{IDE Integration}
 

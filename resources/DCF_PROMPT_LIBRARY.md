@@ -561,6 +561,50 @@ What would make this collaboration more effective?
 
 ---
 
+## Prompt Formulation Techniques
+
+### Negative to Alternative Reframing
+
+**The Problem**: Constraints phrased as negatives ("don't do X") can confuse AI agents. They may get stuck trying to avoid something without knowing what to do instead.
+
+**The Solution**: Replace negative constraints with positive alternatives.
+
+| Instead of... | Say... |
+|---------------|--------|
+| "Don't use global variables" | "Use local variables and pass them as parameters" |
+| "Don't make it too complex" | "Keep the solution simple—prefer readability over cleverness" |
+| "Never use --force flag" | "Use safe git operations; if push is rejected, fetch and rebase first" |
+| "Don't hardcode values" | "Extract configurable values to constants or config files" |
+| "Avoid nested callbacks" | "Use async/await for asynchronous operations" |
+
+**Why this works**: Positive instructions give the AI a clear path forward. Negative instructions only close a door without opening another.
+
+**In CLAUDE.md files**: This is especially important. Instead of a list of "don'ts," provide a list of preferred approaches.
+
+```
+# Instead of:
+"Don't use mocks in tests unless absolutely necessary."
+
+# Prefer:
+"Write integration tests with real dependencies. If a dependency is truly
+impractical to use (external API, slow database), document why before mocking."
+```
+
+### Specificity Gradient
+
+The more specific your prompt, the fewer iterations needed:
+
+| Specificity Level | Example | Likely Iterations |
+|-------------------|---------|-------------------|
+| Vague | "Add tests for foo.py" | 3-5 |
+| Medium | "Add unit tests for the parse_input function in foo.py" | 2-3 |
+| Specific | "Write a test case for parse_input in foo.py covering the edge case where input is empty string, expecting ValueError" | 1 |
+
+**When to be vague**: Exploration, when you don't know what you want yet.
+**When to be specific**: Execution, when you know exactly what you need.
+
+---
+
 ## Quick Reference Card
 
 | Situation | Go-to Prompt |
