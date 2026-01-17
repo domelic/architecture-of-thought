@@ -114,12 +114,10 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ├── THE_ARCHITECTURE_OF_THOUGHT.pdf   # Compiled document (150 pages)
 ├── THE_ARCHITECTURE_OF_THOUGHT.tex   # LaTeX source
 ├── references.bib                    # BibTeX bibliography (18 sources)
-├── docs/                             # Documentation
-│   ├── PUBLICATION_COMPLETE.md       # Publication summary with all links
-│   ├── PUBLICATION_STATUS.md         # Detailed status and statistics
-│   └── SHARING_GUIDE.md              # Distribution strategy guide
-└── notes/                            # Working notes and drafts
-    └── *.md                          # Research notes used in development
+└── docs/                             # Documentation
+    ├── PUBLICATION_COMPLETE.md       # Publication summary with all links
+    ├── PUBLICATION_STATUS.md         # Detailed status and statistics
+    └── SHARING_GUIDE.md              # Distribution strategy guide
 ```
 
 ---
