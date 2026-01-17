@@ -2855,6 +2855,69 @@ Week 3: ``Help me structure yet another code review''\\
     \item \textbf{Value infrastructure}---10 minutes capturing saves hours over time
 \end{enumerate}
 
+\section{Anti-Pattern 13: Context Rot}\index{Context Rot}
+
+Allowing conversation context to degrade through accumulated noise, contradictions, or irrelevant information until the AI's performance noticeably deteriorates.
+
+\textbf{What It Looks Like:}
+
+\begin{quote}
+Session starts clean, AI responses are sharp and relevant.\\
+Hours later: AI seems confused, gives contradictory answers, forgets earlier agreements.\\
+``Why is it getting worse? It was working fine before!''
+\end{quote}
+
+\textbf{The Four Causes:}
+\begin{itemize}
+    \item \textbf{Poisoning}: Incorrect information entered the context and wasn't corrected
+    \item \textbf{Distraction}: Irrelevant tangents dilute attention on the main task
+    \item \textbf{Confusion}: Similar but different concepts create ambiguity
+    \item \textbf{Clash}: Direct contradictions from changed plans not explicitly resolved
+\end{itemize}
+
+\textbf{Symptoms:} Repeated misunderstandings; AI forgets or contradicts earlier agreements; frequent ``No, I meant...'' corrections; context usage above 60\% without proportional value.
+
+\textbf{The Fix:}
+\begin{enumerate}
+    \item \textbf{Monitor context health}---check \texttt{/context} periodically; above 50-60\% on complex tasks, consider clearing
+    \item \textbf{Explicit contradiction resolution}---``Earlier we said X, now we're doing Y. Y is current; ignore X.''
+    \item \textbf{Summarize, don't paste}---instead of 500-line docs, provide key constraints with path to full doc
+    \item \textbf{Clear and restart with summary}---when cluttered, use \texttt{/clear} then restart clean
+    \item \textbf{Use /dcf compact proactively}---capture state in durable document before context gets critical
+\end{enumerate}
+
+\section{Anti-Pattern 14: Knowledge Gatekeeping}\index{Knowledge Gatekeeping}
+
+Organizational knowledge hoarding that prevents effective AI collaboration---tribal knowledge locked in people's heads rather than documented.
+
+\textbf{What It Looks Like:}
+
+\begin{quote}
+Developer: ``I want to use Claude to help refactor the auth system.''\\
+Reality: The auth system's quirks exist only in Sarah's head.\\
+Result: AI produces technically correct but contextually wrong changes.
+\end{quote}
+
+\textbf{Symptoms:}
+\begin{itemize}
+    \item ``Ask [person], they know how that works''
+    \item Undocumented decisions, conventions, gotchas
+    \item AI-assisted work requires constant ``actually, we don't do it that way'' corrections
+    \item Same AI failures repeat because context never gets documented
+\end{itemize}
+
+\textbf{Root Causes:} Information asymmetry treated as job security; no documentation culture; psychological safety issues (asking = admitting ignorance); territorial code ownership.
+
+\textbf{The Fix:}
+\begin{enumerate}
+    \item \textbf{Build shared context infrastructure}---context engineering repos, team wikis for AI-relevant knowledge
+    \item \textbf{Normalize knowledge sharing}---``What I learned today'' becomes team ritual
+    \item \textbf{Document for AI, not just humans}---CLAUDE.md files, ADRs, inline comments explaining ``why''
+    \item \textbf{Permission to explore}---explicitly invite cross-domain work, reduce territorial ownership
+\end{enumerate}
+
+\textbf{The Organizational Insight:} AI amplifies what you know. If knowledge is siloed, AI benefits are siloed too. Teams that gain most from AI have already built knowledge-sharing cultures.
+
 \section{Quick Reference: Anti-Pattern Detection}
 
 \begin{center}
@@ -2874,6 +2937,8 @@ Cognitive Atrophy & Can't function without AI \\
 Goal Drift & Forgot original objective \\
 Abstraction Addiction & Discussing, not doing \\
 Reinvention Addiction & Solving same problem type from scratch \\
+Context Rot & AI performance degrades as session lengthens \\
+Knowledge Gatekeeping & Tribal knowledge blocks AI collaboration \\
 \hline
 \end{tabular}
 \end{center}

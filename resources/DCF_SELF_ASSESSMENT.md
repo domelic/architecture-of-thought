@@ -88,6 +88,8 @@ Did you catch yourself in any of these patterns?
 | **Lazy Prompting** — Vague prompts, frustrated by outputs | ☐ | |
 | **Hallucination Acceptance** — Trusting without verifying | ☐ | |
 | **Rubber Stamping** — Approving without reviewing | ☐ | |
+| **Context Rot** — Session performance degrading over time | ☐ | |
+| **Knowledge Gatekeeping** — Tribal knowledge blocking AI effectiveness | ☐ | |
 
 **If you checked any, what will you do differently?**
 
@@ -241,6 +243,47 @@ For busy weeks, answer just these:
 2. **Did I learn something I'll retain without AI?** Y/N
 3. **Did I catch myself rubber-stamping?** Y/N
 4. **One thing to do differently next week:**
+
+```
+[Write here]
+```
+
+---
+
+## Team Collaboration Check (For team leads or those driving adoption)
+
+### Knowledge Sharing
+
+| Practice | This Week? | Notes |
+|----------|------------|-------|
+| Shared an AI insight with the team | ☐ | |
+| Documented a useful pattern or prompt | ☐ | |
+| Asked questions about unfamiliar systems | ☐ | |
+| Helped someone else with AI collaboration | ☐ | |
+
+### Context Infrastructure
+
+- [ ] Team CLAUDE.md or context repo is current
+- [ ] New patterns have been captured (not just used once)
+- [ ] Knowledge gatekeeping was addressed when encountered
+
+### Trust-Speed-Rigor Balance
+
+**Where is the team on this triangle?**
+
+```
+         TRUST
+          /\
+         /  \
+        /    \
+       / [X]  \      ← Mark current position
+      /________\
+   SPEED      RIGOR
+```
+
+**Is this the right balance for current work?** Y/N
+
+**What would improve the balance?**
 
 ```
 [Write here]

@@ -144,6 +144,9 @@ Preferring abstract discussion over concrete action. Analyzing instead of buildi
 ### Reinvention Addiction
 Repeatedly solving the same type of problem from scratch instead of capturing effective patterns as reusable skills. Treating each session as isolated rather than building cumulative capability.
 
+### Context Rot
+Allowing conversation context to degrade through accumulated noise, contradictions, or irrelevant information. Four causes: poisoning (incorrect info), distraction (irrelevant tangents), confusion (similar but different concepts), clash (unresolved contradictions).
+
 ### Knowledge Gatekeeping
 Organizational knowledge hoarding that prevents effective AI collaboration. Tribal knowledge locked in people's heads rather than documented, causing AI to produce technically correct but contextually wrong outputs.
 
@@ -240,6 +243,7 @@ Agents spawned via the Task tool that run asynchronously while you continue othe
 | **ZPD** | Zone where learning happens |
 | **Convergence** | When refinement yields diminishing returns |
 | **Learning Accelerator** | AI enables faster skill acquisition through context |
+| **Context Rot** | Conversation context degrading over time |
 | **Knowledge Gatekeeping** | Tribal knowledge hoarding blocking AI benefits |
 | **Shared Context** | Team-level AI knowledge infrastructure |
 | **Trust-Speed-Rigor** | Three forces to balance when building with AI |

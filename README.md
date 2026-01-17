@@ -48,7 +48,7 @@ DCF operates at the *micro level* of human-AI interaction—the cognitive strate
 | [Visual Guide](resources/DCF_VISUAL_GUIDE.md) | Diagrams and visual references | Quick reference |
 | [Slide Deck](resources/DCF_SLIDE_DECK.md) | Presentation for teaching DCF | Team training |
 | [Framework Integration](resources/DCF_FRAMEWORK_INTEGRATION.md) | DCF + Ralph, Plan Mode, BMAD | Combining methodologies |
-| [Anti-Patterns Guide](resources/DCF_ANTI_PATTERNS.md) | 12 failure modes with fixes | Avoiding common mistakes |
+| [Anti-Patterns Guide](resources/DCF_ANTI_PATTERNS.md) | 14 failure modes with fixes | Avoiding common mistakes |
 
 ### Learning & Reference
 
@@ -233,7 +233,7 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
     ├── DCF_VISUAL_GUIDE.md           # Diagrams and visual references
     ├── DCF_SLIDE_DECK.md             # Presentation slides
     ├── DCF_FRAMEWORK_INTEGRATION.md  # Integration with other frameworks
-    ├── DCF_ANTI_PATTERNS.md          # 10 failure modes with fixes
+    ├── DCF_ANTI_PATTERNS.md          # 14 failure modes with fixes
     ├── DCF_EXAMPLE_TRANSCRIPTS.md    # 4 annotated conversations
     ├── DCF_FAQ.md                    # Frequently asked questions
     ├── DCF_GLOSSARY.md               # Term definitions

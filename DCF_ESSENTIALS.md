@@ -231,6 +231,23 @@ Most people use AI to avoid learning. They want the answer, not understanding.
 
 **The paradox:** By seeking understanding rather than answers, you become capable of generating better answers yourself.
 
+### AI as Learning Accelerator
+
+A counterintuitive finding: AI doesn't just help with tasks you know—it *dramatically accelerates learning* tasks you don't yet understand.
+
+**The pattern:**
+1. Start with the problem, not prerequisite knowledge
+2. Use AI to scaffold understanding as you need it
+3. Learn concepts in context of real application
+4. Build working solutions while acquiring knowledge
+
+**The shift in value:**
+- Syntax/API details → Lower value (AI handles these)
+- Patterns/concepts → Higher value (guides AI direction)
+- Problem decomposition → Critical (enables effective AI use)
+
+**Key insight:** AI is the most powerful learning tool ever created—but only for those who approach it as learners, not extractors.
+
 ---
 
 ## Anticipatory Calibration
