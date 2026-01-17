@@ -582,12 +582,72 @@ Human: "Great insights. Now, about the principles of REST..."
 
 ---
 
+## Anti-Pattern 12: Reinvention Addiction
+
+### What It Looks Like
+
+Repeatedly solving the same type of problem from scratch instead of capturing and reusing effective patterns.
+
+```
+Week 1: "Help me structure this code review"
+[Great approach discovered]
+
+Week 2: "Help me structure this other code review"
+[Starts from scratch, same questions, same process]
+
+Week 3: "Help me structure yet another code review"
+[Still hasn't captured the pattern as a skill]
+```
+
+### Symptoms
+
+- Solving the same category of problem repeatedly without efficiency gains
+- "We figured this out before" moments that don't lead to capture
+- Effective approaches exist only in conversation history
+- No skill library despite repeated successful patterns
+- Relying on memory instead of infrastructure
+
+### Root Cause
+
+- Capture feels like "extra work" in the moment
+- Not recognizing when a pattern has reached skill-worthy status
+- Undervaluing future time savings
+- Preference for "fresh" solutions over systematized ones
+- Conversation feels more natural than documentation
+
+### The Fix
+
+1. **Notice repetition**
+   ```
+   "Wait—I've done this same sequence before. Is this skill-worthy?"
+   ```
+
+2. **Set a capture trigger**
+   - Third time solving the same type of problem? Capture it.
+   - If you're explaining your approach, it's probably worth documenting.
+
+3. **Use /dcf skill**
+   ```
+   "Let's capture this pattern as a reusable skill before we forget."
+   ```
+
+4. **Value infrastructure**
+   - 10 minutes capturing a pattern saves hours over time
+   - Your skill library is compounding expertise
+
+### The Deeper Issue
+
+Reinvention addiction treats each session as isolated rather than building cumulative capability. Effective DCF practice includes recognizing when you've discovered something reusable and taking the time to capture it. Your future self will thank you.
+
+---
+
 ## Quick Reference: Anti-Pattern Detection
 
 | You Might Be In... | If You Notice... |
 |--------------------|------------------|
 | Socratic Theater | Questions but no course changes |
 | Mirror Narcissism | Only confirming, never challenging |
+| Reactive Evaluation | No expectations, just "looks good" |
 | Infinite Refinement | Can't ship, always "almost done" |
 | Lazy Prompting | Frustrated with AI "not getting it" |
 | Hallucination Acceptance | No verification, just trust |
@@ -596,6 +656,7 @@ Human: "Great insights. Now, about the principles of REST..."
 | Cognitive Atrophy | Can't function without AI |
 | Goal Drift | Forgot original objective |
 | Abstraction Addiction | Discussing, not doing |
+| Reinvention Addiction | Solving same problem type from scratch repeatedly |
 
 ---
 

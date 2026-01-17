@@ -12,6 +12,7 @@ Apply Socratic questioning and structured thinking to any problem, plan, or deci
 /dcf refine              # Iterate on output that needs improvement
 /dcf retro               # End-of-session reflection and learning capture
 /dcf compact             # Prepare for session compaction
+/dcf skill               # Capture an effective pattern as a reusable skill
 ```
 
 ## Instructions
@@ -113,6 +114,38 @@ Guide the user through capturing session state before compaction. Create a worki
    - "What does future-you need to know that might not survive compaction?"
 
 After gathering responses, offer to create a `SESSION_FINDINGS.md` file (gitignored) that captures this information for continuity.
+
+For **`/dcf skill`** (capturing patterns as reusable skills):
+
+Guide the user through recognizing and codifying an effective pattern as a Claude Code skill.
+
+1. **Identify the Pattern**
+   - "What approach have you been using that's working well?"
+   - "Have you done this same sequence multiple times?"
+   - "Could this apply to other similar tasks?"
+
+2. **Extract the Essence**
+   - "What's the transferable core—strip away the instance-specific details?"
+   - "What makes this approach work? What's the non-obvious insight?"
+   - "If you had to teach this to someone else, what would you tell them?"
+
+3. **Generalize and Structure**
+   - "What should the skill be called? What modes might it need?"
+   - "What criteria determine when this skill is appropriate?"
+   - "What does Claude need to know to execute this well?"
+
+4. **Create the Skill File**
+   - Offer to create `.claude/skills/skillname.md` with:
+     - Usage section with invocation examples
+     - Instructions section with detailed guidance
+     - When to apply criteria
+     - Output format expectations
+
+5. **Plan for Refinement**
+   - "How will you know if the skill needs adjustment?"
+   - "What edge cases should we anticipate?"
+
+The `/dcf` skill itself is an example of this process—Socratic questioning codified into reusable infrastructure.
 
 **Phase 3 - Synthesize and Refine**
 

@@ -129,6 +129,9 @@ Each iteration making solutions more complex rather than clearer. Over-engineeri
 ### Abstraction Addiction
 Preferring abstract discussion over concrete action. Analyzing instead of building.
 
+### Reinvention Addiction
+Repeatedly solving the same type of problem from scratch instead of capturing effective patterns as reusable skills. Treating each session as isolated rather than building cumulative capability.
+
 ---
 
 ## Related Frameworks
@@ -176,6 +179,9 @@ A collection of ready-to-use prompts organized by situation or purpose.
 
 ### Skill (Claude Code)
 A predefined workflow that can be invoked with a command. The /dcf skill applies DCF principles.
+
+### Pattern Capture (Pattern-to-Skill)
+The practice of recognizing effective prompting patterns and codifying them as reusable Claude Code skills. When you discover an approach that works well for a category of tasks, extract its transferable essence and document it in `.claude/skills/`. The `/dcf skill` mode guides this process.
 
 ---
 
