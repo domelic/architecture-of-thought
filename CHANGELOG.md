@@ -29,10 +29,25 @@ Following audit against Paul-Elder framework for Socratic questioning:
 - Added "Classical and Modern Synthesis" subsection explaining DCF's 7-operation approach
 - Provides academic grounding for combining classical Socratic operations with modern pedagogical framework
 
+#### Additional Philosophical Foundations
+Three major philosophical frameworks integrated to strengthen DCF's theoretical grounding:
+- **Popper's Critical Rationalism** - Falsificationism grounds DCF's challenge operations (try to disprove, not confirm)
+- **Argyris's Double-Loop Learning** - Explains why metacognition matters (question the frame, not just fix within it)
+- **Gadamer's Hermeneutics** - Fusion of horizons explains why dialogue changes both parties (partnership, not extraction)
+
+New treatise sections:
+- "The Hermeneutic Foundation" in Thinking Mirror chapter
+- "The Critical Rationalist Foundation" in Socratic Method chapter
+- "Single-Loop and Double-Loop Learning" in Metacognition chapter
+
+New glossary entries: Critical Rationalism, Double-Loop Learning, Falsificationism, Fusion of Horizons
+
+New citations: Popper (1959, 1963), Argyris (1977), Argyris & Schön (1978), Gadamer (1960)
+
 ### Changed
-- PDF now 191 pages (up from 190)
+- PDF now 193 pages (up from 190)
 - Socratic operations expanded from 5 to 7 (now complete per Paul-Elder framework)
-- Bibliography now includes 20 sources (up from 18)
+- Bibliography now includes 25 sources (up from 18)
 
 ---
 

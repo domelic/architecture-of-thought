@@ -100,6 +100,18 @@ Support provided to help someone accomplish what they couldn't do alone, with th
 ### Test Coverage as Scaffolding
 The principle that comprehensive test suites enable confident approval of bold AI-assisted changes. Tests verify behavior automatically, reducing human verification burden and enabling faster, larger refactorings.
 
+### Critical Rationalism
+Karl Popper's philosophical stance that all knowledge is provisional, conjectural, and open to revision through criticism. In DCF, provides the foundation for treating AI outputs as hypotheses to be tested rather than truths to be accepted.
+
+### Falsificationism
+Popper's principle that hypotheses gain credibility not from confirmation but from surviving serious attempts at refutation. In DCF, grounds the practice of actively challenging AI outputs rather than seeking confirmation.
+
+### Double-Loop Learning
+Chris Argyris's distinction between learning that adjusts actions within existing assumptions (single-loop) and learning that questions the assumptions themselves (double-loop). DCF's metacognitive emphasis enables double-loop learning by surfacing and examining underlying mental models.
+
+### Fusion of Horizons
+Hans-Georg Gadamer's concept (*Horizontverschmelzung*) that understanding emerges through dialogue when different perspectives merge to create shared meaning. In DCF, explains why human-AI collaboration is partnership: genuine understanding requires dialogue that changes both parties.
+
 ---
 
 ## Framework Levels
@@ -262,6 +274,10 @@ Agents spawned via the Task tool that run asynchronously while you continue othe
 | **Shared Context** | Team-level AI knowledge infrastructure |
 | **Trust-Speed-Rigor** | Three forces to balance when building with AI |
 | **Workflow Composition** | Chaining skills into sequences for common scenarios |
+| **Critical Rationalism** | Popper: all knowledge is provisional, open to criticism |
+| **Falsificationism** | Try to disprove, not confirm |
+| **Double-Loop Learning** | Question the assumptions, not just fix within them |
+| **Fusion of Horizons** | Understanding emerges when perspectives merge through dialogue |
 
 ---
 

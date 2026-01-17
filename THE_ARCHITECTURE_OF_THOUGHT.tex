@@ -248,6 +248,14 @@ This mirror doesn't show you truth. It shows you \emph{a version of your thought
     \item \textbf{Extension}: Ideas grow through recursive elaboration
 \end{itemize}
 
+\subsection{The Hermeneutic Foundation}
+
+The philosopher Hans-Georg Gadamer offers a deeper account of why dialogue produces understanding \cite{gadamer1960truth}. In his concept of \emph{Horizontverschmelzung}---the ``fusion of horizons''---understanding emerges when two perspectives merge to create shared meaning. Each participant brings a ``horizon'': the totality of what they can see from their particular vantage point, shaped by history, context, and experience.
+
+In human-AI collaboration, you bring contextual understanding, values, and goals. The AI brings patterns distilled from vast training data. Neither horizon alone suffices. Understanding emerges through dialogue in which \emph{both parties are changed}---you refine your thinking through articulation; the AI's outputs are shaped by your framing. This is why DCF emphasizes partnership over extraction: genuine understanding requires the fusion of horizons that only dialogue enables.
+
+Gadamer also rehabilitates ``prejudice'' (\emph{Vorurteil})---not as bias to eliminate, but as the necessary pre-judgments that make understanding possible. You cannot approach a problem with no assumptions; you can only make your assumptions explicit and test them through dialogue. This is precisely what Socratic questioning accomplishes.
+
 The mirror hypothesis explains why one-shot prompting fails for complex tasks. A mirror shows you what you bring to it. If you bring a vague question, you receive a vague reflection. But if you bring structured inquiry---layered, iterative, self-correcting---the mirror returns increasing clarity.
 
 \begin{quotebox}
@@ -338,6 +346,25 @@ The \textbf{modern pedagogical tradition}, particularly Paul and Elder's framewo
 DCF adds the \textbf{meta-question}---``What question should I be asking?''---as an explicit operation because, in human-AI collaboration, users frequently struggle not from lacking answers but from asking the wrong question entirely.
 
 This synthesis is appropriate for the modern era. DCF is not a historical reconstruction of Plato but a practical framework for human-AI collaboration. It draws from multiple traditions to be maximally useful while maintaining conceptual coherence through the classical terminology.
+
+\subsection{The Critical Rationalist Foundation}
+
+The philosopher Karl Popper provides additional grounding for DCF's emphasis on challenge and refutation \cite{popper1963conjectures}. His principle of \emph{falsificationism} holds that we advance knowledge not by confirming what we believe, but by actively trying to disprove it. A hypothesis gains credibility not from supporting evidence, but from surviving serious attempts at refutation.
+
+This inverts the natural human tendency toward confirmation bias. We instinctively seek evidence that supports our views. Popper argues we should instead ask: ``What would prove me wrong?'' and then look for exactly that.
+
+DCF's Socratic operations embody this principle:
+
+\begin{itemize}
+    \item \textbf{Elenchus} seeks contradictions in stated positions
+    \item \textbf{Dialectic} presents the strongest counterargument
+    \item \textbf{Evidence} demands factual grounding that could be challenged
+    \item \textbf{Consequences} traces implications that might reveal flaws
+\end{itemize}
+
+When you ask an AI ``What's the strongest argument against this approach?'' or ``What assumptions might be wrong here?'', you're applying Popperian critical rationalism to AI outputs. You're not asking the AI to confirm your intuition---you're asking it to help you falsify your own position.
+
+Popper called this stance ``critical rationalism'': the view that all knowledge is provisional, conjectural, and open to revision through criticism. This is precisely the epistemic humility DCF requires. AI outputs are hypotheses to be tested, not truths to be accepted.
 
 The difference from ancient Athens: Socrates had finite patience and his own biases. The LLM has neither. It can pursue a line of questioning indefinitely, with perfect equanimity, following whatever direction you steer.
 
@@ -771,6 +798,31 @@ Externalized: ``Something about this solution seems off. What are the potential 
 \end{quote}
 
 This externalization makes cognitive processes visible and improvable.
+
+\section{Single-Loop and Double-Loop Learning}
+
+Chris Argyris and Donald Sch{\"o}n introduced a distinction that illuminates why metacognition matters \cite{argyris1977double, argyris1978organizational}. \textbf{Single-loop learning} adjusts actions based on outcomes while leaving underlying assumptions intact. \textbf{Double-loop learning} questions the assumptions themselves.
+
+\begin{quote}
+\textbf{Single-loop}: The code has a bug → Fix the bug \\
+\textbf{Double-loop}: The code has a bug → Why did we write code that could have this bug? What about our process or mental model allowed this?
+\end{quote}
+
+Most problem-solving operates in single-loop mode: identify the problem, apply a solution, check if it worked. This is efficient for routine situations where the frame is correct. But when the frame itself is flawed, single-loop learning produces elegant solutions to the wrong problem.
+
+DCF's metacognitive emphasis is fundamentally about enabling double-loop learning. When you ask ``What assumptions am I making?'' you're stepping outside the frame to examine it. When you ask ``What question should I be asking?'' you're questioning whether you're even solving the right problem.
+
+Organizations and individuals resist double-loop learning because it's uncomfortable---it requires admitting that your fundamental approach might be wrong, not just your execution. Argyris found that people engage in ``defensive reasoning'' to protect their existing mental models from challenge.
+
+The Socratic operations counteract defensive reasoning:
+
+\begin{itemize}
+    \item \textbf{Elenchus} exposes assumptions you're defending without examining
+    \item \textbf{Aporia} creates the productive discomfort that precedes genuine learning
+    \item \textbf{Meta-question} asks whether you're solving the right problem at all
+\end{itemize}
+
+AI collaboration, when done well, should produce double-loop learning: not just answers to your questions, but examination of whether you're asking the right questions, holding the right assumptions, and framing the problem correctly.
 
 \section{Anticipatory Calibration}\label{sec:anticipatory-calibration}\index{Anticipatory Calibration}
 
@@ -4719,11 +4771,15 @@ This glossary provides definitions for key terms used throughout this treatise. 
 
 \textbf{Context Window} --- The maximum amount of text an LLM can process in a single interaction. Determines the practical limits of prompt chaining and conversation depth.
 
+\textbf{Critical Rationalism}\index{Critical Rationalism} --- Karl Popper's philosophical stance that all knowledge is provisional, conjectural, and open to revision through criticism. In DCF, provides the foundation for treating AI outputs as hypotheses to be tested rather than truths to be accepted.
+
 \section*{D}
 
 \textbf{DCF (Dialectical Cognition Framework)} --- The integrated methodology for human-AI collaboration described in this treatise. Combines Socratic dialogue, recursive refinement, and metacognitive awareness.
 
 \textbf{Dialectic} --- The process of arriving at truth through exchange of opposing ideas. In DCF, refers to the productive tension between human and AI perspectives.
+
+\textbf{Double-Loop Learning}\index{Double-Loop Learning} --- Chris Argyris's concept distinguishing learning that adjusts actions within existing assumptions (single-loop) from learning that questions the assumptions themselves (double-loop). DCF's metacognitive emphasis enables double-loop learning by surfacing and examining underlying mental models.
 
 \section*{E}
 
@@ -4732,6 +4788,12 @@ This glossary provides definitions for key terms used throughout this treatise. 
 \textbf{Evidence (Probing Reasons)}\index{Evidence} --- Questioning that examines the factual foundation of statements. In DCF: ``How do you know? What evidence supports this?'' Many beliefs rest on untested assumptions or weakly understood foundations---this operation surfaces them.
 
 \textbf{Extended Mind Thesis} --- The philosophical position that cognitive processes can extend beyond the brain into the environment. Provides theoretical grounding for treating AI as cognitive augmentation.
+
+\section*{F}
+
+\textbf{Falsificationism}\index{Falsificationism} --- Karl Popper's principle that scientific hypotheses gain credibility not from confirmation but from surviving serious attempts at refutation. In DCF, grounds the practice of actively challenging AI outputs rather than seeking confirmation.
+
+\textbf{Fusion of Horizons}\index{Fusion of Horizons} --- Hans-Georg Gadamer's concept (\emph{Horizontverschmelzung}) that understanding emerges through dialogue when different perspectives merge to create shared meaning. In DCF, explains why human-AI collaboration is partnership: genuine understanding requires dialogue that changes both parties.
 
 \section*{H}
 
