@@ -183,6 +183,15 @@ A predefined workflow that can be invoked with a command. The /dcf skill applies
 ### Pattern Capture (Pattern-to-Skill)
 The practice of recognizing effective prompting patterns and codifying them as reusable Claude Code skills. When you discover an approach that works well for a category of tasks, extract its transferable essence and document it in `.claude/skills/`. The `/dcf skill` mode guides this process.
 
+### Hooks
+Shell commands that execute automatically before or after Claude Code tool calls. Enable automated DCF checkpoints—for example, running tests after every file edit.
+
+### Session Lifecycle
+The practice of managing conversation context over time. Includes knowing when to start fresh sessions vs. continue existing ones, and using `/dcf compact` to capture state before context limits are reached.
+
+### Background Agents
+Agents spawned via the Task tool that run asynchronously while you continue other work. Trade engagement for efficiency—use for exploration, engage synchronously for judgment calls.
+
 ---
 
 ## Quick Definitions

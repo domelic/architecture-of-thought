@@ -153,6 +153,25 @@ You (DCF): "Before I approve:
 - Trade-offs reflect your values
 - Output is hard to verify or undo
 
+### Agent Selection
+
+| Agent | Use For | DCF Engagement |
+|-------|---------|----------------|
+| Explore | Understanding code | Review findings for completeness |
+| Plan | Architecture design | Full Socratic review |
+| code-reviewer | Quality analysis | Evaluate flagged issues |
+| Background | Long explorations | Review output later |
+
+### Model Selection
+
+| Model | When to Use | DCF Implication |
+|-------|-------------|-----------------|
+| Haiku | Quick searches, exploration | Lower stakes, more review |
+| Sonnet | Most development work | Balanced engagement |
+| Opus | Architecture, complex judgment | High stakes, deep engagement |
+
+**Principle:** Match model capability to decision stakes.
+
 ---
 
 ## Quick Reference: Socratic Prompts

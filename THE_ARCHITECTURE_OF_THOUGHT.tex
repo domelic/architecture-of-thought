@@ -1563,6 +1563,76 @@ Claude Code: [Executes commit skill with git analysis]
 
 DCF Application: \textbf{Low to Medium}---review generated commit message, verify staged files.
 
+\chapter{The Agent Ecosystem}\index{Agent Ecosystem}\label{ch:agent-ecosystem}
+
+Claude Code's Task tool spawns specialized agents for different purposes. Understanding this ecosystem enables effective delegation and appropriate DCF engagement.
+
+\section{Specialized Agent Types}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Agent Type} & \textbf{Purpose} & \textbf{DCF Checkpoint} \\
+\midrule
+Explore & Codebase understanding & Review findings for completeness \\
+Plan & Architecture design & Full Socratic review of plan \\
+code-reviewer & Code quality analysis & Evaluate flagged issues \\
+code-explorer & Deep feature analysis & Verify execution path accuracy \\
+code-architect & Design blueprints & Architectural review \\
+Bash & Command execution & Review commands before execution \\
+\bottomrule
+\end{tabular}
+\caption{Agent Types and DCF Checkpoints}
+\end{table}
+
+\section{When to Use Which Agent}
+
+\begin{itemize}
+    \item \textbf{Explore (quick/medium/thorough)}: When you need to understand code you haven't seen. Use ``thorough'' for comprehensive analysis, ``quick'' for targeted searches.
+    \item \textbf{Plan}: When the task requires upfront design. Plans deserve full DCF engagement before approval.
+    \item \textbf{code-reviewer}: After implementing changes. Review its findings but apply judgment---not all flagged issues are real problems.
+    \item \textbf{code-architect}: For new features requiring design decisions. Treat blueprints as proposals, not directives.
+\end{itemize}
+
+\section{Background Agents}\index{Background Agents}
+
+Agents can run in the background while you continue working. This raises DCF questions about when synchronous engagement is needed.
+
+\subsection{When to Run in Background}
+
+\begin{itemize}
+    \item Long-running explorations where you don't need immediate results
+    \item Multiple independent searches that can run in parallel
+    \item Tasks where you'll review output later anyway
+\end{itemize}
+
+\subsection{When to Run Synchronously}
+
+\begin{itemize}
+    \item Results will immediately inform your next decision
+    \item The task is high-stakes and needs real-time oversight
+    \item You want to engage dialectically with the process, not just the output
+\end{itemize}
+
+\textbf{DCF Principle}: Background execution trades engagement for efficiency. Use it for exploration and information gathering; engage synchronously for judgment calls.
+
+\section{Multi-Agent Orchestration}
+
+Complex tasks may involve multiple agents working together:
+
+\begin{lstlisting}
+[User requests new feature]
+1. Explore agent: Understand existing patterns
+2. Plan agent: Design implementation approach
+3. [Human reviews plan - DCF checkpoint]
+4. Implementation (main agent)
+5. code-reviewer agent: Quality check
+6. [Human reviews findings - DCF checkpoint]
+\end{lstlisting}
+
+\textbf{DCF Application}: The orchestration itself is a form of prompt chaining. Your checkpoints should occur at decision boundaries, not between every agent.
+
 \chapter{Memory Systems and Cognitive Persistence}
 
 Claude Code's memory systems implement DCF's ``language as infrastructure'' principle:
@@ -1914,6 +1984,172 @@ Allow automatically & Routine, trusted operations & Trust but verify results \\
 \end{table}
 
 \textbf{The Configuration DCF Principle:} Your configuration should match your cognitive engagement level. More autonomy = more need for post-hoc review. Less autonomy = more in-flow checkpoints.
+
+\section{Hooks: Automated DCF Triggers}\index{Hooks}\label{sec:hooks}
+
+Hooks are shell commands that execute automatically before or after Claude Code tool calls. They enable \textbf{automated DCF checkpoints}.
+
+\subsection{Hook Types}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Hook Type} & \textbf{Trigger} & \textbf{DCF Use Case} \\
+\midrule
+PreToolCall & Before any tool runs & Validation, logging \\
+PostToolCall & After tool completes & Auto-testing, verification \\
+Notification & On specific events & Alerting for review \\
+\bottomrule
+\end{tabular}
+\caption{Hook Types and DCF Applications}
+\end{table}
+
+\subsection{DCF-Informed Hook Patterns}
+
+\begin{lstlisting}
+# .claude/hooks/post-edit.sh
+# Run tests after any file edit - automated verification
+npm test --related $CHANGED_FILES
+
+# .claude/hooks/pre-commit.sh
+# Require human review before commits
+echo "DCF Checkpoint: Review changes before commit"
+git diff --staged
+\end{lstlisting}
+
+\textbf{The Hook Philosophy:} Hooks externalize your DCF principles into automated enforcement. If you always want tests run after edits, don't rely on memory---encode it in a hook.
+
+\section{Settings Configuration}\index{Settings}
+
+The \texttt{.claude/settings.json} file defines project-level behavior. Key settings from a DCF perspective:
+
+\begin{lstlisting}
+{
+  "permissions": {
+    "allow": ["Read", "Glob", "Grep"],
+    "ask": ["Edit", "Write", "Bash"],
+    "deny": ["dangerous-commands"]
+  },
+  "planMode": {
+    "requireApproval": true,
+    "maxTurns": 50
+  }
+}
+\end{lstlisting}
+
+\subsection{Permission Strategy}
+
+\begin{itemize}
+    \item \textbf{allow}: Tools that don't modify state---read operations are generally safe
+    \item \textbf{ask}: Tools that change files or run commands---checkpoint opportunities
+    \item \textbf{deny}: Operations you never want automated
+\end{itemize}
+
+\textbf{DCF Principle:} Configure permissions to create natural checkpoints at high-stakes moments while allowing flow for low-stakes operations.
+
+\section{Model Selection as DCF Decision}\index{Model Selection}
+
+Claude Code supports multiple models with different capabilities and costs. Model selection is itself a DCF decision.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{llll}
+\toprule
+\textbf{Model} & \textbf{Strength} & \textbf{Cost} & \textbf{When to Use} \\
+\midrule
+Haiku & Speed, simple tasks & Lowest & File searches, quick questions \\
+Sonnet & Balance & Medium & Most development work \\
+Opus & Deep reasoning & Highest & Architecture, complex judgment \\
+\bottomrule
+\end{tabular}
+\caption{Model Selection Guide}
+\end{table}
+
+\subsection{DCF Model Selection Heuristics}
+
+\begin{itemize}
+    \item \textbf{Use Haiku} for exploration, searches, and tasks where you'll heavily review output anyway
+    \item \textbf{Use Sonnet} for standard development where balance matters
+    \item \textbf{Use Opus} when the decision is hard to reverse, architecturally significant, or requires nuanced judgment
+\end{itemize}
+
+The principle: \textbf{match model capability to decision stakes}. Routine operations don't need your most powerful model; critical decisions deserve it.
+
+\section{Session Lifecycle}\index{Session Lifecycle}\label{sec:session-lifecycle}
+
+Knowing when to start a fresh session vs. continue an existing one is a form of cognitive hygiene.
+
+\subsection{When to Start Fresh}
+
+\begin{itemize}
+    \item Context has drifted significantly from original goal
+    \item Accumulated errors or misunderstandings are compounding
+    \item You're starting a genuinely new task (not a continuation)
+    \item Session history is no longer helpful (noise > signal)
+\end{itemize}
+
+\subsection{When to Continue}
+
+\begin{itemize}
+    \item Task is directly related to prior work
+    \item Context from prior exchanges is valuable
+    \item You haven't hit compaction yet and flow is good
+    \item The AI has learned project-specific patterns you'd lose
+\end{itemize}
+
+\subsection{Session Hygiene Practices}
+
+\begin{enumerate}
+    \item \textbf{Name your sessions mentally}---``This is the API refactor session''
+    \item \textbf{Use /compact strategically}---when context is large but still valuable
+    \item \textbf{Capture before switching}---use \texttt{/dcf compact} before major context shifts
+    \item \textbf{Start fresh for fresh tasks}---don't let inertia keep you in a stale session
+\end{enumerate}
+
+\section{IDE Integration}\index{IDE Integration}
+
+Claude Code integrates with development environments, extending DCF into your editing workflow.
+
+\subsection{VS Code Extension}
+
+The Claude Code VS Code extension provides:
+\begin{itemize}
+    \item Inline chat within the editor
+    \item File context automatically included
+    \item Code selection as conversation input
+    \item Terminal integration for command execution
+\end{itemize}
+
+\subsection{DCF in IDE Context}
+
+IDE integration changes the DCF dynamic:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Aspect} & \textbf{CLI} & \textbf{IDE} \\
+\midrule
+Context & You provide files explicitly & Files visible automatically \\
+Review & Terminal output, then check files & Changes visible in diff view \\
+Flow & Conversation-centric & Code-centric with chat \\
+Checkpoints & Before commands execute & Before accepting changes \\
+\bottomrule
+\end{tabular}
+\caption{CLI vs. IDE Integration}
+\end{table}
+
+\subsection{IDE DCF Practices}
+
+\begin{itemize}
+    \item \textbf{Use diff view as your mirror}---review proposed changes before accepting
+    \item \textbf{Select relevant code}---don't rely on the AI to find the right context
+    \item \textbf{Checkpoint at accept}---the ``Accept'' button is your approval point
+    \item \textbf{Keep terminal visible}---command execution should still be reviewed
+\end{itemize}
+
+\textbf{The IDE Principle}: IDE integration makes some context automatic but doesn't remove the need for engagement. The convenience is in context gathering; the judgment remains yours.
 
 % ============================================================================
 % PART VIII: PRACTICAL APPLICATION
