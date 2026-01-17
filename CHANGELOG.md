@@ -12,6 +12,42 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.1.0] - 2026-01-17
+
+### Added
+
+#### DCF Skill Enhancements (22 total modes)
+- **`/dcf diagnose`** - Identify which anti-pattern you're falling into
+- **`/dcf onboard`** - Guided exploration of unfamiliar codebase/domain
+- **`/dcf decide`** - Reach closure when you have options
+- **`/dcf assumptions`** - Deep excavation of hidden assumptions
+- **`/dcf simplify`** - Reduce complexity to essential
+- **`/dcf context-health`** - Assess and address context rot
+- **Workflow Composition** - Recommended skill sequences for common scenarios
+- **See Also hints** - Each skill now suggests related skills that chain well
+
+#### Treatise Updates
+- Updated skill reference to reflect 22 modes across 6 categories
+- Added Workflow Composition to glossary with index entry
+
+#### Anti-Patterns (14 total)
+- **Anti-Pattern 13: Context Rot** - Conversation context degrading over time
+- **Anti-Pattern 14: Knowledge Gatekeeping** - Tribal knowledge blocking AI effectiveness
+
+#### Resources Updates
+- **DCF_VISUAL_GUIDE.md** - New Skill Workflows diagram with 8 recommended sequences
+- **DCF_ESSENTIALS.md** - Skill Workflows quick reference table
+- **DCF_GLOSSARY.md** - New terms: Learning Accelerator, Context Rot, Knowledge Gatekeeping, Workflow Composition, Trust-Speed-Rigor Triangle, Adoption Stages, Shared Context Infrastructure, Test Coverage as Scaffolding
+- **DCF_TEAM_ADOPTION_PLAYBOOK.md** - Core adoption principles: Demonstration Over Explanation, Adoption Stages, Trust-Speed-Rigor Triangle
+- **DCF_FAQ.md** - Workflow composition guidance
+
+### Changed
+- PDF now 190 pages (up from 180)
+- Skill modes expanded from 16 to 22
+- Anti-patterns expanded from 12 to 14
+
+---
+
 ## [2.0.0] - 2026-01-17
 
 ### Added

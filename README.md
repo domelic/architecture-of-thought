@@ -5,7 +5,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18275170.svg)](https://doi.org/10.5281/zenodo.18275170)
 [![GitHub release](https://img.shields.io/github/v/release/domelic/architecture-of-thought)](https://github.com/domelic/architecture-of-thought/releases/latest)
 [![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-red.svg)](LICENSE)
-[![Pages](https://img.shields.io/badge/Pages-180-blue.svg)](THE_ARCHITECTURE_OF_THOUGHT.pdf)
+[![Pages](https://img.shields.io/badge/Pages-190-blue.svg)](THE_ARCHITECTURE_OF_THOUGHT.pdf)
 [![LaTeX](https://img.shields.io/badge/Format-LaTeX-green.svg)](THE_ARCHITECTURE_OF_THOUGHT.tex)
 
 ---
@@ -29,7 +29,7 @@ DCF operates at the *micro level* of human-AI interaction—the cognitive strate
 
 ## Download
 
-**[Download PDF (180 pages)](THE_ARCHITECTURE_OF_THOUGHT.pdf)**
+**[Download PDF (190 pages)](THE_ARCHITECTURE_OF_THOUGHT.pdf)**
 
 **[DCF Essentials — Practitioner's Quick Reference](DCF_ESSENTIALS.md)**
 
@@ -222,7 +222,7 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ├── DCF_ESSENTIALS.md                 # Condensed practitioner's guide
 ├── CONTRIBUTING.md                   # Contribution guidelines
 ├── CHANGELOG.md                      # Version history
-├── THE_ARCHITECTURE_OF_THOUGHT.pdf   # Compiled document (180 pages)
+├── THE_ARCHITECTURE_OF_THOUGHT.pdf   # Compiled document (190 pages)
 ├── THE_ARCHITECTURE_OF_THOUGHT.tex   # LaTeX source
 ├── references.bib                    # BibTeX bibliography (18 sources)
 ├── .claude/
