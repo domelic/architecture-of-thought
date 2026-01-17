@@ -243,3 +243,23 @@ Notes:
 HUMAN: [...]
 
 AI: [...]
+```
+
+### Related Materials
+
+*Link any relevant files, screenshots, or outputs:*
+
+- [Link or description]
+- [Link or description]
+
+---
+
+## Submission
+
+**Submitted to:** [Repository issues / Community forum / Team wiki]
+**Date submitted:** [Date]
+
+---
+
+*From the Dialectical Cognition Framework (DCF)*
+*https://github.com/domelic/architecture-of-thought*
