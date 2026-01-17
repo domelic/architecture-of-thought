@@ -8,17 +8,17 @@ Apply Socratic questioning to think WITH the user, not just answer them.
 /dcf [mode] [context]
 ```
 
-**Modes:** `review`, `checkpoint`, `debug`, `learn`, `decide`, `unstick`, `premortem`, `challenge`, `simplify`, `retro`, `architect`, `tradeoffs`, `assumptions`, `onboard`, `explain`, `compact`, `context-health`, `diagnose`, `skill`
+**Modes:** `review`, `checkpoint`, `refine`, `self-review`, `debug`, `learn`, `decide`, `unstick`, `premortem`, `challenge`, `simplify`, `retro`, `architect`, `tradeoffs`, `assumptions`, `onboard`, `explain`, `compact`, `context-health`, `diagnose`, `skill`
 
 Examples:
 ```
 /dcf                          # General Socratic dialogue
 /dcf review                   # Evaluate a plan or proposal
+/dcf refine                   # Iterate deliberately on output
+/dcf self-review              # Have Claude review its own work
 /dcf debug                    # Debug by questioning mental models
 /dcf learn typescript generics # Learn through dialogue
 /dcf architect                # Design from broad exploration to MVP
-/dcf tradeoffs                # Analyze options explicitly
-/dcf onboard                  # Explore unfamiliar codebase
 ```
 
 ## Core Principles
@@ -58,6 +58,26 @@ Each mode has an **outcome**, not a script. Achieve the outcome using whatever a
 - Surface assumptions the agent made
 - Check alignment with original intent
 - Determine if this is the right level of autonomy
+
+### `refine` - Iterate on Output
+**Outcome:** Output improves through focused iteration without drift or infinite loops.
+- Identify what specifically isn't working (quality? direction? both?)
+- Define "good enough" concretely before iterating
+- Check: Are we refining toward the right goal, or has it drifted?
+- Distinguish substantive changes from cosmetic ones
+- Know when to stop: diminishing returns, circular changes, or purpose fulfilled
+
+The recursive refinement loop is: Articulate → Generate → Evaluate → Refine. This mode makes that loop deliberate.
+
+### `self-review` - Have Claude Review Its Own Output
+**Outcome:** Errors and gaps are caught by activating evaluation mode distinct from generation.
+- Establish review criteria: What were the requirements? Quality standards? Edge cases?
+- Conduct the review: "Review what you just produced. What issues do you see?"
+- Check for common pitfalls: Security concerns? Error handling? Unnecessary complexity?
+- Assess completeness: What's missing? Placeholders left? Integration issues?
+- Decide: Fix before proceeding, or acceptable as-is?
+
+The insight: Asking the agent to review its own work is surprisingly fruitful—it activates a different cognitive mode than generation.
 
 ### `debug` - Question the Mental Model
 **Outcome:** User examines their model of the code, not just searches for bugs.

@@ -365,6 +365,8 @@ The skill is **principle-based**, not scripted. Each mode has an **outcome**, no
 │   │    /dcf                General Socratic dialogue            │   │
 │   │    /dcf review         Evaluate before committing           │   │
 │   │    /dcf checkpoint     Agentic decision point               │   │
+│   │    /dcf refine         Iterate deliberately on output       │   │
+│   │    /dcf self-review    Have Claude review its own work      │   │
 │   │    /dcf debug          Question the mental model            │   │
 │   │    /dcf learn <topic>  Build understanding through dialogue │   │
 │   │    /dcf decide         Reach closure on a decision          │   │

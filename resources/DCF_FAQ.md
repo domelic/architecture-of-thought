@@ -224,6 +224,8 @@ The `/dcf` skill is a principle-based Claude Code skill that applies DCF's Socra
 /dcf                     # General Socratic dialogue
 /dcf review              # Evaluate before committing
 /dcf checkpoint          # Agentic decision point
+/dcf refine              # Iterate deliberately on output
+/dcf self-review         # Have Claude review its own work
 /dcf debug               # Question the mental model
 /dcf learn <topic>       # Build understanding through dialogue
 /dcf decide              # Reach closure on a decision
@@ -256,6 +258,8 @@ The `/dcf` skill is a principle-based Claude Code skill that applies DCF's Socra
 | `/dcf` | General Socratic questioning on any topic |
 | `/dcf review` | Evaluating a plan, proposal, or code before committing |
 | `/dcf checkpoint` | At an agentic decision point requiring approval |
+| `/dcf refine` | Output needs iteration—want to avoid drift or infinite loops |
+| `/dcf self-review` | Want Claude to catch errors in its own output |
 | `/dcf debug` | Debugging—examine your mental model, not just the code |
 | `/dcf learn` | You want to understand deeply, not just get information |
 | `/dcf decide` | Analysis is complete but you're having trouble committing |
