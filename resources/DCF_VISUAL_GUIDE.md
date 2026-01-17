@@ -353,7 +353,7 @@ Diagrams and visual references for the Dialectical Cognition Framework.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                     /dcf SKILL MODES                                │
+│                     /dcf SKILL MODES (14 total)                     │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                     │
 │   GENERAL                                                           │
@@ -370,14 +370,32 @@ Diagrams and visual references for the Dialectical Cognition Framework.
 │    Evaluate plans     Decision points     Iterate output           │
 │    before approval    in agentic work     toward quality           │
 │                                                                     │
-│   LEARNING & GROWTH                                                 │
-│   ┌──────────────────┐  ┌─────────────┐                            │
-│   │ /dcf learn <X>   │  │ /dcf retro  │                            │
-│   └────────┬─────────┘  └──────┬──────┘                            │
-│            │                   │                                    │
-│            ▼                   ▼                                    │
-│      Understand, don't    End-of-session                           │
-│      just get answers     reflection                                │
+│   DEBUGGING & ANALYSIS                                              │
+│   ┌─────────────┐  ┌────────────────┐  ┌────────────────┐          │
+│   │ /dcf debug  │  │ /dcf premortem │  │ /dcf tradeoffs │          │
+│   └──────┬──────┘  └───────┬────────┘  └───────┬────────┘          │
+│          │                 │                   │                    │
+│          ▼                 ▼                   ▼                    │
+│    Question mental    Imagine failure,    Make implicit            │
+│    model of code      work backward       choices explicit         │
+│                                                                     │
+│   THINKING & LEARNING                                               │
+│   ┌──────────────────┐  ┌─────────────┐  ┌───────────────┐         │
+│   │ /dcf learn <X>   │  │ /dcf retro  │  │ /dcf explain  │         │
+│   └────────┬─────────┘  └──────┬──────┘  └───────┬───────┘         │
+│            │                   │                 │                  │
+│            ▼                   ▼                 ▼                  │
+│      Understand, don't    End-of-session   Teach to test           │
+│      just get answers     reflection       understanding           │
+│                                                                     │
+│   DIALECTIC & UNBLOCKING                                            │
+│   ┌───────────────┐  ┌──────────────┐                              │
+│   │ /dcf challenge│  │ /dcf unstick │                              │
+│   └───────┬───────┘  └──────┬───────┘                              │
+│           │                 │                                       │
+│           ▼                 ▼                                       │
+│     Steelman the       Use confusion                               │
+│     opposite view      productively                                │
 │                                                                     │
 │   SESSION & PATTERN MANAGEMENT                                      │
 │   ┌──────────────┐  ┌─────────────┐                                │

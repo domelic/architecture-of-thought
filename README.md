@@ -143,6 +143,12 @@ This repository includes a `/dcf` skill for Claude Code that applies the framewo
 /dcf retro               # End-of-session reflection and learning capture
 /dcf compact             # Prepare for session compaction
 /dcf skill               # Capture an effective pattern as a reusable skill
+/dcf debug               # Debug with Socratic questioning
+/dcf premortem           # Pre-project failure analysis
+/dcf challenge           # Steelman the opposite position
+/dcf unstick             # When you're blocked and don't know why
+/dcf tradeoffs           # Structured tradeoff analysis
+/dcf explain             # Teach to test understanding (Feynman technique)
 ```
 
 To use: copy `.claude/skills/dcf.md` to your project or global Claude Code skills directory.

@@ -226,6 +226,12 @@ The `/dcf` skill is a Claude Code skill that applies DCF principles directly in 
 /dcf retro               # End-of-session reflection
 /dcf compact             # Prepare for session compaction
 /dcf skill               # Capture an effective pattern as a reusable skill
+/dcf debug               # Debug with Socratic questioning
+/dcf premortem           # Pre-project failure analysis
+/dcf challenge           # Steelman the opposite position
+/dcf unstick             # When you're blocked and don't know why
+/dcf tradeoffs           # Structured tradeoff analysis
+/dcf explain             # Teach to test understanding (Feynman technique)
 ```
 
 ### When should I use each mode?
@@ -240,6 +246,12 @@ The `/dcf` skill is a Claude Code skill that applies DCF principles directly in 
 | `/dcf retro` | End of session—capture what you learned |
 | `/dcf compact` | Session is long and you need to prepare for compaction |
 | `/dcf skill` | You've discovered a pattern worth capturing as a reusable skill |
+| `/dcf debug` | You're debugging and want to examine your mental model of the code |
+| `/dcf premortem` | Before starting a project—imagine it failed, work backward |
+| `/dcf challenge` | You want to strengthen your position by arguing against it |
+| `/dcf unstick` | You're blocked and don't even know what question to ask |
+| `/dcf tradeoffs` | You're choosing between options with hidden costs |
+| `/dcf explain` | You want to test your understanding by teaching |
 
 ### How do I install the /dcf skill?
 
