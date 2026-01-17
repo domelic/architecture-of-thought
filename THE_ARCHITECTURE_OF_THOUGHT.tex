@@ -1768,6 +1768,74 @@ Nested & /feature-dev includes /commit & Review feature before commit phase \\
     \item When you want to learn the underlying process
 \end{itemize}
 
+\section{Creating Skills from Effective Patterns}\label{sec:pattern-to-skill}\index{Skill Creation}\index{Pattern Capture}
+
+When you discover a prompting pattern that works particularly well, \textbf{codify it as a skill}. This transforms tacit knowledge into reusable infrastructure.
+
+\subsection{Recognizing Skill-Worthy Patterns}
+
+A pattern is worth capturing as a skill when:
+\begin{itemize}
+    \item You've used it successfully multiple times
+    \item It applies to a category of tasks, not just one instance
+    \item The sequence of prompts or approach is non-obvious
+    \item You find yourself explaining it to others or re-discovering it
+\end{itemize}
+
+\subsection{The Pattern-to-Skill Process}
+
+\begin{enumerate}
+    \item \textbf{Notice repetition}: You're doing the same sequence again
+    \item \textbf{Extract the essence}: What's the core approach that makes this work?
+    \item \textbf{Generalize}: Remove instance-specific details, keep the transferable structure
+    \item \textbf{Document as skill}: Create a \texttt{.claude/skills/skillname.md} file
+    \item \textbf{Test and refine}: Use it on new instances, adjust based on results
+\end{enumerate}
+
+\subsection{Skill File Structure}
+
+\begin{lstlisting}
+# Skill Name
+
+Brief description of what this skill does.
+
+## Usage
+
+```
+/skillname              # Basic invocation
+/skillname <args>       # With arguments
+```
+
+## Instructions
+
+[Detailed guidance for Claude on how to execute this skill]
+
+### When to Apply
+[Criteria for when this skill is appropriate]
+
+### Process
+[Step-by-step approach]
+
+### Output Format
+[Expected structure of results]
+\end{lstlisting}
+
+\subsection{Example: The DCF Skill Itself}
+
+The \texttt{/dcf} skill in this repository is itself an example of pattern capture. The underlying pattern---Socratic questioning applied to AI collaboration---was discovered through practice, recognized as reusable, and codified into a skill with multiple modes (\texttt{/dcf review}, \texttt{/dcf checkpoint}, \texttt{/dcf learn}, etc.).
+
+\subsection{DCF Connection}
+
+Creating skills from patterns embodies multiple DCF principles:
+\begin{itemize}
+    \item \textbf{Language as infrastructure}: Skills are crystallized prompting knowledge
+    \item \textbf{Scaffolding}: Skills scaffold future interactions with proven approaches
+    \item \textbf{PKM integration}: Your skill library is a form of externalized expertise
+    \item \textbf{Recursive refinement}: Skills improve through use and iteration
+\end{itemize}
+
+The act of creating a skill also forces \textbf{articulation}---you must understand the pattern well enough to explain it, which deepens your own mastery.
+
 \chapter{MCP Orchestration Philosophy}
 
 MCP (Model Context Protocol) servers extend Claude Code's capabilities. Choosing the right tool matters:

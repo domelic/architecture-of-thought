@@ -469,6 +469,66 @@ What's the most important unfinished work?
 
 ---
 
+## Skill Creation Prompts
+
+### Recognizing patterns worth capturing
+
+```
+I've done this same sequence a few times now. Is this a pattern worth capturing as a skill?
+```
+
+```
+What's the transferable essence of what we just did? Strip away the instance-specific details.
+```
+
+```
+Could this approach apply to other similar tasks? What would need to change?
+```
+
+### Extracting the skill
+
+```
+Help me articulate the pattern we've been using. What are the key steps?
+```
+
+```
+What made this approach work? What's the non-obvious insight?
+```
+
+```
+If I had to teach this to someone else, what would I tell them?
+```
+
+### Creating the skill file
+
+```
+Let's create a skill file for this pattern. What should the usage modes be?
+```
+
+```
+Write the instructions section for this skill—what should Claude know to execute it well?
+```
+
+```
+What criteria determine when this skill is appropriate vs. not?
+```
+
+### Refining existing skills
+
+```
+This skill didn't work well for [case]. What's missing?
+```
+
+```
+Should this be a new mode, or does the core skill need adjustment?
+```
+
+```
+What edge cases should the skill instructions address?
+```
+
+---
+
 ## Meta Prompts
 
 ### Process reflection
@@ -512,6 +572,7 @@ What would make this collaboration more effective?
 | Learning | "What's the key insight that would unlock this?" |
 | Wrapping up | "What's the one thing I should remember?" |
 | Before compaction | "What context is essential for continuing this work?" |
+| Pattern recognition | "Is this a pattern worth capturing as a skill?" |
 
 ---
 

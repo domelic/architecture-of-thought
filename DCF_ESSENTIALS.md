@@ -293,6 +293,26 @@ Accumulate what works:
 - Insights from productive dialogues
 - Approaches for specific problem types
 
+### Creating Skills from Patterns
+
+When you discover a prompting approach that works well, **codify it as a skill**.
+
+**Signs a pattern is skill-worthy:**
+- You've used it successfully multiple times
+- It applies to a category of tasks, not just one instance
+- The approach is non-obvious enough to be worth preserving
+- You find yourself re-explaining or re-discovering it
+
+**The process:**
+1. Notice you're repeating a successful pattern
+2. Extract the transferable essence
+3. Create `.claude/skills/skillname.md`
+4. Test on new instances, refine
+
+**Example:** The `/dcf` skill itself is pattern capture — Socratic questioning applied to AI collaboration, codified into reusable infrastructure.
+
+Skills are crystallized expertise. Your skill library compounds your effectiveness over time.
+
 ---
 
 ## Session Continuity: Preparing for Compaction
