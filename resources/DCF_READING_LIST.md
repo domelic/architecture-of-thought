@@ -70,6 +70,22 @@ Start with the **Essentials**, then explore based on your interests.
 - **Key insight**: Cognition is not just in the head—it's in the relationship between brain, body, and world
 - **Recommended for**: Philosophy enthusiasts
 
+### Conjectures and Refutations
+**Popper, K. (1963). Conjectures and Refutations: The Growth of Scientific Knowledge. Routledge.**
+
+- **What it is**: Foundational work on falsificationism and critical rationalism
+- **Why it matters for DCF**: Grounds the practice of challenging AI outputs rather than confirming them
+- **Key insight**: Knowledge advances through bold conjectures and serious attempts at refutation—try to disprove, not confirm
+- **Recommended for**: Anyone wanting to understand why DCF emphasizes challenge over acceptance
+
+### Truth and Method
+**Gadamer, H.-G. (1960). Truth and Method. Continuum. (English translation 1975)**
+
+- **What it is**: Foundational work in philosophical hermeneutics
+- **Why it matters for DCF**: Explains why dialogue produces understanding—the "fusion of horizons"
+- **Key insight**: Understanding emerges when different perspectives merge through dialogue; both parties are changed in genuine conversation
+- **Recommended for**: Those interested in why human-AI collaboration is partnership, not extraction
+
 ---
 
 ## Socratic Method and Dialogue
@@ -117,6 +133,22 @@ Start with the **Essentials**, then explore based on your interests.
 - **Why it matters for DCF**: Framework for how to improve through structured practice
 - **Key insight**: Expertise comes from deliberate practice with feedback, not just time spent
 - **Recommended for**: Those wanting to master DCF itself
+
+### Double Loop Learning in Organizations
+**Argyris, C. (1977). "Double Loop Learning in Organizations." Harvard Business Review, 55(5), 115-125.**
+
+- **What it is**: Seminal article distinguishing single-loop from double-loop learning
+- **Why it matters for DCF**: Explains why metacognition matters—questioning assumptions, not just fixing within them
+- **Key insight**: Single-loop learning adjusts actions; double-loop learning questions the underlying mental models
+- **Recommended for**: Anyone interested in why DCF emphasizes examining assumptions
+
+### Organizational Learning
+**Argyris, C., & Schön, D. (1978). Organizational Learning: A Theory of Action Perspective. Addison-Wesley.**
+
+- **What it is**: Book-length development of double-loop learning theory
+- **Why it matters for DCF**: Deeper exploration of how individuals and organizations resist examining assumptions
+- **Key insight**: "Defensive reasoning" protects existing mental models from challenge—Socratic questioning counteracts this
+- **Recommended for**: Team leaders implementing DCF organizationally
 
 ---
 
@@ -220,15 +252,15 @@ Start with the **Essentials**, then explore based on your interests.
 
 ### Path 1: Philosophical Foundation
 1. The Extended Mind (Clark & Chalmers)
-2. Supersizing the Mind (Clark)
-3. Cognition in the Wild (Hutchins)
+2. Conjectures and Refutations (Popper)
+3. Truth and Method (Gadamer)
 4. Plato's Meno
 
 ### Path 2: Practical Skill-Building
 1. Thinking, Fast and Slow (Kahneman)
-2. How to Take Smart Notes (Ahrens)
-3. Make It Stick (Brown et al.)
-4. Peak (Ericsson)
+2. Double Loop Learning (Argyris)
+3. How to Take Smart Notes (Ahrens)
+4. Make It Stick (Brown et al.)
 
 ### Path 3: Team/Organizational
 1. Thinking in Systems (Meadows)
@@ -248,6 +280,9 @@ Start with the **Essentials**, then explore based on your interests.
 | If you want to understand... | Start with... |
 |------------------------------|--------------|
 | Why AI can be part of thinking | The Extended Mind |
+| Why challenge over confirmation | Conjectures and Refutations |
+| Why dialogue changes both parties | Truth and Method |
+| Why examine assumptions | Double Loop Learning |
 | How to learn effectively | Make It Stick |
 | Socratic questioning | Plato's Meno |
 | Human-AI collaboration research | Nature Human Behaviour (2024) |

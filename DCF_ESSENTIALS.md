@@ -518,9 +518,12 @@ If you merely completed a task without growth—the potential remains unrealized
 ## Further Reading
 
 - **Full treatise**: "The Architecture of Thought: The Dialectical Cognition Framework"
-- **Philosophical foundations**: Clark & Chalmers, "The Extended Mind" (1998)
-- **Scaffolding theory**: Vygotsky, "Mind in Society" (1978)
+- **Extended mind**: Clark & Chalmers, "The Extended Mind" (1998)
+- **Scaffolding**: Vygotsky, "Mind in Society" (1978)
 - **Distributed cognition**: Hutchins, "Cognition in the Wild" (1995)
+- **Critical rationalism**: Popper, "Conjectures and Refutations" (1963)
+- **Double-loop learning**: Argyris, "Double Loop Learning in Organizations" (1977)
+- **Hermeneutics**: Gadamer, "Truth and Method" (1960)
 - **PKM methodology**: Ahrens, "How to Take Smart Notes" (2017)
 
 ---
