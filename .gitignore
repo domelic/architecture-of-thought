@@ -13,6 +13,20 @@
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+*.synctex(busy)
 
 # Mac OS
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# Tool-specific directories
+.claude/
+.playwright-mcp/
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/

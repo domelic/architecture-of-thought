@@ -10,9 +10,9 @@
 | Resource | URL |
 |----------|-----|
 | **DOI** | [10.5281/zenodo.18275170](https://doi.org/10.5281/zenodo.18275170) |
-| **GitHub Repository** | https://github.com/domelic/ai-research |
-| **GitHub Release v1.0.1** | https://github.com/domelic/ai-research/releases/tag/v1.0.1 |
-| **Direct PDF Download** | https://github.com/domelic/ai-research/releases/download/v1.0.1/THE_ARCHITECTURE_OF_THOUGHT.pdf |
+| **GitHub Repository** | https://github.com/domelic/architecture-of-thought |
+| **GitHub Release v1.0.1** | https://github.com/domelic/architecture-of-thought/releases/tag/v1.0.1 |
+| **Direct PDF Download** | https://github.com/domelic/architecture-of-thought/releases/download/v1.0.1/THE_ARCHITECTURE_OF_THOUGHT.pdf |
 | **Zenodo Record** | https://zenodo.org/records/18275170 |
 
 ---
@@ -80,7 +80,7 @@ Omelic, Damir, and Claude. "The Architecture of Thought: The Dialectical Cogniti
 - Compiled to 148 pages
 
 ### 2. GitHub Publication
-- Created public repository: `domelic/ai-research`
+- Created public repository: `domelic/architecture-of-thought`
 - Created comprehensive README.md with abstract, structure, citation info
 - Created GitHub Release v1.0.0 (initial)
 - Created GitHub Release v1.0.1 (for Zenodo integration)
