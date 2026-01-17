@@ -2,6 +2,7 @@
 
 **The Dialectical Cognition Framework (DCF): A Treatise on Human-AI Collaboration in the Agentic Era**
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18275170.svg)](https://doi.org/10.5281/zenodo.18275170)
 [![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-red.svg)](LICENSE)
 [![Pages](https://img.shields.io/badge/Pages-148-blue.svg)](THE_ARCHITECTURE_OF_THOUGHT.pdf)
 [![LaTeX](https://img.shields.io/badge/Format-LaTeX-green.svg)](THE_ARCHITECTURE_OF_THOUGHT.tex)
@@ -82,7 +83,8 @@ If you use or reference this work, please cite:
   author = {Omelic, Damir and {Claude (Anthropic)}},
   title = {The Architecture of Thought: The Dialectical Cognition Framework},
   year = {2026},
-  howpublished = {\url{https://github.com/domelic/ai-research}},
+  doi = {10.5281/zenodo.18275170},
+  url = {https://doi.org/10.5281/zenodo.18275170},
   note = {A Treatise on Human-AI Collaboration in the Agentic Era}
 }
 ```
