@@ -23,7 +23,7 @@
 3. Click "Change visibility" → Public
 4. Confirm
 
-**Your repo URL will be**: `https://github.com/YOUR_USERNAME/ai-research`
+**Your repo URL will be**: `https://github.com/domelic/ai-research`
 
 ---
 

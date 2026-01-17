@@ -82,7 +82,7 @@ If you use or reference this work, please cite:
   author = {Omelic, Damir and {Claude (Anthropic)}},
   title = {The Architecture of Thought: The Dialectical Cognition Framework},
   year = {2026},
-  howpublished = {\url{https://github.com/YOUR_USERNAME/ai-research}},
+  howpublished = {\url{https://github.com/domelic/ai-research}},
   note = {A Treatise on Human-AI Collaboration in the Agentic Era}
 }
 ```
