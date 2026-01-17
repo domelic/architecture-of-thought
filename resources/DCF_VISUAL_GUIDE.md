@@ -353,7 +353,7 @@ Diagrams and visual references for the Dialectical Cognition Framework.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                     /dcf SKILL MODES (15 total)                     │
+│                     /dcf SKILL MODES (16 total)                     │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                     │
 │   GENERAL                                                           │
@@ -382,6 +382,10 @@ Diagrams and visual references for the Dialectical Cognition Framework.
 │          ▼                 ▼                   ▼                    │
 │    Question mental    Imagine failure,    Make implicit            │
 │    model of code      work backward       choices explicit         │
+│                                                                     │
+│   ┌─────────────────┐                                               │
+│   │ /dcf architect  │  Broad exploration → Minimal viable change    │
+│   └─────────────────┘  (The Architectural Funnel)                   │
 │                                                                     │
 │   THINKING & LEARNING                                               │
 │   ┌──────────────────┐  ┌─────────────┐  ┌───────────────┐         │

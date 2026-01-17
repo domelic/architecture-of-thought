@@ -2259,6 +2259,106 @@ Checkpoints & Before commands execute & Before accepting changes \\
     \item Repeat until mastery
 \end{enumerate}
 
+\section{The Architectural Funnel}\label{sec:architectural-funnel}\index{Architectural Funnel}
+
+For complex problems, a powerful pattern emerges: \textbf{divergent exploration that converges to minimal viable change}. This ``Architectural Funnel'' recognizes that you can only build the minimal solution \emph{after} you've understood the full landscape.
+
+\begin{lstlisting}
+    DIVERGENT PHASE              CONVERGENT PHASE
+    ---------------              -----------------
+
+    Broad Strokes        -->     "What's the landscape?"
+    Architecture
+           |
+           v
+    End-to-End           -->     "How does it connect?"
+    Exploration
+           |
+           v
+    Capture &            -->     "What did we learn?"
+    Compact                      (honor context limits)
+           |
+           v
+    Signal from          -->     "What actually matters?"
+    Noise
+           |
+           v
+    Minimal Viable       -->     "What's the smallest move?"
+    Change
+\end{lstlisting}
+
+\subsection{The Four Phases}
+
+\textbf{Phase 1: Divergent Exploration}
+
+Begin with broad strokes. Map the full territory before narrowing:
+\begin{itemize}
+    \item What's the complete scope of this problem?
+    \item How do all the pieces connect end-to-end?
+    \item What are the different approaches that could work?
+    \item What would the ``ideal'' solution look like with no constraints?
+\end{itemize}
+
+The goal is to generate possibilities, not evaluate them yet. Let the exploration be genuinely open.
+
+\textbf{Phase 2: Capture and Compact}
+
+Before context limits force your hand, proactively capture what you've learned:
+\begin{itemize}
+    \item What patterns or principles emerged?
+    \item What did you discover that you didn't know at the start?
+    \item What context is essential for continuing in a fresh session?
+\end{itemize}
+
+This phase honors the reality of context limits while preserving the value of exploration.
+
+\textbf{Phase 3: Convergent Synthesis}
+
+Now extract the signal from the noise---what the user elegantly called ``selecting the proper notes from the sounds'':
+\begin{itemize}
+    \item Of everything explored, what actually matters for \emph{this} situation?
+    \item What can be safely ignored or deferred?
+    \item What's the ``melody''---the core insight the solution should embody?
+\end{itemize}
+
+This is where judgment matters most. The exploration generated raw material; now you compose.
+
+\textbf{Phase 4: Crystallize MVP}
+
+Finally, define the minimal viable change:
+\begin{itemize}
+    \item What's the smallest change that delivers value?
+    \item What can be deferred to future iterations?
+    \item Does this minimal solution actually address the core problem?
+\end{itemize}
+
+\subsection{Why Understanding Enables Minimalism}
+
+A common mistake is trying to build the MVP first without the exploratory phase. This leads to either:
+\begin{itemize}
+    \item \textbf{Premature narrowing}: Missing important considerations that emerge later
+    \item \textbf{Scope creep}: Discovering requirements mid-implementation that force rework
+    \item \textbf{False minimalism}: Building something small that doesn't actually solve the problem
+\end{itemize}
+
+True minimalism requires understanding what can be safely omitted. The broad strokes aren't wasted---they're the foundation that reveals which notes matter.
+
+\begin{quotebox}
+\textbf{The Architectural Funnel Principle}: You can only compose the melody after hearing all the sounds. Exploration generates raw material; synthesis extracts the music; implementation plays only the essential notes.
+\end{quotebox}
+
+\subsection{Applying the Funnel with DCF}
+
+The \texttt{/dcf architect} mode guides through this complete workflow:
+\begin{enumerate}
+    \item \textbf{Divergent questions}: ``What's the full landscape? How does it all connect?''
+    \item \textbf{Capture prompts}: ``What have we learned? What's essential context?''
+    \item \textbf{Convergent questions}: ``What actually matters here? What's the signal?''
+    \item \textbf{MVP crystallization}: ``What's the smallest move that delivers value?''
+\end{enumerate}
+
+This respects both the need for thorough exploration and the practical constraints of context limits and shipping deadlines.
+
 \chapter{Failure Modes and Mitigations}\label{ch:failure-modes}\index{Failure Modes}
 
 Even with good intentions, DCF practice can go wrong. This chapter documents eleven common failure modes, their symptoms, root causes, and corrections. Recognizing these patterns is the first step to avoiding them.

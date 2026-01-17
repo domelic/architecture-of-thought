@@ -53,6 +53,12 @@ The standard DCF questions applied at decision points:
 ### Anticipatory Calibration
 The practice of forming a hypothesis about what AI will produce before prompting, then comparing to build an accurate mental model. Predict → Prompt → Compare → Update.
 
+### Architectural Funnel
+A workflow pattern for complex problems: divergent exploration that converges to minimal viable change. Four phases: (1) Broad exploration of the landscape, (2) Capture and compact before context limits, (3) Extract signal from noise, (4) Crystallize MVP. Embodies the principle that understanding enables minimalism—you can only build the minimal solution after seeing the full picture.
+
+### Signal from Noise
+The convergent phase of the Architectural Funnel where you extract what actually matters from broad exploration. Metaphorically: "selecting the proper notes from the sounds"—the exploratory phase generates raw material, synthesis composes the melody.
+
 ---
 
 ## Stances

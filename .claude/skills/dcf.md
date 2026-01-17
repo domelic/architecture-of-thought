@@ -17,6 +17,7 @@ Apply Socratic questioning and structured thinking to any problem, plan, or deci
 /dcf debug               # Debug with Socratic questioning
 /dcf premortem           # Pre-project failure analysis
 /dcf tradeoffs           # Structured tradeoff analysis
+/dcf architect           # Broad exploration to minimal viable change
 
 # Thinking & Learning
 /dcf learn <topic>       # Use DCF for learning/understanding
@@ -329,6 +330,70 @@ Make implicit choices explicit. Every decision trades something for something el
    - "Given these tradeoffs, which option aligns with your priorities?"
    - "What would have to change for you to revisit this decision?"
    - "How will you explain this tradeoff to future-you or your team?"
+
+For **`/dcf architect`** (broad exploration to minimal viable change):
+
+Guide the user through the Architectural Funnel: divergent exploration that converges to a minimal viable change. This honors the principle that **understanding enables minimalism**—you can only build the minimal solution after you've understood the full landscape.
+
+**Phase 1: Divergent Exploration (Broad Strokes)**
+
+1. **Map the Landscape**
+   - "What's the full scope of this problem? Don't narrow yet—let's see the whole territory."
+   - "What are all the components, systems, or concerns involved?"
+   - "Where does this connect to other parts of the system?"
+
+2. **Explore End-to-End**
+   - "Walk me through how this would work from start to finish."
+   - "What are the entry points and exit points?"
+   - "What could go wrong at each stage?"
+
+3. **Generate Possibilities**
+   - "What are the different ways this could be approached?"
+   - "What would the 'ideal' solution look like with no constraints?"
+   - "What would a quick-and-dirty solution look like?"
+
+**Phase 2: Capture & Compact (Honor Context Limits)**
+
+4. **Synthesize Insights**
+   - "What have we learned so far? Let's capture the key insights."
+   - "What patterns or principles emerged from the exploration?"
+   - "What did we discover that we didn't know at the start?"
+
+5. **Document for Continuity**
+   - If context is getting long: "Let's capture this in a document before we continue."
+   - Create a working document with: landscape overview, key insights, open questions, candidate approaches
+   - "What context is essential if we need to continue this in a fresh session?"
+
+**Phase 3: Convergent Synthesis (Signal from Noise)**
+
+6. **Extract the Signal**
+   - "Of everything we explored, what actually matters for this specific situation?"
+   - "What can we safely ignore or defer?"
+   - "What's the 'melody' here—the core insight that the solution should embody?"
+
+7. **Identify Constraints**
+   - "What are the real constraints—time, resources, dependencies?"
+   - "What's non-negotiable vs. nice-to-have?"
+   - "What would make this 'done enough' for now?"
+
+**Phase 4: Crystallize MVP (Minimal Viable Change)**
+
+8. **Define the Minimal Move**
+   - "Given everything we've learned, what's the smallest change that delivers value?"
+   - "What's the one thing we should build first?"
+   - "What can be deferred to a future iteration?"
+
+9. **Validate the Scope**
+   - "Does this minimal solution actually address the core problem?"
+   - "Are we leaving anything critical out?"
+   - "What's our confidence level that this is the right first step?"
+
+10. **Plan the Implementation**
+    - "What's the sequence of steps to implement this MVP?"
+    - "What checkpoints should we have along the way?"
+    - "What will we learn from implementing this that informs the next iteration?"
+
+**The Key Insight**: The broad exploration isn't wasted—it's the foundation that lets you see which notes matter. You can't compose the melody without first hearing all the sounds. True minimalism requires understanding what can be safely omitted.
 
 For **`/dcf explain`** (Feynman technique - teach to test understanding):
 

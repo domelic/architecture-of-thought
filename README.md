@@ -147,6 +147,7 @@ This repository includes a `/dcf` skill for Claude Code that applies the framewo
 /dcf debug               # Debug with Socratic questioning
 /dcf premortem           # Pre-project failure analysis
 /dcf tradeoffs           # Structured tradeoff analysis
+/dcf architect           # Broad exploration to minimal viable change
 
 # Thinking & Learning
 /dcf learn <topic>       # Use DCF for learning/understanding

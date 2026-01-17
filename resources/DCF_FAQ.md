@@ -230,6 +230,7 @@ The `/dcf` skill is a Claude Code skill that applies DCF principles directly in 
 /dcf debug               # Debug with Socratic questioning
 /dcf premortem           # Pre-project failure analysis
 /dcf tradeoffs           # Structured tradeoff analysis
+/dcf architect           # Broad exploration to minimal viable change
 
 # Thinking & Learning
 /dcf learn <topic>       # Learning and understanding
@@ -260,6 +261,7 @@ The `/dcf` skill is a Claude Code skill that applies DCF principles directly in 
 | `/dcf debug` | You're debugging and want to examine your mental model of the code |
 | `/dcf premortem` | Before starting a project—imagine it failed, work backward |
 | `/dcf tradeoffs` | You're choosing between options with hidden costs |
+| `/dcf architect` | You need to explore broadly before narrowing to MVP |
 | **Thinking & Learning** | |
 | `/dcf learn` | You want to understand something, not just get an answer |
 | `/dcf explain` | You want to test your understanding by teaching |
