@@ -9,10 +9,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- **Examples Directory** - Completed case studies demonstrating DCF in action
+  - Debugging Race Condition (Software Development)
+  - API Architecture Decision (System Design)
+  - Learning Rust Ownership (Learning New Technology)
 - **DCF Research Agenda** - Open questions and research priorities
 - **DCF Video/Podcast Script** - Ready-to-use script for media production
 - **CONTRIBUTING.md** - Contribution guidelines for the community
 - **CHANGELOG.md** - This file
+
+### Fixed
+- Completed DCF_CASE_STUDY_TEMPLATE.md (was truncated)
 
 ---
 

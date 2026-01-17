@@ -68,6 +68,18 @@ DCF operates at the *micro level* of human-AI interaction—the cognitive strate
 | [Video/Podcast Script](resources/DCF_VIDEO_SCRIPT.md) | Ready-to-use media script | Content creation |
 | [Research Agenda](resources/DCF_RESEARCH_AGENDA.md) | Open questions & priorities | Academic collaboration |
 
+### Case Study Examples
+
+Completed case studies demonstrating DCF in action:
+
+| Example | Domain | DCF Principles |
+|---------|--------|----------------|
+| [Debugging Race Condition](examples/CASE_STUDY_debugging_race_condition.md) | Software Development | Elenchus, Recursive Refinement |
+| [API Architecture Decision](examples/CASE_STUDY_api_architecture.md) | System Design | Dialectic, Checkpoint Protocol |
+| [Learning Rust Ownership](examples/CASE_STUDY_learning_rust.md) | Learning | Maieutics, Learning Stance |
+
+See [examples/README.md](examples/README.md) for the full collection and contribution guidelines.
+
 ### Project Files
 
 | File | Description |
@@ -185,6 +197,11 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ├── .claude/
 │   └── skills/
 │       └── dcf.md                    # Claude Code skill for DCF
+├── examples/
+│   ├── README.md                     # Examples overview
+│   ├── CASE_STUDY_debugging_race_condition.md
+│   ├── CASE_STUDY_api_architecture.md
+│   └── CASE_STUDY_learning_rust.md
 └── resources/
     ├── CLAUDE_MD_TEMPLATE.md         # Project configuration template
     ├── DCF_PROMPT_LIBRARY.md         # Socratic prompts by situation
