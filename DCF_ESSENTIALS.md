@@ -181,6 +181,7 @@ You (DCF): "Before I approve:
 - "What question should I be asking?"
 - "What would I miss if I just accepted this?"
 - "Where is my thinking still fuzzy?"
+- "Before I read this—what do I expect the AI produced?"
 
 ---
 
@@ -210,6 +211,26 @@ Most people use AI to avoid learning. They want the answer, not understanding.
 | "Give me the answer" | "Ask me questions that will help me discover the answer" |
 
 **The paradox:** By seeking understanding rather than answers, you become capable of generating better answers yourself.
+
+---
+
+## Anticipatory Calibration
+
+Before prompting, form a hypothesis: *What do I expect the AI to produce?*
+
+Then compare:
+- Did it match your prediction?
+- What surprised you?
+- What does the gap reveal?
+
+**Why this matters:**
+- Comparing against expectation is more rigorous than "does this look good?"
+- Surprise is your learning signal—it reveals miscalibration
+- Over time, you build an accurate mental model of AI capabilities
+
+**The practice:** Predict → Prompt → Compare → Update your mental model.
+
+This is scientific thinking applied to prompting.
 
 ---
 
