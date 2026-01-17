@@ -28,7 +28,7 @@ DCF operates at the *micro level* of human-AI interaction—the cognitive strate
 
 ## Download
 
-**[Download PDF (148 pages)](THE_ARCHITECTURE_OF_THOUGHT.pdf)**
+**[Download PDF (150 pages)](THE_ARCHITECTURE_OF_THOUGHT.pdf)**
 
 ---
 
@@ -78,6 +78,7 @@ This work is intended for:
 
 If you use or reference this work, please cite:
 
+### BibTeX
 ```bibtex
 @misc{omelic2026architecture,
   author = {Omelic, Damir and {Claude (Anthropic)}},
@@ -88,6 +89,12 @@ If you use or reference this work, please cite:
   note = {A Treatise on Human-AI Collaboration in the Agentic Era}
 }
 ```
+
+### APA
+Omelic, D., & Claude. (2026). *The Architecture of Thought: The Dialectical Cognition Framework*. Zenodo. https://doi.org/10.5281/zenodo.18275170
+
+### Chicago
+Omelic, Damir, and Claude. "The Architecture of Thought: The Dialectical Cognition Framework." Zenodo, 2026. https://doi.org/10.5281/zenodo.18275170.
 
 ---
 
@@ -113,11 +120,7 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ├── README.md                         # This file
 ├── THE_ARCHITECTURE_OF_THOUGHT.pdf   # Compiled document (150 pages)
 ├── THE_ARCHITECTURE_OF_THOUGHT.tex   # LaTeX source
-├── references.bib                    # BibTeX bibliography (18 sources)
-└── docs/                             # Documentation
-    ├── PUBLICATION_COMPLETE.md       # Publication summary with all links
-    ├── PUBLICATION_STATUS.md         # Detailed status and statistics
-    └── SHARING_GUIDE.md              # Distribution strategy guide
+└── references.bib                    # BibTeX bibliography (18 sources)
 ```
 
 ---
