@@ -295,6 +295,62 @@ Accumulate what works:
 
 ---
 
+## Session Continuity: Preparing for Compaction
+
+Long sessions hit context limits. When Claude Code compacts, it generates a summary—but summary quality depends on what's available to summarize.
+
+### The Pre-Compaction Checklist
+
+Before a long session ends or compacts, capture:
+
+```
+## Session Findings
+
+### Completed Work
+- [ ] What was accomplished
+- [ ] Which files were modified and why
+- [ ] Decisions made with rationale
+
+### Open Questions
+- [ ] Unresolved issues
+- [ ] Clarifications still needed
+
+### Recommended Next Steps
+- [ ] Prioritized remaining work
+- [ ] Dependencies between tasks
+
+### Context That Matters
+- [ ] Assumptions being made
+- [ ] Non-obvious constraints discovered
+```
+
+### When to Capture
+
+| Trigger | Action |
+|---------|--------|
+| Natural break (lunch, end of day) | Quick capture |
+| Completed logical chunk | Document what was done |
+| Session feels "heavy" | Full capture before continuing |
+| Before running `/compact` | Comprehensive documentation |
+
+### Gitignore Strategy
+
+Session documents are working artifacts:
+
+```
+# .gitignore
+SESSION_NOTES.md
+SESSION_FINDINGS.md
+```
+
+Content either gets incorporated into permanent artifacts (CLAUDE.md, docs) or becomes obsolete.
+
+### DCF Connection
+
+This is **anticipatory calibration** applied to session management—forming an explicit model of "what matters" before compaction forces reliance on automated summarization. The act of writing clarifies your understanding: the thinking mirror at work.
+
+---
+
 ## The Ultimate Test
 
 After every significant AI collaboration, ask:

@@ -11,6 +11,7 @@ Apply Socratic questioning and structured thinking to any problem, plan, or deci
 /dcf learn <topic>       # Use DCF for learning/understanding
 /dcf refine              # Iterate on output that needs improvement
 /dcf retro               # End-of-session reflection and learning capture
+/dcf compact             # Prepare for session compaction
 ```
 
 ## Instructions
@@ -88,6 +89,30 @@ For **`/dcf retro`** (end-of-session reflection):
 - "Where did you just extract answers without real engagement?"
 - "What would you do differently next time?"
 - "Should any of this be captured in CLAUDE.md for future sessions?"
+
+For **`/dcf compact`** (preparing for session compaction):
+
+Guide the user through capturing session state before compaction. Create a working document with:
+
+1. **Completed Work**
+   - "What did we accomplish this session?"
+   - "Which files were modified and why?"
+   - "What decisions were made, and what was the rationale?"
+
+2. **Open Questions**
+   - "What's still unresolved?"
+   - "What clarifications are still needed?"
+
+3. **Recommended Next Steps**
+   - "What should be done next, in priority order?"
+   - "What dependencies exist between remaining tasks?"
+
+4. **Context That Matters**
+   - "What assumptions are we making that aren't obvious?"
+   - "What constraints did we discover during this session?"
+   - "What does future-you need to know that might not survive compaction?"
+
+After gathering responses, offer to create a `SESSION_FINDINGS.md` file (gitignored) that captures this information for continuity.
 
 **Phase 3 - Synthesize and Refine**
 

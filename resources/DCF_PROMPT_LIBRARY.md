@@ -402,6 +402,73 @@ What's still unresolved that will matter later?
 
 ---
 
+## Session Continuity Prompts
+
+### Before compaction or long breaks
+
+```
+Before we compact, let me capture what matters:
+1. What did we accomplish?
+2. What's still open?
+3. What does future-me need to know?
+```
+
+```
+This session is getting long. Let's document our state before context is lost.
+```
+
+```
+Create a SESSION_FINDINGS.md with:
+- Completed work and rationale
+- Open questions
+- Recommended next steps
+- Non-obvious context
+```
+
+### Capturing completed work
+
+```
+Summarize what we changed this session and why each change was made.
+```
+
+```
+Which files were modified? What was the rationale for each?
+```
+
+```
+What decisions were made, and what alternatives did we reject?
+```
+
+### Identifying what survives compaction
+
+```
+What context is essential for continuing this work?
+```
+
+```
+What assumptions are we making that aren't documented anywhere?
+```
+
+```
+If you had to brief someone taking over this work, what would they need to know?
+```
+
+### Prioritizing next steps
+
+```
+What should be done next, in priority order?
+```
+
+```
+What dependencies exist between remaining tasks?
+```
+
+```
+What's the most important unfinished work?
+```
+
+---
+
 ## Meta Prompts
 
 ### Process reflection
@@ -444,6 +511,7 @@ What would make this collaboration more effective?
 | Stuck | "What would I try if I knew it would work?" |
 | Learning | "What's the key insight that would unlock this?" |
 | Wrapping up | "What's the one thing I should remember?" |
+| Before compaction | "What context is essential for continuing this work?" |
 
 ---
 

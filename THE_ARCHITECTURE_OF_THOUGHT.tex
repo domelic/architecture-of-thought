@@ -1607,6 +1607,77 @@ Project-specific technical understanding:
     \item Suggested commands
 \end{itemize}
 
+\section{Session Continuity: Preparing for Compaction}\label{sec:session-continuity}\index{Session Continuity}\index{Compaction Strategy}
+
+Long sessions eventually hit context limits. When Claude Code compacts the conversation, it generates a summary to preserve continuity---but the quality of that summary depends on what's available to summarize. \textbf{Proactive documentation before compaction} dramatically improves session continuity.
+
+\subsection{The Problem}
+
+Context compaction is lossy. Details that seemed obvious during the session may not survive summarization:
+\begin{itemize}
+    \item Decisions made and their rationale
+    \item Files modified and why
+    \item Approaches considered and rejected
+    \item Next steps that were identified but not yet started
+\end{itemize}
+
+Without explicit capture, you may resume a compacted session and find yourself re-discovering context you already had.
+
+\subsection{The Practice: Pre-Compaction Documentation}
+
+When you sense a session is getting long or complex, create a working document that captures session state. This serves two purposes: (1) it creates explicit content for the compaction summary to reference, and (2) it forces you to synthesize what actually happened.
+
+\textbf{Recommended structure:}
+
+\begin{lstlisting}
+# Session Findings
+
+## Completed Work
+- What was accomplished
+- Which files were modified and why
+- Decisions made with rationale
+
+## Open Questions
+- Unresolved issues
+- Clarifications still needed
+
+## Recommended Next Steps
+- Prioritized list of remaining work
+- Dependencies between tasks
+
+## Context That Matters
+- Assumptions being made
+- Constraints discovered during session
+- Anything non-obvious that future-you needs to know
+\end{lstlisting}
+
+\subsection{When to Capture}
+
+\begin{itemize}
+    \item \textbf{Before natural breaks}: Lunch, end of day, context switch
+    \item \textbf{After completing a logical chunk}: Feature done, review complete
+    \item \textbf{When the session feels ``heavy''}: Many files touched, complex decisions made
+    \item \textbf{Before requesting compaction}: If you're about to run \texttt{/compact}
+\end{itemize}
+
+\subsection{Gitignore Strategy}
+
+Session documents are working artifacts, not permanent documentation. Consider gitignoring them:
+
+\begin{lstlisting}
+# .gitignore
+SESSION_NOTES.md
+SESSION_FINDINGS.md
+\end{lstlisting}
+
+This keeps your repository clean while maintaining session continuity. The content either gets incorporated into permanent artifacts (CLAUDE.md, code comments, documentation) or becomes obsolete.
+
+\subsection{Connection to DCF Principles}
+
+Pre-compaction documentation is \textbf{anticipatory calibration} applied to session management. You're forming an explicit model of ``what matters about this session'' before the compaction forces you to rely on an automated summary. The act of writing clarifies your own understanding---the thinking mirror principle at work.
+
+It's also \textbf{scaffolding that fades}: the session document supports continuity during active work, then becomes unnecessary once the work is complete and captured in permanent artifacts.
+
 \chapter{The Modern Co-Developer Pattern}
 
 The ``junior developer'' model is outdated. Claude Code is now a \textbf{senior developer with different strengths}:
