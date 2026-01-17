@@ -8,9 +8,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+*No unreleased changes*
+
+---
+
+## [3.0.0] - 2026-01-17
+
 ### Added
 
 #### Treatise Expansions
+- **Prompt Reference Appendix** (NEW) - 8 tables of essential prompts organized by situation
+  - Clarification, Challenge, Plan Review, Learning, Debugging, Code Review, Synthesis, Meta
+  - Makes the treatise more self-contained as a practical resource
+- **Framework Comparison Tables** - 3 new tables in Part X
+  - Comparison matrix across dimensions (DCF vs Prompt Eng vs Ralph vs Plan Mode)
+  - Situation-based framework selection guide
+  - Anti-patterns and risks by framework
+- **Exercise 8: The Silence Test** - Tests what practitioners have internalized vs. depend on AI for
+  - Operationalizes the scaffolding principle
+  - Includes tracking sheet and reflection questions
 - **Failure Modes Chapter** - Expanded from 4 brief modes to 12 detailed anti-patterns (~350 lines)
   - Each pattern includes: What It Looks Like, Symptoms, Root Causes, The Fix
   - New patterns: Socratic Theater, Mirror Narcissism, Reactive Evaluation, Infinite Refinement, Rubber Stamping, Complexity Creep, Goal Drift, Abstraction Addiction, Reinvention Addiction
@@ -29,6 +45,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   - Model selection (haiku/sonnet/opus) as DCF decision
   - Session lifecycle and context hygiene
   - IDE integration patterns (VS Code)
+- **Glossary Additions** - 5 new terms: Background Agents, Hooks, Pattern Capture, Reinvention Addiction, Session Lifecycle
 
 #### DCF Skill Enhancements
 - **`/dcf refine`** - Iterate on output that needs improvement
@@ -37,6 +54,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **`/dcf skill`** - Capture an effective pattern as a reusable skill
 
 #### Resources Updates
+- **DCF_FAQ.md** - New "Claude Code Integration" section with /dcf skill documentation
+- **DCF_VISUAL_GUIDE.md** - New diagrams: /dcf skill modes, agent selection guide, model selection
+- **DCF_FRAMEWORK_INTEGRATION.md** - New sections: Agent Ecosystem, Hooks, Model Selection, Session Lifecycle
 - **DCF_ANTI_PATTERNS.md** - Added Anti-Pattern 12: Reinvention Addiction
 - **DCF_GLOSSARY.md** - New terms: Pattern Capture, Reinvention Addiction, Hooks, Session Lifecycle, Background Agents, Anticipatory Calibration
 - **DCF_PROMPT_LIBRARY.md** - Session Continuity Prompts, Skill Creation Prompts sections
@@ -56,8 +76,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 - PDF now 180 pages (up from 150)
-- Index now contains 56+ entries
+- Index now contains 64 entries (up from 56)
 - Anti-patterns expanded from 4 to 12
+- Exercises expanded from 7 to 8
 
 ### Fixed
 - Completed DCF_CASE_STUDY_TEMPLATE.md (was truncated)

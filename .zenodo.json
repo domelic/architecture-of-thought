@@ -1,0 +1,38 @@
+{
+  "title": "The Architecture of Thought: The Dialectical Cognition Framework",
+  "description": "A comprehensive methodology for human-AI collaboration that transforms large language models from answer machines into thinking partners. Covers Socratic dialogue, recursive refinement, and practical frameworks for agentic AI systems.",
+  "creators": [
+    {
+      "name": "Omelic, Damir",
+      "affiliation": "Independent Researcher"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Claude (Anthropic)",
+      "type": "Other",
+      "affiliation": "Anthropic"
+    }
+  ],
+  "keywords": [
+    "human-AI collaboration",
+    "large language models",
+    "Socratic method",
+    "cognitive science",
+    "prompt engineering",
+    "agentic AI",
+    "extended mind thesis",
+    "dialectical cognition"
+  ],
+  "license": "MIT",
+  "upload_type": "publication",
+  "publication_type": "book",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/domelic/architecture-of-thought",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ]
+}
