@@ -30,7 +30,24 @@ DCF operates at the *micro level* of human-AI interaction—the cognitive strate
 
 **[Download PDF (150 pages)](THE_ARCHITECTURE_OF_THOUGHT.pdf)**
 
-**[DCF Essentials — Practitioner's Quick Reference](DCF_ESSENTIALS.md)** *(New)*
+**[DCF Essentials — Practitioner's Quick Reference](DCF_ESSENTIALS.md)**
+
+---
+
+## Resources
+
+Practical tools for applying DCF in your workflow:
+
+| Resource | Description | Use Case |
+|----------|-------------|----------|
+| [CLAUDE.md Template](resources/CLAUDE_MD_TEMPLATE.md) | DCF-informed project configuration | Starting new projects |
+| [Prompt Library](resources/DCF_PROMPT_LIBRARY.md) | Ready-to-use Socratic prompts | Daily AI interactions |
+| [Self-Assessment](resources/DCF_SELF_ASSESSMENT.md) | Weekly reflection template | Tracking your growth |
+| [Workshop Exercises](resources/DCF_WORKSHOP_EXERCISES.md) | 8 hands-on practice scenarios | Skill development |
+| [Visual Guide](resources/DCF_VISUAL_GUIDE.md) | Diagrams and visual references | Quick reference |
+| [Slide Deck](resources/DCF_SLIDE_DECK.md) | Presentation for teaching DCF | Team training |
+| [Framework Integration](resources/DCF_FRAMEWORK_INTEGRATION.md) | DCF + Ralph, Plan Mode, BMAD | Combining methodologies |
+| [Anti-Patterns Guide](resources/DCF_ANTI_PATTERNS.md) | 10 failure modes with fixes | Avoiding common mistakes |
 
 ---
 
@@ -137,9 +154,18 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ├── THE_ARCHITECTURE_OF_THOUGHT.pdf   # Compiled document (150 pages)
 ├── THE_ARCHITECTURE_OF_THOUGHT.tex   # LaTeX source
 ├── references.bib                    # BibTeX bibliography (18 sources)
-└── .claude/
-    └── skills/
-        └── dcf.md                    # Claude Code skill for DCF
+├── .claude/
+│   └── skills/
+│       └── dcf.md                    # Claude Code skill for DCF
+└── resources/
+    ├── CLAUDE_MD_TEMPLATE.md         # Project configuration template
+    ├── DCF_PROMPT_LIBRARY.md         # Socratic prompts by situation
+    ├── DCF_SELF_ASSESSMENT.md        # Weekly reflection template
+    ├── DCF_WORKSHOP_EXERCISES.md     # 8 practice exercises
+    ├── DCF_VISUAL_GUIDE.md           # Diagrams and visual references
+    ├── DCF_SLIDE_DECK.md             # Presentation slides
+    ├── DCF_FRAMEWORK_INTEGRATION.md  # Integration with other frameworks
+    └── DCF_ANTI_PATTERNS.md          # 10 failure modes with fixes
 ```
 
 ---
