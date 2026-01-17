@@ -8,14 +8,21 @@ Apply Socratic questioning to think WITH the user, not just answer them.
 /dcf [mode] [context]
 ```
 
-**Modes:** `review`, `checkpoint`, `refine`, `self-review`, `debug`, `learn`, `decide`, `unstick`, `premortem`, `challenge`, `simplify`, `retro`, `architect`, `tradeoffs`, `assumptions`, `onboard`, `explain`, `compact`, `context-health`, `diagnose`, `skill`
+**Modes by category:**
+
+| Category | Modes |
+|----------|-------|
+| Evaluation & Review | `review`, `checkpoint`, `self-review`, `refine` |
+| Problem Solving | `debug`, `unstick`, `simplify`, `diagnose` |
+| Design & Analysis | `architect`, `tradeoffs`, `assumptions`, `premortem`, `challenge`, `decide` |
+| Learning & Exploration | `learn`, `onboard`, `explain` |
+| Session Management | `compact`, `context-health`, `retro`, `skill` |
 
 Examples:
 ```
 /dcf                          # General Socratic dialogue
 /dcf review                   # Evaluate a plan or proposal
 /dcf refine                   # Iterate deliberately on output
-/dcf self-review              # Have Claude review its own work
 /dcf debug                    # Debug by questioning mental models
 /dcf learn typescript generics # Learn through dialogue
 /dcf architect                # Design from broad exploration to MVP
@@ -47,9 +54,11 @@ Apply these as appropriate to the situation:
 
 The **meta-question** is often the most powerful move—users are frequently stuck not because they lack answers, but because they're asking the wrong question. But don't neglect **evidence** (many beliefs rest on untested foundations) and **consequences** (implications reveal whether an idea actually works).
 
-## Mode Intents
+---
 
-Each mode has an **outcome**, not a script. Achieve the outcome using whatever approach fits the context.
+## Evaluation & Review
+
+Quality gates before proceeding.
 
 ### `review` - Evaluate Before Committing
 **Outcome:** User understands tradeoffs, risks, and alternatives before approving.
@@ -65,16 +74,6 @@ Each mode has an **outcome**, not a script. Achieve the outcome using whatever a
 - Check alignment with original intent
 - Determine if this is the right level of autonomy
 
-### `refine` - Iterate on Output
-**Outcome:** Output improves through focused iteration without drift or infinite loops.
-- Identify what specifically isn't working (quality? direction? both?)
-- Define "good enough" concretely before iterating
-- Check: Are we refining toward the right goal, or has it drifted?
-- Distinguish substantive changes from cosmetic ones
-- Know when to stop: diminishing returns, circular changes, or purpose fulfilled
-
-The recursive refinement loop is: Articulate → Generate → Evaluate → Refine. This mode makes that loop deliberate.
-
 ### `self-review` - Have Claude Review Its Own Output
 **Outcome:** Errors and gaps are caught by activating evaluation mode distinct from generation.
 - Establish review criteria: What were the requirements? Quality standards? Edge cases?
@@ -85,27 +84,28 @@ The recursive refinement loop is: Articulate → Generate → Evaluate → Refin
 
 The insight: Asking the agent to review its own work is surprisingly fruitful—it activates a different cognitive mode than generation.
 
+### `refine` - Iterate on Output
+**Outcome:** Output improves through focused iteration without drift or infinite loops.
+- Identify what specifically isn't working (quality? direction? both?)
+- Define "good enough" concretely before iterating
+- Check: Are we refining toward the right goal, or has it drifted?
+- Distinguish substantive changes from cosmetic ones
+- Know when to stop: diminishing returns, circular changes, or purpose fulfilled
+
+The recursive refinement loop is: Articulate → Generate → Evaluate → Refine. This mode makes that loop deliberate.
+
+---
+
+## Problem Solving
+
+Getting past blocks.
+
 ### `debug` - Question the Mental Model
 **Outcome:** User examines their model of the code, not just searches for bugs.
 - Understand what they expect the code to do
 - Find where expectation diverges from reality
 - Challenge assumptions about what's "working correctly"
 - Narrow the search space through questioning
-
-### `learn <topic>` - Build Understanding
-**Outcome:** User understands deeply, not just receives information.
-- Assess what they already know
-- Identify specific confusion points
-- Ask questions that lead to discovery
-- Connect to what they already understand
-- Test understanding by having them explain back
-
-### `decide` - Reach Closure
-**Outcome:** User commits to a decision and moves forward.
-- Verify analysis is actually complete
-- Check for decision avoidance vs. genuine uncertainty
-- Apply forcing functions ("If you had to decide now...")
-- Document the decision and reasoning
 
 ### `unstick` - Break Through Blocks
 **Outcome:** User identifies what's actually blocking them and takes action.
@@ -114,20 +114,6 @@ The insight: Asking the agent to review its own work is surprisingly fruitful—
 - Change the frame if needed
 - Commit to one concrete next action
 
-### `premortem` - Anticipate Failure
-**Outcome:** User identifies and mitigates risks before starting.
-- Imagine the project has failed—work backward
-- Explore likely, catastrophic, and subtle failure modes
-- Identify assumptions at risk
-- Build safeguards for the most critical risks
-
-### `challenge` - Steelman Opposition
-**Outcome:** User's position is stronger from surviving genuine challenge.
-- Articulate their current position clearly
-- Present the strongest counterarguments
-- Find genuine weaknesses (not strawmen)
-- Seek synthesis if both views have merit
-
 ### `simplify` - Find the Essential
 **Outcome:** Complexity is reduced to what actually matters.
 - Understand how complexity accumulated
@@ -135,12 +121,23 @@ The insight: Asking the agent to review its own work is surprisingly fruitful—
 - Question whether each component earns its keep
 - Consider "if you built this fresh today..."
 
-### `retro` - Capture Learning
-**Outcome:** Session insights are captured and patterns identified.
-- What assumptions were examined?
-- What's understood now that wasn't before?
-- What would be done differently?
-- Should anything be captured in CLAUDE.md or as a skill?
+### `diagnose` - Identify Your Anti-Pattern
+**Outcome:** The specific failure mode is named and addressed.
+- Describe symptoms: What's going wrong? What triggered it?
+- Check common anti-patterns by category:
+  - *Unproductive*: Socratic Theater, Rubber Stamping, Lazy Prompting
+  - *No progress*: Infinite Refinement, Abstraction Addiction, Goal Drift
+  - *Trust issues*: Hallucination Acceptance, Mirror Narcissism
+  - *Quality degrading*: Context Rot, Complexity Creep
+  - *Capability not building*: Cognitive Atrophy, Reinvention Addiction
+- Identify root cause and apply the specific fix
+- Prevent recurrence: What checkpoint would catch this earlier?
+
+---
+
+## Design & Analysis
+
+Making good decisions.
 
 ### `architect` - Divergent to Convergent Design
 **Outcome:** Broad exploration crystallizes into minimal viable change.
@@ -170,6 +167,41 @@ The key insight: You can only build the minimal solution after you've understood
 
 The most dangerous assumptions are the ones you don't know you're making.
 
+### `premortem` - Anticipate Failure
+**Outcome:** User identifies and mitigates risks before starting.
+- Imagine the project has failed—work backward
+- Explore likely, catastrophic, and subtle failure modes
+- Identify assumptions at risk
+- Build safeguards for the most critical risks
+
+### `challenge` - Steelman Opposition
+**Outcome:** User's position is stronger from surviving genuine challenge.
+- Articulate their current position clearly
+- Present the strongest counterarguments
+- Find genuine weaknesses (not strawmen)
+- Seek synthesis if both views have merit
+
+### `decide` - Reach Closure
+**Outcome:** User commits to a decision and moves forward.
+- Verify analysis is actually complete
+- Check for decision avoidance vs. genuine uncertainty
+- Apply forcing functions ("If you had to decide now...")
+- Document the decision and reasoning
+
+---
+
+## Learning & Exploration
+
+Building understanding.
+
+### `learn <topic>` - Build Understanding
+**Outcome:** User understands deeply, not just receives information.
+- Assess what they already know
+- Identify specific confusion points
+- Ask questions that lead to discovery
+- Connect to what they already understand
+- Test understanding by having them explain back
+
 ### `onboard` - Guided Exploration of Unfamiliar Territory
 **Outcome:** Unfamiliar codebase/domain becomes navigable with confidence.
 - Assess starting point: What do you know? What's your goal? Learning style?
@@ -187,6 +219,12 @@ The most dangerous assumptions are the ones you don't know you're making.
 - Simplify further: One sentence? Core insight without jargon? Good analogy?
 - Verify: What do you now realize you can't fully explain?
 
+---
+
+## Session Management
+
+Context hygiene and capture.
+
 ### `compact` - Prepare for Session Compaction
 **Outcome:** Essential session state is captured before context limits hit.
 - **Completed work**: What was accomplished? Files modified? Decisions made?
@@ -202,17 +240,12 @@ The most dangerous assumptions are the ones you don't know you're making.
 - Diagnose severity (1-5): Mild → clarify explicitly. Moderate → context reset summary. Severe → capture state, recommend fresh start.
 - Prevent future rot: What practices would keep context cleaner?
 
-### `diagnose` - Identify Your Anti-Pattern
-**Outcome:** The specific failure mode is named and addressed.
-- Describe symptoms: What's going wrong? What triggered it?
-- Check common anti-patterns by category:
-  - *Unproductive*: Socratic Theater, Rubber Stamping, Lazy Prompting
-  - *No progress*: Infinite Refinement, Abstraction Addiction, Goal Drift
-  - *Trust issues*: Hallucination Acceptance, Mirror Narcissism
-  - *Quality degrading*: Context Rot, Complexity Creep
-  - *Capability not building*: Cognitive Atrophy, Reinvention Addiction
-- Identify root cause and apply the specific fix
-- Prevent recurrence: What checkpoint would catch this earlier?
+### `retro` - Capture Learning
+**Outcome:** Session insights are captured and patterns identified.
+- What assumptions were examined?
+- What's understood now that wasn't before?
+- What would be done differently?
+- Should anything be captured in CLAUDE.md or as a skill?
 
 ### `skill` - Capture Pattern as Reusable Skill
 **Outcome:** An effective pattern is codified for future use.
@@ -221,6 +254,8 @@ The most dangerous assumptions are the ones you don't know you're making.
 - Generalize: Name, modes, when to apply, what Claude needs to know
 - Create `.claude/skills/skillname.md` with usage, instructions, criteria
 - Plan refinement: How will you know if it needs adjustment?
+
+---
 
 ## Workflow Composition
 

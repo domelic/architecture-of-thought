@@ -137,34 +137,37 @@ This repository includes a `/dcf` skill for Claude Code—a principle-based appr
 ```bash
 /dcf [mode] [context]
 
-# Core modes (outcome-focused, not scripted)
 /dcf                     # General Socratic dialogue
+
+# Evaluation & Review
 /dcf review              # Evaluate before committing
 /dcf checkpoint          # Agentic decision point
-/dcf refine              # Iterate deliberately on output
 /dcf self-review         # Have Claude review its own work
-/dcf debug               # Question the mental model
-/dcf learn <topic>       # Build understanding through dialogue
-/dcf decide              # Reach closure on a decision
-/dcf unstick             # Break through blocks
-/dcf premortem           # Anticipate failure before starting
-/dcf challenge           # Steelman the opposition
-/dcf simplify            # Find the essential
-/dcf retro               # Capture learning
+/dcf refine              # Iterate deliberately on output
 
-# Design & analysis
+# Problem Solving
+/dcf debug               # Question the mental model
+/dcf unstick             # Break through blocks
+/dcf simplify            # Find the essential
+/dcf diagnose            # Identify which anti-pattern you're falling into
+
+# Design & Analysis
 /dcf architect           # Divergent exploration → minimal viable change
 /dcf tradeoffs           # Structured tradeoff analysis
 /dcf assumptions         # Deep assumption excavation
+/dcf premortem           # Anticipate failure before starting
+/dcf challenge           # Steelman the opposition
+/dcf decide              # Reach closure on a decision
 
-# Learning & onboarding
+# Learning & Exploration
+/dcf learn <topic>       # Build understanding through dialogue
 /dcf onboard             # Explore unfamiliar codebase/domain
 /dcf explain             # Feynman technique - teach to test understanding
 
-# Session management
+# Session Management
 /dcf compact             # Prepare for session compaction
 /dcf context-health      # Assess and address context rot
-/dcf diagnose            # Identify which anti-pattern you're falling into
+/dcf retro               # Capture learning
 /dcf skill               # Capture pattern as reusable skill
 ```
 

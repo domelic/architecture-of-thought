@@ -192,32 +192,37 @@ The `/dcf` skill is **principle-based**, not scripted. Each mode has an outcome,
 ```
 /dcf [mode] [context]
 
-# Core modes
 /dcf                  # General Socratic dialogue
+
+# Evaluation & Review
 /dcf review           # Evaluate before committing
 /dcf checkpoint       # Agentic decision point
-/dcf refine           # Iterate deliberately on output
 /dcf self-review      # Have Claude review its own work
-/dcf debug            # Question the mental model
-/dcf learn <topic>    # Build understanding through dialogue
-/dcf decide           # Reach closure on a decision
-/dcf unstick          # Break through blocks
-/dcf premortem        # Anticipate failure before starting
-/dcf challenge        # Steelman the opposition
-/dcf simplify         # Find the essential
-/dcf retro            # Capture learning
+/dcf refine           # Iterate on output
 
-# Design & analysis
+# Problem Solving
+/dcf debug            # Question the mental model
+/dcf unstick          # Break through blocks
+/dcf simplify         # Find the essential
+/dcf diagnose         # Identify anti-pattern
+
+# Design & Analysis
 /dcf architect        # Divergent → convergent design
 /dcf tradeoffs        # Structured tradeoff analysis
 /dcf assumptions      # Deep assumption excavation
+/dcf premortem        # Anticipate failure
+/dcf challenge        # Steelman opposition
+/dcf decide           # Reach closure
 
-# Learning & session
+# Learning & Exploration
+/dcf learn <topic>    # Build understanding
 /dcf onboard          # Explore unfamiliar territory
 /dcf explain          # Feynman technique
+
+# Session Management
 /dcf compact          # Prepare for compaction
 /dcf context-health   # Assess context rot
-/dcf diagnose         # Identify anti-pattern
+/dcf retro            # Capture learning
 /dcf skill            # Capture as reusable skill
 ```
 
