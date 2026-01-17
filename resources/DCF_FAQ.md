@@ -218,40 +218,56 @@ The `/dcf` skill is a Claude Code skill that applies DCF principles directly in 
 ### What modes does the /dcf skill have?
 
 ```
-/dcf                     # General Socratic questioning
+/dcf                     # General - Socratic questioning on any topic
+
+# Workflow Integration
 /dcf review              # Review plans or proposed approaches
 /dcf checkpoint          # Apply DCF at agentic decision points
-/dcf learn <topic>       # Learning and understanding
 /dcf refine              # Iterate on output that needs improvement
-/dcf retro               # End-of-session reflection
-/dcf compact             # Prepare for session compaction
-/dcf skill               # Capture an effective pattern as a reusable skill
+
+# Debugging & Analysis
 /dcf debug               # Debug with Socratic questioning
 /dcf premortem           # Pre-project failure analysis
+/dcf tradeoffs           # Structured tradeoff analysis
+
+# Thinking & Learning
+/dcf learn <topic>       # Learning and understanding
+/dcf explain             # Teach to test understanding (Feynman technique)
+/dcf retro               # End-of-session reflection
+
+# Dialectic & Unblocking
 /dcf challenge           # Steelman the opposite position
 /dcf unstick             # When you're blocked and don't know why
-/dcf tradeoffs           # Structured tradeoff analysis
-/dcf explain             # Teach to test understanding (Feynman technique)
+
+# Session & Pattern Management
+/dcf compact             # Prepare for session compaction
+/dcf skill               # Capture an effective pattern as a reusable skill
 ```
 
 ### When should I use each mode?
 
 | Mode | Use When |
 |------|----------|
+| **General** | |
 | `/dcf` | You need general Socratic questioning on any topic |
+| **Workflow Integration** | |
 | `/dcf review` | An agent presents a plan and you need to evaluate it |
 | `/dcf checkpoint` | You're at a decision point in an agentic workflow |
-| `/dcf learn` | You want to understand something, not just get an answer |
 | `/dcf refine` | Output exists but isn't quite right |
-| `/dcf retro` | End of session—capture what you learned |
-| `/dcf compact` | Session is long and you need to prepare for compaction |
-| `/dcf skill` | You've discovered a pattern worth capturing as a reusable skill |
+| **Debugging & Analysis** | |
 | `/dcf debug` | You're debugging and want to examine your mental model of the code |
 | `/dcf premortem` | Before starting a project—imagine it failed, work backward |
+| `/dcf tradeoffs` | You're choosing between options with hidden costs |
+| **Thinking & Learning** | |
+| `/dcf learn` | You want to understand something, not just get an answer |
+| `/dcf explain` | You want to test your understanding by teaching |
+| `/dcf retro` | End of session—capture what you learned |
+| **Dialectic & Unblocking** | |
 | `/dcf challenge` | You want to strengthen your position by arguing against it |
 | `/dcf unstick` | You're blocked and don't even know what question to ask |
-| `/dcf tradeoffs` | You're choosing between options with hidden costs |
-| `/dcf explain` | You want to test your understanding by teaching |
+| **Session & Pattern Management** | |
+| `/dcf compact` | Session is long and you need to prepare for compaction |
+| `/dcf skill` | You've discovered a pattern worth capturing as a reusable skill |
 
 ### How do I install the /dcf skill?
 

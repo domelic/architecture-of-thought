@@ -135,20 +135,30 @@ This work is intended for:
 This repository includes a `/dcf` skill for Claude Code that applies the framework's principles directly in your workflow:
 
 ```bash
-/dcf                     # Start DCF session on current context
+/dcf                     # General - Socratic questioning on any topic
+
+# Workflow Integration
 /dcf review              # Review a plan or proposed approach
 /dcf checkpoint          # Apply DCF at an agentic checkpoint
-/dcf learn <topic>       # Use DCF for learning/understanding
 /dcf refine              # Iterate on output that needs improvement
-/dcf retro               # End-of-session reflection and learning capture
-/dcf compact             # Prepare for session compaction
-/dcf skill               # Capture an effective pattern as a reusable skill
+
+# Debugging & Analysis
 /dcf debug               # Debug with Socratic questioning
 /dcf premortem           # Pre-project failure analysis
+/dcf tradeoffs           # Structured tradeoff analysis
+
+# Thinking & Learning
+/dcf learn <topic>       # Use DCF for learning/understanding
+/dcf explain             # Teach to test understanding (Feynman technique)
+/dcf retro               # End-of-session reflection and learning capture
+
+# Dialectic & Unblocking
 /dcf challenge           # Steelman the opposite position
 /dcf unstick             # When you're blocked and don't know why
-/dcf tradeoffs           # Structured tradeoff analysis
-/dcf explain             # Teach to test understanding (Feynman technique)
+
+# Session & Pattern Management
+/dcf compact             # Prepare for session compaction
+/dcf skill               # Capture an effective pattern as a reusable skill
 ```
 
 To use: copy `.claude/skills/dcf.md` to your project or global Claude Code skills directory.
