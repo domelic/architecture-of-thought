@@ -1,0 +1,50 @@
+name: Compile PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.tex'
+      - '**.bib'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: THE_ARCHITECTURE_OF_THOUGHT.tex
+          latexmk_use_xelatex: false
+          latexmk_shell_escape: false
+          extra_system_packages: "biber"
+          pre_compile: |
+            echo "Compiling THE_ARCHITECTURE_OF_THOUGHT.tex"
+          post_compile: |
+            echo "Compilation complete"
+            ls -la THE_ARCHITECTURE_OF_THOUGHT.pdf
+
+      - name: Check PDF was created
+        run: |
+          if [ -f "THE_ARCHITECTURE_OF_THOUGHT.pdf" ]; then
+            echo "PDF compiled successfully"
+            ls -la THE_ARCHITECTURE_OF_THOUGHT.pdf
+          else
+            echo "PDF compilation failed"
+            exit 1
+          fi
+
+      - name: Commit updated PDF
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add THE_ARCHITECTURE_OF_THOUGHT.pdf
+          git diff --staged --quiet || git commit -m "Auto-compile PDF from LaTeX changes"
+          git push
