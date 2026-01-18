@@ -1,0 +1,65 @@
+name: Release Please
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+      version: ${{ steps.release.outputs.version }}
+    steps:
+      - name: Run Release Please
+        uses: google-github-actions/release-please-action@v4
+        id: release
+        with:
+          release-type: simple
+          package-name: architecture-of-thought
+
+  post-release:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update CITATION.cff
+        run: |
+          VERSION="${{ needs.release-please.outputs.version }}"
+          TODAY=$(date +%Y-%m-%d)
+
+          # Update version and date-released in CITATION.cff
+          sed -i "s/^version: .*/version: \"${VERSION}\"/" CITATION.cff
+          sed -i "s/^date-released: .*/date-released: \"${TODAY}\"/" CITATION.cff
+
+          echo "Updated CITATION.cff to version $VERSION, date $TODAY"
+
+      - name: Commit CITATION.cff update
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add CITATION.cff
+          git diff --staged --quiet || git commit -m "chore: update CITATION.cff to v${{ needs.release-please.outputs.version }}"
+          git push origin main
+
+      - name: Upload PDF to release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload "${{ needs.release-please.outputs.tag_name }}" \
+            THE_ARCHITECTURE_OF_THOUGHT.pdf \
+            --clobber

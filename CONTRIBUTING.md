@@ -67,6 +67,41 @@ Help grow the DCF community:
 
 ---
 
+## Commit Message Convention
+
+This project uses [Conventional Commits](https://www.conventionalcommits.org/) for automated releases. Please format your commit messages as:
+
+```
+<type>: <description>
+```
+
+### Types
+
+| Type | Use For | Example |
+|------|---------|---------|
+| `feat` | New content or features | `feat: add section on multi-agent patterns` |
+| `fix` | Corrections and bug fixes | `fix: correct citation in Chapter 4` |
+| `docs` | Documentation changes | `docs: clarify prompt chaining examples` |
+| `chore` | Maintenance (no release) | `chore: update dependencies` |
+| `refactor` | Restructuring (no release) | `refactor: reorganize resources folder` |
+
+### Examples
+
+```bash
+# Adding new content
+git commit -m "feat: add case study on debugging with DCF"
+
+# Fixing an error
+git commit -m "fix: correct typo in DCF_ESSENTIALS.md"
+
+# Updating documentation
+git commit -m "docs: expand workshop exercise instructions"
+```
+
+See [RELEASING.md](RELEASING.md) for full details on how commits trigger releases.
+
+---
+
 ## Style Guidelines
 
 ### Writing Style
