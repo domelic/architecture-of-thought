@@ -1,0 +1,52 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*'  # Trigger on version tags like v1.0.0, v2.1.0, etc.
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract version from tag
+        id: version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
+      - name: Extract release notes from CHANGELOG
+        id: changelog
+        run: |
+          # Extract the section for this version from CHANGELOG.md
+          VERSION="${{ steps.version.outputs.VERSION }}"
+          # Remove 'v' prefix for matching in changelog
+          VERSION_NUM="${VERSION#v}"
+
+          # Extract content between this version header and the next version header
+          NOTES=$(awk "/^## \[${VERSION_NUM}\]/{flag=1; next} /^## \[/{flag=0} flag" CHANGELOG.md)
+
+          # If no notes found, use a default message
+          if [ -z "$NOTES" ]; then
+            NOTES="Release ${VERSION}"
+          fi
+
+          # Write to file to preserve formatting
+          echo "$NOTES" > release_notes.md
+          echo "Release notes extracted"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: "DCF ${{ steps.version.outputs.VERSION }}"
+          body_path: release_notes.md
+          files: |
+            THE_ARCHITECTURE_OF_THOUGHT.pdf
+          draft: false
+          prerelease: ${{ contains(steps.version.outputs.VERSION, '-') }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
