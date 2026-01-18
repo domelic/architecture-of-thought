@@ -233,6 +233,7 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ```
 /
 ├── README.md                         # This file
+├── CLAUDE.md                         # Claude Code project instructions
 ├── DCF_ESSENTIALS.md                 # Condensed practitioner's guide
 ├── CONTRIBUTING.md                   # Contribution guidelines
 ├── CHANGELOG.md                      # Version history
@@ -242,8 +243,9 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ├── .claude/
 │   ├── skills/
 │   │   ├── dcf.md                    # Claude Code skill for DCF (principle-based)
+│   │   ├── github-release.md         # Skill for creating GitHub releases
 │   │   └── archive/
-│   │       └── dcf-procedural.md     # Legacy procedural version (22 modes)
+│   │       └── dcf-procedural.md     # Legacy procedural version
 │   ├── scripts/
 │   │   ├── dcf-workflow              # Workflow automation script
 │   │   └── README.md                 # Scripts documentation
