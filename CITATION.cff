@@ -1,0 +1,33 @@
+# This CITATION.cff file was generated to help others cite this work.
+# Visit https://citation-file-format.github.io for more information.
+
+cff-version: 1.2.0
+title: "The Architecture of Thought: The Dialectical Cognition Framework"
+message: "If you use or reference this work, please cite it as below."
+type: dataset
+authors:
+  - family-names: Omelic
+    given-names: Damir
+    orcid: ""
+  - name: "Claude (Anthropic)"
+abstract: >-
+  A treatise presenting the Dialectical Cognition Framework (DCF)—a methodology
+  for human-AI collaboration that positions LLMs as thinking mirrors rather than
+  answer machines. The framework synthesizes Socratic philosophy, cognitive science,
+  and AI engineering to provide structured approaches for engaging with conversational
+  and agentic AI systems.
+keywords:
+  - human-AI collaboration
+  - dialectical cognition
+  - Socratic method
+  - prompt engineering
+  - large language models
+  - cognitive science
+  - Claude Code
+  - agentic AI
+license: "All Rights Reserved"
+version: "2.2.2"
+doi: "10.5281/zenodo.18275170"
+date-released: "2026-01-18"
+url: "https://github.com/domelic/architecture-of-thought"
+repository-code: "https://github.com/domelic/architecture-of-thought"
