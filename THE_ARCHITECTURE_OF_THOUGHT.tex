@@ -645,6 +645,83 @@ When you hit the three-attempt threshold, ask:
 
 This is not a rigid rule---some problems genuinely require more than three iterations. But it's a useful forcing function to prevent the ``infinite refinement'' anti-pattern where you keep iterating without making real progress.
 
+\section{Escape Paths: Designing Prompts with Built-in Exits}\index{Escape Paths}
+
+Beyond knowing when to stop, practitioners can \emph{design prompts that help AI self-limit}. Rather than relying solely on human judgment to terminate iteration, build exit conditions directly into your prompts.
+
+\subsection{The Escape Path Pattern}
+
+An escape path is a question or condition embedded in your prompt that the AI can ``latch onto'' to determine when it has produced sufficient output:
+
+\begin{lstlisting}
+"Help me improve this function's error handling.
+When you believe the error handling is robust enough
+for a production API, say so and explain why."
+\end{lstlisting}
+
+The key elements:
+\begin{itemize}
+    \item \textbf{Clear completion criteria}: ``robust enough for production API''
+    \item \textbf{Explicit invitation to stop}: ``say so and explain why''
+    \item \textbf{Requires justification}: The AI must articulate why it's done, not just declare it
+\end{itemize}
+
+Without escape paths, prompts implicitly invite endless elaboration. ``Improve this'' has no natural termination. ``Improve this until it meets X standard'' does.
+
+\subsection{Preventing Socratic Fatigue}\index{Socratic Fatigue}
+
+Socratic dialogue is powerful, but humans have a tendency toward over-perfection when engaged in recursive refinement. Each ``what else could be improved?'' invites another cycle, and the collaborative energy of good dialogue can mask diminishing returns.
+
+\textbf{Socratic fatigue} occurs when the questioning process itself becomes exhausting---not because the method failed, but because it succeeded too well. The human, energized by productive dialogue, keeps pushing past the point of useful refinement.
+
+Exit hooks protect against this:
+
+\begin{lstlisting}
+"Review this design for security vulnerabilities.
+After identifying critical and high-severity issues,
+assess whether the remaining concerns are worth
+addressing now or can be deferred. If deferrable,
+we can stop there."
+\end{lstlisting}
+
+This prompt:
+\begin{itemize}
+    \item Sets a priority threshold (critical and high-severity)
+    \item Explicitly permits stopping (``we can stop there'')
+    \item Frames continuation as a choice, not a default
+\end{itemize}
+
+\subsection{Exit Hook Patterns}
+
+Several patterns help build natural stopping points:
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{lX}
+\toprule
+\textbf{Pattern} & \textbf{Example} \\
+\midrule
+Threshold-based & ``Flag issues that would block deployment; note minor improvements separately'' \\
+Priority-gated & ``Focus on the top 3 most impactful changes'' \\
+Sufficiency check & ``When this meets the bar for [context], indicate we're done'' \\
+Explicit permission & ``It's okay to say 'this is good enough for now' '' \\
+Scope anchor & ``Solve the immediate problem; don't optimize for hypothetical futures'' \\
+\bottomrule
+\end{tabularx}
+\caption{Exit Hook Patterns}
+\end{table}
+
+\subsection{The Dual Benefit}
+
+Escape paths serve both parties in the collaboration:
+
+\begin{itemize}
+    \item \textbf{For AI}: Provides clear criteria for completion rather than implicit pressure to elaborate endlessly
+    \item \textbf{For humans}: Creates natural stopping points that counteract perfectionist tendencies
+\end{itemize}
+
+The best prompts don't just request output---they define what ``done'' looks like.
+
 \section{Connection to Maieutic Prompting}
 
 Research on ``maieutic prompting'' (from the Greek word for midwifery, referring to Socrates' teaching method) has explored recursive explanation generation to identify logical contradictions and improve reasoning.
@@ -4787,6 +4864,8 @@ This glossary provides definitions for key terms used throughout this treatise. 
 
 \textbf{Evidence (Probing Reasons)}\index{Evidence} --- Questioning that examines the factual foundation of statements. In DCF: ``How do you know? What evidence supports this?'' Many beliefs rest on untested assumptions or weakly understood foundations---this operation surfaces them.
 
+\textbf{Escape Paths}\index{Escape Paths} --- Questions or conditions embedded in prompts that help AI determine when it has produced sufficient output. Rather than relying solely on human judgment to terminate iteration, escape paths build exit conditions directly into prompt design. See ``Escape Paths: Designing Prompts with Built-in Exits.''
+
 \textbf{Extended Mind Thesis} --- The philosophical position that cognitive processes can extend beyond the brain into the environment. Provides theoretical grounding for treating AI as cognitive augmentation.
 
 \section*{F}
@@ -4848,6 +4927,8 @@ This glossary provides definitions for key terms used throughout this treatise. 
 \textbf{Session Lifecycle}\index{Session Lifecycle} --- The practice of managing conversation context over time. Includes knowing when to start fresh sessions vs.\ continue existing ones, and using \texttt{/dcf compact} to capture state before context limits are reached.
 
 \textbf{Socratic Dialogue} --- A method of inquiry through questioning rather than assertion. In DCF, the primary mode of productive human-AI interaction.
+
+\textbf{Socratic Fatigue}\index{Socratic Fatigue} --- Exhaustion from over-application of Socratic questioning, occurring when the collaborative energy of productive dialogue masks diminishing returns. The human tendency toward over-perfection when engaged in recursive refinement. Counteracted by designing prompts with escape paths and exit hooks.
 
 \textbf{Socratic Prompting} --- The application of Socratic questioning techniques to LLM interaction. Asking ``why'' and ``how do you know'' rather than simply accepting outputs.
 

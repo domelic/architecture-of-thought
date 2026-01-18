@@ -68,6 +68,12 @@ A workflow pattern for complex problems: divergent exploration that converges to
 ### Signal from Noise
 The convergent phase of the Architectural Funnel where you extract what actually matters from broad exploration. Metaphorically: "selecting the proper notes from the sounds"—the exploratory phase generates raw material, synthesis composes the melody.
 
+### Escape Paths
+Questions or conditions embedded in prompts that help AI determine when it has produced sufficient output. Rather than relying solely on human judgment to terminate iteration, escape paths build exit conditions directly into prompt design. Example: "When this meets the bar for production use, indicate we're done."
+
+### Socratic Fatigue
+Exhaustion from over-application of Socratic questioning, occurring when the collaborative energy of productive dialogue masks diminishing returns. The human tendency toward over-perfection when engaged in recursive refinement. Counteracted by designing prompts with escape paths and exit hooks.
+
 ---
 
 ## Stances
