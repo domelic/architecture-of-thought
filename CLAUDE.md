@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This repository contains **"The Architecture of Thought"** — a treatise presenting the Dialectical Cognition Framework (DCF), a methodology for human-AI collaboration. The main output is a 193-page LaTeX document with supporting practical resources in Markdown.
+This repository contains **"The Architecture of Thought"** — a treatise presenting the Dialectical Cognition Framework (DCF), a methodology for human-AI collaboration. The main output is a 198-page LaTeX document with supporting practical resources in Markdown.
 
 ## Build Commands
 
@@ -23,7 +23,7 @@ Requires TeX Live 2025 or MacTeX. The triple pdflatex run resolves cross-referen
 
 | File | Purpose |
 |------|---------|
-| `THE_ARCHITECTURE_OF_THOUGHT.tex` | Main LaTeX source (193 pages, 12 parts + appendices) |
+| `THE_ARCHITECTURE_OF_THOUGHT.tex` | Main LaTeX source (198 pages, 12 parts + appendices) |
 | `DCF_ESSENTIALS.md` | Condensed practitioner's guide — read this to understand DCF concepts |
 | `.claude/skills/dcf.md` | The `/dcf` skill definition (21 modes in 5 categories) |
 | `resources/CLAUDE_MD_TEMPLATE.md` | Template for DCF-informed CLAUDE.md files |
