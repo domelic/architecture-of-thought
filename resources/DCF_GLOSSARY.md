@@ -74,6 +74,15 @@ Questions or conditions embedded in prompts that help AI determine when it has p
 ### Socratic Fatigue
 Exhaustion from over-application of Socratic questioning, occurring when the collaborative energy of productive dialogue masks diminishing returns. The human tendency toward over-perfection when engaged in recursive refinement. Counteracted by designing prompts with escape paths and exit hooks.
 
+### Compounding (Cognitive)
+The phenomenon where AI-assisted learning produces accelerating returns: better questions lead to better responses, which deepen understanding, which enables even better questions. Occurs through the reinforcement loop of articulation, challenge, synthesis, and internalization. Distinguishes learning-stance practitioners from extraction-mode users.
+
+### Reinforcement Loop
+The four-stage cycle through which AI dialogue builds durable capability: (1) Articulation—externalizing thinking; (2) Challenge—AI responses that force active processing; (3) Synthesis—integrating new with existing understanding; (4) Internalization—patterns becoming automatic. The mechanism behind cognitive compounding.
+
+### Research Dialogue
+Using AI for exploration and understanding rather than task completion. Distinct from extraction: produces understanding rather than artifacts, explores multiple paths, and expands capability rather than leaving it unchanged. Investment that compounds over time.
+
 ---
 
 ## Stances
