@@ -1,0 +1,70 @@
+name: PDF Preview
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '**.tex'
+      - '**.bib'
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: THE_ARCHITECTURE_OF_THOUGHT.tex
+          latexmk_use_xelatex: false
+          latexmk_shell_escape: false
+          extra_system_packages: "biber"
+
+      - name: Upload PDF preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf-preview-${{ github.event.pull_request.number }}
+          path: THE_ARCHITECTURE_OF_THOUGHT.pdf
+          retention-days: 14
+
+      - name: Comment on PR with preview link
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const runUrl = `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`;
+            const body = `## 📄 PDF Preview Ready
+
+            The PDF has been compiled from your changes.
+
+            **[Download PDF Preview](${runUrl}#artifacts)**
+
+            The artifact will be available for 14 days.`;
+
+            // Check if we already commented
+            const comments = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const botComment = comments.data.find(comment =>
+              comment.user.type === 'Bot' && comment.body.includes('PDF Preview Ready')
+            );
+
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: body
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: body
+              });
+            }
