@@ -72,9 +72,49 @@ dcf-workflow decision "API design"    # tradeoffs → challenge → decide
 
 When sessions get long, use `/dcf compact` to create `SESSION_FINDINGS.md` (gitignored) for continuity across session resets.
 
+## Git Workflow
+
+### Branch Naming Convention
+
+When creating branches, use prefixes that match the conventional commit type:
+
+| Type | Branch Prefix | When to Use |
+|------|---------------|-------------|
+| `feat/` | `feat/description` | New content or features |
+| `fix/` | `fix/description` | Corrections and bug fixes |
+| `docs/` | `docs/description` | Documentation changes |
+| `refactor/` | `refactor/description` | Restructuring |
+| `chore/` | `chore/description` | Maintenance tasks |
+| `ci/` | `ci/description` | CI/CD changes |
+
+**Rules:**
+- Use lowercase
+- Use hyphens to separate words (e.g., `feat/multi-agent-patterns`)
+- Keep names concise but descriptive
+
+### Commit Message Convention
+
+This project uses [Conventional Commits](https://www.conventionalcommits.org/):
+
+```
+<type>: <description>
+```
+
+**Types:** `feat`, `fix`, `docs`, `style`, `refactor`, `chore`, `ci`
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for full details.
+
+### Pull Request Guidelines
+
+- PRs require review before merging
+- All status checks must pass
+- Branches are automatically deleted after merge
+- Squash merge is preferred for clean history
+
 ## For Claude: Working Style
 
-1. **Apply DCF principles**: Surface assumptions, present trade-offs, use questioning to clarify
-2. **Be direct and concise**: Practitioner-focused, not academic verbose
-3. **Ground abstractions in examples**: New theoretical content needs concrete illustrations
-4. **Maintain consistency**: New resources should follow `resources/` file format patterns
+1. **Follow conventions**: Use the branch naming and commit conventions above
+2. **Apply DCF principles**: Surface assumptions, present trade-offs, use questioning to clarify
+3. **Be direct and concise**: Practitioner-focused, not academic verbose
+4. **Ground abstractions in examples**: New theoretical content needs concrete illustrations
+5. **Maintain consistency**: New resources should follow `resources/` file format patterns
