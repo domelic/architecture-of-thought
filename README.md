@@ -239,7 +239,7 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ├── CHANGELOG.md                      # Version history
 ├── THE_ARCHITECTURE_OF_THOUGHT.pdf   # Compiled document (193 pages)
 ├── THE_ARCHITECTURE_OF_THOUGHT.tex   # LaTeX source
-├── references.bib                    # BibTeX bibliography (25 sources)
+├── references.bib                    # BibTeX bibliography (31 sources)
 ├── .claude/
 │   ├── skills/
 │   │   ├── dcf.md                    # Claude Code skill for DCF (principle-based)

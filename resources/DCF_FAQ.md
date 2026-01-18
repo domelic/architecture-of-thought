@@ -278,9 +278,9 @@ The `/dcf` skill is a principle-based Claude Code skill that applies DCF's Socra
 | `/dcf diagnose` | Something's wrong but you don't know which anti-pattern |
 | `/dcf skill` | Discovered a pattern worth capturing for reuse |
 
-### What about the procedural version with 22 modes?
+### What about the procedural version?
 
-The original procedural version with scripted steps for each of 22 modes is archived at `.claude/skills/archive/dcf-procedural.md`. The current version is principle-based, trusting Claude to apply Socratic questioning contextually rather than following rigid scripts.
+The original procedural version with scripted steps for each mode is archived at `.claude/skills/archive/dcf-procedural.md`. The current version is principle-based, trusting Claude to apply Socratic questioning contextually rather than following rigid scripts.
 
 ### How do I chain modes together?
 

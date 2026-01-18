@@ -27,7 +27,7 @@ Requires TeX Live 2025 or MacTeX. The triple pdflatex run resolves cross-referen
 | `DCF_ESSENTIALS.md` | Condensed practitioner's guide — read this to understand DCF concepts |
 | `.claude/skills/dcf.md` | The `/dcf` skill definition (21 modes in 5 categories) |
 | `resources/CLAUDE_MD_TEMPLATE.md` | Template for DCF-informed CLAUDE.md files |
-| `references.bib` | BibTeX bibliography (25 sources) |
+| `references.bib` | BibTeX bibliography (31 sources) |
 
 ## Available Skills
 

@@ -15,7 +15,9 @@ The Dialectical Cognition Framework is a methodology for **thinking with AI**, n
 
 ---
 
-## The Six Core Principles
+## The Six Essential Principles
+
+*The full treatise presents 12 core principles plus 4 agentic-era principles. These six form the essential foundation for practitioners.*
 
 ### 1. The Thinking Mirror
 
