@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions & Discussion
+    url: https://github.com/domelic/architecture-of-thought/discussions
+    about: Ask questions or discuss DCF concepts
+  - name: DCF FAQ
+    url: https://github.com/domelic/architecture-of-thought/blob/main/resources/DCF_FAQ.md
+    about: Check the FAQ before opening an issue
