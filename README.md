@@ -87,6 +87,7 @@ See [examples/README.md](examples/README.md) for the full collection and contrib
 |------|-------------|
 | [CONTRIBUTING.md](CONTRIBUTING.md) | How to contribute to DCF |
 | [CHANGELOG.md](CHANGELOG.md) | Version history and changes |
+| [RELEASING.md](RELEASING.md) | Release process and checklist |
 
 ---
 
@@ -237,6 +238,8 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ├── DCF_ESSENTIALS.md                 # Condensed practitioner's guide
 ├── CONTRIBUTING.md                   # Contribution guidelines
 ├── CHANGELOG.md                      # Version history
+├── RELEASING.md                      # Release process checklist
+├── CITATION.cff                      # Machine-readable citation
 ├── THE_ARCHITECTURE_OF_THOUGHT.pdf   # Compiled document (198 pages)
 ├── THE_ARCHITECTURE_OF_THOUGHT.tex   # LaTeX source
 ├── references.bib                    # BibTeX bibliography (31 sources)
