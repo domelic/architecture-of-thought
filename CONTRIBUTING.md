@@ -67,6 +67,28 @@ Help grow the DCF community:
 
 ---
 
+## Branch Naming Convention
+
+Branch names should match the conventional commit type:
+
+| Type | Branch Prefix | Example |
+|------|---------------|---------|
+| `feat` | `feat/` | `feat/multi-agent-patterns` |
+| `fix` | `fix/` | `fix/citation-error` |
+| `docs` | `docs/` | `docs/workshop-guide` |
+| `style` | `style/` | `style/formatting` |
+| `refactor` | `refactor/` | `refactor/resources-folder` |
+| `chore` | `chore/` | `chore/update-deps` |
+| `ci` | `ci/` | `ci/add-workflow` |
+
+**Rules:**
+- Use lowercase
+- Use hyphens to separate words
+- Keep names concise but descriptive
+- Branches are automatically deleted after PR merge
+
+---
+
 ## Commit Message Convention
 
 This project uses [Conventional Commits](https://www.conventionalcommits.org/) for automated releases. Please format your commit messages as:
