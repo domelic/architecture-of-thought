@@ -49,6 +49,7 @@ DCF operates at the *micro level* of human-AI interaction—the cognitive strate
 | [Slide Deck](resources/DCF_SLIDE_DECK.md) | Presentation for teaching DCF | Team training |
 | [Framework Integration](resources/DCF_FRAMEWORK_INTEGRATION.md) | DCF + Ralph, Plan Mode, BMAD | Combining methodologies |
 | [Anti-Patterns Guide](resources/DCF_ANTI_PATTERNS.md) | 14 failure modes with fixes | Avoiding common mistakes |
+| [GitHub Setup Guide](resources/GITHUB_REPOSITORY_SETUP.md) | Repository best practices | New GitHub projects |
 
 ### Learning & Reference
 
@@ -244,6 +245,7 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 │   ├── skills/
 │   │   ├── dcf.md                    # Claude Code skill for DCF (principle-based)
 │   │   ├── github-release.md         # Skill for creating GitHub releases
+│   │   ├── github-setup.md           # Skill for repository best practices
 │   │   └── archive/
 │   │       └── dcf-procedural.md     # Legacy procedural version
 │   ├── scripts/
@@ -272,7 +274,8 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
     ├── DCF_TEAM_ADOPTION_PLAYBOOK.md # Organizational adoption guide
     ├── DCF_CASE_STUDY_TEMPLATE.md    # Documentation template
     ├── DCF_VIDEO_SCRIPT.md           # Media production script
-    └── DCF_RESEARCH_AGENDA.md        # Open research questions
+    ├── DCF_RESEARCH_AGENDA.md        # Open research questions
+    └── GITHUB_REPOSITORY_SETUP.md    # Repository best practices guide
 ```
 
 ---

@@ -54,6 +54,21 @@ Uses Playwright browser automation to publish releases from CHANGELOG.md content
 
 Requires: tag pushed to remote, user authenticated to GitHub, Playwright MCP available.
 
+### `/github-setup [scope]` — Repository Best Practices
+
+Sets up GitHub repository with comprehensive best practices.
+
+```bash
+/github-setup              # Full setup assessment and implementation
+/github-setup docs         # Documentation files only
+/github-setup protection   # Branch protection and CODEOWNERS
+/github-setup issues       # Issue templates and labels
+/github-setup automation   # GitHub Actions workflows
+/github-setup discovery    # Topics, social preview, funding
+```
+
+See `.claude/skills/github-setup.md` and `resources/GITHUB_REPOSITORY_SETUP.md` for details.
+
 ## Workflow Automation
 
 The `dcf-workflow` script chains DCF modes with checkpoints:
