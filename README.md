@@ -18,10 +18,10 @@ The framework synthesizes insights from Socratic philosophy, cognitive science, 
 
 **Key contributions include:**
 1. The **Thinking Mirror** hypothesis for understanding human-LLM interaction
-2. A formalized **five-phase Socratic prompting** methodology
-3. Principles for **prompt chaining as cognitive architecture**
-4. Adaptations for the **agentic era** of autonomous AI systems
-5. Positioning within the broader 2025 AI methodology landscape (ACE-FCA, 12-Factor Agents, BMAD, Ralph)
+2. **12 core principles** including Socratic dialogue, recursive refinement, and anticipatory calibration
+3. A **Claude Code skill** with 21 modes across 5 categories (evaluation, problem-solving, design, learning, session management)
+4. **14 documented anti-patterns** with diagnostic questions and mitigations
+5. Positioning within the 2025 AI methodology landscape (ACE-FCA, 12-Factor Agents, BMAD, Ralph)
 
 DCF operates at the *micro level* of human-AI interaction—the cognitive strategy for how humans should think during checkpoints, reviews, and approvals. It serves as a "cognitive operating system" that runs on top of whatever agentic framework practitioners choose.
 
@@ -92,22 +92,22 @@ See [examples/README.md](examples/README.md) for the full collection and contrib
 
 ## Document Structure
 
-| Part | Title | Chapters |
-|------|-------|----------|
-| I | The Core Philosophy of DCF | Collaboration over Extraction, The Thinking Mirror, Socratic Dialogue |
-| II | The Socratic Method Applied | The Five Phases, Maieutic Prompting |
-| III | Prompt Engineering as Architecture | Chains of Thought, Recursive Refinement |
-| IV | Agentic Era Adaptations | Claude Code, Memory Systems, Human Oversight |
-| V | Metacognition and Self-Directed Learning | Thinking About Thinking, The Learning Stance |
-| VI | Personal Knowledge Management | PKM Systems, Zettelkasten, PARA Method |
-| VII | Philosophical Foundations | Extended Mind Thesis, Distributed Cognition, Scaffolding Theory |
-| VIII | Critical Perspectives | Limitations, Ethics, What DCF Is Not |
-| IX | Case Studies | 5 Real-World Applications |
-| X | Measuring Improvement | Metrics, Research Findings |
-| XI | The Broader Landscape | Framework Comparisons, Stack View |
-| XII | Conclusion | Synthesis and Future Directions |
+| Part | Title | Key Chapters |
+|------|-------|--------------|
+| I | The Core Philosophy of DCF | Extraction to Collaboration, The Thinking Mirror, Language as Infrastructure |
+| II | The Socratic Method Reimagined | Socratic Dialogue as Methodology, The Five Phases of Socratic Prompting |
+| III | Prompt Chaining as Cognitive Architecture | Why Single Prompts Fail, Designing Prompt Chains, Recursive Refinement |
+| IV | From Documentation to Knowledge Engineering | Minimal Viable Document, Documentation as System Design, Knowledge Architecture |
+| V | Metacognition and Self-Directed Learning | Thinking About Thinking, The Learning Stance, Building PKM Systems |
+| VI | Philosophical and Cognitive Science Foundations | Extended Mind Thesis, Distributed Cognition, Scaffolding Theory, Dialectical Tradition |
+| VII | Claude Code and Development Best Practices | Architecture, Agent Ecosystem, Memory Systems, Team-Scale DCF, MCP Orchestration |
+| VIII | Practical Application Framework | Practitioner's Toolkit, Failure Modes (14 anti-patterns), Measuring Improvement, Case Studies |
+| IX | The Emerging Discipline | Naming the Field, The Future of Thought Work, Your Role in This Emergence |
+| X | Positioning Within the AI Methodology Landscape | Framework Comparisons (ACE-FCA, BMAD, Ralph), The Stack View, Practical Integration |
+| XI | Agentic Era Adaptations | Manual to Autonomous, Extended Thinking, When to Engage vs. Trust |
+| XII | Critical Perspectives | Limitations of DCF, Ethical Considerations |
 
-**Appendices:** Principles Summary, Reading List, Resources, Research References, Meta-Example, Glossary (~30 terms), Exercises (7 + workshop format)
+**Appendices:** DCF Principles Summary, Prompt Reference, Recommended Reading, Claude Code Resources, Research References, Meta-Example, Glossary (~40 terms), Exercises
 
 ---
 
@@ -118,6 +118,7 @@ DCF draws on established research in cognitive science and philosophy:
 - **Extended Mind Thesis** — Clark & Chalmers (1998)
 - **Distributed Cognition** — Hutchins (1995)
 - **Scaffolding Theory** — Vygotsky, Bruner, Wood & Ross
+- **Hermeneutics** — Gadamer's "fusion of horizons" (*Horizontverschmelzung*)
 - **Human-AI Collaboration Research** — Nature Human Behaviour (2024), Synergy Index (2025)
 
 ---
