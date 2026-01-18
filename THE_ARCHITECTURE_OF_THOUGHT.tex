@@ -645,6 +645,83 @@ When you hit the three-attempt threshold, ask:
 
 This is not a rigid rule---some problems genuinely require more than three iterations. But it's a useful forcing function to prevent the ``infinite refinement'' anti-pattern where you keep iterating without making real progress.
 
+\section{Escape Paths: Designing Prompts with Built-in Exits}\index{Escape Paths}
+
+Beyond knowing when to stop, practitioners can \emph{design prompts that help AI self-limit}. Rather than relying solely on human judgment to terminate iteration, build exit conditions directly into your prompts.
+
+\subsection{The Escape Path Pattern}
+
+An escape path is a question or condition embedded in your prompt that the AI can ``latch onto'' to determine when it has produced sufficient output:
+
+\begin{lstlisting}
+"Help me improve this function's error handling.
+When you believe the error handling is robust enough
+for a production API, say so and explain why."
+\end{lstlisting}
+
+The key elements:
+\begin{itemize}
+    \item \textbf{Clear completion criteria}: ``robust enough for production API''
+    \item \textbf{Explicit invitation to stop}: ``say so and explain why''
+    \item \textbf{Requires justification}: The AI must articulate why it's done, not just declare it
+\end{itemize}
+
+Without escape paths, prompts implicitly invite endless elaboration. ``Improve this'' has no natural termination. ``Improve this until it meets X standard'' does.
+
+\subsection{Preventing Socratic Fatigue}\index{Socratic Fatigue}
+
+Socratic dialogue is powerful, but humans have a tendency toward over-perfection when engaged in recursive refinement. Each ``what else could be improved?'' invites another cycle, and the collaborative energy of good dialogue can mask diminishing returns.
+
+\textbf{Socratic fatigue} occurs when the questioning process itself becomes exhausting---not because the method failed, but because it succeeded too well. The human, energized by productive dialogue, keeps pushing past the point of useful refinement.
+
+Exit hooks protect against this:
+
+\begin{lstlisting}
+"Review this design for security vulnerabilities.
+After identifying critical and high-severity issues,
+assess whether the remaining concerns are worth
+addressing now or can be deferred. If deferrable,
+we can stop there."
+\end{lstlisting}
+
+This prompt:
+\begin{itemize}
+    \item Sets a priority threshold (critical and high-severity)
+    \item Explicitly permits stopping (``we can stop there'')
+    \item Frames continuation as a choice, not a default
+\end{itemize}
+
+\subsection{Exit Hook Patterns}
+
+Several patterns help build natural stopping points:
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{lX}
+\toprule
+\textbf{Pattern} & \textbf{Example} \\
+\midrule
+Threshold-based & ``Flag issues that would block deployment; note minor improvements separately'' \\
+Priority-gated & ``Focus on the top 3 most impactful changes'' \\
+Sufficiency check & ``When this meets the bar for [context], indicate we're done'' \\
+Explicit permission & ``It's okay to say 'this is good enough for now' '' \\
+Scope anchor & ``Solve the immediate problem; don't optimize for hypothetical futures'' \\
+\bottomrule
+\end{tabularx}
+\caption{Exit Hook Patterns}
+\end{table}
+
+\subsection{The Dual Benefit}
+
+Escape paths serve both parties in the collaboration:
+
+\begin{itemize}
+    \item \textbf{For AI}: Provides clear criteria for completion rather than implicit pressure to elaborate endlessly
+    \item \textbf{For humans}: Creates natural stopping points that counteract perfectionist tendencies
+\end{itemize}
+
+The best prompts don't just request output---they define what ``done'' looks like.
+
 \section{Connection to Maieutic Prompting}
 
 Research on ``maieutic prompting'' (from the Greek word for midwifery, referring to Socrates' teaching method) has explored recursive explanation generation to identify logical contradictions and improve reasoning.
@@ -1099,6 +1176,99 @@ Key practices:
 \end{itemize}
 
 The measure of effective AI collaboration isn't how much you accomplish with AI---it's how much more capable you become through working with AI.
+
+\section{The Compounding Mechanism}\index{Compounding}
+
+Why does the learning stance produce compounding returns while extraction produces only immediate outputs? The answer lies in how dialogue---as opposed to retrieval---shapes cognitive capability.
+
+\subsection{The Reinforcement Loop}
+
+Effective AI dialogue creates a four-stage reinforcement loop:
+
+\begin{enumerate}
+    \item \textbf{Articulation}: You must externalize your thinking to prompt effectively. This act of articulation surfaces gaps, clarifies assumptions, and strengthens neural pathways associated with the concept.
+
+    \item \textbf{Challenge}: The AI's response (especially under Socratic engagement) challenges your formulation. Counterarguments, edge cases, and alternative framings force active processing rather than passive reception.
+
+    \item \textbf{Synthesis}: You integrate the AI's contribution with your existing understanding, resolving tensions and building connections. This synthesis creates durable knowledge structures.
+
+    \item \textbf{Internalization}: Through repeated cycles, patterns become automatic. What once required explicit AI scaffolding becomes implicit capability.
+\end{enumerate}
+
+Each cycle through this loop strengthens the underlying skill. Extraction---asking for answers without engaging the loop---produces outputs but skips the stages where learning actually occurs.
+
+\subsection{Compaction as Cognitive Exercise}\index{Compaction!as learning}
+
+Session compaction (creating \texttt{SESSION\_FINDINGS.md} before context limits) is typically framed as context management. But compaction serves a deeper cognitive function: \emph{forced synthesis}.
+
+When you compress a long exploration into essential findings, you must:
+
+\begin{itemize}
+    \item Distinguish signal from noise
+    \item Identify the core insights worth preserving
+    \item Articulate learnings in transferable form
+    \item Recognize what you now understand that you didn't before
+\end{itemize}
+
+This is effortful processing---the kind that produces durable learning. The act of compaction isn't administrative overhead; it's the moment where scattered exploration crystallizes into knowledge.
+
+\begin{quotebox}
+\textbf{Practice}: Don't wait for context limits to force compaction. Periodically pause extended explorations to ask: ``What have I learned so far? What's the essential insight?'' This deliberate synthesis accelerates internalization.
+\end{quotebox}
+
+\subsection{Research Dialogue: Exploration as Skill-Building}
+
+Using AI for research and exploration---rather than task completion---creates distinct learning dynamics:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Task Extraction} & \textbf{Research Dialogue} \\
+\midrule
+``Write this function'' & ``Help me understand this design space'' \\
+Produces artifact & Produces understanding \\
+Single path to output & Multiple paths explored \\
+AI does the work & AI illuminates the territory \\
+Capability unchanged & Capability expanded \\
+\bottomrule
+\end{tabular}
+\caption{Task Extraction vs. Research Dialogue}
+\end{table}
+
+Research dialogue treats AI as a thinking partner for exploration, not a contractor for deliverables. The ``inefficiency'' of exploration is actually investment: you emerge knowing the landscape, not just holding a map someone else drew.
+
+\subsection{Shaping Cognitive Patterns}
+
+Extended AI collaboration shapes how you think, not just what you know:
+
+\begin{itemize}
+    \item \textbf{Question-asking improves}: Repeated Socratic engagement trains you to ask better questions---even without AI
+
+    \item \textbf{Decomposition becomes natural}: Practice breaking problems into promptable pieces transfers to general problem-solving
+
+    \item \textbf{Metacognition strengthens}: Constant reflection on AI outputs builds habitual self-monitoring
+
+    \item \textbf{Synthesis patterns emerge}: Integrating AI contributions with your knowledge becomes a trainable skill
+\end{itemize}
+
+These are not content-specific skills (like learning a programming language) but cognitive patterns that transfer across domains. They represent genuine capability growth, not just knowledge accumulation.
+
+\subsection{The Compound Interest Analogy}
+
+Financial compound interest works because returns are reinvested, producing returns on returns. Cognitive compounding works similarly:
+
+\begin{itemize}
+    \item \textbf{Better questions} → better AI responses → deeper understanding → even better questions
+    \item \textbf{Stronger synthesis} → more integrated knowledge → richer connections → stronger synthesis
+    \item \textbf{Improved metacognition} → better process awareness → more effective collaboration → improved metacognition
+\end{itemize}
+
+Each skill feeds back into the others. Over months and years, the gap between learning-stance practitioners and extraction-mode users widens exponentially---not because one group uses AI more, but because one group uses AI in ways that compound.
+
+\begin{quotebox}
+\textbf{The core insight}: AI dialogue, approached with intentionality, doesn't just produce outputs---it shapes the brain that produces future outputs. Every session is an opportunity for cognitive development, not just task completion.
+\end{quotebox}
 
 \chapter{Building Personal Knowledge Systems}
 
@@ -4769,6 +4939,8 @@ This glossary provides definitions for key terms used throughout this treatise. 
 
 \textbf{Cognitive Scaffolding} --- Temporary AI support that builds human capability over time. Effective scaffolding leads to eventual independence, not permanent dependence.
 
+\textbf{Compounding (Cognitive)}\index{Compounding} --- The phenomenon where AI-assisted learning produces accelerating returns: better questions lead to better responses, which deepen understanding, which enables even better questions. Occurs through the reinforcement loop of articulation, challenge, synthesis, and internalization. Distinguishes learning-stance practitioners from extraction-mode users.
+
 \textbf{Context Window} --- The maximum amount of text an LLM can process in a single interaction. Determines the practical limits of prompt chaining and conversation depth.
 
 \textbf{Critical Rationalism}\index{Critical Rationalism} --- Karl Popper's philosophical stance that all knowledge is provisional, conjectural, and open to revision through criticism. In DCF, provides the foundation for treating AI outputs as hypotheses to be tested rather than truths to be accepted.
@@ -4786,6 +4958,8 @@ This glossary provides definitions for key terms used throughout this treatise. 
 \textbf{Epistemic Humility} --- Recognition of the limits of one's knowledge. In DCF, applies to both human and AI: neither should claim certainty beyond their evidence.
 
 \textbf{Evidence (Probing Reasons)}\index{Evidence} --- Questioning that examines the factual foundation of statements. In DCF: ``How do you know? What evidence supports this?'' Many beliefs rest on untested assumptions or weakly understood foundations---this operation surfaces them.
+
+\textbf{Escape Paths}\index{Escape Paths} --- Questions or conditions embedded in prompts that help AI determine when it has produced sufficient output. Rather than relying solely on human judgment to terminate iteration, escape paths build exit conditions directly into prompt design. See ``Escape Paths: Designing Prompts with Built-in Exits.''
 
 \textbf{Extended Mind Thesis} --- The philosophical position that cognitive processes can extend beyond the brain into the environment. Provides theoretical grounding for treating AI as cognitive augmentation.
 
@@ -4839,7 +5013,11 @@ This glossary provides definitions for key terms used throughout this treatise. 
 
 \textbf{Recursive Refinement} --- The DCF principle of iteratively improving outputs until they converge on clarity. Each iteration's output becomes the next iteration's input.
 
+\textbf{Reinforcement Loop (Cognitive)} --- The four-stage cycle through which AI dialogue builds durable capability: (1) Articulation---externalizing thinking; (2) Challenge---AI responses that force active processing; (3) Synthesis---integrating new with existing understanding; (4) Internalization---patterns becoming automatic. The mechanism behind cognitive compounding.
+
 \textbf{Reinvention Addiction}\index{Reinvention Addiction} --- The anti-pattern of repeatedly solving the same type of problem from scratch instead of capturing effective patterns as reusable skills. Treats each session as isolated rather than building cumulative capability. See Anti-Pattern 12 in Chapter~\ref{ch:failure-modes}.
+
+\textbf{Research Dialogue} --- Using AI for exploration and understanding rather than task completion. Distinct from extraction: produces understanding rather than artifacts, explores multiple paths, and expands capability rather than leaving it unchanged. Investment that compounds over time.
 
 \textbf{ReAct (Reasoning + Acting)} --- An AI paradigm combining reasoning traces with action execution. Enables LLMs to interact with external tools and environments.
 
@@ -4848,6 +5026,8 @@ This glossary provides definitions for key terms used throughout this treatise. 
 \textbf{Session Lifecycle}\index{Session Lifecycle} --- The practice of managing conversation context over time. Includes knowing when to start fresh sessions vs.\ continue existing ones, and using \texttt{/dcf compact} to capture state before context limits are reached.
 
 \textbf{Socratic Dialogue} --- A method of inquiry through questioning rather than assertion. In DCF, the primary mode of productive human-AI interaction.
+
+\textbf{Socratic Fatigue}\index{Socratic Fatigue} --- Exhaustion from over-application of Socratic questioning, occurring when the collaborative energy of productive dialogue masks diminishing returns. The human tendency toward over-perfection when engaged in recursive refinement. Counteracted by designing prompts with escape paths and exit hooks.
 
 \textbf{Socratic Prompting} --- The application of Socratic questioning techniques to LLM interaction. Asking ``why'' and ``how do you know'' rather than simply accepting outputs.
 
