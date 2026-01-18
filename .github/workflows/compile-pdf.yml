@@ -41,10 +41,41 @@ jobs:
             exit 1
           fi
 
-      - name: Commit updated PDF
+      - name: Extract and update page count
+        run: |
+          # Install poppler-utils for pdfinfo
+          sudo apt-get update && sudo apt-get install -y poppler-utils
+
+          # Extract page count from PDF
+          PAGE_COUNT=$(pdfinfo THE_ARCHITECTURE_OF_THOUGHT.pdf | grep "Pages:" | awk '{print $2}')
+          echo "Detected page count: $PAGE_COUNT"
+
+          if [ -z "$PAGE_COUNT" ]; then
+            echo "Could not extract page count, skipping update"
+            exit 0
+          fi
+
+          # Update README.md - badge, download link, and repo structure
+          sed -i "s/Pages-[0-9]*-blue/Pages-${PAGE_COUNT}-blue/g" README.md
+          sed -i "s/PDF ([0-9]* pages)/PDF (${PAGE_COUNT} pages)/g" README.md
+          sed -i "s/Compiled document ([0-9]* pages)/Compiled document (${PAGE_COUNT} pages)/g" README.md
+
+          # Update CLAUDE.md - overview and key files table
+          sed -i "s/[0-9]*-page LaTeX document/${PAGE_COUNT}-page LaTeX document/g" CLAUDE.md
+          sed -i "s/([0-9]* pages,/(${PAGE_COUNT} pages,/g" CLAUDE.md
+
+          # Update resources/DCF_SLIDE_DECK.md if it exists
+          if [ -f "resources/DCF_SLIDE_DECK.md" ]; then
+            sed -i "s/([0-9]* pages)/(${PAGE_COUNT} pages)/g" resources/DCF_SLIDE_DECK.md
+          fi
+
+          echo "Page count updated to $PAGE_COUNT in documentation files"
+
+      - name: Commit updated PDF and page counts
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add THE_ARCHITECTURE_OF_THOUGHT.pdf
-          git diff --staged --quiet || git commit -m "Auto-compile PDF from LaTeX changes"
+          git add THE_ARCHITECTURE_OF_THOUGHT.pdf README.md CLAUDE.md
+          git add resources/DCF_SLIDE_DECK.md 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "Auto-compile PDF and update page count"
           git push
