@@ -201,17 +201,17 @@ If you use or reference this work, please cite:
   author = {Omelic, Damir and {Claude (Anthropic)}},
   title = {The Architecture of Thought: The Dialectical Cognition Framework},
   year = {2026},
-  doi = {10.5281/zenodo.18275170},
-  url = {https://doi.org/10.5281/zenodo.18275170},
+  doi = {10.5281/zenodo.18275169},
+  url = {https://doi.org/10.5281/zenodo.18275169},
   note = {A Treatise on Human-AI Collaboration in the Agentic Era}
 }
 ```
 
 ### APA
-Omelic, D., & Claude. (2026). *The Architecture of Thought: The Dialectical Cognition Framework*. Zenodo. https://doi.org/10.5281/zenodo.18275170
+Omelic, D., & Claude. (2026). *The Architecture of Thought: The Dialectical Cognition Framework*. Zenodo. https://doi.org/10.5281/zenodo.18275169
 
 ### Chicago
-Omelic, Damir, and Claude. "The Architecture of Thought: The Dialectical Cognition Framework." Zenodo, 2026. https://doi.org/10.5281/zenodo.18275170.
+Omelic, Damir, and Claude. "The Architecture of Thought: The Dialectical Cognition Framework." Zenodo, 2026. https://doi.org/10.5281/zenodo.18275169.
 
 ---
 
