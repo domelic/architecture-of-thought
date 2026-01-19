@@ -403,7 +403,7 @@ The skill is **principle-based**, not scripted. Each mode has an **outcome**, no
 │   Claude adapts Socratic questioning to the actual situation.       │
 │                                                                     │
 │   ARCHIVED: Procedural version at                                   │
-│   .claude/skills/archive/dcf-procedural.md                          │
+│   .claude/commands/archive/dcf-procedural.md                        │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
 ```

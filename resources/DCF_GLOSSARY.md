@@ -251,7 +251,7 @@ A collection of ready-to-use prompts organized by situation or purpose.
 A predefined workflow that can be invoked with a command. The /dcf skill applies DCF principles.
 
 ### Pattern Capture (Pattern-to-Skill)
-The practice of recognizing effective prompting patterns and codifying them as reusable Claude Code skills. When you discover an approach that works well for a category of tasks, extract its transferable essence and document it in `.claude/skills/`. The `/dcf skill` mode guides this process.
+The practice of recognizing effective prompting patterns and codifying them as reusable Claude Code skills. When you discover an approach that works well for a category of tasks, extract its transferable essence and document it in `.claude/commands/`. The `/dcf skill` mode guides this process.
 
 ### Hooks
 Shell commands that execute automatically before or after Claude Code tool calls. Enable automated DCF checkpoints—for example, running tests after every file edit.

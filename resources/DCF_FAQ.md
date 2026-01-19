@@ -280,23 +280,23 @@ The `/dcf` skill is a principle-based Claude Code skill that applies DCF's Socra
 
 ### What about the procedural version?
 
-The original procedural version with scripted steps for each mode is archived at `.claude/skills/archive/dcf-procedural.md`. The current version is principle-based, trusting Claude to apply Socratic questioning contextually rather than following rigid scripts.
+The original procedural version with scripted steps for each mode is archived at `.claude/commands/archive/dcf-procedural.md`. The current version is principle-based, trusting Claude to apply Socratic questioning contextually rather than following rigid scripts.
 
 ### How do I chain modes together?
 
 Use the `dcf-workflow` script for workflow automation:
 
 ```bash
-dcf-workflow new-project              # learn → premortem → review
-dcf-workflow debug "auth timeout"     # debug → simplify → decide
-dcf-workflow decision "API design"    # review → challenge → decide
+dcf-workflow new-project              # onboard → architect → premortem
+dcf-workflow debug "auth timeout"     # debug → assumptions → simplify
+dcf-workflow decision "API design"    # tradeoffs → challenge → decide
 ```
 
 See `.claude/scripts/README.md` for full documentation.
 
 ### How do I install the /dcf skill?
 
-1. Copy `.claude/skills/dcf.md` to your project's `.claude/skills/` directory
+1. Copy `.claude/commands/dcf.md` to your project's `.claude/commands/` directory
 2. Optionally add `.claude/scripts/` to your PATH for workflow automation
 3. See `.claude/settings.example.json` for hooks configuration
 
