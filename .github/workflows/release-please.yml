@@ -45,6 +45,45 @@ jobs:
             THE_ARCHITECTURE_OF_THOUGHT.pdf \
             --clobber
 
+      - name: Install Pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+
+      - name: Build EPUB
+        id: epub
+        run: |
+          VERSION="${{ needs.release-please.outputs.version }}"
+          EPUB_NAME="THE_ARCHITECTURE_OF_THOUGHT_v${VERSION}.epub"
+
+          PANDOC_ARGS="--toc --toc-depth=2"
+          PANDOC_ARGS="$PANDOC_ARGS --metadata title=\"The Architecture of Thought\""
+          PANDOC_ARGS="$PANDOC_ARGS --metadata subtitle=\"The Dialectical Cognition Framework\""
+          PANDOC_ARGS="$PANDOC_ARGS --metadata author=\"Damir Omelic\""
+          PANDOC_ARGS="$PANDOC_ARGS --metadata date=\"$(date +%Y)\""
+          PANDOC_ARGS="$PANDOC_ARGS --metadata lang=en"
+
+          # Add cover image if it exists
+          if [ -f "assets/cover.jpg" ]; then
+            PANDOC_ARGS="$PANDOC_ARGS --epub-cover-image=assets/cover.jpg"
+          fi
+
+          # Add bibliography if it exists
+          if [ -f "references.bib" ]; then
+            PANDOC_ARGS="$PANDOC_ARGS --bibliography=references.bib --citeproc"
+          fi
+
+          eval pandoc THE_ARCHITECTURE_OF_THOUGHT.tex -o "${EPUB_NAME}" $PANDOC_ARGS
+          echo "epub_name=${EPUB_NAME}" >> $GITHUB_OUTPUT
+
+      - name: Upload EPUB to release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload "${{ needs.release-please.outputs.tag_name }}" \
+            "${{ steps.epub.outputs.epub_name }}" \
+            --clobber
+
       - name: Update CITATION.cff
         continue-on-error: true
         run: |
