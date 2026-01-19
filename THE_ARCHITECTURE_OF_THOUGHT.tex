@@ -649,6 +649,34 @@ When you hit the three-attempt threshold, ask:
 
 This is not a rigid rule---some problems genuinely require more than three iterations. But it's a useful forcing function to prevent the ``infinite refinement'' anti-pattern where you keep iterating without making real progress.
 
+\subsection{The Disposable Plans Principle}\index{Disposable Plans}
+
+Sometimes the issue isn't how many times you've iterated---it's that the entire plan was based on incorrect assumptions. In such cases, \textbf{regenerating the plan is cheaper than forcing fit}.
+
+\begin{quotebox}
+\textbf{DCF Principle: Disposable Plans}
+
+A plan is a hypothesis about how to achieve a goal, not a contract. When implementation reveals the plan was based on incorrect assumptions, regenerate the plan rather than forcing the implementation to match outdated thinking.
+\end{quotebox}
+
+\textbf{Signs you should regenerate the plan:}
+\begin{itemize}
+    \item \textbf{Tasks keep getting added}---original decomposition missed scope
+    \item \textbf{Completed tasks need rework}---dependencies were wrong
+    \item \textbf{``Just one more fix'' pattern}---plan is papering over fundamental issues
+    \item \textbf{Implementation feels forced}---fighting the plan instead of using it
+    \item \textbf{New information invalidates assumptions}---plan's foundation is gone
+\end{itemize}
+
+\textbf{Signs to keep the plan:}
+\begin{itemize}
+    \item Tasks completing as expected---plan is accurate
+    \item Discoveries improve the plan---it's a living document
+    \item Deviations are tactical, not strategic---core approach is sound
+\end{itemize}
+
+The key insight: one planning session is cheap compared to circular implementation failures. When you catch yourself thinking ``maybe if I just tweak this one more time,'' consider whether a fresh plan would serve you better.
+
 \section{Escape Paths: Designing Prompts with Built-in Exits}\index{Escape Paths}
 
 Beyond knowing when to stop, practitioners can \emph{design prompts that help AI self-limit}. Rather than relying solely on human judgment to terminate iteration, build exit conditions directly into your prompts.
@@ -4112,6 +4140,49 @@ The critical skill in agentic DCF: knowing when human dialectic adds value.
     \item Output will be hard to verify or undo
 \end{itemize}
 
+\section{The Steering Model}\label{sec:steering-model}\index{Steering Model}\index{Upstream Steering}\index{Downstream Steering}
+
+Beyond knowing \emph{when} to engage, practitioners need a framework for \emph{how} to influence agent behavior. The Steering Model frames agentic control as two complementary forces:
+
+\textbf{Upstream Steering} (Deterministic)---what you control \emph{before} the agent runs:
+\begin{itemize}
+    \item CLAUDE.md project instructions
+    \item Specification documents and context files
+    \item Codebase conventions and patterns
+    \item Explicit constraints in your prompts
+\end{itemize}
+
+Upstream steering shapes what the agent will generate. It's deterministic: the same inputs produce consistent behavior.
+
+\textbf{Downstream Steering} (Backpressure)---what validates \emph{after} the agent acts:
+\begin{itemize}
+    \item Test suites that catch incorrect behavior
+    \item Linters and formatters that enforce style
+    \item Type checkers that catch interface mismatches
+    \item Build processes that verify integration
+\end{itemize}
+
+Downstream steering forces self-correction through failure feedback. The agent learns from what doesn't work.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Problem} & \textbf{Strengthen} \\
+\midrule
+Agent keeps making same mistakes & Upstream (add to CLAUDE.md) \\
+Output doesn't match project style & Upstream (document conventions) \\
+Need confidence in correctness & Downstream (add tests) \\
+Code quality varies & Downstream (add linters) \\
+Type errors slip through & Downstream (enable strict checking) \\
+\bottomrule
+\end{tabular}
+\caption{Steering Model: When to Strengthen Each Direction}
+\label{tab:steering-model}
+\end{table}
+
+\textbf{DCF Insight:} Most practitioners under-invest in upstream steering. They accept agent mistakes, then manually correct them---burning cognitive energy on each occurrence. Investing once in CLAUDE.md or conventions documentation pays dividends across every future interaction.
+
 \section{The Approval Checkpoint Pattern}
 
 Before reading the agent's output, apply anticipatory calibration (see Section~\ref{sec:anticipatory-calibration}): form a hypothesis about what you expect the plan to contain. Then compare your expectation against reality---the gap reveals blind spots in your thinking or the agent's.
@@ -4131,6 +4202,47 @@ Agent: [Responds with analysis]
 
 Human (DCF): "Good. Given that, let's adjust the plan to..."
 \end{lstlisting}
+
+\section{The Phase Lock Protocol}\label{sec:phase-lock}\index{Phase Lock Protocol}
+
+For high-stakes work where premature implementation carries significant risk, consider \textbf{Phase Lock}---an optional strict mode that enforces phase discipline through explicit boundaries.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Phase} & \textbf{Allowed} & \textbf{Forbidden} \\
+\midrule
+RESEARCH & Read, search, explore & Edits, conclusions \\
+ANALYZE & Form hypotheses, identify options & Implementation decisions \\
+PLAN & Choose approach, define tasks & Code changes \\
+IMPLEMENT & Execute the plan & Scope changes without re-planning \\
+VERIFY & Test, review, validate & New implementation \\
+\bottomrule
+\end{tabular}
+\caption{Phase Lock: Allowed and Forbidden Actions by Phase}
+\label{tab:phase-lock}
+\end{table}
+
+\textbf{Key constraint:} Phase transitions require explicit user approval. The agent cannot progress from RESEARCH to ANALYZE until the human confirms sufficient understanding has been gathered.
+
+\textbf{When to use Phase Lock:}
+\begin{itemize}
+    \item Architectural decisions affecting multiple systems
+    \item Security-sensitive changes
+    \item Unfamiliar domains with high uncertainty
+    \item When you've caught yourself implementing before understanding
+\end{itemize}
+
+\textbf{When NOT to use Phase Lock:}
+\begin{itemize}
+    \item Quick fixes with obvious solutions
+    \item Well-understood domains
+    \item Low-stakes changes
+    \item When fluidity serves better than rigor
+\end{itemize}
+
+Phase Lock is scaffolding, not standard practice. Use it to build discipline, then relax it as judgment develops. The goal is to internalize the value of phase separation, not to enforce it mechanically forever.
 
 \section{Test Coverage as Scaffolding for Bold Changes}\label{sec:test-scaffolding}\index{Test Coverage}\index{Scaffolding}
 
@@ -4717,6 +4829,75 @@ Calibration & ``I keep being surprised by X. How should I update my model?'' \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\section{Protocols and Templates}\label{sec:protocols-templates}\index{Protocols}
+
+These structured protocols provide templates for specific DCF modes.
+
+\subsection{Task State Markers (for /dcf decompose)}\index{Task State Markers}
+
+Track task progress explicitly to prevent goal drift:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{State} & \textbf{Meaning} \\
+\midrule
+\texttt{brainstormed} & Identified but not validated \\
+\texttt{validated} & Requirements confirmed with user \\
+\texttt{blocked} & Waiting on dependency or decision \\
+\texttt{in\_progress} & Currently being worked \\
+\texttt{review} & Complete, awaiting verification \\
+\texttt{done} & Verified and accepted \\
+\bottomrule
+\end{tabular}
+\caption{Task State Markers for Decomposition}
+\end{table}
+
+Use these states in decomposition output to make progress visible. State transitions should be explicit: \texttt{brainstormed} $\rightarrow$ \texttt{validated} requires user confirmation; \texttt{in\_progress} $\rightarrow$ \texttt{review} requires implementation completion.
+
+\subsection{Chain-of-Verification Protocol (for /dcf verify)}\index{Chain-of-Verification}
+
+For high-stakes claims requiring rigorous verification:
+
+\begin{enumerate}
+    \item \textbf{State the claim}: What exactly are we verifying?
+    \item \textbf{Identify verification questions}: 2-3 specific, answerable questions
+    \item \textbf{Gather evidence independently}: For each question, find evidence, source, and confidence level
+    \item \textbf{Synthesize}: Which questions agree? Conflict? What gaps remain?
+    \item \textbf{Verdict}: Verified / Partially Verified / Unverified / Refuted, with confidence and caveats
+\end{enumerate}
+
+The key insight: gathering evidence independently for each question prevents confirmation bias. If you answer all questions from the same source, you're not verifying---you're echoing.
+
+\subsection{Multi-Perspective Synthesis (for /dcf challenge)}\index{Multi-Perspective Synthesis}
+
+For complex decisions, generate challenges from four frames before synthesis:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lp{8cm}}
+\toprule
+\textbf{Frame} & \textbf{Question} \\
+\midrule
+Technical & Does this work mechanically? What could break? \\
+User & Does this serve the actual need? What's the user experience? \\
+Maintenance & Will future-you thank or curse present-you? \\
+Adversarial & How would someone trying to break this succeed? \\
+\bottomrule
+\end{tabular}
+\caption{Multi-Perspective Challenge Frames}
+\end{table}
+
+After generating each perspective's verdict (Support/Oppose/Neutral), synthesize:
+\begin{itemize}
+    \item \textbf{Converging concerns}: What multiple frames flag as problematic
+    \item \textbf{Diverging assessments}: Where frames disagree (may indicate robustness)
+    \item \textbf{Blind spots}: What no frame addressed
+\end{itemize}
+
+If concerns converge across frames, that's a critical vulnerability. If they diverge, the position may be stronger than initial analysis suggested.
 
 \chapter{Recommended Reading}
 

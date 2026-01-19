@@ -21,11 +21,10 @@
 .LSOverride
 
 # Tool-specific directories
-.claude/
+# Ignore .claude contents but allow specific subdirectories
+.claude/*
 !.claude/commands/
-!.claude/commands/**
 !.claude/scripts/
-!.claude/scripts/**
 !.claude/settings.example.json
 .playwright-mcp/
 

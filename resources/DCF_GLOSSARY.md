@@ -59,6 +59,24 @@ The standard DCF questions applied at decision points:
 2. What's the riskiest assumption?
 3. What would make this fail?
 
+### Steering Model
+A framework for understanding agentic control through two complementary forces: **Upstream Steering** (what you control before the agent runs—CLAUDE.md, specs, conventions) shapes what the agent generates; **Downstream Steering** (what validates after—tests, linters, type checkers) forces self-correction through failure feedback. When the agent keeps making mistakes, strengthen upstream; when you need confidence in correctness, strengthen downstream.
+
+### Phase Lock Protocol
+An optional strict mode for high-stakes work that enforces phase discipline: RESEARCH → ANALYZE → PLAN → IMPLEMENT → VERIFY. Each phase has allowed and forbidden actions; transitions require explicit user approval. Use when architectural decisions affect multiple systems, for security-sensitive changes, or in unfamiliar domains with high uncertainty. Scaffolding, not standard practice—internalize the discipline, then relax the rules.
+
+### Disposable Plans Principle
+The recognition that a plan is a hypothesis about achieving a goal, not a contract. When tasks keep getting added, completed work needs rework, or implementation feels forced, regenerate the plan rather than forcing fit. One planning session is cheap compared to circular implementation failures.
+
+### Task State Markers
+Explicit state tracking for decomposed tasks to prevent goal drift: brainstormed → validated → blocked → in_progress → review → done. Makes progress visible and ensures state transitions are deliberate rather than implicit.
+
+### Chain-of-Verification Protocol
+A structured approach for high-stakes claims: (1) state the claim, (2) identify 2-3 specific verification questions, (3) gather evidence independently for each, (4) synthesize agreeing/conflicting findings, (5) render verdict with confidence level. The key: gathering evidence independently prevents confirmation bias.
+
+### Multi-Perspective Synthesis
+A protocol for the `/dcf challenge` mode: generate challenges from four frames (Technical, User, Maintenance, Adversarial) before synthesis. If concerns converge across frames, that's a critical vulnerability; if they diverge, the position may be more robust than initial analysis suggested.
+
 ### Anticipatory Calibration
 The practice of forming a hypothesis about what AI will produce before prompting, then comparing to build an accurate mental model. Predict → Prompt → Compare → Update.
 
