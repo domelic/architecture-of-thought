@@ -5,7 +5,7 @@
 [![DOI](https://zenodo.org/badge/1136026127.svg)](https://zenodo.org/badge/latestdoi/1136026127)
 [![GitHub release](https://img.shields.io/github/v/release/domelic/architecture-of-thought)](https://github.com/domelic/architecture-of-thought/releases/latest)
 [![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-red.svg)](LICENSE)
-[![Pages](https://img.shields.io/badge/Pages-261-blue.svg)](THE_ARCHITECTURE_OF_THOUGHT.pdf)
+[![Pages](https://img.shields.io/badge/Pages-265-blue.svg)](THE_ARCHITECTURE_OF_THOUGHT.pdf)
 [![LaTeX](https://img.shields.io/badge/Format-LaTeX-green.svg)](THE_ARCHITECTURE_OF_THOUGHT.tex)
 [![Amazon KDP](https://github.com/domelic/architecture-of-thought/actions/workflows/amazon-kdp-publish.yml/badge.svg)](https://github.com/domelic/architecture-of-thought/actions/workflows/amazon-kdp-publish.yml)
 
@@ -32,7 +32,7 @@ DCF operates at the *micro level* of human-AI interaction—the cognitive strate
 
 ## Get the Book
 
-**[Download Free PDF (198 pages)](THE_ARCHITECTURE_OF_THOUGHT.pdf)** — GitHub
+**[Download Free PDF (265 pages)](THE_ARCHITECTURE_OF_THOUGHT.pdf)** — GitHub
 
 **[Buy on Kindle](https://www.amazon.com/dp/B0GHM2M6HR)** — Amazon ($9.99)
 
@@ -372,7 +372,7 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ├── CHANGELOG.md                      # Version history (auto-generated)
 ├── RELEASING.md                      # Release process checklist
 ├── CITATION.cff                      # Machine-readable citation
-├── THE_ARCHITECTURE_OF_THOUGHT.pdf   # Compiled document (198 pages)
+├── THE_ARCHITECTURE_OF_THOUGHT.pdf   # Compiled document (265 pages)
 ├── THE_ARCHITECTURE_OF_THOUGHT.tex   # LaTeX source
 ├── references.bib                    # BibTeX bibliography (31 sources)
 ├── commitlint.config.js              # Conventional commit enforcement
