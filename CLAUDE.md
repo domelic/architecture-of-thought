@@ -11,6 +11,9 @@ This repository contains **"The Architecture of Thought"** — a treatise presen
 ### LaTeX Compilation
 
 ```bash
+# Quick compile (iterative editing - no bibliography/index update)
+pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
+
 # Full compilation with bibliography and index (requires TeX Live 2025 or MacTeX)
 pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 bibtex THE_ARCHITECTURE_OF_THOUGHT
@@ -19,7 +22,7 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ```
 
-The triple pdflatex run resolves cross-references and index entries.
+The triple pdflatex run resolves cross-references and index entries. Use quick compile for iterative content editing; full compile before commits.
 
 ### Validation (run before committing markdown changes)
 
@@ -29,6 +32,10 @@ cspell --config .cspell.json "**/*.md" --no-progress
 
 # Markdown lint (requires markdownlint-cli2: npm install -g markdownlint-cli2)
 markdownlint-cli2 "**/*.md" --config .markdownlint.json --ignore CHANGELOG.md
+
+# Single file validation (during editing)
+cspell --config .cspell.json "path/to/file.md" --no-progress
+markdownlint-cli2 "path/to/file.md" --config .markdownlint.json
 ```
 
 Add project-specific words to `.cspell.json` `words` array when needed.
@@ -182,12 +189,11 @@ When adding new references, place them in the appropriate section or create a ne
 
 ## For Claude: Working Style
 
-1. **Follow conventions**: Use the branch naming and commit conventions above
-2. **Apply DCF principles**: Surface assumptions, present trade-offs, use questioning to clarify
-3. **Be direct and concise**: Practitioner-focused, not academic verbose
-4. **Ground abstractions in examples**: New theoretical content needs concrete illustrations
-5. **Maintain consistency**: New resources should follow `resources/` file format patterns
-6. **Validate before committing**: Run spell-check and markdown-lint on changed `.md` files
+- **Apply DCF principles**: Surface assumptions, present trade-offs, question to clarify
+- **Direct and concise**: Practitioner-focused, avoid academic verbosity
+- **Ground in examples**: New theoretical content needs concrete illustrations
+- **Validate changes**: Run spell-check and markdown-lint on changed `.md` files
+- **Follow patterns**: New resources should match existing `resources/` file formats
 
 ## Quick Troubleshooting
 
