@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.3.2](https://github.com/domelic/architecture-of-thought/compare/v2.3.1...v2.3.2) (2026-01-19)
+
+
+### Bug Fixes
+
+* remove docs/ references (gitignored, not visible on GitHub) ([#33](https://github.com/domelic/architecture-of-thought/issues/33)) ([6790910](https://github.com/domelic/architecture-of-thought/commit/67909101f72f1fbca23b97e7bab3d3c870c95290))
+* remove github-release.md skill (belongs in github-repository-setup) ([#30](https://github.com/domelic/architecture-of-thought/issues/30)) ([ecbef21](https://github.com/domelic/architecture-of-thought/commit/ecbef21966ebe1e2a0fe384c611c987d2fdf0bb8))
+* repair closing code fences across all markdown files ([#34](https://github.com/domelic/architecture-of-thought/issues/34)) ([6c063d5](https://github.com/domelic/architecture-of-thought/commit/6c063d5a407278751abdd36de28b432298083d3c))
+* upload PDF before CITATION.cff update in release workflow ([#35](https://github.com/domelic/architecture-of-thought/issues/35)) ([70808dd](https://github.com/domelic/architecture-of-thought/commit/70808dd76b7b64189daf27a4b06af9d42a1545d9))
+
 ## [2.3.1](https://github.com/domelic/architecture-of-thought/compare/v2.3.0...v2.3.1) (2026-01-19)
 
 
