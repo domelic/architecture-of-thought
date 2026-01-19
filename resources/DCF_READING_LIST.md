@@ -202,6 +202,14 @@ Start with the **Essentials**, then explore based on your interests.
 - **Key insight**: Effective collaboration requires three mental models; the learning stance develops all three simultaneously
 - **Recommended for**: Those interested in skill development theory
 
+### Socratic Method Revisited
+**Hashemi Tonekaboni, N., & Soleymani, S. (2026). "Socratic Method Revisited: Human-AI Dialogue for Knowledge Creation and Internalization." Proceedings of HICSS 2026.**
+
+- **What it is**: Multi-agent framework operationalizing classical Socratic elements (Elenchus, Maieutics, Aporia, Dialectic) with specialized agents coordinated by a Triage Agent
+- **Why it matters for DCF**: Independent validation that Socratic methods are gaining research traction for human-AI collaboration; provides architectural patterns for phase-guided dialogue
+- **Key insight**: "Productive discomfort" (aporia) is an explicit design goal—the system aims to cultivate puzzlement that motivates revision, not intimidation that causes disengagement
+- **Recommended for**: Those interested in agentic implementations of Socratic dialogue, multi-agent architectures
+
 ---
 
 ## Systems Thinking
@@ -313,6 +321,7 @@ Start with the **Essentials**, then explore based on your interests.
 | Why "Could you be wrong?" works | Hills (2025) |
 | Why anti-patterns are risky | Kovács & Szelényi (2025) |
 | How to measure collaboration skills | Sidra & Mason (2025) |
+| Multi-agent Socratic architecture | Hashemi Tonekaboni & Soleymani (2026) |
 | How LLMs work | The Illustrated Transformer |
 | Organizational change | The Fifth Discipline |
 | Knowledge management | How to Take Smart Notes |

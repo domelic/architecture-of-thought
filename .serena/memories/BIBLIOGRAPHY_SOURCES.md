@@ -127,8 +127,9 @@ Annotated reference guide for THE_ARCHITECTURE_OF_THOUGHT citations.
 | `yao2022react` | Yao et al. | "ReAct" (2022) | Reasoning + Acting framework |
 | `wei2022chain` | Wei et al. | "Chain-of-Thought Prompting" (2022) | CoT methodology |
 | `yao2023tree` | Yao et al. | "Tree of Thoughts" (2023) | ToT deliberate problem-solving |
+| `tonekaboni2026socratic` | Hashemi Tonekaboni & Soleymani | "Socratic Method Revisited" (HICSS 2026) | Multi-agent Socratic framework with Triage Agent routing; independent validation of DCF approach |
 
-**When to cite**: Technical prompting research, positioning DCF in LLM literature.
+**When to cite**: Technical prompting research, positioning DCF in LLM literature, multi-agent Socratic architectures.
 
 ---
 
@@ -218,4 +219,9 @@ Weber et al. (Mental Model Triad)
 Sidra & Mason (Collaboration Scales)
     ├── Collaborative AI Literacy → Measurable practitioner skills
     └── Collaborative AI Metacognition → Quantifying DCF outcomes
+
+Hashemi Tonekaboni & Soleymani (Socratic Method Revisited)
+    ├── Multi-agent Socratic architecture → Independent validation of DCF operations
+    ├── Triage Agent routing → Phase-guided dialogue design
+    └── "Productive discomfort" → Aporia as explicit design goal
 ```
