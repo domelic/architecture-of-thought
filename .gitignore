@@ -47,7 +47,7 @@ CLAUDE_CODE_SKILLS.md
 # Generated ebook files
 *.epub
 
-# Cover images (private - not for repo)
+# Cover images (keep working files private)
 cover.png
-cover.jpg
 cover_clean.jpg
+cover_final.jpg
