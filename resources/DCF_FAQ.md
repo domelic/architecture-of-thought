@@ -199,13 +199,25 @@ But DCF is fundamentally about *human* cognition during AI collaboration. The hu
 
 ### Is there research supporting DCF?
 
-DCF synthesizes established research:
+DCF synthesizes established research and is validated by recent studies:
+
+**Theoretical Foundations:**
+
 - **Extended Mind Thesis**: Clark & Chalmers (1998)
 - **Distributed Cognition**: Hutchins (1995)
 - **Scaffolding Theory**: Vygotsky, Bruner
-- **Human-AI Collaboration**: Nature Human Behaviour (2024)
+- **Critical Rationalism**: Popper (1963)
+- **Double-Loop Learning**: Argyris (1977)
 
-The specific synthesis into DCF is new, but the foundations are well-established.
+**Research Validation:**
+
+- **Metacognitive Prompting**: Hills (2025) demonstrates that "Could you be wrong?" generates adversarial information (errors, biases, alternatives) absent from initial AI responses
+- **Autonomy Risks**: Kovács & Szelényi (2025) identifies false mental states and cognitive deskilling as primary risks—exactly what DCF's anti-patterns warn against
+- **Collaboration Measurement**: Sidra & Mason (2025) provides validated scales for collaborative AI literacy and metacognition, enabling organizations to measure DCF training effectiveness
+- **Human-AI Collaboration**: Nature Human Behaviour (2024) meta-analysis confirms that human-AI synergy requires quality collaboration, not just combination
+- **Independent Validation**: Hashemi Tonekaboni & Soleymani (HICSS 2026) independently operationalizes Socratic elements (Elenchus, Maieutics, Aporia, Dialectic) in a multi-agent architecture, converging with DCF's approach
+
+The specific synthesis into DCF is novel, but the foundations are well-established and the core practices are gaining independent research validation.
 
 ---
 

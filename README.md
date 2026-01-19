@@ -125,7 +125,18 @@ DCF draws on established research in cognitive science and philosophy:
 - **Distributed Cognition** — Hutchins (1995)
 - **Scaffolding Theory** — Vygotsky, Bruner, Wood & Ross
 - **Hermeneutics** — Gadamer's "fusion of horizons" (*Horizontverschmelzung*)
-- **Human-AI Collaboration Research** — Nature Human Behaviour (2024), Synergy Index (2025)
+- **Critical Rationalism** — Popper's falsificationism (1963)
+- **Double-Loop Learning** — Argyris (1977)
+
+### Research Validation
+
+Recent research validates DCF's core practices:
+
+- **Metacognitive Prompting** — Hills (2025) demonstrates that "Could you be wrong?" generates adversarial information absent from initial responses
+- **Autonomy Risk Framework** — Kovács & Szelényi (2025) identifies false mental states and cognitive deskilling as primary risks
+- **Collaboration Measurement** — Sidra & Mason (2025) provides validated scales for collaborative AI literacy and metacognition
+- **Human-AI Collaboration** — Nature Human Behaviour (2024) meta-analysis, Synergy Index (2025)
+- **Independent Validation** — Hashemi Tonekaboni & Soleymani (HICSS 2026) independently operationalizes Socratic elements in multi-agent architecture
 
 ---
 

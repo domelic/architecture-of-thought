@@ -182,12 +182,15 @@ DCF is built on theoretical foundations and practical intuition, but many questi
 - Assumption identification
 - Trust calibration
 
+**Existing Instruments:** Sidra & Mason (2025) have validated scales for **Collaborative AI Literacy** (knowledge/skills for effective collaboration) and **Collaborative AI Metacognition** (monitoring one's own cognitive processes during AI interaction). These provide a foundation for DCF-specific measurement—adaptation rather than invention from scratch.
+
 **Development Process:**
-1. Item generation from theory
-2. Expert review
-3. Pilot testing
-4. Factor analysis
-5. Validity studies
+1. Review existing validated scales (Sidra & Mason, 2025)
+2. Adapt items for DCF-specific constructs
+3. Expert review
+4. Pilot testing
+5. Factor analysis
+6. Validity studies against DCF outcomes
 
 ---
 
@@ -348,10 +351,21 @@ Contact: [Repository issues or discussions]
 
 ## References for Research Design
 
+**Foundational:**
+
 - Clark, A., & Chalmers, D. (1998). The extended mind. *Analysis*, 58(1), 7-19.
 - Vygotsky, L. S. (1978). *Mind in society*. Harvard University Press.
 - Kahneman, D. (2011). *Thinking, fast and slow*. Farrar, Straus and Giroux.
+- Popper, K. (1963). *Conjectures and refutations*. Routledge.
+- Argyris, C. (1977). Double loop learning in organizations. *Harvard Business Review*, 55(5), 115-125.
+
+**Human-AI Collaboration:**
+
 - Bastani, O., et al. (2024). When combinations of humans and AI are useful. *Nature Human Behaviour*.
+- Hills, T. T. (2025). Could you be wrong: Metacognitive prompts for improving human decision making help LLMs identify their own biases. *AI*, 7(1), 33.
+- Kovács, G., & Szelényi, A. (2025). Addressing autonomy risks in generative chatbots with the Socratic method. *Frontiers in Artificial Intelligence*.
+- Sidra, S., & Mason, C. (2025). Generative AI in human-AI collaboration: Validation of the Collaborative AI Literacy and Metacognition Scales. *International Journal of Human–Computer Interaction*.
+- Hashemi Tonekaboni, N., & Soleymani, S. (2026). Socratic method revisited: Human-AI dialogue for knowledge creation and internalization. *Proceedings of HICSS 2026*.
 
 ---
 

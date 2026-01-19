@@ -590,6 +590,7 @@ If you merely completed a task without growth—the potential remains unrealized
 - **Metacognitive prompting**: Hills, "Could You Be Wrong" (2025)
 - **Autonomy risks**: Kovács & Szelényi, "Addressing Autonomy Risks in Generative Chatbots" (2025)
 - **Measuring collaboration skills**: Sidra & Mason, "Collaborative AI Literacy and Metacognition Scales" (2025)
+- **Independent validation**: Hashemi Tonekaboni & Soleymani, "Socratic Method Revisited" (HICSS 2026)
 
 ---
 
