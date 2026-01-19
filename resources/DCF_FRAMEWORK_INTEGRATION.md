@@ -13,7 +13,7 @@ MACRO:  Project orchestration    → Ralph, Plan Mode
 MESO:   Phase strategy           → Research-Plan-Implement, SPARC
 MICRO:  Cognitive engagement     → DCF ← You are here
 ATOMIC: Prompt optimization      → Chain-of-Thought, Few-Shot
-```text
+```
 
 **Key insight:** DCF is the cognitive operating system that runs on top of whatever framework you choose.
 
@@ -71,7 +71,7 @@ Plan Mode structures work into phases. DCF tells you how to think within each ph
 │  • Post-implementation: "What deviated from plan?"  │
 │                                                     │
 └─────────────────────────────────────────────────────┘
-```text
+```
 
 ### Integration Commands
 
@@ -88,7 +88,7 @@ What does this optimize for? What does it sacrifice?"
 # Exiting plan mode
 "The plan looks solid after our discussion.
 Key decision was [X] because [Y]. Proceed."
-```text
+```
 
 ---
 
@@ -144,7 +144,7 @@ Key decision was [X] because [Y]. Proceed."
               │                   │
               ▼                   ▼
            Done           Back to DCF/Ralph
-```text
+```
 
 ### When to Use Which
 
@@ -174,7 +174,7 @@ Don't stop until tests pass / output matches spec / etc."
 - Walk me through what it actually did
 - What assumptions did it make during iteration?
 - Is this what we intended?"
-```text
+```
 
 ---
 
@@ -242,7 +242,7 @@ BMAD (BMad Agentic Development) uses specialized personas:
 │  • "What's the riskiest untested path?"             │
 │                                                     │
 └─────────────────────────────────────────────────────┘
-```text
+```
 
 ---
 
@@ -291,7 +291,7 @@ DCF: "Before we proceed with this new context:
       - What changed and why?
       - What assumptions drove the adjustment?
       - Could this optimization be heading the wrong direction?"
-```text
+```
 
 **Risk:** ACE's automation can lead to rubber-stamping.
 **Solution:** Periodic DCF review of ACE's adaptations.
@@ -326,7 +326,7 @@ Standard Questions:
 - Did this produce the right outcome?
 - Where did DCF add value?
 - Where was it overhead?
-```text
+```
 
 ---
 
@@ -371,7 +371,7 @@ Claude Code provides specialized agents for different purposes. Each requires di
 │                │   • Trade real-time engagement for efficiency   │
 │                │                                                 │
 └────────────────┴─────────────────────────────────────────────────┘
-```text
+```
 
 ### Background Agent Pattern
 
@@ -386,7 +386,7 @@ the authentication system. I'll review the findings later."
 "Show me the background agent output. Before I accept:
 - What did it find that I should pay attention to?
 - What might it have missed given its search approach?"
-```text
+```
 
 **Trade-off:** Background agents sacrifice real-time engagement for efficiency. Use for exploration; engage synchronously for judgment calls.
 
@@ -409,7 +409,7 @@ Hooks are shell commands that execute automatically before or after Claude Code 
     }
   }
 }
-```text
+```
 
 ### Use Cases
 
@@ -454,7 +454,7 @@ Different models have different cost/capability trade-offs. Model selection is i
       │ Haiku  │     │ Sonnet │     │  Opus  │
       └────────┘     └────────┘     └────────┘
 
-```text
+```
 
 ### Model Selection Matrix
 
@@ -479,7 +479,7 @@ Stakes assessment:
 
 → Model selection: [Haiku/Sonnet/Opus]
 → DCF engagement level: [proportional to stakes]"
-```text
+```
 
 ---
 
@@ -504,7 +504,7 @@ Long sessions hit context limits. Prepare proactively:
 3. Capture findings to SESSION_FINDINGS.md
 4. Start fresh session if needed
 5. New session has explicit context to work with
-```text
+```
 
 ### DCF Connection
 
@@ -539,7 +539,7 @@ BAD:  Plan Mode + Ralph + BMAD + DCF + ACE at every step
 GOOD: Pick one MACRO framework (e.g., Plan Mode)
       Apply DCF at key checkpoints
       Add others only when clearly needed
-```text
+```
 
 **Start simple. Add complexity only when the simpler approach fails.**
 

@@ -22,7 +22,7 @@ AI: [Lists assumptions]
 Human: "OK, what's the counterargument?"
 AI: [Provides counterargument]
 Human: "OK, proceed."
-```text
+```
 
 No actual engagement with the answers. The questions become ritual.
 
@@ -54,7 +54,7 @@ Human: "What assumptions are in that approach?"
 AI: [Lists assumptions including "the database can handle this query load"]
 Human: "Wait—we haven't tested that assumption. Before we proceed,
         what would happen if that's wrong, and how could we verify it?"
-```text
+```
 
 The difference: genuine curiosity, willingness to change direction.
 
@@ -70,7 +70,7 @@ Using the AI to confirm what you already believe rather than challenge it.
 Human: "I think we should use microservices. Explain why that's the right choice."
 AI: [Provides justification for microservices]
 Human: "Great, that confirms my thinking."
-```text
+```
 
 The mirror reflects only what you want to see.
 
@@ -93,19 +93,19 @@ The mirror reflects only what you want to see.
 1. **Explicitly request counterarguments**
    ```text
    "I'm leaning toward X. Give me the strongest argument for Y instead."
-   ```text
+   ```
 
 2. **Steelman the opposition**
    ```text
    "Assume someone smart disagrees with me. What would they say?"
-   ```text
+   ```
 
 3. **Notice defensive reactions** — they signal you might be in narcissism mode
 
 4. **Ask the uncomfortable question**
    ```text
    "What if I'm wrong about this?"
-   ```text
+   ```
 
 ### Red Flag Phrases
 
@@ -125,7 +125,7 @@ Evaluating AI output without having formed expectations first. Asking "does this
 Human: "Write a function to parse user input"
 AI: [Provides function]
 Human: [Reads it] "Yeah, that looks fine."
-```text
+```
 
 No prediction, no comparison, no learning signal.
 
@@ -149,12 +149,12 @@ No prediction, no comparison, no learning signal.
 1. **Pause before reading** — form an explicit prediction
    ```text
    "Before I look: I expect this to cover X, probably miss Y, and maybe suggest Z."
-   ```text
+   ```
 
 2. **Compare against your prediction**
    ```text
    "Did it match? What surprised me? What does that reveal?"
-   ```text
+   ```
 
 3. **Track surprise patterns** — repeated surprises in one direction mean your mental model is miscalibrated
 
@@ -180,7 +180,7 @@ Human: "This is almost right, but the third paragraph could be clearer..."
 AI: [Revises]
 Human: "Better, but now the flow from paragraph 2 to 3 feels off..."
 [Continues indefinitely]
-```text
+```
 
 ### Symptoms
 
@@ -201,12 +201,12 @@ Human: "Better, but now the flow from paragraph 2 to 3 feels off..."
 1. **Define "done" before starting**
    ```text
    "This is done when: [specific criteria]"
-   ```text
+   ```
 
 2. **Set iteration limits**
    ```text
    "We'll do at most 3 refinement rounds, then ship."
-   ```text
+   ```
 
 3. **Distinguish cosmetic from substantive**
    - Would this change affect outcomes?
@@ -215,7 +215,7 @@ Human: "Better, but now the flow from paragraph 2 to 3 feels off..."
 4. **Apply the "good enough" test**
    ```text
    "Is this good enough to serve its purpose? Not perfect—good enough."
-   ```text
+   ```
 
 ### Convergence Signals
 
@@ -238,7 +238,7 @@ AI: [Makes changes]
 Human: "No, not like that. Better."
 AI: [Makes different changes]
 Human: "This AI doesn't understand me."
-```text
+```
 
 ### Symptoms
 
@@ -266,12 +266,12 @@ Human: "This AI doesn't understand me."
    Bad:  "Make this better"
    Good: "Make this more concise while keeping the technical accuracy.
           Target audience is senior engineers. Aim for 50% fewer words."
-   ```text
+   ```
 
 3. **Provide examples**
    ```text
    "Here's an example of the style I want: [example]"
-   ```text
+   ```
 
 4. **If output is wrong, diagnose input first**
    - What didn't I specify?
@@ -290,7 +290,7 @@ AI: "According to the React documentation, useEffect cleanup runs
      before every re-render."
 Human: [Implements based on this claim without checking]
 [Later: Bug because the claim was subtly wrong]
-```text
+```
 
 ### Symptoms
 
@@ -322,7 +322,7 @@ Human: [Implements based on this claim without checking]
    ```text
    "Is this consistent with the official documentation?"
    "Let me verify this against the source."
-   ```text
+   ```
 
 5. **Calibrate by domain** — AI is more reliable on common patterns, less on edge cases
 
@@ -338,7 +338,7 @@ Approving AI outputs without meaningful review.
 AI: "Here's my implementation plan: [lengthy plan]"
 Human: [Skims for 5 seconds] "Looks good, proceed."
 [Later: Plan had a fundamental flaw]
-```text
+```
 
 ### Symptoms
 
@@ -364,18 +364,18 @@ Human: [Skims for 5 seconds] "Looks good, proceed."
    ```text
    "Let me make sure I understand: you're proposing X because Y,
     which means Z. Is that right?"
-   ```text
+   ```
 
 3. **Ask at least one question** — forces engagement
    ```text
    "What's the riskiest part of this plan?"
-   ```text
+   ```
 
 4. **If you don't have time to review, say so**
    ```text
    "I can't properly review this right now. Let's pause and
     come back when I can give it attention."
-   ```text
+   ```
 
 ---
 
@@ -392,7 +392,7 @@ Iteration 3: Added configuration options
 Iteration 4: Added abstraction layer
 Iteration 5: Now it's a framework
 [Original problem: format a string]
-```text
+```
 
 ### Symptoms
 
@@ -413,17 +413,17 @@ Iteration 5: Now it's a framework
 1. **Anchor to original problem**
    ```text
    "Wait—does this complexity serve the original goal?"
-   ```text
+   ```
 
 2. **Apply YAGNI** (You Ain't Gonna Need It)
    ```text
    "Let's remove anything we don't need RIGHT NOW."
-   ```text
+   ```
 
 3. **Simplify after adding**
    ```text
    "Now that it works, what can we remove?"
-   ```text
+   ```
 
 4. **Track complexity direction**
    - If complexity only increases, something's wrong
@@ -440,7 +440,7 @@ Declining ability to think without AI scaffolding.
 Before AI: Could debug code by reading it
 After AI:  "Claude, what's wrong with this code?"
            [Can't start without AI assistance]
-```text
+```
 
 ### Symptoms
 
@@ -465,7 +465,7 @@ After AI:  "Claude, what's wrong with this code?"
 2. **Use AI to learn, not just do**
    ```text
    "Don't give me the answer—help me figure it out."
-   ```text
+   ```
 
 3. **Test internalization**
    - Can you explain this to someone else?
@@ -490,7 +490,7 @@ Iteration 3: Now discussing email standards
 Iteration 4: Debating whether email validation is even possible
 Iteration 5: Philosophical tangent about identity
 [Email function never completed]
-```text
+```
 
 ### Symptoms
 
@@ -511,23 +511,23 @@ Iteration 5: Philosophical tangent about identity
 1. **State the goal explicitly at the start**
    ```text
    "My goal is: [specific deliverable]. Let's stay focused on this."
-   ```text
+   ```
 
 2. **Check alignment periodically**
    ```text
    "Are we still working toward [original goal]?"
-   ```text
+   ```
 
 3. **Capture tangents separately**
    ```text
    "That's interesting but off-topic. Let me note it for later.
     Back to [original goal]."
-   ```text
+   ```
 
 4. **Time-box explorations**
    ```text
    "Let's spend 5 minutes on this tangent, then return to the main task."
-   ```text
+   ```
 
 ---
 
@@ -542,7 +542,7 @@ Human: "Let's discuss the principles of good API design."
 [30 minutes of high-level discussion]
 Human: "Great insights. Now, about the principles of REST..."
 [Never actually designs an API]
-```text
+```
 
 ### Symptoms
 
@@ -563,22 +563,22 @@ Human: "Great insights. Now, about the principles of REST..."
 1. **Force concreteness**
    ```text
    "Enough principles. Show me what this looks like in code."
-   ```text
+   ```
 
 2. **Deliverable-first framing**
    ```text
    "I need a working [thing], not a framework for thinking about [thing]."
-   ```text
+   ```
 
 3. **Time-limit abstraction**
    ```text
    "5 minutes on principles, then we implement."
-   ```text
+   ```
 
 4. **Concrete validation**
    ```text
    "Does this abstract insight change what we actually build? If not, move on."
-   ```text
+   ```
 
 ---
 
@@ -597,7 +597,7 @@ Week 2: "Help me structure this other code review"
 
 Week 3: "Help me structure yet another code review"
 [Still hasn't captured the pattern as a skill]
-```text
+```
 
 ### Symptoms
 
@@ -620,7 +620,7 @@ Week 3: "Help me structure yet another code review"
 1. **Notice repetition**
    ```text
    "Wait—I've done this same sequence before. Is this skill-worthy?"
-   ```text
+   ```
 
 2. **Set a capture trigger**
    - Third time solving the same type of problem? Capture it.
@@ -629,7 +629,7 @@ Week 3: "Help me structure yet another code review"
 3. **Use /dcf skill**
    ```text
    "Let's capture this pattern as a reusable skill before we forget."
-   ```text
+   ```
 
 4. **Value infrastructure**
    - 10 minutes capturing a pattern saves hours over time
@@ -654,7 +654,7 @@ Human: Here's some additional context [pastes large document]
 Human: Ignore that last part, it's outdated.
 [40 messages later]
 Human: Why does Claude keep getting confused about basic requirements?
-```text
+```
 
 ### The Four Causes of Context Rot
 
@@ -696,31 +696,31 @@ Human: Why does Claude keep getting confused about basic requirements?
    ```text
    Check /context periodically. If above 50-60% on a complex task,
    consider clearing.
-   ```text
+   ```
 
 2. **Explicit contradiction resolution**
    ```text
    "Earlier we said X, but now we're doing Y. To be clear: Y is the
    current approach, ignore X."
-   ```text
+   ```
 
 3. **Summarize, don't paste**
    ```text
    Instead of pasting a 500-line doc, summarize: "The key constraints
    from the spec are: 1, 2, 3. Full doc at path/to/spec.md if needed."
-   ```text
+   ```
 
 4. **Clear and restart with summary**
    ```text
    When context gets cluttered, use /clear then restart with a clean
    summary of current state and next steps.
-   ```text
+   ```
 
 5. **Use /dcf compact proactively**
    ```text
    Before context gets critical, capture state in a durable document
    that can survive a fresh start.
-   ```text
+   ```
 
 ### The Deeper Issue
 
@@ -738,7 +738,7 @@ Organizational knowledge hoarding that prevents effective AI collaboration.
 Developer: "I want to use Claude to help refactor the auth system"
 Reality: The auth system's quirks exist only in Sarah's head
 Result: AI produces technically correct but contextually wrong changes
-```text
+```
 
 The AI has access to code, but not to the tribal knowledge that makes the code make sense.
 
@@ -764,25 +764,25 @@ The AI has access to code, but not to the tribal knowledge that makes the code m
    ```text
    Create a context-engineering repo or team wiki where AI-relevant
    knowledge gets captured: conventions, gotchas, architectural decisions.
-   ```text
+   ```
 
 2. **Normalize knowledge sharing**
    ```text
    "What I learned today" becomes a team ritual.
    Questions are celebrated, not stigmatized.
-   ```text
+   ```
 
 3. **Document for AI, not just humans**
    ```text
    CLAUDE.md files, inline comments explaining "why", and ADRs
    (Architecture Decision Records) give AI the context it needs.
-   ```text
+   ```
 
 4. **Permission to explore**
    ```text
    Explicitly invite: "You don't need to be the expert to work on this."
    Reduce territorial ownership.
-   ```text
+   ```
 
 ### Connection to DCF
 

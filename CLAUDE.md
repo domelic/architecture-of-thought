@@ -15,7 +15,7 @@ bibtex THE_ARCHITECTURE_OF_THOUGHT
 makeindex THE_ARCHITECTURE_OF_THOUGHT
 pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
-```text
+```
 
 Requires TeX Live 2025 or MacTeX. The triple pdflatex run resolves cross-references and index entries.
 
@@ -51,7 +51,7 @@ The `dcf-workflow` script chains DCF modes with checkpoints:
 dcf-workflow new-project              # onboard → architect → premortem
 dcf-workflow debug "auth timeout"     # debug → assumptions → simplify
 dcf-workflow decision "API design"    # tradeoffs → challenge → decide
-```text
+```
 
 **Installation:** Add `.claude/scripts/` to PATH or symlink `dcf-workflow` to `/usr/local/bin/`.
 
@@ -87,7 +87,7 @@ This project uses [Conventional Commits](https://www.conventionalcommits.org/):
 
 ```text
 <type>: <description>
-```text
+```
 
 **Types:** `feat`, `fix`, `docs`, `style`, `refactor`, `chore`, `ci`
 

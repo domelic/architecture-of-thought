@@ -87,7 +87,7 @@ The 2,400-year-old Socratic method applies directly:
 ```text
 Articulate → Generate → Evaluate → Refine
      ↑________________________________↓
-```text
+```
 
 **Stop when:**
 - Quality threshold met
@@ -227,7 +227,7 @@ BEFORE APPROVING:
 
 THE TEST:
 Am I more capable now than before?
-```text
+```
 
 ---
 

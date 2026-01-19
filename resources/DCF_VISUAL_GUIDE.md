@@ -44,7 +44,7 @@ Diagrams and visual references for the Dialectical Cognition Framework.
     │   Quality threshold met       │
     │   Purpose fulfilled           │
     └───────────────────────────────┘
-```text
+```
 
 ---
 
@@ -79,7 +79,7 @@ Diagrams and visual references for the Dialectical Cognition Framework.
 
     Key insight: The mirror shows you YOUR thought transformed.
     Quality in → Quality out.
-```text
+```
 
 ---
 
@@ -121,7 +121,7 @@ Diagrams and visual references for the Dialectical Cognition Framework.
                        I be asking next?"
 
                       Start again, evolved.
-```text
+```
 
 ---
 
@@ -156,7 +156,7 @@ Diagrams and visual references for the Dialectical Cognition Framework.
 
     DCF operates at MICRO level—the cognitive strategy
     that runs on top of whatever framework you choose.
-```text
+```
 
 ---
 
@@ -185,7 +185,7 @@ Diagrams and visual references for the Dialectical Cognition Framework.
          │
          ▼
     But verify output
-```text
+```
 
 ---
 
@@ -228,7 +228,7 @@ Diagrams and visual references for the Dialectical Cognition Framework.
     ╚═════════╤═════════╝
               │
          Continue...
-```text
+```
 
 ---
 
@@ -260,7 +260,7 @@ Diagrams and visual references for the Dialectical Cognition Framework.
     ├── Endless tweaking (perfectionism)
     ├── Losing original purpose (drift)
     └── Getting more complex each iteration (creep)
-```text
+```
 
 ---
 
@@ -293,7 +293,7 @@ Diagrams and visual references for the Dialectical Cognition Framework.
     THE PARADOX:
     By seeking understanding rather than answers,
     you become capable of generating better answers yourself.
-```text
+```
 
 ---
 
@@ -345,7 +345,7 @@ Diagrams and visual references for the Dialectical Cognition Framework.
 ║             You're building capability, not dependency.           ║
 ║                                                                   ║
 ╚═══════════════════════════════════════════════════════════════════╝
-```text
+```
 
 ---
 
@@ -406,7 +406,7 @@ The skill is **principle-based**, not scripted. Each mode has an **outcome**, no
 │   .claude/skills/archive/dcf-procedural.md                          │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
-```text
+```
 
 ---
 
@@ -432,7 +432,7 @@ Use `dcf-workflow` to chain modes with checkpoints:
 │   before proceeding to the next mode.                               │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
-```text
+```
 
 ---
 
@@ -472,7 +472,7 @@ Use `dcf-workflow` to chain modes with checkpoints:
     │ code-reviewer│ Evaluate flagged issues critically  │
     │ Background   │ Review async output when complete   │
     └──────────────┴─────────────────────────────────────┘
-```text
+```
 
 ---
 
@@ -499,7 +499,7 @@ Use `dcf-workflow` to chain modes with checkpoints:
 
     PRINCIPLE: Match model capability to decision stakes.
                Haiku for speed, Opus for depth.
-```text
+```
 
 ---
 

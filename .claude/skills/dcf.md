@@ -6,7 +6,7 @@ Apply Socratic questioning to think WITH the user, not just answer them.
 
 ```text
 /dcf [mode] [context]
-```text
+```
 
 **Modes by category:**
 
@@ -26,7 +26,7 @@ Examples:
 /dcf debug                    # Debug by questioning mental models
 /dcf learn typescript generics # Learn through dialogue
 /dcf architect                # Design from broad exploration to MVP
-```text
+```
 
 ## Core Principles
 
@@ -307,7 +307,7 @@ Modes chain naturally. Common sequences:
 
 ### Next
 [Concrete next step]
-```text
+```
 
 **The Question** section is crucial. End every DCF exchange by surfacing what the user should be thinking about next—not just what to do, but what to ask.
 

@@ -37,7 +37,7 @@ Apply Socratic questioning and structured thinking to any problem, plan, or deci
 /dcf compact             # Prepare for session compaction
 /dcf context-health      # Assess and address context rot
 /dcf skill               # Capture an effective pattern as a reusable skill
-```text
+```
 
 ## Workflows
 
@@ -769,7 +769,7 @@ Structure your DCF session as:
 
 ### The Key Question
 [The question they should be asking next]
-```text
+```
 
 ### Important Guidelines
 

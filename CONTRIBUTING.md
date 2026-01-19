@@ -95,7 +95,7 @@ This project uses [Conventional Commits](https://www.conventionalcommits.org/) f
 
 ```text
 <type>: <description>
-```text
+```
 
 ### Types
 
@@ -118,7 +118,7 @@ git commit -m "fix: correct typo in DCF_ESSENTIALS.md"
 
 # Updating documentation
 git commit -m "docs: expand workshop exercise instructions"
-```text
+```
 
 See [RELEASING.md](RELEASING.md) for full details on how commits trigger releases.
 
@@ -205,7 +205,7 @@ If you build on DCF in your work, please cite:
 ```text
 Dialectical Cognition Framework (DCF)
 https://github.com/domelic/architecture-of-thought
-```text
+```
 
 ### Contributing Authors
 

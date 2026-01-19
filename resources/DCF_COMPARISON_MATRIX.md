@@ -203,7 +203,7 @@ MESO:   Phase strategy            → BMAD, Research-Plan-Implement
 MICRO:  Cognitive engagement      → DCF ← You are here
                                          ↓
 ATOMIC: Prompt optimization       → Chain-of-Thought, Few-Shot
-```text
+```
 
 ### Example Integration
 
@@ -213,7 +213,7 @@ ATOMIC: Prompt optimization       → Chain-of-Thought, Few-Shot
 3. In Plan phase, use DCF checkpoint protocol for review
 4. In Implement phase, use Ralph for execution
 5. At completion, use DCF to evaluate results
-```text
+```
 
 ---
 
