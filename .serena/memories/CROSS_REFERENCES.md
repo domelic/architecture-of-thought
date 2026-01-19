@@ -116,7 +116,7 @@ Zone of Proximal Development (Vygotsky)
 
 Dialectical Thinking (Riegel/Basseches)
     └── DCF Methodology
-        └── 21 Modes
+        └── 24 Modes
             └── Workflow Chains
 
 Hermeneutics (Gadamer)

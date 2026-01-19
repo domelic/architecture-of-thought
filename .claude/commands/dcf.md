@@ -13,8 +13,8 @@ Apply Socratic questioning to think WITH the user, not just answer them.
 | Category | Modes |
 |----------|-------|
 | Evaluation & Review | `review`, `checkpoint`, `self-review`, `refine` |
-| Problem Solving | `debug`, `unstick`, `simplify`, `diagnose` |
-| Design & Analysis | `architect`, `tradeoffs`, `assumptions`, `premortem`, `challenge`, `decide` |
+| Problem Solving | `debug`, `unstick`, `simplify`, `diagnose`, `decompose`, `verify` |
+| Design & Analysis | `architect`, `tradeoffs`, `assumptions`, `premortem`, `challenge`, `decide`, `constrain` |
 | Learning & Exploration | `learn`, `onboard`, `explain` |
 | Session Management | `compact`, `context-health`, `retro`, `skill` |
 
@@ -51,6 +51,7 @@ Apply these as appropriate to the situation:
 | **Consequences** | Trace implications | "What are the consequences? What if you're wrong?" |
 | **Aporia** | Productive confusion | "What question are you not asking?" |
 | **Meta-question** | Find the next inquiry | "What question should you be asking now?" |
+| **Via Negativa** | Define by exclusion | "What should we explicitly NOT do? What failure modes must we avoid?" |
 
 The **meta-question** is often the most powerful move—users are frequently stuck not because they lack answers, but because they're asking the wrong question. But don't neglect **evidence** (many beliefs rest on untested foundations) and **consequences** (implications reveal whether an idea actually works).
 
@@ -133,6 +134,30 @@ Getting past blocks.
 - Identify root cause and apply the specific fix
 - Prevent recurrence: What checkpoint would catch this earlier?
 
+### `decompose` - Systematic Task Breakdown
+**Outcome:** Complex task becomes a dependency graph of atomic subtasks.
+- Identify the end state: What does "done" look like?
+- List all subtasks without filtering (breadth first)
+- Identify dependencies: What blocks what? What can parallelize?
+- Find the critical path: What's the longest dependency chain?
+- Identify risk concentrations: Where do many things depend on one thing?
+- Sequence for early feedback: What can we validate soonest?
+
+**Distinction from `simplify`:** `simplify` reduces complexity by removing non-essential elements. `decompose` maps complexity into manageable pieces without discarding anything. Use `simplify` first if unsure whether all pieces are needed.
+
+### `verify` - Multi-Path Reasoning Synthesis
+**Outcome:** Confidence in conclusion through independent reasoning paths.
+- State the question or decision clearly
+- Generate 3 independent reasoning paths:
+  - **Path A: First-principles** — Reasoning from foundational truths
+  - **Path B: Analogical** — Similar situations and their outcomes
+  - **Path C: Consequential** — Working backward from outcomes
+- Compare conclusions:
+  - All agree → High confidence, proceed
+  - 2 of 3 agree → Examine the dissenting path for insights
+  - All disagree → The question may be wrong or underspecified
+- Synthesize: What does each path reveal that others miss?
+
 ---
 
 ## Design & Analysis
@@ -181,12 +206,32 @@ The most dangerous assumptions are the ones you don't know you're making.
 - Find genuine weaknesses (not strawmen)
 - Seek synthesis if both views have merit
 
+**Multi-perspective challenge:** Generate challenges from independent frames:
+1. **Technical frame:** Does this work mechanically?
+2. **User frame:** Does this serve the actual user need?
+3. **Maintenance frame:** Will future-you thank or curse present-you?
+4. **Adversarial frame:** How would someone trying to break this succeed?
+
+If challenges from different frames converge on the same weakness, that's a critical vulnerability. If they diverge, the position may be more robust than it appears.
+
 ### `decide` - Reach Closure
 **Outcome:** User commits to a decision and moves forward.
 - Verify analysis is actually complete
 - Check for decision avoidance vs. genuine uncertainty
 - Apply forcing functions ("If you had to decide now...")
 - Document the decision and reasoning
+
+### `constrain` - Define Boundaries Before Generation
+**Outcome:** Output boundaries are explicit before work begins, preventing drift and rework.
+- **Format constraints:** What structure must the output have?
+- **Scope constraints:** What's in bounds? What's explicitly out?
+- **Quality constraints:** What standards must it meet?
+- **Resource constraints:** Time, tokens, complexity budget?
+- **Negative constraints:** What must it NOT do or include? (Via Negativa)
+- Verify constraints are consistent (no contradictions)
+- Prioritize constraints (which bend if they conflict?)
+
+**When to use:** Before any generative work where rework is expensive. Particularly valuable before `architect` or extended coding sessions.
 
 ---
 
@@ -227,11 +272,31 @@ Context hygiene and capture.
 
 ### `compact` - Prepare for Session Compaction
 **Outcome:** Essential session state is captured before context limits hit.
-- **Completed work**: What was accomplished? Files modified? Decisions made?
-- **Open questions**: What's unresolved? What clarifications needed?
-- **Next steps**: Priority order, dependencies between tasks
-- **Context that matters**: Non-obvious assumptions, discovered constraints
-- Offer to create `SESSION_FINDINGS.md` (gitignored) for continuity
+
+**Structured capture by memory type:**
+
+- **Episodic** (session-specific, can discard):
+  - Approaches tried and rejected
+  - Dead ends explored
+  - Temporary debugging state
+
+- **Working** (must preserve for continuity):
+  - Current task and immediate goal
+  - Files in play
+  - Immediate blockers
+  - Next concrete action
+
+- **Semantic** (should persist beyond session):
+  - Decisions made with rationale
+  - Patterns discovered
+  - Conventions established
+
+**Recommended persistence:**
+- Add to CLAUDE.md: [project-level learnings]
+- Add to Serena memory: [domain knowledge]
+- Can safely forget: [episodic noise]
+
+Offer to create `SESSION_FINDINGS.md` (gitignored) for continuity.
 
 ### `context-health` - Assess and Address Context Rot
 **Outcome:** Context degradation is identified and remediated.
@@ -239,6 +304,19 @@ Context hygiene and capture.
 - Check symptoms: Poisoning (uncorrected errors), distraction (irrelevant tangents), confusion (conflated concepts), clash (unresolved plan changes)
 - Diagnose severity (1-5): Mild → clarify explicitly. Moderate → context reset summary. Severe → capture state, recommend fresh start.
 - Prevent future rot: What practices would keep context cleaner?
+
+**Memory Audit** — Classify what's in current context:
+
+| Type | Description | Action |
+|------|-------------|--------|
+| **Episodic** | This session only (debugging attempts, rejected approaches) | Can drop if resolved |
+| **Working** | Active task (current file, immediate goal) | Must preserve |
+| **Semantic** | Permanent knowledge (architecture decisions, conventions) | Should persist to CLAUDE.md or memory |
+
+**Context Budget Check:**
+- What percentage is episodic noise vs. working essentials?
+- Is semantic knowledge repeated that should be externalized?
+- What can be dropped without losing capability?
 
 ### `retro` - Capture Learning
 **Outcome:** Session insights are captured and patterns identified.
@@ -273,6 +351,9 @@ Modes chain naturally. Common sequences:
 | Session end | `context-health` → `compact` → `retro` |
 | Code review | `review` → `assumptions` → `challenge` |
 | Pre-implementation | `architect` → `tradeoffs` → `premortem` |
+| Complex task | `constrain` → `decompose` → `architect` |
+| High-stakes decision | `assumptions` → `verify` → `challenge` → `decide` |
+| Unfamiliar domain | `onboard` → `decompose` → `verify` |
 
 ## Tool Integration
 
@@ -284,6 +365,79 @@ Modes chain naturally. Common sequences:
 - `Bash` to run tests or check state
 
 **Don't question in a vacuum.** Ground the dialogue in the actual codebase and situation.
+
+### Tool Selection Framework
+
+Choose your context construction approach based on task characteristics:
+
+| Condition | Approach |
+|-----------|----------|
+| Relevant info known + compact | **Direct embedding** — Read the file directly |
+| Relevant info known + large | **Retrieval** — Use Grep/Glob to find specific parts |
+| Relevant info unknown | **Exploration** — Use HyDE or self-generated scaffolding |
+
+### Tool Sequences by Mode
+
+| Mode | Typical Tool Sequence |
+|------|----------------------|
+| `debug` | Read error → Read suspect file → Grep for related patterns |
+| `onboard` | Glob structure → Read entry points → Grep for conventions |
+| `architect` | Glob to map landscape → Read key interfaces → Grep for patterns |
+| `review` | Read the artifact → Grep for similar patterns → Read tests |
+| `decompose` | Read requirements → Glob affected files → Estimate scope |
+
+---
+
+## Context Engineering
+
+DCF focuses on dialogue quality. Context Engineering focuses on information architecture—what context to construct before dialogue begins.
+
+### The Strategic Layer
+
+| Layer | Question | DCF Component |
+|-------|----------|---------------|
+| Strategic | What information should exist in context? | Context Engineering |
+| Tactical | How do we reason about that information? | Socratic Toolkit |
+| Operational | What specific questions do we ask? | Mode selection |
+
+### Context Construction Principles
+
+**1. Relevance over completeness** — More context ≠ better context. Irrelevant information creates noise that degrades reasoning.
+
+**2. Fresh over stale** — Context from early in a session may be outdated. Actively verify preserved context still reflects current understanding.
+
+**3. Structured over sprawling** — Organized context (clear sections, explicit relationships) enables better retrieval than narrative dumps.
+
+**4. Explicit over implicit** — State assumptions, constraints, and decisions explicitly. What's implicit gets lost; what's explicit persists.
+
+### Context Patterns
+
+**Direct Embedding** ("Give a Bot a Fish")
+- Embed all necessary information directly
+- Use when: Information is compact, you know what's relevant, retrieval latency is costly
+
+**Retrieval Augmentation** ("Teach a Bot to Fish")
+- Provide tools to retrieve information on demand
+- Use when: Relevant info depends on specific question, context would exceed limits, info changes frequently
+
+**Hypothetical Document (HyDE)**
+- Generate what ideal information would look like, then search for matches
+- Use when: You know what you need but not where it is, exploring unfamiliar territory
+
+**Self-Generated Scaffolding**
+- Have the model generate its own context structure before proceeding
+- Use when: Task structure isn't clear upfront, need to discover what's relevant
+
+### Context Budgeting
+
+Every context has a budget—explicit (token limits) and implicit (attention degradation).
+
+**Budgeting questions:**
+- What's the minimum context for this task?
+- What can be retrieved on-demand vs. pre-loaded?
+- What's currently in context that's no longer relevant?
+
+---
 
 ## Response Format
 
@@ -325,6 +479,29 @@ A successful DCF session leaves the user:
 - Aware of assumptions they hadn't examined
 - More capable, not just more informed
 - Ready to act, not still analyzing
+
+### Mode-Specific Success Criteria
+
+| Mode | Success Indicator | Failure Indicator |
+|------|-------------------|-------------------|
+| `review` | User articulates tradeoffs and risks | User just wants approval |
+| `debug` | Search space narrowed, mental model updated | Still randomly trying fixes |
+| `architect` | Clear MVP defined after exploring landscape | No exploration or no convergence |
+| `challenge` | Position strengthened or genuinely revised | Defensive without engagement |
+| `decompose` | Dependency graph with clear critical path | Flat list without relationships |
+| `verify` | Confidence level justified by path agreement | False confidence or unnecessary doubt |
+| `constrain` | Boundaries prevent scope creep | Constraints forgotten during execution |
+| `learn` | Can explain to others, identifies remaining gaps | Information received but not integrated |
+| `compact` | Next session can resume without loss | Critical context lost, decisions forgotten |
+
+### Quantitative Signals
+
+When possible, look for measurable indicators:
+- **Decision velocity:** Did we reach a decision, or defer again?
+- **Assumption count:** How many assumptions surfaced that weren't visible before?
+- **Scope change:** Did scope expand (drift) or contract (oversimplification)?
+- **Action concreteness:** Is the next action specific and immediately executable?
+- **Confidence calibration:** Can the user state their confidence level and justify it?
 
 ---
 

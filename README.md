@@ -20,7 +20,7 @@ The framework synthesizes insights from Socratic philosophy, cognitive science, 
 **Key contributions include:**
 1. The **Thinking Mirror** hypothesis for understanding human-LLM interaction
 2. **12 core principles** including Socratic dialogue, recursive refinement, and anticipatory calibration
-3. A **Claude Code skill** with 21 modes across 5 categories (evaluation, problem-solving, design, learning, session management)
+3. A **Claude Code skill** with 24 modes across 5 categories (evaluation, problem-solving, design, learning, session management)
 4. **14 documented anti-patterns** with diagnostic questions and mitigations
 5. Positioning within the 2025-2026 AI methodology landscape (ACE-FCA, 12-Factor Agents, BMAD, Ralph)
 

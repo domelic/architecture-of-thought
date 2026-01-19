@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This repository contains **"The Architecture of Thought"** — a treatise presenting the Dialectical Cognition Framework (DCF), a methodology for human-AI collaboration. The main output is a 198-page LaTeX document with supporting practical resources in Markdown.
+This repository contains **"The Architecture of Thought"** — a treatise presenting the Dialectical Cognition Framework (DCF), a methodology for human-AI collaboration. The main output is a ~200-page LaTeX document with supporting practical resources in Markdown.
 
 ## Build & Validation Commands
 
@@ -37,12 +37,12 @@ Add project-specific words to `.cspell.json` `words` array when needed.
 
 | File | Purpose |
 |------|---------|
-| `THE_ARCHITECTURE_OF_THOUGHT.tex` | Main LaTeX source (198 pages, 12 parts + appendices) |
+| `THE_ARCHITECTURE_OF_THOUGHT.tex` | Main LaTeX source (12 parts + appendices) |
 | `DCF_ESSENTIALS.md` | Condensed practitioner's guide — read this to understand DCF concepts |
-| `.claude/commands/dcf.md` | The `/dcf` skill definition (21 modes in 5 categories) |
+| `.claude/commands/dcf.md` | The `/dcf` skill definition (24 modes in 5 categories) |
 | `.claude/scripts/dcf-workflow` | Shell script for chaining DCF modes with checkpoints |
 | `resources/CLAUDE_MD_TEMPLATE.md` | Template for DCF-informed CLAUDE.md files |
-| `references.bib` | BibTeX bibliography (31 sources) |
+| `references.bib` | BibTeX bibliography |
 
 ## Available Skills
 
@@ -133,7 +133,7 @@ This project has Serena MCP configured with memories for editing the treatise.
 | Memory | Purpose |
 |--------|---------|
 | `LATEX_EDITING_GUIDE` | Document structure map, line ranges, editing patterns, LaTeX conventions |
-| `DCF_CONCEPTS` | 21 modes, Socratic toolkit, anti-patterns, terminology quick reference |
+| `DCF_CONCEPTS` | 24 modes, Socratic toolkit, anti-patterns, terminology quick reference |
 | `STYLE_GUIDE` | Writing conventions, tone, terminology preferences, formatting patterns |
 | `CROSS_REFERENCES` | Concept dependencies, term definition locations, label/ref conventions |
 | `BIBLIOGRAPHY_SOURCES` | Annotated sources by topic, citation guidance, reference relationships |
@@ -155,25 +155,12 @@ Use Zotero MCP for bibliography management when adding new references:
 
 **Workflow for adding citations:**
 
-1. Search Zotero for existing sources: `zotero_search("extended mind Clark")`
-2. Get BibTeX export: `zotero_item_bibtex(item_key)`
+1. Search Zotero: `mcp__zotero__zotero_semantic_search` or `mcp__zotero__zotero_search_items`
+2. Get metadata with BibTeX: `mcp__zotero__zotero_get_item_metadata` with `format: "bibtex"`
 3. Add to `references.bib` following existing entry patterns
 4. Cite in LaTeX: `\cite{clark1998extended}`
 
-**Current bibliography sections in `references.bib`:**
-
-- Extended Mind and Distributed Cognition
-- Scaffolding and Zone of Proximal Development
-- Dialectical Thinking and Post-Formal Development
-- Philosophy of Science and Critical Rationalism
-- Organizational Learning
-- Hermeneutics
-- Personal Knowledge Management
-- Human-AI Collaboration Measurement
-- Socratic Method and Critical Thinking
-- Socratic Prompting and LLM Reasoning
-- Agentic AI and Development Methodologies
-- Classic Philosophy
+**Bibliography sections in `references.bib`:** Extended Mind, Scaffolding/ZPD, Dialectical Thinking, Philosophy of Science, Organizational Learning, Hermeneutics, PKM, Human-AI Collaboration, Socratic Method, Socratic Prompting/LLM, Agentic AI, Classic Philosophy.
 
 When adding new references, place them in the appropriate section or create a new commented section header.
 
@@ -185,3 +172,12 @@ When adding new references, place them in the appropriate section or create a ne
 4. **Ground abstractions in examples**: New theoretical content needs concrete illustrations
 5. **Maintain consistency**: New resources should follow `resources/` file format patterns
 6. **Validate before committing**: Run spell-check and markdown-lint on changed `.md` files
+
+## Quick Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| Spell check fails on valid word | Add to `.cspell.json` `words` array |
+| LaTeX undefined reference | Run pdflatex 2-3 times after bibtex/makeindex |
+| CI link-checker fails | Check for broken external URLs in markdown |
+| Commitlint rejects message | Use format `type: description` (lowercase type, no period) |

@@ -6,7 +6,7 @@ Quick reference for Dialectical Cognition Framework terminology, modes, and rela
 
 **Thinking Mirror** - LLMs reflect and transform thought. Quality in → Quality out. Not answer machines but collaborative partners in cognition.
 
-## The 21 DCF Modes
+## The 24 DCF Modes
 
 ### Evaluation & Review (4 modes)
 
@@ -17,7 +17,7 @@ Quick reference for Dialectical Cognition Framework terminology, modes, and rela
 | `self-review` | Claude reviews own output | "What issues do you see in what you produced?" |
 | `refine` | Iterate on output | "Are we refining toward the right goal?" |
 
-### Problem Solving (4 modes)
+### Problem Solving (6 modes)
 
 | Mode | Purpose | Key Question |
 |------|---------|--------------|
@@ -25,8 +25,10 @@ Quick reference for Dialectical Cognition Framework terminology, modes, and rela
 | `unstick` | Break through blocks | "What's the smallest piece you can progress on?" |
 | `simplify` | Find the essential | "What's the 20% that delivers 80%?" |
 | `diagnose` | Identify anti-pattern | "Which failure mode matches these symptoms?" |
+| `decompose` | Systematic task breakdown | "What blocks what? What can parallelize?" |
+| `verify` | Multi-path reasoning synthesis | "Do first-principles, analogical, and consequential paths agree?" |
 
-### Design & Analysis (6 modes)
+### Design & Analysis (7 modes)
 
 | Mode | Purpose | Key Question |
 |------|---------|--------------|
@@ -36,6 +38,7 @@ Quick reference for Dialectical Cognition Framework terminology, modes, and rela
 | `premortem` | Anticipate failure | "Imagine it failed—why?" |
 | `challenge` | Steelman opposition | "What's the strongest counterargument?" |
 | `decide` | Reach closure | "If you had to decide now..." |
+| `constrain` | Define boundaries before generation | "What must it NOT do? What's out of scope?" |
 
 ### Learning & Exploration (3 modes)
 
@@ -54,7 +57,7 @@ Quick reference for Dialectical Cognition Framework terminology, modes, and rela
 | `retro` | Capture learning | "What's understood now that wasn't before?" |
 | `skill` | Capture as reusable skill | "What's the transferable essence?" |
 
-## The Socratic Toolkit (7 operations)
+## The Socratic Toolkit (8 operations)
 
 | Operation | Purpose | Example Prompt |
 |-----------|---------|----------------|
@@ -65,6 +68,7 @@ Quick reference for Dialectical Cognition Framework terminology, modes, and rela
 | **Consequences** | Trace implications | "What are the consequences if wrong?" |
 | **Aporia** | Productive confusion | "What question are you not asking?" |
 | **Meta-question** | Find next inquiry | "What question should you be asking now?" |
+| **Via Negativa** | Define by exclusion | "What should we explicitly NOT do?" |
 
 ## Core Loop
 
@@ -114,6 +118,9 @@ Articulate → Generate → Evaluate → Refine
 | Session end | `context-health` → `compact` → `retro` |
 | Code review | `review` → `assumptions` → `challenge` |
 | Pre-implementation | `architect` → `tradeoffs` → `premortem` |
+| Complex task | `constrain` → `decompose` → `architect` |
+| High-stakes decision | `assumptions` → `verify` → `challenge` → `decide` |
+| Unfamiliar domain | `onboard` → `decompose` → `verify` |
 
 ## Agentic Era Adaptations
 

@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{report}
+\documentclass[12pt,a4paper]{book}
 
 % ============================================================================
 % PACKAGES
@@ -310,6 +310,7 @@ The Socratic method, articulated 2,400 years ago, remains humanity's most powerf
     \item \textbf{Consequences}: Tracing implications and outcomes
     \item \textbf{Aporia}: Productive confusion that precedes insight
     \item \textbf{Meta-question}: Finding the right question to ask
+    \item \textbf{Via Negativa}: Defining by exclusion---what to avoid
 \end{enumerate}
 
 These operations map directly to human-AI dialogue:
@@ -327,6 +328,7 @@ These operations map directly to human-AI dialogue:
 \textbf{Consequences} & ``What are the consequences? What if you're wrong?'' \\
 \textbf{Aporia} & ``What am I not seeing about this problem?'' \\
 \textbf{Meta-question} & ``What question should I be asking?'' \\
+\textbf{Via Negativa} & ``What should we explicitly NOT do here?'' \\
 \bottomrule
 \end{tabular}
 \caption{Socratic Operations in DCF}
@@ -334,7 +336,7 @@ These operations map directly to human-AI dialogue:
 
 \subsection{Classical and Modern Synthesis}
 
-DCF's seven operations synthesize two traditions. The \textbf{classical Socratic method} from Plato's dialogues provides four operations: \emph{elenchus} (cross-examination), \emph{maieutics} (intellectual midwifery), \emph{dialectic} (reasoned argument), and \emph{aporia} (productive puzzlement). These remain the conceptual foundation.
+DCF's eight operations synthesize multiple traditions. The \textbf{classical Socratic method} from Plato's dialogues provides four operations: \emph{elenchus} (cross-examination), \emph{maieutics} (intellectual midwifery), \emph{dialectic} (reasoned argument), and \emph{aporia} (productive puzzlement). These remain the conceptual foundation.
 
 The \textbf{modern pedagogical tradition}, particularly Paul and Elder's framework for critical thinking \cite{paul2006thinkers}, identifies six types of Socratic questions: clarification, probing assumptions, probing reasons and evidence, examining viewpoints, exploring implications, and questioning the question itself. This taxonomy, validated through decades of educational practice, reveals two distinct cognitive moves not explicitly named in the classical framework:
 
@@ -344,6 +346,8 @@ The \textbf{modern pedagogical tradition}, particularly Paul and Elder's framewo
 \end{itemize}
 
 DCF adds the \textbf{meta-question}---``What question should I be asking?''---as an explicit operation because, in human-AI collaboration, users frequently struggle not from lacking answers but from asking the wrong question entirely.
+
+The eighth operation, \textbf{via negativa}---``What should we explicitly NOT do?''---draws from the apophatic tradition of defining by exclusion. Negative prompting (stating what to avoid) activates different reasoning than positive guidance alone, making explicit the failure modes and anti-goals that would otherwise remain implicit.
 
 This synthesis is appropriate for the modern era. DCF is not a historical reconstruction of Plato but a practical framework for human-AI collaboration. It draws from multiple traditions to be maximally useful while maintaining conceptual coherence through the classical terminology.
 
@@ -2287,7 +2291,7 @@ Brief description of what this skill does.
 
 \subsection{Example: The DCF Skill Itself}
 
-The \texttt{/dcf} skill in this repository is itself an example of pattern capture. The underlying pattern---Socratic questioning applied to AI collaboration---was discovered through practice, recognized as reusable, and codified into a principle-based skill with 21 modes across four categories: core modes (\texttt{/dcf review}, \texttt{/dcf checkpoint}, \texttt{/dcf refine}, \texttt{/dcf self-review}, \texttt{/dcf debug}, \texttt{/dcf learn}, \texttt{/dcf decide}, \texttt{/dcf unstick}, \texttt{/dcf premortem}, \texttt{/dcf challenge}, \texttt{/dcf simplify}, \texttt{/dcf retro}), design \& analysis (\texttt{/dcf architect}, \texttt{/dcf tradeoffs}, \texttt{/dcf assumptions}), learning \& onboarding (\texttt{/dcf onboard}, \texttt{/dcf explain}), and session management (\texttt{/dcf compact}, \texttt{/dcf context-health}, \texttt{/dcf diagnose}, \texttt{/dcf skill}). The skill is \emph{principle-based}---each mode describes an outcome, not a script, trusting Claude to apply Socratic questioning contextually. These modes can be chained into workflows for common scenarios---see Workflow Composition in the Glossary.
+The \texttt{/dcf} skill in this repository is itself an example of pattern capture. The underlying pattern---Socratic questioning applied to AI collaboration---was discovered through practice, recognized as reusable, and codified into a principle-based skill with 24 modes across five categories: evaluation \& review (\texttt{/dcf review}, \texttt{/dcf checkpoint}, \texttt{/dcf self-review}, \texttt{/dcf refine}), problem solving (\texttt{/dcf debug}, \texttt{/dcf unstick}, \texttt{/dcf simplify}, \texttt{/dcf diagnose}, \texttt{/dcf decompose}, \texttt{/dcf verify}), design \& analysis (\texttt{/dcf architect}, \texttt{/dcf tradeoffs}, \texttt{/dcf assumptions}, \texttt{/dcf premortem}, \texttt{/dcf challenge}, \texttt{/dcf decide}, \texttt{/dcf constrain}), learning \& exploration (\texttt{/dcf learn}, \texttt{/dcf onboard}, \texttt{/dcf explain}), and session management (\texttt{/dcf compact}, \texttt{/dcf context-health}, \texttt{/dcf retro}, \texttt{/dcf skill}). The skill is \emph{principle-based}---each mode describes an outcome, not a script, trusting Claude to apply Socratic questioning contextually. These modes can be chained into workflows for common scenarios---see Workflow Composition in the Glossary.
 
 \subsection{DCF Connection}
 
@@ -4941,6 +4945,10 @@ This glossary provides definitions for key terms used throughout this treatise. 
 
 \textbf{Compounding (Cognitive)}\index{Compounding} --- The phenomenon where AI-assisted learning produces accelerating returns: better questions lead to better responses, which deepen understanding, which enables even better questions. Occurs through the reinforcement loop of articulation, challenge, synthesis, and internalization. Distinguishes learning-stance practitioners from extraction-mode users.
 
+\textbf{Context Budgeting}\index{Context Budgeting} --- The practice of managing what information exists in an AI conversation's context. Every context has explicit limits (token windows) and implicit limits (attention degradation). Effective budgeting distinguishes what must be pre-loaded from what can be retrieved on-demand, and identifies what can be safely dropped without losing capability.
+
+\textbf{Context Engineering}\index{Context Engineering} --- The strategic layer of DCF concerned with information architecture: what context to construct before dialogue begins. Complements the Socratic Toolkit (tactical: how to reason) and mode selection (operational: what questions to ask). Core principles include relevance over completeness, fresh over stale, structured over sprawling, and explicit over implicit.
+
 \textbf{Context Window} --- The maximum amount of text an LLM can process in a single interaction. Determines the practical limits of prompt chaining and conversation depth.
 
 \textbf{Critical Rationalism}\index{Critical Rationalism} --- Karl Popper's philosophical stance that all knowledge is provisional, conjectural, and open to revision through criticism. In DCF, provides the foundation for treating AI outputs as hypotheses to be tested rather than truths to be accepted.
@@ -5045,9 +5053,11 @@ This glossary provides definitions for key terms used throughout this treatise. 
 
 \textbf{Verification} --- The process of checking AI outputs for accuracy and appropriateness. Essential complement to Socratic dialogue in DCF.
 
+\textbf{Via Negativa}\index{Via Negativa} --- A Socratic operation that defines by exclusion: ``What should we explicitly NOT do?'' Drawing from the apophatic tradition, this technique activates different reasoning than positive guidance alone. Explicitly stating what to avoid surfaces failure modes and anti-goals that would otherwise remain implicit. Particularly valuable for the \texttt{constrain} mode and before generative work where rework is expensive.
+
 \section*{W}
 
-\textbf{Workflow Composition}\index{Workflow Composition} --- The practice of chaining multiple DCF skill modes into sequences appropriate for common scenarios. Skills remain atomic (invoked individually), but recommended sequences provide guidance for multi-phase work. Examples: ``New Project'' (\texttt{onboard} $\rightarrow$ \texttt{architect} $\rightarrow$ \texttt{premortem}), ``Decision Point'' (\texttt{tradeoffs} $\rightarrow$ \texttt{challenge} $\rightarrow$ \texttt{decide}). Each transition is a checkpoint where users engage fully before proceeding.
+\textbf{Workflow Composition}\index{Workflow Composition} --- The practice of chaining multiple DCF skill modes into sequences appropriate for common scenarios. Skills remain atomic (invoked individually), but recommended sequences provide guidance for multi-phase work. Examples: ``New Project'' (\texttt{onboard} $\rightarrow$ \texttt{architect} $\rightarrow$ \texttt{premortem}), ``Decision Point'' (\texttt{tradeoffs} $\rightarrow$ \texttt{challenge} $\rightarrow$ \texttt{decide}), ``Complex Task'' (\texttt{constrain} $\rightarrow$ \texttt{decompose} $\rightarrow$ \texttt{architect}), ``High-Stakes Decision'' (\texttt{assumptions} $\rightarrow$ \texttt{verify} $\rightarrow$ \texttt{challenge} $\rightarrow$ \texttt{decide}). Each transition is a checkpoint where users engage fully before proceeding.
 
 \section*{Z}
 

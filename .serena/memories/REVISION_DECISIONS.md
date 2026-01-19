@@ -72,16 +72,25 @@ When making editorial decisions, add entries in this format:
 
 ---
 
-### 2026-01 Mode Count: 21
+### 2026-01 Mode Count: 21 → 24
 
 **Context:** DCF skill defines operational modes for practitioners.
 
-**Decision:** 21 modes across 5 categories. New modes require clear differentiation from existing ones.
+**Original Decision (early 2026-01):** 21 modes across 5 categories.
 
-**Categories:**
+**Updated Decision (late 2026-01):** Expanded to 24 modes based on analysis of complementary prompt engineering resources (dair-ai/Prompt-Engineering-Guide, NirDiamant/Prompt_Engineering, brexhq/prompt-engineering, Awesome-Context-Engineering).
+
+**New additions:**
+- `decompose` (Problem Solving): Systematic task breakdown with dependency mapping
+- `verify` (Problem Solving): Multi-path reasoning synthesis for confidence
+- `constrain` (Design & Analysis): Define boundaries before generation
+
+**Also added:** Via Negativa as 8th Socratic Toolkit operation (define by exclusion).
+
+**Categories (current):**
 - Evaluation & Review (4): review, checkpoint, self-review, refine
-- Problem Solving (4): debug, unstick, simplify, diagnose
-- Design & Analysis (6): architect, tradeoffs, assumptions, premortem, challenge, decide
+- Problem Solving (6): debug, unstick, simplify, diagnose, decompose, verify
+- Design & Analysis (7): architect, tradeoffs, assumptions, premortem, challenge, decide, constrain
 - Learning & Exploration (3): learn, onboard, explain
 - Session Management (4): compact, context-health, retro, skill
 
