@@ -188,6 +188,60 @@ get_checkpoint_questions() {
     esac
 }
 
+get_intro_questions() {
+    local workflow="$1"
+    local first_mode="$2"
+
+    case "$workflow" in
+        new-project)
+            printf "  • What is the project/codebase you're exploring?\n"
+            printf "  • What's your goal—contributing, reviewing, or understanding?\n"
+            printf "  • What do you already know about its stack or domain?\n"
+            ;;
+        debug)
+            printf "  • What's the bug or unexpected behavior you're seeing?\n"
+            printf "  • When did it start occurring (recent change, always, intermittent)?\n"
+            printf "  • What have you tried so far?\n"
+            ;;
+        decision)
+            printf "  • What decision needs to be made?\n"
+            printf "  • What constraints are non-negotiable?\n"
+            printf "  • Who are the stakeholders and what do they care about?\n"
+            ;;
+        learning)
+            printf "  • What concept or skill are you trying to learn?\n"
+            printf "  • What's your current level of understanding?\n"
+            printf "  • Why is this important to learn now?\n"
+            ;;
+        unstuck)
+            printf "  • What are you trying to accomplish?\n"
+            printf "  • Where exactly are you stuck?\n"
+            printf "  • How long have you been stuck on this?\n"
+            ;;
+        session-end)
+            printf "  • What was the main focus of this session?\n"
+            printf "  • Did you achieve what you set out to do?\n"
+            printf "  • What's the most important thing to remember?\n"
+            ;;
+        code-review)
+            printf "  • What code are you reviewing (PR, file, feature)?\n"
+            printf "  • What's the stated purpose of these changes?\n"
+            printf "  • Are there specific concerns to focus on?\n"
+            ;;
+        pre-implementation)
+            printf "  • What feature or change are you planning to implement?\n"
+            printf "  • What are the requirements or acceptance criteria?\n"
+            printf "  • Are there existing patterns to follow or constraints to respect?\n"
+            ;;
+        *)
+            # Generic fallback for custom workflows
+            printf "  • What's the context for this workflow?\n"
+            printf "  • What outcome are you hoping to achieve?\n"
+            printf "  • What do you already know about the problem space?\n"
+            ;;
+    esac
+}
+
 # -----------------------------------------------------------------------------
 # Utility functions
 # -----------------------------------------------------------------------------
@@ -341,6 +395,19 @@ display_mode() {
     printf "\n"
 }
 
+show_intro() {
+    local workflow="$1"
+    local first_mode="$2"
+
+    printf "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}\n"
+    printf "${BLUE}▋ SETUP${NC}\n\n"
+    printf "  Before starting '%s':\n" "$first_mode"
+    get_intro_questions "$workflow" "$first_mode"
+    printf "\n"
+    read -r -p "  Press Enter to begin, or Ctrl+C to stop... "
+    printf "\n"
+}
+
 show_checkpoint() {
     local workflow="$1"
     local current_mode="$2"
@@ -378,10 +445,13 @@ run_workflow() {
     local mode next_mode
     local i
     local count=${#modes[@]}
+    local first_mode="${modes[0]}"
 
     printf "${YELLOW}This workflow has %d steps with checkpoints between each.${NC}\n" "$count"
-    read -r -p "Press Enter to begin... "
     printf "\n"
+
+    # Show intro/setup questions before starting
+    show_intro "$workflow" "$first_mode"
 
     for (( i=0; i<count; i++ )); do
         mode="${modes[$i]}"
