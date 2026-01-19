@@ -41,6 +41,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y pandoc texlive-latex-base texlive-fonts-recommended
 
+      - name: Install epubcheck
+        run: |
+          EPUBCHECK_VERSION="5.1.0"
+          wget -q "https://github.com/w3c/epubcheck/releases/download/v${EPUBCHECK_VERSION}/epubcheck-${EPUBCHECK_VERSION}.zip"
+          unzip -q "epubcheck-${EPUBCHECK_VERSION}.zip"
+          echo "EPUBCHECK_JAR=$(pwd)/epubcheck-${EPUBCHECK_VERSION}/epubcheck.jar" >> $GITHUB_ENV
+
       - name: Build EPUB
         id: build
         run: |
@@ -89,6 +96,19 @@ jobs:
             echo "Error: EPUB file not created"
             exit 1
           fi
+
+      - name: Validate EPUB
+        run: |
+          echo "Validating EPUB with epubcheck..."
+          java -jar "$EPUBCHECK_JAR" "${{ steps.build.outputs.epub_name }}" 2>&1 | tee epubcheck-output.txt
+
+          # Check for errors (warnings are acceptable)
+          if grep -q "^ERROR" epubcheck-output.txt; then
+            echo "::error::EPUB validation failed with errors"
+            exit 1
+          fi
+
+          echo "EPUB validation passed"
 
       - name: Upload EPUB as artifact
         uses: actions/upload-artifact@v4
