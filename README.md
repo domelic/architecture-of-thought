@@ -184,10 +184,89 @@ dcf-workflow decision "API design"    # tradeoffs → challenge → decide
 
 > **Caution:** Workflows are scaffolding, not standard practice. Each transition should be a genuine checkpoint—"Is this the right next mode?"—not an automatic progression. The goal is to internalize when each mode fits, then choose deliberately.
 
-**Installation:**
-- Copy `.claude/skills/dcf.md` to your project or global Claude Code skills directory
-- Optionally add `.claude/scripts/` to your PATH for workflow automation
-- See `.claude/settings.example.json` for hooks configuration
+### Installation
+
+**1. Install the `/dcf` skill:**
+
+```bash
+# Global installation (available in all projects)
+mkdir -p ~/.claude/skills
+curl -o ~/.claude/skills/dcf.md https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/skills/dcf.md
+
+# Or project-level installation
+mkdir -p .claude/skills
+curl -o .claude/skills/dcf.md https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/skills/dcf.md
+```
+
+**2. Install `dcf-workflow` script (optional):**
+
+```bash
+# Create user bin directory
+mkdir -p ~/bin
+
+# Download the script
+curl -o ~/bin/dcf-workflow https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/scripts/dcf-workflow
+chmod +x ~/bin/dcf-workflow
+
+# Add to PATH (add to ~/.zshrc or ~/.bashrc)
+echo 'export PATH="$HOME/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+**3. Configure hooks (optional):**
+
+Add to your project's `.claude/settings.local.json`:
+
+```json
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '💭 DCF Checkpoint: What assumptions did this edit make?'"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo \"$TOOL_INPUT\" | grep -qE '(rm -rf|git reset --hard|git push.*-f)'; then echo '⚠️  Destructive command detected.' >&2; fi"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '🪞 DCF Active: Think WITH the AI, not just use it.'"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+See `.claude/settings.example.json` for additional hook examples.
+
+**4. Verify installation:**
+
+```bash
+# Check dcf-workflow (restart terminal first)
+dcf-workflow --help
+
+# Check /dcf skill (in Claude Code)
+/dcf
+```
 
 ---
 
