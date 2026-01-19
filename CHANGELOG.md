@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.6.0](https://github.com/domelic/architecture-of-thought/compare/v2.5.0...v2.6.0) (2026-01-19)
+
+
+### Features
+
+* contextual workflow questions and documentation fixes ([#53](https://github.com/domelic/architecture-of-thought/issues/53)) ([c14599a](https://github.com/domelic/architecture-of-thought/commit/c14599acb344de9e01c58c9cca1fe0efad3384dc))
+
 ## [2.5.0](https://github.com/domelic/architecture-of-thought/compare/v2.4.4...v2.5.0) (2026-01-19)
 
 
