@@ -244,6 +244,12 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ├── THE_ARCHITECTURE_OF_THOUGHT.pdf   # Compiled document (198 pages)
 ├── THE_ARCHITECTURE_OF_THOUGHT.tex   # LaTeX source
 ├── references.bib                    # BibTeX bibliography (31 sources)
+├── assets/
+│   └── cover.jpg                     # Book cover image
+├── docs/
+│   ├── AMAZON_KDP_CONTENT.md         # KDP metadata and description
+│   ├── AMAZON_PUBLISHING_GUIDE.md    # Full publishing documentation
+│   └── CLAUDE_CODE_SKILLS.md         # Claude Code skill development guide
 ├── .claude/
 │   ├── skills/
 │   │   ├── dcf.md                    # Claude Code skill for DCF (principle-based)
