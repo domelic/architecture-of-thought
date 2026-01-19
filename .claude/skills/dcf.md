@@ -4,9 +4,9 @@ Apply Socratic questioning to think WITH the user, not just answer them.
 
 ## Usage
 
-```
+```text
 /dcf [mode] [context]
-```
+```text
 
 **Modes by category:**
 
@@ -19,14 +19,14 @@ Apply Socratic questioning to think WITH the user, not just answer them.
 | Session Management | `compact`, `context-health`, `retro`, `skill` |
 
 Examples:
-```
+```text
 /dcf                          # General Socratic dialogue
 /dcf review                   # Evaluate a plan or proposal
 /dcf refine                   # Iterate deliberately on output
 /dcf debug                    # Debug by questioning mental models
 /dcf learn typescript generics # Learn through dialogue
 /dcf architect                # Design from broad exploration to MVP
-```
+```text
 
 ## Core Principles
 
@@ -287,7 +287,7 @@ Modes chain naturally. Common sequences:
 
 ## Response Format
 
-```
+```text
 ## DCF: [Mode]
 
 ### Context
@@ -307,7 +307,7 @@ Modes chain naturally. Common sequences:
 
 ### Next
 [Concrete next step]
-```
+```text
 
 **The Question** section is crucial. End every DCF exchange by surfacing what the user should be thinking about next—not just what to do, but what to ask.
 

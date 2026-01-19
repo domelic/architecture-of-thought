@@ -4,9 +4,9 @@ This project uses [Release Please](https://github.com/google-github-actions/rele
 
 ## How It Works
 
-```
+```text
 Conventional Commit → Push to main → Release Please PR → Merge → Release Created
-```
+```text
 
 1. **You commit** using conventional commit format
 2. **Release Please** creates/updates a release PR with CHANGELOG entries
@@ -17,13 +17,13 @@ Conventional Commit → Push to main → Release Please PR → Merge → Release
 
 Use this format for your commit messages:
 
-```
+```text
 <type>: <description>
 
 [optional body]
 
 [optional footer]
-```
+```text
 
 ### Types
 
@@ -47,7 +47,7 @@ For major version bumps, add `!` after the type or include `BREAKING CHANGE:` in
 feat!: restructure Part III with new chapter organization
 
 BREAKING CHANGE: Chapter numbering has changed significantly.
-```
+```text
 
 ### Examples
 
@@ -63,7 +63,7 @@ git commit -m "docs: expand examples in DCF_PROMPT_LIBRARY"
 
 # Maintenance (no release)
 git commit -m "chore: update GitHub Actions versions"
-```
+```text
 
 ## Release Workflow
 
@@ -88,7 +88,7 @@ If you need to release without waiting for conventional commits:
 # Create an empty commit to trigger release-please
 git commit --allow-empty -m "feat: trigger release"
 git push origin main
-```
+```text
 
 ## Version Numbering
 
@@ -103,12 +103,12 @@ This project follows [Semantic Versioning](https://semver.org/):
 View pending releases:
 ```bash
 gh pr list --label "autorelease: pending"
-```
+```text
 
 View release history:
 ```bash
 gh release list
-```
+```text
 
 ## Troubleshooting
 

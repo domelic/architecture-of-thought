@@ -195,7 +195,7 @@ This matrix helps you understand where DCF fits in the ecosystem and when to use
 
 ### The Full Stack
 
-```
+```text
 MACRO:  Project orchestration     → Ralph Loop, Plan Mode
                                          ↓
 MESO:   Phase strategy            → BMAD, Research-Plan-Implement
@@ -203,17 +203,17 @@ MESO:   Phase strategy            → BMAD, Research-Plan-Implement
 MICRO:  Cognitive engagement      → DCF ← You are here
                                          ↓
 ATOMIC: Prompt optimization       → Chain-of-Thought, Few-Shot
-```
+```text
 
 ### Example Integration
 
-```
+```text
 1. Use Plan Mode to structure the project
 2. In Research phase, apply DCF to understand the problem
 3. In Plan phase, use DCF checkpoint protocol for review
 4. In Implement phase, use Ralph for execution
 5. At completion, use DCF to evaluate results
-```
+```text
 
 ---
 

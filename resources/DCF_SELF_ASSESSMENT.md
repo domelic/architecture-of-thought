@@ -33,21 +33,21 @@ Reflect on your AI interactions this week:
 
 **What assumptions did the AI surface that you hadn't examined?**
 
-```
+```text
 [Write here]
-```
+```text
 
 **What did you learn that you didn't know before?**
 
-```
+```text
 [Write here]
-```
+```text
 
 **Where did you just extract answers without understanding?**
 
-```
+```text
 [Write here]
-```
+```text
 
 ---
 
@@ -55,24 +55,24 @@ Reflect on your AI interactions this week:
 
 **What can you do now that you couldn't do last month?**
 
-```
+```text
 [Write here]
-```
+```text
 
 **What do you still depend on AI for that you'd like to internalize?**
 
-```
+```text
 [Write here]
-```
+```text
 
 **Did you attempt any tasks without AI to test your growth?**
 
 - [ ] Yes → How did it go?
 - [ ] No → Consider trying this week
 
-```
+```text
 [Write here]
-```
+```text
 
 ---
 
@@ -93,9 +93,9 @@ Did you catch yourself in any of these patterns?
 
 **If you checked any, what will you do differently?**
 
-```
+```text
 [Write here]
-```
+```text
 
 ---
 
@@ -105,23 +105,23 @@ Did you catch yourself in any of these patterns?
 
 What made it effective?
 
-```
+```text
 [Write here]
-```
+```text
 
 **Most frustrating interaction:**
 
 What went wrong? How could DCF principles have helped?
 
-```
+```text
 [Write here]
-```
+```text
 
 **An insight worth remembering:**
 
-```
+```text
 [Write here]
-```
+```text
 
 ---
 
@@ -131,21 +131,21 @@ Based on this reflection, I will focus on:
 
 **One practice to improve:**
 
-```
+```text
 [Write here]
-```
+```text
 
 **One experiment to try:**
 
-```
+```text
 [Write here]
-```
+```text
 
 **One question to explore:**
 
-```
+```text
 [Write here]
-```
+```text
 
 ---
 
@@ -163,15 +163,15 @@ Week 1: /30 → Week 2: /30 → Week 3: /30 → Week 4: /30
 
 **Skills internalized this month:**
 
-```
+```text
 [Write here]
-```
+```text
 
 **ZPD expansion:** What problems can you tackle now (with AI help) that were beyond reach before?
 
-```
+```text
 [Write here]
-```
+```text
 
 ### The Ultimate Question
 
@@ -179,9 +179,9 @@ Week 1: /30 → Week 2: /30 → Week 3: /30 → Week 4: /30
 
 Honest assessment:
 
-```
+```text
 [Write here]
-```
+```text
 
 ---
 
@@ -203,35 +203,35 @@ Honest assessment:
 
 **What types of work benefit most from AI collaboration?**
 
-```
+```text
 [Write here]
-```
+```text
 
 **Where is AI collaboration counterproductive for you?**
 
-```
+```text
 [Write here]
-```
+```text
 
 **What's your optimal engagement level?**
 
-```
+```text
 [Write here]
-```
+```text
 
 ### Future Direction
 
 **What capability do you want to develop next quarter?**
 
-```
+```text
 [Write here]
-```
+```text
 
 **What DCF practice needs the most work?**
 
-```
+```text
 [Write here]
-```
+```text
 
 ---
 
@@ -244,9 +244,9 @@ For busy weeks, answer just these:
 3. **Did I catch myself rubber-stamping?** Y/N
 4. **One thing to do differently next week:**
 
-```
+```text
 [Write here]
-```
+```text
 
 ---
 
@@ -271,7 +271,7 @@ For busy weeks, answer just these:
 
 **Where is the team on this triangle?**
 
-```
+```text
          TRUST
           /\
          /  \
@@ -279,15 +279,15 @@ For busy weeks, answer just these:
        / [X]  \      ← Mark current position
       /________\
    SPEED      RIGOR
-```
+```text
 
 **Is this the right balance for current work?** Y/N
 
 **What would improve the balance?**
 
-```
+```text
 [Write here]
-```
+```text
 
 ---
 

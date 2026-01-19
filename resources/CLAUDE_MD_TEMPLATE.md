@@ -22,7 +22,7 @@ Copy this template to your project root as `CLAUDE.md` and customize for your pr
 
 # Run tests
 [command]
-```
+```text
 
 ## Architecture
 
@@ -146,7 +146,7 @@ When I ask for review, apply these DCF questions:
 
 *Template based on the Dialectical Cognition Framework (DCF)*
 *https://github.com/domelic/architecture-of-thought*
-```
+```text
 
 ---
 

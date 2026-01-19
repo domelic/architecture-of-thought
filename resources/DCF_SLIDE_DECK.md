@@ -84,10 +84,10 @@ The 2,400-year-old Socratic method applies directly:
 
 # Principle 3: Recursive Refinement
 
-```
+```text
 Articulate → Generate → Evaluate → Refine
      ↑________________________________↓
-```
+```text
 
 **Stop when:**
 - Quality threshold met
@@ -212,7 +212,7 @@ If you're just completing tasks—the potential is unrealized.
 
 # The DCF Cheat Sheet
 
-```
+```text
 CORE LOOP:  Articulate → Generate → Evaluate → Refine
 
 AT EVERY RESPONSE:
@@ -227,7 +227,7 @@ BEFORE APPROVING:
 
 THE TEST:
 Am I more capable now than before?
-```
+```text
 
 ---
 

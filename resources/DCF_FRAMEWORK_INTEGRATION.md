@@ -8,12 +8,12 @@ How to combine DCF with other AI agent methodologies.
 
 DCF operates at the **MICRO level**—how you think during interactions. It complements frameworks at other levels:
 
-```
+```text
 MACRO:  Project orchestration    → Ralph, Plan Mode
 MESO:   Phase strategy           → Research-Plan-Implement, SPARC
 MICRO:  Cognitive engagement     → DCF ← You are here
 ATOMIC: Prompt optimization      → Chain-of-Thought, Few-Shot
-```
+```text
 
 **Key insight:** DCF is the cognitive operating system that runs on top of whatever framework you choose.
 
@@ -25,7 +25,7 @@ ATOMIC: Prompt optimization      → Chain-of-Thought, Few-Shot
 
 Plan Mode structures work into phases. DCF tells you how to think within each phase.
 
-```
+```text
 ┌─────────────────────────────────────────────────────┐
 │                    RESEARCH PHASE                   │
 ├─────────────────────────────────────────────────────┤
@@ -71,11 +71,11 @@ Plan Mode structures work into phases. DCF tells you how to think within each ph
 │  • Post-implementation: "What deviated from plan?"  │
 │                                                     │
 └─────────────────────────────────────────────────────┘
-```
+```text
 
 ### Integration Commands
 
-```
+```text
 # Enter Plan Mode with DCF mindset
 "Enter plan mode. When you present your plan, I'll be asking:
 what alternatives you considered, the riskiest assumptions,
@@ -88,7 +88,7 @@ What does this optimize for? What does it sacrifice?"
 # Exiting plan mode
 "The plan looks solid after our discussion.
 Key decision was [X] because [Y]. Proceed."
-```
+```text
 
 ---
 
@@ -107,7 +107,7 @@ Key decision was [X] because [Y]. Proceed."
 
 **Ralph handles execution; DCF handles judgment.**
 
-```
+```text
 ┌───────────────────────────────────────────────────┐
 │              DCF: DEFINE THE TASK                 │
 │                                                   │
@@ -144,7 +144,7 @@ Key decision was [X] because [Y]. Proceed."
               │                   │
               ▼                   ▼
            Done           Back to DCF/Ralph
-```
+```text
 
 ### When to Use Which
 
@@ -158,7 +158,7 @@ Key decision was [X] because [Y]. Proceed."
 
 ### Integration Pattern
 
-```
+```text
 # Start with DCF to define
 "I need to [goal]. Before we start, help me clarify:
 - What exactly should the end state be?
@@ -174,7 +174,7 @@ Don't stop until tests pass / output matches spec / etc."
 - Walk me through what it actually did
 - What assumptions did it make during iteration?
 - Is this what we intended?"
-```
+```text
 
 ---
 
@@ -190,7 +190,7 @@ BMAD (BMad Agentic Development) uses specialized personas:
 
 ### DCF Integration by Persona
 
-```
+```text
 ┌─────────────────────────────────────────────────────┐
 │                     ANALYST                         │
 ├─────────────────────────────────────────────────────┤
@@ -242,7 +242,7 @@ BMAD (BMad Agentic Development) uses specialized personas:
 │  • "What's the riskiest untested path?"             │
 │                                                     │
 └─────────────────────────────────────────────────────┘
-```
+```text
 
 ---
 
@@ -284,14 +284,14 @@ Autonomous Context Engineering with Feedback-Controlled Adaptation:
 
 ACE automates context curation. DCF ensures human judgment remains sharp.
 
-```
+```text
 ACE: "I've automatically adjusted the context based on previous outcomes."
 
 DCF: "Before we proceed with this new context:
       - What changed and why?
       - What assumptions drove the adjustment?
       - Could this optimization be heading the wrong direction?"
-```
+```text
 
 **Risk:** ACE's automation can lead to rubber-stamping.
 **Solution:** Periodic DCF review of ACE's adaptations.
@@ -326,7 +326,7 @@ Standard Questions:
 - Did this produce the right outcome?
 - Where did DCF add value?
 - Where was it overhead?
-```
+```text
 
 ---
 
@@ -336,7 +336,7 @@ Standard Questions:
 
 Claude Code provides specialized agents for different purposes. Each requires different DCF engagement:
 
-```
+```text
 ┌────────────────┬─────────────────────────────────────────────────┐
 │    AGENT       │    DCF ENGAGEMENT                               │
 ├────────────────┼─────────────────────────────────────────────────┤
@@ -371,11 +371,11 @@ Claude Code provides specialized agents for different purposes. Each requires di
 │                │   • Trade real-time engagement for efficiency   │
 │                │                                                 │
 └────────────────┴─────────────────────────────────────────────────┘
-```
+```text
 
 ### Background Agent Pattern
 
-```
+```text
 # Launch background exploration
 "Use the Task tool with run_in_background=true to explore
 the authentication system. I'll review the findings later."
@@ -386,7 +386,7 @@ the authentication system. I'll review the findings later."
 "Show me the background agent output. Before I accept:
 - What did it find that I should pay attention to?
 - What might it have missed given its search approach?"
-```
+```text
 
 **Trade-off:** Background agents sacrifice real-time engagement for efficiency. Use for exploration; engage synchronously for judgment calls.
 
@@ -409,7 +409,7 @@ Hooks are shell commands that execute automatically before or after Claude Code 
     }
   }
 }
-```
+```text
 
 ### Use Cases
 
@@ -440,7 +440,7 @@ Different models have different cost/capability trade-offs. Model selection is i
 
 ### Decision Guide
 
-```
+```text
                      What are the stakes?
                            │
            ┌───────────────┼───────────────┐
@@ -454,7 +454,7 @@ Different models have different cost/capability trade-offs. Model selection is i
       │ Haiku  │     │ Sonnet │     │  Opus  │
       └────────┘     └────────┘     └────────┘
 
-```
+```text
 
 ### Model Selection Matrix
 
@@ -468,7 +468,7 @@ Different models have different cost/capability trade-offs. Model selection is i
 
 ### Integration Pattern
 
-```
+```text
 # Before starting a task, consider:
 "This task involves [X].
 
@@ -479,7 +479,7 @@ Stakes assessment:
 
 → Model selection: [Haiku/Sonnet/Opus]
 → DCF engagement level: [proportional to stakes]"
-```
+```text
 
 ---
 
@@ -498,13 +498,13 @@ Stakes assessment:
 
 Long sessions hit context limits. Prepare proactively:
 
-```
+```text
 1. Notice session is getting long
 2. Run /dcf compact
 3. Capture findings to SESSION_FINDINGS.md
 4. Start fresh session if needed
 5. New session has explicit context to work with
-```
+```text
 
 ### DCF Connection
 
@@ -532,14 +532,14 @@ Session management is **anticipatory calibration** applied to context. You're fo
 
 **Warning:** Don't combine everything at once.
 
-```
+```text
 BAD:  Plan Mode + Ralph + BMAD + DCF + ACE at every step
       → Paralysis, overhead, frustration
 
 GOOD: Pick one MACRO framework (e.g., Plan Mode)
       Apply DCF at key checkpoints
       Add others only when clearly needed
-```
+```text
 
 **Start simple. Add complexity only when the simpler approach fails.**
 

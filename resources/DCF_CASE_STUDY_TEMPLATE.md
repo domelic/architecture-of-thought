@@ -28,25 +28,25 @@ A standardized format for documenting DCF applications. Use this template to cap
 
 *Describe the starting situation. What problem were you facing? What were you trying to accomplish?*
 
-```
+```text
 [Write here]
-```
+```text
 
 ### Background
 
 *What relevant context helps understand this case? Prior attempts, constraints, stakes?*
 
-```
+```text
 [Write here]
-```
+```text
 
 ### Why DCF?
 
 *What made you decide to apply DCF to this situation?*
 
-```
+```text
 [Write here]
-```
+```text
 
 ---
 
@@ -68,24 +68,24 @@ A standardized format for documenting DCF applications. Use this template to cap
 *Summarize the key moments in the DCF dialogue. What questions were asked? What emerged?*
 
 **Opening:**
-```
+```text
 [How did you frame the initial inquiry?]
-```
+```text
 
 **Key Exchange 1:**
-```
+```text
 [A pivotal moment in the dialogue—what question/response shifted thinking?]
-```
+```text
 
 **Key Exchange 2:**
-```
+```text
 [Another important moment]
-```
+```text
 
 **Resolution:**
-```
+```text
 [How did the dialogue conclude? What was decided/learned/produced?]
-```
+```text
 
 ### DCF Principles in Action
 
@@ -105,25 +105,25 @@ A standardized format for documenting DCF applications. Use this template to cap
 
 *What was the direct result of the DCF interaction?*
 
-```
+```text
 [Write here]
-```
+```text
 
 ### Secondary Outcomes
 
 *What else emerged? Unexpected insights, new questions, changed perspectives?*
 
-```
+```text
 [Write here]
-```
+```text
 
 ### Comparison to Counterfactual
 
 *How do you think this would have gone without DCF? What would you have done instead?*
 
-```
+```text
 [Write here]
-```
+```text
 
 ---
 
@@ -149,17 +149,17 @@ A standardized format for documenting DCF applications. Use this template to cap
 
 *What surprised you about the interaction?*
 
-```
+```text
 [Write here]
-```
+```text
 
 ### Key Insight
 
 *If you had to distill this case to one insight, what would it be?*
 
-```
+```text
 [Write here]
-```
+```text
 
 ---
 
@@ -178,9 +178,9 @@ A standardized format for documenting DCF applications. Use this template to cap
 
 *What conditions made DCF work here? What would need to be true for this to transfer?*
 
-```
+```text
 [Write here]
-```
+```text
 
 ### Anti-Patterns Avoided
 
@@ -195,9 +195,9 @@ A standardized format for documenting DCF applications. Use this template to cap
 - [ ] Other: _______________
 
 Notes:
-```
+```text
 [How did you avoid or recover from these?]
-```
+```text
 
 ---
 
@@ -207,17 +207,17 @@ Notes:
 
 *What did YOU learn or develop through this interaction?*
 
-```
+```text
 [Write here]
-```
+```text
 
 ### What Would You Do Differently?
 
 *If you faced this situation again, how would you adjust your DCF application?*
 
-```
+```text
 [Write here]
-```
+```text
 
 ### Rating
 
@@ -239,11 +239,11 @@ Notes:
 
 *Include a brief excerpt from the actual dialogue (anonymized if needed):*
 
-```
+```text
 HUMAN: [...]
 
 AI: [...]
-```
+```text
 
 ### Related Materials
 
