@@ -5,7 +5,7 @@
 [![DOI](https://zenodo.org/badge/1136026127.svg)](https://zenodo.org/badge/latestdoi/1136026127)
 [![GitHub release](https://img.shields.io/github/v/release/domelic/architecture-of-thought)](https://github.com/domelic/architecture-of-thought/releases/latest)
 [![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-red.svg)](LICENSE)
-[![Pages](https://img.shields.io/badge/Pages-198-blue.svg)](THE_ARCHITECTURE_OF_THOUGHT.pdf)
+[![Pages](https://img.shields.io/badge/Pages-261-blue.svg)](THE_ARCHITECTURE_OF_THOUGHT.pdf)
 [![LaTeX](https://img.shields.io/badge/Format-LaTeX-green.svg)](THE_ARCHITECTURE_OF_THOUGHT.tex)
 [![Amazon KDP](https://github.com/domelic/architecture-of-thought/actions/workflows/amazon-kdp-publish.yml/badge.svg)](https://github.com/domelic/architecture-of-thought/actions/workflows/amazon-kdp-publish.yml)
 

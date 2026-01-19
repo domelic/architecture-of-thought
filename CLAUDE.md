@@ -53,8 +53,8 @@ Applies Socratic questioning contextually. See `.claude/commands/dcf.md` for ful
 | Category | Modes |
 |----------|-------|
 | Evaluation & Review | `review`, `checkpoint`, `self-review`, `refine` |
-| Problem Solving | `debug`, `unstick`, `simplify`, `diagnose` |
-| Design & Analysis | `architect`, `tradeoffs`, `assumptions`, `premortem`, `challenge`, `decide` |
+| Problem Solving | `debug`, `unstick`, `simplify`, `diagnose`, `decompose`, `verify` |
+| Design & Analysis | `architect`, `tradeoffs`, `assumptions`, `premortem`, `challenge`, `decide`, `constrain` |
 | Learning & Exploration | `learn`, `onboard`, `explain` |
 | Session Management | `compact`, `context-health`, `retro`, `skill` |
 
@@ -66,6 +66,9 @@ The `dcf-workflow` script chains DCF modes with checkpoints:
 dcf-workflow new-project              # onboard → architect → premortem
 dcf-workflow debug "auth timeout"     # debug → assumptions → simplify
 dcf-workflow decision "API design"    # tradeoffs → challenge → decide
+dcf-workflow complex-task             # constrain → decompose → architect
+dcf-workflow high-stakes              # assumptions → verify → challenge → decide
+dcf-workflow unfamiliar               # onboard → decompose → verify
 dcf-workflow --list                   # show all workflows
 dcf-workflow --dry-run <workflow>     # preview without executing
 ```

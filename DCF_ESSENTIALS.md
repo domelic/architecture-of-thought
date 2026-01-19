@@ -88,6 +88,8 @@ Each cycle:
 - Perfectionism trap (endless tweaking)
 - Goal drift (losing original purpose)
 
+**Disposable Plans:** A plan is a hypothesis, not a contract. When tasks keep getting added, completed work needs rework, or implementation feels forced—regenerate the plan rather than forcing fit.
+
 ---
 
 ### 5. Scaffolding, Not Replacement
@@ -168,6 +170,25 @@ You (DCF): "Before I approve:
 - Architectural decisions are being made
 - Trade-offs reflect your values
 - Output is hard to verify or undo
+
+### Steering Model
+
+Control agentic systems through two complementary forces:
+
+**Upstream Steering** (before the agent runs):
+- CLAUDE.md, specs, context files, conventions
+- Shapes what the agent will generate
+
+**Downstream Steering** (after the agent acts):
+- Tests, linters, type checkers, builds
+- Forces self-correction through failure feedback
+
+| Problem | Strengthen |
+|---------|------------|
+| Agent keeps making same mistakes | Upstream (add to CLAUDE.md) |
+| Need confidence in correctness | Downstream (add tests) |
+| Output doesn't match style | Upstream (document conventions) |
+| Quality varies | Downstream (add linters) |
 
 ### Agent Selection
 

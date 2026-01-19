@@ -95,6 +95,21 @@ The insight: Asking the agent to review its own work is surprisingly fruitful—
 
 The recursive refinement loop is: Articulate → Generate → Evaluate → Refine. This mode makes that loop deliberate.
 
+**The Disposable Plans Principle:** A plan is a hypothesis about how to achieve a goal, not a contract. When implementation reveals the plan was based on incorrect assumptions, regenerate the plan rather than forcing the implementation to match outdated thinking.
+
+| Signal to Regenerate | Meaning |
+|---------------------|---------|
+| Tasks keep getting added | Original decomposition missed scope |
+| Completed tasks need rework | Dependencies were wrong |
+| "Just one more fix" pattern | Plan is papering over fundamental issues |
+| Implementation feels forced | Fighting the plan instead of using it |
+
+| Signal to Keep Plan | Meaning |
+|--------------------|---------|
+| Tasks completing as expected | Plan is accurate |
+| Discoveries improve the plan | Plan is a living document |
+| Deviations are tactical, not strategic | Core approach is sound |
+
 ---
 
 ## Problem Solving
@@ -135,13 +150,41 @@ Getting past blocks.
 - Prevent recurrence: What checkpoint would catch this earlier?
 
 ### `decompose` - Systematic Task Breakdown
-**Outcome:** Complex task becomes a dependency graph of atomic subtasks.
+**Outcome:** Complex task becomes a dependency graph of atomic subtasks with visible progress.
 - Identify the end state: What does "done" look like?
 - List all subtasks without filtering (breadth first)
 - Identify dependencies: What blocks what? What can parallelize?
 - Find the critical path: What's the longest dependency chain?
 - Identify risk concentrations: Where do many things depend on one thing?
 - Sequence for early feedback: What can we validate soonest?
+
+**Task State Markers:** Track progress explicitly to prevent goal drift.
+
+| State | Meaning |
+|-------|---------|
+| `brainstormed` | Identified but not validated |
+| `validated` | Requirements confirmed with user |
+| `blocked` | Waiting on dependency or decision |
+| `in_progress` | Currently being worked |
+| `review` | Complete, awaiting verification |
+| `done` | Verified and accepted |
+
+**Output Template:**
+```text
+## Task Decomposition: [Name]
+
+### End State
+[What "done" looks like]
+
+### Subtasks
+| # | Task | State | Depends On | Notes |
+|---|------|-------|------------|-------|
+| 1 | [Task] | brainstormed | — | |
+| 2 | [Task] | brainstormed | 1 | |
+
+### Critical Path
+[Longest dependency chain]
+```
 
 **Distinction from `simplify`:** `simplify` reduces complexity by removing non-essential elements. `decompose` maps complexity into manageable pieces without discarding anything. Use `simplify` first if unsure whether all pieces are needed.
 
@@ -158,6 +201,34 @@ Getting past blocks.
   - All disagree → The question may be wrong or underspecified
 - Synthesize: What does each path reveal that others miss?
 
+**Chain-of-Verification Protocol** (for high-stakes claims):
+```text
+### 1. State the Claim
+[What are we verifying?]
+
+### 2. Verification Questions
+- Question A: [Specific, answerable]
+- Question B: [Specific, answerable]
+- Question C: [Specific, answerable]
+
+### 3. Gather Evidence (independently per question)
+| Question | Evidence | Source | Confidence |
+|----------|----------|--------|------------|
+| A | [Finding] | [Where] | High/Med/Low |
+| B | [Finding] | [Where] | High/Med/Low |
+| C | [Finding] | [Where] | High/Med/Low |
+
+### 4. Synthesize
+- Agreeing: [List]
+- Conflicting: [List]
+- Gaps: [List]
+
+### 5. Verdict
+[Verified / Partially Verified / Unverified / Refuted]
+Confidence: [High/Medium/Low]
+Caveats: [What could change this]
+```
+
 ---
 
 ## Design & Analysis
@@ -173,6 +244,23 @@ Making good decisions.
 - **Crystallize MVP**: What's the smallest change that delivers value?
 
 The key insight: You can only build the minimal solution after you've understood the full landscape.
+
+**Phase Lock Protocol** (optional, for high-stakes work):
+When phase discipline prevents premature implementation, enforce strict separation:
+
+| Phase | Allowed | Forbidden |
+|-------|---------|-----------|
+| RESEARCH | Read, search, explore | Edits, conclusions |
+| ANALYZE | Form hypotheses, identify options | Implementation decisions |
+| PLAN | Choose approach, define tasks | Code changes |
+| IMPLEMENT | Execute the plan | Scope changes without re-planning |
+| VERIFY | Test, review, validate | Implementation (create new tasks) |
+
+Phase transitions require explicit user approval. Use Phase Lock when:
+- Architectural decisions affect multiple systems
+- Security-sensitive changes
+- Unfamiliar domains with high uncertainty
+- You've caught yourself implementing before understanding
 
 ### `tradeoffs` - Structured Tradeoff Analysis
 **Outcome:** Implicit choices become explicit; decision criteria are clear.
@@ -206,11 +294,19 @@ The most dangerous assumptions are the ones you don't know you're making.
 - Find genuine weaknesses (not strawmen)
 - Seek synthesis if both views have merit
 
-**Multi-perspective challenge:** Generate challenges from independent frames:
-1. **Technical frame:** Does this work mechanically?
-2. **User frame:** Does this serve the actual user need?
-3. **Maintenance frame:** Will future-you thank or curse present-you?
-4. **Adversarial frame:** How would someone trying to break this succeed?
+**Multi-Perspective Synthesis:** Generate challenges from independent frames, then synthesize:
+
+| Frame | Question | Verdict |
+|-------|----------|---------|
+| **Technical** | Does this work mechanically? | Support/Oppose/Neutral |
+| **User** | Does this serve the actual need? | Support/Oppose/Neutral |
+| **Maintenance** | Will future-you thank or curse present-you? | Support/Oppose/Neutral |
+| **Adversarial** | How would someone break this? | Support/Oppose/Neutral |
+
+**Synthesis:**
+- Converging concerns: [What multiple frames flag]
+- Diverging assessments: [Where frames disagree]
+- Blind spots: [What no frame addressed]
 
 If challenges from different frames converge on the same weakness, that's a critical vulnerability. If they diverge, the position may be more robust than it appears.
 
@@ -354,6 +450,9 @@ Modes chain naturally. Common sequences:
 | Complex task | `constrain` → `decompose` → `architect` |
 | High-stakes decision | `assumptions` → `verify` → `challenge` → `decide` |
 | Unfamiliar domain | `onboard` → `decompose` → `verify` |
+| High-stakes architecture | `constrain` → `architect` (with Phase Lock) → `verify` |
+| Recovery from drift | `diagnose` → regenerate plan → `architect` |
+| Multi-stakeholder | `tradeoffs` → `challenge` (multi-perspective) → `decide` |
 
 ## Tool Integration
 
@@ -436,6 +535,63 @@ Every context has a budget—explicit (token limits) and implicit (attention deg
 - What's the minimum context for this task?
 - What can be retrieved on-demand vs. pre-loaded?
 - What's currently in context that's no longer relevant?
+
+---
+
+## Agentic Steering Model
+
+Frame agentic control as two complementary forces:
+
+```text
+┌─────────────────────────────────────────────────────────────┐
+│                    STEERING MODEL                           │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│   UPSTREAM (You Control)              DOWNSTREAM (Validates)│
+│   ══════════════════════              ═════════════════════ │
+│                                                             │
+│   ┌─────────────┐                     ┌─────────────┐      │
+│   │ CLAUDE.md   │                     │ Tests       │      │
+│   │ Specs       │ ───► AGENT ───────► │ Linters     │      │
+│   │ Conventions │      ACTION         │ Type Check  │      │
+│   │ Context     │                     │ Build       │      │
+│   └─────────────┘                     └─────────────┘      │
+│                                              │              │
+│                                              ▼              │
+│                                       ┌─────────────┐      │
+│                                       │ Pass/Fail   │      │
+│                                       │ Feedback    │      │
+│                                       └─────────────┘      │
+│                                              │              │
+│                              ┌───────────────┴────────┐    │
+│                              ▼                        ▼    │
+│                         [PASS]                   [FAIL]    │
+│                         Commit                   Retry     │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**Upstream Steering** (Deterministic)
+- What you control before the agent runs
+- CLAUDE.md, specs, context files, codebase conventions
+- Shapes what the agent will generate
+
+**Downstream Steering** (Backpressure)
+- What validates after the agent acts
+- Tests, linters, type checkers, builds
+- Forces self-correction through failure feedback
+
+### When to Strengthen Each
+
+**Strengthen Upstream Steering When:**
+- Agent keeps making the same mistakes → Add to CLAUDE.md
+- Output doesn't match project style → Document conventions
+- Agent misunderstands requirements → Improve specs
+
+**Strengthen Downstream Steering When:**
+- Need confidence in correctness → Add tests
+- Code quality varies → Add linters, formatters
+- Type errors slip through → Enable strict type checking
 
 ---
 
