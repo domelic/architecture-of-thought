@@ -1,82 +1,135 @@
 # The Architecture of Thought
 
-**The Dialectical Cognition Framework (DCF): A Treatise on Human-AI Collaboration in the Agentic Era**
+**The Dialectical Cognition Framework (DCF): A Methodology for Human-AI Collaboration**
 
 [![DOI](https://zenodo.org/badge/1136026127.svg)](https://zenodo.org/badge/latestdoi/1136026127)
 [![GitHub release](https://img.shields.io/github/v/release/domelic/architecture-of-thought)](https://github.com/domelic/architecture-of-thought/releases/latest)
 [![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-red.svg)](LICENSE)
-[![Pages](https://img.shields.io/badge/Pages-265-blue.svg)](THE_ARCHITECTURE_OF_THOUGHT.pdf)
-[![LaTeX](https://img.shields.io/badge/Format-LaTeX-green.svg)](THE_ARCHITECTURE_OF_THOUGHT.tex)
-[![Amazon KDP](https://github.com/domelic/architecture-of-thought/actions/workflows/amazon-kdp-publish.yml/badge.svg)](https://github.com/domelic/architecture-of-thought/actions/workflows/amazon-kdp-publish.yml)
+
+> **DCF positions LLMs as *thinking mirrors*: collaborative partners in the architecture of thought itself.**
+
+**What is DCF?** A methodology for working with AI that emphasizes *questioning over extraction*. Instead of "give me the answer," you engage in structured Socratic dialogue that surfaces assumptions, explores alternatives, and builds genuine understanding.
+
+DCF operates at the *micro level* of human-AI interaction—the cognitive strategy for how to think during checkpoints, reviews, and approvals. It's a "cognitive operating system" that runs on top of whatever agentic framework you choose.
+
+<details>
+<summary><strong>What's included</strong></summary>
+
+- The **Thinking Mirror** hypothesis for understanding human-LLM interaction
+- **12 core principles** including Socratic dialogue, recursive refinement, and anticipatory calibration
+- **24 modes** across 5 categories (evaluation, problem-solving, design, learning, session management)
+- **14 documented anti-patterns** with diagnostic questions and mitigations
+- Positioning within the 2025-2026 AI methodology landscape (ACE-FCA, 12-Factor Agents, BMAD, Ralph)
+- Research-grounded **autonomy risk framework** with empirically-validated mitigations
+- The **"Could You Be Wrong?" checkpoint protocol** for surfacing adversarial information
+
+</details>
+
+**Who is this for?** Software engineers, technical writers, and knowledge workers who want to move beyond surface-level prompting with AI coding assistants.
 
 ---
 
-## Abstract
+## Table of Contents
 
-This treatise presents the **Dialectical Cognition Framework (DCF)**—a methodology for human-AI collaboration that emerged from extensive practical experience working with large language models. Unlike extraction-based approaches that treat AI as an answer machine, DCF positions LLMs as *thinking mirrors*: collaborative partners in the architecture of thought itself.
+| Practice | Theory & Reference |
+|----------|-------------------|
+| [Quick Start](#quick-start) — Install & begin | [The Book (Optional)](#the-book-optional) — 265-page treatise |
+| [Claude Code Skills](#claude-code-skills) — `/dcf` and `/cybw` | [Theoretical Foundations](#theoretical-foundations) — Research basis |
+| [Practical Resources](#practical-resources) — Templates, prompts, exercises | [All DCF Modes](#all-dcf-modes) — Complete 24-mode reference |
+| [Installation](#installation) — Setup details | [Citation](#citation) — How to cite |
 
-The framework synthesizes insights from Socratic philosophy, cognitive science, and contemporary AI engineering to provide a structured approach for engaging with both conversational and agentic AI systems.
-
-**Key contributions include:**
-1. The **Thinking Mirror** hypothesis for understanding human-LLM interaction
-2. **12 core principles** including Socratic dialogue, recursive refinement, and anticipatory calibration
-3. A **Claude Code skill** with 24 modes across 5 categories (evaluation, problem-solving, design, learning, session management)
-4. **14 documented anti-patterns** with diagnostic questions and mitigations
-5. Positioning within the 2025-2026 AI methodology landscape (ACE-FCA, 12-Factor Agents, BMAD, Ralph)
-6. Research-grounded **autonomy risk framework** (false mental states, cognitive deskilling) with empirically-validated mitigations
-7. The **"Could You Be Wrong?" checkpoint protocol** for surfacing adversarial information
-
-DCF operates at the *micro level* of human-AI interaction—the cognitive strategy for how humans should think during checkpoints, reviews, and approvals. It serves as a "cognitive operating system" that runs on top of whatever agentic framework practitioners choose.
+**Most users should start with [Quick Start](#quick-start) and the [Practical Resources](#practical-resources).**
 
 ---
 
-## Get the Book
+## Quick Start
 
-**[Download Free PDF (265 pages)](THE_ARCHITECTURE_OF_THOUGHT.pdf)** — GitHub
+**You don't need to read the book to use DCF.** Start with the practical tools:
 
-**[Buy on Kindle](https://www.amazon.com/dp/B0GHM2M6HR)** — Amazon ($9.99)
-
-**[DCF Essentials — Practitioner's Quick Reference](DCF_ESSENTIALS.md)**
+| To... | Use this |
+|-------|----------|
+| Install the skills | `curl -fsSL https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/scripts/install-dcf.sh \| bash` |
+| Get a 5-minute overview | [DCF Essentials](DCF_ESSENTIALS.md) |
+| Start a Socratic dialogue | `/dcf` in Claude Code |
+| Challenge your assumptions | `/cybw` in Claude Code |
+| See it in action | [Example Transcripts](resources/DCF_EXAMPLE_TRANSCRIPTS.md) |
 
 ---
 
-## Resources
+## Claude Code Skills
 
-### Practical Tools
+### `/dcf [mode] [context]` — Socratic Dialogue
+
+24 modes across 5 categories for structured thinking:
+
+```bash
+/dcf                     # General Socratic dialogue
+
+# Evaluation & Review
+/dcf review              # Evaluate before committing
+/dcf checkpoint          # Agentic decision point
+/dcf self-review         # Have Claude review its own work
+
+# Problem Solving
+/dcf debug               # Question the mental model
+/dcf unstick             # Break through blocks
+/dcf decompose           # Systematic task breakdown
+
+# Design & Analysis
+/dcf architect           # Divergent exploration → minimal viable change
+/dcf tradeoffs           # Structured tradeoff analysis
+/dcf assumptions         # Deep assumption excavation
+/dcf premortem           # Anticipate failure before starting
+
+# Learning
+/dcf learn <topic>       # Build understanding through dialogue
+/dcf onboard             # Explore unfamiliar codebase
+```
+
+[See all 24 modes →](#all-dcf-modes)
+
+### `/cybw [target]` — Could You Be Wrong?
+
+Quick adversarial checkpoint based on Hills (2025) research:
+
+```bash
+/cybw                           # Challenge the last response
+/cybw the caching strategy      # Challenge a specific decision
+/cybw "users want this feature" # Challenge an assumption
+```
+
+---
+
+## Practical Resources
+
+### Start Here
+
+| Resource | Description | Time |
+|----------|-------------|------|
+| [DCF Essentials](DCF_ESSENTIALS.md) | Condensed practitioner's guide | 5 min |
+| [Example Transcripts](resources/DCF_EXAMPLE_TRANSCRIPTS.md) | 4 annotated real-world conversations | 15 min |
+| [Anti-Patterns Guide](resources/DCF_ANTI_PATTERNS.md) | 14 failure modes with fixes | 10 min |
+
+### Daily Practice
 
 | Resource | Description | Use Case |
 |----------|-------------|----------|
-| [CLAUDE.md Template](resources/CLAUDE_MD_TEMPLATE.md) | DCF-informed project configuration | Starting new projects |
 | [Prompt Library](resources/DCF_PROMPT_LIBRARY.md) | Ready-to-use Socratic prompts | Daily AI interactions |
-| [Self-Assessment](resources/DCF_SELF_ASSESSMENT.md) | Weekly reflection template | Tracking your growth |
+| [CLAUDE.md Template](resources/CLAUDE_MD_TEMPLATE.md) | DCF-informed project configuration | Starting new projects |
+| [Self-Assessment](resources/DCF_SELF_ASSESSMENT.md) | Weekly reflection template | Tracking growth |
 | [Workshop Exercises](resources/DCF_WORKSHOP_EXERCISES.md) | 8 hands-on practice scenarios | Skill development |
-| [Visual Guide](resources/DCF_VISUAL_GUIDE.md) | Diagrams and visual references | Quick reference |
-| [Slide Deck](resources/DCF_SLIDE_DECK.md) | Presentation for teaching DCF | Team training |
-| [Framework Integration](resources/DCF_FRAMEWORK_INTEGRATION.md) | DCF + Ralph, Plan Mode, BMAD | Combining methodologies |
-| [Anti-Patterns Guide](resources/DCF_ANTI_PATTERNS.md) | 14 failure modes with fixes | Avoiding common mistakes |
 
-### Learning & Reference
+### Reference
 
 | Resource | Description | Use Case |
 |----------|-------------|----------|
-| [Example Transcripts](resources/DCF_EXAMPLE_TRANSCRIPTS.md) | 4 annotated real-world conversations | See DCF in action |
-| [FAQ](resources/DCF_FAQ.md) | Comprehensive Q&A | Common questions answered |
-| [Glossary](resources/DCF_GLOSSARY.md) | 40+ term definitions | Quick term lookup |
-| [Reading List](resources/DCF_READING_LIST.md) | Annotated bibliography | Deeper learning paths |
+| [Visual Guide](resources/DCF_VISUAL_GUIDE.md) | Diagrams and visual references | Quick lookup |
+| [FAQ](resources/DCF_FAQ.md) | Comprehensive Q&A | Common questions |
+| [Glossary](resources/DCF_GLOSSARY.md) | 40+ term definitions | Term lookup |
+| [Framework Integration](resources/DCF_FRAMEWORK_INTEGRATION.md) | DCF + Ralph, Plan Mode, BMAD | Combining methodologies |
 | [Comparison Matrix](resources/DCF_COMPARISON_MATRIX.md) | DCF vs other methodologies | Choosing approaches |
 
-### Team & Community
-
-| Resource | Description | Use Case |
-|----------|-------------|----------|
-| [Team Adoption Playbook](resources/DCF_TEAM_ADOPTION_PLAYBOOK.md) | 5-phase organizational guide | Rolling out DCF |
-| [Case Study Template](resources/DCF_CASE_STUDY_TEMPLATE.md) | Standardized documentation format | Sharing experiences |
-| [Video/Podcast Script](resources/DCF_VIDEO_SCRIPT.md) | Ready-to-use media script | Content creation |
-| [Research Agenda](resources/DCF_RESEARCH_AGENDA.md) | Open questions & priorities | Academic collaboration |
-
-### Case Study Examples
-
-Completed case studies demonstrating DCF in action:
+### Case Studies
 
 | Example | Domain | DCF Principles |
 |---------|--------|----------------|
@@ -84,19 +137,37 @@ Completed case studies demonstrating DCF in action:
 | [API Architecture Decision](examples/CASE_STUDY_api_architecture.md) | System Design | Dialectic, Checkpoint Protocol |
 | [Learning Rust Ownership](examples/CASE_STUDY_learning_rust.md) | Learning | Maieutics, Learning Stance |
 
-See [examples/README.md](examples/README.md) for the full collection and contribution guidelines.
+See [examples/README.md](examples/README.md) for the full collection.
 
-### Project Files
+### Team Adoption
 
-| File | Description |
-|------|-------------|
-| [CONTRIBUTING.md](CONTRIBUTING.md) | How to contribute to DCF |
-| [CHANGELOG.md](CHANGELOG.md) | Version history and changes |
-| [RELEASING.md](RELEASING.md) | Release process and checklist |
+| Resource | Description | Use Case |
+|----------|-------------|----------|
+| [Team Adoption Playbook](resources/DCF_TEAM_ADOPTION_PLAYBOOK.md) | 5-phase organizational guide | Rolling out DCF |
+| [Slide Deck](resources/DCF_SLIDE_DECK.md) | Presentation for teaching DCF | Team training |
+| [Case Study Template](resources/DCF_CASE_STUDY_TEMPLATE.md) | Standardized documentation format | Sharing experiences |
+| [Reading List](resources/DCF_READING_LIST.md) | Annotated bibliography | Deeper learning |
 
 ---
 
-## Document Structure
+## The Book (Optional)
+
+> **Note:** The book is an early draft — a work in progress exploring the theoretical foundations. You can be fully productive with DCF using just the skills and resources above.
+
+**"The Architecture of Thought"** is a 265-page treatise that dives deep into the philosophy and cognitive science behind DCF. It's for those who want to understand *why* the framework works, not just *how* to use it.
+
+| Format | Link |
+|--------|------|
+| Free PDF | [Download (265 pages)](THE_ARCHITECTURE_OF_THOUGHT.pdf) |
+| Free EPUB | [Download](https://github.com/domelic/architecture-of-thought/releases/latest/download/Omelic-Architecture-of-Thought.epub) |
+| Kindle | [Amazon ($9.99)](https://www.amazon.com/dp/B0GHM2M6HR) |
+
+[![Pages](https://img.shields.io/badge/Pages-265-blue.svg)](THE_ARCHITECTURE_OF_THOUGHT.pdf)
+[![LaTeX](https://img.shields.io/badge/Format-LaTeX-green.svg)](THE_ARCHITECTURE_OF_THOUGHT.tex)
+[![Amazon KDP](https://github.com/domelic/architecture-of-thought/actions/workflows/amazon-kdp-publish.yml/badge.svg)](https://github.com/domelic/architecture-of-thought/actions/workflows/amazon-kdp-publish.yml)
+
+<details>
+<summary><strong>Book Contents (12 Parts)</strong></summary>
 
 | Part | Title | Key Chapters |
 |------|-------|--------------|
@@ -115,6 +186,8 @@ See [examples/README.md](examples/README.md) for the full collection and contrib
 
 **Appendices:** DCF Principles Summary, Prompt Reference, Recommended Reading, Claude Code Resources, Research References, Meta-Example, Glossary (~40 terms), Exercises
 
+</details>
+
 ---
 
 ## Theoretical Foundations
@@ -128,7 +201,8 @@ DCF draws on established research in cognitive science and philosophy:
 - **Critical Rationalism** — Popper's falsificationism (1963)
 - **Double-Loop Learning** — Argyris (1977)
 
-### Research Validation
+<details>
+<summary><strong>Research validation</strong></summary>
 
 Recent research validates DCF's core practices:
 
@@ -138,23 +212,64 @@ Recent research validates DCF's core practices:
 - **Human-AI Collaboration** — Nature Human Behaviour (2024) meta-analysis, Synergy Index (2025)
 - **Independent Validation** — Hashemi Tonekaboni & Soleymani (HICSS 2026) independently operationalizes Socratic elements in multi-agent architecture
 
+</details>
+
 ---
 
-## For Practitioners
+## Installation
 
-This work is intended for:
-- Software engineers working with AI coding assistants
-- Technical writers using LLMs for documentation
-- Knowledge workers seeking deeper AI engagement
-- Anyone moving beyond surface-level prompting
+**Prerequisite:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code) — Anthropic's agentic coding tool
 
-### Claude Code Skills
+**Quick Install (recommended):**
 
-This repository includes two skills for Claude Code:
+```bash
+curl -fsSL https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/scripts/install-dcf.sh | bash
+```
 
-#### `/dcf [mode] [context]` — Socratic Dialogue
+This installs the `/dcf` and `/cybw` skills globally, the `dcf-workflow` script, and optionally configures hooks.
 
-A principle-based approach that trusts Claude to apply Socratic questioning contextually:
+<details>
+<summary><strong>Manual Installation</strong></summary>
+
+**1. Install skills:**
+
+```bash
+# Global installation (available in all projects)
+mkdir -p ~/.claude/commands
+curl -o ~/.claude/commands/dcf.md https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/commands/dcf.md
+curl -o ~/.claude/commands/cybw.md https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/commands/cybw.md
+
+# Or project-level installation
+mkdir -p .claude/commands
+curl -o .claude/commands/dcf.md https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/commands/dcf.md
+curl -o .claude/commands/cybw.md https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/commands/cybw.md
+```
+
+**2. Install `dcf-workflow` script (optional):**
+
+```bash
+mkdir -p ~/bin
+curl -o ~/bin/dcf-workflow https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/scripts/dcf-workflow
+chmod +x ~/bin/dcf-workflow
+echo 'export PATH="$HOME/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+**3. Verify installation:**
+
+```bash
+dcf-workflow --help  # Check workflow script
+/dcf                  # Check skill in Claude Code
+```
+
+</details>
+
+---
+
+## All DCF Modes
+
+<details>
+<summary><strong>Complete list of 24 modes</strong></summary>
 
 ```bash
 /dcf [mode] [context]
@@ -196,19 +311,12 @@ A principle-based approach that trusts Claude to apply Socratic questioning cont
 /dcf skill               # Capture pattern as reusable skill
 ```
 
-#### `/cybw [target]` — Could You Be Wrong?
+</details>
 
-Quick adversarial checkpoint based on Hills (2025) metacognitive prompting research. Surfaces errors, biases, contradictory evidence, and alternatives absent from initial responses.
+<details>
+<summary><strong>Workflow automation with dcf-workflow</strong></summary>
 
-```bash
-/cybw                           # Challenge the last response
-/cybw the caching strategy      # Challenge a specific decision
-/cybw "users want this feature" # Challenge a specific assumption
-```
-
-Use `/cybw` for fast checks. Use `/dcf challenge` for full structured analysis.
-
-**Workflow Automation:** Use the `dcf-workflow` script to chain modes with checkpoints:
+Chain modes with checkpoints:
 
 ```bash
 dcf-workflow new-project              # onboard → architect → premortem
@@ -219,49 +327,12 @@ dcf-workflow high-stakes              # assumptions → verify → challenge →
 dcf-workflow unfamiliar               # onboard → decompose → verify
 ```
 
-> **Caution:** Workflows are scaffolding, not standard practice. Each transition should be a genuine checkpoint—"Is this the right next mode?"—not an automatic progression. The goal is to internalize when each mode fits, then choose deliberately.
+> **Caution:** Workflows are scaffolding. Each transition should be a genuine checkpoint—not automatic progression.
 
-### Installation
-
-**Quick Install (recommended):**
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/scripts/install-dcf.sh | bash
-```
-
-This installs the `/dcf` skill globally, the `dcf-workflow` script, and optionally configures hooks.
+</details>
 
 <details>
-<summary><strong>Manual Installation</strong></summary>
-
-**1. Install the `/dcf` skill:**
-
-```bash
-# Global installation (available in all projects)
-mkdir -p ~/.claude/commands
-curl -o ~/.claude/commands/dcf.md https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/commands/dcf.md
-
-# Or project-level installation
-mkdir -p .claude/commands
-curl -o .claude/commands/dcf.md https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/commands/dcf.md
-```
-
-**2. Install `dcf-workflow` script (optional):**
-
-```bash
-# Create user bin directory
-mkdir -p ~/bin
-
-# Download the script
-curl -o ~/bin/dcf-workflow https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/scripts/dcf-workflow
-chmod +x ~/bin/dcf-workflow
-
-# Add to PATH (add to ~/.zshrc or ~/.bashrc)
-echo 'export PATH="$HOME/bin:$PATH"' >> ~/.zshrc
-source ~/.zshrc
-```
-
-**3. Configure hooks (optional):**
+<summary><strong>Optional: Configure hooks</strong></summary>
 
 Add to your project's `.claude/settings.local.json`:
 
@@ -275,17 +346,6 @@ Add to your project's `.claude/settings.local.json`:
           {
             "type": "command",
             "command": "echo '💭 DCF Checkpoint: What assumptions did this edit make?'"
-          }
-        ]
-      }
-    ],
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "if echo \"$TOOL_INPUT\" | grep -qE '(rm -rf|git reset --hard|git push.*-f)'; then echo '⚠️  Destructive command detected.' >&2; fi"
           }
         ]
       }
@@ -304,17 +364,7 @@ Add to your project's `.claude/settings.local.json`:
 }
 ```
 
-See `.claude/settings.example.json` for additional hook examples.
-
-**4. Verify installation:**
-
-```bash
-# Check dcf-workflow (restart terminal first)
-dcf-workflow --help
-
-# Check /dcf skill (in Claude Code)
-/dcf
-```
+See `.claude/settings.example.json` for additional examples.
 
 </details>
 
@@ -324,7 +374,6 @@ dcf-workflow --help
 
 If you use or reference this work, please cite:
 
-### BibTeX
 ```bibtex
 @misc{omelic2026architecture,
   author = {Omelic, Damir and {Claude (Anthropic)}},
@@ -336,30 +385,21 @@ If you use or reference this work, please cite:
 }
 ```
 
-### APA
-Omelic, D., & Claude. (2026). *The Architecture of Thought: The Dialectical Cognition Framework*. Zenodo. https://doi.org/10.5281/zenodo.18275169
+<details>
+<summary><strong>APA / Chicago formats</strong></summary>
 
-### Chicago
-Omelic, Damir, and Claude. "The Architecture of Thought: The Dialectical Cognition Framework." Zenodo, 2026. https://doi.org/10.5281/zenodo.18275169.
+**APA:** Omelic, D., & Claude. (2026). *The Architecture of Thought: The Dialectical Cognition Framework*. Zenodo. https://doi.org/10.5281/zenodo.18275169
 
----
+**Chicago:** Omelic, Damir, and Claude. "The Architecture of Thought: The Dialectical Cognition Framework." Zenodo, 2026. https://doi.org/10.5281/zenodo.18275169.
 
-## Building from Source
-
-Requires LaTeX (TeX Live 2025 or MacTeX):
-
-```bash
-# Full compilation with bibliography and index
-pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
-bibtex THE_ARCHITECTURE_OF_THOUGHT
-makeindex THE_ARCHITECTURE_OF_THOUGHT
-pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
-pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
-```
+</details>
 
 ---
 
 ## Repository Structure
+
+<details>
+<summary><strong>Directory layout</strong></summary>
 
 ```text
 /
@@ -444,22 +484,42 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
     └── DCF_RESEARCH_AGENDA.md        # Open research questions
 ```
 
+</details>
+
+<details>
+<summary><strong>Building from source</strong></summary>
+
+Requires LaTeX (TeX Live 2025 or MacTeX):
+
+```bash
+# Full compilation with bibliography and index
+pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
+bibtex THE_ARCHITECTURE_OF_THOUGHT
+makeindex THE_ARCHITECTURE_OF_THOUGHT
+pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
+pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
+```
+
+</details>
+
+---
+
+## Contributing
+
+| File | Description |
+|------|-------------|
+| [CONTRIBUTING.md](CONTRIBUTING.md) | How to contribute to DCF |
+| [CHANGELOG.md](CHANGELOG.md) | Version history and changes |
+| [RELEASING.md](RELEASING.md) | Release process and checklist |
+
 ---
 
 ## License & Copyright
 
 **© 2026 Damir Omelic. All Rights Reserved.**
 
-This work is the intellectual property of the primary author. This document was co-authored with Claude, an AI assistant developed by Anthropic. The human author retains full intellectual property rights.
+Co-authored with Claude (Anthropic). The human author retains full intellectual property rights.
 
 ---
 
-## Author
-
-**Damir Omelic** — Independent Researcher
-
-Co-authored with **Claude** (Anthropic)
-
----
-
-*The architecture of thought awaits its architects.*
+If you find DCF useful, consider [starring the repo](https://github.com/domelic/architecture-of-thought) to help others discover it.
