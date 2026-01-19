@@ -126,19 +126,19 @@ Hermeneutics (Gadamer)
 
 ## Cross-Reference Patterns
 
-### When referencing concepts forward:
+### When Referencing Concepts Forward
 ```latex
 (see Section~\ref{sec:anticipatory-calibration})
 (discussed further in Part~VI)
 ```
 
-### When referencing concepts backward:
+### When Referencing Concepts Backward
 ```latex
 As established in the Thinking Mirror hypothesis (Chapter~2)...
 Building on the scaffolding principles from Part~VI...
 ```
 
-### Key labels in document:
+### Key Labels in Document
 - `\label{sec:anticipatory-calibration}` - Anticipatory Calibration section
 - `\label{sec:learning-accelerator}` - AI as Learning Accelerator
 - `\label{ch:agent-ecosystem}` - Agent Ecosystem chapter
@@ -154,18 +154,18 @@ Building on the scaffolding principles from Part~VI...
 
 ## Editing Guidelines
 
-### Adding new concepts:
+### Adding New Concepts
 1. Check if concept relates to existing foundations
 2. Reference the foundational concept on first use
 3. Add to this cross-reference map
 4. Ensure index entry created
 
-### Modifying existing concepts:
+### Modifying Existing Concepts
 1. Check dependency graph for downstream references
 2. Verify changes don't contradict dependent content
 3. Update anti-pattern sections if behavior implications change
 
-### Adding new anti-patterns:
+### Adding New Anti-Patterns
 1. Follow naming convention (Title Case)
 2. Define in Part VIII after existing anti-patterns
 3. Link to the DCF concept it inverts

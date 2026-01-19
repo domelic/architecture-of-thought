@@ -9,6 +9,7 @@ Quick reference for Dialectical Cognition Framework terminology, modes, and rela
 ## The 21 DCF Modes
 
 ### Evaluation & Review (4 modes)
+
 | Mode | Purpose | Key Question |
 |------|---------|--------------|
 | `review` | Evaluate before committing | "What would make you regret this?" |
@@ -17,6 +18,7 @@ Quick reference for Dialectical Cognition Framework terminology, modes, and rela
 | `refine` | Iterate on output | "Are we refining toward the right goal?" |
 
 ### Problem Solving (4 modes)
+
 | Mode | Purpose | Key Question |
 |------|---------|--------------|
 | `debug` | Question the mental model | "Where does expectation diverge from reality?" |
@@ -25,6 +27,7 @@ Quick reference for Dialectical Cognition Framework terminology, modes, and rela
 | `diagnose` | Identify anti-pattern | "Which failure mode matches these symptoms?" |
 
 ### Design & Analysis (6 modes)
+
 | Mode | Purpose | Key Question |
 |------|---------|--------------|
 | `architect` | Divergent → convergent design | "What's the minimal change after understanding the landscape?" |
@@ -35,6 +38,7 @@ Quick reference for Dialectical Cognition Framework terminology, modes, and rela
 | `decide` | Reach closure | "If you had to decide now..." |
 
 ### Learning & Exploration (3 modes)
+
 | Mode | Purpose | Key Question |
 |------|---------|--------------|
 | `learn` | Build understanding | "What do you already know about this?" |
