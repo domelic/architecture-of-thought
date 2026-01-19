@@ -11,6 +11,9 @@ This repository contains **"The Architecture of Thought"** — a treatise presen
 ### LaTeX Compilation
 
 ```bash
+# Quick compile (iterative editing - no bibliography/index update)
+pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
+
 # Full compilation with bibliography and index (requires TeX Live 2025 or MacTeX)
 pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 bibtex THE_ARCHITECTURE_OF_THOUGHT
@@ -19,7 +22,7 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ```
 
-The triple pdflatex run resolves cross-references and index entries.
+The triple pdflatex run resolves cross-references and index entries. Use quick compile for iterative content editing; full compile before commits.
 
 ### Validation (run before committing markdown changes)
 
@@ -29,6 +32,10 @@ cspell --config .cspell.json "**/*.md" --no-progress
 
 # Markdown lint (requires markdownlint-cli2: npm install -g markdownlint-cli2)
 markdownlint-cli2 "**/*.md" --config .markdownlint.json --ignore CHANGELOG.md
+
+# Single file validation (during editing)
+cspell --config .cspell.json "path/to/file.md" --no-progress
+markdownlint-cli2 "path/to/file.md" --config .markdownlint.json
 ```
 
 Add project-specific words to `.cspell.json` `words` array when needed.
@@ -40,6 +47,7 @@ Add project-specific words to `.cspell.json` `words` array when needed.
 | `THE_ARCHITECTURE_OF_THOUGHT.tex` | Main LaTeX source (12 parts + appendices) |
 | `DCF_ESSENTIALS.md` | Condensed practitioner's guide — read this to understand DCF concepts |
 | `.claude/commands/dcf.md` | The `/dcf` skill definition (24 modes in 5 categories) |
+| `.claude/commands/cybw.md` | The `/cybw` skill — quick adversarial checkpoint |
 | `.claude/scripts/dcf-workflow` | Shell script for chaining DCF modes with checkpoints |
 | `resources/CLAUDE_MD_TEMPLATE.md` | Template for DCF-informed CLAUDE.md files |
 | `references.bib` | BibTeX bibliography |
@@ -57,6 +65,18 @@ Applies Socratic questioning contextually. See `.claude/commands/dcf.md` for ful
 | Design & Analysis | `architect`, `tradeoffs`, `assumptions`, `premortem`, `challenge`, `decide`, `constrain` |
 | Learning & Exploration | `learn`, `onboard`, `explain` |
 | Session Management | `compact`, `context-health`, `retro`, `skill` |
+
+### `/cybw [target]` — Could You Be Wrong?
+
+Quick adversarial checkpoint based on Hills (2025) research. Surfaces errors, biases, contradictory evidence, and alternatives absent from initial responses.
+
+```text
+/cybw                           # Challenge the last response
+/cybw the caching strategy      # Challenge a specific decision
+/cybw "users want this feature" # Challenge a specific assumption
+```
+
+Use `/cybw` for fast checks. Use `/dcf challenge` for full structured analysis.
 
 ## Workflow Automation
 
@@ -163,18 +183,17 @@ Use Zotero MCP for bibliography management when adding new references:
 3. Add to `references.bib` following existing entry patterns
 4. Cite in LaTeX: `\cite{clark1998extended}`
 
-**Bibliography sections in `references.bib`:** Extended Mind, Scaffolding/ZPD, Dialectical Thinking, Philosophy of Science, Organizational Learning, Hermeneutics, PKM, Human-AI Collaboration, Socratic Method, Socratic Prompting/LLM, Agentic AI, Classic Philosophy.
+**Bibliography sections in `references.bib`:** Extended Mind, Scaffolding/ZPD, Dialectical Thinking, Philosophy of Science, Organizational Learning, Hermeneutics, PKM, Human-AI Collaboration, Metacognition and Human-AI Collaboration Research, Socratic Method, Socratic Prompting/LLM, Agentic AI, Classic Philosophy.
 
 When adding new references, place them in the appropriate section or create a new commented section header.
 
 ## For Claude: Working Style
 
-1. **Follow conventions**: Use the branch naming and commit conventions above
-2. **Apply DCF principles**: Surface assumptions, present trade-offs, use questioning to clarify
-3. **Be direct and concise**: Practitioner-focused, not academic verbose
-4. **Ground abstractions in examples**: New theoretical content needs concrete illustrations
-5. **Maintain consistency**: New resources should follow `resources/` file format patterns
-6. **Validate before committing**: Run spell-check and markdown-lint on changed `.md` files
+- **Apply DCF principles**: Surface assumptions, present trade-offs, question to clarify
+- **Direct and concise**: Practitioner-focused, avoid academic verbosity
+- **Ground in examples**: New theoretical content needs concrete illustrations
+- **Validate changes**: Run spell-check and markdown-lint on changed `.md` files
+- **Follow patterns**: New resources should match existing `resources/` file formats
 
 ## Quick Troubleshooting
 

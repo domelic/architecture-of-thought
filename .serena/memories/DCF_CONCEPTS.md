@@ -146,6 +146,18 @@ Articulate → Generate → Evaluate → Refine
 | Dialectical Thinking | Holding contradictions productively | Part VI |
 | Extended Mind | Cognition beyond brain boundaries | Part VI |
 | Distributed Cognition | System-level cognitive analysis | Part VI |
+| Collaborative AI Literacy | Knowledge/skills for effective collaboration (measurable) | Part VIII |
+| Collaborative AI Metacognition | Monitoring your own thinking during AI use | Part VIII |
+| False Mental States | Autonomy risk: AI misinformation distorting beliefs | Part VIII |
+| Cognitive Deskilling | Autonomy risk: capability loss from outsourcing thinking | Part VIII |
+
+## Research Validation (Part X)
+
+Recent research validates DCF practices:
+- **Hills (2025)** - "Could you be wrong?" generates adversarial info absent from initial responses
+- **Kovács & Szelényi (2025)** - False mental states and cognitive deskilling as primary autonomy risks
+- **Sidra & Mason (2025)** - Validated scales for collaborative AI literacy and metacognition
+- **Hashemi Tonekaboni & Soleymani (2026)** - Independent multi-agent Socratic architecture (HICSS)
 
 ## Cross-References for Editing
 

@@ -289,26 +289,46 @@ The most dangerous assumptions are the ones you don't know you're making.
 
 ### `challenge` - Steelman Opposition
 **Outcome:** User's position is stronger from surviving genuine challenge.
-- Articulate their current position clearly
-- Present the strongest counterarguments
-- Find genuine weaknesses (not strawmen)
-- Seek synthesis if both views have merit
 
-**Multi-Perspective Synthesis:** Generate challenges from independent frames, then synthesize:
+**Protocol:**
+
+1. **State the position clearly** — What are you defending?
+
+2. **"Could you be wrong?"** — Ask this directly. Research shows this single question surfaces error identification, biases, contradictory evidence, and alternatives absent from initial reasoning. (Hills, 2025)
+
+3. **Multi-Perspective Synthesis** — Generate challenges from four frames:
 
 | Frame | Question | Verdict |
 |-------|----------|---------|
-| **Technical** | Does this work mechanically? | Support/Oppose/Neutral |
-| **User** | Does this serve the actual need? | Support/Oppose/Neutral |
+| **Technical** | Does this work mechanically? What could break? | Support/Oppose/Neutral |
+| **User** | Does this serve the actual need? Who suffers if wrong? | Support/Oppose/Neutral |
 | **Maintenance** | Will future-you thank or curse present-you? | Support/Oppose/Neutral |
-| **Adversarial** | How would someone break this? | Support/Oppose/Neutral |
+| **Adversarial** | How would someone exploit or undermine this? | Support/Oppose/Neutral |
+
+4. **Convergence check** — If concerns converge across frames, that's a critical vulnerability. If they diverge, the position may be more robust than initial analysis suggested.
 
 **Synthesis:**
 - Converging concerns: [What multiple frames flag]
 - Diverging assessments: [Where frames disagree]
 - Blind spots: [What no frame addressed]
 
-If challenges from different frames converge on the same weakness, that's a critical vulnerability. If they diverge, the position may be more robust than it appears.
+**Output format:**
+
+```text
+Position: [what's being challenged]
+
+Could You Be Wrong?
+- [error/bias/alternative 1]
+- [error/bias/alternative 2]
+
+Frame Analysis:
+- Technical: [challenges]
+- User: [challenges]
+- Maintenance: [challenges]
+- Adversarial: [challenges]
+
+Verdict: [converging concerns = vulnerability / diverging = robust]
+```
 
 ### `decide` - Reach Closure
 **Outcome:** User commits to a decision and moves forward.

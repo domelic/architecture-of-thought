@@ -94,6 +94,19 @@ Annotated reference guide for THE_ARCHITECTURE_OF_THOUGHT citations.
 
 ---
 
+### Metacognition and Human-AI Collaboration Research
+
+| Key | Author(s) | Work | Use In Document |
+|-----|-----------|------|-----------------|
+| `hills2025metacognitive` | Hills | "Could You Be Wrong" (2025) | Checkpoint protocol validation, adversarial information generation |
+| `socrai2025autonomy` | Kovács & Szelényi | "Addressing Autonomy Risks in Generative Chatbots" (2025) | Autonomy risks (false mental states, cognitive deskilling) |
+| `mentalmodels2025` | Weber, Müller, Fischer | "Development of Mental Models in Human-AI Collaboration" (2025) | Mental Model Triad (domain, processing, complementarity-awareness) |
+| `sidra2025scales` | Sidra & Mason | "Collaborative AI Literacy and Metacognition Scales" (2025) | Validated measurement instruments for collaboration skills |
+
+**When to cite**: Checkpoint protocol ("could you be wrong?"), theoretical grounding for anti-patterns, mental model development, measuring collaboration skills.
+
+---
+
 ### Socratic Method and Critical Thinking
 
 | Key | Author(s) | Work | Use In Document |
@@ -114,8 +127,9 @@ Annotated reference guide for THE_ARCHITECTURE_OF_THOUGHT citations.
 | `yao2022react` | Yao et al. | "ReAct" (2022) | Reasoning + Acting framework |
 | `wei2022chain` | Wei et al. | "Chain-of-Thought Prompting" (2022) | CoT methodology |
 | `yao2023tree` | Yao et al. | "Tree of Thoughts" (2023) | ToT deliberate problem-solving |
+| `tonekaboni2026socratic` | Hashemi Tonekaboni & Soleymani | "Socratic Method Revisited" (HICSS 2026) | Multi-agent Socratic framework with Triage Agent routing; independent validation of DCF approach |
 
-**When to cite**: Technical prompting research, positioning DCF in LLM literature.
+**When to cite**: Technical prompting research, positioning DCF in LLM literature, multi-agent Socratic architectures.
 
 ---
 
@@ -186,9 +200,28 @@ Gadamer (Hermeneutics)
 
 Popper (Critical Rationalism)
     └── Testing assumptions
-        └── Elenchus and Evidence operations
+        ├── Elenchus and Evidence operations
+        └── Hills (Could You Be Wrong) - empirical validation
 
 Argyris (Double-Loop Learning)
     └── Questioning mental models
         └── DCF as cognitive upgrade
+
+Kovács & Szelényi (Autonomy Risks)
+    ├── False Mental States → Hallucination Acceptance
+    └── Cognitive Deskilling → Cognitive Atrophy
+
+Weber et al. (Mental Model Triad)
+    ├── Domain model → Learning stance
+    ├── Processing model → Anticipatory calibration
+    └── Complementarity-awareness → Thinking Mirror
+
+Sidra & Mason (Collaboration Scales)
+    ├── Collaborative AI Literacy → Measurable practitioner skills
+    └── Collaborative AI Metacognition → Quantifying DCF outcomes
+
+Hashemi Tonekaboni & Soleymani (Socratic Method Revisited)
+    ├── Multi-agent Socratic architecture → Independent validation of DCF operations
+    ├── Triage Agent routing → Phase-guided dialogue design
+    └── "Productive discomfort" → Aporia as explicit design goal
 ```
