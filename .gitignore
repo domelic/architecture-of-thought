@@ -36,18 +36,18 @@
 .vscode/
 .idea/
 
-# Private/personal files
-AMAZON_PUBLISHING_GUIDE.md
-AMAZON_KDP_CONTENT.md
-SESSION_NOTES.md
-SESSION_REVIEW_FINDINGS.md
-SESSION_FINDINGS.md
-CLAUDE_CODE_SKILLS.md
+# Session working files
+SESSION_*.md
+
+# Private documentation (in docs/)
+docs/AMAZON_PUBLISHING_GUIDE.md
+docs/AMAZON_KDP_CONTENT.md
+docs/CLAUDE_CODE_SKILLS.md
 
 # Generated ebook files
 *.epub
 
-# Cover images (keep working files private)
-cover.png
-cover_clean.jpg
-cover_final.jpg
+# Cover images - working files (in assets/)
+assets/cover.png
+assets/cover_clean.jpg
+assets/cover_final.jpg

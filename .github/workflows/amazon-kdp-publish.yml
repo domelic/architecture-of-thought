@@ -62,10 +62,13 @@ jobs:
           PANDOC_ARGS="$PANDOC_ARGS --metadata date=\"$(date +%Y)\""
           PANDOC_ARGS="$PANDOC_ARGS --metadata lang=en"
 
-          # Add cover image if it exists (check for jpg, jpeg, or png)
+          # Add cover image if it exists (check assets/ directory first, then root)
           COVER_IMAGE=""
           for ext in jpg jpeg png; do
-            if [ -f "cover.$ext" ]; then
+            if [ -f "assets/cover.$ext" ]; then
+              COVER_IMAGE="assets/cover.$ext"
+              break
+            elif [ -f "cover.$ext" ]; then
               COVER_IMAGE="cover.$ext"
               break
             fi
