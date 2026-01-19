@@ -19,10 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Check links with Lychee
-        uses: lycheeverse/lychee-action@v1
+        uses: lycheeverse/lychee-action@v2
         with:
           args: >-
             --verbose
@@ -40,7 +40,7 @@ jobs:
 
       - name: Create Issue on Failure
         if: failure() && github.event_name == 'schedule'
-        uses: peter-evans/create-issue-from-file@v5
+        uses: peter-evans/create-issue-from-file@v6
         with:
           title: "Link Checker: Broken links detected"
           content-filepath: ./lychee/out.md
