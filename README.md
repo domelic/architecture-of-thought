@@ -189,7 +189,7 @@ dcf-workflow decision "API design"    # tradeoffs → challenge → decide
 **Quick Install (recommended):**
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/domelic/architecture-of-thought/main/install-dcf.sh | bash
+curl -fsSL https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/scripts/install-dcf.sh | bash
 ```
 
 This installs the `/dcf` skill globally, the `dcf-workflow` script, and optionally configures hooks.
