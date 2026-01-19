@@ -217,7 +217,7 @@ The `/dcf` skill is a principle-based Claude Code skill that applies DCF's Socra
 
 ### What modes does the /dcf skill have?
 
-```
+```text
 /dcf [mode] [context]
 
 # Core modes
@@ -249,7 +249,7 @@ The `/dcf` skill is a principle-based Claude Code skill that applies DCF's Socra
 /dcf context-health      # Assess and address context rot
 /dcf diagnose            # Identify anti-pattern
 /dcf skill               # Capture pattern as skill
-```
+```text
 
 ### When should I use each mode?
 
@@ -290,7 +290,7 @@ Use the `dcf-workflow` script for workflow automation:
 dcf-workflow new-project              # learn → premortem → review
 dcf-workflow debug "auth timeout"     # debug → simplify → decide
 dcf-workflow decision "API design"    # review → challenge → decide
-```
+```text
 
 See `.claude/scripts/README.md` for full documentation.
 
@@ -315,7 +315,7 @@ Claude Code hooks can trigger DCF checkpoints automatically. See `.claude/settin
     ]
   }
 }
-```
+```text
 
 Hooks enable DCF at scale without manual invocation.
 
@@ -340,7 +340,7 @@ dcf-workflow decision "API design"    # tradeoffs → challenge → decide
 dcf-workflow learning "rust ownership"# learn → explain → retro
 dcf-workflow unstuck                  # diagnose → unstick → simplify
 dcf-workflow session-end              # context-health → compact → retro
-```
+```text
 
 The script provides checkpoints between each mode, prompting you to reflect before proceeding.
 

@@ -65,11 +65,11 @@ The 2,400-year-old Socratic method maps directly to AI collaboration:
 
 ### 4. Recursive Refinement
 
-```
+```text
 Articulate → Generate → Evaluate → Refine
      ↑                              |
      |______________________________|
-```
+```text
 
 Each cycle:
 1. **Articulate**: Express your current understanding
@@ -146,14 +146,14 @@ In agentic systems (Claude Code, etc.), AI executes autonomously between human c
 
 ### When the Agent Presents a Plan
 
-```
+```text
 Agent: "Here's my implementation plan: [details]. Ready to proceed?"
 
 You (DCF): "Before I approve:
 1. What alternatives did you consider?
 2. What's the riskiest assumption?
 3. What would make us regret this approach?"
-```
+```text
 
 ### Trust vs. Engage Decision Matrix
 
@@ -191,7 +191,7 @@ You (DCF): "Before I approve:
 
 The `/dcf` skill is **principle-based**, not scripted. Each mode has an outcome, not a script:
 
-```
+```text
 /dcf [mode] [context]
 
 /dcf                  # General Socratic dialogue
@@ -226,7 +226,7 @@ The `/dcf` skill is **principle-based**, not scripted. Each mode has an outcome,
 /dcf context-health   # Assess context rot
 /dcf retro            # Capture learning
 /dcf skill            # Capture as reusable skill
-```
+```text
 
 **Workflow Automation:** Use `dcf-workflow` to chain modes with checkpoints:
 
@@ -234,7 +234,7 @@ The `/dcf` skill is **principle-based**, not scripted. Each mode has an outcome,
 dcf-workflow new-project    # onboard → architect → premortem
 dcf-workflow debug          # debug → assumptions → simplify
 dcf-workflow decision       # tradeoffs → challenge → decide
-```
+```text
 
 **Principle:** Claude adapts Socratic questioning to the actual situation—no rigid scripts.
 
@@ -340,7 +340,7 @@ This is scientific thinking applied to prompting.
 
 ### With Plan Mode (Research-Plan-Implement)
 
-```
+```text
 [Research phase]
 → DCF: "What did you find that surprised you?"
 → DCF: "What's still unclear after research?"
@@ -352,11 +352,11 @@ This is scientific thinking applied to prompting.
 [Implement phase]
 → Trust automation, review outputs
 → DCF at checkpoints: "Does this match the plan's intent?"
-```
+```text
 
 ### With Ralph Loop (Autonomous Iteration)
 
-```
+```text
 [Define task with DCF]
 → Clear objectives, constraints, success criteria
 
@@ -366,7 +366,7 @@ This is scientific thinking applied to prompting.
 [Review at checkpoint]
 → DCF: "Did the iterations converge on the right solution?"
 → DCF: "What assumptions did the loop make?"
-```
+```text
 
 **Key insight:** Ralph handles execution; DCF handles judgment.
 
@@ -425,7 +425,7 @@ Long sessions hit context limits. When Claude Code compacts, it generates a summ
 
 Before a long session ends or compacts, capture:
 
-```
+```text
 ## Session Findings
 
 ### Completed Work
@@ -444,7 +444,7 @@ Before a long session ends or compacts, capture:
 ### Context That Matters
 - [ ] Assumptions being made
 - [ ] Non-obvious constraints discovered
-```
+```text
 
 ### When to Capture
 
@@ -459,11 +459,11 @@ Before a long session ends or compacts, capture:
 
 Session documents are working artifacts:
 
-```
+```text
 # .gitignore
 SESSION_NOTES.md
 SESSION_FINDINGS.md
-```
+```text
 
 Content either gets incorporated into permanent artifacts (CLAUDE.md, docs) or becomes obsolete.
 
@@ -487,7 +487,7 @@ If you merely completed a task without growth—the potential remains unrealized
 
 ## One-Page Cheat Sheet
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    DCF ESSENTIALS                           │
 ├─────────────────────────────────────────────────────────────┤
@@ -518,7 +518,7 @@ If you merely completed a task without growth—the potential remains unrealized
 │  Quality in → Quality out.                                 │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
-```
+```text
 
 ---
 

@@ -16,13 +16,13 @@ Even with good intentions, DCF practice can go wrong. This guide documents the f
 
 Going through the motions of Socratic questioning without genuine inquiry.
 
-```
+```text
 Human: "What assumptions are in that?"
 AI: [Lists assumptions]
 Human: "OK, what's the counterargument?"
 AI: [Provides counterargument]
 Human: "OK, proceed."
-```
+```text
 
 No actual engagement with the answers. The questions become ritual.
 
@@ -49,12 +49,12 @@ No actual engagement with the answers. The questions become ritual.
 
 ### Example of Real Engagement
 
-```
+```text
 Human: "What assumptions are in that approach?"
 AI: [Lists assumptions including "the database can handle this query load"]
 Human: "Wait—we haven't tested that assumption. Before we proceed,
         what would happen if that's wrong, and how could we verify it?"
-```
+```text
 
 The difference: genuine curiosity, willingness to change direction.
 
@@ -66,11 +66,11 @@ The difference: genuine curiosity, willingness to change direction.
 
 Using the AI to confirm what you already believe rather than challenge it.
 
-```
+```text
 Human: "I think we should use microservices. Explain why that's the right choice."
 AI: [Provides justification for microservices]
 Human: "Great, that confirms my thinking."
-```
+```text
 
 The mirror reflects only what you want to see.
 
@@ -121,11 +121,11 @@ The mirror reflects only what you want to see.
 
 Evaluating AI output without having formed expectations first. Asking "does this look good?" rather than "does this match what I predicted?"
 
-```
+```text
 Human: "Write a function to parse user input"
 AI: [Provides function]
 Human: [Reads it] "Yeah, that looks fine."
-```
+```text
 
 No prediction, no comparison, no learning signal.
 
@@ -174,13 +174,13 @@ Reactive evaluation means you're not building a calibrated model of AI capabilit
 
 Never reaching "good enough." Endless iteration without convergence.
 
-```
+```text
 Iteration 15:
 Human: "This is almost right, but the third paragraph could be clearer..."
 AI: [Revises]
 Human: "Better, but now the flow from paragraph 2 to 3 feels off..."
 [Continues indefinitely]
-```
+```text
 
 ### Symptoms
 
@@ -232,13 +232,13 @@ Human: "Better, but now the flow from paragraph 2 to 3 feels off..."
 
 Vague prompts, then frustration with vague outputs.
 
-```
+```text
 Human: "Make this better."
 AI: [Makes changes]
 Human: "No, not like that. Better."
 AI: [Makes different changes]
 Human: "This AI doesn't understand me."
-```
+```text
 
 ### Symptoms
 
@@ -285,12 +285,12 @@ Human: "This AI doesn't understand me."
 
 Trusting AI outputs without verification, especially factual claims.
 
-```
+```text
 AI: "According to the React documentation, useEffect cleanup runs
      before every re-render."
 Human: [Implements based on this claim without checking]
 [Later: Bug because the claim was subtly wrong]
-```
+```text
 
 ### Symptoms
 
@@ -334,11 +334,11 @@ Human: [Implements based on this claim without checking]
 
 Approving AI outputs without meaningful review.
 
-```
+```text
 AI: "Here's my implementation plan: [lengthy plan]"
 Human: [Skims for 5 seconds] "Looks good, proceed."
 [Later: Plan had a fundamental flaw]
-```
+```text
 
 ### Symptoms
 
@@ -385,14 +385,14 @@ Human: [Skims for 5 seconds] "Looks good, proceed."
 
 Each iteration makes the solution more complex rather than clearer.
 
-```
+```text
 Iteration 1: Simple solution
 Iteration 2: Added error handling
 Iteration 3: Added configuration options
 Iteration 4: Added abstraction layer
 Iteration 5: Now it's a framework
 [Original problem: format a string]
-```
+```text
 
 ### Symptoms
 
@@ -436,11 +436,11 @@ Iteration 5: Now it's a framework
 
 Declining ability to think without AI scaffolding.
 
-```
+```text
 Before AI: Could debug code by reading it
 After AI:  "Claude, what's wrong with this code?"
            [Can't start without AI assistance]
-```
+```text
 
 ### Symptoms
 
@@ -482,7 +482,7 @@ After AI:  "Claude, what's wrong with this code?"
 
 Losing sight of the original objective through successive iterations.
 
-```
+```text
 Original goal: Write a function to validate emails
 Iteration 1: Validation function
 Iteration 2: Added internationalization
@@ -490,7 +490,7 @@ Iteration 3: Now discussing email standards
 Iteration 4: Debating whether email validation is even possible
 Iteration 5: Philosophical tangent about identity
 [Email function never completed]
-```
+```text
 
 ### Symptoms
 
@@ -537,12 +537,12 @@ Iteration 5: Philosophical tangent about identity
 
 Preferring abstract discussion over concrete action.
 
-```
+```text
 Human: "Let's discuss the principles of good API design."
 [30 minutes of high-level discussion]
 Human: "Great insights. Now, about the principles of REST..."
 [Never actually designs an API]
-```
+```text
 
 ### Symptoms
 
@@ -588,7 +588,7 @@ Human: "Great insights. Now, about the principles of REST..."
 
 Repeatedly solving the same type of problem from scratch instead of capturing and reusing effective patterns.
 
-```
+```text
 Week 1: "Help me structure this code review"
 [Great approach discovered]
 
@@ -597,7 +597,7 @@ Week 2: "Help me structure this other code review"
 
 Week 3: "Help me structure yet another code review"
 [Still hasn't captured the pattern as a skill]
-```
+```text
 
 ### Symptoms
 
@@ -645,7 +645,7 @@ Reinvention addiction treats each session as isolated rather than building cumul
 
 **The Pattern**: Allowing the conversation context to degrade through accumulated noise, contradictions, or irrelevant information until the AI's performance noticeably suffers.
 
-```
+```text
 [Session starts clean]
 Human: Great explanation of the auth system!
 Human: Actually wait, let's try a different approach...
@@ -654,7 +654,7 @@ Human: Here's some additional context [pastes large document]
 Human: Ignore that last part, it's outdated.
 [40 messages later]
 Human: Why does Claude keep getting confused about basic requirements?
-```
+```text
 
 ### The Four Causes of Context Rot
 
@@ -734,11 +734,11 @@ Context is the AI's working memory. Just as you can't think clearly with a clutt
 
 Organizational knowledge hoarding that prevents effective AI collaboration.
 
-```
+```text
 Developer: "I want to use Claude to help refactor the auth system"
 Reality: The auth system's quirks exist only in Sarah's head
 Result: AI produces technically correct but contextually wrong changes
-```
+```text
 
 The AI has access to code, but not to the tribal knowledge that makes the code make sense.
 

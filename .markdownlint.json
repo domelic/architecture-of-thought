@@ -8,15 +8,20 @@
   "MD010": true,
   "MD012": { "maximum": 2 },
   "MD013": false,
+  "MD022": false,
   "MD024": { "siblings_only": true },
-  "MD025": { "front_matter_title": "" },
+  "MD025": false,
   "MD026": { "punctuation": ".,;:!" },
+  "MD028": false,
   "MD029": { "style": "ordered" },
+  "MD031": false,
+  "MD032": false,
   "MD033": false,
   "MD034": false,
   "MD036": false,
   "MD040": true,
   "MD041": false,
   "MD046": { "style": "fenced" },
-  "MD048": { "style": "backtick" }
+  "MD048": { "style": "backtick" },
+  "MD060": false
 }

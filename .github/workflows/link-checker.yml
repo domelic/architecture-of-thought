@@ -28,11 +28,15 @@ jobs:
             --verbose
             --no-progress
             --accept 100..=103,200..=299,403,429
-            --exclude-mail
             --exclude "^https://doi.org/"
             --exclude "^https://zenodo.org/badge/"
+            --exclude "^https://www.amazon.com/kindlepreviewer"
             --exclude "localhost"
             --exclude "127.0.0.1"
+            --exclude "AMAZON_KDP_CONTENT.md"
+            --exclude "AMAZON_PUBLISHING_GUIDE.md"
+            --exclude "\\[Definition\\]"
+            --exclude "DCF_CASE_STUDY_TEMPLATE.md"
             '**/*.md'
           fail: true
         env:

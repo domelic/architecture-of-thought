@@ -46,7 +46,7 @@ People adopt new approaches at different rates, and that's expected and reasonab
 
 Building fast with AI requires balancing three forces:
 
-```
+```text
          TRUST
           /\
          /  \
@@ -54,7 +54,7 @@ Building fast with AI requires balancing three forces:
        /      \
       /________\
    SPEED      RIGOR
-```
+```text
 
 **Trust**: Team confidence that AI-assisted work meets standards
 **Speed**: Velocity of development with AI assistance

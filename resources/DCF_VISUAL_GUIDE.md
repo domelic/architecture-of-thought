@@ -6,7 +6,7 @@ Diagrams and visual references for the Dialectical Cognition Framework.
 
 ## The Core Loop
 
-```
+```text
                     ┌─────────────────────────────────────┐
                     │                                     │
                     ▼                                     │
@@ -44,13 +44,13 @@ Diagrams and visual references for the Dialectical Cognition Framework.
     │   Quality threshold met       │
     │   Purpose fulfilled           │
     └───────────────────────────────┘
-```
+```text
 
 ---
 
 ## The Thinking Mirror
 
-```
+```text
     ┌─────────────────────────────────────────────────────────┐
     │                        HUMAN                            │
     │                                                         │
@@ -79,13 +79,13 @@ Diagrams and visual references for the Dialectical Cognition Framework.
 
     Key insight: The mirror shows you YOUR thought transformed.
     Quality in → Quality out.
-```
+```text
 
 ---
 
 ## The Five Phases of Socratic Prompting
 
-```
+```text
     Phase 1                Phase 2                Phase 3
     RAW INQUIRY    ───►   REFLECTIVE      ───►   PERSONAL
                           CLARIFICATION          SYNTHESIS
@@ -121,13 +121,13 @@ Diagrams and visual references for the Dialectical Cognition Framework.
                        I be asking next?"
 
                       Start again, evolved.
-```
+```text
 
 ---
 
 ## The Stack View
 
-```
+```text
     ┌─────────────────────────────────────────────────────┐
     │                                                     │
     │   MACRO: Project-Level Orchestration               │
@@ -156,13 +156,13 @@ Diagrams and visual references for the Dialectical Cognition Framework.
 
     DCF operates at MICRO level—the cognitive strategy
     that runs on top of whatever framework you choose.
-```
+```text
 
 ---
 
 ## Trust vs. Engage Decision
 
-```
+```text
                          Is the task well-defined?
                                    │
                     ┌──────────────┴──────────────┐
@@ -185,13 +185,13 @@ Diagrams and visual references for the Dialectical Cognition Framework.
          │
          ▼
     But verify output
-```
+```text
 
 ---
 
 ## Agentic Checkpoint Pattern
 
-```
+```text
     ┌─────────────────────────────────────────────────────────┐
     │                    AGENTIC WORKFLOW                     │
     └─────────────────────────────────────────────────────────┘
@@ -228,13 +228,13 @@ Diagrams and visual references for the Dialectical Cognition Framework.
     ╚═════════╤═════════╝
               │
          Continue...
-```
+```text
 
 ---
 
 ## Convergence Criteria
 
-```
+```text
     Quality
       ▲
       │
@@ -260,13 +260,13 @@ Diagrams and visual references for the Dialectical Cognition Framework.
     ├── Endless tweaking (perfectionism)
     ├── Losing original purpose (drift)
     └── Getting more complex each iteration (creep)
-```
+```text
 
 ---
 
 ## The Learning Stance vs. Extraction Stance
 
-```
+```text
     EXTRACTION STANCE                 LEARNING STANCE
 
     "Give me the answer"              "Help me understand"
@@ -293,13 +293,13 @@ Diagrams and visual references for the Dialectical Cognition Framework.
     THE PARADOX:
     By seeking understanding rather than answers,
     you become capable of generating better answers yourself.
-```
+```text
 
 ---
 
 ## One-Page Summary Poster
 
-```
+```text
 ╔═══════════════════════════════════════════════════════════════════╗
 ║                                                                   ║
 ║              THE DIALECTICAL COGNITION FRAMEWORK                  ║
@@ -345,7 +345,7 @@ Diagrams and visual references for the Dialectical Cognition Framework.
 ║             You're building capability, not dependency.           ║
 ║                                                                   ║
 ╚═══════════════════════════════════════════════════════════════════╝
-```
+```text
 
 ---
 
@@ -353,7 +353,7 @@ Diagrams and visual references for the Dialectical Cognition Framework.
 
 The skill is **principle-based**, not scripted. Each mode has an **outcome**, not a script.
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────┐
 │                    /dcf SKILL MODES (Principle-Based)               │
 ├─────────────────────────────────────────────────────────────────────┤
@@ -406,7 +406,7 @@ The skill is **principle-based**, not scripted. Each mode has an **outcome**, no
 │   .claude/skills/archive/dcf-procedural.md                          │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
-```
+```text
 
 ---
 
@@ -414,7 +414,7 @@ The skill is **principle-based**, not scripted. Each mode has an **outcome**, no
 
 Use `dcf-workflow` to chain modes with checkpoints:
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────┐
 │                        dcf-workflow <scenario>                       │
 ├─────────────────────────────────────────────────────────────────────┤
@@ -432,13 +432,13 @@ Use `dcf-workflow` to chain modes with checkpoints:
 │   before proceeding to the next mode.                               │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
-```
+```text
 
 ---
 
 ## Agent Selection Guide
 
-```
+```text
     What are you trying to do?
               │
     ┌─────────┴─────────────────────────────────┐
@@ -472,13 +472,13 @@ Use `dcf-workflow` to chain modes with checkpoints:
     │ code-reviewer│ Evaluate flagged issues critically  │
     │ Background   │ Review async output when complete   │
     └──────────────┴─────────────────────────────────────┘
-```
+```text
 
 ---
 
 ## Model Selection Decision
 
-```
+```text
                         What are the stakes?
                               │
               ┌───────────────┼───────────────┐
@@ -499,7 +499,7 @@ Use `dcf-workflow` to chain modes with checkpoints:
 
     PRINCIPLE: Match model capability to decision stakes.
                Haiku for speed, Opus for depth.
-```
+```text
 
 ---
 
