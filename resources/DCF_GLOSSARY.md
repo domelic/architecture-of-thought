@@ -259,13 +259,13 @@ Principles for building production-reliable AI agents.
 ## Measurement Terms
 
 ### Synergy Index
-A metric framework for measuring human-AI collaboration effectiveness across task completion, innovation, adaptability, and error detection.
+A metric framework for measuring human-AI collaboration effectiveness across task completion, innovation, adaptability, and error detection. (Riedl & Weidmann, 2025)
 
 ### Collaborative AI Literacy
-The ability to direct, contextualize, and refine AI outputs effectively.
+The knowledge and skills required for effective AI collaboration: understanding AI capabilities and limitations, directing outputs effectively, providing appropriate context, and refining results. Measurable through validated scales. In DCF: what you *know* about collaboration—the techniques themselves. (Sidra & Mason, 2025)
 
 ### Collaborative AI Metacognition
-Awareness of your own thinking process during AI collaboration; planning, monitoring, and evaluating your cognitive engagement.
+The ability to monitor and regulate your own cognitive processes during AI collaboration: planning your approach, tracking whether collaboration is productive, and adjusting strategy as needed. Predicts effective AI use better than literacy alone. In DCF: *awareness of* your collaboration—anticipatory calibration, checkpoint discipline, and knowing when you're drifting. (Sidra & Mason, 2025)
 
 ---
 
@@ -327,6 +327,8 @@ Agents spawned via the Task tool that run asynchronously while you continue othe
 | **False Mental States** | Autonomy risk: AI misinformation distorting user beliefs |
 | **Cognitive Deskilling** | Autonomy risk: capability loss from outsourcing thinking |
 | **Mental Model Triad** | Domain, processing, and complementarity-awareness models |
+| **Collaborative AI Literacy** | Knowledge/skills for effective AI collaboration (measurable) |
+| **Collaborative AI Metacognition** | Monitoring your own thinking during AI collaboration |
 
 ---
 

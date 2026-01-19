@@ -311,6 +311,8 @@ These aren't just bad habits—they're **autonomy risks**. Accepting hallucinati
 | **Hallucination Acceptance** | Trusting without verification (→ *false mental states*) | Ask "Could you be wrong?" + verify claims |
 | **Cognitive Atrophy** | Declining ability to think without AI (→ *cognitive deskilling*) | Practice unassisted reasoning; use learning stance |
 
+**Measurability note:** The skills that prevent these failure modes—collaborative AI literacy (what you know) and collaborative AI metacognition (how you monitor your collaboration)—are now measurable through validated scales, enabling organizations to assess training effectiveness. (Sidra & Mason, 2025)
+
 ---
 
 ## The Learning Stance
@@ -587,6 +589,7 @@ If you merely completed a task without growth—the potential remains unrealized
 - **PKM methodology**: Ahrens, "How to Take Smart Notes" (2017)
 - **Metacognitive prompting**: Hills, "Could You Be Wrong" (2025)
 - **Autonomy risks**: Kovács & Szelényi, "Addressing Autonomy Risks in Generative Chatbots" (2025)
+- **Measuring collaboration skills**: Sidra & Mason, "Collaborative AI Literacy and Metacognition Scales" (2025)
 
 ---
 
