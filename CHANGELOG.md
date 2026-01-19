@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.7.0](https://github.com/domelic/architecture-of-thought/compare/v2.6.0...v2.7.0) (2026-01-19)
+
+
+### Features
+
+* expand DCF to 24 modes with Via Negativa and Context Engineering ([#59](https://github.com/domelic/architecture-of-thought/issues/59)) ([5a986bb](https://github.com/domelic/architecture-of-thought/commit/5a986bb1bcdf3b5f9a16256f2037d1933e6f180a))
+
 ## [2.6.0](https://github.com/domelic/architecture-of-thought/compare/v2.5.0...v2.6.0) (2026-01-19)
 
 
