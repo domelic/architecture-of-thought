@@ -7,6 +7,7 @@
 [![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-red.svg)](LICENSE)
 [![Pages](https://img.shields.io/badge/Pages-198-blue.svg)](THE_ARCHITECTURE_OF_THOUGHT.pdf)
 [![LaTeX](https://img.shields.io/badge/Format-LaTeX-green.svg)](THE_ARCHITECTURE_OF_THOUGHT.tex)
+[![Amazon KDP](https://github.com/domelic/architecture-of-thought/actions/workflows/amazon-kdp-publish.yml/badge.svg)](https://github.com/domelic/architecture-of-thought/actions/workflows/amazon-kdp-publish.yml)
 
 ---
 
