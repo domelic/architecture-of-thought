@@ -40,6 +40,7 @@ Add project-specific words to `.cspell.json` `words` array when needed.
 | `THE_ARCHITECTURE_OF_THOUGHT.tex` | Main LaTeX source (12 parts + appendices) |
 | `DCF_ESSENTIALS.md` | Condensed practitioner's guide — read this to understand DCF concepts |
 | `.claude/commands/dcf.md` | The `/dcf` skill definition (24 modes in 5 categories) |
+| `.claude/commands/cybw.md` | The `/cybw` skill — quick adversarial checkpoint |
 | `.claude/scripts/dcf-workflow` | Shell script for chaining DCF modes with checkpoints |
 | `resources/CLAUDE_MD_TEMPLATE.md` | Template for DCF-informed CLAUDE.md files |
 | `references.bib` | BibTeX bibliography |
@@ -57,6 +58,18 @@ Applies Socratic questioning contextually. See `.claude/commands/dcf.md` for ful
 | Design & Analysis | `architect`, `tradeoffs`, `assumptions`, `premortem`, `challenge`, `decide`, `constrain` |
 | Learning & Exploration | `learn`, `onboard`, `explain` |
 | Session Management | `compact`, `context-health`, `retro`, `skill` |
+
+### `/cybw [target]` — Could You Be Wrong?
+
+Quick adversarial checkpoint based on Hills (2025) research. Surfaces errors, biases, contradictory evidence, and alternatives absent from initial responses.
+
+```text
+/cybw                           # Challenge the last response
+/cybw the caching strategy      # Challenge a specific decision
+/cybw "users want this feature" # Challenge a specific assumption
+```
+
+Use `/cybw` for fast checks. Use `/dcf challenge` for full structured analysis.
 
 ## Workflow Automation
 
