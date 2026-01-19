@@ -307,10 +307,15 @@ Claude Code hooks can trigger DCF checkpoints automatically. See `.claude/settin
 ```json
 {
   "hooks": {
-    "post_tool_call": [
+    "PostToolUse": [
       {
-        "tool": "Edit",
-        "command": "echo '💭 DCF Checkpoint: What assumptions did this edit make?'"
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '💭 DCF Checkpoint: What assumptions did this edit make?'"
+          }
+        ]
       }
     ]
   }

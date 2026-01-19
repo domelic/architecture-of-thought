@@ -404,9 +404,17 @@ Hooks are shell commands that execute automatically before or after Claude Code 
 // .claude/settings.json
 {
   "hooks": {
-    "post_tool_call": {
-      "Edit": "echo '⚠️ File modified. DCF check: What assumptions did this change make?'"
-    }
+    "PostToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '⚠️ File modified. DCF check: What assumptions did this change make?'"
+          }
+        ]
+      }
+    ]
   }
 }
 ```
