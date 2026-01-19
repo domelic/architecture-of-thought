@@ -8,6 +8,10 @@
 
 > **DCF positions LLMs as *thinking mirrors*: collaborative partners in the architecture of thought itself.**
 
+**What is DCF?** A methodology for working with AI that emphasizes *questioning over extraction*. Instead of "give me the answer," you engage in structured Socratic dialogue that surfaces assumptions, explores alternatives, and builds genuine understanding. The framework provides 24 modes for different situations—debugging, architecture decisions, learning new domains, and more.
+
+**Who is this for?** Software engineers, technical writers, and knowledge workers who want to move beyond surface-level prompting with AI coding assistants.
+
 ---
 
 ## Table of Contents
@@ -169,17 +173,11 @@ See [examples/README.md](examples/README.md) for the full collection.
 
 </details>
 
-### Project Files
-
-| File | Description |
-|------|-------------|
-| [CONTRIBUTING.md](CONTRIBUTING.md) | How to contribute to DCF |
-| [CHANGELOG.md](CHANGELOG.md) | Version history and changes |
-| [RELEASING.md](RELEASING.md) | Release process and checklist |
-
 ---
 
 ## Installation
+
+**Prerequisite:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code) — Anthropic's agentic coding tool
 
 **Quick Install (recommended):**
 
@@ -224,17 +222,6 @@ dcf-workflow --help  # Check workflow script
 ```
 
 </details>
-
----
-
-## For Practitioners
-
-This work is intended for:
-
-- Software engineers working with AI coding assistants
-- Technical writers using LLMs for documentation
-- Knowledge workers seeking deeper AI engagement
-- Anyone moving beyond surface-level prompting
 
 ---
 
@@ -369,7 +356,6 @@ See `.claude/settings.example.json` for additional examples.
 
 If you use or reference this work, please cite:
 
-### BibTeX
 ```bibtex
 @misc{omelic2026architecture,
   author = {Omelic, Damir and {Claude (Anthropic)}},
@@ -381,30 +367,21 @@ If you use or reference this work, please cite:
 }
 ```
 
-### APA
-Omelic, D., & Claude. (2026). *The Architecture of Thought: The Dialectical Cognition Framework*. Zenodo. https://doi.org/10.5281/zenodo.18275169
+<details>
+<summary><strong>APA / Chicago formats</strong></summary>
 
-### Chicago
-Omelic, Damir, and Claude. "The Architecture of Thought: The Dialectical Cognition Framework." Zenodo, 2026. https://doi.org/10.5281/zenodo.18275169.
+**APA:** Omelic, D., & Claude. (2026). *The Architecture of Thought: The Dialectical Cognition Framework*. Zenodo. https://doi.org/10.5281/zenodo.18275169
 
----
+**Chicago:** Omelic, Damir, and Claude. "The Architecture of Thought: The Dialectical Cognition Framework." Zenodo, 2026. https://doi.org/10.5281/zenodo.18275169.
 
-## Building from Source
-
-Requires LaTeX (TeX Live 2025 or MacTeX):
-
-```bash
-# Full compilation with bibliography and index
-pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
-bibtex THE_ARCHITECTURE_OF_THOUGHT
-makeindex THE_ARCHITECTURE_OF_THOUGHT
-pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
-pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
-```
+</details>
 
 ---
 
 ## Repository Structure
+
+<details>
+<summary><strong>Directory layout</strong></summary>
 
 ```text
 /
@@ -488,6 +465,34 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
     ├── DCF_VIDEO_SCRIPT.md           # Media production script
     └── DCF_RESEARCH_AGENDA.md        # Open research questions
 ```
+
+</details>
+
+<details>
+<summary><strong>Building from source</strong></summary>
+
+Requires LaTeX (TeX Live 2025 or MacTeX):
+
+```bash
+# Full compilation with bibliography and index
+pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
+bibtex THE_ARCHITECTURE_OF_THOUGHT
+makeindex THE_ARCHITECTURE_OF_THOUGHT
+pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
+pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
+```
+
+</details>
+
+---
+
+## Contributing
+
+| File | Description |
+|------|-------------|
+| [CONTRIBUTING.md](CONTRIBUTING.md) | How to contribute to DCF |
+| [CHANGELOG.md](CHANGELOG.md) | Version history and changes |
+| [RELEASING.md](RELEASING.md) | Release process and checklist |
 
 ---
 
