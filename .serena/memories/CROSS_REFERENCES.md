@@ -15,7 +15,7 @@ Concept dependencies, definition locations, and term relationships for THE_ARCHI
 | VII | Claude Code and Development | 1806-2573 | Agent Ecosystem, Session Continuity, Skill Creation, Hooks |
 | VIII | Practical Application Framework | 2574-3428 | Architectural Funnel, Failure Modes (14 anti-patterns) |
 | IX | The Emerging Discipline | 3429-3628 | Future directions |
-| X | AI Methodology Landscape | 3629-3989 | ACE-FCA, 12-Factor Agents, BMAD, Ralph, Framework Comparison |
+| X | AI Methodology Landscape | 3629-4010 | ACE-FCA, 12-Factor Agents, BMAD, Ralph, Framework Comparison, Emerging Validation |
 | XI | Agentic Era Adaptations | 3990-4287 | Trust vs Engage, Test Coverage as Scaffolding |
 | XII | Critical Perspectives | 4288+ | Limitations, Critiques |
 
@@ -78,6 +78,16 @@ Concept dependencies, definition locations, and term relationships for THE_ARCHI
 | Model Selection | Part VII | 2446 | - |
 | Session Lifecycle | Part VII | 2474 | - |
 
+### Research Validation (Part VIII & X)
+
+| Term | Defined In | Line ~Range | Citation |
+|------|-----------|-------------|----------|
+| Collaborative AI Literacy | Part VIII | 2820 | Sidra & Mason (2025) |
+| Collaborative AI Metacognition | Part VIII | 2820 | Sidra & Mason (2025) |
+| False Mental States | Part VIII | 2880 | Kovács & Szelényi (2025) |
+| Cognitive Deskilling | Part VIII | 2973 | Kovács & Szelényi (2025) |
+| Emerging Validation | Part X | 4003 | Hashemi Tonekaboni & Soleymani (2026) |
+
 ### Anti-Patterns (Part VIII)
 
 All 14 anti-patterns defined in Part VIII, Chapter "Failure Modes and Mitigations" starting at line 2711:
@@ -122,6 +132,18 @@ Dialectical Thinking (Riegel/Basseches)
 Hermeneutics (Gadamer)
     └── Fusion of Horizons
         └── Thinking Mirror foundation
+
+Research Validation
+    ├── Hills (2025) "Could You Be Wrong?"
+    │   └── Checkpoint Protocol
+    ├── Kovács & Szelényi (2025) Autonomy Risks
+    │   ├── False Mental States → Hallucination Acceptance
+    │   └── Cognitive Deskilling → Cognitive Atrophy
+    ├── Sidra & Mason (2025) Measurement
+    │   ├── Collaborative AI Literacy
+    │   └── Collaborative AI Metacognition
+    └── Hashemi Tonekaboni & Soleymani (2026)
+        └── Independent Socratic validation
 ```
 
 ## Cross-Reference Patterns
