@@ -151,6 +151,46 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for full details.
 - Branches are automatically deleted after merge
 - Squash merge is preferred for clean history
 
+## MCP Integrations
+
+### Serena Code Intelligence
+
+This project has Serena MCP configured with a memory for LaTeX editing.
+
+| Memory | Purpose |
+|--------|---------|
+| `LATEX_EDITING_GUIDE` | Document structure map, line ranges, editing patterns, LaTeX conventions |
+
+When editing `THE_ARCHITECTURE_OF_THOUGHT.tex`, read the memory first to understand document structure and conventions.
+
+### Zotero Research Library
+
+Use Zotero MCP for bibliography management when adding new references:
+
+**Workflow for adding citations:**
+
+1. Search Zotero for existing sources: `zotero_search("extended mind Clark")`
+2. Get BibTeX export: `zotero_item_bibtex(item_key)`
+3. Add to `references.bib` following existing entry patterns
+4. Cite in LaTeX: `\cite{clark1998extended}`
+
+**Current bibliography sections in `references.bib`:**
+
+- Extended Mind and Distributed Cognition
+- Scaffolding and Zone of Proximal Development
+- Dialectical Thinking and Post-Formal Development
+- Philosophy of Science and Critical Rationalism
+- Organizational Learning
+- Hermeneutics
+- Personal Knowledge Management
+- Human-AI Collaboration Measurement
+- Socratic Method and Critical Thinking
+- Socratic Prompting and LLM Reasoning
+- Agentic AI and Development Methodologies
+- Classic Philosophy
+
+When adding new references, place them in the appropriate section or create a new commented section header.
+
 ## For Claude: Working Style
 
 1. **Follow conventions**: Use the branch naming and commit conventions above
