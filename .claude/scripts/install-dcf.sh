@@ -15,56 +15,106 @@
 #   --help     Show this help message
 #
 
-set -e
+set -euo pipefail
 
-# Colors for output
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-BLUE='\033[0;34m'
-NC='\033[0m' # No Color
+# =============================================================================
+# Configuration
+# =============================================================================
 
-# Parse arguments
-FORCE=false
-for arg in "$@"; do
-    case $arg in
-        --force)
-            FORCE=true
-            ;;
-        --help)
-            echo "DCF Installation Script"
-            echo ""
-            echo "Usage:"
-            echo "  curl -fsSL https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/scripts/install-dcf.sh | bash"
-            echo ""
-            echo "Options:"
-            echo "  --force    Overwrite existing files without prompting"
-            echo "  --help     Show this help message"
-            exit 0
-            ;;
-    esac
-done
+readonly BASE_URL="https://raw.githubusercontent.com/domelic/architecture-of-thought/main"
+readonly VERSION="1.0.0"
 
-# Base URL for raw files
-BASE_URL="https://raw.githubusercontent.com/domelic/architecture-of-thought/main"
+# Installation paths
+readonly SKILL_DIR="$HOME/.claude/skills"
+readonly BIN_DIR="$HOME/bin"
+readonly DCF_SKILL="$SKILL_DIR/dcf.md"
+readonly DCF_WORKFLOW="$BIN_DIR/dcf-workflow"
 
-echo -e "${BLUE}"
-echo "╔═══════════════════════════════════════════════════════════╗"
-echo "║     Dialectical Cognition Framework (DCF) Installer       ║"
-echo "║                                                           ║"
-echo "║  Components:                                              ║"
-echo "║    • /dcf skill      - Socratic dialogue modes            ║"
-echo "║    • dcf-workflow    - Chain modes with checkpoints       ║"
-echo "║    • hooks           - Auto-trigger DCF checkpoints       ║"
-echo "╚═══════════════════════════════════════════════════════════╝"
-echo -e "${NC}"
+# =============================================================================
+# Color Output
+# =============================================================================
 
-# Detect shell config file
+# Check if stdout is a terminal for color support
+if [[ -t 1 ]]; then
+    readonly RED='\033[0;31m'
+    readonly GREEN='\033[0;32m'
+    readonly YELLOW='\033[1;33m'
+    readonly BLUE='\033[0;34m'
+    readonly NC='\033[0m'
+else
+    readonly RED=''
+    readonly GREEN=''
+    readonly YELLOW=''
+    readonly BLUE=''
+    readonly NC=''
+fi
+
+# =============================================================================
+# Utility Functions
+# =============================================================================
+
+print_info() {
+    printf "${BLUE}%s${NC}\n" "$1"
+}
+
+print_success() {
+    printf "${GREEN}%s${NC}\n" "$1"
+}
+
+print_warning() {
+    printf "${YELLOW}%s${NC}\n" "$1"
+}
+
+print_error() {
+    printf "${RED}%s${NC}\n" "$1" >&2
+}
+
+print_step() {
+    printf "${YELLOW}[%s] %s${NC}\n" "$1" "$2"
+}
+
+# =============================================================================
+# Core Functions
+# =============================================================================
+
+show_banner() {
+    print_info "
+╔═══════════════════════════════════════════════════════════╗
+║     Dialectical Cognition Framework (DCF) Installer       ║
+║                                         v${VERSION}        ║
+║  Components:                                              ║
+║    • /dcf skill      - Socratic dialogue modes            ║
+║    • dcf-workflow    - Chain modes with checkpoints       ║
+║    • hooks           - Auto-trigger DCF checkpoints       ║
+╚═══════════════════════════════════════════════════════════╝"
+}
+
+show_help() {
+    cat << EOF
+DCF Installation Script v${VERSION}
+
+Usage:
+  curl -fsSL ${BASE_URL}/.claude/scripts/install-dcf.sh | bash
+  ./install-dcf.sh [OPTIONS]
+
+Options:
+  --force    Overwrite existing files without prompting
+  --help     Show this help message
+
+Components installed:
+  ~/.claude/skills/dcf.md    Global /dcf skill for Claude Code
+  ~/bin/dcf-workflow         Workflow automation script
+
+Documentation:
+  https://github.com/domelic/architecture-of-thought
+EOF
+}
+
 detect_shell_config() {
-    if [ -n "$ZSH_VERSION" ] || [ "$SHELL" = "/bin/zsh" ]; then
+    if [[ -n "${ZSH_VERSION:-}" ]] || [[ "$SHELL" == */zsh ]]; then
         echo "$HOME/.zshrc"
-    elif [ -n "$BASH_VERSION" ] || [ "$SHELL" = "/bin/bash" ]; then
-        if [ -f "$HOME/.bashrc" ]; then
+    elif [[ -n "${BASH_VERSION:-}" ]] || [[ "$SHELL" == */bash ]]; then
+        if [[ -f "$HOME/.bashrc" ]]; then
             echo "$HOME/.bashrc"
         else
             echo "$HOME/.bash_profile"
@@ -74,156 +124,260 @@ detect_shell_config() {
     fi
 }
 
-# Check if file exists and prompt for action
+is_interactive() {
+    [[ -t 0 ]]
+}
+
+confirm() {
+    local prompt="$1"
+    local default="${2:-n}"
+
+    if ! is_interactive; then
+        [[ "$default" == "y" ]]
+        return
+    fi
+
+    local yn_prompt
+    if [[ "$default" == "y" ]]; then
+        yn_prompt="[Y/n]"
+    else
+        yn_prompt="[y/N]"
+    fi
+
+    read -p "$prompt $yn_prompt " -n 1 -r
+    echo
+
+    if [[ -z "$REPLY" ]]; then
+        [[ "$default" == "y" ]]
+    else
+        [[ "$REPLY" =~ ^[Yy]$ ]]
+    fi
+}
+
+backup_file() {
+    local file="$1"
+    local backup="${file}.backup.$(date +%Y%m%d%H%M%S)"
+    cp "$file" "$backup"
+    echo "$backup"
+}
+
+# Check if file exists and handle overwrite logic
 # Returns: 0 = proceed with install, 1 = skip
 check_existing_file() {
     local file="$1"
     local name="$2"
+    local force="$3"
 
-    if [ -f "$file" ]; then
-        if [ "$FORCE" = true ]; then
-            echo -e "${YELLOW}  ⚠ Backing up existing $name${NC}"
-            cp "$file" "$file.backup.$(date +%Y%m%d%H%M%S)"
-            return 0
-        fi
+    if [[ ! -f "$file" ]]; then
+        return 0
+    fi
 
-        echo -e "${YELLOW}  ⚠ $name already exists at $file${NC}"
-        read -p "    Overwrite? (existing file will be backed up) [y/N] " -n 1 -r
-        echo ""
-        if [[ $REPLY =~ ^[Yy]$ ]]; then
-            cp "$file" "$file.backup.$(date +%Y%m%d%H%M%S)"
-            echo -e "${GREEN}    Backed up to $file.backup.*${NC}"
-            return 0
-        else
-            echo -e "${BLUE}    Skipping $name${NC}"
-            return 1
-        fi
+    if [[ "$force" == "true" ]]; then
+        print_warning "  Backing up existing $name"
+        backup_file "$file" > /dev/null
+        return 0
+    fi
+
+    print_warning "  $name already exists at $file"
+
+    if confirm "    Overwrite? (existing file will be backed up)"; then
+        local backup
+        backup=$(backup_file "$file")
+        print_success "    Backed up to $backup"
+        return 0
+    else
+        print_info "    Skipping $name"
+        return 1
+    fi
+}
+
+download_file() {
+    local url="$1"
+    local dest="$2"
+
+    if ! curl -fsSL -o "$dest" "$url"; then
+        print_error "  Failed to download from $url"
+        return 1
     fi
     return 0
 }
 
-SHELL_CONFIG=$(detect_shell_config)
-
-# Step 1: Install /dcf skill
-echo -e "${YELLOW}[1/4] Installing /dcf skill...${NC}"
-mkdir -p "$HOME/.claude/skills"
-DCF_SKILL="$HOME/.claude/skills/dcf.md"
-
-if check_existing_file "$DCF_SKILL" "/dcf skill"; then
-    if curl -fsSL -o "$DCF_SKILL" "$BASE_URL/.claude/skills/dcf.md"; then
-        echo -e "${GREEN}  ✓ Installed to $DCF_SKILL${NC}"
-    else
-        echo -e "${RED}  ✗ Failed to download dcf.md${NC}"
-        exit 1
-    fi
-fi
-
-# Step 2: Install dcf-workflow script
-echo -e "${YELLOW}[2/4] Installing dcf-workflow script...${NC}"
-mkdir -p "$HOME/bin"
-DCF_WORKFLOW="$HOME/bin/dcf-workflow"
-
-if check_existing_file "$DCF_WORKFLOW" "dcf-workflow"; then
-    if curl -fsSL -o "$DCF_WORKFLOW" "$BASE_URL/.claude/scripts/dcf-workflow"; then
-        chmod +x "$DCF_WORKFLOW"
-        echo -e "${GREEN}  ✓ Installed to $DCF_WORKFLOW${NC}"
-    else
-        echo -e "${RED}  ✗ Failed to download dcf-workflow${NC}"
-        exit 1
-    fi
-fi
-
-# Step 3: Add ~/bin to PATH if not already there
-echo -e "${YELLOW}[3/4] Configuring PATH...${NC}"
-
-# Check various ways ~/bin might already be in PATH
 path_already_configured() {
+    local shell_config="$1"
+
     # Check if currently in PATH
     if echo "$PATH" | tr ':' '\n' | grep -qE "^$HOME/bin$"; then
         return 0
     fi
+
     # Check common patterns in shell config
-    if [ -f "$SHELL_CONFIG" ]; then
-        if grep -qE '(export )?PATH=.*\$HOME/bin' "$SHELL_CONFIG" 2>/dev/null; then
+    if [[ -f "$shell_config" ]]; then
+        if grep -qE '(export )?PATH=.*\$HOME/bin' "$shell_config" 2>/dev/null; then
             return 0
         fi
-        if grep -qE '(export )?PATH=.*~/bin' "$SHELL_CONFIG" 2>/dev/null; then
+        if grep -qE '(export )?PATH=.*~/bin' "$shell_config" 2>/dev/null; then
             return 0
         fi
     fi
+
     return 1
 }
 
-if path_already_configured; then
-    echo -e "${GREEN}  ✓ ~/bin already configured in PATH${NC}"
-else
-    echo '' >> "$SHELL_CONFIG"
-    echo '# DCF tools (added by install-dcf.sh)' >> "$SHELL_CONFIG"
-    echo 'export PATH="$HOME/bin:$PATH"' >> "$SHELL_CONFIG"
-    echo -e "${GREEN}  ✓ Added ~/bin to PATH in $SHELL_CONFIG${NC}"
-    echo -e "${YELLOW}    Run 'source $SHELL_CONFIG' or restart terminal to apply${NC}"
-fi
+# =============================================================================
+# Installation Steps
+# =============================================================================
 
-# Step 4: Offer to install hooks
-echo -e "${YELLOW}[4/4] Configure hooks?${NC}"
-echo "    Hooks auto-trigger DCF checkpoints on edits and destructive commands."
-echo ""
+install_dcf_skill() {
+    local force="$1"
 
-# Check if running interactively (not piped)
-if [ -t 0 ]; then
-    read -p "    Install example hooks to current project? [y/N] " -n 1 -r
+    print_step "1/4" "Installing /dcf skill..."
+    mkdir -p "$SKILL_DIR"
+
+    if check_existing_file "$DCF_SKILL" "/dcf skill" "$force"; then
+        if download_file "$BASE_URL/.claude/skills/dcf.md" "$DCF_SKILL"; then
+            print_success "  Installed to $DCF_SKILL"
+            return 0
+        fi
+        return 1
+    fi
+    return 0
+}
+
+install_dcf_workflow() {
+    local force="$1"
+
+    print_step "2/4" "Installing dcf-workflow script..."
+    mkdir -p "$BIN_DIR"
+
+    if check_existing_file "$DCF_WORKFLOW" "dcf-workflow" "$force"; then
+        if download_file "$BASE_URL/.claude/scripts/dcf-workflow" "$DCF_WORKFLOW"; then
+            chmod +x "$DCF_WORKFLOW"
+            print_success "  Installed to $DCF_WORKFLOW"
+            return 0
+        fi
+        return 1
+    fi
+    return 0
+}
+
+configure_path() {
+    local shell_config="$1"
+
+    print_step "3/4" "Configuring PATH..."
+
+    if path_already_configured "$shell_config"; then
+        print_success "  ~/bin already configured in PATH"
+        return 0
+    fi
+
+    {
+        echo ''
+        echo '# DCF tools (added by install-dcf.sh)'
+        echo 'export PATH="$HOME/bin:$PATH"'
+    } >> "$shell_config"
+
+    print_success "  Added ~/bin to PATH in $shell_config"
+    print_warning "    Run 'source $shell_config' or restart terminal to apply"
+}
+
+install_hooks() {
+    local settings_file=".claude/settings.local.json"
+
+    print_step "4/4" "Configure hooks?"
+    echo "    Hooks auto-trigger DCF checkpoints on edits and destructive commands."
     echo ""
-else
-    echo "    (Non-interactive mode - skipping hooks)"
-    REPLY="n"
-fi
 
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    SETTINGS_FILE=".claude/settings.local.json"
+    if ! is_interactive; then
+        echo "    (Non-interactive mode - skipping hooks)"
+        return 0
+    fi
 
-    if [ -f "$SETTINGS_FILE" ]; then
-        echo -e "${YELLOW}    $SETTINGS_FILE already exists.${NC}"
-        read -p "    Overwrite with example hooks? (existing file will be backed up) [y/N] " -n 1 -r
-        echo ""
-        if [[ $REPLY =~ ^[Yy]$ ]]; then
-            cp "$SETTINGS_FILE" "$SETTINGS_FILE.backup.$(date +%Y%m%d%H%M%S)"
-            echo -e "${GREEN}    Backed up existing settings${NC}"
-            if curl -fsSL -o "$SETTINGS_FILE" "$BASE_URL/.claude/settings.example.json"; then
-                echo -e "${GREEN}  ✓ Installed hooks to $SETTINGS_FILE${NC}"
-            else
-                echo -e "${RED}  ✗ Failed to download settings.example.json${NC}"
+    if ! confirm "    Install example hooks to current project?"; then
+        print_info "    Skipping hooks. See .claude/settings.example.json for manual setup."
+        return 0
+    fi
+
+    if [[ -f "$settings_file" ]]; then
+        print_warning "    $settings_file already exists."
+
+        if confirm "    Overwrite with example hooks? (existing file will be backed up)"; then
+            backup_file "$settings_file" > /dev/null
+            print_success "    Backed up existing settings"
+
+            if download_file "$BASE_URL/.claude/settings.example.json" "$settings_file"; then
+                print_success "  Installed hooks to $settings_file"
             fi
         else
-            echo -e "${BLUE}    Skipping hooks installation.${NC}"
-            echo -e "${BLUE}    See: $BASE_URL/.claude/settings.example.json${NC}"
+            print_info "    Skipping hooks installation."
+            print_info "    See: $BASE_URL/.claude/settings.example.json"
         fi
     else
         mkdir -p .claude
-        if curl -fsSL -o "$SETTINGS_FILE" "$BASE_URL/.claude/settings.example.json"; then
-            echo -e "${GREEN}  ✓ Installed hooks to $SETTINGS_FILE${NC}"
-        else
-            echo -e "${RED}  ✗ Failed to download settings.example.json${NC}"
+        if download_file "$BASE_URL/.claude/settings.example.json" "$settings_file"; then
+            print_success "  Installed hooks to $settings_file"
         fi
     fi
-else
-    echo -e "${BLUE}    Skipping hooks. See .claude/settings.example.json for manual setup.${NC}"
-fi
+}
 
-# Summary
-echo ""
-echo -e "${GREEN}═══════════════════════════════════════════════════════════${NC}"
-echo -e "${GREEN}  DCF Installation Complete!${NC}"
-echo -e "${GREEN}═══════════════════════════════════════════════════════════${NC}"
-echo ""
-echo "  Installed:"
-echo "    • ~/.claude/skills/dcf.md     (global /dcf skill)"
-echo "    • ~/bin/dcf-workflow          (workflow automation)"
-echo ""
-echo "  Next steps:"
-echo "    1. Restart terminal or run: source $SHELL_CONFIG"
-echo "    2. Restart Claude Code session (for hooks)"
-echo "    3. Try: /dcf or dcf-workflow --help"
-echo ""
-echo "  Documentation:"
-echo "    https://github.com/domelic/architecture-of-thought"
-echo ""
+show_summary() {
+    local shell_config="$1"
+
+    echo ""
+    print_success "═══════════════════════════════════════════════════════════"
+    print_success "  DCF Installation Complete!"
+    print_success "═══════════════════════════════════════════════════════════"
+    echo ""
+    echo "  Installed:"
+    echo "    • ~/.claude/skills/dcf.md     (global /dcf skill)"
+    echo "    • ~/bin/dcf-workflow          (workflow automation)"
+    echo ""
+    echo "  Next steps:"
+    echo "    1. Restart terminal or run: source $shell_config"
+    echo "    2. Restart Claude Code session (for hooks)"
+    echo "    3. Try: /dcf or dcf-workflow --help"
+    echo ""
+    echo "  Documentation:"
+    echo "    https://github.com/domelic/architecture-of-thought"
+    echo ""
+}
+
+# =============================================================================
+# Main
+# =============================================================================
+
+main() {
+    local force=false
+
+    # Parse arguments
+    for arg in "$@"; do
+        case "$arg" in
+            --force)
+                force=true
+                ;;
+            --help|-h)
+                show_help
+                exit 0
+                ;;
+            *)
+                print_error "Unknown option: $arg"
+                show_help
+                exit 1
+                ;;
+        esac
+    done
+
+    local shell_config
+    shell_config=$(detect_shell_config)
+
+    show_banner
+
+    # Run installation steps
+    install_dcf_skill "$force" || exit 1
+    install_dcf_workflow "$force" || exit 1
+    configure_path "$shell_config"
+    install_hooks
+
+    show_summary "$shell_config"
+}
+
+main "$@"
