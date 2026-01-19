@@ -8,7 +8,9 @@
 
 > **DCF positions LLMs as *thinking mirrors*: collaborative partners in the architecture of thought itself.**
 
-**What is DCF?** A methodology for working with AI that emphasizes *questioning over extraction*. Instead of "give me the answer," you engage in structured Socratic dialogue that surfaces assumptions, explores alternatives, and builds genuine understanding. DCF operates as a "cognitive operating system" that runs on top of whatever agentic framework you choose.
+**What is DCF?** A methodology for working with AI that emphasizes *questioning over extraction*. Instead of "give me the answer," you engage in structured Socratic dialogue that surfaces assumptions, explores alternatives, and builds genuine understanding.
+
+DCF operates at the *micro level* of human-AI interaction—the cognitive strategy for how to think during checkpoints, reviews, and approvals. It's a "cognitive operating system" that runs on top of whatever agentic framework you choose.
 
 <details>
 <summary><strong>What's included</strong></summary>
@@ -110,22 +112,22 @@ Quick adversarial checkpoint based on Hills (2025) research:
 
 ### Daily Practice
 
-| Resource | Description |
-|----------|-------------|
-| [Prompt Library](resources/DCF_PROMPT_LIBRARY.md) | Ready-to-use Socratic prompts for any situation |
-| [CLAUDE.md Template](resources/CLAUDE_MD_TEMPLATE.md) | DCF-informed project configuration |
-| [Self-Assessment](resources/DCF_SELF_ASSESSMENT.md) | Weekly reflection template |
-| [Workshop Exercises](resources/DCF_WORKSHOP_EXERCISES.md) | 8 hands-on practice scenarios |
+| Resource | Description | Use Case |
+|----------|-------------|----------|
+| [Prompt Library](resources/DCF_PROMPT_LIBRARY.md) | Ready-to-use Socratic prompts | Daily AI interactions |
+| [CLAUDE.md Template](resources/CLAUDE_MD_TEMPLATE.md) | DCF-informed project configuration | Starting new projects |
+| [Self-Assessment](resources/DCF_SELF_ASSESSMENT.md) | Weekly reflection template | Tracking growth |
+| [Workshop Exercises](resources/DCF_WORKSHOP_EXERCISES.md) | 8 hands-on practice scenarios | Skill development |
 
 ### Reference
 
-| Resource | Description |
-|----------|-------------|
-| [Visual Guide](resources/DCF_VISUAL_GUIDE.md) | Diagrams and visual references |
-| [FAQ](resources/DCF_FAQ.md) | Comprehensive Q&A |
-| [Glossary](resources/DCF_GLOSSARY.md) | 40+ term definitions |
-| [Framework Integration](resources/DCF_FRAMEWORK_INTEGRATION.md) | DCF + Ralph, Plan Mode, BMAD |
-| [Comparison Matrix](resources/DCF_COMPARISON_MATRIX.md) | DCF vs other methodologies |
+| Resource | Description | Use Case |
+|----------|-------------|----------|
+| [Visual Guide](resources/DCF_VISUAL_GUIDE.md) | Diagrams and visual references | Quick lookup |
+| [FAQ](resources/DCF_FAQ.md) | Comprehensive Q&A | Common questions |
+| [Glossary](resources/DCF_GLOSSARY.md) | 40+ term definitions | Term lookup |
+| [Framework Integration](resources/DCF_FRAMEWORK_INTEGRATION.md) | DCF + Ralph, Plan Mode, BMAD | Combining methodologies |
+| [Comparison Matrix](resources/DCF_COMPARISON_MATRIX.md) | DCF vs other methodologies | Choosing approaches |
 
 ### Case Studies
 
@@ -139,12 +141,12 @@ See [examples/README.md](examples/README.md) for the full collection.
 
 ### Team Adoption
 
-| Resource | Description |
-|----------|-------------|
-| [Team Adoption Playbook](resources/DCF_TEAM_ADOPTION_PLAYBOOK.md) | 5-phase organizational guide |
-| [Slide Deck](resources/DCF_SLIDE_DECK.md) | Presentation for teaching DCF |
-| [Case Study Template](resources/DCF_CASE_STUDY_TEMPLATE.md) | Standardized documentation format |
-| [Reading List](resources/DCF_READING_LIST.md) | Annotated bibliography for deeper learning |
+| Resource | Description | Use Case |
+|----------|-------------|----------|
+| [Team Adoption Playbook](resources/DCF_TEAM_ADOPTION_PLAYBOOK.md) | 5-phase organizational guide | Rolling out DCF |
+| [Slide Deck](resources/DCF_SLIDE_DECK.md) | Presentation for teaching DCF | Team training |
+| [Case Study Template](resources/DCF_CASE_STUDY_TEMPLATE.md) | Standardized documentation format | Sharing experiences |
+| [Reading List](resources/DCF_READING_LIST.md) | Annotated bibliography | Deeper learning |
 
 ---
 
