@@ -367,14 +367,18 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 │       ├── stale.yml                 # Inactive issue management
 │       └── welcome.yml               # New contributor greeting
 ├── .claude/
-│   ├── skills/
-│   │   ├── dcf.md                    # Claude Code skill for DCF
-│   │   └── archive/
-│   │       └── dcf-procedural.md     # Legacy procedural version
+│   ├── commands/
+│   │   └── dcf.md                    # Claude Code skill for DCF
 │   ├── scripts/
 │   │   ├── dcf-workflow              # Workflow automation script
+│   │   ├── install-dcf.sh            # Installation script
 │   │   └── README.md                 # Scripts documentation
 │   └── settings.example.json         # Example hooks configuration
+├── .serena/
+│   ├── .gitignore                    # Cache exclusion
+│   ├── project.yml                   # Serena project configuration
+│   └── memories/
+│       └── LATEX_EDITING_GUIDE.md    # LaTeX document editing guide
 ├── examples/
 │   ├── README.md                     # Examples overview
 │   ├── CASE_STUDY_debugging_race_condition.md
