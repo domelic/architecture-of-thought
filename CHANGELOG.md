@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.3.1](https://github.com/domelic/architecture-of-thought/compare/v2.3.0...v2.3.1) (2026-01-19)
+
+
+### Bug Fixes
+
+* remove errant 'text' from closing code fences in README ([#26](https://github.com/domelic/architecture-of-thought/issues/26)) ([d8b524d](https://github.com/domelic/architecture-of-thought/commit/d8b524dc6511d7be377f053712e9b6b8b485a31e))
+
 ## [2.3.0](https://github.com/domelic/architecture-of-thought/compare/v2.2.2...v2.3.0) (2026-01-19)
 
 
