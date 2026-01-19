@@ -43,17 +43,6 @@ Applies Socratic questioning contextually. See `.claude/skills/dcf.md` for full 
 | Learning & Exploration | `learn`, `onboard`, `explain` |
 | Session Management | `compact`, `context-health`, `retro`, `skill` |
 
-### `/github-release <tag>` — Create GitHub Releases
-
-Uses Playwright browser automation to publish releases from CHANGELOG.md content.
-
-```bash
-/github-release v3.0.0
-/github-release v2.1.0 "Bug fixes and performance improvements"
-```text
-
-Requires: tag pushed to remote, user authenticated to GitHub, Playwright MCP available.
-
 ## Workflow Automation
 
 The `dcf-workflow` script chains DCF modes with checkpoints:

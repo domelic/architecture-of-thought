@@ -279,7 +279,6 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ├── .claude/
 │   ├── skills/
 │   │   ├── dcf.md                    # Claude Code skill for DCF
-│   │   ├── github-release.md         # Skill for creating GitHub releases
 │   │   └── archive/
 │   │       └── dcf-procedural.md     # Legacy procedural version
 │   ├── scripts/
