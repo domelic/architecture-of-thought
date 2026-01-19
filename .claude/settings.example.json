@@ -1,69 +1,60 @@
 {
-  "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/settings-schema.json",
-  "_comment": "Example Claude Code settings with DCF hooks. Copy to settings.json to use.",
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
 
   "hooks": {
-    "post_tool_call": [
+    "PostToolUse": [
       {
-        "_comment": "Prompt reflection after file edits",
-        "tool": "Edit",
-        "command": "echo '\n💭 DCF Checkpoint: What assumptions did this edit make?'"
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '💭 DCF Checkpoint: What assumptions did this edit make?'"
+          }
+        ]
       },
       {
-        "_comment": "Prompt reflection after writes",
-        "tool": "Write",
-        "command": "echo '\n💭 DCF Checkpoint: Does this new file align with the original intent?'"
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '💭 DCF Checkpoint: Does this new file align with the original intent?'"
+          }
+        ]
       }
     ],
 
-    "pre_tool_call": [
+    "PreToolUse": [
       {
-        "_comment": "Pause before destructive bash commands",
-        "tool": "Bash",
-        "match": "(rm|git reset|git push.*-f)",
-        "command": "echo '⚠️  Destructive command detected. Apply DCF review before proceeding.'"
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo \"$TOOL_INPUT\" | grep -qE '(rm -rf|git reset --hard|git push.*-f)'; then echo '⚠️  Destructive command detected. Apply DCF review before proceeding.' >&2; fi"
+          }
+        ]
       }
     ],
 
-    "on_session_start": [
+    "SessionStart": [
       {
-        "_comment": "Remind about DCF at session start",
-        "command": "echo '🪞 DCF Active: Think WITH the AI, not just use it.'"
-      }
-    ],
-
-    "on_mode_change": [
-      {
-        "_comment": "Checkpoint when switching modes",
-        "from": "plan",
-        "to": "implement",
-        "command": "echo '\n📋 Transitioning from Plan to Implement. Run /dcf checkpoint to review the plan.'"
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '🪞 DCF Active: Think WITH the AI, not just use it.'"
+          }
+        ]
       }
     ]
   },
 
   "permissions": {
-    "_comment": "DCF suggests explicit approval for high-stakes operations",
     "allow": [
       "Read",
       "Glob",
       "Grep",
       "LS"
     ],
-    "ask": [
-      "Edit",
-      "Write",
-      "Bash"
-    ]
-  },
-
-  "model": {
-    "_comment": "DCF model selection: match capability to stakes",
-    "default": "sonnet",
-    "tasks": {
-      "explore": "haiku",
-      "plan": "sonnet",
-      "architect": "opus"
-    }
+    "deny": [],
+    "additionalDirectories": []
   }
 }
