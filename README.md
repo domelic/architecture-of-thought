@@ -314,7 +314,7 @@ See [examples/README.md](examples/README.md) for the full collection.
 | Format | Link |
 |--------|------|
 | Free PDF | [Download (265 pages)](THE_ARCHITECTURE_OF_THOUGHT.pdf) |
-| Free EPUB | [Download](https://github.com/domelic/architecture-of-thought/releases/latest/download/Omelic-Architecture-of-Thought.epub) |
+| Free EPUB | [Download](https://github.com/domelic/architecture-of-thought/releases/latest) |
 | Kindle | [Amazon ($9.99)](https://www.amazon.com/dp/B0GHM2M6HR) |
 
 [![Pages](https://img.shields.io/badge/Pages-265-blue.svg)](THE_ARCHITECTURE_OF_THOUGHT.pdf)
