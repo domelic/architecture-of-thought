@@ -171,7 +171,7 @@ Add to the appropriate section (marked by comment headers like `% EXTENDED MIND`
 
 ## Key Source Relationships
 
-```
+```text
 Clark & Chalmers (Extended Mind)
     ├── Informs Thinking Mirror hypothesis
     └── Connects to Hutchins (system-level)

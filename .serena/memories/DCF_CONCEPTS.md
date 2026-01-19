@@ -63,7 +63,7 @@ Quick reference for Dialectical Cognition Framework terminology, modes, and rela
 
 ## Core Loop
 
-```
+```text
 Articulate → Generate → Evaluate → Refine
      ↑______________________________|
 ```

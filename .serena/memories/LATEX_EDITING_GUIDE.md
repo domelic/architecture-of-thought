@@ -13,7 +13,7 @@ The document is a ~5,400-line LaTeX treatise structured as a `report` class docu
 
 ## Document Structure Map
 
-```
+```text
 Lines 1-92:      Preamble (packages, configuration, custom environments)
 Lines 93-167:    Title page and front matter setup
 Lines 168-295:   PART I: Core Philosophy (Chapters 1-3)

@@ -101,7 +101,7 @@ All 14 anti-patterns defined in Part VIII, Chapter "Failure Modes and Mitigation
 
 ## Concept Dependency Graph
 
-```
+```text
 Extended Mind (Clark & Chalmers)
     └── Thinking Mirror Hypothesis
         └── Collaboration Over Extraction
