@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.4.4](https://github.com/domelic/architecture-of-thought/compare/v2.4.3...v2.4.4) (2026-01-19)
+
+
+### Bug Fixes
+
+* have Release Please manage CITATION.cff version ([#48](https://github.com/domelic/architecture-of-thought/issues/48)) ([637dacb](https://github.com/domelic/architecture-of-thought/commit/637dacbac90e9b1e6ca39b14abc3b4aeb4d80740))
+
 ## [2.4.3](https://github.com/domelic/architecture-of-thought/compare/v2.4.2...v2.4.3) (2026-01-19)
 
 
