@@ -44,33 +44,6 @@ Add project-specific words to `.cspell.json` `words` array when needed.
 | `resources/CLAUDE_MD_TEMPLATE.md` | Template for DCF-informed CLAUDE.md files |
 | `references.bib` | BibTeX bibliography (31 sources) |
 
-## Serena Code Intelligence
-
-This project has Serena MCP configured with a memory for LaTeX editing.
-
-### Available Memory
-
-| Memory | Purpose |
-|--------|---------|
-| `LATEX_EDITING_GUIDE` | Document structure map, editing patterns, LaTeX conventions |
-
-### Using the Memory
-
-When editing `THE_ARCHITECTURE_OF_THOUGHT.tex`, read the guide first:
-
-```text
-Serena: read_memory
-  memory_file_name: "LATEX_EDITING_GUIDE.md"
-```
-
-The guide includes:
-
-- Line ranges for all 12 Parts and appendices
-- Templates for adding sections, chapters, parts
-- LaTeX patterns (tables, quote boxes, code listings)
-- Cross-referencing and indexing conventions
-- Build verification sequence
-
 ## Available Skills
 
 ### `/dcf [mode] [context]` — Socratic Dialogue
@@ -155,13 +128,26 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for full details.
 
 ### Serena Code Intelligence
 
-This project has Serena MCP configured with a memory for LaTeX editing.
+This project has Serena MCP configured with memories for editing the treatise.
 
 | Memory | Purpose |
 |--------|---------|
 | `LATEX_EDITING_GUIDE` | Document structure map, line ranges, editing patterns, LaTeX conventions |
+| `DCF_CONCEPTS` | 21 modes, Socratic toolkit, anti-patterns, terminology quick reference |
+| `STYLE_GUIDE` | Writing conventions, tone, terminology preferences, formatting patterns |
+| `CROSS_REFERENCES` | Concept dependencies, term definition locations, label/ref conventions |
+| `BIBLIOGRAPHY_SOURCES` | Annotated sources by topic, citation guidance, reference relationships |
+| `REVISION_DECISIONS` | Editorial decision log, style precedents, rejected alternatives |
 
-When editing `THE_ARCHITECTURE_OF_THOUGHT.tex`, read the memory first to understand document structure and conventions.
+**Before editing the LaTeX document**, read relevant memories:
+- `LATEX_EDITING_GUIDE` - Where and how to edit
+- `STYLE_GUIDE` - How to write consistently
+- `CROSS_REFERENCES` - What depends on what
+- `DCF_CONCEPTS` - Quick reference for framework terms
+
+**When adding citations**: Consult `BIBLIOGRAPHY_SOURCES` for context on existing references.
+
+**When making editorial decisions**: Log significant choices in `REVISION_DECISIONS`.
 
 ### Zotero Research Library
 

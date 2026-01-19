@@ -378,7 +378,12 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 │   ├── .gitignore                    # Cache exclusion
 │   ├── project.yml                   # Serena project configuration
 │   └── memories/
-│       └── LATEX_EDITING_GUIDE.md    # LaTeX document editing guide
+│       ├── LATEX_EDITING_GUIDE.md    # Document structure and editing patterns
+│       ├── DCF_CONCEPTS.md           # Framework terminology quick reference
+│       ├── STYLE_GUIDE.md            # Writing conventions and formatting
+│       ├── CROSS_REFERENCES.md       # Concept dependencies and locations
+│       ├── BIBLIOGRAPHY_SOURCES.md   # Annotated citation guide
+│       └── REVISION_DECISIONS.md     # Editorial decision log
 ├── examples/
 │   ├── README.md                     # Examples overview
 │   ├── CASE_STUDY_debugging_race_condition.md
