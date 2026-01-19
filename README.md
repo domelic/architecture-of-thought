@@ -22,7 +22,7 @@ The framework synthesizes insights from Socratic philosophy, cognitive science, 
 2. **12 core principles** including Socratic dialogue, recursive refinement, and anticipatory calibration
 3. A **Claude Code skill** with 21 modes across 5 categories (evaluation, problem-solving, design, learning, session management)
 4. **14 documented anti-patterns** with diagnostic questions and mitigations
-5. Positioning within the 2025 AI methodology landscape (ACE-FCA, 12-Factor Agents, BMAD, Ralph)
+5. Positioning within the 2025-2026 AI methodology landscape (ACE-FCA, 12-Factor Agents, BMAD, Ralph)
 
 DCF operates at the *micro level* of human-AI interaction—the cognitive strategy for how humans should think during checkpoints, reviews, and approvals. It serves as a "cognitive operating system" that runs on top of whatever agentic framework practitioners choose.
 
