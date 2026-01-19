@@ -1,0 +1,150 @@
+name: Amazon KDP Publish
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version tag (e.g., v3.0.0)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  build-epub:
+    runs-on: ubuntu-latest
+    outputs:
+      epub_name: ${{ steps.build.outputs.epub_name }}
+      version: ${{ steps.version.outputs.version }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get version
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            VERSION="${{ inputs.version }}"
+          else
+            VERSION="${{ github.event.release.tag_name }}"
+          fi
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+          echo "Version: ${VERSION}"
+
+      - name: Install Pandoc and dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-latex-base texlive-fonts-recommended
+
+      - name: Build EPUB
+        id: build
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          EPUB_NAME="THE_ARCHITECTURE_OF_THOUGHT_${VERSION}.epub"
+
+          # Build EPUB using Pandoc
+          pandoc THE_ARCHITECTURE_OF_THOUGHT.tex -o "${EPUB_NAME}" \
+            --toc \
+            --toc-depth=2 \
+            --epub-cover-image=cover.jpg \
+            --metadata title="The Architecture of Thought" \
+            --metadata subtitle="The Dialectical Cognition Framework" \
+            --metadata author="Damir Omelic" \
+            --metadata date="$(date +%Y)" \
+            --bibliography=references.bib \
+            --citeproc \
+            || echo "Pandoc build completed with warnings"
+
+          # Verify EPUB was created
+          if [ -f "${EPUB_NAME}" ]; then
+            echo "EPUB created successfully: ${EPUB_NAME}"
+            echo "epub_name=${EPUB_NAME}" >> $GITHUB_OUTPUT
+            ls -la "${EPUB_NAME}"
+          else
+            echo "Error: EPUB file not created"
+            exit 1
+          fi
+
+      - name: Upload EPUB as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: epub-${{ steps.version.outputs.version }}
+          path: ${{ steps.build.outputs.epub_name }}
+          retention-days: 90
+
+      - name: Upload EPUB to release
+        if: github.event_name == 'release'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload "${{ github.event.release.tag_name }}" \
+            "${{ steps.build.outputs.epub_name }}" \
+            --clobber
+
+  create-kdp-issue:
+    needs: build-epub
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create KDP upload issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION="${{ needs.build-epub.outputs.version }}"
+          EPUB_NAME="${{ needs.build-epub.outputs.epub_name }}"
+
+          # Check if issue already exists
+          EXISTING=$(gh issue list --label "amazon-kdp" --state open --json number --jq length)
+          if [ "$EXISTING" -gt "0" ]; then
+            echo "KDP upload issue already exists, skipping creation"
+            exit 0
+          fi
+
+          gh issue create \
+            --title "Amazon KDP: Upload ${VERSION}" \
+            --label "amazon-kdp,release" \
+            --body "## Amazon KDP Upload Required
+
+A new release **${VERSION}** has been published and the EPUB has been built.
+
+### Download EPUB
+
+- **From Release**: [${EPUB_NAME}](https://github.com/${{ github.repository }}/releases/download/${VERSION}/${EPUB_NAME})
+- **From Artifacts**: Check the [Actions run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+### Upload Checklist
+
+- [ ] Download the EPUB file from the release
+- [ ] Log in to [KDP](https://kdp.amazon.com)
+- [ ] Navigate to your book's Kindle eBook Content
+- [ ] Upload the new EPUB file
+- [ ] Review the preview in Kindle Previewer
+- [ ] Update the version number in book details if needed
+- [ ] Save and publish changes
+- [ ] Wait for Amazon review (24-72 hours)
+
+### Book Details
+
+| Field | Value |
+|-------|-------|
+| Title | The Architecture of Thought |
+| Subtitle | The Dialectical Cognition Framework |
+| Author | Damir Omelic |
+| Version | ${VERSION} |
+
+### After Publishing
+
+- [ ] Verify the update is live on Amazon
+- [ ] Close this issue
+
+---
+*This issue was automatically created by the Amazon KDP Publish workflow.*
+"
