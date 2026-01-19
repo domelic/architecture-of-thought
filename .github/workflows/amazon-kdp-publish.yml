@@ -52,7 +52,7 @@ jobs:
         id: build
         run: |
           VERSION="${{ steps.version.outputs.version }}"
-          EPUB_NAME="THE_ARCHITECTURE_OF_THOUGHT_${VERSION}.epub"
+          EPUB_NAME="Omelic-Architecture-of-Thought-${VERSION}.epub"
 
           # Build pandoc command with optional arguments
           PANDOC_ARGS="--toc --toc-depth=2"
