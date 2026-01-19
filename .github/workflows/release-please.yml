@@ -37,7 +37,16 @@ jobs:
           ref: main
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Upload PDF to release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload "${{ needs.release-please.outputs.tag_name }}" \
+            THE_ARCHITECTURE_OF_THOUGHT.pdf \
+            --clobber
+
       - name: Update CITATION.cff
+        continue-on-error: true
         run: |
           VERSION="${{ needs.release-please.outputs.version }}"
           TODAY=$(date +%Y-%m-%d)
@@ -48,18 +57,9 @@ jobs:
 
           echo "Updated CITATION.cff to version $VERSION, date $TODAY"
 
-      - name: Commit CITATION.cff update
-        run: |
+          # Commit and push (may fail due to branch protection)
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add CITATION.cff
-          git diff --staged --quiet || git commit -m "chore: update CITATION.cff to v${{ needs.release-please.outputs.version }}"
-          git push origin main
-
-      - name: Upload PDF to release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh release upload "${{ needs.release-please.outputs.tag_name }}" \
-            THE_ARCHITECTURE_OF_THOUGHT.pdf \
-            --clobber
+          git diff --staged --quiet || git commit -m "chore: update CITATION.cff to v${VERSION}"
+          git push origin main || echo "::warning::Could not push CITATION.cff update - branch protection requires PR"
