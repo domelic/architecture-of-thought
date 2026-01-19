@@ -57,6 +57,138 @@ is_workflow() {
 }
 
 # -----------------------------------------------------------------------------
+# Contextual checkpoint questions per workflow transition
+# -----------------------------------------------------------------------------
+
+get_checkpoint_questions() {
+    local workflow="$1"
+    local current_mode="$2"
+    local next_mode="$3"
+    local transition="${current_mode}→${next_mode}"
+
+    case "$workflow" in
+        new-project)
+            case "$transition" in
+                "onboard→architect")
+                    printf "  • Do you understand the codebase structure and key patterns?\n"
+                    printf "  • What constraints or tech debt did onboarding reveal?\n"
+                    printf "  • Are there architectural decisions already baked in?\n"
+                    ;;
+                "architect→premortem")
+                    printf "  • Is the architecture design complete and coherent?\n"
+                    printf "  • What are the riskiest parts of this design?\n"
+                    printf "  • What dependencies or integrations need special attention?\n"
+                    ;;
+            esac
+            ;;
+        debug)
+            case "$transition" in
+                "debug→assumptions")
+                    printf "  • Is the bug's behavior clearly understood and reproducible?\n"
+                    printf "  • What assumptions are you making about the root cause?\n"
+                    printf "  • Have you ruled out environmental or data issues?\n"
+                    ;;
+                "assumptions→simplify")
+                    printf "  • Did questioning assumptions reveal blind spots?\n"
+                    printf "  • Can you reduce the problem scope further?\n"
+                    printf "  • What's the minimal test case that reproduces this?\n"
+                    ;;
+            esac
+            ;;
+        decision)
+            case "$transition" in
+                "tradeoffs→challenge")
+                    printf "  • Are all viable options on the table with clear tradeoffs?\n"
+                    printf "  • What option are you leaning toward and why?\n"
+                    printf "  • What's being overlooked or underweighted?\n"
+                    ;;
+                "challenge→decide")
+                    printf "  • Have the options been stress-tested against edge cases?\n"
+                    printf "  • Are there reversibility concerns with any option?\n"
+                    printf "  • Ready to commit, or need more information?\n"
+                    ;;
+            esac
+            ;;
+        learning)
+            case "$transition" in
+                "learn→explain")
+                    printf "  • Do you understand the concept well enough to explain it?\n"
+                    printf "  • What mental models or analogies help clarify this?\n"
+                    printf "  • What aspects are still fuzzy?\n"
+                    ;;
+                "explain→retro")
+                    printf "  • Did explaining reveal gaps in understanding?\n"
+                    printf "  • What would you teach differently next time?\n"
+                    printf "  • How does this connect to what you already knew?\n"
+                    ;;
+            esac
+            ;;
+        unstuck)
+            case "$transition" in
+                "diagnose→unstick")
+                    printf "  • Is the root cause of being stuck identified?\n"
+                    printf "  • Is this a knowledge gap, tooling issue, or unclear requirements?\n"
+                    printf "  • What's the single biggest blocker right now?\n"
+                    ;;
+                "unstick→simplify")
+                    printf "  • Did the unsticking reveal a path forward?\n"
+                    printf "  • Can the approach be simplified further?\n"
+                    printf "  • What can be deferred or eliminated entirely?\n"
+                    ;;
+            esac
+            ;;
+        session-end)
+            case "$transition" in
+                "context-health→compact")
+                    printf "  • Is the context still coherent or has it drifted?\n"
+                    printf "  • What key decisions and findings must be preserved?\n"
+                    printf "  • What can be safely forgotten?\n"
+                    ;;
+                "compact→retro")
+                    printf "  • Is SESSION_FINDINGS.md ready for the next session?\n"
+                    printf "  • What worked well this session?\n"
+                    printf "  • What would you do differently?\n"
+                    ;;
+            esac
+            ;;
+        code-review)
+            case "$transition" in
+                "review→assumptions")
+                    printf "  • Does the code do what it claims to do?\n"
+                    printf "  • What assumptions is this code making about inputs/state?\n"
+                    printf "  • Are there obvious bugs, security issues, or edge cases?\n"
+                    ;;
+                "assumptions→challenge")
+                    printf "  • Did assumption-questioning reveal hidden risks?\n"
+                    printf "  • What alternative approaches could work better?\n"
+                    printf "  • Is this code solving the right problem?\n"
+                    ;;
+            esac
+            ;;
+        pre-implementation)
+            case "$transition" in
+                "architect→tradeoffs")
+                    printf "  • Is the high-level architecture defined?\n"
+                    printf "  • What key technical decisions need to be made?\n"
+                    printf "  • What are the integration points and dependencies?\n"
+                    ;;
+                "tradeoffs→premortem")
+                    printf "  • Are the tradeoffs understood and documented?\n"
+                    printf "  • Which decisions are reversible vs. one-way doors?\n"
+                    printf "  • What could cause this implementation to fail?\n"
+                    ;;
+            esac
+            ;;
+        *)
+            # Generic fallback for custom workflows
+            printf "  • Did the previous mode achieve its outcome?\n"
+            printf "  • What insights emerged that inform the next step?\n"
+            printf "  • Should you branch to a different mode instead?\n"
+            ;;
+    esac
+}
+
+# -----------------------------------------------------------------------------
 # Utility functions
 # -----------------------------------------------------------------------------
 
@@ -210,14 +342,15 @@ display_mode() {
 }
 
 show_checkpoint() {
-    local next_mode="$1"
+    local workflow="$1"
+    local current_mode="$2"
+    local next_mode="$3"
 
     printf "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}\n"
     printf "${YELLOW}▋ CHECKPOINT${NC}\n\n"
     printf "  Before proceeding to '%s':\n" "$next_mode"
-    printf "  • Did the previous mode achieve its outcome?\n"
-    printf "  • What insights emerged that inform the next step?\n"
-    printf "  • Should you branch to a different mode instead?\n\n"
+    get_checkpoint_questions "$workflow" "$current_mode" "$next_mode"
+    printf "\n"
     read -r -p "  Press Enter to continue, or Ctrl+C to stop... "
     printf "\n"
 }
@@ -238,8 +371,9 @@ display_plan() {
 }
 
 run_workflow() {
-    local context="$1"
-    shift
+    local workflow="$1"
+    local context="$2"
+    shift 2
     local modes=("$@")
     local mode next_mode
     local i
@@ -257,7 +391,7 @@ run_workflow() {
         # Checkpoint between modes (not after last)
         if (( i < count - 1 )); then
             next_mode="${modes[$((i + 1))]}"
-            show_checkpoint "$next_mode"
+            show_checkpoint "$workflow" "$mode" "$next_mode"
         fi
     done
 
@@ -274,6 +408,7 @@ main() {
     local dry_run=false
     local modes=()
     local context=""
+    local workflow_name="custom"
     local arg
     local workflow_modes
     local positional_args=()
@@ -326,12 +461,14 @@ main() {
         if [[ "$arg" =~ ^[a-z-]+$ ]] && (( ${#arg} < 20 )); then
             # If only one mode-like arg and it's a workflow, expand it
             if (( mode_count == 1 )) && is_workflow "$arg" && (( ${#modes[@]} == 0 )); then
+                workflow_name="$arg"
                 workflow_modes="$(get_workflow "$arg")"
                 read -ra modes <<< "$workflow_modes"
             elif is_valid_mode "$arg"; then
                 modes+=("$arg")
             elif is_workflow "$arg" && (( ${#modes[@]} == 0 )); then
                 # Workflow name that's not also a mode (e.g., new-project)
+                workflow_name="$arg"
                 workflow_modes="$(get_workflow "$arg")"
                 read -ra modes <<< "$workflow_modes"
             else
@@ -361,7 +498,7 @@ main() {
     fi
 
     # Run
-    run_workflow "$context" "${modes[@]}"
+    run_workflow "$workflow_name" "$context" "${modes[@]}"
 }
 
 main "$@"
