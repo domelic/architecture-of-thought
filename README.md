@@ -148,9 +148,13 @@ This work is intended for:
 - Knowledge workers seeking deeper AI engagement
 - Anyone moving beyond surface-level prompting
 
-### Claude Code Skill
+### Claude Code Skills
 
-This repository includes a `/dcf` skill for Claude Code—a principle-based approach that trusts Claude to apply Socratic questioning contextually:
+This repository includes two skills for Claude Code:
+
+#### `/dcf [mode] [context]` — Socratic Dialogue
+
+A principle-based approach that trusts Claude to apply Socratic questioning contextually:
 
 ```bash
 /dcf [mode] [context]
@@ -191,6 +195,18 @@ This repository includes a `/dcf` skill for Claude Code—a principle-based appr
 /dcf retro               # Capture learning
 /dcf skill               # Capture pattern as reusable skill
 ```
+
+#### `/cybw [target]` — Could You Be Wrong?
+
+Quick adversarial checkpoint based on Hills (2025) metacognitive prompting research. Surfaces errors, biases, contradictory evidence, and alternatives absent from initial responses.
+
+```bash
+/cybw                           # Challenge the last response
+/cybw the caching strategy      # Challenge a specific decision
+/cybw "users want this feature" # Challenge a specific assumption
+```
+
+Use `/cybw` for fast checks. Use `/dcf challenge` for full structured analysis.
 
 **Workflow Automation:** Use the `dcf-workflow` script to chain modes with checkpoints:
 
