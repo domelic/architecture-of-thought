@@ -94,6 +94,18 @@ Annotated reference guide for THE_ARCHITECTURE_OF_THOUGHT citations.
 
 ---
 
+### Metacognition and Human-AI Collaboration Research
+
+| Key | Author(s) | Work | Use In Document |
+|-----|-----------|------|-----------------|
+| `hills2025metacognitive` | Hills | "Could You Be Wrong" (2025) | Checkpoint protocol validation, adversarial information generation |
+| `socrai2025autonomy` | Kovács & Szelényi | "Addressing Autonomy Risks in Generative Chatbots" (2025) | Autonomy risks (false mental states, cognitive deskilling) |
+| `mentalmodels2025` | Weber, Müller, Fischer | "Development of Mental Models in Human-AI Collaboration" (2025) | Mental Model Triad (domain, processing, complementarity-awareness) |
+
+**When to cite**: Checkpoint protocol ("could you be wrong?"), theoretical grounding for anti-patterns, mental model development.
+
+---
+
 ### Socratic Method and Critical Thinking
 
 | Key | Author(s) | Work | Use In Document |
@@ -186,9 +198,19 @@ Gadamer (Hermeneutics)
 
 Popper (Critical Rationalism)
     └── Testing assumptions
-        └── Elenchus and Evidence operations
+        ├── Elenchus and Evidence operations
+        └── Hills (Could You Be Wrong) - empirical validation
 
 Argyris (Double-Loop Learning)
     └── Questioning mental models
         └── DCF as cognitive upgrade
+
+Kovács & Szelényi (Autonomy Risks)
+    ├── False Mental States → Hallucination Acceptance
+    └── Cognitive Deskilling → Cognitive Atrophy
+
+Weber et al. (Mental Model Triad)
+    ├── Domain model → Learning stance
+    ├── Processing model → Anticipatory calibration
+    └── Complementarity-awareness → Thinking Mirror
 ```

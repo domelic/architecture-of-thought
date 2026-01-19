@@ -178,6 +178,30 @@ Start with the **Essentials**, then explore based on your interests.
 - **Key insight**: Synergy requires measuring task completion, innovation, adaptability, and error detection together
 - **Recommended for**: Those implementing DCF measurement
 
+### Could You Be Wrong
+**Hills, T. T. (2025). "Could You Be Wrong: Metacognitive Prompts for Improving Human Decision Making Help LLMs Identify Their Own Biases." AI, 7(1), 33.**
+
+- **What it is**: Research on metacognitive prompting for debiasing both humans and LLMs
+- **Why it matters for DCF**: Empirical validation of the checkpoint protocol's core question
+- **Key insight**: Asking "could you be wrong?" generates adversarial information (errors, biases, alternatives) absent from initial responses—functions like a second opinion
+- **Recommended for**: Anyone wanting research backing for Socratic questioning
+
+### Addressing Autonomy Risks in Generative Chatbots
+**Kovács, G., & Szelényi, A. (2025). "Addressing Autonomy Risks in Generative Chatbots with the Socratic Method." Frontiers in Artificial Intelligence.**
+
+- **What it is**: Analysis of autonomy risks (false mental states, cognitive deskilling) and Socratic mitigations
+- **Why it matters for DCF**: Theoretical grounding for why anti-patterns matter—they're not just bad habits, they're autonomy risks
+- **Key insight**: The Socratic approach simultaneously improves AI output quality AND prevents user capability degradation
+- **Recommended for**: Those wanting to understand deeper stakes of DCF practice
+
+### Mental Models in Human-AI Collaboration
+**Weber, S., Müller, C., & Fischer, M. (2025). "Development of Mental Models in Human-AI Collaboration." arXiv:2510.08104.**
+
+- **What it is**: Conceptual framework for mental model evolution during AI collaboration
+- **Why it matters for DCF**: Explains what practitioners develop through practice—domain, processing, and complementarity-awareness models
+- **Key insight**: Effective collaboration requires three mental models; the learning stance develops all three simultaneously
+- **Recommended for**: Those interested in skill development theory
+
 ---
 
 ## Systems Thinking
@@ -286,6 +310,8 @@ Start with the **Essentials**, then explore based on your interests.
 | How to learn effectively | Make It Stick |
 | Socratic questioning | Plato's Meno |
 | Human-AI collaboration research | Nature Human Behaviour (2024) |
+| Why "Could you be wrong?" works | Hills (2025) |
+| Why anti-patterns are risky | Kovács & Szelényi (2025) |
 | How LLMs work | The Illustrated Transformer |
 | Organizational change | The Fifth Discipline |
 | Knowledge management | How to Take Smart Notes |
