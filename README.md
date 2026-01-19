@@ -235,24 +235,50 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ```text
 /
 ├── README.md                         # This file
+├── LICENSE                           # All Rights Reserved license
 ├── CLAUDE.md                         # Claude Code project instructions
 ├── DCF_ESSENTIALS.md                 # Condensed practitioner's guide
 ├── CONTRIBUTING.md                   # Contribution guidelines
-├── CHANGELOG.md                      # Version history
+├── CODE_OF_CONDUCT.md                # Community guidelines
+├── CHANGELOG.md                      # Version history (auto-generated)
 ├── RELEASING.md                      # Release process checklist
 ├── CITATION.cff                      # Machine-readable citation
 ├── THE_ARCHITECTURE_OF_THOUGHT.pdf   # Compiled document (198 pages)
 ├── THE_ARCHITECTURE_OF_THOUGHT.tex   # LaTeX source
 ├── references.bib                    # BibTeX bibliography (31 sources)
+├── commitlint.config.js              # Conventional commit enforcement
+├── release-please-config.json        # Release automation config
 ├── assets/
 │   └── cover.jpg                     # Book cover image
-├── docs/
+├── docs/                             # Private documentation (gitignored)
 │   ├── AMAZON_KDP_CONTENT.md         # KDP metadata and description
 │   ├── AMAZON_PUBLISHING_GUIDE.md    # Full publishing documentation
 │   └── CLAUDE_CODE_SKILLS.md         # Claude Code skill development guide
+├── .github/
+│   ├── CODEOWNERS                    # Code ownership definitions
+│   ├── FUNDING.yml                   # Sponsorship configuration
+│   ├── PULL_REQUEST_TEMPLATE.md      # PR template
+│   ├── dependabot.yml                # Dependency update automation
+│   ├── social-preview.svg            # Repository social image
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── bug_report.md             # Bug report template
+│   │   ├── feature_request.md        # Feature request template
+│   │   ├── case_study.md             # Case study submission template
+│   │   └── config.yml                # Template chooser config
+│   └── workflows/
+│       ├── release-please.yml        # Automated releases
+│       ├── amazon-kdp-publish.yml    # EPUB build on release
+│       ├── commitlint.yml            # Commit message validation
+│       ├── markdown-lint.yml         # Markdown formatting
+│       ├── spell-check.yml           # Spelling validation
+│       ├── link-checker.yml          # Broken link detection
+│       ├── compile-pdf.yml           # LaTeX compilation
+│       ├── pdf-preview.yml           # PR artifact preview
+│       ├── stale.yml                 # Inactive issue management
+│       └── welcome.yml               # New contributor greeting
 ├── .claude/
 │   ├── skills/
-│   │   ├── dcf.md                    # Claude Code skill for DCF (principle-based)
+│   │   ├── dcf.md                    # Claude Code skill for DCF
 │   │   ├── github-release.md         # Skill for creating GitHub releases
 │   │   └── archive/
 │   │       └── dcf-procedural.md     # Legacy procedural version
