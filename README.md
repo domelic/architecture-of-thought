@@ -34,9 +34,10 @@ DCF operates at the *micro level* of human-AI interaction—the cognitive strate
 | Practice | Theory & Reference |
 |----------|-------------------|
 | [Quick Start](#quick-start) — Install & begin | [The Book (Optional)](#the-book-optional) — 265-page treatise |
-| [Claude Code Skills](#claude-code-skills) — `/dcf` and `/cybw` | [Theoretical Foundations](#theoretical-foundations) — Research basis |
-| [Practical Resources](#practical-resources) — Templates, prompts, exercises | [All DCF Modes](#all-dcf-modes) — Complete 24-mode reference |
-| [Installation](#installation) — Setup details | [Citation](#citation) — How to cite |
+| [Installation](#installation) — Setup details | [Theoretical Foundations](#theoretical-foundations) — Research basis |
+| [Claude Code Skills](#claude-code-skills) — `/dcf` and `/cybw` | [Citation](#citation) — How to cite |
+| [All DCF Modes](#all-dcf-modes) — Complete 24-mode reference | |
+| [Practical Resources](#practical-resources) — Templates, prompts, exercises | |
 
 **Most users should start with [Quick Start](#quick-start) and the [Practical Resources](#practical-resources).**
 
@@ -53,6 +54,56 @@ DCF operates at the *micro level* of human-AI interaction—the cognitive strate
 | Start a Socratic dialogue | `/dcf` in Claude Code |
 | Challenge your assumptions | `/cybw` in Claude Code |
 | See it in action | [Example Transcripts](resources/DCF_EXAMPLE_TRANSCRIPTS.md) |
+
+---
+
+## Installation
+
+**Prerequisite:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code) — Anthropic's agentic coding tool
+
+**Quick Install (recommended):**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/scripts/install-dcf.sh | bash
+```
+
+This installs the `/dcf` and `/cybw` skills globally, the `dcf-workflow` script, and optionally configures hooks.
+
+<details>
+<summary><strong>Manual Installation</strong></summary>
+
+**1. Install skills:**
+
+```bash
+# Global installation (available in all projects)
+mkdir -p ~/.claude/commands
+curl -o ~/.claude/commands/dcf.md https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/commands/dcf.md
+curl -o ~/.claude/commands/cybw.md https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/commands/cybw.md
+
+# Or project-level installation
+mkdir -p .claude/commands
+curl -o .claude/commands/dcf.md https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/commands/dcf.md
+curl -o .claude/commands/cybw.md https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/commands/cybw.md
+```
+
+**2. Install `dcf-workflow` script (optional):**
+
+```bash
+mkdir -p ~/bin
+curl -o ~/bin/dcf-workflow https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/scripts/dcf-workflow
+chmod +x ~/bin/dcf-workflow
+echo 'export PATH="$HOME/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+**3. Verify installation:**
+
+```bash
+dcf-workflow --help  # Check workflow script
+/dcf                  # Check skill in Claude Code
+```
+
+</details>
 
 ---
 
@@ -97,6 +148,110 @@ Quick adversarial checkpoint based on Hills (2025) research:
 /cybw the caching strategy      # Challenge a specific decision
 /cybw "users want this feature" # Challenge an assumption
 ```
+
+---
+
+## All DCF Modes
+
+<details>
+<summary><strong>Complete list of 24 modes</strong></summary>
+
+```bash
+/dcf [mode] [context]
+
+/dcf                     # General Socratic dialogue
+
+# Evaluation & Review
+/dcf review              # Evaluate before committing
+/dcf checkpoint          # Agentic decision point
+/dcf self-review         # Have Claude review its own work
+/dcf refine              # Iterate deliberately on output
+
+# Problem Solving
+/dcf debug               # Question the mental model
+/dcf unstick             # Break through blocks
+/dcf simplify            # Find the essential
+/dcf diagnose            # Identify which anti-pattern you're falling into
+/dcf decompose           # Systematic task breakdown with dependency mapping
+/dcf verify              # Multi-path reasoning synthesis for confidence
+
+# Design & Analysis
+/dcf architect           # Divergent exploration → minimal viable change
+/dcf tradeoffs           # Structured tradeoff analysis
+/dcf assumptions         # Deep assumption excavation
+/dcf premortem           # Anticipate failure before starting
+/dcf challenge           # Steelman the opposition
+/dcf decide              # Reach closure on a decision
+/dcf constrain           # Define boundaries before generation
+
+# Learning & Exploration
+/dcf learn <topic>       # Build understanding through dialogue
+/dcf onboard             # Explore unfamiliar codebase/domain
+/dcf explain             # Feynman technique - teach to test understanding
+
+# Session Management
+/dcf compact             # Prepare for session compaction
+/dcf context-health      # Assess and address context rot
+/dcf retro               # Capture learning
+/dcf skill               # Capture pattern as reusable skill
+```
+
+</details>
+
+<details>
+<summary><strong>Workflow automation with dcf-workflow</strong></summary>
+
+Chain modes with checkpoints:
+
+```bash
+dcf-workflow new-project              # onboard → architect → premortem
+dcf-workflow debug "auth timeout"     # debug → assumptions → simplify
+dcf-workflow decision "API design"    # tradeoffs → challenge → decide
+dcf-workflow complex-task             # constrain → decompose → architect
+dcf-workflow high-stakes              # assumptions → verify → challenge → decide
+dcf-workflow unfamiliar               # onboard → decompose → verify
+```
+
+> **Caution:** Workflows are scaffolding. Each transition should be a genuine checkpoint—not automatic progression.
+
+</details>
+
+<details>
+<summary><strong>Optional: Configure hooks</strong></summary>
+
+Add to your project's `.claude/settings.local.json`:
+
+```json
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '💭 DCF Checkpoint: What assumptions did this edit make?'"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '🪞 DCF Active: Think WITH the AI, not just use it.'"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+See `.claude/settings.example.json` for additional examples.
+
+</details>
 
 ---
 
@@ -211,160 +366,6 @@ Recent research validates DCF's core practices:
 - **Collaboration Measurement** — Sidra & Mason (2025) provides validated scales for collaborative AI literacy and metacognition
 - **Human-AI Collaboration** — Nature Human Behaviour (2024) meta-analysis, Synergy Index (2025)
 - **Independent Validation** — Hashemi Tonekaboni & Soleymani (HICSS 2026) independently operationalizes Socratic elements in multi-agent architecture
-
-</details>
-
----
-
-## Installation
-
-**Prerequisite:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code) — Anthropic's agentic coding tool
-
-**Quick Install (recommended):**
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/scripts/install-dcf.sh | bash
-```
-
-This installs the `/dcf` and `/cybw` skills globally, the `dcf-workflow` script, and optionally configures hooks.
-
-<details>
-<summary><strong>Manual Installation</strong></summary>
-
-**1. Install skills:**
-
-```bash
-# Global installation (available in all projects)
-mkdir -p ~/.claude/commands
-curl -o ~/.claude/commands/dcf.md https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/commands/dcf.md
-curl -o ~/.claude/commands/cybw.md https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/commands/cybw.md
-
-# Or project-level installation
-mkdir -p .claude/commands
-curl -o .claude/commands/dcf.md https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/commands/dcf.md
-curl -o .claude/commands/cybw.md https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/commands/cybw.md
-```
-
-**2. Install `dcf-workflow` script (optional):**
-
-```bash
-mkdir -p ~/bin
-curl -o ~/bin/dcf-workflow https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/scripts/dcf-workflow
-chmod +x ~/bin/dcf-workflow
-echo 'export PATH="$HOME/bin:$PATH"' >> ~/.zshrc
-source ~/.zshrc
-```
-
-**3. Verify installation:**
-
-```bash
-dcf-workflow --help  # Check workflow script
-/dcf                  # Check skill in Claude Code
-```
-
-</details>
-
----
-
-## All DCF Modes
-
-<details>
-<summary><strong>Complete list of 24 modes</strong></summary>
-
-```bash
-/dcf [mode] [context]
-
-/dcf                     # General Socratic dialogue
-
-# Evaluation & Review
-/dcf review              # Evaluate before committing
-/dcf checkpoint          # Agentic decision point
-/dcf self-review         # Have Claude review its own work
-/dcf refine              # Iterate deliberately on output
-
-# Problem Solving
-/dcf debug               # Question the mental model
-/dcf unstick             # Break through blocks
-/dcf simplify            # Find the essential
-/dcf diagnose            # Identify which anti-pattern you're falling into
-/dcf decompose           # Systematic task breakdown with dependency mapping
-/dcf verify              # Multi-path reasoning synthesis for confidence
-
-# Design & Analysis
-/dcf architect           # Divergent exploration → minimal viable change
-/dcf tradeoffs           # Structured tradeoff analysis
-/dcf assumptions         # Deep assumption excavation
-/dcf premortem           # Anticipate failure before starting
-/dcf challenge           # Steelman the opposition
-/dcf decide              # Reach closure on a decision
-/dcf constrain           # Define boundaries before generation
-
-# Learning & Exploration
-/dcf learn <topic>       # Build understanding through dialogue
-/dcf onboard             # Explore unfamiliar codebase/domain
-/dcf explain             # Feynman technique - teach to test understanding
-
-# Session Management
-/dcf compact             # Prepare for session compaction
-/dcf context-health      # Assess and address context rot
-/dcf retro               # Capture learning
-/dcf skill               # Capture pattern as reusable skill
-```
-
-</details>
-
-<details>
-<summary><strong>Workflow automation with dcf-workflow</strong></summary>
-
-Chain modes with checkpoints:
-
-```bash
-dcf-workflow new-project              # onboard → architect → premortem
-dcf-workflow debug "auth timeout"     # debug → assumptions → simplify
-dcf-workflow decision "API design"    # tradeoffs → challenge → decide
-dcf-workflow complex-task             # constrain → decompose → architect
-dcf-workflow high-stakes              # assumptions → verify → challenge → decide
-dcf-workflow unfamiliar               # onboard → decompose → verify
-```
-
-> **Caution:** Workflows are scaffolding. Each transition should be a genuine checkpoint—not automatic progression.
-
-</details>
-
-<details>
-<summary><strong>Optional: Configure hooks</strong></summary>
-
-Add to your project's `.claude/settings.local.json`:
-
-```json
-{
-  "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "Edit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "echo '💭 DCF Checkpoint: What assumptions did this edit make?'"
-          }
-        ]
-      }
-    ],
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "echo '🪞 DCF Active: Think WITH the AI, not just use it.'"
-          }
-        ]
-      }
-    ]
-  }
-}
-```
-
-See `.claude/settings.example.json` for additional examples.
 
 </details>
 
