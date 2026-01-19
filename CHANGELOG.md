@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.8.0](https://github.com/domelic/architecture-of-thought/compare/v2.7.0...v2.8.0) (2026-01-19)
+
+
+### Features
+
+* add landscape integration enhancements to DCF ([#62](https://github.com/domelic/architecture-of-thought/issues/62)) ([e24dceb](https://github.com/domelic/architecture-of-thought/commit/e24dceb31c66c8858dbae85b23b290588d37e668))
+
 ## [2.7.0](https://github.com/domelic/architecture-of-thought/compare/v2.6.0...v2.7.0) (2026-01-19)
 
 
