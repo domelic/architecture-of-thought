@@ -41,8 +41,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          VERSION="${{ needs.release-please.outputs.version }}"
+          PDF_NAME="Omelic-Architecture-of-Thought-v${VERSION}.pdf"
+          cp THE_ARCHITECTURE_OF_THOUGHT.pdf "${PDF_NAME}"
           gh release upload "${{ needs.release-please.outputs.tag_name }}" \
-            THE_ARCHITECTURE_OF_THOUGHT.pdf \
+            "${PDF_NAME}" \
             --clobber
 
       - name: Install Pandoc
@@ -54,7 +57,7 @@ jobs:
         id: epub
         run: |
           VERSION="${{ needs.release-please.outputs.version }}"
-          EPUB_NAME="THE_ARCHITECTURE_OF_THOUGHT_v${VERSION}.epub"
+          EPUB_NAME="Omelic-Architecture-of-Thought-v${VERSION}.epub"
 
           PANDOC_ARGS="--toc --toc-depth=2"
           PANDOC_ARGS="$PANDOC_ARGS --metadata title=\"The Architecture of Thought\""
