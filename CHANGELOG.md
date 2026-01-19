@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.5.0](https://github.com/domelic/architecture-of-thought/compare/v2.4.4...v2.5.0) (2026-01-19)
+
+
+### Features
+
+* DCF installation improvements and skill location fix ([#51](https://github.com/domelic/architecture-of-thought/issues/51)) ([b8568e4](https://github.com/domelic/architecture-of-thought/commit/b8568e491ffb6e6c847833b8ff35854ef35e784b))
+
 ## [2.4.4](https://github.com/domelic/architecture-of-thought/compare/v2.4.3...v2.4.4) (2026-01-19)
 
 
