@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.4.0](https://github.com/domelic/architecture-of-thought/compare/v2.3.2...v2.4.0) (2026-01-19)
+
+
+### Features
+
+* add EPUB generation to release workflow ([#36](https://github.com/domelic/architecture-of-thought/issues/36)) ([e3eea8d](https://github.com/domelic/architecture-of-thought/commit/e3eea8d219598a07f5fb52cfa44e4bc4984f2528))
+
 ## [2.3.2](https://github.com/domelic/architecture-of-thought/compare/v2.3.1...v2.3.2) (2026-01-19)
 
 
