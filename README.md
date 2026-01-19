@@ -201,12 +201,12 @@ This installs the `/dcf` skill globally, the `dcf-workflow` script, and optional
 
 ```bash
 # Global installation (available in all projects)
-mkdir -p ~/.claude/skills
-curl -o ~/.claude/skills/dcf.md https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/skills/dcf.md
+mkdir -p ~/.claude/commands
+curl -o ~/.claude/commands/dcf.md https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/commands/dcf.md
 
 # Or project-level installation
-mkdir -p .claude/skills
-curl -o .claude/skills/dcf.md https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/skills/dcf.md
+mkdir -p .claude/commands
+curl -o .claude/commands/dcf.md https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/commands/dcf.md
 ```
 
 **2. Install `dcf-workflow` script (optional):**

@@ -25,7 +25,7 @@ readonly BASE_URL="https://raw.githubusercontent.com/domelic/architecture-of-tho
 readonly VERSION="1.0.0"
 
 # Installation paths
-readonly SKILL_DIR="$HOME/.claude/skills"
+readonly SKILL_DIR="$HOME/.claude/commands"
 readonly BIN_DIR="$HOME/bin"
 readonly DCF_SKILL="$SKILL_DIR/dcf.md"
 readonly DCF_WORKFLOW="$BIN_DIR/dcf-workflow"
@@ -108,7 +108,7 @@ Options:
   --help     Show this help message
 
 Components installed:
-  ~/.claude/skills/dcf.md    Global /dcf skill for Claude Code
+  ~/.claude/commands/dcf.md  Global /dcf skill for Claude Code
   ~/bin/dcf-workflow         Workflow automation script
 
 Documentation:
@@ -240,7 +240,7 @@ install_dcf_skill() {
     mkdir -p "$SKILL_DIR"
 
     if check_existing_file "$DCF_SKILL" "/dcf skill" "$force"; then
-        if download_file "$BASE_URL/.claude/skills/dcf.md" "$DCF_SKILL"; then
+        if download_file "$BASE_URL/.claude/commands/dcf.md" "$DCF_SKILL"; then
             print_success "  Installed to $DCF_SKILL"
             INSTALLED_SKILL=true
             return 0
@@ -345,7 +345,7 @@ show_summary() {
         print_info "═══════════════════════════════════════════════════════════"
         echo ""
         echo "  Existing installation:"
-        echo "    • ~/.claude/skills/dcf.md     (global /dcf skill)"
+        echo "    • ~/.claude/commands/dcf.md   (global /dcf skill)"
         echo "    • ~/bin/dcf-workflow          (workflow automation)"
         echo ""
         echo "  To reinstall, run with --force flag"
@@ -364,7 +364,7 @@ show_summary() {
        [[ "$INSTALLED_PATH" == "true" ]] || \
        [[ "$INSTALLED_HOOKS" == "true" ]]; then
         echo "  Installed:"
-        [[ "$INSTALLED_SKILL" == "true" ]] && echo "    • ~/.claude/skills/dcf.md     (global /dcf skill)"
+        [[ "$INSTALLED_SKILL" == "true" ]] && echo "    • ~/.claude/commands/dcf.md   (global /dcf skill)"
         [[ "$INSTALLED_WORKFLOW" == "true" ]] && echo "    • ~/bin/dcf-workflow          (workflow automation)"
         [[ "$INSTALLED_PATH" == "true" ]] && echo "    • PATH updated in $shell_config"
         [[ "$INSTALLED_HOOKS" == "true" ]] && echo "    • .claude/settings.local.json (hooks)"
@@ -380,7 +380,7 @@ show_summary() {
 
     if [[ "$skipped" == "true" ]]; then
         echo "  Skipped (already exists):"
-        [[ "$INSTALLED_SKILL" == "false" ]] && echo "    • ~/.claude/skills/dcf.md"
+        [[ "$INSTALLED_SKILL" == "false" ]] && echo "    • ~/.claude/commands/dcf.md"
         [[ "$INSTALLED_WORKFLOW" == "false" ]] && echo "    • ~/bin/dcf-workflow"
         echo ""
     fi
