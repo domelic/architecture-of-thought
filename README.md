@@ -16,12 +16,12 @@
 
 ## Table of Contents
 
-| Practice | Theory |
-|----------|--------|
+| Practice | Theory & Reference |
+|----------|-------------------|
 | [Quick Start](#quick-start) — Install & begin | [The Book (Optional)](#the-book-optional) — 265-page treatise |
 | [Claude Code Skills](#claude-code-skills) — `/dcf` and `/cybw` | [Theoretical Foundations](#theoretical-foundations) — Research basis |
-| [Practical Resources](#practical-resources) — Templates, prompts, exercises | [All DCF Modes](#all-dcf-modes) — Complete reference |
-| [Installation](#installation) — Setup instructions | [Citation](#citation) — How to cite |
+| [Practical Resources](#practical-resources) — Templates, prompts, exercises | [All DCF Modes](#all-dcf-modes) — Complete 24-mode reference |
+| [Installation](#installation) — Setup details | [Citation](#citation) — How to cite |
 
 **Most users should start with [Quick Start](#quick-start) and the [Practical Resources](#practical-resources).**
 
@@ -175,6 +175,32 @@ See [examples/README.md](examples/README.md) for the full collection.
 
 ---
 
+## Theoretical Foundations
+
+DCF draws on established research in cognitive science and philosophy:
+
+- **Extended Mind Thesis** — Clark & Chalmers (1998)
+- **Distributed Cognition** — Hutchins (1995)
+- **Scaffolding Theory** — Vygotsky, Bruner, Wood & Ross
+- **Hermeneutics** — Gadamer's "fusion of horizons" (*Horizontverschmelzung*)
+- **Critical Rationalism** — Popper's falsificationism (1963)
+- **Double-Loop Learning** — Argyris (1977)
+
+<details>
+<summary><strong>Research validation</strong></summary>
+
+Recent research validates DCF's core practices:
+
+- **Metacognitive Prompting** — Hills (2025) demonstrates that "Could you be wrong?" generates adversarial information absent from initial responses
+- **Autonomy Risk Framework** — Kovács & Szelényi (2025) identifies false mental states and cognitive deskilling as primary risks
+- **Collaboration Measurement** — Sidra & Mason (2025) provides validated scales for collaborative AI literacy and metacognition
+- **Human-AI Collaboration** — Nature Human Behaviour (2024) meta-analysis, Synergy Index (2025)
+- **Independent Validation** — Hashemi Tonekaboni & Soleymani (HICSS 2026) independently operationalizes Socratic elements in multi-agent architecture
+
+</details>
+
+---
+
 ## Installation
 
 **Prerequisite:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code) — Anthropic's agentic coding tool
@@ -222,29 +248,6 @@ dcf-workflow --help  # Check workflow script
 ```
 
 </details>
-
----
-
-## Theoretical Foundations
-
-DCF draws on established research in cognitive science and philosophy:
-
-- **Extended Mind Thesis** — Clark & Chalmers (1998)
-- **Distributed Cognition** — Hutchins (1995)
-- **Scaffolding Theory** — Vygotsky, Bruner, Wood & Ross
-- **Hermeneutics** — Gadamer's "fusion of horizons" (*Horizontverschmelzung*)
-- **Critical Rationalism** — Popper's falsificationism (1963)
-- **Double-Loop Learning** — Argyris (1977)
-
-### Research Validation
-
-Recent research validates DCF's core practices:
-
-- **Metacognitive Prompting** — Hills (2025) demonstrates that "Could you be wrong?" generates adversarial information absent from initial responses
-- **Autonomy Risk Framework** — Kovács & Szelényi (2025) identifies false mental states and cognitive deskilling as primary risks
-- **Collaboration Measurement** — Sidra & Mason (2025) provides validated scales for collaborative AI literacy and metacognition
-- **Human-AI Collaboration** — Nature Human Behaviour (2024) meta-analysis, Synergy Index (2025)
-- **Independent Validation** — Hashemi Tonekaboni & Soleymani (HICSS 2026) independently operationalizes Socratic elements in multi-agent architecture
 
 ---
 
@@ -500,16 +503,8 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 
 **© 2026 Damir Omelic. All Rights Reserved.**
 
-This work is the intellectual property of the primary author. This document was co-authored with Claude, an AI assistant developed by Anthropic. The human author retains full intellectual property rights.
+Co-authored with Claude (Anthropic). The human author retains full intellectual property rights.
 
 ---
 
-## Author
-
-**Damir Omelic** — Independent Researcher
-
-Co-authored with **Claude** (Anthropic)
-
----
-
-*The architecture of thought awaits its architects.*
+If you find DCF useful, consider [starring the repo](https://github.com/domelic/architecture-of-thought) to help others discover it.
