@@ -42,6 +42,14 @@ What's out of scope? What should I explicitly NOT build?
 
 ## Challenge Prompts
 
+### The universal challenge question
+
+```text
+Could you be wrong?
+```
+
+This single question surfaces error identification, biases, contradictory evidence, and alternatives that don't appear in the initial response. Use it at every checkpoint. (Hills, 2025)
+
 ### Questioning assumptions
 
 ```text

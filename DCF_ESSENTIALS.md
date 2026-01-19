@@ -275,6 +275,7 @@ dcf-workflow high-stakes    # assumptions → verify → challenge → decide
 - "What's the simplest version of this?"
 
 ### For Challenge
+- **"Could you be wrong?"** ← Most powerful single question
 - "What's the strongest argument against this?"
 - "What could go wrong?"
 - "What am I not seeing?"
@@ -299,14 +300,16 @@ dcf-workflow high-stakes    # assumptions → verify → challenge → decide
 
 ## Common Failure Modes
 
+These aren't just bad habits—they're **autonomy risks**. Accepting hallucinations corrupts your mental model (losing epistemic autonomy). Outsourcing all thinking degrades your capabilities (losing cognitive autonomy).
+
 | Failure Mode | Symptom | Fix |
 |-------------|---------|-----|
 | **Socratic Theater** | Going through motions without genuine inquiry | Ask questions you don't know the answer to |
 | **Mirror Narcissism** | Using AI to confirm existing beliefs | Explicitly request counterarguments |
 | **Infinite Refinement** | Never reaching "good enough" | Set convergence criteria upfront |
 | **Lazy Prompting** | Vague prompts, frustrated by poor outputs | Structure prompts with context and constraints |
-| **Hallucination Acceptance** | Trusting without verification | Treat AI output as draft, not truth |
-| **Cognitive Atrophy** | Declining ability to think without AI | Practice unassisted reasoning regularly |
+| **Hallucination Acceptance** | Trusting without verification (→ *false mental states*) | Ask "Could you be wrong?" + verify claims |
+| **Cognitive Atrophy** | Declining ability to think without AI (→ *cognitive deskilling*) | Practice unassisted reasoning; use learning stance |
 
 ---
 
@@ -360,6 +363,28 @@ Then compare:
 **The practice:** Predict → Prompt → Compare → Update your mental model.
 
 This is scientific thinking applied to prompting.
+
+---
+
+## The "Could You Be Wrong?" Checkpoint
+
+Research validates a remarkably simple metacognitive technique: following any AI response with "Could you be wrong?" (Hills, 2025).
+
+Unlike chain-of-thought (which elaborates reasoning), this question generates *adversarial* information:
+- **Error identification** — what mistakes might be present
+- **Bias surfacing** — what assumptions shaped the response
+- **Contradictory evidence** — what facts point in other directions
+- **Alternative approaches** — what other options exist
+
+**None of this appears in the initial response.** The question itself unlocks it.
+
+**When to use it:**
+- After receiving a proposed solution
+- After accepting a factual claim
+- After endorsing a decision
+- At every checkpoint before approval
+
+**Why it works:** It functions like "asking for a second opinion," aggregating diverse perspectives within a single interaction. Four words that operationalize critical rationalism.
 
 ---
 
@@ -523,6 +548,7 @@ If you merely completed a task without growth—the potential remains unrealized
 │                    ↑_______________________________↓        │
 │                                                             │
 │  AT EVERY RESPONSE, ASK ONE OF:                            │
+│  • "Could you be wrong?" ← surfaces hidden info            │
 │  • "What assumptions are in that?"                         │
 │  • "What's the counterargument?"                           │
 │  • "What am I not seeing?"                                 │
@@ -559,6 +585,8 @@ If you merely completed a task without growth—the potential remains unrealized
 - **Double-loop learning**: Argyris, "Double Loop Learning in Organizations" (1977)
 - **Hermeneutics**: Gadamer, "Truth and Method" (1960)
 - **PKM methodology**: Ahrens, "How to Take Smart Notes" (2017)
+- **Metacognitive prompting**: Hills, "Could You Be Wrong" (2025)
+- **Autonomy risks**: Kovács & Szelényi, "Addressing Autonomy Risks in Generative Chatbots" (2025)
 
 ---
 

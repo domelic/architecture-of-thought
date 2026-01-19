@@ -163,7 +163,7 @@ Use Zotero MCP for bibliography management when adding new references:
 3. Add to `references.bib` following existing entry patterns
 4. Cite in LaTeX: `\cite{clark1998extended}`
 
-**Bibliography sections in `references.bib`:** Extended Mind, Scaffolding/ZPD, Dialectical Thinking, Philosophy of Science, Organizational Learning, Hermeneutics, PKM, Human-AI Collaboration, Socratic Method, Socratic Prompting/LLM, Agentic AI, Classic Philosophy.
+**Bibliography sections in `references.bib`:** Extended Mind, Scaffolding/ZPD, Dialectical Thinking, Philosophy of Science, Organizational Learning, Hermeneutics, PKM, Human-AI Collaboration, Metacognition and Human-AI Collaboration Research, Socratic Method, Socratic Prompting/LLM, Agentic AI, Classic Philosophy.
 
 When adding new references, place them in the appropriate section or create a new commented section header.
 

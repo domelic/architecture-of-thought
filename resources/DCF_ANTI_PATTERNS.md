@@ -8,6 +8,17 @@ Common failure modes in human-AI collaboration and how to recognize and fix them
 
 Even with good intentions, DCF practice can go wrong. This guide documents the failure modes, their symptoms, root causes, and corrections.
 
+### The Autonomy Risks
+
+These anti-patterns aren't just bad habits—they represent deeper **autonomy risks** (Kovács & Szelényi, 2025):
+
+| Risk | Mechanism | Related Anti-Patterns |
+|------|-----------|----------------------|
+| **False Mental States** | AI misinformation distorts your beliefs, causing cognitions you wouldn't endorse if properly informed | Hallucination Acceptance, Mirror Narcissism |
+| **Cognitive Deskilling** | Outsourcing thinking removes opportunities to exercise capabilities, leading to skill degradation | Cognitive Atrophy, Lazy Prompting |
+
+The Socratic approach mitigates both: questioning improves AI output quality (reducing false mental states) while cultivating your critical faculties (preventing deskilling).
+
 ---
 
 ## Anti-Pattern 1: Socratic Theater

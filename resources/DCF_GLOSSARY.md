@@ -92,6 +92,9 @@ Questions or conditions embedded in prompts that help AI determine when it has p
 ### Socratic Fatigue
 Exhaustion from over-application of Socratic questioning, occurring when the collaborative energy of productive dialogue masks diminishing returns. The human tendency toward over-perfection when engaged in recursive refinement. Counteracted by designing prompts with escape paths and exit hooks.
 
+### Could You Be Wrong Protocol
+A metacognitive prompting technique that generates adversarial information by asking "Could you be wrong?" after receiving a response. Unlike chain-of-thought (which elaborates reasoning), this produces error identification, biases, contradictory evidence, and alternatives not present in the initial response. Research shows it functions like "asking for a second opinion," borrowing from wisdom-of-crowds effects. In DCF: a checkpoint question and foundation for the `challenge` mode. (Hills, 2025)
+
 ### Compounding (Cognitive)
 The phenomenon where AI-assisted learning produces accelerating returns: better questions lead to better responses, which deepen understanding, which enables even better questions. Occurs through the reinforcement loop of articulation, challenge, synthesis, and internalization. Distinguishes learning-stance practitioners from extraction-mode users.
 
@@ -145,6 +148,9 @@ Chris Argyris's distinction between learning that adjusts actions within existin
 ### Fusion of Horizons
 Hans-Georg Gadamer's concept (*Horizontverschmelzung*) that understanding emerges through dialogue when different perspectives merge to create shared meaning. In DCF, explains why human-AI collaboration is partnership: genuine understanding requires dialogue that changes both parties.
 
+### Mental Model Triad
+Three complementary mental models that evolve through human-AI collaboration: (1) **Domain model**—understanding of the subject matter; (2) **Information processing model**—comprehension of how the AI reasons; (3) **Complementarity-awareness model**—recognition of how human and AI capabilities combine. Evolution mechanisms: data contextualization, reasoning transparency, and performance feedback. In DCF: the Thinking Mirror metaphor primarily addresses complementarity-awareness; the learning stance develops all three. (Mental Models Framework, 2025)
+
 ---
 
 ## Framework Levels
@@ -178,13 +184,13 @@ Never reaching "good enough"; endless iteration without convergence. Perfectioni
 Providing vague inputs then being frustrated with vague outputs. Expecting AI to read your mind.
 
 ### Hallucination Acceptance
-Trusting AI outputs without verification, especially factual claims. Treating AI output as truth.
+Trusting AI outputs without verification, especially factual claims. Treating AI output as truth. The risk is *false mental states*: misinformation that distorts cognitions, causing beliefs to deviate from what you'd endorse under ideal conditions. Counteracted by verification protocols and the "Could you be wrong?" checkpoint question.
 
 ### Rubber Stamping
 Approving AI outputs without meaningful review. Treating checkpoints as interruptions.
 
 ### Cognitive Atrophy
-Declining ability to think without AI scaffolding. Over-reliance that weakens independent capability.
+Declining ability to think without AI scaffolding. Over-reliance that weakens independent capability. The mechanism is *cognitive deskilling*: sustained practice maintains skills, and outsourcing cognitive tasks removes opportunities to exercise them. Research documents memory decline, reduced concentration, and diminished analysis depth in heavy AI users. Counteracted by the learning stance—engaging with AI to understand, not just to extract.
 
 ### Goal Drift
 Losing sight of the original objective through successive iterations. Tangents overwhelming the main task.
@@ -200,6 +206,12 @@ Repeatedly solving the same type of problem from scratch instead of capturing ef
 
 ### Context Rot
 Allowing conversation context to degrade through accumulated noise, contradictions, or irrelevant information. Four causes: poisoning (incorrect info), distraction (irrelevant tangents), confusion (similar but different concepts), clash (unresolved contradictions).
+
+### False Mental States
+An autonomy risk where AI-generated misinformation distorts user cognitions, causing beliefs to deviate from what the user would endorse under ideal conditions. Encompasses both unintentional errors (hallucinations, training biases) and deliberate manipulation. In DCF: the mechanism behind the Hallucination Acceptance anti-pattern. (SocrAI, 2025)
+
+### Cognitive Deskilling
+An autonomy risk where sustained outsourcing of cognitive tasks to AI degrades intellectual capacities. Manifests as memory decline, reduced concentration, and diminished analysis depth. Occurs because sustained practice maintains skills—when AI performs thinking tasks, users lose opportunities to exercise essential capabilities. In DCF: the mechanism behind the Cognitive Atrophy anti-pattern. (SocrAI, 2025)
 
 ### Knowledge Gatekeeping
 Organizational knowledge hoarding that prevents effective AI collaboration. Tribal knowledge locked in people's heads rather than documented, causing AI to produce technically correct but contextually wrong outputs.
@@ -311,6 +323,10 @@ Agents spawned via the Task tool that run asynchronously while you continue othe
 | **Falsificationism** | Try to disprove, not confirm |
 | **Double-Loop Learning** | Question the assumptions, not just fix within them |
 | **Fusion of Horizons** | Understanding emerges when perspectives merge through dialogue |
+| **Could You Be Wrong** | Metacognitive prompt that surfaces adversarial information |
+| **False Mental States** | Autonomy risk: AI misinformation distorting user beliefs |
+| **Cognitive Deskilling** | Autonomy risk: capability loss from outsourcing thinking |
+| **Mental Model Triad** | Domain, processing, and complementarity-awareness models |
 
 ---
 

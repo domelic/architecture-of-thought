@@ -768,6 +768,35 @@ The approach involves:
 
 This connects directly to DCF's Socratic emphasis: recursion isn't just refinement of output, but deepening of understanding through successive articulation.
 
+\section{The ``Could You Be Wrong?'' Question}\index{Could You Be Wrong}
+
+Recent research validates a remarkably simple metacognitive technique: following any AI response with the question ``Could you be wrong?'' \cite{hills2025metacognitive}. Unlike chain-of-thought prompting, which elaborates reasoning forward, this question generates \emph{adversarial} information---error identification, biases, contradictory evidence, and alternatives that were absent from the initial response.
+
+The mechanism borrows from wisdom-of-crowds research: asking ``could you be wrong?'' functions like requesting a second opinion, aggregating across a diversity of perspectives within a single interaction. Hills found this effective across discriminatory biases, reasoning errors, and overconfident claims.
+
+For DCF practitioners, this question belongs at every checkpoint:
+
+\begin{itemize}
+    \item After receiving a proposed solution: ``Could you be wrong about this approach?''
+    \item After accepting a factual claim: ``Could you be wrong about this fact?''
+    \item After endorsing a decision: ``Could you be wrong about this recommendation?''
+\end{itemize}
+
+The question's power lies in its generality. It requires no domain expertise to ask, yet consistently surfaces information the initial response suppressed. It operationalizes critical rationalism in four words.
+
+\begin{quotebox}
+\textbf{DCF Practice: The Could-You-Be-Wrong Checkpoint}
+
+After any significant AI output, ask: ``Could you be wrong?'' This generates:
+\begin{enumerate}
+    \item Error identification---what mistakes might be present
+    \item Bias surfacing---what assumptions shaped the response
+    \item Contradictory evidence---what facts point in other directions
+    \item Alternative approaches---what other options exist
+\end{enumerate}
+None of this information appears in the initial response. The question itself unlocks it.
+\end{quotebox}
+
 \section{Amplified Cognition, Not Automation}
 
 The recursive refinement loop is \textbf{amplified cognition}, not automation. The human remains essential:
@@ -1656,6 +1685,36 @@ The human-AI team becomes a distributed cognitive system. The human provides jud
 DCF operates within distributed cognitive systems. CLAUDE.md files function as cognitive artifacts---encoding preferences and context that shape AI behavior. Prompt patterns serve as procedures---coordinating human-AI interaction. Memory systems provide organizational memory across sessions.
 
 Effective DCF practice means designing these distributed systems well: clear artifacts, reliable procedures, well-maintained memory. The quality of your human-AI collaboration depends not just on your prompting skill, but on the cognitive infrastructure you've built around it.
+
+\section{The Mental Model Triad}\index{Mental Model Triad}
+
+Recent research identifies three complementary mental models that evolve through human-AI collaboration \cite{mentalmodels2025}:
+
+\begin{enumerate}
+    \item \textbf{Domain model}---understanding of the subject matter itself
+    \item \textbf{Information processing model}---comprehension of how the AI reasons and processes information
+    \item \textbf{Complementarity-awareness model}---recognition of how human and AI capabilities combine
+\end{enumerate}
+
+Three mechanisms drive their evolution: \emph{data contextualization} (providing context around information), \emph{reasoning transparency} (making AI decision-making understandable), and \emph{performance feedback} (information about collaboration outcomes).
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lp{5cm}p{5cm}}
+\toprule
+\textbf{Model} & \textbf{What It Enables} & \textbf{DCF Development} \\
+\midrule
+Domain & Evaluating AI contributions for accuracy & Learning stance, recursive refinement \\
+Information Processing & Anticipating AI strengths and failures & Anticipatory calibration, checkpoint protocol \\
+Complementarity-Awareness & Leveraging the human-AI partnership & Thinking Mirror metaphor, dialectic \\
+\bottomrule
+\end{tabular}
+\caption{Mental Model Triad and DCF Practices}
+\end{table}
+
+DCF's Thinking Mirror metaphor primarily addresses complementarity-awareness---understanding what AI reflects and transforms about your thought. But effective collaboration requires all three models. The practitioner must understand the domain (or they cannot evaluate AI contributions), understand AI processing (or they cannot anticipate failures), and understand complementarity (or they cannot leverage the partnership).
+
+The learning stance develops all three simultaneously: engaging with AI to understand rather than extract builds domain knowledge through dialogue, reveals AI processing through observation, and develops complementarity-awareness through practice.
 
 \chapter{Scaffolding Theory}
 
@@ -2743,6 +2802,20 @@ This respects both the need for thorough exploration and the practical constrain
 \chapter{Failure Modes and Mitigations}\label{ch:failure-modes}\index{Failure Modes}
 
 Even with good intentions, DCF practice can go wrong. This chapter documents eleven common failure modes, their symptoms, root causes, and corrections. Recognizing these patterns is the first step to avoiding them.
+
+\section{The Autonomy Risks}\index{Autonomy Risks}
+
+Before examining specific anti-patterns, it's valuable to understand the deeper risks they represent. Recent work on Socratic chatbots identifies two primary risks that map directly to DCF anti-patterns \cite{socrai2025autonomy}:
+
+\begin{description}
+    \item[False Mental States]\index{False Mental States} Misinformation that distorts cognitions, causing beliefs to deviate from what the user would endorse under semi-idealized conditions. This is the mechanism behind \emph{Hallucination Acceptance}---not merely accepting wrong information, but having one's mental model corrupted by it.
+
+    \item[Cognitive Deskilling]\index{Cognitive Deskilling} Degradation of intellectual capacities through sustained outsourcing of cognitive tasks. Because practice maintains skills, heavy AI reliance removes opportunities to exercise essential capabilities. Research documents memory decline, reduced concentration, and diminished analysis depth. This is the mechanism behind \emph{Cognitive Atrophy}.
+\end{description}
+
+Framing these as \emph{autonomy risks} rather than mere bad habits clarifies the stakes. The practitioner who accepts hallucinations doesn't just make errors---they lose epistemic autonomy, holding beliefs they wouldn't endorse if properly informed. The practitioner who outsources all thinking doesn't just become dependent---they lose cognitive autonomy, unable to function without the scaffold.
+
+The Socratic approach mitigates both risks simultaneously: structured questioning improves AI output quality (reducing false mental states) while cultivating the user's critical faculties (preventing cognitive deskilling). This is why DCF emphasizes the \emph{learning stance}---it's not merely more fulfilling, it's protective.
 
 \section{Anti-Pattern 1: Socratic Theater}\index{Socratic Theater}
 
