@@ -7,6 +7,9 @@ on:
 jobs:
   commitlint:
     runs-on: ubuntu-latest
+    # Skip for Dependabot PRs - they use sentence-case which fails commitlint
+    # Dependabot PRs are squash-merged with corrected commit messages
+    if: github.actor != 'dependabot[bot]'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
