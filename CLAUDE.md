@@ -177,6 +177,27 @@ Use Zotero MCP for bibliography management when adding new references:
 
 When adding new references, place them in the appropriate section or create a new commented section header.
 
+### Obsidian Knowledge Base
+
+Use Obsidian MCP to connect your personal knowledge base with Claude Code. See [docs/OBSIDIAN_MCP.md](docs/OBSIDIAN_MCP.md) for setup options.
+
+**Recommended setup:** Install the [obsidian-claude-code-mcp](https://github.com/iansinnott/obsidian-claude-code-mcp) plugin in Obsidian. Claude Code auto-discovers vaults via WebSocket.
+
+**Workflow for research synthesis:**
+
+1. Search vault for relevant notes: "Search my Obsidian for notes on scaffolding theory"
+2. Cross-reference with Zotero for citations
+3. Synthesize into new LaTeX content
+4. Edit in THE_ARCHITECTURE_OF_THOUGHT.tex
+
+**Combining tools:**
+
+| Task | Tool |
+|------|------|
+| Find research notes | Obsidian MCP |
+| Get citation details | Zotero MCP |
+| Edit LaTeX document | Serena MCP |
+
 ## For Claude: Working Style
 
 1. **Follow conventions**: Use the branch naming and commit conventions above

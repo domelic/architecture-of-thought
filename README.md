@@ -384,6 +384,8 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 │       ├── CROSS_REFERENCES.md       # Concept dependencies and locations
 │       ├── BIBLIOGRAPHY_SOURCES.md   # Annotated citation guide
 │       └── REVISION_DECISIONS.md     # Editorial decision log
+├── docs/
+│   └── OBSIDIAN_MCP.md               # Obsidian vault integration guide
 ├── examples/
 │   ├── README.md                     # Examples overview
 │   ├── CASE_STUDY_debugging_race_condition.md
