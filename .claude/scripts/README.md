@@ -10,13 +10,13 @@ Add to your PATH:
 
 ```bash
 export PATH="$PATH:/path/to/ai-research/.claude/scripts"
-```text
+```
 
 Or create a symlink:
 
 ```bash
 ln -s /path/to/ai-research/.claude/scripts/dcf-workflow /usr/local/bin/dcf-workflow
-```text
+```
 
 ## dcf-workflow
 
@@ -38,7 +38,7 @@ dcf-workflow debug simplify decide
 dcf-workflow --list      # Show available workflows
 dcf-workflow --help      # Show help
 dcf-workflow --dry-run debug  # Show what would run
-```text
+```
 
 ### Predefined Workflows
 
@@ -98,7 +98,7 @@ Run in Claude Code:
   • Should you branch to a different mode instead?
 
   Press Enter to continue, or Ctrl+C to stop...
-```text
+```
 
 ## Creating Custom Scripts
 
@@ -109,6 +109,6 @@ You can create your own workflow scripts:
 # my-workflow.sh
 
 dcf-workflow learn premortem review "$@"
-```text
+```
 
 Or call modes directly in your own automation.

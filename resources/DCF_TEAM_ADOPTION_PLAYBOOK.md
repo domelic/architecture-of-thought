@@ -54,7 +54,7 @@ Building fast with AI requires balancing three forces:
        /      \
       /________\
    SPEED      RIGOR
-```text
+```
 
 **Trust**: Team confidence that AI-assisted work meets standards
 **Speed**: Velocity of development with AI assistance

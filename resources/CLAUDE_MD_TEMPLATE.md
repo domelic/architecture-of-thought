@@ -22,7 +22,7 @@ Copy this template to your project root as `CLAUDE.md` and customize for your pr
 
 # Run tests
 [command]
-```text
+```
 
 ## Architecture
 

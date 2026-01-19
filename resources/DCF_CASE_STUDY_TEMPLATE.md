@@ -30,7 +30,7 @@ A standardized format for documenting DCF applications. Use this template to cap
 
 ```text
 [Write here]
-```text
+```
 
 ### Background
 
@@ -38,7 +38,7 @@ A standardized format for documenting DCF applications. Use this template to cap
 
 ```text
 [Write here]
-```text
+```
 
 ### Why DCF?
 
@@ -46,7 +46,7 @@ A standardized format for documenting DCF applications. Use this template to cap
 
 ```text
 [Write here]
-```text
+```
 
 ---
 
@@ -70,22 +70,22 @@ A standardized format for documenting DCF applications. Use this template to cap
 **Opening:**
 ```text
 [How did you frame the initial inquiry?]
-```text
+```
 
 **Key Exchange 1:**
 ```text
 [A pivotal moment in the dialogue—what question/response shifted thinking?]
-```text
+```
 
 **Key Exchange 2:**
 ```text
 [Another important moment]
-```text
+```
 
 **Resolution:**
 ```text
 [How did the dialogue conclude? What was decided/learned/produced?]
-```text
+```
 
 ### DCF Principles in Action
 
@@ -107,7 +107,7 @@ A standardized format for documenting DCF applications. Use this template to cap
 
 ```text
 [Write here]
-```text
+```
 
 ### Secondary Outcomes
 
@@ -115,7 +115,7 @@ A standardized format for documenting DCF applications. Use this template to cap
 
 ```text
 [Write here]
-```text
+```
 
 ### Comparison to Counterfactual
 
@@ -123,7 +123,7 @@ A standardized format for documenting DCF applications. Use this template to cap
 
 ```text
 [Write here]
-```text
+```
 
 ---
 
@@ -151,7 +151,7 @@ A standardized format for documenting DCF applications. Use this template to cap
 
 ```text
 [Write here]
-```text
+```
 
 ### Key Insight
 
@@ -159,7 +159,7 @@ A standardized format for documenting DCF applications. Use this template to cap
 
 ```text
 [Write here]
-```text
+```
 
 ---
 
@@ -180,7 +180,7 @@ A standardized format for documenting DCF applications. Use this template to cap
 
 ```text
 [Write here]
-```text
+```
 
 ### Anti-Patterns Avoided
 
@@ -197,7 +197,7 @@ A standardized format for documenting DCF applications. Use this template to cap
 Notes:
 ```text
 [How did you avoid or recover from these?]
-```text
+```
 
 ---
 
@@ -209,7 +209,7 @@ Notes:
 
 ```text
 [Write here]
-```text
+```
 
 ### What Would You Do Differently?
 
@@ -217,7 +217,7 @@ Notes:
 
 ```text
 [Write here]
-```text
+```
 
 ### Rating
 
@@ -243,7 +243,7 @@ Notes:
 HUMAN: [...]
 
 AI: [...]
-```text
+```
 
 ### Related Materials
 
