@@ -125,3 +125,35 @@ gh release list
 ### Need to edit CHANGELOG before release?
 - Edit the release PR directly before merging
 - Or edit CHANGELOG.md after release (next release will preserve your edits)
+
+## Amazon KDP Publishing
+
+When a release is published, an automated workflow builds the EPUB and creates a GitHub issue with upload instructions.
+
+### Automatic Steps
+
+1. **EPUB built** from LaTeX source using Pandoc
+2. **EPUB attached** to the GitHub release
+3. **Issue created** with upload checklist
+
+### Manual Steps (After Release)
+
+1. Download the EPUB from the release assets
+2. Log in to [KDP](https://kdp.amazon.com)
+3. Navigate to your book's Kindle eBook Content
+4. Upload the new EPUB file
+5. Review the preview in Kindle Previewer
+6. Save and publish changes
+7. Wait for Amazon review (24-72 hours)
+8. Close the GitHub issue once live
+
+### Why Manual Upload?
+
+Amazon KDP has no public API for automated uploads. The workflow automates everything possible (EPUB build, release attachment, instructions) while the actual KDP upload requires manual action.
+
+### Resources
+
+- [KDP Dashboard](https://kdp.amazon.com)
+- [Kindle Previewer](https://www.amazon.com/kindlepreviewer)
+- [AMAZON_PUBLISHING_GUIDE.md](AMAZON_PUBLISHING_GUIDE.md) — Full publishing documentation
+- [AMAZON_KDP_CONTENT.md](AMAZON_KDP_CONTENT.md) — Ready-to-use KDP content
