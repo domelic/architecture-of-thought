@@ -47,18 +47,38 @@ jobs:
           VERSION="${{ steps.version.outputs.version }}"
           EPUB_NAME="THE_ARCHITECTURE_OF_THOUGHT_${VERSION}.epub"
 
+          # Build pandoc command with optional arguments
+          PANDOC_ARGS="--toc --toc-depth=2"
+          PANDOC_ARGS="$PANDOC_ARGS --metadata title=\"The Architecture of Thought\""
+          PANDOC_ARGS="$PANDOC_ARGS --metadata subtitle=\"The Dialectical Cognition Framework\""
+          PANDOC_ARGS="$PANDOC_ARGS --metadata author=\"Damir Omelic\""
+          PANDOC_ARGS="$PANDOC_ARGS --metadata date=\"$(date +%Y)\""
+
+          # Add cover image if it exists (check for jpg, jpeg, or png)
+          COVER_IMAGE=""
+          for ext in jpg jpeg png; do
+            if [ -f "cover.$ext" ]; then
+              COVER_IMAGE="cover.$ext"
+              break
+            fi
+          done
+
+          if [ -n "$COVER_IMAGE" ]; then
+            echo "Found $COVER_IMAGE, including in EPUB"
+            PANDOC_ARGS="$PANDOC_ARGS --epub-cover-image=$COVER_IMAGE"
+          else
+            echo "No cover image found, building EPUB without cover"
+          fi
+
+          # Add bibliography if it exists
+          if [ -f "references.bib" ]; then
+            echo "Found references.bib, including citations"
+            PANDOC_ARGS="$PANDOC_ARGS --bibliography=references.bib --citeproc"
+          fi
+
           # Build EPUB using Pandoc
-          pandoc THE_ARCHITECTURE_OF_THOUGHT.tex -o "${EPUB_NAME}" \
-            --toc \
-            --toc-depth=2 \
-            --epub-cover-image=cover.jpg \
-            --metadata title="The Architecture of Thought" \
-            --metadata subtitle="The Dialectical Cognition Framework" \
-            --metadata author="Damir Omelic" \
-            --metadata date="$(date +%Y)" \
-            --bibliography=references.bib \
-            --citeproc \
-            || echo "Pandoc build completed with warnings"
+          echo "Running: pandoc THE_ARCHITECTURE_OF_THOUGHT.tex -o ${EPUB_NAME} $PANDOC_ARGS"
+          eval pandoc THE_ARCHITECTURE_OF_THOUGHT.tex -o "${EPUB_NAME}" $PANDOC_ARGS
 
           # Verify EPUB was created
           if [ -f "${EPUB_NAME}" ]; then
