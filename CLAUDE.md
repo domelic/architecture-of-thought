@@ -44,6 +44,33 @@ Add project-specific words to `.cspell.json` `words` array when needed.
 | `resources/CLAUDE_MD_TEMPLATE.md` | Template for DCF-informed CLAUDE.md files |
 | `references.bib` | BibTeX bibliography (31 sources) |
 
+## Serena Code Intelligence
+
+This project has Serena MCP configured with a memory for LaTeX editing.
+
+### Available Memory
+
+| Memory | Purpose |
+|--------|---------|
+| `LATEX_EDITING_GUIDE` | Document structure map, editing patterns, LaTeX conventions |
+
+### Using the Memory
+
+When editing `THE_ARCHITECTURE_OF_THOUGHT.tex`, read the guide first:
+
+```text
+Serena: read_memory
+  memory_file_name: "LATEX_EDITING_GUIDE.md"
+```
+
+The guide includes:
+
+- Line ranges for all 12 Parts and appendices
+- Templates for adding sections, chapters, parts
+- LaTeX patterns (tables, quote boxes, code listings)
+- Cross-referencing and indexing conventions
+- Build verification sequence
+
 ## Available Skills
 
 ### `/dcf [mode] [context]` — Socratic Dialogue
