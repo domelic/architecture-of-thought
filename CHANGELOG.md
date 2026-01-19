@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.3.0](https://github.com/domelic/architecture-of-thought/compare/v2.2.2...v2.3.0) (2026-01-19)
+
+
+### Features
+
+* add final polish workflows and configurations ([#13](https://github.com/domelic/architecture-of-thought/issues/13)) ([de8cd10](https://github.com/domelic/architecture-of-thought/commit/de8cd10d4629421efda6a1de9c7047ba9d1a5a3c))
+* add Release Please for automated releases ([#12](https://github.com/domelic/architecture-of-thought/issues/12)) ([2453160](https://github.com/domelic/architecture-of-thought/commit/2453160147800cc3927be61ee1911574dc5da151))
+
+
+### Bug Fixes
+
+* improve EPUB generation and validation ([#22](https://github.com/domelic/architecture-of-thought/issues/22)) ([5e583ab](https://github.com/domelic/architecture-of-thought/commit/5e583ab2e8b5cf41319ed7278bb9c01b20c47ceb))
+* make cover image and bibliography optional ([#18](https://github.com/domelic/architecture-of-thought/issues/18)) ([2630067](https://github.com/domelic/architecture-of-thought/commit/2630067132c703078aa9b4ab067d5f7b2840dd5b))
+* resolve Amazon KDP workflow parsing issue ([#17](https://github.com/domelic/architecture-of-thought/issues/17)) ([4482b85](https://github.com/domelic/architecture-of-thought/commit/4482b85dbe3febd296d0ed9f3f33caee38ca4fae))
+* resolve workflow failures ([#24](https://github.com/domelic/architecture-of-thought/issues/24)) ([e6ebc55](https://github.com/domelic/architecture-of-thought/commit/e6ebc552965c9e3f6f58d74b1dc27c1dfa208943))
+
 ## [Unreleased]
 
 *No unreleased changes*
