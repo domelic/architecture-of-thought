@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.9.0](https://github.com/domelic/architecture-of-thought/compare/v2.8.0...v2.9.0) (2026-01-19)
+
+
+### Features
+
+* integrate research findings into DCF framework ([#64](https://github.com/domelic/architecture-of-thought/issues/64)) ([222e135](https://github.com/domelic/architecture-of-thought/commit/222e135d44cf4dcb7ec98ca2416d467272f92de3))
+
 ## [2.8.0](https://github.com/domelic/architecture-of-thought/compare/v2.7.0...v2.8.0) (2026-01-19)
 
 
