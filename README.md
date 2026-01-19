@@ -34,9 +34,10 @@ DCF operates at the *micro level* of human-AI interaction—the cognitive strate
 | Practice | Theory & Reference |
 |----------|-------------------|
 | [Quick Start](#quick-start) — Install & begin | [The Book (Optional)](#the-book-optional) — 265-page treatise |
-| [Claude Code Skills](#claude-code-skills) — `/dcf` and `/cybw` | [Theoretical Foundations](#theoretical-foundations) — Research basis |
-| [Practical Resources](#practical-resources) — Templates, prompts, exercises | [All DCF Modes](#all-dcf-modes) — Complete 24-mode reference |
-| [Installation](#installation) — Setup details | [Citation](#citation) — How to cite |
+| [Installation](#installation) — Setup details | [Theoretical Foundations](#theoretical-foundations) — Research basis |
+| [Claude Code Skills](#claude-code-skills) — `/dcf` and `/cybw` | [Citation](#citation) — How to cite |
+| [All DCF Modes](#all-dcf-modes) — Complete 24-mode reference | |
+| [Practical Resources](#practical-resources) — Templates, prompts, exercises | |
 
 **Most users should start with [Quick Start](#quick-start) and the [Practical Resources](#practical-resources).**
 
@@ -53,166 +54,6 @@ DCF operates at the *micro level* of human-AI interaction—the cognitive strate
 | Start a Socratic dialogue | `/dcf` in Claude Code |
 | Challenge your assumptions | `/cybw` in Claude Code |
 | See it in action | [Example Transcripts](resources/DCF_EXAMPLE_TRANSCRIPTS.md) |
-
----
-
-## Claude Code Skills
-
-### `/dcf [mode] [context]` — Socratic Dialogue
-
-24 modes across 5 categories for structured thinking:
-
-```bash
-/dcf                     # General Socratic dialogue
-
-# Evaluation & Review
-/dcf review              # Evaluate before committing
-/dcf checkpoint          # Agentic decision point
-/dcf self-review         # Have Claude review its own work
-
-# Problem Solving
-/dcf debug               # Question the mental model
-/dcf unstick             # Break through blocks
-/dcf decompose           # Systematic task breakdown
-
-# Design & Analysis
-/dcf architect           # Divergent exploration → minimal viable change
-/dcf tradeoffs           # Structured tradeoff analysis
-/dcf assumptions         # Deep assumption excavation
-/dcf premortem           # Anticipate failure before starting
-
-# Learning
-/dcf learn <topic>       # Build understanding through dialogue
-/dcf onboard             # Explore unfamiliar codebase
-```
-
-[See all 24 modes →](#all-dcf-modes)
-
-### `/cybw [target]` — Could You Be Wrong?
-
-Quick adversarial checkpoint based on Hills (2025) research:
-
-```bash
-/cybw                           # Challenge the last response
-/cybw the caching strategy      # Challenge a specific decision
-/cybw "users want this feature" # Challenge an assumption
-```
-
----
-
-## Practical Resources
-
-### Start Here
-
-| Resource | Description | Time |
-|----------|-------------|------|
-| [DCF Essentials](DCF_ESSENTIALS.md) | Condensed practitioner's guide | 5 min |
-| [Example Transcripts](resources/DCF_EXAMPLE_TRANSCRIPTS.md) | 4 annotated real-world conversations | 15 min |
-| [Anti-Patterns Guide](resources/DCF_ANTI_PATTERNS.md) | 14 failure modes with fixes | 10 min |
-
-### Daily Practice
-
-| Resource | Description | Use Case |
-|----------|-------------|----------|
-| [Prompt Library](resources/DCF_PROMPT_LIBRARY.md) | Ready-to-use Socratic prompts | Daily AI interactions |
-| [CLAUDE.md Template](resources/CLAUDE_MD_TEMPLATE.md) | DCF-informed project configuration | Starting new projects |
-| [Self-Assessment](resources/DCF_SELF_ASSESSMENT.md) | Weekly reflection template | Tracking growth |
-| [Workshop Exercises](resources/DCF_WORKSHOP_EXERCISES.md) | 8 hands-on practice scenarios | Skill development |
-
-### Reference
-
-| Resource | Description | Use Case |
-|----------|-------------|----------|
-| [Visual Guide](resources/DCF_VISUAL_GUIDE.md) | Diagrams and visual references | Quick lookup |
-| [FAQ](resources/DCF_FAQ.md) | Comprehensive Q&A | Common questions |
-| [Glossary](resources/DCF_GLOSSARY.md) | 40+ term definitions | Term lookup |
-| [Framework Integration](resources/DCF_FRAMEWORK_INTEGRATION.md) | DCF + Ralph, Plan Mode, BMAD | Combining methodologies |
-| [Comparison Matrix](resources/DCF_COMPARISON_MATRIX.md) | DCF vs other methodologies | Choosing approaches |
-
-### Case Studies
-
-| Example | Domain | DCF Principles |
-|---------|--------|----------------|
-| [Debugging Race Condition](examples/CASE_STUDY_debugging_race_condition.md) | Software Development | Elenchus, Recursive Refinement |
-| [API Architecture Decision](examples/CASE_STUDY_api_architecture.md) | System Design | Dialectic, Checkpoint Protocol |
-| [Learning Rust Ownership](examples/CASE_STUDY_learning_rust.md) | Learning | Maieutics, Learning Stance |
-
-See [examples/README.md](examples/README.md) for the full collection.
-
-### Team Adoption
-
-| Resource | Description | Use Case |
-|----------|-------------|----------|
-| [Team Adoption Playbook](resources/DCF_TEAM_ADOPTION_PLAYBOOK.md) | 5-phase organizational guide | Rolling out DCF |
-| [Slide Deck](resources/DCF_SLIDE_DECK.md) | Presentation for teaching DCF | Team training |
-| [Case Study Template](resources/DCF_CASE_STUDY_TEMPLATE.md) | Standardized documentation format | Sharing experiences |
-| [Reading List](resources/DCF_READING_LIST.md) | Annotated bibliography | Deeper learning |
-
----
-
-## The Book (Optional)
-
-> **Note:** The book is an early draft — a work in progress exploring the theoretical foundations. You can be fully productive with DCF using just the skills and resources above.
-
-**"The Architecture of Thought"** is a 265-page treatise that dives deep into the philosophy and cognitive science behind DCF. It's for those who want to understand *why* the framework works, not just *how* to use it.
-
-| Format | Link |
-|--------|------|
-| Free PDF | [Download (265 pages)](THE_ARCHITECTURE_OF_THOUGHT.pdf) |
-| Free EPUB | [Download](https://github.com/domelic/architecture-of-thought/releases/latest/download/Omelic-Architecture-of-Thought.epub) |
-| Kindle | [Amazon ($9.99)](https://www.amazon.com/dp/B0GHM2M6HR) |
-
-[![Pages](https://img.shields.io/badge/Pages-265-blue.svg)](THE_ARCHITECTURE_OF_THOUGHT.pdf)
-[![LaTeX](https://img.shields.io/badge/Format-LaTeX-green.svg)](THE_ARCHITECTURE_OF_THOUGHT.tex)
-[![Amazon KDP](https://github.com/domelic/architecture-of-thought/actions/workflows/amazon-kdp-publish.yml/badge.svg)](https://github.com/domelic/architecture-of-thought/actions/workflows/amazon-kdp-publish.yml)
-
-<details>
-<summary><strong>Book Contents (12 Parts)</strong></summary>
-
-| Part | Title | Key Chapters |
-|------|-------|--------------|
-| I | The Core Philosophy of DCF | Extraction to Collaboration, The Thinking Mirror, Language as Infrastructure |
-| II | The Socratic Method Reimagined | Socratic Dialogue as Methodology, The Five Phases of Socratic Prompting |
-| III | Prompt Chaining as Cognitive Architecture | Why Single Prompts Fail, Designing Prompt Chains, Recursive Refinement |
-| IV | From Documentation to Knowledge Engineering | Minimal Viable Document, Documentation as System Design, Knowledge Architecture |
-| V | Metacognition and Self-Directed Learning | Thinking About Thinking, The Learning Stance, Building PKM Systems |
-| VI | Philosophical and Cognitive Science Foundations | Extended Mind Thesis, Distributed Cognition, Scaffolding Theory, Dialectical Tradition |
-| VII | Claude Code and Development Best Practices | Architecture, Agent Ecosystem, Memory Systems, Team-Scale DCF, MCP Orchestration |
-| VIII | Practical Application Framework | Practitioner's Toolkit, Failure Modes (14 anti-patterns), Measuring Improvement, Case Studies |
-| IX | The Emerging Discipline | Naming the Field, The Future of Thought Work, Your Role in This Emergence |
-| X | Positioning Within the AI Methodology Landscape | Framework Comparisons (ACE-FCA, BMAD, Ralph), The Stack View, Practical Integration |
-| XI | Agentic Era Adaptations | Manual to Autonomous, Extended Thinking, When to Engage vs. Trust |
-| XII | Critical Perspectives | Limitations of DCF, Ethical Considerations |
-
-**Appendices:** DCF Principles Summary, Prompt Reference, Recommended Reading, Claude Code Resources, Research References, Meta-Example, Glossary (~40 terms), Exercises
-
-</details>
-
----
-
-## Theoretical Foundations
-
-DCF draws on established research in cognitive science and philosophy:
-
-- **Extended Mind Thesis** — Clark & Chalmers (1998)
-- **Distributed Cognition** — Hutchins (1995)
-- **Scaffolding Theory** — Vygotsky, Bruner, Wood & Ross
-- **Hermeneutics** — Gadamer's "fusion of horizons" (*Horizontverschmelzung*)
-- **Critical Rationalism** — Popper's falsificationism (1963)
-- **Double-Loop Learning** — Argyris (1977)
-
-<details>
-<summary><strong>Research validation</strong></summary>
-
-Recent research validates DCF's core practices:
-
-- **Metacognitive Prompting** — Hills (2025) demonstrates that "Could you be wrong?" generates adversarial information absent from initial responses
-- **Autonomy Risk Framework** — Kovács & Szelényi (2025) identifies false mental states and cognitive deskilling as primary risks
-- **Collaboration Measurement** — Sidra & Mason (2025) provides validated scales for collaborative AI literacy and metacognition
-- **Human-AI Collaboration** — Nature Human Behaviour (2024) meta-analysis, Synergy Index (2025)
-- **Independent Validation** — Hashemi Tonekaboni & Soleymani (HICSS 2026) independently operationalizes Socratic elements in multi-agent architecture
-
-</details>
 
 ---
 
@@ -263,6 +104,50 @@ dcf-workflow --help  # Check workflow script
 ```
 
 </details>
+
+---
+
+## Claude Code Skills
+
+### `/dcf [mode] [context]` — Socratic Dialogue
+
+24 modes across 5 categories for structured thinking:
+
+```bash
+/dcf                     # General Socratic dialogue
+
+# Evaluation & Review
+/dcf review              # Evaluate before committing
+/dcf checkpoint          # Agentic decision point
+/dcf self-review         # Have Claude review its own work
+
+# Problem Solving
+/dcf debug               # Question the mental model
+/dcf unstick             # Break through blocks
+/dcf decompose           # Systematic task breakdown
+
+# Design & Analysis
+/dcf architect           # Divergent exploration → minimal viable change
+/dcf tradeoffs           # Structured tradeoff analysis
+/dcf assumptions         # Deep assumption excavation
+/dcf premortem           # Anticipate failure before starting
+
+# Learning
+/dcf learn <topic>       # Build understanding through dialogue
+/dcf onboard             # Explore unfamiliar codebase
+```
+
+[See all 24 modes →](#all-dcf-modes)
+
+### `/cybw [target]` — Could You Be Wrong?
+
+Quick adversarial checkpoint based on Hills (2025) research:
+
+```bash
+/cybw                           # Challenge the last response
+/cybw the caching strategy      # Challenge a specific decision
+/cybw "users want this feature" # Challenge an assumption
+```
 
 ---
 
@@ -365,6 +250,122 @@ Add to your project's `.claude/settings.local.json`:
 ```
 
 See `.claude/settings.example.json` for additional examples.
+
+</details>
+
+---
+
+## Practical Resources
+
+### Start Here
+
+| Resource | Description | Time |
+|----------|-------------|------|
+| [DCF Essentials](DCF_ESSENTIALS.md) | Condensed practitioner's guide | 5 min |
+| [Example Transcripts](resources/DCF_EXAMPLE_TRANSCRIPTS.md) | 4 annotated real-world conversations | 15 min |
+| [Anti-Patterns Guide](resources/DCF_ANTI_PATTERNS.md) | 14 failure modes with fixes | 10 min |
+
+### Daily Practice
+
+| Resource | Description | Use Case |
+|----------|-------------|----------|
+| [Prompt Library](resources/DCF_PROMPT_LIBRARY.md) | Ready-to-use Socratic prompts | Daily AI interactions |
+| [CLAUDE.md Template](resources/CLAUDE_MD_TEMPLATE.md) | DCF-informed project configuration | Starting new projects |
+| [Self-Assessment](resources/DCF_SELF_ASSESSMENT.md) | Weekly reflection template | Tracking growth |
+| [Workshop Exercises](resources/DCF_WORKSHOP_EXERCISES.md) | 8 hands-on practice scenarios | Skill development |
+
+### Reference
+
+| Resource | Description | Use Case |
+|----------|-------------|----------|
+| [Visual Guide](resources/DCF_VISUAL_GUIDE.md) | Diagrams and visual references | Quick lookup |
+| [FAQ](resources/DCF_FAQ.md) | Comprehensive Q&A | Common questions |
+| [Glossary](resources/DCF_GLOSSARY.md) | 40+ term definitions | Term lookup |
+| [Framework Integration](resources/DCF_FRAMEWORK_INTEGRATION.md) | DCF + Ralph, Plan Mode, BMAD | Combining methodologies |
+| [Comparison Matrix](resources/DCF_COMPARISON_MATRIX.md) | DCF vs other methodologies | Choosing approaches |
+
+### Case Studies
+
+| Example | Domain | DCF Principles |
+|---------|--------|----------------|
+| [Debugging Race Condition](examples/CASE_STUDY_debugging_race_condition.md) | Software Development | Elenchus, Recursive Refinement |
+| [API Architecture Decision](examples/CASE_STUDY_api_architecture.md) | System Design | Dialectic, Checkpoint Protocol |
+| [Learning Rust Ownership](examples/CASE_STUDY_learning_rust.md) | Learning | Maieutics, Learning Stance |
+
+See [examples/README.md](examples/README.md) for the full collection.
+
+### Team Adoption
+
+| Resource | Description | Use Case |
+|----------|-------------|----------|
+| [Team Adoption Playbook](resources/DCF_TEAM_ADOPTION_PLAYBOOK.md) | 5-phase organizational guide | Rolling out DCF |
+| [Slide Deck](resources/DCF_SLIDE_DECK.md) | Presentation for teaching DCF | Team training |
+| [Case Study Template](resources/DCF_CASE_STUDY_TEMPLATE.md) | Standardized documentation format | Sharing experiences |
+| [Reading List](resources/DCF_READING_LIST.md) | Annotated bibliography | Deeper learning |
+
+---
+
+## The Book (Optional)
+
+> **Note:** The book is an early draft — a work in progress exploring the theoretical foundations. You can be fully productive with DCF using just the skills and resources above.
+
+**"The Architecture of Thought"** is a 265-page treatise that dives deep into the philosophy and cognitive science behind DCF. It's for those who want to understand *why* the framework works, not just *how* to use it.
+
+| Format | Link |
+|--------|------|
+| Free PDF | [Download (265 pages)](THE_ARCHITECTURE_OF_THOUGHT.pdf) |
+| Free EPUB | [Download](https://github.com/domelic/architecture-of-thought/releases/latest) |
+| Kindle | [Amazon ($9.99)](https://www.amazon.com/dp/B0GHM2M6HR) |
+
+[![Pages](https://img.shields.io/badge/Pages-265-blue.svg)](THE_ARCHITECTURE_OF_THOUGHT.pdf)
+[![LaTeX](https://img.shields.io/badge/Format-LaTeX-green.svg)](THE_ARCHITECTURE_OF_THOUGHT.tex)
+[![Amazon KDP](https://github.com/domelic/architecture-of-thought/actions/workflows/amazon-kdp-publish.yml/badge.svg)](https://github.com/domelic/architecture-of-thought/actions/workflows/amazon-kdp-publish.yml)
+
+<details>
+<summary><strong>Book Contents (12 Parts)</strong></summary>
+
+| Part | Title | Key Chapters |
+|------|-------|--------------|
+| I | The Core Philosophy of DCF | Extraction to Collaboration, The Thinking Mirror, Language as Infrastructure |
+| II | The Socratic Method Reimagined | Socratic Dialogue as Methodology, The Five Phases of Socratic Prompting |
+| III | Prompt Chaining as Cognitive Architecture | Why Single Prompts Fail, Designing Prompt Chains, Recursive Refinement |
+| IV | From Documentation to Knowledge Engineering | Minimal Viable Document, Documentation as System Design, Knowledge Architecture |
+| V | Metacognition and Self-Directed Learning | Thinking About Thinking, The Learning Stance, Building PKM Systems |
+| VI | Philosophical and Cognitive Science Foundations | Extended Mind Thesis, Distributed Cognition, Scaffolding Theory, Dialectical Tradition |
+| VII | Claude Code and Development Best Practices | Architecture, Agent Ecosystem, Memory Systems, Team-Scale DCF, MCP Orchestration |
+| VIII | Practical Application Framework | Practitioner's Toolkit, Failure Modes (14 anti-patterns), Measuring Improvement, Case Studies |
+| IX | The Emerging Discipline | Naming the Field, The Future of Thought Work, Your Role in This Emergence |
+| X | Positioning Within the AI Methodology Landscape | Framework Comparisons (ACE-FCA, BMAD, Ralph), The Stack View, Practical Integration |
+| XI | Agentic Era Adaptations | Manual to Autonomous, Extended Thinking, When to Engage vs. Trust |
+| XII | Critical Perspectives | Limitations of DCF, Ethical Considerations |
+
+**Appendices:** DCF Principles Summary, Prompt Reference, Recommended Reading, Claude Code Resources, Research References, Meta-Example, Glossary (~40 terms), Exercises
+
+</details>
+
+---
+
+## Theoretical Foundations
+
+DCF draws on established research in cognitive science and philosophy:
+
+- **Extended Mind Thesis** — Clark & Chalmers (1998)
+- **Distributed Cognition** — Hutchins (1995)
+- **Scaffolding Theory** — Vygotsky, Bruner, Wood & Ross
+- **Hermeneutics** — Gadamer's "fusion of horizons" (*Horizontverschmelzung*)
+- **Critical Rationalism** — Popper's falsificationism (1963)
+- **Double-Loop Learning** — Argyris (1977)
+
+<details>
+<summary><strong>Research validation</strong></summary>
+
+Recent research validates DCF's core practices:
+
+- **Metacognitive Prompting** — Hills (2025) demonstrates that "Could you be wrong?" generates adversarial information absent from initial responses
+- **Autonomy Risk Framework** — Kovács & Szelényi (2025) identifies false mental states and cognitive deskilling as primary risks
+- **Collaboration Measurement** — Sidra & Mason (2025) provides validated scales for collaborative AI literacy and metacognition
+- **Human-AI Collaboration** — Nature Human Behaviour (2024) meta-analysis, Synergy Index (2025)
+- **Independent Validation** — Hashemi Tonekaboni & Soleymani (HICSS 2026) independently operationalizes Socratic elements in multi-agent architecture
 
 </details>
 
