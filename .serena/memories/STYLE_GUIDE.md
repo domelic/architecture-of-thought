@@ -19,6 +19,7 @@ Writing conventions, terminology, and formatting patterns for maintaining consis
 ## Terminology Preferences
 
 ### Preferred Terms → Avoid
+
 | Use | Instead of |
 |-----|-----------|
 | human-AI collaboration | AI-assisted work, AI tools |

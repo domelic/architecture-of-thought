@@ -46,6 +46,7 @@ Quick reference for Dialectical Cognition Framework terminology, modes, and rela
 | `explain` | Feynman technique | "Where did you hesitate or use hand-wavy language?" |
 
 ### Session Management (4 modes)
+
 | Mode | Purpose | Key Question |
 |------|---------|--------------|
 | `compact` | Prepare for compaction | "What context matters for the next session?" |
