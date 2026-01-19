@@ -240,7 +240,7 @@ install_dcf_skill() {
     mkdir -p "$SKILL_DIR"
 
     if check_existing_file "$DCF_SKILL" "/dcf skill" "$force"; then
-        if download_file "$BASE_URL/.claude/skills/dcf.md" "$DCF_SKILL"; then
+        if download_file "$BASE_URL/.claude/commands/dcf.md" "$DCF_SKILL"; then
             print_success "  Installed to $DCF_SKILL"
             INSTALLED_SKILL=true
             return 0
