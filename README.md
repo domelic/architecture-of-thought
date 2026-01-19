@@ -28,9 +28,11 @@ DCF operates at the *micro level* of human-AI interaction—the cognitive strate
 
 ---
 
-## Download
+## Get the Book
 
-**[Download PDF (198 pages)](THE_ARCHITECTURE_OF_THOUGHT.pdf)**
+**[Download Free PDF (198 pages)](THE_ARCHITECTURE_OF_THOUGHT.pdf)** — GitHub
+
+**[Buy on Kindle](https://www.amazon.com/dp/B0GHM2M6HR)** — Amazon ($9.99)
 
 **[DCF Essentials — Practitioner's Quick Reference](DCF_ESSENTIALS.md)**
 

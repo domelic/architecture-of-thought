@@ -56,12 +56,13 @@ dcf-workflow --dry-run debug  # Show what would run
 ### How It Works
 
 1. Shows the workflow sequence
-2. For each mode:
+2. **SETUP** — Contextual questions to frame your thinking before starting
+3. For each mode:
    - Displays the `/dcf` command to run
    - Copies to clipboard (if available)
    - Waits for you to complete in Claude Code
-3. Between modes:
-   - Checkpoint prompt
+4. **CHECKPOINT** — Contextual transition questions between modes
+   - Questions specific to the workflow and transition
    - Opportunity to branch or stop
 
 ### Example Session
@@ -76,7 +77,16 @@ DCF Workflow
   Context:  monorepo vs polyrepo
 
 This workflow has 3 steps with checkpoints between each.
-Press Enter to begin...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+▋ SETUP
+
+  Before starting 'tradeoffs':
+  • What decision needs to be made?
+  • What constraints are non-negotiable?
+  • Who are the stakeholders and what do they care about?
+
+  Press Enter to begin, or Ctrl+C to stop...
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ▶ DCF Mode: tradeoffs
@@ -93,9 +103,9 @@ Run in Claude Code:
 ▋ CHECKPOINT
 
   Before proceeding to 'challenge':
-  • Did the previous mode achieve its outcome?
-  • What insights emerged that inform the next step?
-  • Should you branch to a different mode instead?
+  • Are all viable options on the table with clear tradeoffs?
+  • What option are you leaning toward and why?
+  • What's being overlooked or underweighted?
 
   Press Enter to continue, or Ctrl+C to stop...
 ```

@@ -22,8 +22,8 @@
 
 # Tool-specific directories
 .claude/
-!.claude/skills/
-!.claude/skills/**
+!.claude/commands/
+!.claude/commands/**
 !.claude/scripts/
 !.claude/scripts/**
 !.claude/settings.example.json

@@ -408,7 +408,7 @@ When you discover a prompting approach that works well, **codify it as a skill**
 **The process:**
 1. Notice you're repeating a successful pattern
 2. Extract the transferable essence
-3. Create `.claude/skills/skillname.md`
+3. Create `.claude/commands/skillname.md`
 4. Test on new instances, refine
 
 **Example:** The `/dcf` skill itself is pattern capture — Socratic questioning applied to AI collaboration, codified into reusable infrastructure.

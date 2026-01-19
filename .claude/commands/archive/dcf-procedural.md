@@ -271,7 +271,7 @@ Guide the user through recognizing and codifying an effective pattern as a Claud
    - "What does Claude need to know to execute this well?"
 
 4. **Create the Skill File**
-   - Offer to create `.claude/skills/skillname.md` with:
+   - Offer to create `.claude/commands/skillname.md` with:
      - Usage section with invocation examples
      - Instructions section with detailed guidance
      - When to apply criteria

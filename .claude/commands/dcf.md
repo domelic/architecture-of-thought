@@ -252,7 +252,7 @@ Context hygiene and capture.
 - Identify the pattern: What's working? Done multiple times? Applies to other tasks?
 - Extract the essence: What's transferable? What's the non-obvious insight?
 - Generalize: Name, modes, when to apply, what Claude needs to know
-- Create `.claude/skills/skillname.md` with usage, instructions, criteria
+- Create `.claude/commands/skillname.md` with usage, instructions, criteria
 - Plan refinement: How will you know if it needs adjustment?
 
 ---
