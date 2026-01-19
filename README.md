@@ -172,7 +172,7 @@ This repository includes a `/dcf` skill for Claude Code—a principle-based appr
 /dcf context-health      # Assess and address context rot
 /dcf retro               # Capture learning
 /dcf skill               # Capture pattern as reusable skill
-```text
+```
 
 **Workflow Automation:** Use the `dcf-workflow` script to chain modes with checkpoints:
 
@@ -180,7 +180,7 @@ This repository includes a `/dcf` skill for Claude Code—a principle-based appr
 dcf-workflow new-project              # onboard → architect → premortem
 dcf-workflow debug "auth timeout"     # debug → assumptions → simplify
 dcf-workflow decision "API design"    # tradeoffs → challenge → decide
-```text
+```
 
 > **Caution:** Workflows are scaffolding, not standard practice. Each transition should be a genuine checkpoint—"Is this the right next mode?"—not an automatic progression. The goal is to internalize when each mode fits, then choose deliberately.
 
@@ -205,7 +205,7 @@ If you use or reference this work, please cite:
   url = {https://doi.org/10.5281/zenodo.18275170},
   note = {A Treatise on Human-AI Collaboration in the Agentic Era}
 }
-```text
+```
 
 ### APA
 Omelic, D., & Claude. (2026). *The Architecture of Thought: The Dialectical Cognition Framework*. Zenodo. https://doi.org/10.5281/zenodo.18275170
@@ -226,7 +226,7 @@ bibtex THE_ARCHITECTURE_OF_THOUGHT
 makeindex THE_ARCHITECTURE_OF_THOUGHT
 pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
-```text
+```
 
 ---
 
@@ -277,7 +277,7 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
     ├── DCF_CASE_STUDY_TEMPLATE.md    # Documentation template
     ├── DCF_VIDEO_SCRIPT.md           # Media production script
     └── DCF_RESEARCH_AGENDA.md        # Open research questions
-```text
+```
 
 ---
 
