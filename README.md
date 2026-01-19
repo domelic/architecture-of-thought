@@ -8,7 +8,20 @@
 
 > **DCF positions LLMs as *thinking mirrors*: collaborative partners in the architecture of thought itself.**
 
-**What is DCF?** A methodology for working with AI that emphasizes *questioning over extraction*. Instead of "give me the answer," you engage in structured Socratic dialogue that surfaces assumptions, explores alternatives, and builds genuine understanding. The framework provides 24 modes for different situations—debugging, architecture decisions, learning new domains, and more.
+**What is DCF?** A methodology for working with AI that emphasizes *questioning over extraction*. Instead of "give me the answer," you engage in structured Socratic dialogue that surfaces assumptions, explores alternatives, and builds genuine understanding. DCF operates as a "cognitive operating system" that runs on top of whatever agentic framework you choose.
+
+<details>
+<summary><strong>What's included</strong></summary>
+
+- The **Thinking Mirror** hypothesis for understanding human-LLM interaction
+- **12 core principles** including Socratic dialogue, recursive refinement, and anticipatory calibration
+- **24 modes** across 5 categories (evaluation, problem-solving, design, learning, session management)
+- **14 documented anti-patterns** with diagnostic questions and mitigations
+- Positioning within the 2025-2026 AI methodology landscape (ACE-FCA, 12-Factor Agents, BMAD, Ralph)
+- Research-grounded **autonomy risk framework** with empirically-validated mitigations
+- The **"Could You Be Wrong?" checkpoint protocol** for surfacing adversarial information
+
+</details>
 
 **Who is this for?** Software engineers, technical writers, and knowledge workers who want to move beyond surface-level prompting with AI coding assistants.
 
