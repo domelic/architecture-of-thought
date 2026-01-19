@@ -101,8 +101,9 @@ Annotated reference guide for THE_ARCHITECTURE_OF_THOUGHT citations.
 | `hills2025metacognitive` | Hills | "Could You Be Wrong" (2025) | Checkpoint protocol validation, adversarial information generation |
 | `socrai2025autonomy` | Kovács & Szelényi | "Addressing Autonomy Risks in Generative Chatbots" (2025) | Autonomy risks (false mental states, cognitive deskilling) |
 | `mentalmodels2025` | Weber, Müller, Fischer | "Development of Mental Models in Human-AI Collaboration" (2025) | Mental Model Triad (domain, processing, complementarity-awareness) |
+| `sidra2025scales` | Sidra & Mason | "Collaborative AI Literacy and Metacognition Scales" (2025) | Validated measurement instruments for collaboration skills |
 
-**When to cite**: Checkpoint protocol ("could you be wrong?"), theoretical grounding for anti-patterns, mental model development.
+**When to cite**: Checkpoint protocol ("could you be wrong?"), theoretical grounding for anti-patterns, mental model development, measuring collaboration skills.
 
 ---
 
@@ -213,4 +214,8 @@ Weber et al. (Mental Model Triad)
     ├── Domain model → Learning stance
     ├── Processing model → Anticipatory calibration
     └── Complementarity-awareness → Thinking Mirror
+
+Sidra & Mason (Collaboration Scales)
+    ├── Collaborative AI Literacy → Measurable practitioner skills
+    └── Collaborative AI Metacognition → Quantifying DCF outcomes
 ```

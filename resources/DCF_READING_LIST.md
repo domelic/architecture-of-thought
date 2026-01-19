@@ -162,13 +162,13 @@ Start with the **Essentials**, then explore based on your interests.
 - **Key insight**: Simply combining humans and AI doesn't guarantee synergy—the quality of collaboration matters
 - **Recommended for**: Those wanting research backing
 
-### Collaborative AI Literacy and Metacognition
-**Various authors (2024-2025). Emerging research on AI collaboration skills.**
+### Collaborative AI Literacy and Metacognition Scales
+**Sidra, S., & Mason, C. (2025). "Generative AI in Human-AI Collaboration: Validation of the Collaborative AI Literacy and Collaborative AI Metacognition Scales." International Journal of Human–Computer Interaction.**
 
-- **What it is**: Developing measures for AI collaboration capability
-- **Why it matters for DCF**: Validates that effective AI use is a learnable skill
-- **Key insight**: Metacognition during AI use predicts collaboration quality
-- **Recommended for**: Researchers and measurement-focused practitioners
+- **What it is**: Validated measurement instruments for AI collaboration capability
+- **Why it matters for DCF**: Provides concrete metrics for the skills DCF develops—both literacy (what you know) and metacognition (how you monitor your collaboration)
+- **Key insight**: Collaborative AI metacognition is measurable and predicts effective AI use; these scales can assess DCF training outcomes
+- **Recommended for**: Researchers, organizations measuring DCF adoption, anyone wanting to quantify collaboration skills
 
 ### The Synergy Index
 **Riedl, M., & Weidmann, J. (2025). "The Synergy Index: Measuring Human-AI Partnership Effectiveness."**
@@ -312,6 +312,7 @@ Start with the **Essentials**, then explore based on your interests.
 | Human-AI collaboration research | Nature Human Behaviour (2024) |
 | Why "Could you be wrong?" works | Hills (2025) |
 | Why anti-patterns are risky | Kovács & Szelényi (2025) |
+| How to measure collaboration skills | Sidra & Mason (2025) |
 | How LLMs work | The Illustrated Transformer |
 | Organizational change | The Fifth Discipline |
 | Knowledge management | How to Take Smart Notes |
