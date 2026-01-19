@@ -58,6 +58,7 @@ The 2,400-year-old Socratic method maps directly to AI collaboration:
 | **Consequences** (tracing implications) | "What are the consequences? What if you're wrong?" |
 | **Aporia** (productive confusion) | "What am I not seeing about this?" |
 | **Meta-question** (finding the inquiry) | "What question should I be asking?" |
+| **Via Negativa** (defining by exclusion) | "What should we explicitly NOT do here?" |
 
 **Practice:** After every AI response, ask at least one challenging question before accepting it.
 
@@ -207,6 +208,8 @@ The `/dcf` skill is **principle-based**, not scripted. Each mode has an outcome,
 /dcf unstick          # Break through blocks
 /dcf simplify         # Find the essential
 /dcf diagnose         # Identify anti-pattern
+/dcf decompose        # Systematic task breakdown
+/dcf verify           # Multi-path reasoning synthesis
 
 # Design & Analysis
 /dcf architect        # Divergent → convergent design
@@ -215,6 +218,7 @@ The `/dcf` skill is **principle-based**, not scripted. Each mode has an outcome,
 /dcf premortem        # Anticipate failure
 /dcf challenge        # Steelman opposition
 /dcf decide           # Reach closure
+/dcf constrain        # Define boundaries before generation
 
 # Learning & Exploration
 /dcf learn <topic>    # Build understanding
@@ -234,6 +238,8 @@ The `/dcf` skill is **principle-based**, not scripted. Each mode has an outcome,
 dcf-workflow new-project    # onboard → architect → premortem
 dcf-workflow debug          # debug → assumptions → simplify
 dcf-workflow decision       # tradeoffs → challenge → decide
+dcf-workflow complex-task   # constrain → decompose → architect
+dcf-workflow high-stakes    # assumptions → verify → challenge → decide
 ```
 
 **Principle:** Claude adapts Socratic questioning to the actual situation—no rigid scripts.
