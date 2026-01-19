@@ -37,6 +37,7 @@ jobs:
             --exclude "AMAZON_PUBLISHING_GUIDE.md"
             --exclude "\\[Definition\\]"
             --exclude "DCF_CASE_STUDY_TEMPLATE.md"
+            --exclude "^https://github.com/domelic/architecture-of-thought/compare/"
             '**/*.md'
           fail: true
         env:
