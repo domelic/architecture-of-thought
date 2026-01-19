@@ -250,10 +250,6 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ├── release-please-config.json        # Release automation config
 ├── assets/
 │   └── cover.jpg                     # Book cover image
-├── docs/                             # Private documentation (gitignored)
-│   ├── AMAZON_KDP_CONTENT.md         # KDP metadata and description
-│   ├── AMAZON_PUBLISHING_GUIDE.md    # Full publishing documentation
-│   └── CLAUDE_CODE_SKILLS.md         # Claude Code skill development guide
 ├── .github/
 │   ├── CODEOWNERS                    # Code ownership definitions
 │   ├── FUNDING.yml                   # Sponsorship configuration

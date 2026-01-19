@@ -155,5 +155,5 @@ Amazon KDP has no public API for automated uploads. The workflow automates every
 
 - [KDP Dashboard](https://kdp.amazon.com)
 - [Kindle Previewer](https://www.amazon.com/kindlepreviewer)
-- [AMAZON_PUBLISHING_GUIDE.md](docs/AMAZON_PUBLISHING_GUIDE.md) — Full publishing documentation
-- [AMAZON_KDP_CONTENT.md](docs/AMAZON_KDP_CONTENT.md) — Ready-to-use KDP content
+- `docs/AMAZON_PUBLISHING_GUIDE.md` — Full publishing documentation (local only, gitignored)
+- `docs/AMAZON_KDP_CONTENT.md` — Ready-to-use KDP content (local only, gitignored)
