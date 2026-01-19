@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.4.3](https://github.com/domelic/architecture-of-thought/compare/v2.4.2...v2.4.3) (2026-01-19)
+
+
+### Bug Fixes
+
+* update settings.example.json and link checker ([#44](https://github.com/domelic/architecture-of-thought/issues/44)) ([ec2e7de](https://github.com/domelic/architecture-of-thought/commit/ec2e7de73afa87a627c74ff4f97fff5d8aa44579))
+* use Zenodo concept DOI in CITATION.cff ([#46](https://github.com/domelic/architecture-of-thought/issues/46)) ([2797591](https://github.com/domelic/architecture-of-thought/commit/2797591081fc3a6ae21c7a3728174c7973f260bb))
+
 ## [2.4.2](https://github.com/domelic/architecture-of-thought/compare/v2.4.1...v2.4.2) (2026-01-19)
 
 
