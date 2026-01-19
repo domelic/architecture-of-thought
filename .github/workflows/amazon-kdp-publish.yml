@@ -163,6 +163,8 @@ jobs:
 
           A new release has been published and the EPUB has been built.
 
+          > ⚠️ **Reminder:** Do NOT enroll in KDP Select. It requires exclusivity and conflicts with the free EPUB/PDF on GitHub.
+
           ### Download EPUB
 
           Download from the GitHub release assets or Actions artifacts.
@@ -174,6 +176,7 @@ jobs:
           - [ ] Navigate to your book's Kindle eBook Content
           - [ ] Upload the new EPUB file
           - [ ] Review the preview in Kindle Previewer
+          - [ ] **Ensure KDP Select is NOT enabled**
           - [ ] Update the version number in book details if needed
           - [ ] Save and publish changes
           - [ ] Wait for Amazon review (24-72 hours)
