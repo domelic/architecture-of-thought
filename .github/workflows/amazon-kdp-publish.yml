@@ -97,10 +97,9 @@ jobs:
       - name: Create KDP upload issue
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ needs.build-epub.outputs.version }}
+          EPUB_NAME: ${{ needs.build-epub.outputs.epub_name }}
         run: |
-          VERSION="${{ needs.build-epub.outputs.version }}"
-          EPUB_NAME="${{ needs.build-epub.outputs.epub_name }}"
-
           # Check if issue already exists
           EXISTING=$(gh issue list --label "amazon-kdp" --state open --json number --jq length)
           if [ "$EXISTING" -gt "0" ]; then
@@ -108,43 +107,45 @@ jobs:
             exit 0
           fi
 
+          # Create issue body file
+          cat > /tmp/issue-body.md << 'ISSUE_EOF'
+          ## Amazon KDP Upload Required
+
+          A new release has been published and the EPUB has been built.
+
+          ### Download EPUB
+
+          Download from the GitHub release assets or Actions artifacts.
+
+          ### Upload Checklist
+
+          - [ ] Download the EPUB file from the release
+          - [ ] Log in to [KDP](https://kdp.amazon.com)
+          - [ ] Navigate to your book's Kindle eBook Content
+          - [ ] Upload the new EPUB file
+          - [ ] Review the preview in Kindle Previewer
+          - [ ] Update the version number in book details if needed
+          - [ ] Save and publish changes
+          - [ ] Wait for Amazon review (24-72 hours)
+
+          ### Book Details
+
+          | Field | Value |
+          |-------|-------|
+          | Title | The Architecture of Thought |
+          | Subtitle | The Dialectical Cognition Framework |
+          | Author | Damir Omelic |
+
+          ### After Publishing
+
+          - [ ] Verify the update is live on Amazon
+          - [ ] Close this issue
+
+          ---
+          *This issue was automatically created by the Amazon KDP Publish workflow.*
+          ISSUE_EOF
+
           gh issue create \
             --title "Amazon KDP: Upload ${VERSION}" \
-            --label "amazon-kdp,release" \
-            --body "## Amazon KDP Upload Required
-
-A new release **${VERSION}** has been published and the EPUB has been built.
-
-### Download EPUB
-
-- **From Release**: [${EPUB_NAME}](https://github.com/${{ github.repository }}/releases/download/${VERSION}/${EPUB_NAME})
-- **From Artifacts**: Check the [Actions run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
-
-### Upload Checklist
-
-- [ ] Download the EPUB file from the release
-- [ ] Log in to [KDP](https://kdp.amazon.com)
-- [ ] Navigate to your book's Kindle eBook Content
-- [ ] Upload the new EPUB file
-- [ ] Review the preview in Kindle Previewer
-- [ ] Update the version number in book details if needed
-- [ ] Save and publish changes
-- [ ] Wait for Amazon review (24-72 hours)
-
-### Book Details
-
-| Field | Value |
-|-------|-------|
-| Title | The Architecture of Thought |
-| Subtitle | The Dialectical Cognition Framework |
-| Author | Damir Omelic |
-| Version | ${VERSION} |
-
-### After Publishing
-
-- [ ] Verify the update is live on Amazon
-- [ ] Close this issue
-
----
-*This issue was automatically created by the Amazon KDP Publish workflow.*
-"
+            --label "amazon-kdp" \
+            --body-file /tmp/issue-body.md
