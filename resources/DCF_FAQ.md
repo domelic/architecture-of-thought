@@ -99,7 +99,7 @@ Signs you're doing "DCF theater" (going through motions):
 
 ## Objections and Concerns
 
-### Isn't this just overthinking? Sometimes I need quick answers.
+### Isn't this just overthinking? Sometimes I need quick answers
 
 DCF isn't about applying maximum rigor to everything. It's about matching engagement level to task importance:
 
