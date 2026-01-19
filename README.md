@@ -155,6 +155,8 @@ This repository includes a `/dcf` skill for Claude Code—a principle-based appr
 /dcf unstick             # Break through blocks
 /dcf simplify            # Find the essential
 /dcf diagnose            # Identify which anti-pattern you're falling into
+/dcf decompose           # Systematic task breakdown with dependency mapping
+/dcf verify              # Multi-path reasoning synthesis for confidence
 
 # Design & Analysis
 /dcf architect           # Divergent exploration → minimal viable change
@@ -163,6 +165,7 @@ This repository includes a `/dcf` skill for Claude Code—a principle-based appr
 /dcf premortem           # Anticipate failure before starting
 /dcf challenge           # Steelman the opposition
 /dcf decide              # Reach closure on a decision
+/dcf constrain           # Define boundaries before generation
 
 # Learning & Exploration
 /dcf learn <topic>       # Build understanding through dialogue
@@ -182,6 +185,9 @@ This repository includes a `/dcf` skill for Claude Code—a principle-based appr
 dcf-workflow new-project              # onboard → architect → premortem
 dcf-workflow debug "auth timeout"     # debug → assumptions → simplify
 dcf-workflow decision "API design"    # tradeoffs → challenge → decide
+dcf-workflow complex-task             # constrain → decompose → architect
+dcf-workflow high-stakes              # assumptions → verify → challenge → decide
+dcf-workflow unfamiliar               # onboard → decompose → verify
 ```
 
 > **Caution:** Workflows are scaffolding, not standard practice. Each transition should be a genuine checkpoint—"Is this the right next mode?"—not an automatic progression. The goal is to internalize when each mode fits, then choose deliberately.
