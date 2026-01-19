@@ -128,6 +128,8 @@ gh release list
 
 ## Amazon KDP Publishing
 
+> ⚠️ **Do NOT enroll in KDP Select.** KDP Select requires exclusivity—you cannot distribute the ebook elsewhere (including the free EPUB/PDF on GitHub). This project intentionally offers free downloads alongside paid Kindle purchases.
+
 When a release is published, an automated workflow builds the EPUB and creates a GitHub issue with upload instructions.
 
 ### Automatic Steps
