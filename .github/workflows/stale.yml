@@ -28,7 +28,7 @@ jobs:
           days-before-issue-stale: 45
           days-before-issue-close: 14
           stale-issue-label: 'stale'
-          exempt-issue-labels: 'pinned,security,in-progress'
+          exempt-issue-labels: 'pinned,security,in-progress,amazon-kdp'
 
           # PR settings
           stale-pr-message: >
