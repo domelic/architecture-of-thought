@@ -25,7 +25,7 @@ Requires TeX Live 2025 or MacTeX. The triple pdflatex run resolves cross-referen
 |------|---------|
 | `THE_ARCHITECTURE_OF_THOUGHT.tex` | Main LaTeX source (198 pages, 12 parts + appendices) |
 | `DCF_ESSENTIALS.md` | Condensed practitioner's guide — read this to understand DCF concepts |
-| `.claude/skills/dcf.md` | The `/dcf` skill definition (21 modes in 5 categories) |
+| `.claude/commands/dcf.md` | The `/dcf` skill definition (21 modes in 5 categories) |
 | `resources/CLAUDE_MD_TEMPLATE.md` | Template for DCF-informed CLAUDE.md files |
 | `references.bib` | BibTeX bibliography (31 sources) |
 
@@ -33,7 +33,7 @@ Requires TeX Live 2025 or MacTeX. The triple pdflatex run resolves cross-referen
 
 ### `/dcf [mode] [context]` — Socratic Dialogue
 
-Applies Socratic questioning contextually. See `.claude/skills/dcf.md` for full details.
+Applies Socratic questioning contextually. See `.claude/commands/dcf.md` for full details.
 
 | Category | Modes |
 |----------|-------|
