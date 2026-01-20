@@ -28,10 +28,12 @@ readonly VERSION="1.0.0"
 readonly SKILL_DIR="$HOME/.claude/commands"
 readonly BIN_DIR="$HOME/bin"
 readonly DCF_SKILL="$SKILL_DIR/dcf.md"
+readonly CYBW_SKILL="$SKILL_DIR/cybw.md"
 readonly DCF_WORKFLOW="$BIN_DIR/dcf-workflow"
 
 # Track installation results
-INSTALLED_SKILL=false
+INSTALLED_DCF_SKILL=false
+INSTALLED_CYBW_SKILL=false
 INSTALLED_WORKFLOW=false
 INSTALLED_PATH=false
 INSTALLED_HOOKS=false
@@ -90,6 +92,7 @@ show_banner() {
 ║                                         v${VERSION}        ║
 ║  Components:                                              ║
 ║    • /dcf skill      - Socratic dialogue modes            ║
+║    • /cybw skill     - Quick adversarial checkpoint       ║
 ║    • dcf-workflow    - Chain modes with checkpoints       ║
 ║    • hooks           - Auto-trigger DCF checkpoints       ║
 ╚═══════════════════════════════════════════════════════════╝"
@@ -108,8 +111,12 @@ Options:
   --help     Show this help message
 
 Components installed:
-  ~/.claude/commands/dcf.md  Global /dcf skill for Claude Code
-  ~/bin/dcf-workflow         Workflow automation script
+  ~/.claude/commands/dcf.md   Global /dcf skill for Claude Code
+  ~/.claude/commands/cybw.md  Global /cybw skill (quick adversarial checkpoint)
+  ~/bin/dcf-workflow          Workflow automation script
+
+Note: When run via pipe (curl | bash), interactive prompts are skipped.
+      Existing files are preserved; use --force to overwrite.
 
 Documentation:
   https://github.com/domelic/architecture-of-thought
@@ -236,13 +243,30 @@ path_already_configured() {
 install_dcf_skill() {
     local force="$1"
 
-    print_step "1/4" "Installing /dcf skill..."
+    print_step "1/5" "Installing /dcf skill..."
     mkdir -p "$SKILL_DIR"
 
     if check_existing_file "$DCF_SKILL" "/dcf skill" "$force"; then
         if download_file "$BASE_URL/.claude/commands/dcf.md" "$DCF_SKILL"; then
             print_success "  Installed to $DCF_SKILL"
-            INSTALLED_SKILL=true
+            INSTALLED_DCF_SKILL=true
+            return 0
+        fi
+        return 1
+    fi
+    return 0
+}
+
+install_cybw_skill() {
+    local force="$1"
+
+    print_step "2/5" "Installing /cybw skill..."
+    mkdir -p "$SKILL_DIR"
+
+    if check_existing_file "$CYBW_SKILL" "/cybw skill" "$force"; then
+        if download_file "$BASE_URL/.claude/commands/cybw.md" "$CYBW_SKILL"; then
+            print_success "  Installed to $CYBW_SKILL"
+            INSTALLED_CYBW_SKILL=true
             return 0
         fi
         return 1
@@ -253,7 +277,7 @@ install_dcf_skill() {
 install_dcf_workflow() {
     local force="$1"
 
-    print_step "2/4" "Installing dcf-workflow script..."
+    print_step "3/5" "Installing dcf-workflow script..."
     mkdir -p "$BIN_DIR"
 
     if check_existing_file "$DCF_WORKFLOW" "dcf-workflow" "$force"; then
@@ -271,7 +295,7 @@ install_dcf_workflow() {
 configure_path() {
     local shell_config="$1"
 
-    print_step "3/4" "Configuring PATH..."
+    print_step "4/5" "Configuring PATH..."
 
     if path_already_configured "$shell_config"; then
         print_success "  ~/bin already configured in PATH"
@@ -292,7 +316,7 @@ configure_path() {
 install_hooks() {
     local settings_file=".claude/settings.local.json"
 
-    print_step "4/4" "Configure hooks?"
+    print_step "5/5" "Configure hooks?"
     echo "    Hooks auto-trigger DCF checkpoints on edits and destructive commands."
     echo ""
 
@@ -336,7 +360,8 @@ show_summary() {
     echo ""
 
     # Check if anything was installed
-    if [[ "$INSTALLED_SKILL" == "false" ]] && \
+    if [[ "$INSTALLED_DCF_SKILL" == "false" ]] && \
+       [[ "$INSTALLED_CYBW_SKILL" == "false" ]] && \
        [[ "$INSTALLED_WORKFLOW" == "false" ]] && \
        [[ "$INSTALLED_PATH" == "false" ]] && \
        [[ "$INSTALLED_HOOKS" == "false" ]]; then
@@ -346,6 +371,7 @@ show_summary() {
         echo ""
         echo "  Existing installation:"
         echo "    • ~/.claude/commands/dcf.md   (global /dcf skill)"
+        echo "    • ~/.claude/commands/cybw.md  (global /cybw skill)"
         echo "    • ~/bin/dcf-workflow          (workflow automation)"
         echo ""
         echo "  To reinstall, run with --force flag"
@@ -359,12 +385,14 @@ show_summary() {
     echo ""
 
     # Show what was installed
-    if [[ "$INSTALLED_SKILL" == "true" ]] || \
+    if [[ "$INSTALLED_DCF_SKILL" == "true" ]] || \
+       [[ "$INSTALLED_CYBW_SKILL" == "true" ]] || \
        [[ "$INSTALLED_WORKFLOW" == "true" ]] || \
        [[ "$INSTALLED_PATH" == "true" ]] || \
        [[ "$INSTALLED_HOOKS" == "true" ]]; then
         echo "  Installed:"
-        [[ "$INSTALLED_SKILL" == "true" ]] && echo "    • ~/.claude/commands/dcf.md   (global /dcf skill)"
+        [[ "$INSTALLED_DCF_SKILL" == "true" ]] && echo "    • ~/.claude/commands/dcf.md   (global /dcf skill)"
+        [[ "$INSTALLED_CYBW_SKILL" == "true" ]] && echo "    • ~/.claude/commands/cybw.md  (global /cybw skill)"
         [[ "$INSTALLED_WORKFLOW" == "true" ]] && echo "    • ~/bin/dcf-workflow          (workflow automation)"
         [[ "$INSTALLED_PATH" == "true" ]] && echo "    • PATH updated in $shell_config"
         [[ "$INSTALLED_HOOKS" == "true" ]] && echo "    • .claude/settings.local.json (hooks)"
@@ -373,14 +401,16 @@ show_summary() {
 
     # Show what was skipped
     local skipped=false
-    if [[ "$INSTALLED_SKILL" == "false" ]] || \
+    if [[ "$INSTALLED_DCF_SKILL" == "false" ]] || \
+       [[ "$INSTALLED_CYBW_SKILL" == "false" ]] || \
        [[ "$INSTALLED_WORKFLOW" == "false" ]]; then
         skipped=true
     fi
 
     if [[ "$skipped" == "true" ]]; then
         echo "  Skipped (already exists):"
-        [[ "$INSTALLED_SKILL" == "false" ]] && echo "    • ~/.claude/commands/dcf.md"
+        [[ "$INSTALLED_DCF_SKILL" == "false" ]] && echo "    • ~/.claude/commands/dcf.md"
+        [[ "$INSTALLED_CYBW_SKILL" == "false" ]] && echo "    • ~/.claude/commands/cybw.md"
         [[ "$INSTALLED_WORKFLOW" == "false" ]] && echo "    • ~/bin/dcf-workflow"
         echo ""
     fi
@@ -389,10 +419,10 @@ show_summary() {
     if [[ "$INSTALLED_PATH" == "true" ]]; then
         echo "    1. Restart terminal or run: source $shell_config"
         echo "    2. Restart Claude Code session (for hooks)"
-        echo "    3. Try: /dcf or dcf-workflow --help"
+        echo "    3. Try: /dcf, /cybw, or dcf-workflow --help"
     else
         echo "    1. Restart Claude Code session (for hooks)"
-        echo "    2. Try: /dcf or dcf-workflow --help"
+        echo "    2. Try: /dcf, /cybw, or dcf-workflow --help"
     fi
     echo ""
     echo "  Documentation:"
@@ -432,6 +462,7 @@ main() {
 
     # Run installation steps
     install_dcf_skill "$force" || exit 1
+    install_cybw_skill "$force" || exit 1
     install_dcf_workflow "$force" || exit 1
     configure_path "$shell_config"
     install_hooks
