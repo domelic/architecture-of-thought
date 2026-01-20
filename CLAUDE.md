@@ -211,6 +211,7 @@ When adding new references, place them in the appropriate section or create a ne
 - Full LaTeX compile if .tex or .bib changed
 
 **Model selection guidance:**
+
 | Model | When to Use |
 |-------|-------------|
 | Haiku | Quick searches, exploration, lower-stakes tasks |
