@@ -61,6 +61,9 @@ curl -fsSL https://raw.githubusercontent.com/domelic/architecture-of-thought/mai
 - "What assumptions are in that?"
 - "What's the strongest argument against this?"
 
+> [!TIP]
+> **"Could you be wrong?"** is the single most powerful question. It surfaces errors, biases, and alternatives that don't appear in the initial response. Use it at every checkpoint.
+
 **4. Before approving any plan:**
 
 - What alternatives were considered?
@@ -245,7 +248,8 @@ See [DCF Prompt Library](resources/DCF_PROMPT_LIBRARY.md) for the complete colle
 
 ## What to Avoid
 
-These aren't just bad habits—they're **autonomy risks**. Accepting hallucinations corrupts your mental model. Outsourcing all thinking degrades your capabilities.
+> [!CAUTION]
+> These aren't just bad habits—they're **autonomy risks**. Accepting hallucinations corrupts your mental model. Outsourcing all thinking degrades your capabilities.
 
 | Category | Anti-Pattern | Symptom | Fix |
 |----------|-------------|---------|-----|
@@ -311,6 +315,14 @@ Challenge every response with the [8 operations](#the-socratic-toolkit). The 2,4
 ### 4. Recursive Refinement
 
 Articulate → Generate → Evaluate → Refine → Repeat. Stop when quality threshold met, changes become cosmetic, or purpose fulfilled. Plans are hypotheses, not contracts.
+
+```mermaid
+graph LR
+    A[Articulate] --> B[Generate]
+    B --> C[Evaluate]
+    C --> D[Refine]
+    D --> A
+```
 
 ### 5. Scaffolding, Not Replacement
 
