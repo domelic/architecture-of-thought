@@ -8,6 +8,21 @@
 
 **Who is this for?** Software engineers, technical writers, and knowledge workers who want to move beyond surface-level prompting with AI coding assistants.
 
+**Reading time:** ~5 minutes for essentials, ~15 minutes for everything.
+
+<details>
+<summary><strong>What's covered</strong></summary>
+
+- **8 Socratic operations** — questioning toolkit mapped from 2,400-year-old method
+- **24 modes** across 5 categories for `/dcf` skill
+- **5 phases** of Socratic prompting with operation mappings
+- **6 anti-patterns** (of 14 total) with symptoms and fixes
+- **Trust vs Engage matrix** for agentic systems
+- **Workflow chains** for common scenarios
+- **Research-validated** checkpoint protocol ("Could you be wrong?")
+
+</details>
+
 ---
 
 ## Table of Contents
@@ -55,6 +70,8 @@ curl -fsSL https://raw.githubusercontent.com/domelic/architecture-of-thought/mai
 That's the core of DCF. Everything else is refinement.
 
 **Want to see it in action?** Read the [Example Transcripts](resources/DCF_EXAMPLE_TRANSCRIPTS.md) — 4 annotated real-world conversations.
+
+**Have questions?** See the [FAQ](resources/DCF_FAQ.md) for common questions and misconceptions.
 
 ---
 
@@ -145,17 +162,49 @@ Phase 5: "What question should I be asking next?"
 /dcf skill            # Capture as reusable skill
 ```
 
+<details>
+<summary><strong>Key questions by mode</strong></summary>
+
+| Mode | Key Question |
+|------|--------------|
+| `review` | "What would make you regret this?" |
+| `checkpoint` | "What assumptions did the agent make?" |
+| `debug` | "Where does expectation diverge from reality?" |
+| `unstick` | "What's the smallest piece you can progress on?" |
+| `simplify` | "What's the 20% that delivers 80%?" |
+| `decompose` | "What blocks what? What can parallelize?" |
+| `verify` | "Do first-principles, analogical, and consequential paths agree?" |
+| `architect` | "What's the minimal change after understanding the landscape?" |
+| `tradeoffs` | "What do you gain/give up with each option?" |
+| `assumptions` | "Which assumption, if wrong, invalidates everything?" |
+| `premortem` | "Imagine it failed—why?" |
+| `challenge` | "What's the strongest counterargument?" |
+| `decide` | "If you had to decide now..." |
+| `constrain` | "What must it NOT do? What's out of scope?" |
+| `learn` | "What do you already know about this?" |
+| `onboard` | "Where can you make a small, safe change?" |
+| `explain` | "Where did you hesitate or use hand-wavy language?" |
+| `compact` | "What context matters for the next session?" |
+| `context-health` | "How severe is the degradation (1-5)?" |
+| `retro` | "What's understood now that wasn't before?" |
+
+</details>
+
 ### Workflow Chains
 
-Chain modes for common scenarios:
+The install script adds `dcf-workflow` to your PATH. Chain modes for common scenarios:
 
 ```bash
-dcf-workflow new-project    # onboard → architect → premortem
-dcf-workflow debug          # debug → assumptions → simplify
-dcf-workflow decision       # tradeoffs → challenge → decide
-dcf-workflow complex-task   # constrain → decompose → architect
-dcf-workflow high-stakes    # assumptions → verify → challenge → decide
-dcf-workflow unfamiliar     # onboard → decompose → verify
+dcf-workflow new-project       # onboard → architect → premortem
+dcf-workflow debug             # debug → assumptions → simplify
+dcf-workflow decision          # tradeoffs → challenge → decide
+dcf-workflow complex-task      # constrain → decompose → architect
+dcf-workflow high-stakes       # assumptions → verify → challenge → decide
+dcf-workflow unfamiliar        # onboard → decompose → verify
+dcf-workflow learning          # learn → explain → retro
+dcf-workflow session-end       # context-health → compact → retro
+dcf-workflow code-review       # review → assumptions → challenge
+dcf-workflow pre-implementation # architect → tradeoffs → premortem
 ```
 
 Each transition is a checkpoint—engage fully before proceeding.
@@ -190,22 +239,24 @@ Each transition is a checkpoint—engage fully before proceeding.
 - "What would I miss if I just accepted this?"
 - "Where is my thinking still fuzzy?"
 
+See [DCF Prompt Library](resources/DCF_PROMPT_LIBRARY.md) for the complete collection.
+
 ---
 
 ## What to Avoid
 
 These aren't just bad habits—they're **autonomy risks**. Accepting hallucinations corrupts your mental model. Outsourcing all thinking degrades your capabilities.
 
-| Failure Mode | Symptom | Fix |
-|-------------|---------|-----|
-| **Socratic Theater** | Going through motions without genuine inquiry | Ask questions you don't know the answer to |
-| **Mirror Narcissism** | Using AI to confirm existing beliefs | Explicitly request counterarguments |
-| **Infinite Refinement** | Never reaching "good enough" | Set convergence criteria upfront |
-| **Lazy Prompting** | Vague prompts, frustrated by poor outputs | Structure prompts with context and constraints |
-| **Hallucination Acceptance** | Trusting without verification | Ask "Could you be wrong?" + verify claims |
-| **Cognitive Atrophy** | Declining ability to think without AI | Practice unassisted reasoning; use learning stance |
+| Category | Anti-Pattern | Symptom | Fix |
+|----------|-------------|---------|-----|
+| **Unproductive** | Socratic Theater | Going through motions | Ask questions you don't know the answer to |
+| | Lazy Prompting | Vague prompts, poor outputs | Structure with context and constraints |
+| **No Progress** | Infinite Refinement | Never "good enough" | Set convergence criteria upfront |
+| **Trust Issues** | Hallucination Acceptance | Trusting without verifying | "Could you be wrong?" + verify claims |
+| | Mirror Narcissism | Using AI to confirm beliefs | Explicitly request counterarguments |
+| **Capability Loss** | Cognitive Atrophy | Declining unassisted ability | Practice without AI; use learning stance |
 
-See [Anti-Patterns Guide](resources/DCF_ANTI_PATTERNS.md) for all 14 failure modes.
+See [Anti-Patterns Guide](resources/DCF_ANTI_PATTERNS.md) for all 14 failure modes across 5 categories.
 
 ---
 
@@ -326,7 +377,7 @@ Use at every checkpoint before approval. Four words that operationalize critical
 <details>
 <summary><strong>Memory as Cognitive Infrastructure</strong></summary>
 
-**CLAUDE.md (Project Memory):** Your externalized project cognition—context, conventions, DCF preferences.
+**CLAUDE.md (Project Memory):** Your externalized project cognition—context, conventions, DCF preferences. See [CLAUDE.md Template](resources/CLAUDE_MD_TEMPLATE.md).
 
 **Conversation Context:** When it grows long, summarize decisions, note open questions, capture insights.
 
@@ -347,6 +398,22 @@ Use `/dcf compact` to create SESSION_FINDINGS.md (gitignored). This is anticipat
 
 </details>
 
+<details>
+<summary><strong>Research Validation</strong></summary>
+
+Recent research validates DCF's core practices:
+
+| Finding | Source | DCF Implication |
+|---------|--------|-----------------|
+| "Could you be wrong?" generates adversarial info absent from initial responses | Hills (2025) | Validates checkpoint protocol |
+| False mental states and cognitive deskilling are primary autonomy risks | Kovács & Szelényi (2025) | Validates anti-pattern warnings |
+| Collaborative AI metacognition is measurable | Sidra & Mason (2025) | DCF skills can be assessed |
+| Socratic elements effective in multi-agent architecture | Hashemi Tonekaboni & Soleymani (2026) | Independent validation of approach |
+
+DCF synthesizes established research (Extended Mind, Scaffolding Theory, Critical Rationalism) with emerging human-AI collaboration findings.
+
+</details>
+
 ---
 
 ## The Ultimate Test
@@ -361,44 +428,33 @@ If yes—the methodology is working. If you merely completed a task without grow
 
 ## One-Page Cheat Sheet
 
-```text
-┌─────────────────────────────────────────────────────────────┐
-│                    DCF ESSENTIALS                           │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  CORE LOOP:  Articulate → Generate → Evaluate → Refine     │
-│                    ↑_______________________________↓        │
-│                                                             │
-│  AT EVERY RESPONSE, ASK ONE OF:                            │
-│  • "Could you be wrong?" ← surfaces hidden info            │
-│  • "What assumptions are in that?"                         │
-│  • "What's the counterargument?"                           │
-│  • "What am I not seeing?"                                 │
-│                                                             │
-│  BEFORE APPROVING A PLAN:                                  │
-│  • What alternatives were considered?                      │
-│  • What's the riskiest assumption?                         │
-│  • What would make this fail?                              │
-│                                                             │
-│  STOP ITERATING WHEN:                                      │
-│  • Quality threshold met                                   │
-│  • Changes become cosmetic                                 │
-│  • Purpose fulfilled                                       │
-│                                                             │
-│  THE TEST:                                                 │
-│  Am I more capable now than before this interaction?       │
-│                                                             │
-│  REMEMBER:                                                 │
-│  The AI is a thinking mirror, not an oracle.              │
-│  Quality in → Quality out.                                 │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+| | DCF Essentials |
+|---|----------------|
+| **Core Loop** | Articulate → Generate → Evaluate → Refine → *(repeat)* |
+| **At Every Response** | • "Could you be wrong?" ← *surfaces hidden info* |
+| | • "What assumptions are in that?" |
+| | • "What's the counterargument?" |
+| | • "What am I not seeing?" |
+| **Before Approving** | • What alternatives were considered? |
+| | • What's the riskiest assumption? |
+| | • What would make this fail? |
+| **Stop When** | • Quality threshold met |
+| | • Changes become cosmetic |
+| | • Purpose fulfilled |
+| **The Test** | *Am I more capable now than before?* |
+| **Remember** | The AI is a thinking mirror, not an oracle. Quality in → Quality out. |
 
 ---
 
 ## Further Reading
 
+### Practical Resources
+- [DCF FAQ](resources/DCF_FAQ.md) — Common questions and misconceptions
+- [DCF Glossary](resources/DCF_GLOSSARY.md) — Terminology reference
+- [DCF Prompt Library](resources/DCF_PROMPT_LIBRARY.md) — Ready-to-use prompts by situation
+- [Case Studies](examples/README.md) — Real-world applications (debugging, architecture, learning)
+
+### Theoretical Foundations
 - **Full treatise**: [The Architecture of Thought](THE_ARCHITECTURE_OF_THOUGHT.pdf) (265 pages, optional)
 - **Extended mind**: Clark & Chalmers, "The Extended Mind" (1998)
 - **Scaffolding**: Vygotsky, "Mind in Society" (1978)
