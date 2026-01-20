@@ -36,7 +36,8 @@ curl -fsSL https://raw.githubusercontent.com/domelic/architecture-of-thought/mai
 **2. Try your first Socratic dialogue:**
 
 ```text
-/dcf
+/dcf                  # General Socratic questioning
+/cybw                 # Quick "Could you be wrong?" challenge
 ```
 
 **3. After any AI response, ask one of these:**
@@ -52,6 +53,8 @@ curl -fsSL https://raw.githubusercontent.com/domelic/architecture-of-thought/mai
 - What would make this fail?
 
 That's the core of DCF. Everything else is refinement.
+
+**Want to see it in action?** Read the [Example Transcripts](resources/DCF_EXAMPLE_TRANSCRIPTS.md) — 4 annotated real-world conversations.
 
 ---
 
@@ -85,7 +88,7 @@ A typical Socratic prompting session flows through five phases. Each phase uses 
 | **1. Raw Inquiry** | Start messy. Think aloud. | Maieutics |
 | **2. Reflective Clarification** | Challenge the response. Don't accept—interrogate. | Elenchus, Evidence, Consequences |
 | **3. Personal Synthesis** | Anchor in your specific context. | Maieutics, Aporia |
-| **4. Operationalization** | Convert insight to structure. | Via Negativa |
+| **4. Operationalization** | Convert insight to structure. | *(action phase)* |
 | **5. Recursive Loop** | Start again from your evolved perspective. | Meta-question |
 
 **Example flow:**
@@ -152,6 +155,7 @@ dcf-workflow debug          # debug → assumptions → simplify
 dcf-workflow decision       # tradeoffs → challenge → decide
 dcf-workflow complex-task   # constrain → decompose → architect
 dcf-workflow high-stakes    # assumptions → verify → challenge → decide
+dcf-workflow unfamiliar     # onboard → decompose → verify
 ```
 
 Each transition is a checkpoint—engage fully before proceeding.
@@ -216,7 +220,7 @@ In agentic systems, AI executes autonomously between checkpoints. DCF applies at
 | Task is well-defined and bounded | Requirements are ambiguous |
 | Failure is low-cost and reversible | Architectural decisions are being made |
 | Output is easy to verify | Trade-offs reflect your values |
-| | Output is hard to verify or undo |
+| Tests/linters catch errors | Output is hard to verify or undo |
 
 ### Steering Model
 
@@ -342,6 +346,16 @@ Before long sessions end, capture:
 Use `/dcf compact` to create SESSION_FINDINGS.md (gitignored). This is anticipatory calibration applied to session management.
 
 </details>
+
+---
+
+## The Ultimate Test
+
+After every significant AI collaboration, ask:
+
+> **Did I understand more deeply, think more clearly, or become capable of harder challenges?**
+
+If yes—the methodology is working. If you merely completed a task without growth—the potential remains unrealized.
 
 ---
 
