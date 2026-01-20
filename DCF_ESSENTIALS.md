@@ -1,217 +1,129 @@
 # DCF Essentials
-## The Dialectical Cognition Framework — A Practitioner's Guide
 
-**Companion to "The Architecture of Thought"**
+**The Dialectical Cognition Framework — A Practitioner's Guide**
 
-*Damir Omelic & Claude (Anthropic) | January 2026*
+> **DCF positions LLMs as *thinking mirrors*: collaborative partners in the architecture of thought itself.**
 
----
+**What is DCF?** A methodology for *thinking with AI*, not just using it. While most approaches focus on what to ask, DCF focuses on **how to think** during the collaboration. The quality of what you get back depends on the quality of thought you bring.
 
-## What is DCF?
+**Who is this for?** Software engineers, technical writers, and knowledge workers who want to move beyond surface-level prompting with AI coding assistants.
 
-The Dialectical Cognition Framework is a methodology for **thinking with AI**, not just using it. While most approaches focus on what to ask AI, DCF focuses on **how to think** during the collaboration.
+**Reading time:** ~5 minutes for essentials, ~15 minutes for everything.
 
-**The core insight:** LLMs are not answer machines—they're *thinking mirrors*. The quality of what you get back depends on the quality of thought you bring to the interaction.
+<details>
+<summary><strong>What's covered</strong></summary>
 
----
+- **8 Socratic operations** — questioning toolkit mapped from 2,400-year-old method
+- **24 modes** across 5 categories for `/dcf` skill
+- **5 phases** of Socratic prompting with operation mappings
+- **6 anti-patterns** (of 14 total) with symptoms and fixes
+- **Trust vs Engage matrix** for agentic systems
+- **Workflow chains** for common scenarios
+- **Research-validated** checkpoint protocol ("Could you be wrong?")
 
-## The Six Essential Principles
-
-*The full treatise presents 12 core principles plus 4 agentic-era principles. These six form the essential foundation for practitioners.*
-
-### 1. The Thinking Mirror
-
-> An LLM reflects and transforms your thought. Vague input → vague output. Structured inquiry → increasing clarity.
-
-When you articulate an idea to an AI, you're externalizing cognition. The response reveals:
-- Structures you hadn't noticed
-- Implications you hadn't considered
-- Contradictions you hadn't seen
-
-**Practice:** Before prompting, ask yourself: "What am I actually trying to understand?"
+</details>
 
 ---
 
-### 2. Collaboration Over Extraction
+## Table of Contents
 
-| Extraction Mindset | DCF Mindset |
-|-------------------|-------------|
-| "Give me the answer" | "Help me think through this" |
-| One-shot prompts | Recursive dialogue |
-| Measure: correctness | Measure: clarity gained |
-| AI as tool | AI as thinking partner |
+| Practice | Theory & Reference |
+|----------|-------------------|
+| [Quick Start](#quick-start) — First actions | [The Six Principles](#the-six-principles) — Core philosophy |
+| [The Socratic Toolkit](#the-socratic-toolkit) — 8 operations | [Going Deeper](#going-deeper) — Advanced topics |
+| [How to Use It](#how-to-use-it) — Phases, modes, workflows | [Further Reading](#further-reading) — Sources |
+| [Quick Reference](#quick-reference-prompts) — Prompts by situation | |
+| [What to Avoid](#what-to-avoid) — 6 failure modes | |
+| [Agentic Context](#agentic-context) — When to trust vs engage | |
 
-**Practice:** Replace "Write me X" with "Help me understand what X should accomplish, then let's build it together."
-
----
-
-### 3. Socratic Dialogue
-
-The 2,400-year-old Socratic method maps directly to AI collaboration:
-
-| Socratic Operation | DCF Application |
-|-------------------|-----------------|
-| **Elenchus** (cross-examination) | "What assumptions are in that answer?" |
-| **Maieutics** (drawing out knowledge) | "Help me articulate what I'm trying to express" |
-| **Dialectic** (reasoned argument) | "Present the strongest counterargument" |
-| **Evidence** (probing reasons) | "How do you know? What evidence supports this?" |
-| **Consequences** (tracing implications) | "What are the consequences? What if you're wrong?" |
-| **Aporia** (productive confusion) | "What am I not seeing about this?" |
-| **Meta-question** (finding the inquiry) | "What question should I be asking?" |
-| **Via Negativa** (defining by exclusion) | "What should we explicitly NOT do here?" |
-
-**Practice:** After every AI response, ask at least one challenging question before accepting it.
+**Start with [Quick Start](#quick-start), then explore [The Socratic Toolkit](#the-socratic-toolkit).**
 
 ---
 
-### 4. Recursive Refinement
+## Quick Start
 
-```text
-Articulate → Generate → Evaluate → Refine
-     ↑                              |
-     |______________________________|
+**1. Install the skills** (requires [Claude Code](https://docs.anthropic.com/en/docs/claude-code)):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/domelic/architecture-of-thought/main/.claude/scripts/install-dcf.sh | bash
 ```
 
-Each cycle:
-1. **Articulate**: Express your current understanding
-2. **Generate**: Let AI produce new content
-3. **Evaluate**: Assess quality, identify gaps
-4. **Refine**: Improve based on evaluation
-
-**Stop when:**
-- Output meets your quality threshold
-- Changes become cosmetic, not substantive
-- Purpose is fulfilled
-
-**Watch for:**
-- Circular refinement (oscillating without progress)
-- Perfectionism trap (endless tweaking)
-- Goal drift (losing original purpose)
-
-**Disposable Plans:** A plan is a hypothesis, not a contract. When tasks keep getting added, completed work needs rework, or implementation feels forced—regenerate the plan rather than forcing fit.
-
----
-
-### 5. Scaffolding, Not Replacement
-
-From Vygotsky: there are things you can do alone, things you can't do at all, and things you can do *with help*. AI should scaffold you into the third category—then fade as you internalize the capability.
-
-**The test:** Does your AI collaboration make you more capable when the AI is gone?
-
-If you're just extracting answers without growth, you're not being scaffolded—you're being carried.
-
----
-
-### 6. The Meta-Question
-
-> "What question should I be asking?"
-
-Often the most powerful move isn't answering—it's finding the right question. Users are frequently stuck not because they lack answers but because they're asking the wrong question.
-
-**Practice:** End every significant exchange by surfacing what question should come next. This is often more valuable than any answer.
-
----
-
-## The Five Phases of Socratic Prompting
-
-### Phase 1: Raw Inquiry
-Begin with the messy question. Don't optimize—think aloud.
-
-> "I'm trying to understand why our API keeps timing out under load. What might I be missing?"
-
-### Phase 2: Reflective Clarification
-Challenge the response. Don't accept—interrogate.
-
-> "What assumptions underlie that answer?"
-> "How would this change if we had 10x the traffic?"
-> "Reframe this from a security perspective."
-
-### Phase 3: Personal Synthesis
-Anchor abstract responses in your specific context.
-
-> "That reminds me of the outage last month. Can you help me connect these patterns?"
-
-### Phase 4: Operationalization
-Convert insight into structure.
-
-> "Based on this, write me a checklist for load testing."
-
-### Phase 5: Recursive Loop
-Start again from your evolved perspective.
-
-> "What question should I be asking next?"
-
----
-
-## Agentic Era: DCF at Checkpoints
-
-In agentic systems (Claude Code, etc.), AI executes autonomously between human checkpoints. DCF now applies at **decision points**, not every interaction.
-
-### When the Agent Presents a Plan
+**2. Try your first Socratic dialogue:**
 
 ```text
-Agent: "Here's my implementation plan: [details]. Ready to proceed?"
-
-You (DCF): "Before I approve:
-1. What alternatives did you consider?
-2. What's the riskiest assumption?
-3. What would make us regret this approach?"
+/dcf                  # General Socratic questioning
+/cybw                 # Quick "Could you be wrong?" challenge
 ```
 
-### Trust vs. Engage Decision Matrix
+**3. After any AI response, ask one of these:**
 
-**Trust the agent when:**
-- Task is well-defined and bounded
-- Failure is low-cost and reversible
-- You can easily verify output
+- "Could you be wrong?"
+- "What assumptions are in that?"
+- "What's the strongest argument against this?"
 
-**Engage dialectically when:**
-- Requirements are ambiguous
-- Architectural decisions are being made
-- Trade-offs reflect your values
-- Output is hard to verify or undo
+> [!TIP]
+> **"Could you be wrong?"** is the single most powerful question. It surfaces errors, biases, and alternatives that don't appear in the initial response. Use it at every checkpoint.
 
-### Steering Model
+**4. Before approving any plan:**
 
-Control agentic systems through two complementary forces:
+- What alternatives were considered?
+- What's the riskiest assumption?
+- What would make this fail?
 
-**Upstream Steering** (before the agent runs):
-- CLAUDE.md, specs, context files, conventions
-- Shapes what the agent will generate
+That's the core of DCF. Everything else is refinement.
 
-**Downstream Steering** (after the agent acts):
-- Tests, linters, type checkers, builds
-- Forces self-correction through failure feedback
+**Want to see it in action?** Read the [Example Transcripts](resources/DCF_EXAMPLE_TRANSCRIPTS.md) — 4 annotated real-world conversations.
 
-| Problem | Strengthen |
-|---------|------------|
-| Agent keeps making same mistakes | Upstream (add to CLAUDE.md) |
-| Need confidence in correctness | Downstream (add tests) |
-| Output doesn't match style | Upstream (document conventions) |
-| Quality varies | Downstream (add linters) |
+**Have questions?** See the [FAQ](resources/DCF_FAQ.md) for common questions and misconceptions.
 
-### Agent Selection
+---
 
-| Agent | Use For | DCF Engagement |
-|-------|---------|----------------|
-| Explore | Understanding code | Review findings for completeness |
-| Plan | Architecture design | Full Socratic review |
-| code-reviewer | Quality analysis | Evaluate flagged issues |
-| Background | Long explorations | Review output later |
+## The Socratic Toolkit
 
-### Model Selection
+The 2,400-year-old Socratic method maps directly to AI collaboration. These 8 operations are your questioning toolkit:
 
-| Model | When to Use | DCF Implication |
-|-------|-------------|-----------------|
-| Haiku | Quick searches, exploration | Lower stakes, more review |
-| Sonnet | Most development work | Balanced engagement |
-| Opus | Architecture, complex judgment | High stakes, deep engagement |
+| Operation | What It Does | Example Prompt |
+|-----------|--------------|----------------|
+| **Elenchus** | Expose hidden assumptions | "What assumptions are in that answer?" |
+| **Maieutics** | Draw out latent knowledge | "Help me articulate what I'm trying to express" |
+| **Dialectic** | Test via opposition | "Present the strongest counterargument" |
+| **Evidence** | Probe the reasoning | "How do you know? What evidence supports this?" |
+| **Consequences** | Trace implications | "What are the consequences? What if you're wrong?" |
+| **Aporia** | Productive confusion | "What am I not seeing about this?" |
+| **Meta-question** | Find the right inquiry | "What question should I be asking?" |
+| **Via Negativa** | Define by exclusion | "What should we explicitly NOT do here?" |
 
-**Principle:** Match model capability to decision stakes.
+**Practice:** After every AI response, use at least one operation before accepting it.
 
-### The /dcf Skill
+---
 
-The `/dcf` skill is **principle-based**, not scripted. Each mode has an outcome, not a script:
+## How to Use It
+
+### The Five Phases
+
+A typical Socratic prompting session flows through five phases. Each phase uses different operations from the toolkit:
+
+| Phase | What to Do | Operations Used |
+|-------|------------|-----------------|
+| **1. Raw Inquiry** | Start messy. Think aloud. | Maieutics |
+| **2. Reflective Clarification** | Challenge the response. Don't accept—interrogate. | Elenchus, Evidence, Consequences |
+| **3. Personal Synthesis** | Anchor in your specific context. | Maieutics, Aporia |
+| **4. Operationalization** | Convert insight to structure. | *(action phase)* |
+| **5. Recursive Loop** | Start again from your evolved perspective. | Meta-question |
+
+**Example flow:**
+
+```text
+Phase 1: "I'm trying to understand why our API keeps timing out under load."
+Phase 2: "What assumptions underlie that answer? How would this change at 10x traffic?"
+Phase 3: "That reminds me of last month's outage. Can you help me connect these?"
+Phase 4: "Based on this, write me a checklist for load testing."
+Phase 5: "What question should I be asking next?"
+```
+
+### The /dcf Modes
+
+24 modes across 5 categories. Each mode applies Socratic questioning to a specific situation:
 
 ```text
 /dcf [mode] [context]
@@ -253,21 +165,56 @@ The `/dcf` skill is **principle-based**, not scripted. Each mode has an outcome,
 /dcf skill            # Capture as reusable skill
 ```
 
-**Workflow Automation:** Use `dcf-workflow` to chain modes with checkpoints:
+<details>
+<summary><strong>Key questions by mode</strong></summary>
+
+| Mode | Key Question |
+|------|--------------|
+| `review` | "What would make you regret this?" |
+| `checkpoint` | "What assumptions did the agent make?" |
+| `debug` | "Where does expectation diverge from reality?" |
+| `unstick` | "What's the smallest piece you can progress on?" |
+| `simplify` | "What's the 20% that delivers 80%?" |
+| `decompose` | "What blocks what? What can parallelize?" |
+| `verify` | "Do first-principles, analogical, and consequential paths agree?" |
+| `architect` | "What's the minimal change after understanding the landscape?" |
+| `tradeoffs` | "What do you gain/give up with each option?" |
+| `assumptions` | "Which assumption, if wrong, invalidates everything?" |
+| `premortem` | "Imagine it failed—why?" |
+| `challenge` | "What's the strongest counterargument?" |
+| `decide` | "If you had to decide now..." |
+| `constrain` | "What must it NOT do? What's out of scope?" |
+| `learn` | "What do you already know about this?" |
+| `onboard` | "Where can you make a small, safe change?" |
+| `explain` | "Where did you hesitate or use hand-wavy language?" |
+| `compact` | "What context matters for the next session?" |
+| `context-health` | "How severe is the degradation (1-5)?" |
+| `retro` | "What's understood now that wasn't before?" |
+
+</details>
+
+### Workflow Chains
+
+The install script adds `dcf-workflow` to your PATH. Chain modes for common scenarios:
 
 ```bash
-dcf-workflow new-project    # onboard → architect → premortem
-dcf-workflow debug          # debug → assumptions → simplify
-dcf-workflow decision       # tradeoffs → challenge → decide
-dcf-workflow complex-task   # constrain → decompose → architect
-dcf-workflow high-stakes    # assumptions → verify → challenge → decide
+dcf-workflow new-project       # onboard → architect → premortem
+dcf-workflow debug             # debug → assumptions → simplify
+dcf-workflow decision          # tradeoffs → challenge → decide
+dcf-workflow complex-task      # constrain → decompose → architect
+dcf-workflow high-stakes       # assumptions → verify → challenge → decide
+dcf-workflow unfamiliar        # onboard → decompose → verify
+dcf-workflow learning          # learn → explain → retro
+dcf-workflow session-end       # context-health → compact → retro
+dcf-workflow code-review       # review → assumptions → challenge
+dcf-workflow pre-implementation # architect → tradeoffs → premortem
 ```
 
-**Principle:** Claude adapts Socratic questioning to the actual situation—no rigid scripts.
+Each transition is a checkpoint—engage fully before proceeding.
 
 ---
 
-## Quick Reference: Socratic Prompts
+## Quick Reference: Prompts
 
 ### For Clarification
 - "What assumptions are built into that?"
@@ -294,61 +241,120 @@ dcf-workflow high-stakes    # assumptions → verify → challenge → decide
 - "What question should I be asking?"
 - "What would I miss if I just accepted this?"
 - "Where is my thinking still fuzzy?"
-- "Before I read this—what do I expect the AI produced?"
+
+See [DCF Prompt Library](resources/DCF_PROMPT_LIBRARY.md) for the complete collection.
 
 ---
 
-## Common Failure Modes
+## What to Avoid
 
-These aren't just bad habits—they're **autonomy risks**. Accepting hallucinations corrupts your mental model (losing epistemic autonomy). Outsourcing all thinking degrades your capabilities (losing cognitive autonomy).
+> [!CAUTION]
+> These aren't just bad habits—they're **autonomy risks**. Accepting hallucinations corrupts your mental model. Outsourcing all thinking degrades your capabilities.
 
-| Failure Mode | Symptom | Fix |
-|-------------|---------|-----|
-| **Socratic Theater** | Going through motions without genuine inquiry | Ask questions you don't know the answer to |
-| **Mirror Narcissism** | Using AI to confirm existing beliefs | Explicitly request counterarguments |
-| **Infinite Refinement** | Never reaching "good enough" | Set convergence criteria upfront |
-| **Lazy Prompting** | Vague prompts, frustrated by poor outputs | Structure prompts with context and constraints |
-| **Hallucination Acceptance** | Trusting without verification (→ *false mental states*) | Ask "Could you be wrong?" + verify claims |
-| **Cognitive Atrophy** | Declining ability to think without AI (→ *cognitive deskilling*) | Practice unassisted reasoning; use learning stance |
+| Category | Anti-Pattern | Symptom | Fix |
+|----------|-------------|---------|-----|
+| **Unproductive** | Socratic Theater | Going through motions | Ask questions you don't know the answer to |
+| | Lazy Prompting | Vague prompts, poor outputs | Structure with context and constraints |
+| **No Progress** | Infinite Refinement | Never "good enough" | Set convergence criteria upfront |
+| **Trust Issues** | Hallucination Acceptance | Trusting without verifying | "Could you be wrong?" + verify claims |
+| | Mirror Narcissism | Using AI to confirm beliefs | Explicitly request counterarguments |
+| **Capability Loss** | Cognitive Atrophy | Declining unassisted ability | Practice without AI; use learning stance |
 
-**Measurability note:** The skills that prevent these failure modes—collaborative AI literacy (what you know) and collaborative AI metacognition (how you monitor your collaboration)—are now measurable through validated scales, enabling organizations to assess training effectiveness. (Sidra & Mason, 2025)
+See [Anti-Patterns Guide](resources/DCF_ANTI_PATTERNS.md) for all 14 failure modes across 5 categories.
 
 ---
 
-## The Learning Stance
+## Agentic Context
 
-Most people use AI to avoid learning. They want the answer, not understanding.
+In agentic systems, AI executes autonomously between checkpoints. DCF applies at **decision points**, not every interaction.
 
-**Invert this:**
+### Trust vs. Engage
+
+| Trust the Agent | Engage Dialectically |
+|-----------------|---------------------|
+| Task is well-defined and bounded | Requirements are ambiguous |
+| Failure is low-cost and reversible | Architectural decisions are being made |
+| Output is easy to verify | Trade-offs reflect your values |
+| Tests/linters catch errors | Output is hard to verify or undo |
+
+### Steering Model
+
+| Problem | Strengthen |
+|---------|------------|
+| Agent keeps making same mistakes | **Upstream** (add to CLAUDE.md) |
+| Need confidence in correctness | **Downstream** (add tests) |
+| Output doesn't match style | **Upstream** (document conventions) |
+| Quality varies | **Downstream** (add linters) |
+
+### Model Selection
+
+| Model | When to Use | DCF Implication |
+|-------|-------------|-----------------|
+| Haiku | Quick searches, exploration | Lower stakes, more review |
+| Sonnet | Most development work | Balanced engagement |
+| Opus | Architecture, complex judgment | High stakes, deep engagement |
+
+---
+
+## The Six Principles
+
+*The theoretical foundation. Practice first, understand later.*
+
+### 1. The Thinking Mirror
+
+LLMs reflect and transform your thought. Vague input → vague output. Structured inquiry → increasing clarity. The response reveals structures, implications, and contradictions you hadn't seen.
+
+### 2. Collaboration Over Extraction
+
+"Help me think through this" not "give me the answer." Recursive dialogue, not one-shot prompts. Measure clarity gained, not just correctness.
+
+### 3. Socratic Dialogue
+
+Challenge every response with the [8 operations](#the-socratic-toolkit). The 2,400-year-old method maps directly to AI collaboration.
+
+### 4. Recursive Refinement
+
+Articulate → Generate → Evaluate → Refine → Repeat. Stop when quality threshold met, changes become cosmetic, or purpose fulfilled. Plans are hypotheses, not contracts.
+
+```mermaid
+graph LR
+    A[Articulate] --> B[Generate]
+    B --> C[Evaluate]
+    C --> D[Refine]
+    D --> A
+```
+
+### 5. Scaffolding, Not Replacement
+
+AI should make you more capable when it's gone. If you're extracting answers without growth, you're being carried, not scaffolded.
+
+### 6. The Meta-Question
+
+"What question should I be asking?" Often more powerful than any answer. Users are frequently stuck because they're asking the wrong question.
+
+---
+
+## Going Deeper
+
+<details>
+<summary><strong>The Learning Stance</strong></summary>
+
+Most people use AI to avoid learning. Invert this:
 
 | Instead of... | Try... |
 |--------------|--------|
-| "Write a function that does X" | "What approaches could I take for X, and what are the tradeoffs?" |
+| "Write a function that does X" | "What approaches could I take, and what are the tradeoffs?" |
 | "Fix this bug" | "Help me understand why this is failing" |
-| "Give me the answer" | "Ask me questions that will help me discover the answer" |
+| "Give me the answer" | "Ask me questions that help me discover the answer" |
 
 **The paradox:** By seeking understanding rather than answers, you become capable of generating better answers yourself.
 
-### AI as Learning Accelerator
+**AI as Learning Accelerator:** Start with the problem, not prerequisites. Use AI to scaffold understanding as you need it. Learn in context of real application.
 
-A counterintuitive finding: AI doesn't just help with tasks you know—it *dramatically accelerates learning* tasks you don't yet understand.
+</details>
 
-**The pattern:**
-1. Start with the problem, not prerequisite knowledge
-2. Use AI to scaffold understanding as you need it
-3. Learn concepts in context of real application
-4. Build working solutions while acquiring knowledge
-
-**The shift in value:**
-- Syntax/API details → Lower value (AI handles these)
-- Patterns/concepts → Higher value (guides AI direction)
-- Problem decomposition → Critical (enables effective AI use)
-
-**Key insight:** AI is the most powerful learning tool ever created—but only for those who approach it as learners, not extractors.
-
----
-
-## Anticipatory Calibration
+<details>
+<summary><strong>Anticipatory Calibration</strong></summary>
 
 Before prompting, form a hypothesis: *What do I expect the AI to produce?*
 
@@ -357,173 +363,68 @@ Then compare:
 - What surprised you?
 - What does the gap reveal?
 
-**Why this matters:**
-- Comparing against expectation is more rigorous than "does this look good?"
-- Surprise is your learning signal—it reveals miscalibration
-- Over time, you build an accurate mental model of AI capabilities
-
 **The practice:** Predict → Prompt → Compare → Update your mental model.
 
-This is scientific thinking applied to prompting.
+Surprise is your learning signal. Over time, you build an accurate model of AI capabilities.
 
----
+</details>
 
-## The "Could You Be Wrong?" Checkpoint
+<details>
+<summary><strong>The "Could You Be Wrong?" Protocol</strong></summary>
 
-Research validates a remarkably simple metacognitive technique: following any AI response with "Could you be wrong?" (Hills, 2025).
+Research validates this simple technique (Hills, 2025): follow any AI response with "Could you be wrong?"
 
-Unlike chain-of-thought (which elaborates reasoning), this question generates *adversarial* information:
-- **Error identification** — what mistakes might be present
-- **Bias surfacing** — what assumptions shaped the response
-- **Contradictory evidence** — what facts point in other directions
-- **Alternative approaches** — what other options exist
+Unlike chain-of-thought, this generates *adversarial* information:
+- Error identification
+- Bias surfacing
+- Contradictory evidence
+- Alternative approaches
 
-**None of this appears in the initial response.** The question itself unlocks it.
+**None of this appears in the initial response.** The question unlocks it.
 
-**When to use it:**
-- After receiving a proposed solution
-- After accepting a factual claim
-- After endorsing a decision
-- At every checkpoint before approval
+Use at every checkpoint before approval. Four words that operationalize critical rationalism.
 
-**Why it works:** It functions like "asking for a second opinion," aggregating diverse perspectives within a single interaction. Four words that operationalize critical rationalism.
+</details>
 
----
+<details>
+<summary><strong>Memory as Cognitive Infrastructure</strong></summary>
 
-## DCF + Common Workflows
+**CLAUDE.md (Project Memory):** Your externalized project cognition—context, conventions, DCF preferences. See [CLAUDE.md Template](resources/CLAUDE_MD_TEMPLATE.md).
 
-### With Plan Mode (Research-Plan-Implement)
+**Conversation Context:** When it grows long, summarize decisions, note open questions, capture insights.
 
-```text
-[Research phase]
-→ DCF: "What did you find that surprised you?"
-→ DCF: "What's still unclear after research?"
+**Creating Skills from Patterns:** When you find a prompting approach that works, codify it as a skill in `.claude/commands/`. Skills are crystallized expertise.
 
-[Plan phase]
-→ DCF: "What's the riskiest part of this plan?"
-→ DCF: "What would a simpler approach look like?"
+</details>
 
-[Implement phase]
-→ Trust automation, review outputs
-→ DCF at checkpoints: "Does this match the plan's intent?"
-```
+<details>
+<summary><strong>Session Continuity</strong></summary>
 
-### With Ralph Loop (Autonomous Iteration)
+Before long sessions end, capture:
+- What was accomplished and why
+- Unresolved issues
+- Prioritized next steps
+- Non-obvious context
 
-```text
-[Define task with DCF]
-→ Clear objectives, constraints, success criteria
+Use `/dcf compact` to create SESSION_FINDINGS.md (gitignored). This is anticipatory calibration applied to session management.
 
-[Let Ralph execute]
-→ Trust autonomous iteration
+</details>
 
-[Review at checkpoint]
-→ DCF: "Did the iterations converge on the right solution?"
-→ DCF: "What assumptions did the loop make?"
-```
+<details>
+<summary><strong>Research Validation</strong></summary>
 
-**Key insight:** Ralph handles execution; DCF handles judgment.
+Recent research validates DCF's core practices:
 
----
+| Finding | Source | DCF Implication |
+|---------|--------|-----------------|
+| "Could you be wrong?" generates adversarial info absent from initial responses | Hills (2025) | Validates checkpoint protocol |
+| False mental states and cognitive deskilling are primary autonomy risks | Kovács & Szelényi (2025) | Validates anti-pattern warnings |
+| Collaborative AI metacognition is measurable | Sidra & Mason (2025) | DCF skills can be assessed |
+| Socratic elements effective in multi-agent architecture | Hashemi Tonekaboni & Soleymani (2026) | Independent validation of approach |
 
-## Memory as Cognitive Infrastructure
+DCF synthesizes established research (Extended Mind, Scaffolding Theory, Critical Rationalism) with emerging human-AI collaboration findings.
 
-### CLAUDE.md (Project Memory)
-
-Your externalized project cognition. Include:
-- Project context and architecture
-- Conventions and patterns
-- **DCF preferences**: "Always present plans before implementing. Challenge my assumptions. Show trade-offs explicitly."
-
-### Conversation Context
-
-The active working memory. When it grows long:
-- Summarize key decisions made
-- Note open questions
-- Capture insights for CLAUDE.md
-
-### Personal Knowledge System
-
-Accumulate what works:
-- Prompt patterns that succeeded
-- Insights from productive dialogues
-- Approaches for specific problem types
-
-### Creating Skills from Patterns
-
-When you discover a prompting approach that works well, **codify it as a skill**.
-
-**Signs a pattern is skill-worthy:**
-- You've used it successfully multiple times
-- It applies to a category of tasks, not just one instance
-- The approach is non-obvious enough to be worth preserving
-- You find yourself re-explaining or re-discovering it
-
-**The process:**
-1. Notice you're repeating a successful pattern
-2. Extract the transferable essence
-3. Create `.claude/commands/skillname.md`
-4. Test on new instances, refine
-
-**Example:** The `/dcf` skill itself is pattern capture — Socratic questioning applied to AI collaboration, codified into reusable infrastructure.
-
-Skills are crystallized expertise. Your skill library compounds your effectiveness over time.
-
----
-
-## Session Continuity: Preparing for Compaction
-
-Long sessions hit context limits. When Claude Code compacts, it generates a summary—but summary quality depends on what's available to summarize.
-
-### The Pre-Compaction Checklist
-
-Before a long session ends or compacts, capture:
-
-```text
-## Session Findings
-
-### Completed Work
-- [ ] What was accomplished
-- [ ] Which files were modified and why
-- [ ] Decisions made with rationale
-
-### Open Questions
-- [ ] Unresolved issues
-- [ ] Clarifications still needed
-
-### Recommended Next Steps
-- [ ] Prioritized remaining work
-- [ ] Dependencies between tasks
-
-### Context That Matters
-- [ ] Assumptions being made
-- [ ] Non-obvious constraints discovered
-```
-
-### When to Capture
-
-| Trigger | Action |
-|---------|--------|
-| Natural break (lunch, end of day) | Quick capture |
-| Completed logical chunk | Document what was done |
-| Session feels "heavy" | Full capture before continuing |
-| Before running `/compact` | Comprehensive documentation |
-
-### Gitignore Strategy
-
-Session documents are working artifacts:
-
-```text
-# .gitignore
-SESSION_NOTES.md
-SESSION_FINDINGS.md
-```
-
-Content either gets incorporated into permanent artifacts (CLAUDE.md, docs) or becomes obsolete.
-
-### DCF Connection
-
-This is **anticipatory calibration** applied to session management—forming an explicit model of "what matters" before compaction forces reliance on automated summarization. The act of writing clarifies your understanding: the thinking mirror at work.
+</details>
 
 ---
 
@@ -533,64 +434,47 @@ After every significant AI collaboration, ask:
 
 > **Did I understand more deeply, think more clearly, or become capable of harder challenges?**
 
-If yes—the methodology is working.
-
-If you merely completed a task without growth—the potential remains unrealized.
+If yes—the methodology is working. If you merely completed a task without growth—the potential remains unrealized.
 
 ---
 
 ## One-Page Cheat Sheet
 
-```text
-┌─────────────────────────────────────────────────────────────┐
-│                    DCF ESSENTIALS                           │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  CORE LOOP:  Articulate → Generate → Evaluate → Refine     │
-│                    ↑_______________________________↓        │
-│                                                             │
-│  AT EVERY RESPONSE, ASK ONE OF:                            │
-│  • "Could you be wrong?" ← surfaces hidden info            │
-│  • "What assumptions are in that?"                         │
-│  • "What's the counterargument?"                           │
-│  • "What am I not seeing?"                                 │
-│                                                             │
-│  BEFORE APPROVING A PLAN:                                  │
-│  • What alternatives were considered?                      │
-│  • What's the riskiest assumption?                         │
-│  • What would make this fail?                              │
-│                                                             │
-│  STOP ITERATING WHEN:                                      │
-│  • Quality threshold met                                   │
-│  • Changes become cosmetic                                 │
-│  • Purpose fulfilled                                       │
-│                                                             │
-│  THE TEST:                                                 │
-│  Am I more capable now than before this interaction?       │
-│                                                             │
-│  REMEMBER:                                                 │
-│  The AI is a thinking mirror, not an oracle.              │
-│  Quality in → Quality out.                                 │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+| | DCF Essentials |
+|---|----------------|
+| **Core Loop** | Articulate → Generate → Evaluate → Refine → *(repeat)* |
+| **At Every Response** | • "Could you be wrong?" ← *surfaces hidden info* |
+| | • "What assumptions are in that?" |
+| | • "What's the counterargument?" |
+| | • "What am I not seeing?" |
+| **Before Approving** | • What alternatives were considered? |
+| | • What's the riskiest assumption? |
+| | • What would make this fail? |
+| **Stop When** | • Quality threshold met |
+| | • Changes become cosmetic |
+| | • Purpose fulfilled |
+| **The Test** | *Am I more capable now than before?* |
+| **Remember** | The AI is a thinking mirror, not an oracle. Quality in → Quality out. |
 
 ---
 
 ## Further Reading
 
-- **Full treatise**: "The Architecture of Thought: The Dialectical Cognition Framework"
+### Practical Resources
+- [DCF FAQ](resources/DCF_FAQ.md) — Common questions and misconceptions
+- [DCF Glossary](resources/DCF_GLOSSARY.md) — Terminology reference
+- [DCF Prompt Library](resources/DCF_PROMPT_LIBRARY.md) — Ready-to-use prompts by situation
+- [Case Studies](examples/README.md) — Real-world applications (debugging, architecture, learning)
+
+### Theoretical Foundations
+- **Full treatise**: [The Architecture of Thought](THE_ARCHITECTURE_OF_THOUGHT.pdf) (265 pages, optional)
 - **Extended mind**: Clark & Chalmers, "The Extended Mind" (1998)
 - **Scaffolding**: Vygotsky, "Mind in Society" (1978)
-- **Distributed cognition**: Hutchins, "Cognition in the Wild" (1995)
 - **Critical rationalism**: Popper, "Conjectures and Refutations" (1963)
-- **Double-loop learning**: Argyris, "Double Loop Learning in Organizations" (1977)
-- **Hermeneutics**: Gadamer, "Truth and Method" (1960)
-- **PKM methodology**: Ahrens, "How to Take Smart Notes" (2017)
 - **Metacognitive prompting**: Hills, "Could You Be Wrong" (2025)
 - **Autonomy risks**: Kovács & Szelényi, "Addressing Autonomy Risks in Generative Chatbots" (2025)
-- **Measuring collaboration skills**: Sidra & Mason, "Collaborative AI Literacy and Metacognition Scales" (2025)
-- **Independent validation**: Hashemi Tonekaboni & Soleymani, "Socratic Method Revisited" (HICSS 2026)
+
+See [DCF Reading List](resources/DCF_READING_LIST.md) for the complete annotated bibliography.
 
 ---
 

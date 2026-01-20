@@ -55,6 +55,16 @@ DCF operates at the *micro level* of human-AI interaction—the cognitive strate
 | Challenge your assumptions | `/cybw` in Claude Code |
 | See it in action | [Example Transcripts](resources/DCF_EXAMPLE_TRANSCRIPTS.md) |
 
+**The core loop:**
+
+```mermaid
+graph LR
+    A[Articulate] --> B[Generate]
+    B --> C[Evaluate]
+    C --> D[Refine]
+    D --> A
+```
+
 ---
 
 ## Installation
@@ -148,6 +158,9 @@ Quick adversarial checkpoint based on Hills (2025) research:
 /cybw the caching strategy      # Challenge a specific decision
 /cybw "users want this feature" # Challenge an assumption
 ```
+
+> [!TIP]
+> **"Could you be wrong?"** surfaces errors, biases, and alternatives absent from initial responses. Use it at every checkpoint before approval.
 
 ---
 
@@ -307,7 +320,8 @@ See [examples/README.md](examples/README.md) for the full collection.
 
 ## The Book (Optional)
 
-> **Note:** The book is an early draft — a work in progress exploring the theoretical foundations. You can be fully productive with DCF using just the skills and resources above.
+> [!NOTE]
+> The book is an early draft — a work in progress exploring the theoretical foundations. You can be fully productive with DCF using just the skills and resources above.
 
 **"The Architecture of Thought"** is a 265-page treatise that dives deep into the philosophy and cognitive science behind DCF. It's for those who want to understand *why* the framework works, not just *how* to use it.
 
