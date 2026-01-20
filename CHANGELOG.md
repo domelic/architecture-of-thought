@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.9.1](https://github.com/domelic/architecture-of-thought/compare/v2.9.0...v2.9.1) (2026-01-20)
+
+
+### Bug Fixes
+
+* add /cybw skill to install-dcf.sh ([#72](https://github.com/domelic/architecture-of-thought/issues/72)) ([4d477bf](https://github.com/domelic/architecture-of-thought/commit/4d477bf2d6f40830bc7db5c33dc0e9e65e0e261b))
+
 ## [2.9.0](https://github.com/domelic/architecture-of-thought/compare/v2.8.0...v2.9.0) (2026-01-19)
 
 
