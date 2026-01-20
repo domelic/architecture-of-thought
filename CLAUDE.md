@@ -4,7 +4,21 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This repository contains **"The Architecture of Thought"** — a treatise presenting the Dialectical Cognition Framework (DCF), a methodology for human-AI collaboration. The main output is a ~200-page LaTeX document with supporting practical resources in Markdown.
+This repository contains **"The Architecture of Thought"** — a treatise presenting the Dialectical Cognition Framework (DCF), a methodology for human-AI collaboration. The main output is a ~265-page LaTeX document with supporting practical resources in Markdown.
+
+**Read DCF_ESSENTIALS.md first** to understand the core concepts, Socratic toolkit, and 24 modes.
+
+## Commands Quick Reference
+
+| Task | Command |
+|------|---------|
+| Quick LaTeX compile | `pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex` |
+| Full LaTeX build | See [Full Compilation](#latex-compilation) below |
+| Spell check all | `cspell --config .cspell.json "**/*.md" --no-progress` |
+| Lint all markdown | `markdownlint-cli2 "**/*.md" --config .markdownlint.json --ignore CHANGELOG.md` |
+| Single file validation | `cspell --config .cspell.json "file.md" && markdownlint-cli2 "file.md"` |
+
+**Dependencies:** TeX Live 2025 or MacTeX for LaTeX; `npm install -g cspell markdownlint-cli2` for validation.
 
 ## Build & Validation Commands
 
@@ -14,7 +28,7 @@ This repository contains **"The Architecture of Thought"** — a treatise presen
 # Quick compile (iterative editing - no bibliography/index update)
 pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 
-# Full compilation with bibliography and index (requires TeX Live 2025 or MacTeX)
+# Full compilation with bibliography and index
 pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 bibtex THE_ARCHITECTURE_OF_THOUGHT
 makeindex THE_ARCHITECTURE_OF_THOUGHT
@@ -27,15 +41,8 @@ The triple pdflatex run resolves cross-references and index entries. Use quick c
 ### Validation (run before committing markdown changes)
 
 ```bash
-# Spell check (requires cspell: npm install -g cspell)
 cspell --config .cspell.json "**/*.md" --no-progress
-
-# Markdown lint (requires markdownlint-cli2: npm install -g markdownlint-cli2)
 markdownlint-cli2 "**/*.md" --config .markdownlint.json --ignore CHANGELOG.md
-
-# Single file validation (during editing)
-cspell --config .cspell.json "path/to/file.md" --no-progress
-markdownlint-cli2 "path/to/file.md" --config .markdownlint.json
 ```
 
 Add project-specific words to `.cspell.json` `words` array when needed.
@@ -189,11 +196,27 @@ When adding new references, place them in the appropriate section or create a ne
 
 ## For Claude: Working Style
 
-- **Apply DCF principles**: Surface assumptions, present trade-offs, question to clarify
-- **Direct and concise**: Practitioner-focused, avoid academic verbosity
-- **Ground in examples**: New theoretical content needs concrete illustrations
-- **Validate changes**: Run spell-check and markdown-lint on changed `.md` files
-- **Follow patterns**: New resources should match existing `resources/` file formats
+**Collaboration approach:**
+- Apply DCF principles: surface assumptions, present trade-offs, question to clarify
+- Use the Socratic toolkit: Elenchus (expose assumptions), Dialectic (test via opposition), Meta-question (find the right inquiry)
+- End significant exchanges by surfacing what question the user should ask next
+
+**Content style:**
+- Direct and concise—practitioner-focused, avoid academic verbosity
+- Ground in examples—new theoretical content needs concrete illustrations
+- Follow patterns—new resources should match existing `resources/` file formats
+
+**Before committing:**
+- Run spell-check and markdown-lint on changed `.md` files
+- Full LaTeX compile if .tex or .bib changed
+
+**Model selection guidance:**
+
+| Model | When to Use |
+|-------|-------------|
+| Haiku | Quick searches, exploration, lower-stakes tasks |
+| Sonnet | Most development work, balanced engagement |
+| Opus | Architecture decisions, complex judgment, high-stakes work |
 
 ## Quick Troubleshooting
 
