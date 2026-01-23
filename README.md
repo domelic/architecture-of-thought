@@ -4,7 +4,7 @@
 
 [![DOI](https://zenodo.org/badge/1136026127.svg)](https://zenodo.org/badge/latestdoi/1136026127)
 [![GitHub release](https://img.shields.io/github/v/release/domelic/architecture-of-thought)](https://github.com/domelic/architecture-of-thought/releases/latest)
-[![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-red.svg)](LICENSE)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE-CC-BY-NC-SA-4.0)
 
 > **DCF positions LLMs as *thinking mirrors*: collaborative partners in the architecture of thought itself.**
 
@@ -419,7 +419,8 @@ If you use or reference this work, please cite:
 ```text
 /
 ├── README.md                         # This file
-├── LICENSE                           # All Rights Reserved license
+├── LICENSE.md                        # License overview and clarifications
+├── LICENSE-CC-BY-NC-SA-4.0           # Full CC-BY-NC-SA-4.0 text
 ├── CLAUDE.md                         # Claude Code project instructions
 ├── DCF_ESSENTIALS.md                 # Condensed practitioner's guide
 ├── CONTRIBUTING.md                   # Contribution guidelines
@@ -529,11 +530,15 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 
 ---
 
-## License & Copyright
+## License
 
-**© 2026 Damir Omelic. All Rights Reserved.**
+This project is licensed under [CC-BY-NC-SA-4.0](LICENSE-CC-BY-NC-SA-4.0).
 
-Co-authored with Claude (Anthropic). The human author retains full intellectual property rights.
+**Free to use** at work, in your projects, and for learning. **Commercial use** (selling courses, books, certifications based on DCF) requires permission.
+
+See [LICENSE.md](LICENSE.md) for details on what's allowed.
+
+**© 2026 Damir Omelic.** Co-authored with Claude (Anthropic). The human author retains full intellectual property rights.
 
 ---
 
