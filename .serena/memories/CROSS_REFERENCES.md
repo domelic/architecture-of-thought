@@ -4,110 +4,109 @@ Concept dependencies, definition locations, and term relationships for THE_ARCHI
 
 ## Document Structure Overview
 
-| Part | Title | Lines | Core Concepts |
-|------|-------|-------|---------------|
-| I | The Core Philosophy of DCF | 196-298 | Thinking Mirror, Collaboration vs Extraction, Language as Infrastructure |
-| II | The Socratic Method Reimagined | 299-436 | Seven Socratic Operations, Five Phases of Prompting |
-| III | Prompt Chaining as Cognitive Architecture | 437-769 | Recursive Refinement, Escape Paths, Chain Composition |
-| IV | From Documentation to Knowledge Engineering | 770-849 | PKM, Zettelkasten, PARA Method |
-| V | Metacognition and Self-Directed Learning | 850-1447 | Anticipatory Calibration, Learning Accelerator |
-| VI | Philosophical Foundations | 1448-1805 | Extended Mind, Distributed Cognition, ZPD, Scaffolding, Dialectical Thinking |
-| VII | Claude Code and Development | 1806-2573 | Agent Ecosystem, Session Continuity, Skill Creation, Hooks |
-| VIII | Practical Application Framework | 2574-3428 | Architectural Funnel, Failure Modes (14 anti-patterns) |
-| IX | The Emerging Discipline | 3429-3628 | Future directions |
-| X | AI Methodology Landscape | 3629-4010 | ACE-FCA, 12-Factor Agents, BMAD, Ralph, Framework Comparison, Emerging Validation |
-| XI | Agentic Era Adaptations | 3990-4287 | Trust vs Engage, Test Coverage as Scaffolding |
-| XII | Critical Perspectives | 4288+ | Limitations, Critiques |
+| Part | Title | Directory | Core Concepts |
+|------|-------|-----------|---------------|
+| I | Core Philosophy | `part01-core-philosophy/` | Thinking Mirror, Collaboration vs Extraction, Language as Infrastructure |
+| II | Socratic Method Reimagined | `part02-socratic-method/` | Seven Socratic Operations, Five Phases of Prompting |
+| III | Prompt Chaining | `part03-prompt-chaining/` | Recursive Refinement, Escape Paths, Chain Composition |
+| IV | Knowledge Engineering | `part04-knowledge-engineering/` | PKM, Zettelkasten, PARA Method |
+| V | Metacognition | `part05-metacognition/` | Anticipatory Calibration, Learning Accelerator |
+| VI | Philosophical Foundations | `part06-philosophical-foundations/` | Extended Mind, Distributed Cognition, ZPD, Scaffolding, Dialectical Thinking |
+| VII | Claude Code | `part07-claude-code/` | Agent Ecosystem, Session Continuity, Skill Creation, Hooks |
+| VIII | Practical Application | `part08-practical-application/` | Architectural Funnel, Failure Modes (14 anti-patterns) |
+| IX | Emerging Discipline | `part09-emerging-discipline/` | Future directions |
+| X | Methodology Landscape | `part10-methodology-landscape/` | ACE-FCA, 12-Factor Agents, BMAD, Ralph, Framework Comparison |
+| XI | Agentic Era | `part11-agentic-era/` | Trust vs Engage, Test Coverage as Scaffolding |
+| XII | Critical Perspectives | `part12-critical-perspectives/` | Limitations, Critiques |
 
 ## Term Definition Locations
 
 ### Core DCF Concepts
 
-| Term | Defined In | Line ~Range | Dependencies |
-|------|-----------|-------------|--------------|
-| Dialectical Cognition Framework | Abstract | 148 | - |
-| Thinking Mirror | Part I, Ch 2 | 230-263 | Extended Mind (Part VI) |
-| Collaboration Over Extraction | Part I, Ch 1 | 198-228 | - |
-| Language as Infrastructure | Part I, Ch 3 | 265-293 | - |
-| CLAUDE.md | Part I, Ch 3 | 288 | Language as Infrastructure |
+| Term | File | Dependencies |
+|------|------|--------------|
+| Dialectical Cognition Framework | `parts/frontmatter.tex` | - |
+| Thinking Mirror | `ch02-thinking-mirror.tex` | Extended Mind (Part VI) |
+| Collaboration Over Extraction | `ch01-beyond-prompting.tex` | - |
+| Language as Infrastructure | `ch03-language-infrastructure.tex` | - |
+| CLAUDE.md | `ch03-language-infrastructure.tex` | Language as Infrastructure |
 
 ### Socratic Method
 
-| Term | Defined In | Line ~Range | Dependencies |
-|------|-----------|-------------|--------------|
-| Elenchus | Part II, Ch 4 | 306 | - |
-| Maieutics | Part II, Ch 4 | 307 | - |
-| Dialectic | Part II, Ch 4 | 308 | - |
-| Evidence (Socratic) | Part II, Ch 4 | 309 | - |
-| Consequences (Socratic) | Part II, Ch 4 | 310 | - |
-| Aporia | Part II, Ch 4 | 311 | - |
-| Meta-question | Part II, Ch 4 | 312 | - |
-| Five Phases | Part II | 360-430 | Seven Operations |
+| Term | File | Dependencies |
+|------|------|--------------|
+| Elenchus | `ch04-socratic-dialogue.tex` | - |
+| Maieutics | `ch04-socratic-dialogue.tex` | - |
+| Dialectic | `ch04-socratic-dialogue.tex` | - |
+| Evidence (Socratic) | `ch04-socratic-dialogue.tex` | - |
+| Consequences (Socratic) | `ch04-socratic-dialogue.tex` | - |
+| Aporia | `ch04-socratic-dialogue.tex` | - |
+| Meta-question | `ch04-socratic-dialogue.tex` | - |
+| Five Phases | `ch05-five-phases.tex` | Seven Operations |
 
 ### Cognitive Science Foundations (Part VI)
 
-| Term | Defined In | Line ~Range | Dependencies |
-|------|-----------|-------------|--------------|
-| Extended Mind Thesis | Part VI | 1452 | Clark & Chalmers |
-| Distributed Cognition | Part VI | 1533 | Hutchins |
-| Zone of Proximal Development (ZPD) | Part VI | 1630-1658 | Vygotsky |
-| Scaffolding | Part VI | 1660 | Bruner, Wood, Ross; requires ZPD |
-| Dialectical Thinking | Part VI | 1758-1800 | Riegel, Basseches; Post-formal development |
-| Horizontverschmelzung | Part I | 253 | Gadamer (used to explain Thinking Mirror) |
+| Term | File | Dependencies |
+|------|------|--------------|
+| Extended Mind Thesis | `ch15-extended-mind.tex` | Clark & Chalmers |
+| Distributed Cognition | `ch16-distributed-cognition.tex` | Hutchins |
+| Zone of Proximal Development (ZPD) | `ch17-scaffolding-theory.tex` | Vygotsky |
+| Scaffolding | `ch17-scaffolding-theory.tex` | Bruner, Wood, Ross; requires ZPD |
+| Dialectical Thinking | `ch18-dialectical-thinking.tex` | Riegel, Basseches |
+| Horizontverschmelzung | `ch02-thinking-mirror.tex` | Gadamer |
 
 ### Prompting & Refinement (Parts III-V)
 
-| Term | Defined In | Line ~Range | Dependencies |
-|------|-----------|-------------|--------------|
-| Recursive Refinement Loop | Part III, Ch 6 | 519 | - |
-| Escape Paths | Part III | 648 | Recursive Refinement |
-| Socratic Fatigue | Part III | 671 | - |
-| Anticipatory Calibration | Part V | 904 | Metacognition |
-| Learning Accelerator | Part V | 1031 | Scaffolding (Part VI) |
+| Term | File | Dependencies |
+|------|------|--------------|
+| Recursive Refinement Loop | `ch08-recursive-refinement.tex` | - |
+| Escape Paths | `ch08-recursive-refinement.tex` | Recursive Refinement |
+| Socratic Fatigue | `ch08-recursive-refinement.tex` | - |
+| Anticipatory Calibration | `ch12-thinking-about-thinking.tex` | Metacognition |
+| Learning Accelerator | `ch13-learning-stance.tex` | Scaffolding (Part VI) |
 
-### Agentic Era (Part VII)
+### Claude Code (Part VII)
 
-| Term | Defined In | Line ~Range | Dependencies |
-|------|-----------|-------------|--------------|
-| Agent Ecosystem | Part VII, Ch | 1901 | - |
-| Background Agents | Part VII | 1933 | Agent Ecosystem |
-| Session Continuity | Part VII | 2015 | Context Rot (anti-pattern) |
-| Shared Context Infrastructure | Part VII | 2086 | CLAUDE.md |
-| Skill Creation | Part VII | 2236 | - |
-| Hooks | Part VII | 2383 | - |
-| Model Selection | Part VII | 2446 | - |
-| Session Lifecycle | Part VII | 2474 | - |
+| Term | File | Dependencies |
+|------|------|--------------|
+| Agent Ecosystem | `ch21-agent-ecosystem.tex` | - |
+| Background Agents | `ch21-agent-ecosystem.tex` | Agent Ecosystem |
+| Session Continuity | `ch22-memory-systems.tex` | Context Rot (anti-pattern) |
+| Shared Context Infrastructure | `ch22-memory-systems.tex` | CLAUDE.md |
+| Skill Creation | `ch25-skill-composition.tex` | - |
+| Hooks | `ch28-configuration-philosophy.tex` | - |
+| Model Selection | `ch28-configuration-philosophy.tex` | - |
+| Session Lifecycle | `ch28-configuration-philosophy.tex` | - |
 
-### Research Validation (Part VIII & X)
+### Research Validation
 
-| Term | Defined In | Line ~Range | Citation |
-|------|-----------|-------------|----------|
-| Collaborative AI Literacy | Part VIII | 2820 | Sidra & Mason (2025) |
-| Collaborative AI Metacognition | Part VIII | 2820 | Sidra & Mason (2025) |
-| False Mental States | Part VIII | 2880 | Kovács & Szelényi (2025) |
-| Cognitive Deskilling | Part VIII | 2973 | Kovács & Szelényi (2025) |
-| Emerging Validation | Part X | 4003 | Hashemi Tonekaboni & Soleymani (2026) |
+| Term | File | Citation |
+|------|------|----------|
+| Collaborative AI Literacy | `ch31-measuring-improvement.tex` | Sidra & Mason (2025) |
+| Collaborative AI Metacognition | `ch31-measuring-improvement.tex` | Sidra & Mason (2025) |
+| False Mental States | `ch30-failure-modes.tex` | Kovács & Szelényi (2025) |
+| Cognitive Deskilling | `ch30-failure-modes.tex` | Kovács & Szelényi (2025) |
 
-### Anti-Patterns (Part VIII)
+### Anti-Patterns
 
-All 14 anti-patterns defined in Part VIII, Chapter "Failure Modes and Mitigations" starting at line 2711:
+All 14 anti-patterns defined in `parts/part08-practical-application/ch30-failure-modes.tex`:
 
-| Anti-Pattern | Line ~Start | Related Concepts |
-|--------------|-------------|------------------|
-| Socratic Theater | 2715 | Socratic Method |
-| Mirror Narcissism | 2749 | Thinking Mirror |
-| Reactive Evaluation | 2781 | Anticipatory Calibration |
-| Infinite Refinement | 2814 | Recursive Refinement |
-| Lazy Prompting | 2848 | Five Phases |
-| Hallucination Acceptance | 2880 | - |
-| Rubber Stamping | 2910 | Checkpoint mode |
-| Complexity Creep | 2940 | Simplify mode |
-| Cognitive Atrophy | 2973 | Scaffolding |
-| Goal Drift | 3003 | - |
-| Abstraction Addiction | 3037 | - |
-| Reinvention Addiction | 3068 | Skill Creation |
-| Context Rot | 3101 | Session Continuity |
-| Knowledge Gatekeeping | 3132 | - |
+| Anti-Pattern | Related Concepts |
+|--------------|------------------|
+| Socratic Theater | Socratic Method |
+| Mirror Narcissism | Thinking Mirror |
+| Reactive Evaluation | Anticipatory Calibration |
+| Infinite Refinement | Recursive Refinement |
+| Lazy Prompting | Five Phases |
+| Hallucination Acceptance | - |
+| Rubber Stamping | Checkpoint mode |
+| Complexity Creep | Simplify mode |
+| Cognitive Atrophy | Scaffolding |
+| Goal Drift | - |
+| Abstraction Addiction | - |
+| Reinvention Addiction | Skill Creation |
+| Context Rot | Session Continuity |
+| Knowledge Gatekeeping | - |
 
 ## Concept Dependency Graph
 
@@ -146,6 +145,22 @@ Research Validation
         └── Independent Socratic validation
 ```
 
+## Key Labels in Document
+
+- `\label{ch:thinking-mirror}` - Thinking Mirror chapter
+- `\label{sec:anticipatory-calibration}` - Anticipatory Calibration section
+- `\label{sec:learning-accelerator}` - AI as Learning Accelerator
+- `\label{ch:agent-ecosystem}` - Agent Ecosystem chapter
+- `\label{sec:session-continuity}` - Session Continuity
+- `\label{sec:shared-context}` - Shared Context Infrastructure
+- `\label{sec:pattern-to-skill}` - Creating Skills from Patterns
+- `\label{sec:hooks}` - Hooks section
+- `\label{sec:session-lifecycle}` - Session Lifecycle
+- `\label{sec:architectural-funnel}` - Architectural Funnel
+- `\label{ch:failure-modes}` - Failure Modes chapter
+- `\label{sec:test-scaffolding}` - Test Coverage as Scaffolding
+- `\label{ch:prompt-reference}` - Prompt Reference appendix
+
 ## Cross-Reference Patterns
 
 ### When Referencing Concepts Forward
@@ -159,20 +174,6 @@ Research Validation
 As established in the Thinking Mirror hypothesis (Chapter~2)...
 Building on the scaffolding principles from Part~VI...
 ```
-
-### Key Labels in Document
-- `\label{sec:anticipatory-calibration}` - Anticipatory Calibration section
-- `\label{sec:learning-accelerator}` - AI as Learning Accelerator
-- `\label{ch:agent-ecosystem}` - Agent Ecosystem chapter
-- `\label{sec:session-continuity}` - Session Continuity
-- `\label{sec:shared-context}` - Shared Context Infrastructure
-- `\label{sec:pattern-to-skill}` - Creating Skills from Patterns
-- `\label{sec:hooks}` - Hooks section
-- `\label{sec:session-lifecycle}` - Session Lifecycle
-- `\label{sec:architectural-funnel}` - Architectural Funnel
-- `\label{ch:failure-modes}` - Failure Modes chapter
-- `\label{sec:test-scaffolding}` - Test Coverage as Scaffolding
-- `\label{ch:prompt-reference}` - Prompt Reference appendix
 
 ## Editing Guidelines
 
@@ -189,6 +190,6 @@ Building on the scaffolding principles from Part~VI...
 
 ### Adding New Anti-Patterns
 1. Follow naming convention (Title Case)
-2. Define in Part VIII after existing anti-patterns
+2. Define in `ch30-failure-modes.tex`
 3. Link to the DCF concept it inverts
 4. Add to DCF_CONCEPTS memory
