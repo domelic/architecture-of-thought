@@ -1,36 +1,114 @@
-# LaTeX Editing Guide: THE_ARCHITECTURE_OF_THOUGHT.tex
+# LaTeX Editing Guide: THE_ARCHITECTURE_OF_THOUGHT
 
 ## Document Overview
 
-The document is a ~5,400-line LaTeX treatise structured as a `report` class document with:
+The document is a ~267-page LaTeX treatise structured as a `book` class document with:
 - **12 Parts** (major thematic divisions)
-- **~60 Chapters** (main content units)
-- **~150 Sections** (detailed topics)
-- **7 Appendix Chapters**
+- **53 Chapters** (main content units)
+- **8 Appendices** (A-H)
 - Front matter (Abstract, ToC, Lists) and back matter (Acknowledgments, Colophon, Index, Bibliography)
+
+The document is split into **76 chapter files** under `parts/`.
 
 ---
 
 ## Document Structure Map
 
 ```text
-Lines 1-92:      Preamble (packages, configuration, custom environments)
-Lines 93-167:    Title page and front matter setup
-Lines 168-295:   PART I: Core Philosophy (Chapters 1-3)
-Lines 296-436:   PART II: Socratic Method Reimagined
-Lines 437-768:   PART III: Prompt Chaining as Cognitive Architecture
-Lines 769-849:   PART IV: Documentation to Knowledge Engineering
-Lines 850-1447:  PART V: Metacognition and Self-Directed Learning
-Lines 1448-1756: PART VI: Philosophical and Cognitive Science Foundations
-Lines 1757-1805: PART VII: Dialectical Thinking Tradition
-Lines 1806-2573: PART VIII: Claude Code and Development Best Practices
-Lines 2574-3428: PART IX: Practical Application Framework
-Lines 3429-3628: PART X: The Emerging Discipline
-Lines 3629-3989: PART XI: Positioning Within AI Methodology Landscape
-Lines 3990-4287: PART XII: Agentic Era Adaptations
-Lines 4288-4524: PART XIII: Critical Perspectives
-Lines 4525-5293: APPENDICES (Chapters A-H)
-Lines 5294-5357: Back matter (Acknowledgments, Bibliography, Colophon, Index)
+THE_ARCHITECTURE_OF_THOUGHT.tex   # Main file with \include directives
+preamble.tex                       # Packages, configuration, custom environments
+references.bib                     # Bibliography
+
+parts/
+├── frontmatter.tex               # Abstract
+├── preface.tex                   # Preface
+├── part01-core-philosophy/
+│   ├── _part.tex                 # \part{} declaration
+│   ├── ch01-beyond-prompting.tex
+│   ├── ch02-thinking-mirror.tex
+│   └── ch03-language-infrastructure.tex
+├── part02-socratic-method/
+│   ├── _part.tex
+│   ├── ch04-socratic-dialogue.tex
+│   └── ch05-five-phases.tex
+├── part03-prompt-chaining/
+│   ├── _part.tex
+│   ├── ch06-why-single-prompts-fail.tex
+│   ├── ch07-designing-prompt-chains.tex
+│   └── ch08-recursive-refinement.tex
+├── part04-knowledge-engineering/
+│   ├── _part.tex
+│   ├── ch09-minimal-viable-document.tex
+│   ├── ch10-documentation-as-system-design.tex
+│   └── ch11-knowledge-architecture.tex
+├── part05-metacognition/
+│   ├── _part.tex
+│   ├── ch12-thinking-about-thinking.tex
+│   ├── ch13-learning-stance.tex
+│   └── ch14-personal-knowledge-systems.tex
+├── part06-philosophical-foundations/
+│   ├── _part.tex
+│   ├── ch15-extended-mind.tex
+│   ├── ch16-distributed-cognition.tex
+│   ├── ch17-scaffolding-theory.tex
+│   └── ch18-dialectical-thinking.tex
+├── part07-claude-code/
+│   ├── _part.tex
+│   ├── ch19-architecture.tex
+│   ├── ch20-dcf-interaction-levels.tex
+│   ├── ch21-agent-ecosystem.tex
+│   ├── ch22-memory-systems.tex
+│   ├── ch23-co-developer-pattern.tex
+│   ├── ch24-team-scale-dcf.tex
+│   ├── ch25-skill-composition.tex
+│   ├── ch26-mcp-orchestration.tex
+│   ├── ch27-community-patterns.tex
+│   └── ch28-configuration-philosophy.tex
+├── part08-practical-application/
+│   ├── _part.tex
+│   ├── ch29-practitioners-toolkit.tex
+│   ├── ch30-failure-modes.tex
+│   ├── ch31-measuring-improvement.tex
+│   └── ch32-case-studies.tex
+├── part09-emerging-discipline/
+│   ├── _part.tex
+│   ├── ch33-naming-the-field.tex
+│   ├── ch34-future-of-thought-work.tex
+│   └── ch35-your-role.tex
+├── part10-methodology-landscape/
+│   ├── _part.tex
+│   ├── ch36-ecosystem-frameworks.tex
+│   ├── ch37-comparison-frameworks.tex
+│   ├── ch38-stack-view.tex
+│   ├── ch39-synthesis.tex
+│   ├── ch40-practical-integration.tex
+│   ├── ch41-naming-approach.tex
+│   ├── ch42-framework-landscape.tex
+│   └── ch43-ralph-tension.tex
+├── part11-agentic-era/
+│   ├── _part.tex
+│   ├── ch44-shift-to-autonomous.tex
+│   ├── ch45-dcf-agentic-context.tex
+│   ├── ch46-claude-code-architecture-dcf.tex
+│   ├── ch47-memory-cognitive-infra.tex
+│   ├── ch48-when-to-engage.tex
+│   ├── ch49-extended-thinking.tex
+│   ├── ch50-tool-ecosystems.tex
+│   └── ch51-future-dcf-agentic.tex
+├── part12-critical-perspectives/
+│   ├── _part.tex
+│   ├── ch52-limitations.tex
+│   └── ch53-ethical-considerations.tex
+├── appendices/
+│   ├── app-a-principles-summary.tex
+│   ├── app-b-prompt-reference.tex
+│   ├── app-c-recommended-reading.tex
+│   ├── app-d-claude-code-resources.tex
+│   ├── app-e-research-references.tex
+│   ├── app-f-meta-example.tex
+│   ├── app-g-glossary.tex
+│   └── app-h-exercises.tex
+└── backmatter.tex                # Acknowledgments, Colophon
 ```
 
 ---
@@ -39,7 +117,7 @@ Lines 5294-5357: Back matter (Acknowledgments, Bibliography, Colophon, Index)
 
 ### Adding a New Section
 
-**Location**: Within an existing chapter
+**Location**: Within an existing chapter file
 
 ```latex
 \section{Your Section Title}\label{sec:your-label}\index{Index Entry}
@@ -54,7 +132,8 @@ Content here...
 
 ### Adding a New Chapter
 
-**Location**: After an existing chapter, before the next `\part` or `\chapter`
+1. Create a new file in the appropriate part directory: `parts/partNN-name/chNN-slug.tex`
+2. Add `\include{parts/partNN-name/chNN-slug}` to `THE_ARCHITECTURE_OF_THOUGHT.tex`
 
 ```latex
 \chapter{Chapter Title}\label{ch:your-label}\index{Main Index Entry}
@@ -71,19 +150,24 @@ Opening paragraph that frames the chapter's purpose...
 
 ### Adding a New Part
 
-**Location**: At a major thematic boundary
+1. Create directory: `parts/partNN-name/`
+2. Create `_part.tex` with the `\part{}` declaration
+3. Add chapter files
+4. Update `THE_ARCHITECTURE_OF_THOUGHT.tex` with `\include` directives
 
 ```latex
-% ============================================================================
-% PART [NUMBER]: DESCRIPTIVE TITLE
-% ============================================================================
-
+% In _part.tex:
 \part{Full Part Title}
 ```
 
-### Adding Content to an Existing Section
+### Fast Single-Chapter Compilation
 
-Find the section by searching for `\section{Section Name}` and add content after the existing paragraphs.
+Add to main .tex file after `\input{preamble}`:
+```latex
+\includeonly{parts/part07-claude-code/ch22-memory-systems}
+```
+
+Then run `pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex` for fast iteration on that chapter only.
 
 ---
 
@@ -94,7 +178,7 @@ Find the section by searching for `\section{Section Name}` and add content after
 ```latex
 \begin{table}[H]
 \centering
-\begin{tabular}{ll}  % or {lll}, {p{5cm}p{5cm}}, etc.
+\begin{tabular}{ll}
 \toprule
 \textbf{Column 1} & \textbf{Column 2} \\
 \midrule
@@ -107,8 +191,6 @@ Item 2 & Description 2 \\
 \end{table}
 ```
 
-**Packages used**: `booktabs` (for `\toprule`, `\midrule`, `\bottomrule`), `float` (for `[H]` placement)
-
 ### Quote Boxes (Callouts)
 
 ```latex
@@ -116,12 +198,6 @@ Item 2 & Description 2 \\
 \textbf{Title:} Content of the callout box...
 \end{quotebox}
 ```
-
-Use for:
-- Agentic Era Updates
-- Key insights
-- Warnings
-- DCF Principles
 
 ### Code Listings
 
@@ -131,18 +207,13 @@ your code here
 \end{lstlisting}
 ```
 
-### Bulleted Lists
+### Lists
 
 ```latex
 \begin{itemize}
     \item \textbf{Bold lead}: Explanation
-    \item Another item
 \end{itemize}
-```
 
-### Numbered Lists
-
-```latex
 \begin{enumerate}
     \item First step
     \item Second step
@@ -153,73 +224,42 @@ your code here
 
 ## Cross-Referencing
 
-### Referring to Other Parts of the Document
-
 ```latex
 See Chapter~\ref{ch:failure-modes}
 As discussed in Section~\ref{sec:session-lifecycle}
 Table~\ref{tab:comparison-matrix} shows...
 ```
 
-### Adding Index Entries
+### Index Entries
 
 ```latex
-\index{Primary Term}                    % Simple entry
-\index{Primary Term!Subterm}            % Subentry
-\index{Term|textbf}                     % Bold page number (main discussion)
+\index{Primary Term}
+\index{Primary Term!Subterm}
+\index{Term|textbf}  % Bold page number (main discussion)
 ```
 
 ### Citations
 
 ```latex
 As Vygotsky noted \cite{vygotsky1978mind}...
-Multiple sources support this \cite{clark1998extended,hutchins1995cognition}
-```
-
-Add new bibliography entries to `references.bib` following existing format.
-
----
-
-## Adding Bibliography Entries
-
-Edit `references.bib` and add entries in the appropriate section:
-
-```bibtex
-@book{authorYYYYkeyword,
-  author = {Last, First},
-  title = {Book Title},
-  publisher = {Publisher Name},
-  year = {YYYY},
-  address = {City}
-}
-
-@article{authorYYYYkeyword,
-  author = {Last, First and Second, Author},
-  title = {Article Title},
-  journal = {Journal Name},
-  volume = {X},
-  number = {Y},
-  pages = {1--10},
-  year = {YYYY},
-  doi = {10.xxxx/xxxxx}
-}
+Multiple sources \cite{clark1998extended,hutchins1995cognition}
 ```
 
 ---
 
 ## Common Edit Locations by Purpose
 
-| Purpose | Where to Edit |
-|---------|--------------|
-| Core DCF philosophy | Part I (lines 193-295) |
-| Socratic methodology | Part II (lines 296-436) |
-| Prompt patterns | Part III (lines 437-768) |
-| Claude Code integration | Part VIII (lines 1806-2573) |
-| Anti-patterns/failures | Chapter in Part IX (lines 2711-3201) |
-| Framework comparisons | Part XI (lines 3629-3989) |
-| Practical prompts | Appendix B (lines 4568-4718) |
-| Glossary terms | Appendix F (lines 4906-5059) |
-| Exercises | Appendix H (lines 5060-5293) |
+| Purpose | File Path |
+|---------|-----------|
+| Core DCF philosophy | `parts/part01-core-philosophy/ch01-03` |
+| Socratic methodology | `parts/part02-socratic-method/ch04-05` |
+| Prompt patterns | `parts/part03-prompt-chaining/ch06-08` |
+| Claude Code integration | `parts/part07-claude-code/ch19-28` |
+| Anti-patterns/failures | `parts/part08-practical-application/ch30-failure-modes.tex` |
+| Framework comparisons | `parts/part10-methodology-landscape/ch36-43` |
+| Practical prompts | `parts/appendices/app-b-prompt-reference.tex` |
+| Glossary terms | `parts/appendices/app-g-glossary.tex` |
+| Exercises | `parts/appendices/app-h-exercises.tex` |
 
 ---
 
@@ -228,14 +268,18 @@ Edit `references.bib` and add entries in the appropriate section:
 ### Build Sequence
 
 ```bash
+# Quick compile (iterative editing)
 pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
-bibtex THE_ARCHITECTURE_OF_THOUGHT      # Only if bibliography changed
-makeindex THE_ARCHITECTURE_OF_THOUGHT   # Only if index entries changed
+
+# Full compilation with bibliography and index
 pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
-pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex  # Third pass for cross-refs
+bibtex THE_ARCHITECTURE_OF_THOUGHT
+makeindex THE_ARCHITECTURE_OF_THOUGHT
+pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
+pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ```
 
-### Common Errors to Watch For
+### Common Errors
 
 | Error | Cause | Fix |
 |-------|-------|-----|
@@ -243,7 +287,6 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex  # Third pass for cross-refs
 | Missing `$` | Math mode not closed | Check `$...$` pairs |
 | Runaway argument | Unclosed `{` | Find missing `}` |
 | Citation undefined | Missing bib entry | Add to references.bib |
-| Float specifier | Invalid placement | Use `[H]` or `[htbp]` |
 
 ---
 
@@ -257,52 +300,25 @@ pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex  # Third pass for cross-refs
 
 ### Formatting Conventions
 - Bold for **key terms** on first use: `\textbf{term}`
-- Italic for *emphasis* or *foreign terms*: `\emph{word}`
-- Monospace for `code` or `commands`: `\texttt{code}`
-- En-dash for ranges: `1--10` produces 1–10
-- Em-dash for breaks: `---` produces —
-
-### Chapter Opening Pattern
-
-Each chapter typically follows:
-1. Opening paragraph framing the chapter's purpose
-2. Core content sections
-3. Optional "Agentic Era Update" quotebox if relevant
+- Italic for *emphasis*: `\emph{word}`
+- Monospace for `code`: `\texttt{code}`
+- En-dash for ranges: `1--10`
+- Em-dash for breaks: `---`
 
 ---
 
 ## Quick Search Patterns
 
-Find the right location using these grep patterns:
-
 ```bash
-# Find a specific part
-grep -n "\\\\part{" THE_ARCHITECTURE_OF_THOUGHT.tex
+# Find all chapters in a part
+ls parts/part07-claude-code/
 
-# Find a specific chapter
-grep -n "\\\\chapter{.*Memory" THE_ARCHITECTURE_OF_THOUGHT.tex
-
-# Find a section by keyword
-grep -n "\\\\section{.*Checkpoint" THE_ARCHITECTURE_OF_THOUGHT.tex
+# Find a section by keyword across all files
+grep -r "\\\\section{.*Memory" parts/
 
 # Find all index entries for a term
-grep -n "\\\\index{Scaffold" THE_ARCHITECTURE_OF_THOUGHT.tex
+grep -r "\\\\index{Scaffold" parts/
 
 # Find citations of a source
-grep -n "\\\\cite{clark" THE_ARCHITECTURE_OF_THOUGHT.tex
+grep -r "\\\\cite{clark" parts/
 ```
-
----
-
-## Appendix Chapters (Quick Reference)
-
-| Appendix | Content | Lines |
-|----------|---------|-------|
-| A | DCF Principles Summary | 4527-4567 |
-| B | Prompt Reference | 4568-4718 |
-| C | Recommended Reading | 4719-4762 |
-| D | Claude Code Resources | 4763-4789 |
-| E | Research References | 4790-4816 |
-| F | DCF in Practice (Meta-Example) | 4817-4905 |
-| G | Glossary of Terms | 4906-5059 |
-| H | Exercises and Worksheets | 5060-5293 |

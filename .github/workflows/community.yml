@@ -1,0 +1,91 @@
+name: Community
+
+on:
+  pull_request_target:
+    types: [opened]
+  issues:
+    types: [opened]
+  schedule:
+    # Run daily at midnight UTC (for stale check)
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  welcome:
+    name: Welcome Contributors
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request_target' || github.event_name == 'issues'
+    steps:
+      - name: Welcome first-time contributors
+        uses: actions/first-interaction@v3
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: |
+            Welcome to the Dialectical Cognition Framework! 👋
+
+            Thank you for opening your first issue. We appreciate you taking the time to contribute.
+
+            **Before we proceed:**
+            - Please make sure you've checked the [FAQ](resources/DCF_FAQ.md) and existing issues
+            - For questions, consider using [GitHub Discussions](https://github.com/domelic/architecture-of-thought/discussions)
+            - For case studies, use the [case study template](resources/DCF_CASE_STUDY_TEMPLATE.md)
+
+            A maintainer will review your issue soon. In the meantime, feel free to explore the [DCF Essentials](DCF_ESSENTIALS.md) guide.
+
+            *The architecture of thought awaits its architects.*
+
+          pr-message: |
+            Welcome to the Dialectical Cognition Framework! 👋
+
+            Thank you for your first pull request. We're excited to see your contribution.
+
+            **Checklist for contributors:**
+            - [ ] Commits follow [conventional commit format](CONTRIBUTING.md#commit-message-convention)
+            - [ ] Changes are documented appropriately
+            - [ ] Spell check passes (or new terms added to `.cspell.json`)
+
+            A maintainer will review your PR soon. Thank you for helping improve DCF!
+
+            *The architecture of thought awaits its architects.*
+
+  stale:
+    name: Mark Stale
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Mark stale issues and PRs
+        uses: actions/stale@v10
+        with:
+          # Issue settings
+          stale-issue-message: >
+            This issue has been automatically marked as stale because it has not had
+            recent activity. It will be closed in 14 days if no further activity occurs.
+            If this issue is still relevant, please comment or remove the stale label.
+          close-issue-message: >
+            This issue was closed because it has been inactive for 60 days.
+            Feel free to reopen if this is still relevant.
+          days-before-issue-stale: 45
+          days-before-issue-close: 14
+          stale-issue-label: 'stale'
+          exempt-issue-labels: 'pinned,security,in-progress,amazon-kdp'
+
+          # PR settings
+          stale-pr-message: >
+            This pull request has been automatically marked as stale because it has not had
+            recent activity. It will be closed in 14 days if no further activity occurs.
+            If this PR is still relevant, please comment or remove the stale label.
+          close-pr-message: >
+            This pull request was closed because it has been inactive for 60 days.
+            Feel free to reopen if this is still relevant.
+          days-before-pr-stale: 45
+          days-before-pr-close: 14
+          stale-pr-label: 'stale'
+          exempt-pr-labels: 'pinned,in-progress'
+
+          # General settings
+          operations-per-run: 30
+          remove-stale-when-updated: true
