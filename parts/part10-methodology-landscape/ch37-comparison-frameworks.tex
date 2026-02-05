@@ -1,0 +1,87 @@
+\chapter{Comparison with Agentic Frameworks}
+
+\section{The Ralph Method / Ralph Loop}
+
+\textbf{What it is}: A continuous human-in-the-loop workflow where the AI works autonomously between human checkpoints, with the human providing guidance at inflection points.
+
+\textbf{Focus}: Task completion with appropriate autonomy; knowing when to proceed vs. when to ask.
+
+\textbf{Relationship to DCF}: Ralph is an \emph{operational pattern} for how agentic AI should behave during execution. DCF is a \emph{cognitive philosophy} for how humans should think with AI. They're complementary---you can use Socratic prompting \emph{within} a Ralph loop, especially at checkpoint moments.
+
+\section{Research-Plan-Implement (Plan Mode)}
+
+\textbf{What it is}: A three-phase workflow where AI first researches the problem space, then plans the approach, then implements the solution.
+
+\textbf{Focus}: Reducing errors by separating reasoning phases; getting approval before execution.
+
+\textbf{Relationship to DCF}: Research-Plan-Implement is a \emph{macro workflow} for software development tasks. DCF addresses the \emph{micro interactions} within each phase.
+
+\section{Chain-of-Thought / Tree-of-Thought}\index{Chain-of-Thought}\index{Tree-of-Thought}
+
+\textbf{What it is}: Prompting techniques that encourage the model to reason step-by-step.
+
+\textbf{Focus}: Improving reasoning quality in individual prompts.
+
+\textbf{Relationship to DCF}: These are \emph{single-prompt techniques}; DCF is a \emph{multi-turn conversation strategy}.
+
+\section{Comparison Matrix}\index{Framework Comparison}
+
+The following table summarizes how DCF relates to other methodologies:
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{p{2.2cm}p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}}
+\toprule
+\textbf{Dimension} & \textbf{DCF} & \textbf{Prompt Eng.} & \textbf{Ralph Loop} & \textbf{Plan Mode} \\
+\midrule
+Primary Focus & Human thinking & AI output quality & Task automation & Work structure \\
+Level & Micro (interaction) & Atomic (prompt) & Macro (project) & Meso (phase) \\
+Human Role & Thinking partner & Prompt crafter & Supervisor & Approver \\
+AI Role & Thinking mirror & Output generator & Autonomous executor & Planner \\
+Goal & Understanding + output & Better outputs & Task completion & Structured work \\
+When to Use & Complex thinking & Routine prompts & Well-defined tasks & Multi-step projects \\
+\bottomrule
+\end{tabular}
+\caption{Framework comparison across key dimensions}
+\end{table}
+
+\section{When to Use Which Approach}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{6cm}p{6cm}}
+\toprule
+\textbf{Situation} & \textbf{Recommended Approach} \\
+\midrule
+Well-defined task, need output & Prompt Engineering \\
+Complex task, need understanding & DCF \\
+Multi-step project with phases & Plan Mode + DCF at checkpoints \\
+Autonomous execution of clear goal & Ralph Loop \\
+Logic-heavy single problem & Chain-of-Thought \\
+Learning something new & DCF (learning stance) \\
+Architectural decision & DCF (dialectic emphasis) \\
+Code review & DCF (checkpoint protocol) \\
+\bottomrule
+\end{tabular}
+\caption{Situation-based framework selection}
+\end{table}
+
+\section{Anti-Patterns by Framework}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{3cm}p{5cm}p{5cm}}
+\toprule
+\textbf{Approach} & \textbf{Don't Use When} & \textbf{Risk if Misapplied} \\
+\midrule
+DCF & Trivial tasks; extreme time pressure & Analysis paralysis \\
+Prompt Engineering & Understanding matters more than output & Surface-level results \\
+Ralph Loop & Requirements unclear; failure is costly & Wrong direction at speed \\
+Plan Mode & Simple single-step tasks & Overhead without value \\
+Chain-of-Thought & Multi-turn dialogue needed & Missed context \\
+\bottomrule
+\end{tabular}
+\caption{When NOT to use each approach}
+\end{table}
+

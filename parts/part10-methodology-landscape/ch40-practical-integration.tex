@@ -1,0 +1,39 @@
+\chapter{Practical Integration}
+
+\section{Using Socratic Prompting within Ralph Loop}
+
+\begin{lstlisting}
+[Ralph working autonomously on a task...]
+[Checkpoint reached]
+
+Human (Socratic): "Before I approve this direction, help me understand:
+- What assumptions are you making?
+- What alternatives did you consider?
+- What could go wrong?"
+
+[AI responds with analysis]
+
+Human (Recursive Refinement): "Given those concerns, let's revise
+the approach. What would change if we prioritized X over Y?"
+
+[Continue until clarity achieved, then approve]
+\end{lstlisting}
+
+\section{Using Recursive Refinement in Plan Mode}
+
+\begin{lstlisting}
+[In "Plan" phase]
+
+AI: "Here's my proposed implementation plan..."
+
+Human (Socratic): "Before we commit to this plan:
+- What would a simpler solution look like?
+- What's the riskiest assumption here?
+- How would we know if this plan is wrong?"
+
+[Iterate 2-3 times, refining the plan]
+
+Human (Metacognitive): "What would I miss if I just approved the
+first plan? This iteration revealed X, Y, Z--worth the extra cycles."
+\end{lstlisting}
+

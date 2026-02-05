@@ -1,0 +1,36 @@
+\chapter{Why Single Prompts Fail}
+
+LLMs have fundamental constraints:
+
+\begin{itemize}
+    \item \textbf{Context windows}: Limited memory for each conversation
+    \item \textbf{Statelessness}: No persistent understanding across sessions
+    \item \textbf{Hallucination tendency}: Confident generation without knowledge
+    \item \textbf{Global awareness limitations}: Poor integration of distant parts of long inputs
+\end{itemize}
+
+These constraints mean that complex tasks cannot be solved with single prompts. The input is too messy, the reasoning too long, the verification too incomplete.
+
+\textbf{Prompt chaining} addresses these constraints by decomposing complex cognition into manageable steps:
+
+\begin{lstlisting}
+Step 1: Extract structure from raw input
+Step 2: Identify gaps and ambiguities
+Step 3: Clarify each component separately
+Step 4: Synthesize into coherent whole
+Step 5: Verify against requirements
+Step 6: Iterate on failures
+\end{lstlisting}
+
+Each step is a discrete prompt with a focused objective. The chain creates a \textbf{cognitive pipeline}---a series of transformations that convert chaos into clarity.
+
+\begin{quotebox}
+\textbf{Agentic Era Reality:} Claude Code performs this chaining automatically:
+\begin{itemize}
+    \item The \textbf{Task tool} spawns specialized agents for different chain steps
+    \item \textbf{Plan Mode} implements research→plan→implement chains
+    \item \textbf{Extended thinking} handles internal reasoning chains
+    \item \textbf{Tool orchestration} chains file reads, edits, and verification
+\end{itemize}
+Your role shifts from \emph{building chains} to \emph{evaluating chain outputs} and \emph{intervening when chains fail}.
+\end{quotebox}

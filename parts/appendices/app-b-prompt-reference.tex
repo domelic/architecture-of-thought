@@ -1,0 +1,218 @@
+\chapter{Prompt Reference}\label{ch:prompt-reference}\index{Prompt Reference}
+
+This appendix provides essential prompts organized by situation. These are not scripts to recite---they're starting points for genuine inquiry. Adapt them to your context.
+
+\section{Clarification Prompts}
+
+Use when requirements or direction are unclear.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{3cm}p{9cm}}
+\toprule
+\textbf{Situation} & \textbf{Prompt} \\
+\midrule
+Unclear problem & ``What problem are we actually solving? What does success look like?'' \\
+Ambiguous scope & ``What's in scope? What should I explicitly NOT build?'' \\
+Multiple interpretations & ``This could mean A or B. Which direction should we go?'' \\
+Missing context & ``What prerequisite knowledge am I missing to understand this?'' \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Challenge Prompts}
+
+Use to surface assumptions and stress-test decisions.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{3cm}p{9cm}}
+\toprule
+\textbf{Situation} & \textbf{Prompt} \\
+\midrule
+Question assumptions & ``What assumptions are built into that approach?'' \\
+Test robustness & ``What's the strongest argument against this?'' \\
+Anticipate failure & ``If this fails, what's the most likely reason?'' \\
+Find blind spots & ``What am I not seeing about this problem?'' \\
+Future regret & ``What would make us regret this decision in 6 months?'' \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Plan Review Prompts}
+
+Use at checkpoints before approving AI-generated plans.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{3cm}p{9cm}}
+\toprule
+\textbf{Situation} & \textbf{Prompt} \\
+\midrule
+Standard checkpoint & ``Before I approve: What alternatives did you consider? What's the riskiest assumption? What would make this fail?'' \\
+Complexity check & ``Is this complexity necessary, or are we over-engineering?'' \\
+Trade-off analysis & ``What does this optimize for? What does it sacrifice?'' \\
+Simplification & ``What's the simplest version that could work?'' \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Learning Prompts}
+
+Use when the goal is understanding, not just output.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{3cm}p{9cm}}
+\toprule
+\textbf{Situation} & \textbf{Prompt} \\
+\midrule
+Guided discovery & ``Don't give me the answer---ask me questions that help me discover it.'' \\
+Key insight & ``What's the key insight that would unlock my understanding?'' \\
+Test understanding & ``I think I understand X. Quiz me to find my gaps.'' \\
+Build depth & ``What's the next level of depth I should explore?'' \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Debugging Prompts}
+
+Use when diagnosing problems.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{3cm}p{9cm}}
+\toprule
+\textbf{Situation} & \textbf{Prompt} \\
+\midrule
+Systematic diagnosis & ``What are the possible causes? Let's rank them by likelihood.'' \\
+Assumption check & ``What assumptions am I making about how this should work?'' \\
+Minimal reproduction & ``What's the smallest test case that reproduces this?'' \\
+Getting unstuck & ``I've been stuck for a while. Help me step back and see it fresh.'' \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Code Review Prompts}
+
+Use when reviewing code or implementations.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{3cm}p{9cm}}
+\toprule
+\textbf{Situation} & \textbf{Prompt} \\
+\midrule
+Understanding & ``Explain this code as if I'm new to the team. What's the key insight?'' \\
+Hidden assumptions & ``Where are the assumptions buried in this code?'' \\
+Edge cases & ``What edge cases does this not handle?'' \\
+Silent failures & ``Where could this fail silently?'' \\
+Simplification & ``Is there a simpler way to achieve the same result?'' \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Synthesis Prompts}
+
+Use when wrapping up work or capturing learning.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{3cm}p{9cm}}
+\toprule
+\textbf{Situation} & \textbf{Prompt} \\
+\midrule
+Session summary & ``What's the one thing I should remember from this session?'' \\
+Learning capture & ``What did I learn that I didn't know before?'' \\
+Next steps & ``What question should I be asking next?'' \\
+Pre-compaction & ``What context is essential for continuing this work?'' \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Meta Prompts}
+
+Use for reflection on the collaboration itself.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{3cm}p{9cm}}
+\toprule
+\textbf{Situation} & \textbf{Prompt} \\
+\midrule
+Engagement check & ``Am I extracting answers or building understanding?'' \\
+Collaboration quality & ``What would make this collaboration more effective?'' \\
+Calibration & ``I keep being surprised by X. How should I update my model?'' \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Protocols and Templates}\label{sec:protocols-templates}\index{Protocols}
+
+These structured protocols provide templates for specific DCF modes.
+
+\subsection{Task State Markers (for /dcf decompose)}\index{Task State Markers}
+
+Track task progress explicitly to prevent goal drift:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{State} & \textbf{Meaning} \\
+\midrule
+\texttt{brainstormed} & Identified but not validated \\
+\texttt{validated} & Requirements confirmed with user \\
+\texttt{blocked} & Waiting on dependency or decision \\
+\texttt{in\_progress} & Currently being worked \\
+\texttt{review} & Complete, awaiting verification \\
+\texttt{done} & Verified and accepted \\
+\bottomrule
+\end{tabular}
+\caption{Task State Markers for Decomposition}
+\end{table}
+
+Use these states in decomposition output to make progress visible. State transitions should be explicit: \texttt{brainstormed} $\rightarrow$ \texttt{validated} requires user confirmation; \texttt{in\_progress} $\rightarrow$ \texttt{review} requires implementation completion.
+
+\subsection{Chain-of-Verification Protocol (for /dcf verify)}\index{Chain-of-Verification}
+
+For high-stakes claims requiring rigorous verification:
+
+\begin{enumerate}
+    \item \textbf{State the claim}: What exactly are we verifying?
+    \item \textbf{Identify verification questions}: 2-3 specific, answerable questions
+    \item \textbf{Gather evidence independently}: For each question, find evidence, source, and confidence level
+    \item \textbf{Synthesize}: Which questions agree? Conflict? What gaps remain?
+    \item \textbf{Verdict}: Verified / Partially Verified / Unverified / Refuted, with confidence and caveats
+\end{enumerate}
+
+The key insight: gathering evidence independently for each question prevents confirmation bias. If you answer all questions from the same source, you're not verifying---you're echoing.
+
+\subsection{Multi-Perspective Synthesis (for /dcf challenge)}\index{Multi-Perspective Synthesis}
+
+For complex decisions, generate challenges from four frames before synthesis:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lp{8cm}}
+\toprule
+\textbf{Frame} & \textbf{Question} \\
+\midrule
+Technical & Does this work mechanically? What could break? \\
+User & Does this serve the actual need? What's the user experience? \\
+Maintenance & Will future-you thank or curse present-you? \\
+Adversarial & How would someone trying to break this succeed? \\
+\bottomrule
+\end{tabular}
+\caption{Multi-Perspective Challenge Frames}
+\end{table}
+
+After generating each perspective's verdict (Support/Oppose/Neutral), synthesize:
+\begin{itemize}
+    \item \textbf{Converging concerns}: What multiple frames flag as problematic
+    \item \textbf{Diverging assessments}: Where frames disagree (may indicate robustness)
+    \item \textbf{Blind spots}: What no frame addressed
+\end{itemize}
+
+If concerns converge across frames, that's a critical vulnerability. If they diverge, the position may be stronger than initial analysis suggested.
+
