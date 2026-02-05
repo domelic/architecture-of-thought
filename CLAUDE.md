@@ -70,7 +70,7 @@ Add project-specific words to `.cspell.json` `words` array when needed.
 
 The treatise is split into 76 chapter files under `parts/`:
 
-```
+```text
 parts/
 ├── frontmatter.tex              # Abstract
 ├── preface.tex
