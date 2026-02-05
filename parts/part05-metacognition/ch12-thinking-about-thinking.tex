@@ -1,0 +1,123 @@
+\chapter{Thinking About Thinking}
+
+Metacognition\index{Metacognition}---awareness of one's own cognitive processes---is the capability that distinguishes effective learners from ineffective ones. It's also the capability that distinguishes effective LLM users from ineffective ones.
+
+Metacognitive practitioners:
+
+\begin{itemize}
+    \item Notice when understanding is incomplete
+    \item Adjust strategies when progress stalls
+    \item Reflect on process, not just outcome
+    \item Build systems to improve future thinking
+\end{itemize}
+
+LLMs scaffold metacognition by externalizing the inner dialogue:
+
+\begin{quote}
+Internal: ``I'm confused about this'' \\
+Externalized: ``I notice I'm confused. Help me identify what specifically is unclear.''
+\end{quote}
+
+\begin{quote}
+Internal: ``This doesn't feel right'' \\
+Externalized: ``Something about this solution seems off. What are the potential failure modes?''
+\end{quote}
+
+This externalization makes cognitive processes visible and improvable.
+
+\section{Single-Loop and Double-Loop Learning}
+
+Chris Argyris and Donald Sch{\"o}n introduced a distinction that illuminates why metacognition matters \cite{argyris1977double, argyris1978organizational}. \textbf{Single-loop learning} adjusts actions based on outcomes while leaving underlying assumptions intact. \textbf{Double-loop learning} questions the assumptions themselves.
+
+\begin{quote}
+\textbf{Single-loop}: The code has a bug → Fix the bug \\
+\textbf{Double-loop}: The code has a bug → Why did we write code that could have this bug? What about our process or mental model allowed this?
+\end{quote}
+
+Most problem-solving operates in single-loop mode: identify the problem, apply a solution, check if it worked. This is efficient for routine situations where the frame is correct. But when the frame itself is flawed, single-loop learning produces elegant solutions to the wrong problem.
+
+DCF's metacognitive emphasis is fundamentally about enabling double-loop learning. When you ask ``What assumptions am I making?'' you're stepping outside the frame to examine it. When you ask ``What question should I be asking?'' you're questioning whether you're even solving the right problem.
+
+Organizations and individuals resist double-loop learning because it's uncomfortable---it requires admitting that your fundamental approach might be wrong, not just your execution. Argyris found that people engage in ``defensive reasoning'' to protect their existing mental models from challenge.
+
+The Socratic operations counteract defensive reasoning:
+
+\begin{itemize}
+    \item \textbf{Elenchus} exposes assumptions you're defending without examining
+    \item \textbf{Aporia} creates the productive discomfort that precedes genuine learning
+    \item \textbf{Meta-question} asks whether you're solving the right problem at all
+\end{itemize}
+
+AI collaboration, when done well, should produce double-loop learning: not just answers to your questions, but examination of whether you're asking the right questions, holding the right assumptions, and framing the problem correctly.
+
+\section{Anticipatory Calibration}\label{sec:anticipatory-calibration}\index{Anticipatory Calibration}
+
+A powerful metacognitive practice: \textbf{form a hypothesis about what the AI will produce before you prompt}.
+
+Most users prompt, receive a response, and evaluate reactively: ``Does this look good?'' This passive evaluation leaves you vulnerable to accepting plausible-sounding but flawed output. The alternative is \emph{anticipatory calibration}---predicting what you expect, then comparing.
+
+\subsection{The Practice}
+
+Before submitting a prompt, explicitly articulate your expectation:
+
+\begin{quote}
+``I expect the AI to identify three main causes, probably mention X, and likely miss the nuance about Y.''
+\end{quote}
+
+After receiving the response, compare:
+
+\begin{itemize}
+    \item Did it match your prediction?
+    \item What surprised you---positively or negatively?
+    \item What does the gap reveal about your mental model?
+\end{itemize}
+
+\subsection{Why This Matters}
+
+Anticipation serves three functions:
+
+\begin{enumerate}
+    \item \textbf{Rigorous evaluation}: Comparing against an expectation is more demanding than asking ``is this good?'' You notice gaps you would otherwise miss.
+    \item \textbf{Mental model calibration}: Over time, you build an accurate model of what AI does well and poorly. This informs prompt design and trust decisions.
+    \item \textbf{Assumption surfacing}: Your predictions reveal your own assumptions about what's ``easy'' or ``hard'' for AI---assumptions that may be wrong.
+\end{enumerate}
+
+\subsection{Surprise as Information}
+
+The gap between expectation and reality is your primary learning signal:
+
+\begin{itemize}
+    \item \textbf{Positive surprise} (AI exceeded expectations): Update your model of AI capabilities upward. Consider delegating more.
+    \item \textbf{Negative surprise} (AI fell short): Either an AI limitation or a prompt quality issue. Investigate which.
+    \item \textbf{Repeated surprises in one direction}: Your mental model is miscalibrated. Adjust.
+\end{itemize}
+
+This is scientific thinking applied to prompting: hypothesis, test, update. The practitioner who anticipates learns faster than the one who merely reacts.
+
+\begin{quotebox}
+\textbf{Agentic Era Application:} When an agent presents a plan, pause before reading it. What do you expect the plan to contain? What approach do you predict? Then read---and notice where the agent surprised you. This discipline prevents rubber-stamping.
+\end{quotebox}
+
+\subsection{The Throw-Away Draft Pattern}
+
+A powerful variation: use a first draft specifically to reveal where your mental model diverges from reality.
+
+The pattern:
+\begin{enumerate}
+    \item \textbf{Generate a throw-away draft}: Ask the AI to produce a first attempt, knowing you'll likely discard it.
+    \item \textbf{Compare to your mental model}: Where did the output surprise you? Where did it take a different approach than you expected?
+    \item \textbf{Use the delta to sharpen your prompt}: The divergence tells you exactly what needs to be specified more clearly.
+    \item \textbf{Generate the real version}: With the insights from the throw-away draft, your next prompt will be much more precise.
+\end{enumerate}
+
+This inverts the typical workflow. Instead of trying to write the perfect prompt upfront, you use the first iteration as a learning tool. The ``wasted'' first draft actually saves time by revealing gaps in your specification that would have caused multiple correction cycles.
+
+Example:
+\begin{quote}
+\emph{Throw-away draft request}: ``Write a function to parse user input.''\\
+\emph{Draft reveals}: AI assumed string input, used regex, returned dict.\\
+\emph{What you learned}: You need to specify input type, parsing approach, and return format.\\
+\emph{Real request}: ``Write a function to parse JSON user input, validate against a schema, and return a typed dataclass with validation errors.''
+\end{quote}
+
+The throw-away draft pattern is especially valuable for complex tasks where you can't anticipate all the decisions the AI will need to make. Rather than guessing, you let the first draft reveal the decision points.

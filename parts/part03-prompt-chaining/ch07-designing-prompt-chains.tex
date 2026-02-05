@@ -1,0 +1,38 @@
+\chapter{Designing Prompt Chains}
+
+Effective prompt chains share common patterns:
+
+\section{The Scaffolding Pattern}
+
+\begin{lstlisting}
+1. "Break this task into components"
+2. "For each component, identify inputs and outputs"
+3. "Generate stub implementations with documentation"
+4. "Implement each stub, one at a time"
+5. "Test each implementation"
+6. "Integrate and verify"
+\end{lstlisting}
+
+\section{The Clarification Pattern}
+
+\begin{lstlisting}
+1. "Summarize the key concepts in this document"
+2. "Identify ambiguities and contradictions"
+3. "Propose clarifications for each issue"
+4. "Rewrite with clarifications integrated"
+5. "Identify remaining gaps"
+6. "Repeat until complete"
+\end{lstlisting}
+
+\section{The Validation Pattern}
+
+\begin{lstlisting}
+1. "Generate a solution"
+2. "List all assumptions in that solution"
+3. "Challenge each assumption"
+4. "Revise solution based on valid challenges"
+5. "Generate test cases"
+6. "Verify against test cases"
+\end{lstlisting}
+
+The key insight: \textbf{you're not asking the LLM to solve the problem. You're asking it to help you decompose the problem into solvable pieces.}

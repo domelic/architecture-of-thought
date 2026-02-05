@@ -1,0 +1,180 @@
+\chapter{When to Engage vs. When to Trust}
+
+The critical skill in agentic DCF: knowing when human dialectic adds value.
+
+\section{Trust the Agent When}
+
+\begin{itemize}
+    \item Task is well-defined and bounded
+    \item Agent has relevant context (from memories, prior conversation)
+    \item Failure is low-cost and reversible
+    \item You can verify output easily
+\end{itemize}
+
+\section{Engage Dialectically When}
+
+\begin{itemize}
+    \item Requirements are ambiguous
+    \item Architectural decisions are being made
+    \item Trade-offs exist that reflect your values
+    \item You notice the agent making assumptions
+    \item Output will be hard to verify or undo
+\end{itemize}
+
+\section{The Steering Model}\label{sec:steering-model}\index{Steering Model}\index{Upstream Steering}\index{Downstream Steering}
+
+Beyond knowing \emph{when} to engage, practitioners need a framework for \emph{how} to influence agent behavior. The Steering Model frames agentic control as two complementary forces:
+
+\textbf{Upstream Steering} (Deterministic)---what you control \emph{before} the agent runs:
+\begin{itemize}
+    \item CLAUDE.md project instructions
+    \item Specification documents and context files
+    \item Codebase conventions and patterns
+    \item Explicit constraints in your prompts
+\end{itemize}
+
+Upstream steering shapes what the agent will generate. It's deterministic: the same inputs produce consistent behavior.
+
+\textbf{Downstream Steering} (Backpressure)---what validates \emph{after} the agent acts:
+\begin{itemize}
+    \item Test suites that catch incorrect behavior
+    \item Linters and formatters that enforce style
+    \item Type checkers that catch interface mismatches
+    \item Build processes that verify integration
+\end{itemize}
+
+Downstream steering forces self-correction through failure feedback. The agent learns from what doesn't work.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Problem} & \textbf{Strengthen} \\
+\midrule
+Agent keeps making same mistakes & Upstream (add to CLAUDE.md) \\
+Output doesn't match project style & Upstream (document conventions) \\
+Need confidence in correctness & Downstream (add tests) \\
+Code quality varies & Downstream (add linters) \\
+Type errors slip through & Downstream (enable strict checking) \\
+\bottomrule
+\end{tabular}
+\caption{Steering Model: When to Strengthen Each Direction}
+\label{tab:steering-model}
+\end{table}
+
+\textbf{DCF Insight:} Most practitioners under-invest in upstream steering. They accept agent mistakes, then manually correct them---burning cognitive energy on each occurrence. Investing once in CLAUDE.md or conventions documentation pays dividends across every future interaction.
+
+\section{The Approval Checkpoint Pattern}
+
+Before reading the agent's output, apply anticipatory calibration (see Section~\ref{sec:anticipatory-calibration}): form a hypothesis about what you expect the plan to contain. Then compare your expectation against reality---the gap reveals blind spots in your thinking or the agent's.
+
+\begin{lstlisting}
+Agent: "I've analyzed the codebase and propose this implementation plan:
+       [detailed plan]
+
+       Ready to proceed?"
+
+Human (DCF): "Before I approve:
+             1. What alternatives did you consider?
+             2. What's the riskiest assumption here?
+             3. What would make us regret this approach?"
+
+Agent: [Responds with analysis]
+
+Human (DCF): "Good. Given that, let's adjust the plan to..."
+\end{lstlisting}
+
+\section{The Phase Lock Protocol}\label{sec:phase-lock}\index{Phase Lock Protocol}
+
+For high-stakes work where premature implementation carries significant risk, consider \textbf{Phase Lock}---an optional strict mode that enforces phase discipline through explicit boundaries.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Phase} & \textbf{Allowed} & \textbf{Forbidden} \\
+\midrule
+RESEARCH & Read, search, explore & Edits, conclusions \\
+ANALYZE & Form hypotheses, identify options & Implementation decisions \\
+PLAN & Choose approach, define tasks & Code changes \\
+IMPLEMENT & Execute the plan & Scope changes without re-planning \\
+VERIFY & Test, review, validate & New implementation \\
+\bottomrule
+\end{tabular}
+\caption{Phase Lock: Allowed and Forbidden Actions by Phase}
+\label{tab:phase-lock}
+\end{table}
+
+\textbf{Key constraint:} Phase transitions require explicit user approval. The agent cannot progress from RESEARCH to ANALYZE until the human confirms sufficient understanding has been gathered.
+
+\textbf{When to use Phase Lock:}
+\begin{itemize}
+    \item Architectural decisions affecting multiple systems
+    \item Security-sensitive changes
+    \item Unfamiliar domains with high uncertainty
+    \item When you've caught yourself implementing before understanding
+\end{itemize}
+
+\textbf{When NOT to use Phase Lock:}
+\begin{itemize}
+    \item Quick fixes with obvious solutions
+    \item Well-understood domains
+    \item Low-stakes changes
+    \item When fluidity serves better than rigor
+\end{itemize}
+
+Phase Lock is scaffolding, not standard practice. Use it to build discipline, then relax it as judgment develops. The goal is to internalize the value of phase separation, not to enforce it mechanically forever.
+
+\section{Test Coverage as Scaffolding for Bold Changes}\label{sec:test-scaffolding}\index{Test Coverage}\index{Scaffolding}
+
+A critical enabler for agentic AI: \textbf{test coverage provides the confidence to approve large changes}.
+
+\subsection{The Problem}
+
+AI agents can now propose sweeping modernizations:
+\begin{itemize}
+    \item Replace legacy patterns with modern equivalents
+    \item Refactor entire subsystems
+    \item Migrate to new frameworks or architectures
+    \item Pull out large chunks of code and replace them
+\end{itemize}
+
+Without safety nets, approving such changes is terrifying. The human becomes a bottleneck---not from lack of trust in AI, but from lack of \emph{verification capability}.
+
+\subsection{Tests as Verification Infrastructure}
+
+Comprehensive test coverage transforms the approval dynamic:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lp{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Coverage Level} & \textbf{Human Burden} & \textbf{Approval Confidence} \\
+\midrule
+None & Manual review of every change & Low (can't verify behavior preserved) \\
+Partial & Focus review on untested areas & Medium (verified where covered) \\
+Comprehensive & Run tests, review output & High (behavior verified automatically) \\
+\bottomrule
+\end{tabular}
+\caption{Test Coverage and Approval Confidence}
+\end{table}
+
+\subsection{The Investment}
+
+Before enabling bold AI-assisted changes, invest in test infrastructure:
+
+\begin{enumerate}
+    \item \textbf{Critical path coverage}: Test the flows that must not break
+    \item \textbf{Regression suites}: Capture known-good behavior before changes
+    \item \textbf{Integration tests}: Verify system-level behavior, not just units
+    \item \textbf{CI integration}: Tests run automatically on every change
+\end{enumerate}
+
+\subsection{Connection to DCF}
+
+Test coverage is \textbf{scaffolding at the infrastructure level}. It supports your ability to approve agent changes confidently, then becomes invisible once in place. You don't think about the tests during review---you trust them to catch problems.
+
+\begin{quotebox}
+\textbf{Key insight:} Test coverage doesn't just verify code---it verifies \emph{AI changes to code}. Investing in tests before AI adoption multiplies AI's value by enabling bolder, faster approvals.
+\end{quotebox}
+

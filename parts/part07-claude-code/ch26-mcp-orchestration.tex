@@ -1,0 +1,27 @@
+\chapter{MCP Orchestration Philosophy}
+
+MCP (Model Context Protocol) servers extend Claude Code's capabilities. Choosing the right tool matters:
+
+\section{Tool Selection by Use Case}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Use Case} & \textbf{Best Tool} & \textbf{Why} \\
+\midrule
+Find all usages of a function & Serena & Semantic understanding \\
+Read a specific file & Read tool & Simpler, faster \\
+Refactor a method & Serena & Precise symbol editing \\
+Simple text replacement & Edit tool & Good enough, less overhead \\
+Create GitHub PR & GitHub MCP & Native API integration \\
+Run git commands & Bash tool & More flexible \\
+Research current API docs & Context7 MCP & Up-to-date documentation \\
+General web research & WebSearch & Broader scope \\
+\bottomrule
+\end{tabular}
+\caption{Tool Selection Guide}
+\end{table}
+
+\textbf{DCF Principle:} Ask ``Is this the right tool?'' before accepting the agent's tool choice. Sometimes simpler tools are better.
+

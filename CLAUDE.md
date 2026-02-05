@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This repository contains **"The Architecture of Thought"** — a treatise presenting the Dialectical Cognition Framework (DCF), a methodology for human-AI collaboration. The main output is a ~265-page LaTeX document with supporting practical resources in Markdown.
+This repository contains **"The Architecture of Thought"** — a treatise presenting the Dialectical Cognition Framework (DCF), a methodology for human-AI collaboration. The main output is a ~267-page LaTeX document (split into chapters) with supporting practical resources in Markdown.
 
 **Read DCF_ESSENTIALS.md first** to understand the core concepts, Socratic toolkit, and 24 modes.
 
@@ -34,9 +34,14 @@ bibtex THE_ARCHITECTURE_OF_THOUGHT
 makeindex THE_ARCHITECTURE_OF_THOUGHT
 pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
+
+# Partial compile (single chapter for faster iteration)
+# Add to main .tex file after \input{preamble}:
+# \includeonly{parts/part07-claude-code/ch22-memory-systems}
+pdflatex THE_ARCHITECTURE_OF_THOUGHT.tex
 ```
 
-The triple pdflatex run resolves cross-references and index entries. Use quick compile for iterative content editing; full compile before commits.
+The triple pdflatex run resolves cross-references and index entries. Use quick compile for iterative content editing; full compile before commits. Use `\includeonly{}` for fast single-chapter development.
 
 ### Validation (run before committing markdown changes)
 
@@ -51,13 +56,41 @@ Add project-specific words to `.cspell.json` `words` array when needed.
 
 | File | Purpose |
 |------|---------|
-| `THE_ARCHITECTURE_OF_THOUGHT.tex` | Main LaTeX source (12 parts + appendices) |
+| `THE_ARCHITECTURE_OF_THOUGHT.tex` | Main LaTeX file with `\include` directives |
+| `preamble.tex` | All packages, configuration, and custom commands |
+| `parts/` | Chapter files organized by part (see structure below) |
 | `DCF_ESSENTIALS.md` | Condensed practitioner's guide — read this to understand DCF concepts |
 | `.claude/commands/dcf.md` | The `/dcf` skill definition (24 modes in 5 categories) |
 | `.claude/commands/cybw.md` | The `/cybw` skill — quick adversarial checkpoint |
 | `.claude/scripts/dcf-workflow` | Shell script for chaining DCF modes with checkpoints |
 | `resources/CLAUDE_MD_TEMPLATE.md` | Template for DCF-informed CLAUDE.md files |
 | `references.bib` | BibTeX bibliography |
+
+### Document Structure
+
+The treatise is split into 76 chapter files under `parts/`:
+
+```
+parts/
+├── frontmatter.tex              # Abstract
+├── preface.tex
+├── part01-core-philosophy/      # Chapters 1-3
+├── part02-socratic-method/      # Chapters 4-5
+├── part03-prompt-chaining/      # Chapters 6-8
+├── part04-knowledge-engineering/# Chapters 9-11
+├── part05-metacognition/        # Chapters 12-14
+├── part06-philosophical-foundations/ # Chapters 15-18
+├── part07-claude-code/          # Chapters 19-28
+├── part08-practical-application/# Chapters 29-32
+├── part09-emerging-discipline/  # Chapters 33-35
+├── part10-methodology-landscape/# Chapters 36-43
+├── part11-agentic-era/          # Chapters 44-51
+├── part12-critical-perspectives/# Chapters 52-53
+├── appendices/                  # Appendices A-H
+└── backmatter.tex               # Acknowledgments, Colophon
+```
+
+Each part directory contains a `_part.tex` file with the `\part{}` declaration and individual chapter files named `chNN-slug.tex`.
 
 ## Available Skills
 
@@ -170,10 +203,12 @@ This project has Serena MCP configured with memories for editing the treatise.
 | `REVISION_DECISIONS` | Editorial decision log, style precedents, rejected alternatives |
 
 **Before editing the LaTeX document**, read relevant memories:
-- `LATEX_EDITING_GUIDE` - Where and how to edit
+- `LATEX_EDITING_GUIDE` - Where and how to edit (note: now references chapter files, not line numbers)
 - `STYLE_GUIDE` - How to write consistently
 - `CROSS_REFERENCES` - What depends on what
 - `DCF_CONCEPTS` - Quick reference for framework terms
+
+> **Note:** The document was restructured into chapter files. Serena memories referencing line numbers in the monolithic file may need updating to reference chapter file paths instead (e.g., `parts/part07-claude-code/ch22-memory-systems.tex`).
 
 **When adding citations**: Consult `BIBLIOGRAPHY_SOURCES` for context on existing references.
 

@@ -1,0 +1,39 @@
+\chapter{Claude Code Architecture}
+
+Claude Code is a fully agentic development environment. Understanding its architecture enables effective DCF application:
+
+\section{Core Components}
+
+\begin{lstlisting}
+CLAUDE CODE MAIN PROCESS
+- Conversation management
+- Tool orchestration (Read, Write, Edit, Bash, Glob, Grep)
+- Agent spawning (Task tool)
+- Memory management
+
+BUILT-IN WORKFLOWS
+- Plan Mode (EnterPlanMode -> research -> ExitPlanMode)
+- Ralph Loop (autonomous execution with checkpoints)
+- Todo tracking (TodoWrite for progress visibility)
+
+SPECIALIZED AGENTS (via Task tool)
+- Explore: Fast codebase exploration
+- Plan: Architecture design
+- code-reviewer: Quality analysis
+- feature-dev: Guided development
+- pr-review-toolkit: PR analysis suite
+
+SKILLS (via Skill tool)
+- /commit: Git commit workflow
+- /review-pr: PR review
+- /frontend-design: UI generation
+- Custom skills via plugins
+
+MCP SERVERS (external capabilities)
+- Serena: Semantic code intelligence
+- Playwright: Browser automation
+- GitHub: Repository operations
+- Atlassian: Jira/Confluence integration
+- Context7: Documentation retrieval
+\end{lstlisting}
+

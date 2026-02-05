@@ -1,0 +1,175 @@
+\chapter{Memory Systems and Cognitive Persistence}
+
+Claude Code's memory systems implement DCF's ``language as infrastructure'' principle:
+
+\section{CLAUDE.md (Project Memory)}
+
+\begin{lstlisting}
+# CLAUDE.md - Project: MyApp
+
+## Project Overview
+[Brief description for context]
+
+## Architecture Decisions
+- Using PostgreSQL for X reason
+- Chose React over Vue because...
+
+## Conventions
+- Test files: *.test.ts
+- Use conventional commits
+
+## DCF Preferences
+- Always present plans before implementing
+- Challenge my assumptions
+- Show trade-offs explicitly
+\end{lstlisting}
+
+\section{User Memories (Personal Cognitive Profile)}
+
+Accumulated understanding of how you work:
+\begin{itemize}
+    \item Preferred coding style
+    \item Common project types
+    \item Review depth preferences
+\end{itemize}
+
+\section{Serena Memories (Code Intelligence)}
+
+Project-specific technical understanding:
+\begin{itemize}
+    \item Architecture patterns discovered during onboarding
+    \item Symbol relationships
+    \item Suggested commands
+\end{itemize}
+
+\section{Session Continuity: Preparing for Compaction}\label{sec:session-continuity}\index{Session Continuity}\index{Compaction Strategy}
+
+Long sessions eventually hit context limits. When Claude Code compacts the conversation, it generates a summary to preserve continuity---but the quality of that summary depends on what's available to summarize. \textbf{Proactive documentation before compaction} dramatically improves session continuity.
+
+\subsection{The Problem}
+
+Context compaction is lossy. Details that seemed obvious during the session may not survive summarization:
+\begin{itemize}
+    \item Decisions made and their rationale
+    \item Files modified and why
+    \item Approaches considered and rejected
+    \item Next steps that were identified but not yet started
+\end{itemize}
+
+Without explicit capture, you may resume a compacted session and find yourself re-discovering context you already had.
+
+\subsection{The Practice: Pre-Compaction Documentation}
+
+When you sense a session is getting long or complex, create a working document that captures session state. This serves two purposes: (1) it creates explicit content for the compaction summary to reference, and (2) it forces you to synthesize what actually happened.
+
+\textbf{Recommended structure:}
+
+\begin{lstlisting}
+# Session Findings
+
+## Completed Work
+- What was accomplished
+- Which files were modified and why
+- Decisions made with rationale
+
+## Open Questions
+- Unresolved issues
+- Clarifications still needed
+
+## Recommended Next Steps
+- Prioritized list of remaining work
+- Dependencies between tasks
+
+## Context That Matters
+- Assumptions being made
+- Constraints discovered during session
+- Anything non-obvious that future-you needs to know
+\end{lstlisting}
+
+\subsection{When to Capture}
+
+\begin{itemize}
+    \item \textbf{Before natural breaks}: Lunch, end of day, context switch
+    \item \textbf{After completing a logical chunk}: Feature done, review complete
+    \item \textbf{When the session feels ``heavy''}: Many files touched, complex decisions made
+    \item \textbf{Before requesting compaction}: If you're about to run \texttt{/compact}
+\end{itemize}
+
+\subsection{Gitignore Strategy}
+
+Session documents are working artifacts, not permanent documentation. Consider gitignoring them:
+
+\begin{lstlisting}
+# .gitignore
+SESSION_NOTES.md
+SESSION_FINDINGS.md
+\end{lstlisting}
+
+This keeps your repository clean while maintaining session continuity. The content either gets incorporated into permanent artifacts (CLAUDE.md, code comments, documentation) or becomes obsolete.
+
+\subsection{Connection to DCF Principles}
+
+Pre-compaction documentation is \textbf{anticipatory calibration} applied to session management. You're forming an explicit model of ``what matters about this session'' before the compaction forces you to rely on an automated summary. The act of writing clarifies your own understanding---the thinking mirror principle at work.
+
+It's also \textbf{scaffolding that fades}: the session document supports continuity during active work, then becomes unnecessary once the work is complete and captured in permanent artifacts.
+
+\section{Shared Context Infrastructure}\label{sec:shared-context}\index{Shared Context Infrastructure}\index{Context Engineering Repository}
+
+Individual memory systems (CLAUDE.md, personal memories) extend naturally to \textbf{team-level shared context}. Organizations that maximize AI benefits create infrastructure for collective context---preventing the siloing of AI knowledge.
+
+\subsection{The Problem: AI Knowledge Silos}
+
+Without deliberate infrastructure, AI benefits fragment:
+\begin{itemize}
+    \item Each team member develops their own effective prompts
+    \item Successful patterns aren't shared
+    \item Failed experiments are repeated across the team
+    \item No institutional learning about what works
+\end{itemize}
+
+This mirrors traditional knowledge silos, amplified by AI's rapid iteration cycles.
+
+\subsection{The Solution: Context Engineering Repositories}
+
+A \textbf{context engineering repository} serves as a centralized place for team AI knowledge:
+
+\begin{lstlisting}
+/context-engineering/
+  /prompts/
+    - code-review-prompt.md
+    - architecture-analysis.md
+    - debugging-approach.md
+  /CLAUDE.md-templates/
+    - project-type-a.md
+    - project-type-b.md
+  /learnings/
+    - what-works.md
+    - what-doesnt-work.md
+  /experiments/
+    - current-experiments.md
+    - results.md
+\end{lstlisting}
+
+\subsection{Goals of Shared Context Infrastructure}
+
+\begin{enumerate}
+    \item \textbf{Team alignment}: Shared vocabulary and approaches
+    \item \textbf{Iterative improvement}: Prompts evolve through collective experience
+    \item \textbf{Transparency}: ``This is what we're trying, here's what we're learning''
+    \item \textbf{Collaboration}: Others can try, adapt, and improve shared patterns
+    \item \textbf{Prevent siloing}: Useful processes become organizational assets, not individual secrets
+    \item \textbf{Knowledge centralization}: One place to look for ``how do we use AI for X''
+\end{enumerate}
+
+\subsection{Implementation Patterns}
+
+\textbf{Pull request workflow for prompts:} Treat prompt improvements like code changes. Propose, review, merge. This creates accountability and learning records.
+
+\textbf{Regular sync meetings:} Brief (15 min) sessions to share ``what I learned about AI this week.'' Surfaces patterns that wouldn't otherwise propagate.
+
+\textbf{Experiments registry:} Track what's being tried, by whom, with what results. Prevents duplicate effort and builds institutional knowledge.
+
+\begin{quotebox}
+\textbf{Key insight:} The most effective organizations treat AI collaboration as a \emph{team sport}, not an individual skill. Shared context infrastructure makes this possible.
+\end{quotebox}
+

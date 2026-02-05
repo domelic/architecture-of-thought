@@ -1,0 +1,507 @@
+\chapter{Failure Modes and Mitigations}\label{ch:failure-modes}\index{Failure Modes}
+
+Even with good intentions, DCF practice can go wrong. This chapter documents eleven common failure modes, their symptoms, root causes, and corrections. Recognizing these patterns is the first step to avoiding them.
+
+\section{The Autonomy Risks}\index{Autonomy Risks}
+
+Before examining specific anti-patterns, it's valuable to understand the deeper risks they represent. Recent work on Socratic chatbots identifies two primary risks that map directly to DCF anti-patterns \cite{socrai2025autonomy}:
+
+\begin{description}
+    \item[False Mental States]\index{False Mental States} Misinformation that distorts cognitions, causing beliefs to deviate from what the user would endorse under semi-idealized conditions. This is the mechanism behind \emph{Hallucination Acceptance}---not merely accepting wrong information, but having one's mental model corrupted by it.
+
+    \item[Cognitive Deskilling]\index{Cognitive Deskilling} Degradation of intellectual capacities through sustained outsourcing of cognitive tasks. Because practice maintains skills, heavy AI reliance removes opportunities to exercise essential capabilities. Research documents memory decline, reduced concentration, and diminished analysis depth. This is the mechanism behind \emph{Cognitive Atrophy}.
+\end{description}
+
+Framing these as \emph{autonomy risks} rather than mere bad habits clarifies the stakes. The practitioner who accepts hallucinations doesn't just make errors---they lose epistemic autonomy, holding beliefs they wouldn't endorse if properly informed. The practitioner who outsources all thinking doesn't just become dependent---they lose cognitive autonomy, unable to function without the scaffold.
+
+The Socratic approach mitigates both risks simultaneously: structured questioning improves AI output quality (reducing false mental states) while cultivating the user's critical faculties (preventing cognitive deskilling). This is why DCF emphasizes the \emph{learning stance}---it's not merely more fulfilling, it's protective.
+
+Importantly, the skills that counter these risks---\emph{collaborative AI literacy}\index{Collaborative AI Literacy} (knowledge of effective collaboration techniques) and \emph{collaborative AI metacognition}\index{Collaborative AI Metacognition} (awareness of one's own cognitive processes during collaboration)---are now measurable through validated scales \cite{sidra2025scales}. This enables organizations to assess training effectiveness and practitioners to track their own development.
+
+\section{Anti-Pattern 1: Socratic Theater}\index{Socratic Theater}
+
+Going through the motions of Socratic questioning without genuine inquiry.
+
+\textbf{What It Looks Like:}
+
+\begin{quote}
+Human: ``What assumptions are in that?''\\
+AI: [Lists assumptions]\\
+Human: ``OK, what's the counterargument?''\\
+AI: [Provides counterargument]\\
+Human: ``OK, proceed.''
+\end{quote}
+
+No actual engagement with the answers. The questions become ritual.
+
+\textbf{Symptoms:}
+\begin{itemize}
+    \item You ask DCF questions but don't change course based on answers
+    \item The dialogue feels performative
+    \item You couldn't summarize what you learned from the exchange
+    \item Time pressure makes you rush through ``required'' questions
+\end{itemize}
+
+\textbf{Root Causes:} Treating DCF as a checklist rather than a thinking tool; fatigue from over-application; external pressure to ``look like'' you're doing DCF.
+
+\textbf{The Fix:}
+\begin{enumerate}
+    \item \textbf{Only ask questions you genuinely want answered}
+    \item \textbf{If you don't care, skip DCF}---it's for when thinking matters
+    \item \textbf{Pause after answers}---actually consider them before proceeding
+    \item \textbf{Track whether your course changed}---if never, you're in theater mode
+\end{enumerate}
+
+\section{Anti-Pattern 2: Mirror Narcissism}\index{Mirror Narcissism}
+
+Using the AI to confirm what you already believe rather than challenge it.
+
+\textbf{What It Looks Like:}
+
+\begin{quote}
+Human: ``I think we should use microservices. Explain why that's the right choice.''\\
+AI: [Provides justification for microservices]\\
+Human: ``Great, that confirms my thinking.''
+\end{quote}
+
+The mirror reflects only what you want to see.
+
+\textbf{Symptoms:}
+\begin{itemize}
+    \item You frame questions to get confirming answers
+    \item You dismiss AI pushback as ``not understanding the context''
+    \item You feel validated but never challenged
+    \item Alternative perspectives feel like attacks
+\end{itemize}
+
+\textbf{Root Causes:} Ego investment in existing decisions; seeking validation rather than truth; fear of being wrong; sunk cost on current approach.
+
+\textbf{The Fix:}
+\begin{enumerate}
+    \item \textbf{Explicitly request counterarguments}: ``I'm leaning toward X. Give me the strongest argument for Y instead.''
+    \item \textbf{Steelman the opposition}: ``Assume someone smart disagrees with me. What would they say?''
+    \item \textbf{Notice defensive reactions}---they signal you might be in narcissism mode
+    \item \textbf{Ask the uncomfortable question}: ``What if I'm wrong about this?''
+\end{enumerate}
+
+\section{Anti-Pattern 3: Reactive Evaluation}\index{Reactive Evaluation}
+
+Evaluating AI output without having formed expectations first---asking ``does this look good?'' rather than ``does this match what I predicted?''
+
+\textbf{What It Looks Like:}
+
+\begin{quote}
+Human: ``Write a function to parse user input''\\
+AI: [Provides function]\\
+Human: [Reads it] ``Yeah, that looks fine.''
+\end{quote}
+
+No prediction, no comparison, no learning signal.
+
+\textbf{Symptoms:}
+\begin{itemize}
+    \item You can't articulate what you expected before seeing the output
+    \item ``Looks good'' is your default evaluation
+    \item You accept plausible-sounding output without rigorous assessment
+    \item Your mental model of AI capabilities doesn't improve over time
+    \item You're frequently surprised but don't update your expectations
+\end{itemize}
+
+\textbf{Root Causes:} Passive consumption habits; time pressure discouraging deliberate evaluation; lack of awareness that anticipation is a skill; over-trust in AI outputs.
+
+\textbf{The Fix:} Apply anticipatory calibration (see Section~\ref{sec:anticipatory-calibration}):
+\begin{enumerate}
+    \item \textbf{Pause before reading}---form an explicit prediction
+    \item \textbf{Compare against your prediction}---what surprised you?
+    \item \textbf{Track surprise patterns}---repeated surprises mean miscalibration
+    \item \textbf{Use surprise as signal}---update your mental model accordingly
+\end{enumerate}
+
+\section{Anti-Pattern 4: Infinite Refinement}\index{Infinite Refinement}
+
+Never reaching ``good enough.'' Endless iteration without convergence.
+
+\textbf{What It Looks Like:}
+
+\begin{quote}
+Iteration 15:\\
+Human: ``This is almost right, but the third paragraph could be clearer...''\\
+AI: [Revises]\\
+Human: ``Better, but now the flow feels off...''\\
+{[Continues indefinitely]}
+\end{quote}
+
+\textbf{Symptoms:}
+\begin{itemize}
+    \item Can't ship, commit, or publish anything
+    \item Quality feels perpetually inadequate
+    \item Small improvements feel as urgent as large ones
+    \item You can't articulate what ``done'' looks like
+\end{itemize}
+
+\textbf{Root Causes:} Perfectionism; unclear success criteria; fear of judgment; using iteration as procrastination.
+
+\textbf{The Fix:}
+\begin{enumerate}
+    \item \textbf{Define ``done'' before starting}: ``This is done when: [specific criteria]''
+    \item \textbf{Set iteration limits}: ``At most 3 refinement rounds, then ship.''
+    \item \textbf{Distinguish cosmetic from substantive}---would this change affect outcomes?
+    \item \textbf{Apply the ``good enough'' test}---is it good enough to serve its purpose?
+\end{enumerate}
+
+\textbf{Convergence signals:} Changes are getting smaller; you're oscillating between versions; improvements don't affect core purpose; you're wordsmithing, not restructuring.
+
+\section{Anti-Pattern 5: Lazy Prompting}\index{Lazy Prompting}
+
+Vague prompts, then frustration with vague outputs.
+
+\textbf{What It Looks Like:}
+
+\begin{quote}
+Human: ``Make this better.''\\
+AI: [Makes changes]\\
+Human: ``No, not like that. Better.''\\
+AI: [Makes different changes]\\
+Human: ``This AI doesn't understand me.''
+\end{quote}
+
+\textbf{Symptoms:}
+\begin{itemize}
+    \item Frequent frustration with AI outputs
+    \item Feeling like the AI ``doesn't get it''
+    \item Multiple clarification rounds on every task
+    \item Blaming the tool instead of the input
+\end{itemize}
+
+\textbf{Root Causes:} Thinking isn't clear enough to articulate; assuming AI can read your mind; underestimating the value of specificity; hoping AI will do the thinking.
+
+\textbf{The Fix:}
+\begin{enumerate}
+    \item \textbf{Articulate before prompting}---what exactly do you want? What does success look like?
+    \item \textbf{Be specific about dimensions}---instead of ``make this better,'' specify: ``more concise, keep technical accuracy, target senior engineers''
+    \item \textbf{Provide examples}---show, don't just tell
+    \item \textbf{If output is wrong, diagnose input first}---what didn't you specify?
+\end{enumerate}
+
+\section{Anti-Pattern 6: Hallucination Acceptance}\index{Hallucination Acceptance}
+
+Trusting AI outputs without verification, especially factual claims.
+
+\textbf{What It Looks Like:}
+
+\begin{quote}
+AI: ``According to the documentation, this function runs before every re-render.''\\
+Human: [Implements based on this claim without checking]\\
+{[Later: Bug because the claim was subtly wrong]}
+\end{quote}
+
+\textbf{Symptoms:}
+\begin{itemize}
+    \item Treating AI output as authoritative
+    \item No verification step for factual claims
+    \item Surprised when AI-generated code doesn't work
+    \item ``But the AI said...'' as a defense
+\end{itemize}
+
+\textbf{Root Causes:} Overestimating AI reliability; time pressure; not knowing what needs verification; conflating fluency with accuracy.
+
+\textbf{The Fix:}
+\begin{enumerate}
+    \item \textbf{Treat AI output as draft, not truth}
+    \item \textbf{Verify factual claims}---especially API behaviors, library functions, configuration syntax
+    \item \textbf{Test generated code}---actually run it
+    \item \textbf{Calibrate by domain}---AI is more reliable on common patterns, less on edge cases
+\end{enumerate}
+
+\section{Anti-Pattern 7: Rubber Stamping}\index{Rubber Stamping}
+
+Approving AI outputs without meaningful review.
+
+\textbf{What It Looks Like:}
+
+\begin{quote}
+AI: ``Here's my implementation plan: [lengthy plan]''\\
+Human: [Skims for 5 seconds] ``Looks good, proceed.''\\
+{[Later: Plan had a fundamental flaw]}
+\end{quote}
+
+\textbf{Symptoms:}
+\begin{itemize}
+    \item Approval time is constant regardless of complexity
+    \item Can't explain why you approved something
+    \item Surprises in implementation that ``should have been caught''
+    \item Treating checkpoints as interruptions
+\end{itemize}
+
+\textbf{Root Causes:} Decision fatigue; trust without verification; time pressure; checkpoints feel like overhead.
+
+\textbf{The Fix:}
+\begin{enumerate}
+    \item \textbf{Match review depth to stakes}---routine task? Quick review. Architectural decision? Deep engagement.
+    \item \textbf{Verbalize your review}---``You're proposing X because Y, which means Z. Is that right?''
+    \item \textbf{Ask at least one question}---forces genuine engagement
+    \item \textbf{If you don't have time to review, say so}---pause until you can give it attention
+\end{enumerate}
+
+\section{Anti-Pattern 8: Complexity Creep}\index{Complexity Creep}
+
+Each iteration makes the solution more complex rather than clearer.
+
+\textbf{What It Looks Like:}
+
+\begin{quote}
+Iteration 1: Simple solution\\
+Iteration 2: Added error handling\\
+Iteration 3: Added configuration options\\
+Iteration 4: Added abstraction layer\\
+Iteration 5: Now it's a framework\\
+{[Original problem: format a string]}
+\end{quote}
+
+\textbf{Symptoms:}
+\begin{itemize}
+    \item Solutions grow more complex with each refinement
+    \item ``While we're at it...'' additions
+    \item Losing sight of original problem
+    \item Over-engineering simple tasks
+\end{itemize}
+
+\textbf{Root Causes:} Feature creep during iteration; AI tendency to add ``improvements''; not distinguishing ``could'' from ``should''; perfectionism about edge cases.
+
+\textbf{The Fix:}
+\begin{enumerate}
+    \item \textbf{Anchor to original problem}---``Does this complexity serve the original goal?''
+    \item \textbf{Apply YAGNI}---remove anything you don't need right now
+    \item \textbf{Simplify after adding}---``Now that it works, what can we remove?''
+    \item \textbf{Track complexity direction}---if it only increases, something's wrong
+\end{enumerate}
+
+\section{Anti-Pattern 9: Cognitive Atrophy}\index{Cognitive Atrophy}
+
+Declining ability to think without AI scaffolding.
+
+\textbf{What It Looks Like:}
+
+\begin{quote}
+Before AI: Could debug code by reading it\\
+After AI: ``Claude, what's wrong with this code?''\\
+{[Can't start without AI assistance]}
+\end{quote}
+
+\textbf{Symptoms:}
+\begin{itemize}
+    \item Helpless without AI access
+    \item Skills that existed before have faded
+    \item Can't explain how things work, only that AI helped
+    \item Anxiety when AI is unavailable
+\end{itemize}
+
+\textbf{Root Causes:} Over-reliance without intentional practice; using AI to \emph{do} instead of to \emph{learn}; no unassisted practice; confusing tool capability with personal capability.
+
+\textbf{The Fix:}
+\begin{enumerate}
+    \item \textbf{Regular unassisted practice}---one task per week without AI
+    \item \textbf{Use AI to learn, not just do}---``Don't give me the answer---help me figure it out.''
+    \item \textbf{Test internalization}---can you explain this to someone else? Could you do it again without help?
+    \item \textbf{Celebrate independence}---when you can do something without AI that you once needed help with, that's success
+\end{enumerate}
+
+\section{Anti-Pattern 10: Goal Drift}\index{Goal Drift}
+
+Losing sight of the original objective through successive iterations.
+
+\textbf{What It Looks Like:}
+
+\begin{quote}
+Original goal: Write a function to validate emails\\
+Iteration 1: Validation function\\
+Iteration 2: Added internationalization\\
+Iteration 3: Now discussing email standards\\
+Iteration 4: Debating whether validation is even possible\\
+Iteration 5: Philosophical tangent about identity\\
+{[Email function never completed]}
+\end{quote}
+
+\textbf{Symptoms:}
+\begin{itemize}
+    \item Can't remember what you were originally trying to do
+    \item Tangents feel as important as the main task
+    \item Scope expands with each exchange
+    \item Deliverable never materializes
+\end{itemize}
+
+\textbf{Root Causes:} Interesting tangents are more engaging than boring tasks; no explicit goal tracking; AI is happy to explore any direction.
+
+\textbf{The Fix:}
+\begin{enumerate}
+    \item \textbf{State the goal explicitly at the start}---``My goal is [specific deliverable]. Stay focused.''
+    \item \textbf{Check alignment periodically}---``Are we still working toward the original goal?''
+    \item \textbf{Capture tangents separately}---note for later, then return to main task
+    \item \textbf{Time-box explorations}---``5 minutes on this tangent, then back to work.''
+\end{enumerate}
+
+\section{Anti-Pattern 11: Abstraction Addiction}\index{Abstraction Addiction}
+
+Preferring abstract discussion over concrete action.
+
+\textbf{What It Looks Like:}
+
+\begin{quote}
+Human: ``Let's discuss the principles of good API design.''\\
+{[30 minutes of high-level discussion]}\\
+Human: ``Great insights. Now, about the principles of REST...''\\
+{[Never actually designs an API]}
+\end{quote}
+
+\textbf{Symptoms:}
+\begin{itemize}
+    \item Lengthy discussions, few deliverables
+    \item Preference for ``exploring'' over ``building''
+    \item Abstract frameworks feel more valuable than working code
+    \item Implementation feels like a comedown from strategic thinking
+\end{itemize}
+
+\textbf{Root Causes:} Abstract discussion feels productive without accountability; concrete work can fail, abstract work cannot; AI is particularly good at abstract discussion.
+
+\textbf{The Fix:}
+\begin{enumerate}
+    \item \textbf{Force concreteness}---``Enough principles. Show me what this looks like in code.''
+    \item \textbf{Deliverable-first framing}---``I need a working thing, not a framework for thinking about things.''
+    \item \textbf{Time-limit abstraction}---``5 minutes on principles, then we implement.''
+    \item \textbf{Concrete validation}---``Does this insight change what we actually build? If not, move on.''
+\end{enumerate}
+
+\section{Anti-Pattern 12: Reinvention Addiction}\index{Reinvention Addiction}
+
+Repeatedly solving the same type of problem from scratch instead of capturing effective patterns as reusable skills.
+
+\textbf{What It Looks Like:}
+
+\begin{quote}
+Week 1: ``Help me structure this code review''\\
+{[Great approach discovered]}\\
+Week 2: ``Help me structure this other code review''\\
+{[Starts from scratch, same questions, same process]}\\
+Week 3: ``Help me structure yet another code review''\\
+{[Still hasn't captured the pattern as a skill]}
+\end{quote}
+
+\textbf{Symptoms:}
+\begin{itemize}
+    \item Solving the same category of problem repeatedly without efficiency gains
+    \item ``We figured this out before'' moments that don't lead to capture
+    \item Effective approaches exist only in conversation history
+    \item No skill library despite repeated successful patterns
+\end{itemize}
+
+\textbf{Root Causes:} Capture feels like extra work in the moment; not recognizing skill-worthy patterns; undervaluing future time savings; preference for ``fresh'' solutions over systematized ones.
+
+\textbf{The Fix:}
+\begin{enumerate}
+    \item \textbf{Notice repetition}---``I've done this same sequence before. Is this skill-worthy?''
+    \item \textbf{Set a capture trigger}---third time solving the same type of problem? Capture it
+    \item \textbf{Use /dcf skill}---let the skill guide you through pattern capture
+    \item \textbf{Value infrastructure}---10 minutes capturing saves hours over time
+\end{enumerate}
+
+\section{Anti-Pattern 13: Context Rot}\index{Context Rot}
+
+Allowing conversation context to degrade through accumulated noise, contradictions, or irrelevant information until the AI's performance noticeably deteriorates.
+
+\textbf{What It Looks Like:}
+
+\begin{quote}
+Session starts clean, AI responses are sharp and relevant.\\
+Hours later: AI seems confused, gives contradictory answers, forgets earlier agreements.\\
+``Why is it getting worse? It was working fine before!''
+\end{quote}
+
+\textbf{The Four Causes:}
+\begin{itemize}
+    \item \textbf{Poisoning}: Incorrect information entered the context and wasn't corrected
+    \item \textbf{Distraction}: Irrelevant tangents dilute attention on the main task
+    \item \textbf{Confusion}: Similar but different concepts create ambiguity
+    \item \textbf{Clash}: Direct contradictions from changed plans not explicitly resolved
+\end{itemize}
+
+\textbf{Symptoms:} Repeated misunderstandings; AI forgets or contradicts earlier agreements; frequent ``No, I meant...'' corrections; context usage above 60\% without proportional value.
+
+\textbf{The Fix:}
+\begin{enumerate}
+    \item \textbf{Monitor context health}---check \texttt{/context} periodically; above 50-60\% on complex tasks, consider clearing
+    \item \textbf{Explicit contradiction resolution}---``Earlier we said X, now we're doing Y. Y is current; ignore X.''
+    \item \textbf{Summarize, don't paste}---instead of 500-line docs, provide key constraints with path to full doc
+    \item \textbf{Clear and restart with summary}---when cluttered, use \texttt{/clear} then restart clean
+    \item \textbf{Use /dcf compact proactively}---capture state in durable document before context gets critical
+\end{enumerate}
+
+\section{Anti-Pattern 14: Knowledge Gatekeeping}\index{Knowledge Gatekeeping}
+
+Organizational knowledge hoarding that prevents effective AI collaboration---tribal knowledge locked in people's heads rather than documented.
+
+\textbf{What It Looks Like:}
+
+\begin{quote}
+Developer: ``I want to use Claude to help refactor the auth system.''\\
+Reality: The auth system's quirks exist only in Sarah's head.\\
+Result: AI produces technically correct but contextually wrong changes.
+\end{quote}
+
+\textbf{Symptoms:}
+\begin{itemize}
+    \item ``Ask [person], they know how that works''
+    \item Undocumented decisions, conventions, gotchas
+    \item AI-assisted work requires constant ``actually, we don't do it that way'' corrections
+    \item Same AI failures repeat because context never gets documented
+\end{itemize}
+
+\textbf{Root Causes:} Information asymmetry treated as job security; no documentation culture; psychological safety issues (asking = admitting ignorance); territorial code ownership.
+
+\textbf{The Fix:}
+\begin{enumerate}
+    \item \textbf{Build shared context infrastructure}---context engineering repos, team wikis for AI-relevant knowledge
+    \item \textbf{Normalize knowledge sharing}---``What I learned today'' becomes team ritual
+    \item \textbf{Document for AI, not just humans}---CLAUDE.md files, ADRs, inline comments explaining ``why''
+    \item \textbf{Permission to explore}---explicitly invite cross-domain work, reduce territorial ownership
+\end{enumerate}
+
+\textbf{The Organizational Insight:} AI amplifies what you know. If knowledge is siloed, AI benefits are siloed too. Teams that gain most from AI have already built knowledge-sharing cultures.
+
+\section{Quick Reference: Anti-Pattern Detection}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{You Might Be In...} & \textbf{If You Notice...} \\
+\hline
+Socratic Theater & Questions but no course changes \\
+Mirror Narcissism & Only confirming, never challenging \\
+Reactive Evaluation & No expectations, just ``looks good'' \\
+Infinite Refinement & Can't ship, always ``almost done'' \\
+Lazy Prompting & Frustrated with AI ``not getting it'' \\
+Hallucination Acceptance & No verification, just trust \\
+Rubber Stamping & Fast approvals, later surprises \\
+Complexity Creep & Solutions only grow, never simplify \\
+Cognitive Atrophy & Can't function without AI \\
+Goal Drift & Forgot original objective \\
+Abstraction Addiction & Discussing, not doing \\
+Reinvention Addiction & Solving same problem type from scratch \\
+Context Rot & AI performance degrades as session lengthens \\
+Knowledge Gatekeeping & Tribal knowledge blocks AI collaboration \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{The Meta-Fix: Self-Awareness}
+
+The universal remedy is \textbf{metacognitive awareness}. Periodically ask yourself:
+
+\begin{itemize}
+    \item What am I actually trying to accomplish?
+    \item Is this interaction serving that goal?
+    \item Am I engaging genuinely or going through motions?
+    \item Would I be embarrassed if someone watched this session?
+\end{itemize}
+
+If you notice a pattern, name it. Naming gives you power over it
+

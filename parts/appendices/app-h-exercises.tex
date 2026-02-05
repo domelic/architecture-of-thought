@@ -1,0 +1,233 @@
+\chapter{Exercises and Worksheets}
+
+This appendix provides practical exercises for developing DCF skills. Use these individually or in workshop settings.
+
+\section{Exercise 1: Socratic Self-Assessment}
+
+\textbf{Objective}: Evaluate your current interaction patterns with AI.
+
+\textbf{Instructions}:
+\begin{enumerate}
+    \item Review your last 5 AI conversations (or start fresh with a technical question)
+    \item For each exchange, classify your prompts:
+    \begin{itemize}
+        \item \textbf{Assertion}: ``Write me a function that...''
+        \item \textbf{Question}: ``What are the tradeoffs between...''
+        \item \textbf{Challenge}: ``Why did you choose X over Y?''
+        \item \textbf{Meta}: ``Let's step back---what's the real problem here?''
+    \end{itemize}
+    \item Calculate the ratio of each type
+    \item Identify patterns and set goals for more questioning
+\end{enumerate}
+
+\textbf{Reflection Questions}:
+\begin{itemize}
+    \item What percentage of your prompts were assertions vs. questions?
+    \item When you asked questions, were they genuine inquiries or rhetorical?
+    \item How often did you challenge the AI's initial response?
+\end{itemize}
+
+\section{Exercise 2: The Why Chain}
+
+\textbf{Objective}: Practice depth of inquiry through sequential questioning.
+
+\textbf{Instructions}:
+\begin{enumerate}
+    \item Start with any AI response you've recently received
+    \item Ask ``Why?'' or ``How do you know?'' five times in sequence
+    \item Document what you learn at each level
+    \item Note when the AI reaches the limits of its knowledge
+\end{enumerate}
+
+\textbf{Example Chain}:
+\begin{enumerate}
+    \item AI: ``Use a HashMap for this data structure.''
+    \item Human: ``Why a HashMap specifically?''
+    \item AI: ``O(1) average lookup time.''
+    \item Human: ``Why is O(1) lookup important here?''
+    \item AI: ``Your access pattern is key-based retrieval.''
+    \item Human: ``How do you know my access pattern?''
+    \item AI: ``Based on the code you showed...''
+    \item Human: ``What assumptions are you making?''
+    \item AI: (Now we reach the interesting territory)
+\end{enumerate}
+
+\section{Exercise 3: Mirror Calibration}
+
+\textbf{Objective}: Understand how input quality affects output quality.
+
+\textbf{Instructions}:
+\begin{enumerate}
+    \item Choose a technical problem you understand well
+    \item Craft three prompts of varying quality:
+    \begin{itemize}
+        \item \textbf{Low}: Vague, no context (``fix my code'')
+        \item \textbf{Medium}: Some context, clear request
+        \item \textbf{High}: Rich context, specific question, constraints stated
+    \end{itemize}
+    \item Submit each to the AI and compare responses
+    \item Analyze the correlation between input and output quality
+\end{enumerate}
+
+\textbf{Scoring Rubric}:
+\begin{table}[H]
+\centering
+\begin{tabular}{lp{8cm}}
+\toprule
+\textbf{Dimension} & \textbf{Assessment Questions} \\
+\midrule
+Relevance & Did the response address your actual need? \\
+Accuracy & Was the technical content correct? \\
+Completeness & Were important aspects covered? \\
+Actionability & Could you implement the suggestion? \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Exercise 4: Checkpoint Design}
+
+\textbf{Objective}: Practice identifying effective approval points in a workflow.
+
+\textbf{Instructions}:
+\begin{enumerate}
+    \item Choose a multi-step task (e.g., refactor a module, write documentation)
+    \item Map out all the steps an agentic AI would take
+    \item Identify which steps are:
+    \begin{itemize}
+        \item \textbf{Reversible}: Can be easily undone
+        \item \textbf{Consequential}: Have significant impact
+        \item \textbf{Uncertain}: Require human judgment
+    \end{itemize}
+    \item Design checkpoint placement that balances oversight with efficiency
+    \item For each checkpoint, write 2-3 Socratic questions you would ask
+\end{enumerate}
+
+\section{Exercise 5: Recursive Refinement Practice}
+
+\textbf{Objective}: Experience the iterative improvement process.
+
+\textbf{Instructions}:
+\begin{enumerate}
+    \item Ask the AI to explain a concept you're learning
+    \item Rate the initial explanation (1-10) and identify gaps
+    \item Craft a follow-up question addressing the weakest point
+    \item Repeat steps 2-3 until you rate the explanation 8+
+    \item Count how many iterations were required
+\end{enumerate}
+
+\textbf{Tracking Sheet}:
+\begin{table}[H]
+\centering
+\begin{tabular}{cccp{5cm}}
+\toprule
+\textbf{Iteration} & \textbf{Rating} & \textbf{Gap Identified} & \textbf{Follow-up Question} \\
+\midrule
+1 & & & \\
+2 & & & \\
+3 & & & \\
+4 & & & \\
+5 & & & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Exercise 6: Metacognitive Journaling}
+
+\textbf{Objective}: Develop awareness of your own thinking during AI collaboration.
+
+\textbf{Instructions}:
+\begin{enumerate}
+    \item During your next significant AI session, pause every 10 minutes
+    \item Record:
+    \begin{itemize}
+        \item What was I trying to accomplish?
+        \item What did I actually ask for?
+        \item How did I feel about the AI's response?
+        \item What am I assuming?
+        \item What would I do differently?
+    \end{itemize}
+    \item After the session, review your notes for patterns
+\end{enumerate}
+
+\section{Exercise 7: Framework Comparison}
+
+\textbf{Objective}: Understand DCF's position in the landscape of approaches.
+
+\textbf{Instructions}:
+\begin{enumerate}
+    \item Choose a real task you need to complete
+    \item Approach it using three different methodologies:
+    \begin{itemize}
+        \item Pure prompting (single detailed prompt)
+        \item Agentic (let AI plan and execute autonomously)
+        \item DCF (Socratic dialogue at checkpoints)
+    \end{itemize}
+    \item Compare results on: quality, time, learning, satisfaction
+    \item Identify which approach suits which task types
+\end{enumerate}
+
+\section{Exercise 8: The Silence Test}\index{Silence Test}
+
+\textbf{Objective}: Assess what you've internalized vs. what you still depend on AI for.
+
+This exercise tests whether AI collaboration is building your capability or creating dependency---the core question of scaffolding theory.
+
+\textbf{Instructions}:
+\begin{enumerate}
+    \item Choose a task you normally do with AI assistance
+    \item Attempt it \emph{without} AI. Set a timer for 20 minutes.
+    \item During the attempt, track:
+    \begin{itemize}
+        \item Where you got stuck
+        \item What you wanted to ask AI for help with
+        \item What you successfully did independently
+    \end{itemize}
+    \item After 20 minutes, use AI to complete the task
+    \item Compare: What was genuinely difficult vs. what was habitual dependency?
+\end{enumerate}
+
+\textbf{Tracking Sheet}:
+\begin{table}[H]
+\centering
+\begin{tabular}{p{4cm}p{4cm}p{4cm}}
+\toprule
+\textbf{Got Stuck On} & \textbf{Wanted AI For} & \textbf{Did Independently} \\
+\midrule
+& & \\
+& & \\
+& & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Reflection Questions}:
+\begin{itemize}
+    \item What should I practice doing without AI?
+    \item What is AI genuinely augmenting vs. replacing?
+    \item Am I building capability or dependency?
+    \item If the same patterns appear repeatedly, what skill am I avoiding developing?
+\end{itemize}
+
+\textbf{The DCF Connection}: This exercise operationalizes the scaffolding principle---AI should help you reach capabilities you couldn't achieve alone, then fade as you internalize those capabilities. If you can't do \emph{anything} without AI, the scaffold has become a crutch.
+
+\section{Workshop Format: DCF Introduction (90 minutes)}
+
+\textbf{For facilitators introducing DCF to teams:}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Time} & \textbf{Activity} & \textbf{Materials} \\
+\midrule
+0-10 min & Introduction to DCF concepts & Slides from Chapter 3 \\
+10-25 min & Exercise 1: Self-Assessment & Individual work \\
+25-35 min & Pair share: Assessment results & Discussion pairs \\
+35-55 min & Exercise 2: Why Chain (live demo) & Shared screen \\
+55-70 min & Exercise 3: Mirror Calibration & Small groups \\
+70-85 min & Debrief and Q\&A & Full group \\
+85-90 min & Commitment: One DCF practice to try & Individual \\
+\bottomrule
+\end{tabular}
+\end{table}
+

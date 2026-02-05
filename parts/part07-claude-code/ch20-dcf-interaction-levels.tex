@@ -1,0 +1,54 @@
+\chapter{DCF at Each Interaction Level}
+
+\section{Level 1: Direct Commands}
+
+Simple tasks where Claude Code executes directly:
+
+\begin{quote}
+Human: ``Read the README and summarize the project structure''
+\end{quote}
+
+DCF Application: Minimal---trust the output, verify if critical.
+
+\section{Level 2: Plan Mode (Research-Plan-Implement)}
+
+Complex tasks requiring upfront planning:
+
+\begin{quote}
+Human: ``Implement user authentication for this API'' \\
+Claude Code: [Enters Plan Mode, researches codebase, presents plan]
+\end{quote}
+
+DCF Application: \textbf{High}---review plan Socratically before approval:
+\begin{itemize}
+    \item ``What alternatives did you consider?''
+    \item ``What's the riskiest assumption?''
+    \item ``What would make this approach fail?''
+\end{itemize}
+
+\section{Level 3: Agent Delegation}
+
+Tasks spawned to specialized agents:
+
+\begin{quote}
+Claude Code: [Spawns Explore agent to understand codebase] \\
+Claude Code: [Spawns code-reviewer after implementation]
+\end{quote}
+
+DCF Application: \textbf{Medium}---evaluate agent selection and outputs:
+\begin{itemize}
+    \item Was the right agent chosen?
+    \item Did the agent's findings get incorporated correctly?
+\end{itemize}
+
+\section{Level 4: Skill Execution}
+
+Predefined workflows for common tasks:
+
+\begin{quote}
+Human: ``/commit'' \\
+Claude Code: [Executes commit skill with git analysis]
+\end{quote}
+
+DCF Application: \textbf{Low to Medium}---review generated commit message, verify staged files.
+

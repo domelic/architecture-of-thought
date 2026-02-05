@@ -1,0 +1,70 @@
+\chapter{The Agent Ecosystem}\index{Agent Ecosystem}\label{ch:agent-ecosystem}
+
+Claude Code's Task tool spawns specialized agents for different purposes. Understanding this ecosystem enables effective delegation and appropriate DCF engagement.
+
+\section{Specialized Agent Types}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Agent Type} & \textbf{Purpose} & \textbf{DCF Checkpoint} \\
+\midrule
+Explore & Codebase understanding & Review findings for completeness \\
+Plan & Architecture design & Full Socratic review of plan \\
+code-reviewer & Code quality analysis & Evaluate flagged issues \\
+code-explorer & Deep feature analysis & Verify execution path accuracy \\
+code-architect & Design blueprints & Architectural review \\
+Bash & Command execution & Review commands before execution \\
+\bottomrule
+\end{tabular}
+\caption{Agent Types and DCF Checkpoints}
+\end{table}
+
+\section{When to Use Which Agent}
+
+\begin{itemize}
+    \item \textbf{Explore (quick/medium/thorough)}: When you need to understand code you haven't seen. Use ``thorough'' for comprehensive analysis, ``quick'' for targeted searches.
+    \item \textbf{Plan}: When the task requires upfront design. Plans deserve full DCF engagement before approval.
+    \item \textbf{code-reviewer}: After implementing changes. Review its findings but apply judgment---not all flagged issues are real problems.
+    \item \textbf{code-architect}: For new features requiring design decisions. Treat blueprints as proposals, not directives.
+\end{itemize}
+
+\section{Background Agents}\index{Background Agents}
+
+Agents can run in the background while you continue working. This raises DCF questions about when synchronous engagement is needed.
+
+\subsection{When to Run in Background}
+
+\begin{itemize}
+    \item Long-running explorations where you don't need immediate results
+    \item Multiple independent searches that can run in parallel
+    \item Tasks where you'll review output later anyway
+\end{itemize}
+
+\subsection{When to Run Synchronously}
+
+\begin{itemize}
+    \item Results will immediately inform your next decision
+    \item The task is high-stakes and needs real-time oversight
+    \item You want to engage dialectically with the process, not just the output
+\end{itemize}
+
+\textbf{DCF Principle}: Background execution trades engagement for efficiency. Use it for exploration and information gathering; engage synchronously for judgment calls.
+
+\section{Multi-Agent Orchestration}
+
+Complex tasks may involve multiple agents working together:
+
+\begin{lstlisting}
+[User requests new feature]
+1. Explore agent: Understand existing patterns
+2. Plan agent: Design implementation approach
+3. [Human reviews plan - DCF checkpoint]
+4. Implementation (main agent)
+5. code-reviewer agent: Quality check
+6. [Human reviews findings - DCF checkpoint]
+\end{lstlisting}
+
+\textbf{DCF Application}: The orchestration itself is a form of prompt chaining. Your checkpoints should occur at decision boundaries, not between every agent.
+

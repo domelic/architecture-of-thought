@@ -1,0 +1,209 @@
+\chapter{Configuration Philosophy}
+
+Configuration is cognitive architecture in code form.
+
+\section{Permission Levels}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Level} & \textbf{When to Use} & \textbf{DCF Implication} \\
+\midrule
+Ask always & Learning, sensitive code & Maximum DCF engagement \\
+Allow with approval & Normal development & Checkpoint-based DCF \\
+Allow automatically & Routine, trusted operations & Trust but verify results \\
+\bottomrule
+\end{tabular}
+\caption{Permission Levels and DCF}
+\end{table}
+
+\textbf{The Configuration DCF Principle:} Your configuration should match your cognitive engagement level. More autonomy = more need for post-hoc review. Less autonomy = more in-flow checkpoints.
+
+\section{Hooks: Automated DCF Triggers}\index{Hooks}\label{sec:hooks}
+
+Hooks are shell commands that execute automatically before or after Claude Code tool calls. They enable \textbf{automated DCF checkpoints}.
+
+\subsection{Hook Types}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Hook Type} & \textbf{Trigger} & \textbf{DCF Use Case} \\
+\midrule
+PreToolCall & Before any tool runs & Validation, logging \\
+PostToolCall & After tool completes & Auto-testing, verification \\
+Notification & On specific events & Alerting for review \\
+\bottomrule
+\end{tabular}
+\caption{Hook Types and DCF Applications}
+\end{table}
+
+\subsection{DCF-Informed Hook Patterns}
+
+\begin{lstlisting}
+# .claude/hooks/post-edit.sh
+# Run tests after any file edit - automated verification
+npm test --related $CHANGED_FILES
+
+# .claude/hooks/pre-commit.sh
+# Require human review before commits
+echo "DCF Checkpoint: Review changes before commit"
+git diff --staged
+\end{lstlisting}
+
+\textbf{The Hook Philosophy:} Hooks externalize your DCF principles into automated enforcement. If you always want tests run after edits, don't rely on memory---encode it in a hook.
+
+\section{Settings Configuration}\index{Settings}
+
+The \texttt{.claude/settings.json} file defines project-level behavior. Key settings from a DCF perspective:
+
+\begin{lstlisting}
+{
+  "permissions": {
+    "allow": ["Read", "Glob", "Grep"],
+    "ask": ["Edit", "Write", "Bash"],
+    "deny": ["dangerous-commands"]
+  },
+  "planMode": {
+    "requireApproval": true,
+    "maxTurns": 50
+  }
+}
+\end{lstlisting}
+
+\subsection{Permission Strategy}
+
+\begin{itemize}
+    \item \textbf{allow}: Tools that don't modify state---read operations are generally safe
+    \item \textbf{ask}: Tools that change files or run commands---checkpoint opportunities
+    \item \textbf{deny}: Operations you never want automated
+\end{itemize}
+
+\textbf{DCF Principle:} Configure permissions to create natural checkpoints at high-stakes moments while allowing flow for low-stakes operations.
+
+\section{Model Selection as DCF Decision}\index{Model Selection}
+
+Claude Code supports multiple models with different capabilities and costs. Model selection is itself a DCF decision.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{llll}
+\toprule
+\textbf{Model} & \textbf{Strength} & \textbf{Cost} & \textbf{When to Use} \\
+\midrule
+Haiku & Speed, simple tasks & Lowest & File searches, quick questions \\
+Sonnet & Balance & Medium & Most development work \\
+Opus & Deep reasoning & Highest & Architecture, complex judgment \\
+\bottomrule
+\end{tabular}
+\caption{Model Selection Guide}
+\end{table}
+
+\subsection{DCF Model Selection Heuristics}
+
+\begin{itemize}
+    \item \textbf{Use Haiku} for exploration, searches, and tasks where you'll heavily review output anyway
+    \item \textbf{Use Sonnet} for standard development where balance matters
+    \item \textbf{Use Opus} when the decision is hard to reverse, architecturally significant, or requires nuanced judgment
+\end{itemize}
+
+The principle: \textbf{match model capability to decision stakes}. Routine operations don't need your most powerful model; critical decisions deserve it.
+
+\section{Session Lifecycle}\index{Session Lifecycle}\label{sec:session-lifecycle}
+
+Knowing when to start a fresh session vs. continue an existing one is a form of cognitive hygiene.
+
+\subsection{When to Start Fresh}
+
+\begin{itemize}
+    \item Context has drifted significantly from original goal
+    \item Accumulated errors or misunderstandings are compounding
+    \item You're starting a genuinely new task (not a continuation)
+    \item Session history is no longer helpful (noise > signal)
+\end{itemize}
+
+\subsection{When to Continue}
+
+\begin{itemize}
+    \item Task is directly related to prior work
+    \item Context from prior exchanges is valuable
+    \item You haven't hit compaction yet and flow is good
+    \item The AI has learned project-specific patterns you'd lose
+\end{itemize}
+
+\subsection{Session Hygiene Practices}
+
+\begin{enumerate}
+    \item \textbf{Name your sessions mentally}---``This is the API refactor session''
+    \item \textbf{Use /compact strategically}---when context is large but still valuable
+    \item \textbf{Capture before switching}---use \texttt{/dcf compact} before major context shifts
+    \item \textbf{Start fresh for fresh tasks}---don't let inertia keep you in a stale session
+\end{enumerate}
+
+\subsection{The 50-60\% Context Guideline}
+
+A practical heuristic: \textbf{effective context capacity is 50-60\% of the maximum, not 100\%}.
+
+This matters because:
+\begin{itemize}
+    \item \textbf{Tool calls consume context}: Every file read, command executed, and search result adds to context consumption---often invisibly.
+    \item \textbf{Performance degrades before limits}: AI quality can degrade well before you hit hard context limits.
+    \item \textbf{Headroom enables recovery}: If you're at 90\% and need to paste an error message, you have no room to work.
+\end{itemize}
+
+Practical implications:
+\begin{itemize}
+    \item \textbf{Monitor context}: Use \texttt{/context} periodically to check consumption.
+    \item \textbf{Plan for compaction early}: When you hit 50-60\% on a complex task, start thinking about what to capture.
+    \item \textbf{Don't start complex tasks mid-session}: If you're already at 40\%, starting a major new task risks hitting limits at an awkward point.
+    \item \textbf{Summarize rather than paste}: A 500-line document becomes noise; a 10-line summary with ``full doc at path/to/spec.md'' preserves headroom.
+\end{itemize}
+
+The 50-60\% guideline isn't a rigid rule, but it prevents the surprise of hitting context limits during critical work.
+
+\section{IDE Integration}\index{IDE Integration}
+
+Claude Code integrates with development environments, extending DCF into your editing workflow.
+
+\subsection{VS Code Extension}
+
+The Claude Code VS Code extension provides:
+\begin{itemize}
+    \item Inline chat within the editor
+    \item File context automatically included
+    \item Code selection as conversation input
+    \item Terminal integration for command execution
+\end{itemize}
+
+\subsection{DCF in IDE Context}
+
+IDE integration changes the DCF dynamic:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Aspect} & \textbf{CLI} & \textbf{IDE} \\
+\midrule
+Context & You provide files explicitly & Files visible automatically \\
+Review & Terminal output, then check files & Changes visible in diff view \\
+Flow & Conversation-centric & Code-centric with chat \\
+Checkpoints & Before commands execute & Before accepting changes \\
+\bottomrule
+\end{tabular}
+\caption{CLI vs. IDE Integration}
+\end{table}
+
+\subsection{IDE DCF Practices}
+
+\begin{itemize}
+    \item \textbf{Use diff view as your mirror}---review proposed changes before accepting
+    \item \textbf{Select relevant code}---don't rely on the AI to find the right context
+    \item \textbf{Checkpoint at accept}---the ``Accept'' button is your approval point
+    \item \textbf{Keep terminal visible}---command execution should still be reviewed
+\end{itemize}
+
+\textbf{The IDE Principle}: IDE integration makes some context automatic but doesn't remove the need for engagement. The convenience is in context gathering; the judgment remains yours.
+
