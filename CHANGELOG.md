@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.9.2](https://github.com/domelic/architecture-of-thought/compare/v2.9.1...v2.9.2) (2026-02-05)
+
+
+### Bug Fixes
+
+* use PR-based approach for PDF compilation ([#77](https://github.com/domelic/architecture-of-thought/issues/77)) ([c9842e4](https://github.com/domelic/architecture-of-thought/commit/c9842e45db3465c1298db97da9a597061e70401f))
+
 ## [2.9.1](https://github.com/domelic/architecture-of-thought/compare/v2.9.0...v2.9.1) (2026-01-20)
 
 
