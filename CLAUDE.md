@@ -145,11 +145,9 @@ When sessions get long, use `/dcf compact` to create `SESSION_FINDINGS.md` (giti
 
 PRs trigger these GitHub Actions (all must pass):
 
-- **commitlint**: Validates conventional commit format
-- **markdown-lint**: Checks markdown formatting against `.markdownlint.json`
-- **spell-check**: Validates spelling against `.cspell.json`
-- **link-checker**: Detects broken links in markdown files
-- **compile-pdf**: Builds LaTeX document
+- **ci.yml**: Commitlint, markdown-lint, spell-check, link-checker (consolidated)
+- **pdf-preview.yml**: Compiles PDF and posts preview link on PRs with .tex/.bib changes
+- **compile-pdf.yml**: Builds LaTeX document on push to main
 
 ## Git Workflow
 
