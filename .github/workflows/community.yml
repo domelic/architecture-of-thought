@@ -23,8 +23,8 @@ jobs:
       - name: Welcome first-time contributors
         uses: actions/first-interaction@v3
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          issue-message: |
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          issue_message: |
             Welcome to the Dialectical Cognition Framework! 👋
 
             Thank you for opening your first issue. We appreciate you taking the time to contribute.
@@ -38,7 +38,7 @@ jobs:
 
             *The architecture of thought awaits its architects.*
 
-          pr-message: |
+          pr_message: |
             Welcome to the Dialectical Cognition Framework! 👋
 
             Thank you for your first pull request. We're excited to see your contribution.
