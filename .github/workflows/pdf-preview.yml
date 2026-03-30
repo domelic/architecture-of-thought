@@ -27,7 +27,7 @@ jobs:
           extra_system_packages: "biber"
 
       - name: Upload PDF preview
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: pdf-preview-${{ github.event.pull_request.number }}
           path: THE_ARCHITECTURE_OF_THOUGHT.pdf

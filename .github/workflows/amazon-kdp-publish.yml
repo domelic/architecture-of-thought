@@ -121,7 +121,7 @@ jobs:
           echo "EPUB validation completed"
 
       - name: Upload EPUB as artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: epub-${{ steps.version.outputs.version }}
           path: ${{ steps.build.outputs.epub_name }}
