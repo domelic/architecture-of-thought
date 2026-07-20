@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Get version
         id: version
@@ -121,7 +121,7 @@ jobs:
           echo "EPUB validation completed"
 
       - name: Upload EPUB as artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: epub-${{ steps.version.outputs.version }}
           path: ${{ steps.build.outputs.epub_name }}
@@ -142,7 +142,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Create KDP upload issue
         env:
