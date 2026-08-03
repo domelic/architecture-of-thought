@@ -58,7 +58,7 @@ jobs:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     steps:
       - name: Mark stale issues and PRs
-        uses: actions/stale@v10
+        uses: actions/stale@v11
         with:
           # Issue settings
           stale-issue-message: >
