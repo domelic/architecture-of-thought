@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v4
@@ -27,14 +27,14 @@ jobs:
           extra_system_packages: "biber"
 
       - name: Upload PDF preview
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: pdf-preview-${{ github.event.pull_request.number }}
           path: THE_ARCHITECTURE_OF_THOUGHT.pdf
           retention-days: 14
 
       - name: Comment on PR with preview link
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const runUrl = `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`;
